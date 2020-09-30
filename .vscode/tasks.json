@@ -1,0 +1,55 @@
+{
+  // See https://go.microsoft.com/fwlink/?LinkId=733558
+  // for the documentation about the tasks.json format
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "Build for production",
+      "type": "npm",
+      "script": "build",
+      "problemMatcher": [],
+      "group": "build"
+    },
+    {
+      "label": "Eject react-scripts",
+      "type": "npm",
+      "script": "eject",
+      "problemMatcher": [],
+      "group": "none"
+    },
+    {
+      "label": "Run eslint on the document",
+      "type": "npm",
+      "script": "lint",
+      "problemMatcher": [],
+      "group": "test"
+    },
+    {
+      "label": "Build for development",
+      "type": "npm",
+      "script": "start",
+      "problemMatcher": [],
+      "group": {
+        "kind": "build",
+        "isDefault": true
+      }
+    },
+    {
+      "label": "Run tests",
+      "type": "npm",
+      "script": "test",
+      "problemMatcher": [],
+      "group": {
+        "kind": "test",
+        "isDefault": true
+      }
+    },
+    {
+      "label": "Run tests and extract coverage",
+      "type": "npm",
+      "script": "test:coverage",
+      "problemMatcher": [],
+      "group": "test"
+    }
+  ]
+}

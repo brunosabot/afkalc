@@ -1,0 +1,9 @@
+.git
+.github
+.gitignore
+.prettierrc
+.stylelintrc
+.vscode
+build
+node_modules
+README.md
