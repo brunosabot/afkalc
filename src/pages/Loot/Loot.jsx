@@ -82,6 +82,10 @@ const Loot = () => {
         onChange={setPass}
       />
 
+      <div style={{ fontWeight: "600", padding: "16px" }}>
+        You will have 100% chance drop by clearing the stage for :
+      </div>
+
       {chests.map(chest => {
         const date = new Date(pass);
         if (isNaN(new Date(pass).getTime())) {
