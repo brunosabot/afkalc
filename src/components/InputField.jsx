@@ -1,7 +1,14 @@
-import React, { useRef } from "react";
+import React, { useMemo, useRef } from "react";
 
 const InputField = ({ label, value, onChange, type = "text" }) => {
   const refId = useRef("input-field_" + Math.random());
+
+  const localValue = useMemo(() => {
+    if (value === 0) {
+      return "";
+    }
+    return value;
+  }, [value]);
 
   return (
     <div className="input-field__wrapper">
@@ -12,7 +19,7 @@ const InputField = ({ label, value, onChange, type = "text" }) => {
         className="input-field"
         id={refId.current}
         type={type}
-        value={value}
+        value={localValue}
         onChange={(e) => onChange(e.target.value)}
       />
     </div>

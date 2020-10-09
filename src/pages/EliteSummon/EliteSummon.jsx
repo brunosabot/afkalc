@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useCallback, useState } from "react";
 import InputField from "../../components/InputField";
 
 const EliteSummon = () => {
@@ -15,39 +15,23 @@ const EliteSummon = () => {
   const assuredTry = 30;
   const luck = 1 / p - (1 / p) * Math.pow(1 - p, assuredTry);
 
+  const onChange = useCallback((setter) => {
+    return (e) => {
+      const val = Number(e);
+      if (!Number.isNaN(val) && val >= 0) {
+        setter(val);
+      }
+    };
+  }, []);
+
   return (
     <div>
-      <InputField type="number" value={elite} label="Elite" onChange={(e) => setElite(Number(e))} />
-      <InputField
-        type="number"
-        value={eliteP}
-        label="Elite+"
-        onChange={(e) => setEliteP(Number(e))}
-      />
-      <InputField
-        type="number"
-        value={legendary}
-        label="Legendary"
-        onChange={(e) => setLegendary(Number(e))}
-      />
-      <InputField
-        type="number"
-        value={legendaryP}
-        label="Legendary+"
-        onChange={(e) => setLegendaryP(Number(e))}
-      />
-      <InputField
-        type="number"
-        value={mythic}
-        label="Mythic"
-        onChange={(e) => setMythic(Number(e))}
-      />
-      <InputField
-        type="number"
-        value={mythicP}
-        label="Mythic+"
-        onChange={(e) => setMythicP(Number(e))}
-      />
+      <InputField value={elite} label="Elite" onChange={onChange(setElite)} />
+      <InputField value={eliteP} label="Elite+" onChange={onChange(setEliteP)} />
+      <InputField value={legendary} label="Legendary" onChange={onChange(setLegendary)} />
+      <InputField value={legendaryP} label="Legendary+" onChange={onChange(setLegendaryP)} />
+      <InputField value={mythic} label="Mythic" onChange={onChange(setMythic)} />
+      <InputField value={mythicP} label="Mythic+" onChange={onChange(setMythicP)} />
 
       <div style={{ fontWeight: 900, padding: "16px" }}>
         {got < 8 ? `≈ ${Math.round(diamCost * luck * (8 - got))} diams` : "Good to go!"}
