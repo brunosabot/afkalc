@@ -94,7 +94,6 @@ const Loot = () => {
 
         const obtainedDate = new Date(date.getTime() + chest.CD * 1000);
         const isOK = obtainedDate <= new Date();
-        console.log(obtainedDate, new Date());
 
         return (
           <div
