@@ -16,7 +16,7 @@ const images = {
   "Amplifying Emblem": "ApmEmblem.jpg",
   "Primal Emblem": "PrimEmb.jpg",
   "Dura Shards": "DuraShards.jpg",
-  "Dust x1": "Dust.jpg"
+  "Dust x1": "Dust.jpg",
 };
 
 function getDuration(time) {
@@ -38,25 +38,25 @@ const Loot = () => {
     localStorage.getItem("campaign.pass") || new Date().toLocaleString("en-US")
   );
 
-  const setLevel = useCallback(value => {
+  const setLevel = useCallback((value) => {
     localStorage.setItem("campaign.level", value);
     _setLevel(value);
   }, []);
 
-  const setPass = useCallback(value => {
+  const setPass = useCallback((value) => {
     localStorage.setItem("campaign.pass", value);
     _setPass(value);
   }, []);
 
   const chests = useMemo(() => {
-    const stage = stages.find(stage => stage.stage === level);
+    const stage = stages.find((stage) => stage.stage === level);
     if (stage) {
       return stage.chests
         .sort((a, b) => b.CD - a.CD)
-        .map(chest => {
+        .map((chest) => {
           return {
             ...chest,
-            image: images[chest.Content]
+            image: images[chest.Content],
           };
         });
     }
@@ -86,7 +86,7 @@ const Loot = () => {
         You will have 100% chance drop by clearing the stage for :
       </div>
 
-      {chests.map(chest => {
+      {chests.map((chest) => {
         const date = new Date(pass);
         if (isNaN(new Date(pass).getTime())) {
           return null;
@@ -102,7 +102,7 @@ const Loot = () => {
               display: "flex",
               justifyContent: "space-between",
               padding: "8px 16px",
-              alignItems: "center"
+              alignItems: "center",
             }}
           >
             <img

@@ -20,7 +20,7 @@ const InputField = ({ label, value, onChange, type = "text" }) => {
         id={refId.current}
         type={type}
         value={localValue}
-        onChange={e => onChange(e.target.value)}
+        onChange={(e) => onChange(e.target.value)}
       />
     </div>
   );

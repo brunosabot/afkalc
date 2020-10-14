@@ -16,7 +16,7 @@ const SignatureItem = () => {
       <InputField
         value={currentLevel}
         label="Current SI level"
-        onChange={e => {
+        onChange={(e) => {
           const val = Number(e);
           if (!Number.isNaN(val) && val >= 0 && val <= 40) {
             setCurrentLevel(val);

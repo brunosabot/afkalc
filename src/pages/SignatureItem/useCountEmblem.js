@@ -41,7 +41,7 @@ const items = {
   37: { type: "celest", count: 90 },
   38: { type: "celest", count: 120 },
   39: { type: "celest", count: 180 },
-  40: { type: "celest", count: 300 }
+  40: { type: "celest", count: 300 },
 };
 
 export default function useCountEmblem(max, currentLevel) {
