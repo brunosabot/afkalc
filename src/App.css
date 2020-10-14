@@ -1,8 +1,10 @@
 html {
-  background-image: linear-gradient(to bottom, #e6cb9d, #c59d65);
+  background-color: #432d24;
+  /* background-image: linear-gradient(to bottom, #e6cb9d, #c59d65); */
   min-height: 100%;
-  color: #6d452b;
-  font-size: 16px;
+  color: #230f08;
+  font-size: 18px;
+  font-family: "Patrick Hand SC", cursive;
 }
 
 .emblem {
@@ -19,7 +21,7 @@ html {
 .emblem-count__title {
   flex-basis: 100%;
   font-weight: 900;
-  margin: 8px 0;
+  margin: 0 0 8px 0;
 }
 .emblem-count__wrapper {
   flex-basis: 25%;
@@ -32,19 +34,24 @@ html {
 .input-field__wrapper {
   display: flex;
   flex-direction: column;
-  padding: 16px;
+  padding: 0 16px 16px 16px;
 }
 .input-field__label {
   margin-bottom: 4px;
 }
 .input-field {
-  background-image: linear-gradient(to bottom, #695238, #6f5943);
-  border: 1px solid #968061;
-  border-radius: 2px;
-  color: #fff;
+  background: rgba(35, 15, 8, 0.2);
+  border: 2px solid #230f08;
+  border-radius: 4px;
+  color: #230f08;
   padding: 4px 8px;
   height: 32px;
   font-size: 16px;
+  font-family: inherit;
+}
+.input-field:focus {
+  box-shadow: 0 0 5px #230f08;
+  outline: 0;
 }
 
 .menu__overlay {
@@ -66,30 +73,52 @@ html {
   height: 24px;
   width: 24px;
   padding: 8px;
+  color: #c59d65;
 }
 .menu__content {
   display: flex;
   flex-direction: column;
-  padding: 16px;
+  padding: 32px 16px;
   position: absolute;
   top: 0;
   left: 0;
   width: 200px;
   bottom: 0;
-  background-image: linear-gradient(to bottom, #e6cb9d, #c59d65);
+  background: #432d24;
+  font-size: 20px;
+  color: #fff;
   transform: translateX(-100%);
   transition: 0.2s all cubic-bezier(0.4, 0, 0.6, 1);
 }
 .menu__content--active {
   transform: translateX(0%);
+  box-shadow: 2px 2px 5px #230f08;
 }
 .menu__link {
   padding: 8px 0;
   color: inherit;
   display: flex;
   align-items: center;
+  border-bottom: 2px solid #230f08;
+  text-decoration: none;
+}
+.menu__link:last-child {
+  border-bottom: 0;
 }
 .menu__link-icon {
   height: 24px;
   width: 24px;
+  margin-right: 8px;
+  transition: all 0.1s linear;
+}
+.menu__link:hover .menu__link-icon {
+  margin-right: 16px;
+}
+
+.card {
+  box-shadow: 2px 2px 5px #230f08;
+  background-color: #c59d65;
+  margin: 16px;
+  border-radius: 8px;
+  border: 2px solid #230f08;
 }

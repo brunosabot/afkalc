@@ -3,6 +3,7 @@ import InputField from "../../components/InputField";
 import stages from "../../data/stages.json";
 import dayjs from "dayjs";
 import relativeTime from "dayjs/plugin/relativeTime";
+import Card from "../../components/Card";
 dayjs.extend(relativeTime);
 
 const images = {
@@ -65,61 +66,66 @@ const Loot = () => {
 
   return (
     <div>
-      <InputField value={level} label="Campaign level" onChange={setLevel} />
-      <InputField
-        value={pass}
-        label={
-          <span>
-            Stage start date
-            <span
-              onClick={() => setPass(new Date().toLocaleString("en-US"))}
-              style={{ textDecoration: "underline", marginLeft: "8px", cursor: "pointer" }}
-            >
-              Set now
+      <Card>
+        <div style={{ fontWeight: "600", padding: "16px" }}>First, set your campaign progress</div>
+        <InputField value={level} label="Campaign level" onChange={setLevel} />
+        <InputField
+          value={pass}
+          label={
+            <span>
+              Stage start date
+              <span
+                onClick={() => setPass(new Date().toLocaleString("en-US"))}
+                style={{ textDecoration: "underline", marginLeft: "8px", cursor: "pointer" }}
+              >
+                Set now
+              </span>
             </span>
-          </span>
-        }
-        onChange={setPass}
-      />
+          }
+          onChange={setPass}
+        />
+      </Card>
 
-      <div style={{ fontWeight: "600", padding: "16px" }}>
-        You will have 100% chance drop by clearing the stage for :
-      </div>
+      <Card>
+        <div style={{ fontWeight: "600", padding: "16px" }}>
+          You will have 100% chance drop by clearing the stage for :
+        </div>
 
-      {chests.map((chest) => {
-        const date = new Date(pass);
-        if (isNaN(new Date(pass).getTime())) {
-          return null;
-        }
+        {chests.map((chest) => {
+          const date = new Date(pass);
+          if (isNaN(new Date(pass).getTime())) {
+            return null;
+          }
 
-        const obtainedDate = new Date(date.getTime() + chest.CD * 1000);
-        const isOK = obtainedDate <= new Date();
+          const obtainedDate = new Date(date.getTime() + chest.CD * 1000);
+          const isOK = obtainedDate <= new Date();
 
-        return (
-          <div
-            key={chest.Content}
-            style={{
-              display: "flex",
-              justifyContent: "space-between",
-              padding: "8px 16px",
-              alignItems: "center",
-            }}
-          >
-            <img
-              src={chest.image}
-              style={{ height: "30px", width: "30px", marginRight: "8px" }}
-              alt={chest.Content}
-            />
-            {chest.Content}:
-            <div style={{ textAlign: "right", flexGrow: 1 }}>
-              <div style={{ opacity: 0.5 }}>{getDuration(chest.CD)}</div>
-              <div style={{ fontWeight: "600" }}>
-                {isOK ? "OK" : dayjs(new Date(date.getTime() + chest.CD * 1000)).fromNow()}
+          return (
+            <div
+              key={chest.Content}
+              style={{
+                display: "flex",
+                justifyContent: "space-between",
+                padding: "8px 16px",
+                alignItems: "center",
+              }}
+            >
+              <img
+                src={chest.image}
+                style={{ height: "30px", width: "30px", marginRight: "8px" }}
+                alt={chest.Content}
+              />
+              {chest.Content}:
+              <div style={{ textAlign: "right", flexGrow: 1 }}>
+                <div style={{ opacity: 0.5 }}>{getDuration(chest.CD)}</div>
+                <div style={{ fontWeight: "600" }}>
+                  {isOK ? "OK" : dayjs(new Date(date.getTime() + chest.CD * 1000)).fromNow()}
+                </div>
               </div>
             </div>
-          </div>
-        );
-      })}
+          );
+        })}
+      </Card>
     </div>
   );
 };
