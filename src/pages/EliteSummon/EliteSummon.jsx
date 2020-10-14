@@ -15,8 +15,8 @@ const EliteSummon = () => {
   const assuredTry = 30;
   const luck = 1 / p - (1 / p) * Math.pow(1 - p, assuredTry);
 
-  const onChange = useCallback((setter) => {
-    return (e) => {
+  const onChange = useCallback(setter => {
+    return e => {
       const val = Number(e);
       if (!Number.isNaN(val) && val >= 0) {
         setter(val);

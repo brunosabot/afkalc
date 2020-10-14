@@ -105,7 +105,11 @@ const Loot = () => {
               alignItems: "center"
             }}
           >
-            <img src={chest.image} style={{ height: "30px", width: "30px", marginRight: "8px" }} />
+            <img
+              src={chest.image}
+              style={{ height: "30px", width: "30px", marginRight: "8px" }}
+              alt={chest.Content}
+            />
             {chest.Content}:
             <div style={{ textAlign: "right", flexGrow: 1 }}>
               <div style={{ opacity: 0.5 }}>{getDuration(chest.CD)}</div>
