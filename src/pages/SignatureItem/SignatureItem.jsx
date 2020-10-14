@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import useCountEmblem from "./useCountEmblem";
 import SignatureItemLeft from "./SignatureItemLeft";
 import InputField from "../../components/InputField";
+import Card from "../../components/Card";
 
 const SignatureItem = () => {
   const [currentLevel, setCurrentLevel] = useState(0);
@@ -13,16 +14,21 @@ const SignatureItem = () => {
 
   return (
     <div>
-      <InputField
-        value={currentLevel}
-        label="Current SI level"
-        onChange={(e) => {
-          const val = Number(e);
-          if (!Number.isNaN(val) && val >= 0 && val <= 40) {
-            setCurrentLevel(val);
-          }
-        }}
-      />
+      <Card>
+        <div style={{ fontWeight: "600", padding: "16px" }}>
+          First, set your character informations
+        </div>
+        <InputField
+          value={currentLevel}
+          label="Current SI level"
+          onChange={(e) => {
+            const val = Number(e);
+            if (!Number.isNaN(val) && val >= 0 && val <= 40) {
+              setCurrentLevel(val);
+            }
+          }}
+        />
+      </Card>
 
       <SignatureItemLeft
         step={40}

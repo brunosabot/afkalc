@@ -1,4 +1,5 @@
 import React, { useCallback, useState } from "react";
+import Card from "../../components/Card";
 import InputField from "../../components/InputField";
 
 const EliteSummon = () => {
@@ -26,26 +27,30 @@ const EliteSummon = () => {
 
   return (
     <div>
-      <div style={{ fontWeight: "600", padding: "16px" }}>
-        First, enter the hero copy you already have:
-      </div>
+      <Card>
+        <div style={{ fontWeight: "600", padding: "16px" }}>
+          First, enter the hero copy you already have:
+        </div>
 
-      <InputField value={elite} label="Elite" onChange={onChange(setElite)} />
-      <InputField value={eliteP} label="Elite+" onChange={onChange(setEliteP)} />
-      <InputField value={legendary} label="Legendary" onChange={onChange(setLegendary)} />
-      <InputField value={legendaryP} label="Legendary+" onChange={onChange(setLegendaryP)} />
-      <InputField value={mythic} label="Mythic" onChange={onChange(setMythic)} />
-      <InputField value={mythicP} label="Mythic+" onChange={onChange(setMythicP)} />
+        <InputField value={elite} label="Elite" onChange={onChange(setElite)} />
+        <InputField value={eliteP} label="Elite+" onChange={onChange(setEliteP)} />
+        <InputField value={legendary} label="Legendary" onChange={onChange(setLegendary)} />
+        <InputField value={legendaryP} label="Legendary+" onChange={onChange(setLegendaryP)} />
+        <InputField value={mythic} label="Mythic" onChange={onChange(setMythic)} />
+        <InputField value={mythicP} label="Mythic+" onChange={onChange(setMythicP)} />
+      </Card>
 
-      <div style={{ fontWeight: "600", padding: "16px" }}>
-        To have enough copy for an ascend hero, you need:
-      </div>
+      <Card>
+        <div style={{ fontWeight: "600", padding: "16px" }}>
+          To have enough copy for an ascend hero, you need:
+        </div>
 
-      <div style={{ fontWeight: 900, padding: "16px" }}>
-        {got < 8
-          ? `≈ ${Math.round(diamCost * luck * (8 - got))} diams`
-          : "Nothing, you're good to go!"}
-      </div>
+        <div style={{ fontWeight: 900, padding: "16px" }}>
+          {got < 8
+            ? `≈ ${Math.round(diamCost * luck * (8 - got))} diams`
+            : "Nothing, you're good to go!"}
+        </div>
+      </Card>
     </div>
   );
 };
