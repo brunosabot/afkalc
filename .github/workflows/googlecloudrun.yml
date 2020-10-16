@@ -12,6 +12,10 @@ jobs:
       - name: Checkout the repository
         uses: actions/checkout@v1
 
+      - name: Copy .env file
+        run: |
+          echo "${{ secrets.ENV }}" > .env
+
       - name: Build Docker image
         run: |
           docker build . --tag eu.gcr.io/${{ secrets.GCLOUD_PROJECT }}/${{ secrets.GCLOUD_APP_NAME }}
