@@ -4,6 +4,7 @@ COPY yarn.lock .
 RUN yarn
 COPY public ./public
 COPY src ./src
+COPY .env .env
 RUN yarn build
 
 FROM nginx:alpine
