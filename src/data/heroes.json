@@ -1,0 +1,104 @@
+[
+  {
+    "faction": "dimensionals",
+    "characters": [
+      { "name": "Arthur", "id": 48 },
+      { "name": "Ezio", "id": 64 },
+      { "name": "Nakoruru", "id": 62 },
+      { "name": "Ukyo", "id": 57 }
+    ]
+  },
+  {
+    "faction": "celestials",
+    "characters": [
+      { "name": "Athalia", "id": 21 },
+      { "name": "Elijah & Lailah", "id": 35 },
+      { "name": "Flora", "id": 61 },
+      { "name": "Orthros", "id": 42 },
+      { "name": "Talene", "id": 47 },
+      { "name": "Wu Kong", "id": 50 },
+      { "name": "Zaphrael", "id": 67 }
+    ]
+  },
+  {
+    "faction": "hypogeans",
+    "characters": [
+      { "name": "Ezizh", "id": 25 },
+      { "name": "Khazard", "id": 49 },
+      { "name": "Lucretia", "id": 68 },
+      { "name": "Mehira", "id": 32 },
+      { "name": "Mezoth", "id": 54 },
+      { "name": "Zolrath", "id": 40 }
+    ]
+  },
+  {
+    "faction": "lightbearers",
+    "characters": [
+      { "name": "Belinda", "id": 2 },
+      { "name": "Cecilia", "id": 53 },
+      { "name": "Estrilda", "id": 1 },
+      { "name": "Fawkes", "id": 22 },
+      { "name": "Gwyneth", "id": 41 },
+      { "name": "Hendrik", "id": 30 },
+      { "name": "Lucius", "id": 17 },
+      { "name": "Oscar", "id": 56 },
+      { "name": "Raine", "id": 3 },
+      { "name": "Rigby", "id": 44 },
+      { "name": "Rosaline", "id": 36 },
+      { "name": "Rowan", "id": 34 },
+      { "name": "Thane", "id": 18 }
+    ]
+  },
+  {
+    "faction": "maulers",
+    "characters": [
+      { "name": "Anoki", "id": 60 },
+      { "name": "Antandra", "id": 38 },
+      { "name": "Brutus", "id": 6 },
+      { "name": "Drez", "id": 65 },
+      { "name": "Khasos", "id": 5 },
+      { "name": "Numisu", "id": 13 },
+      { "name": "Safiya", "id": 26 },
+      { "name": "Satrana", "id": 39 },
+      { "name": "Skreg", "id": 23 },
+      { "name": "Skriath", "id": 51 },
+      { "name": "Tidus", "id": 45 },
+      { "name": "Vurk", "id": 4 },
+      { "name": "Warek", "id": 15 }
+    ]
+  },
+  {
+    "faction": "wilders",
+    "characters": [
+      { "name": "Eironn", "id": 27 },
+      { "name": "Gorvo", "id": 33 },
+      { "name": "Kaz", "id": 8 },
+      { "name": "Lorsan", "id": 43 },
+      { "name": "Lyca", "id": 9 },
+      { "name": "Nemora", "id": 7 },
+      { "name": "Saurus", "id": 58 },
+      { "name": "Seirus", "id": 24 },
+      { "name": "Solise", "id": 52 },
+      { "name": "Tasi", "id": 19 },
+      { "name": "Ulmus", "id": 16 }
+    ]
+  },
+  {
+    "faction": "graveborns",
+    "characters": [
+      { "name": "Baden", "id": 29 },
+      { "name": "Daimon", "id": 63 },
+      { "name": "Ferael", "id": 14 },
+      { "name": "Grezhul", "id": 11 },
+      { "name": "Isabella", "id": 10 },
+      { "name": "Izold", "id": 46 },
+      { "name": "Kelthur", "id": 31 },
+      { "name": "Nara", "id": 28 },
+      { "name": "Oden", "id": 55 },
+      { "name": "Shemira", "id": 12 },
+      { "name": "Theowyn", "id": 66 },
+      { "name": "Thoran", "id": 20 },
+      { "name": "Torne", "id": 59 }
+    ]
+  }
+]

@@ -6,6 +6,7 @@ import SignatureItem from "./pages/SignatureItem/SignatureItem";
 import EliteSummon from "./pages/EliteSummon/EliteSummon";
 import Loot from "./pages/Loot/Loot";
 import Menu from "./components/Menu";
+import HeroList from "./pages/HeroList/HeroList";
 
 function App() {
   return (
@@ -21,6 +22,12 @@ function App() {
           </Route>
           <Route path="/loot">
             <Loot />
+          </Route>
+          <Route path="/hero-list/:id">
+            <HeroList />
+          </Route>
+          <Route path="/hero-list">
+            <HeroList />
           </Route>
           <Route path="/">
             <Home />

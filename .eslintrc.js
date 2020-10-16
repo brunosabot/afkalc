@@ -2,7 +2,7 @@ module.exports = {
   extends: ["airbnb", "prettier"],
   env: {
     browser: true,
-    jest: true
+    jest: true,
   },
   parser: "babel-eslint",
   parserOptions: {
@@ -10,7 +10,10 @@ module.exports = {
     sourceType: "module",
     ecmaFeatures: {
       jsx: true,
-      experimentalObjectRestSpread: true
-    }
-  }
+      experimentalObjectRestSpread: true,
+    },
+  },
+  rules: {
+    "react/prop-types": "off",
+  },
 };
