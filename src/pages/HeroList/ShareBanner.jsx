@@ -1,11 +1,19 @@
 import { nanoid } from "nanoid";
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
+import { FirebaseContext } from "../../FirebaseProvider";
 import useFirestoreWithBackup from "../../hooks/useFirestoreWithBackup";
 
 const ShareBanner = ({ isView }) => {
   const [copy, setCopy] = useState(false);
   const [id] = useFirestoreWithBackup("%ID%", "user", "shareId", "", nanoid(10), isView);
-  const value = id ? `https://afkalc.heycoucou.com/hero-list/${id}` : "";
+  const { values } = useContext(FirebaseContext);
+
+  let value = "";
+  if (id) {
+    value = `https://afkalc.heycoucou.com/hero-list/${id}`;
+  } else if (values.isAuth === false) {
+    value = "You need to be logged in to share yout list";
+  }
 
   if (isView === true) {
     return <div style={{ marginTop: "16px" }} />;
@@ -20,6 +28,9 @@ const ShareBanner = ({ isView }) => {
       <input
         className="hero-list__share"
         onClick={(e) => {
+          if (values.isAuth === false) {
+            return;
+          }
           e.target.select();
           document.execCommand("copy");
           setCopy(true);
