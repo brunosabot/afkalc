@@ -54,7 +54,7 @@ const HeroList = () => {
         const data = levels[key] || {};
         const newLevels = {
           ...levels,
-          [key]: { ...data, [field]: parseInt(e.target.value, 10) },
+          [key]: { ...data, [field]: parseInt(e.target.value || "0", 10) },
         };
 
         setLevels(newLevels);
@@ -65,10 +65,11 @@ const HeroList = () => {
 
   const getValue = useCallback(
     (key, index) => {
-      if (levels[key] === undefined) return 0;
-      if (levels[key][index]) return levels[key][index];
+      if (levels[key] === undefined) return "";
+      if (levels[key][index] === undefined) return "";
+      if (levels[key][index] === 0) return "";
 
-      return 0;
+      return levels[key][index];
     },
     [levels]
   );
