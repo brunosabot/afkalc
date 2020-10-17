@@ -5,19 +5,55 @@
       { "name": "Arthur", "id": 48, "type": "strength", "class": "tank", "role": "tank" },
       { "name": "Ezio", "id": 64, "type": "agility", "class": "ranger", "role": "assassin" },
       { "name": "Nakoruru", "id": 62, "type": "agility", "class": "ranger", "role": "burst" },
-      { "name": "Ukyo", "id": 57, "type": "agility", "class": "warrior", "role": "continuousdamage" }
+      {
+        "name": "Ukyo",
+        "id": 57,
+        "type": "agility",
+        "class": "warrior",
+        "role": "continuous"
+      }
     ]
   },
   {
     "faction": "celestials",
     "characters": [
       { "name": "Athalia", "id": 21, "type": "agility", "class": "ranger", "role": "assassin" },
-      { "name": "Elijah & Lailah", "id": 35, "type": "intelligence", "class": "support", "role": "buffer" },
-      { "name": "Flora", "id": 61, "type": "intelligence", "class": "mage", "role": "continuousdamage" },
+      {
+        "name": "Elijah & Lailah",
+        "id": 35,
+        "type": "intelligence",
+        "class": "support",
+        "role": "buffer"
+      },
+      {
+        "name": "Flora",
+        "id": 61,
+        "type": "intelligence",
+        "class": "mage",
+        "role": "continuous"
+      },
       { "name": "Orthros", "id": 42, "type": "strength", "class": "tank", "role": "tank" },
-      { "name": "Talene", "id": 47, "type": "agility", "class": "support", "role": "continuousdamage" },
-      { "name": "Wu Kong", "id": 50, "type": "strength", "class": "warrior", "role": "continuousdamage" },
-      { "name": "Zaphrael", "id": 67, "type": "intelligence", "class": "mage", "role": "continuousdamage" }
+      {
+        "name": "Talene",
+        "id": 47,
+        "type": "agility",
+        "class": "support",
+        "role": "continuous"
+      },
+      {
+        "name": "Wu Kong",
+        "id": 50,
+        "type": "strength",
+        "class": "warrior",
+        "role": "continuous"
+      },
+      {
+        "name": "Zaphrael",
+        "id": 67,
+        "type": "intelligence",
+        "class": "mage",
+        "role": "continuous"
+      }
     ]
   },
   {
@@ -38,13 +74,25 @@
       { "name": "Cecilia", "id": 53, "type": "agility", "class": "ranger", "role": "assassin" },
       { "name": "Estrilda", "id": 1, "type": "strength", "class": "warrior", "role": "burst" },
       { "name": "Fawkes", "id": 22, "type": "agility", "class": "ranger", "role": "control" },
-      { "name": "Gwyneth", "id": 41, "type": "strength", "class": "ranger", "role": "continuousdamage" },
+      {
+        "name": "Gwyneth",
+        "id": 41,
+        "type": "strength",
+        "class": "ranger",
+        "role": "continuous"
+      },
       { "name": "Hendrik", "id": 30, "type": "strength", "class": "tank", "role": "tank" },
       { "name": "Lucius", "id": 17, "type": "strength", "class": "tank", "role": "regen" },
       { "name": "Oscar", "id": 56, "type": "agility", "class": "ranger", "role": "assassin" },
       { "name": "Raine", "id": 3, "type": "agility", "class": "support", "role": "buffer" },
       { "name": "Rigby", "id": 44, "type": "strength", "class": "warrior", "role": "tank" },
-      { "name": "Rosaline", "id": 36, "type": "intelligence", "class": "support", "role": "buffer" },
+      {
+        "name": "Rosaline",
+        "id": 36,
+        "type": "intelligence",
+        "class": "support",
+        "role": "buffer"
+      },
       { "name": "Rowan", "id": 34, "type": "intelligence", "class": "support", "role": "buffer" },
       { "name": "Thane", "id": 18, "type": "agility", "class": "ranger", "role": "assassin" }
     ]
@@ -56,15 +104,33 @@
       { "name": "Antandra", "id": 38, "type": "agility", "class": "warrior", "role": "tank" },
       { "name": "Brutus", "id": 6, "type": "strength", "class": "tank", "role": "tank" },
       { "name": "Drez", "id": 65, "type": "agility", "class": "ranger", "role": "burst" },
-      { "name": "Khasos", "id": 5, "type": "strength", "class": "warrior", "role": "continuousdamage" },
+      {
+        "name": "Khasos",
+        "id": 5,
+        "type": "strength",
+        "class": "warrior",
+        "role": "continuous"
+      },
       { "name": "Numisu", "id": 13, "type": "intelligence", "class": "support", "role": "regen" },
       { "name": "Safiya", "id": 26, "type": "intelligence", "class": "mage", "role": "aoe" },
       { "name": "Satrana", "id": 39, "type": "intelligence", "class": "mage", "role": "burst" },
       { "name": "Skreg", "id": 23, "type": "strength", "class": "tank", "role": "tank" },
       { "name": "Skriath", "id": 51, "type": "intelligence", "class": "mage", "role": "aoe" },
-      { "name": "Tidus", "id": 45, "type": "agility", "class": "ranger", "role": "continuousdamage" },
+      {
+        "name": "Tidus",
+        "id": 45,
+        "type": "agility",
+        "class": "ranger",
+        "role": "continuous"
+      },
       { "name": "Vurk", "id": 4, "type": "agility", "class": "ranger", "role": "aoe" },
-      { "name": "Warek", "id": 15, "type": "strength", "class": "warrior", "role": "continuousdamage" }
+      {
+        "name": "Warek",
+        "id": 15,
+        "type": "strength",
+        "class": "warrior",
+        "role": "continuous"
+      }
     ]
   },
   {
@@ -76,7 +142,13 @@
       { "name": "Lorsan", "id": 43, "type": "intelligence", "class": "mage", "role": "aoe" },
       { "name": "Lyca", "id": 9, "type": "agility", "class": "ranger", "role": "buffer" },
       { "name": "Nemora", "id": 7, "type": "intelligence", "class": "support", "role": "regen" },
-      { "name": "Saurus", "id": 58, "type": "strength", "class": "warrior", "role": "continuousdamage" },
+      {
+        "name": "Saurus",
+        "id": 58,
+        "type": "strength",
+        "class": "warrior",
+        "role": "continuous"
+      },
       { "name": "Seirus", "id": 24, "type": "strength", "class": "warrior", "role": "tank" },
       { "name": "Solise", "id": 52, "type": "intelligence", "class": "mage", "role": "control" },
       { "name": "Tasi", "id": 19, "type": "intelligence", "class": "support", "role": "control" },
@@ -86,17 +158,41 @@
   {
     "faction": "graveborns",
     "characters": [
-      { "name": "Baden", "id": 29, "type": "agility", "class": "warrior", "role": "continuousdamage" },
+      {
+        "name": "Baden",
+        "id": 29,
+        "type": "agility",
+        "class": "warrior",
+        "role": "continuous"
+      },
       { "name": "Daimon", "id": 63, "type": "strength", "class": "tank", "role": "tank" },
-      { "name": "Ferael", "id": 14, "type": "agility", "class": "ranger", "role": "continuousdamage" },
+      {
+        "name": "Ferael",
+        "id": 14,
+        "type": "agility",
+        "class": "ranger",
+        "role": "continuous"
+      },
       { "name": "Grezhul", "id": 11, "type": "strength", "class": "tank", "role": "tank" },
-      { "name": "Isabella", "id": 10, "type": "intelligence", "class": "mage", "role": "continuousdamage" },
+      {
+        "name": "Isabella",
+        "id": 10,
+        "type": "intelligence",
+        "class": "mage",
+        "role": "continuous"
+      },
       { "name": "Izold", "id": 46, "type": "strength", "class": "warrior", "role": "tank" },
       { "name": "Kelthur", "id": 31, "type": "agility", "class": "ranger", "role": "assassin" },
       { "name": "Nara", "id": 28, "type": "strength", "class": "warrior", "role": "assassin" },
       { "name": "Oden", "id": 55, "type": "intelligence", "class": "mage", "role": "aoe" },
       { "name": "Shemira", "id": 12, "type": "intelligence", "class": "mage", "role": "aoe" },
-      { "name": "Theowyn", "id": 66, "type": "agility", "class": "ranger", "role": "continuousdamage" },
+      {
+        "name": "Theowyn",
+        "id": 66,
+        "type": "agility",
+        "class": "ranger",
+        "role": "continuous"
+      },
       { "name": "Thoran", "id": 20, "type": "strength", "class": "tank", "role": "tank" },
       { "name": "Torne", "id": 59, "type": "strength", "class": "tank", "role": "tank" }
     ]

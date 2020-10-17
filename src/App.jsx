@@ -12,7 +12,7 @@ function App() {
   return (
     <Router>
       <Menu />
-      <div style={{ maxWidth: "480px", margin: "auto" }}>
+      <div style={{ maxWidth: "480px", margin: "auto", marginTop: "40px" }}>
         <Switch>
           <Route path="/signature-item">
             <SignatureItem />
