@@ -6,6 +6,7 @@ const Filter = ({ filter, setFilter, imagePath, data }) => {
       {data.map((e) => {
         return (
           <button
+            key={e}
             className={`hero-list__filter ${filter === e ? "hero-list__filter--active" : ""}`}
             type="button"
             onClick={() => {
