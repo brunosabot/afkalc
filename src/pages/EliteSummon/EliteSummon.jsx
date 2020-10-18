@@ -1,6 +1,9 @@
 import React, { useCallback, useState } from "react";
-import Card from "../../components/Card";
-import InputField from "../../components/InputField";
+import Card from "../../components/ui/card/Card";
+import CardTitle from "../../components/ui/card/CardTitle";
+import CardValue from "../../components/ui/card/CardValue";
+import InputField from "../../components/ui/InputField";
+import { getEstimatedDiamsForSummon } from "../../lib/summon";
 
 const EliteSummon = () => {
   const [elite, setElite] = useState(0);
@@ -10,11 +13,7 @@ const EliteSummon = () => {
   const [mythic, setMythic] = useState(0);
   const [mythicP, setMythicP] = useState(0);
 
-  const got = elite + eliteP * 2 + legendary * 2 + legendaryP * 4 + mythic * 4 + mythicP * 4;
-  const p = 0.0461;
-  const diamCost = 300;
-  const assuredTry = 30;
-  const luck = 1 / p - (1 / p) * Math.pow(1 - p, assuredTry);
+  const diams = getEstimatedDiamsForSummon(elite, eliteP, legendary, legendaryP, mythic, mythicP);
 
   const onChange = useCallback((setter) => {
     return (e) => {
@@ -28,9 +27,7 @@ const EliteSummon = () => {
   return (
     <div>
       <Card>
-        <div style={{ fontWeight: "600", padding: "16px" }}>
-          First, enter the hero copy you already have:
-        </div>
+        <CardTitle>First, enter the hero copy you already have:</CardTitle>
 
         <InputField value={elite} label="Elite" onChange={onChange(setElite)} />
         <InputField value={eliteP} label="Elite+" onChange={onChange(setEliteP)} />
@@ -41,15 +38,9 @@ const EliteSummon = () => {
       </Card>
 
       <Card>
-        <div style={{ fontWeight: "600", padding: "16px" }}>
-          To have enough copy for an ascend hero, you need:
-        </div>
+        <CardTitle>To have enough copy for an ascend hero, you need:</CardTitle>
 
-        <div style={{ fontWeight: 900, padding: "16px" }}>
-          {got < 8
-            ? `≈ ${Math.round(diamCost * luck * (8 - got))} diams`
-            : "Nothing, you're good to go!"}
-        </div>
+        <CardValue>{diams > 0 ? `≈ ${diams} diams` : "Nothing, you're good to go!"}</CardValue>
       </Card>
     </div>
   );

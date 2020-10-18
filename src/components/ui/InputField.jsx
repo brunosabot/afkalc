@@ -1,7 +1,7 @@
 import React, { useMemo, useRef } from "react";
 
 const InputField = ({ label, value, onChange, type = "text" }) => {
-  const refId = useRef("input-field_" + Math.random());
+  const refId = useRef(`input-field_${Math.random()}`);
 
   const localValue = useMemo(() => {
     if (value === 0) {

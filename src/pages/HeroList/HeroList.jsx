@@ -1,7 +1,7 @@
 import React, { Fragment, useCallback, useEffect, useMemo, useState } from "react";
 import { useParams } from "react-router-dom";
 import * as firebase from "firebase/app";
-import Card from "../../components/Card";
+import Card from "../../components/ui/card/Card";
 import factions from "../../data/heroes.json";
 import useFirestoreWithBackup from "../../hooks/useFirestoreWithBackup";
 import HeroLine from "./HeroLine";
@@ -75,8 +75,8 @@ const HeroList = () => {
   );
 
   return (
-    <div>
-      <Card>
+    <Card>
+      <div style={{ marginBottom: "16px" }}>
         <ShareBanner isView={isView} />
 
         <FactionFilter filter={factionFilter} setFilter={setFactionFilter} imagePath="factions" />
@@ -115,9 +115,8 @@ const HeroList = () => {
             </Fragment>
           );
         })}
-        <div style={{ marginBottom: "16px" }} />
-      </Card>
-    </div>
+      </div>
+    </Card>
   );
 };
 

@@ -1,5 +1,6 @@
 import { nanoid } from "nanoid";
 import React, { useContext, useState } from "react";
+import CardTitle from "../../components/ui/card/CardTitle";
 import { FirebaseContext } from "../../FirebaseProvider";
 import useFirestoreWithBackup from "../../hooks/useFirestoreWithBackup";
 
@@ -16,11 +17,11 @@ const ShareBanner = ({ isView }) => {
   }
 
   if (isView === true) {
-    return <div style={{ marginTop: "16px" }} />;
+    return <CardTitle>Viewing somebody&apos;s list</CardTitle>;
   }
 
   return (
-    <div style={{ fontWeight: "600", padding: "16px", position: "relative", height: "64px" }}>
+    <CardTitle style={{ position: "relative" }}>
       Share your hero list with the URL:
       {copy ? (
         <div style={{ position: "absolute", top: "16px", right: "16px" }}>Link copied</div>
@@ -39,7 +40,7 @@ const ShareBanner = ({ isView }) => {
         value={value}
         readOnly
       />
-    </div>
+    </CardTitle>
   );
 };
 
