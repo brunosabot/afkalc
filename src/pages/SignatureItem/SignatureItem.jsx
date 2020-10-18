@@ -1,8 +1,9 @@
-import React, { useState } from "react";
-import useCountEmblem from "./useCountEmblem";
-import SignatureItemLeft from "./SignatureItemLeft";
-import InputField from "../../components/InputField";
-import Card from "../../components/Card";
+import React, { useCallback, useState } from "react";
+import useCountEmblem from "./components/hooks/useCountEmblem";
+import SignatureItemLeft from "./components/ui/SignatureItemLeft";
+import InputField from "../../components/ui/InputField";
+import Card from "../../components/ui/card/Card";
+import CardTitle from "../../components/ui/card/CardTitle";
 
 const SignatureItem = () => {
   const [currentLevel, setCurrentLevel] = useState(0);
@@ -12,22 +13,18 @@ const SignatureItem = () => {
   const [primoridial30, amplifying30, faction30, celest30] = useCountEmblem(30, currentLevel);
   const [primoridial40, amplifying40, faction40, celest40] = useCountEmblem(40, currentLevel);
 
+  const onChange = useCallback((e) => {
+    const val = Number(e);
+    if (!Number.isNaN(val) && val >= 0 && val <= 40) {
+      setCurrentLevel(val);
+    }
+  }, []);
+
   return (
     <div>
       <Card>
-        <div style={{ fontWeight: "600", padding: "16px" }}>
-          First, set your character informations
-        </div>
-        <InputField
-          value={currentLevel}
-          label="Current SI level"
-          onChange={(e) => {
-            const val = Number(e);
-            if (!Number.isNaN(val) && val >= 0 && val <= 40) {
-              setCurrentLevel(val);
-            }
-          }}
-        />
+        <CardTitle>First, set your character informations</CardTitle>
+        <InputField value={currentLevel} label="Current SI level" onChange={onChange} />
       </Card>
 
       <SignatureItemLeft

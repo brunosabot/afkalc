@@ -5,8 +5,8 @@ import Home from "./pages/Home/Home";
 import SignatureItem from "./pages/SignatureItem/SignatureItem";
 import EliteSummon from "./pages/EliteSummon/EliteSummon";
 import Loot from "./pages/Loot/Loot";
-import Menu from "./components/Menu";
 import HeroList from "./pages/HeroList/HeroList";
+import Menu from "./components/functionnal/Menu";
 
 function App() {
   return (
