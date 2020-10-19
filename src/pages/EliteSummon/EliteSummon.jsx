@@ -1,4 +1,5 @@
 import React, { useCallback, useState } from "react";
+import HelpButton from "../../components/ui/button/HelpButton";
 import Card from "../../components/ui/card/Card";
 import CardTitle from "../../components/ui/card/CardTitle";
 import CardValue from "../../components/ui/card/CardValue";
@@ -6,6 +7,7 @@ import InputField from "../../components/ui/InputField";
 import { getEstimatedDiamsForSummon } from "../../lib/summon";
 
 const EliteSummon = () => {
+  const [showHelp, setShowHelp] = useState(false);
   const [elite, setElite] = useState(0);
   const [eliteP, setEliteP] = useState(0);
   const [legendary, setLegendary] = useState(0);
@@ -26,7 +28,16 @@ const EliteSummon = () => {
 
   return (
     <div>
+      {showHelp ? (
+        <Card>
+          <div style={{ padding: "16px" }}>
+            This tool is aimed to give you an estimation of how many diamants you will need to get
+            enough hero copies to get an ascend hero
+          </div>
+        </Card>
+      ) : null}
       <Card>
+        <HelpButton onClick={() => setShowHelp(!showHelp)} />
         <CardTitle>First, enter the hero copy you already have:</CardTitle>
 
         <InputField value={elite} label="Elite" onChange={onChange(setElite)} />

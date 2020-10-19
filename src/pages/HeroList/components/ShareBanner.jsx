@@ -1,8 +1,8 @@
 import { nanoid } from "nanoid";
 import React, { useContext, useState } from "react";
-import CardTitle from "../../components/ui/card/CardTitle";
-import { FirebaseContext } from "../../FirebaseProvider";
-import useFirestoreWithBackup from "../../hooks/useFirestoreWithBackup";
+import CardTitle from "../../../components/ui/card/CardTitle";
+import { FirebaseContext } from "../../../FirebaseProvider";
+import useFirestoreWithBackup from "../../../hooks/useFirestoreWithBackup";
 
 const ShareBanner = ({ isView }) => {
   const [copy, setCopy] = useState(false);
