@@ -221,6 +221,7 @@ html {
   box-sizing: border-box;
 }
 .hero-list__image-wrapper {
+  flex-shrink: 0;
   position: relative;
   box-shadow: 0 0 1px 1px #6f5c70;
   margin-right: 8px;
