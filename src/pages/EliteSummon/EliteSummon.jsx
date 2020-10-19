@@ -38,14 +38,26 @@ const EliteSummon = () => {
       ) : null}
       <Card>
         <HelpButton onClick={() => setShowHelp(!showHelp)} />
-        <CardTitle>First, enter the hero copy you already have:</CardTitle>
+        <CardTitle>Enter your desired hero current count:</CardTitle>
 
-        <InputField value={elite} label="Elite" onChange={onChange(setElite)} />
-        <InputField value={eliteP} label="Elite+" onChange={onChange(setEliteP)} />
-        <InputField value={legendary} label="Legendary" onChange={onChange(setLegendary)} />
-        <InputField value={legendaryP} label="Legendary+" onChange={onChange(setLegendaryP)} />
-        <InputField value={mythic} label="Mythic" onChange={onChange(setMythic)} />
-        <InputField value={mythicP} label="Mythic+" onChange={onChange(setMythicP)} />
+        <InputField value={elite} label="Elite heroes you have" onChange={onChange(setElite)} />
+        <InputField value={eliteP} label="Elite+ heroes you have" onChange={onChange(setEliteP)} />
+        <InputField
+          value={legendary}
+          label="Legendary heroes you have"
+          onChange={onChange(setLegendary)}
+        />
+        <InputField
+          value={legendaryP}
+          label="Legendary+ heroes you have"
+          onChange={onChange(setLegendaryP)}
+        />
+        <InputField value={mythic} label="Mythic heroes you have" onChange={onChange(setMythic)} />
+        <InputField
+          value={mythicP}
+          label="Mythic+ heroes you have"
+          onChange={onChange(setMythicP)}
+        />
       </Card>
 
       <Card>
