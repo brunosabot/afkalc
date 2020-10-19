@@ -6,7 +6,7 @@ const InnField = ({ id, setLevel, getValue, isView }) => {
       onChange={setLevel(id, "inn")}
       className="hero-list__number"
       value={getValue(id, "inn")}
-      disabled={getValue(id, "ascend") < 5}
+      disabled={getValue(id, "ascend") < 7}
       readOnly={isView}
       maxLength="1"
     />
