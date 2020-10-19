@@ -160,6 +160,7 @@ html {
   margin: 16px;
   border-radius: 8px;
   border: 2px solid #230f08;
+  position: relative;
 }
 .card__title {
   font-weight: 600;
@@ -329,4 +330,12 @@ html {
 }
 .loot__remaining {
   font-weight: 600;
+}
+
+.help-button {
+  height: 24px;
+  width: 24px;
+  position: absolute;
+  right: 0;
+  padding: 8px;
 }

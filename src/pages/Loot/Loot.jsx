@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import InputField from "../../components/ui/InputField";
 import Card from "../../components/ui/card/Card";
 import CardTitle from "../../components/ui/card/CardTitle";
@@ -6,8 +6,10 @@ import useFirestoreWithBackup from "../../hooks/useFirestoreWithBackup";
 import Chest from "./components/ui/Chest";
 import useChestLevel from "./components/hooks/useChestLevel";
 import PassNowLabel from "./components/ui/PassNowLabel";
+import HelpButton from "../../components/ui/button/HelpButton";
 
 const Loot = () => {
+  const [showHelp, setShowHelp] = useState(false);
   const [level, setLevel] = useFirestoreWithBackup("%ID%", "campaign", "level", "1-1");
   const [pass, setPass] = useFirestoreWithBackup(
     "%ID%",
@@ -22,7 +24,17 @@ const Loot = () => {
 
   return (
     <div>
+      {showHelp ? (
+        <Card>
+          <div style={{ padding: "16px" }}>
+            When you wait long enough before passing a level, you can ensure having some loots. By
+            having your campaign level and the last success date, you will have the timing for the
+            next loot you need.
+          </div>
+        </Card>
+      ) : null}
       <Card>
+        <HelpButton onClick={() => setShowHelp(!showHelp)} />
         <CardTitle>First, set your campaign progress</CardTitle>
         <InputField value={level} label="Campaign level" onChange={setLevel} />
         <InputField value={pass} label={passLabel} onChange={setPass} />

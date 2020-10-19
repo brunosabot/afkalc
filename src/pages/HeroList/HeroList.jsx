@@ -4,13 +4,13 @@ import * as firebase from "firebase/app";
 import Card from "../../components/ui/card/Card";
 import factions from "../../data/heroes.json";
 import useFirestoreWithBackup from "../../hooks/useFirestoreWithBackup";
-import HeroLine from "./HeroLine";
-import FactionLine from "./FactionLine";
-import ShareBanner from "./ShareBanner";
-import FactionFilter from "./FactionFilter";
-import TypeFilter from "./TypeFilter";
-import ClassFilter from "./ClassFilter";
-import RoleFilter from "./RoleFilter";
+import HeroLine from "./components/HeroLine";
+import FactionLine from "./components/FactionLine";
+import ShareBanner from "./components/ShareBanner";
+import FactionFilter from "./components/FactionFilter";
+import TypeFilter from "./components/TypeFilter";
+import ClassFilter from "./components/ClassFilter";
+import RoleFilter from "./components/RoleFilter";
 
 const firestore = firebase.firestore();
 
