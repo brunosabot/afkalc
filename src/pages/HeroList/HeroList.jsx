@@ -1,6 +1,6 @@
 import React, { Fragment, useCallback, useEffect, useMemo, useState } from "react";
 import { useParams } from "react-router-dom";
-import * as firebase from "firebase/app";
+import firebase from "firebase/app";
 import Card from "../../components/ui/card/Card";
 import factions from "../../data/heroes.json";
 import useFirestoreWithBackup from "../../hooks/useFirestoreWithBackup";

@@ -1,4 +1,4 @@
-import * as firebase from "firebase/app";
+import firebase from "firebase/app";
 import { useCallback, useContext, useEffect, useMemo } from "react";
 import { FirebaseContext } from "../FirebaseProvider";
 import useFirestorePartialUpdateRef from "./useFirestorePartialUpdateRef";
