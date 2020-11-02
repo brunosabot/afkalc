@@ -11,6 +11,7 @@ import FactionFilter from "./components/FactionFilter";
 import TypeFilter from "./components/TypeFilter";
 import ClassFilter from "./components/ClassFilter";
 import RoleFilter from "./components/RoleFilter";
+import AscendFilter from "./components/AscendFilter";
 
 const firestore = firebase.firestore();
 
@@ -24,6 +25,7 @@ const HeroList = () => {
   const [classFilter, setClassFilter] = useState("");
   const [roleFilter, setRoleFilter] = useState("");
   const [factionFilter, setFactionFilter] = useState("");
+  const [ascendFilter, setAscendFilter] = useState("");
 
   const [levels, setLevels] = useFirestoreWithBackup(
     listPath,
@@ -83,6 +85,7 @@ const HeroList = () => {
         <TypeFilter filter={typeFilter} setFilter={setTypeFilter} imagePath="types" />
         <ClassFilter filter={classFilter} setFilter={setClassFilter} imagePath="classes" />
         <RoleFilter filter={roleFilter} setFilter={setRoleFilter} imagePath="roles" />
+        <AscendFilter filter={ascendFilter} setFilter={setAscendFilter} imagePath="ascend" />
 
         {factions.map((faction) => {
           if (factionFilter !== "" && faction.faction !== factionFilter) {
@@ -96,7 +99,19 @@ const HeroList = () => {
                 if (
                   (typeFilter !== "" && character.type !== typeFilter) ||
                   (classFilter !== "" && character.class !== classFilter) ||
-                  (roleFilter !== "" && character.role !== roleFilter)
+                  (roleFilter !== "" && character.role !== roleFilter) ||
+                  (ascendFilter !== "" &&
+                    ascendFilter === "elite" &&
+                    [1, 2].includes(getValue(character.id, "ascend")) === false) ||
+                  (ascendFilter !== "" &&
+                    ascendFilter === "legendary" &&
+                    [3, 4].includes(getValue(character.id, "ascend")) === false) ||
+                  (ascendFilter !== "" &&
+                    ascendFilter === "mythic" &&
+                    [5, 6].includes(getValue(character.id, "ascend")) === false) ||
+                  (ascendFilter !== "" &&
+                    ascendFilter === "ascended" &&
+                    [7, 8, 9, 10, 11, 12].includes(getValue(character.id, "ascend")) === false)
                 ) {
                   return null;
                 }
