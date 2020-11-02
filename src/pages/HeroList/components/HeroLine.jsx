@@ -8,7 +8,9 @@ const HeroLine = ({ id, name, setLevel, getValue, isView }) => {
 
   return (
     <div key={id} className="hero-list__line">
-      <div className="hero-list__image-wrapper">
+      <div
+        className={`hero-list__image-wrapper hero-list__image-wrapper--${getValue(id, "ascend")}`}
+      >
         <img src={`/heroes/${heroFileName}.jpg`} className="hero-list__image" alt={name} />
       </div>
       <span className="hero-list__item-name">{name}</span>
