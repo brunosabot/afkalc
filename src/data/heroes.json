@@ -11,6 +11,14 @@
         "type": "agility",
         "class": "warrior",
         "role": "continuous"
+      },
+      { "name": "Albedo", "id": 69, "type": "strength", "class": "tank", "role": "tank" },
+      {
+        "name": "Ainz Ooal Gown",
+        "id": 70,
+        "type": "intelligence",
+        "class": "mage",
+        "role": "continuous"
       }
     ]
   },
@@ -152,7 +160,8 @@
       { "name": "Seirus", "id": 24, "type": "strength", "class": "warrior", "role": "tank" },
       { "name": "Solise", "id": 52, "type": "intelligence", "class": "mage", "role": "control" },
       { "name": "Tasi", "id": 19, "type": "intelligence", "class": "support", "role": "control" },
-      { "name": "Ulmus", "id": 16, "type": "strength", "class": "tank", "role": "tank" }
+      { "name": "Ulmus", "id": 16, "type": "strength", "class": "tank", "role": "tank" },
+      { "name": "Pippa", "id": 71, "type": "intelligence", "class": "mage", "role": "continuous" }
     ]
   },
   {
