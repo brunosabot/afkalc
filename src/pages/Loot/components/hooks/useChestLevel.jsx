@@ -13,6 +13,7 @@ const images = {
   "Primal Emblem": "PrimEmb.jpg",
   "Dura Shards": "DuraShards.jpg",
   "Dust x1": "Dust.jpg",
+  Crude: "crude.jpg",
 };
 
 export default function useChestLevel(level) {
