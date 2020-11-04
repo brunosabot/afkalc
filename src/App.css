@@ -4,6 +4,9 @@ html {
   color: #230f08;
   font-size: 18px;
 }
+a {
+  color: inherit;
+}
 
 .login-button__wrapper {
   text-align: center;
@@ -82,6 +85,38 @@ html {
   font-family: inherit;
 }
 .input-field:focus {
+  box-shadow: 0 0 5px #230f08;
+  outline: 0;
+}
+
+.select-field__wrapper {
+  display: flex;
+  flex-direction: column;
+  padding: 0 16px 16px 16px;
+}
+.select-field__label {
+  margin-bottom: 4px;
+}
+.select-field__label-link {
+  text-decoration: underline;
+  margin-left: 8px;
+  cursor: pointer;
+  background: transparent;
+  border: 0;
+  font-family: inherit;
+  font-size: 1em;
+}
+.select-field {
+  background: rgba(35, 15, 8, 0.2);
+  border: 2px solid #230f08;
+  border-radius: 4px;
+  color: #230f08;
+  padding: 4px 8px;
+  height: 40px;
+  font-size: 16px;
+  font-family: inherit;
+}
+.select-field:focus {
   box-shadow: 0 0 5px #230f08;
   outline: 0;
 }
@@ -169,16 +204,18 @@ html {
 .card__value-wrapper {
   display: block;
   text-align: center;
+  padding: 16px;
+}
+.card__value-wrapper + .card__value-wrapper {
+  padding-top: 0;
 }
 .card__value {
-  display: inline-block;
+  display: inline-flex;
   font-weight: 900;
-  /* border-top: 2px solid #230f08;
-  border-bottom: 2px solid #230f08; */
+  align-items: center;
   padding: 8px;
-  margin: 16px;
   font-family: inherit;
-  margin: 16px auto;
+  margin: 0 auto;
 }
 
 .hero-list__share {
@@ -372,4 +409,9 @@ html {
   position: absolute;
   right: 0;
   padding: 8px;
+}
+
+.diamond-line__image {
+  margin-left: 8px;
+  height: 24px;
 }
