@@ -1,8 +1,8 @@
 name: Deploy the application to Google Cloud Run
 on:
   push:
-    branches:
-      - "master"
+    tags:
+      - "*"
 
 jobs:
   deploy:
