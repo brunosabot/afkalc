@@ -200,6 +200,7 @@ a {
 .card__title {
   font-weight: 600;
   padding: 16px;
+  position: relative;
 }
 .card__value-wrapper {
   display: block;
