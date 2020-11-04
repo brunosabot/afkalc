@@ -41,7 +41,7 @@ const images = {
 };
 
 export default function useChestLevel(level: string) {
-  const [chapter] = level.split("-").map(e=>parseInt(e, 10));
+  const [chapter] = level.split("-").map((e) => parseInt(e, 10));
   const currentLevel = chapter >= 33 ? "33-1" : level;
 
   const chests = useMemo(() => {

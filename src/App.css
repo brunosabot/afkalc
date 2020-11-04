@@ -416,3 +416,12 @@ a {
   margin-left: 8px;
   height: 24px;
 }
+
+.home-link__wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.home-link {
+  padding: 8px 16px;
+}

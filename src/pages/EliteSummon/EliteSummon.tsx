@@ -1,10 +1,11 @@
-import React, { useCallback, useState } from "react";
+import React, { useState } from "react";
 import HelpButton from "../../components/ui/button/HelpButton";
 import Card from "../../components/ui/card/Card";
 import CardTitle from "../../components/ui/card/CardTitle";
 import CardValue from "../../components/ui/card/CardValue";
 import InputField from "../../components/ui/InputField";
 import { getEstimatedDiamsForSummon } from "../../lib/summon";
+import useOnChangeNumber from "../../hooks/useOnChangeNumber";
 
 interface IProps {
   [key: string]: never;
@@ -20,15 +21,7 @@ const EliteSummon: React.FC<IProps> = () => {
   const [mythicP, setMythicP] = useState(0);
 
   const diams = getEstimatedDiamsForSummon(elite, eliteP, legendary, legendaryP, mythic, mythicP);
-
-  const onChange = useCallback((setter: (value: number) => void) => {
-    return (e: string) => {
-      const val = Number(e);
-      if (!Number.isNaN(val) && val >= 0) {
-        setter(val);
-      }
-    };
-  }, []);
+  const onChange = useOnChangeNumber();
 
   return (
     <div>

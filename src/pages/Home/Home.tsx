@@ -1,4 +1,5 @@
 import React, { useContext } from "react";
+import { NavLink } from "react-router-dom";
 import LoginButton from "../../components/ui/button/LoginButton";
 import LogoutButton from "../../components/ui/button/LogoutButton";
 import Card from "../../components/ui/card/Card";
@@ -16,6 +17,14 @@ const Home: React.FC<IProps> = () => {
     <Card>
       <CardTitle>Welcome on Afkalc, the calculation tool for AFK Arena</CardTitle>
       {values.isAuth ? <LogoutButton /> : <LoginButton />}
+
+      <div className="home-link__wrapper">
+        <NavLink className="home-link" to="/signature-item">SI Emblem</NavLink>
+        <NavLink className="home-link" to="/elite-summon">Elite summon</NavLink>
+        <NavLink className="home-link" to="/loot">Loot</NavLink>
+        <NavLink className="home-link" to="/hero-list">Hero List (Beta)</NavLink>
+        <NavLink className="home-link" to="/fast-reward">Fast Reward</NavLink>
+      </div>
     </Card>
   );
 };
