@@ -1,9 +1,9 @@
 import React from "react";
 import ReactDOM from "react-dom";
+import App from "./components/App";
+import FirebaseProvider from "./components/providers/FirebaseProvider";
 import "./index.css";
-import App from "./App";
 import * as serviceWorker from "./serviceWorker";
-import FirebaseProvider from "./FirebaseProvider";
 
 ReactDOM.render(
   <React.StrictMode>

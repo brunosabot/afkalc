@@ -1,6 +1,6 @@
 import React, { useMemo, useRef } from "react";
 
-interface Value {
+interface IValue {
   key: string;
   label: string;
 }
@@ -9,7 +9,7 @@ interface IProps {
   label: string;
   value: string | number;
   onChange: (value: string) => void;
-  values: Value[];
+  values: IValue[];
 }
 
 const SelectField: React.FC<IProps> = ({ label, value, values, onChange }) => {

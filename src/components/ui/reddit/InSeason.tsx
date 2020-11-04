@@ -1,10 +1,10 @@
 import React from "react";
 
-interface Props {
+interface IProps {
   [key: string]: never;
 }
 
-const InSeason: React.FC<Props> = () => {
+const InSeason: React.FC<IProps> = () => {
   return (
     <a target="_blank" rel="noreferrer" href="https://www.reddit.com/user/inSeason/">
       u/inSeason

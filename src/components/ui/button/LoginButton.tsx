@@ -1,5 +1,5 @@
 import React, { useContext } from "react";
-import { FirebaseContext } from "../../../FirebaseProvider";
+import { FirebaseContext } from "../../providers/FirebaseProvider";
 
 interface IProps {
   [key: string]: never;
