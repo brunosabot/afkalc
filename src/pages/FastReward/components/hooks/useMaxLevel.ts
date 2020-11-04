@@ -1,5 +1,5 @@
 import { useCallback, useMemo } from "react";
-import fastRewardData from "../../data/fastReward.json";
+import fastRewardData from "../../../../data/fastReward.json";
 
 interface IPlayerLevel {
   [key: string]: string;
