@@ -41,8 +41,11 @@ const images = {
 };
 
 export default function useChestLevel(level: string) {
+  const [chapter] = level.split("-").map(e=>parseInt(e, 10));
+  const currentLevel = chapter >= 33 ? "33-1" : level;
+
   const chests = useMemo(() => {
-    const stage = (stages as IStage[]).find((s) => s.stage === level);
+    const stage = (stages as IStage[]).find((s) => s.stage === currentLevel);
     if (stage) {
       return stage.chests
         .sort((a, b) => b.CD - a.CD)
@@ -54,7 +57,7 @@ export default function useChestLevel(level: string) {
         });
     }
     return [];
-  }, [level]);
+  }, [currentLevel]);
 
   return chests;
 }
