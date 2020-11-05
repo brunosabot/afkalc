@@ -9,11 +9,13 @@ interface IProps {
 }
 
 const InnField: React.FC<IProps> = ({ id, setLevel, getValue, isView }) => {
+  const value = getValue(id, "inn");
+
   return (
     <input
       onChange={(e) => setLevel(id, "inn")(parseInt(e.target.value, 10))}
       className="hero-list__number"
-      value={getValue(id, "inn")}
+      value={value === 0 ? "" : value}
       disabled={getValue(id, "ascend") < 7}
       readOnly={isView}
       maxLength={1}
