@@ -17,7 +17,9 @@ export default function useFirestoreWithBackup<T>(
 ): [T, (value: T) => void] {
   const { values } = useContext(FirebaseContext);
   const dbPath = useMemo(() => {
-    const path = `${localStoragePath}/${firestorePath}/`;
+    if (firestorePath === "") return "";
+
+    const path = `${localStoragePath}/${firestorePath}/`
     if (path.indexOf("%ID%") === -1) return path;
 
     return values.uid === "" ? "" : path.replace("%ID%", values.uid);
