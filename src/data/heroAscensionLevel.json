@@ -1,15 +1,15 @@
 [
   { "key": 0, "name": "-" },
-  { "key": 1, "name": "Elite" },
-  { "key": 2, "name": "Elite+" },
-  { "key": 3, "name": "Legendary" },
-  { "key": 4, "name": "Legendary+" },
-  { "key": 5, "name": "Mythic" },
-  { "key": 6, "name": "Mythic+" },
-  { "key": 7, "name": "Ascend" },
-  { "key": 8, "name": "Ascend 1*" },
-  { "key": 9, "name": "Ascend 2*" },
-  { "key": 10, "name": "Ascend 3*" },
-  { "key": 11, "name": "Ascend 4*" },
-  { "key": 12, "name": "Ascend 5*" }
+  { "key": 1, "name": "elite" },
+  { "key": 2, "name": "elite-p" },
+  { "key": 3, "name": "legendary" },
+  { "key": 4, "name": "legendary-p" },
+  { "key": 5, "name": "mythic" },
+  { "key": 6, "name": "mythic-p" },
+  { "key": 7, "name": "ascend" },
+  { "key": 8, "name": "ascend-1" },
+  { "key": 9, "name": "ascend-2" },
+  { "key": 10, "name": "ascend-3" },
+  { "key": 11, "name": "ascend-4" },
+  { "key": 12, "name": "ascend-5" }
 ]

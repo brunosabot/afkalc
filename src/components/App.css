@@ -27,6 +27,15 @@ a {
   display: block;
 }
 
+.button-lang {
+  border: 0;
+  background: transparent;
+  padding: 8px;
+  line-height: 1em;
+  margin: 0 2px;
+  font-size: 24px;
+}
+
 .emblem {
   width: 30px;
   margin-left: 8px;
@@ -423,6 +432,7 @@ a {
   position: absolute;
   right: 0;
   padding: 8px;
+  z-index: 1;
 }
 
 .diamond-line__image {

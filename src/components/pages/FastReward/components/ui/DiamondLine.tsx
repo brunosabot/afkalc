@@ -1,4 +1,5 @@
 import React from "react";
+import { useTranslation } from "react-i18next";
 import { compareChapter } from "../../../../../lib/chapter";
 import CardValue from "../../../../ui/card/CardValue";
 
@@ -9,6 +10,8 @@ interface IProps {
 }
 
 const DiamondLine: React.FC<IProps> = ({ count, campaignLevel, diamsLevel }) => {
+  const {t}=useTranslation("fast-reward");
+
   if (compareChapter(campaignLevel, diamsLevel) < 0) {
     return null;
   }
@@ -16,7 +19,7 @@ const DiamondLine: React.FC<IProps> = ({ count, campaignLevel, diamsLevel }) => 
   return (
     <CardValue>
       {count}
-      <img className="diamond-line__image" src="/diamond.jpg" alt="diamonds" />
+      <img className="diamond-line__image" src="/diamond.jpg" alt={t("diamonds")} />
     </CardValue>
   );
 };

@@ -1,4 +1,6 @@
+import i18n from "i18next";
 import React, { useCallback, useState } from "react";
+import { useTranslation } from "react-i18next";
 import HelpButton from "../../ui/button/HelpButton";
 import Card from "../../ui/card/Card";
 import CardTitle from "../../ui/card/CardTitle";
@@ -6,11 +8,14 @@ import InputField from "../../ui/InputField";
 import useCountEmblem from "./components/hooks/useCountEmblem";
 import SignatureItemLeft from "./components/ui/SignatureItemLeft";
 
+i18n.loadNamespaces("signature-item");
+
 interface IProps {
   [key: string]: never;
 }
 
 const SignatureItem: React.FC<IProps> = () => {
+  const {t} = useTranslation("signature-item");
   const [currentLevel, setCurrentLevel] = useState(0);
   const [showHelp, setShowHelp] = useState(false);
 
@@ -30,16 +35,13 @@ const SignatureItem: React.FC<IProps> = () => {
     <div>
       {showHelp ? (
         <Card>
-          <div style={{ padding: "16px" }}>
-            This tool is aimed to give you the remaining emblems you need to get to the specified
-            stages
-          </div>
+          <div style={{ padding: "16px" }}>{t("help")}</div>
         </Card>
       ) : null}
       <Card>
         <HelpButton onClick={() => setShowHelp(!showHelp)} />
-        <CardTitle>First, set your character informations</CardTitle>
-        <InputField value={currentLevel} label="Current SI level" onChange={onChange} />
+        <CardTitle>{t("form-title")}</CardTitle>
+        <InputField value={currentLevel} label={t("label-current-si")} onChange={onChange} />
       </Card>
 
       <SignatureItemLeft

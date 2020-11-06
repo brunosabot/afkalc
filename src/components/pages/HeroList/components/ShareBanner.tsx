@@ -1,5 +1,6 @@
 import { nanoid } from "nanoid";
 import React, { useContext, useState } from "react";
+import { useTranslation } from "react-i18next";
 import useFirestoreWithBackup from "../../../hooks/useFirestoreWithBackup";
 import { FirebaseContext } from "../../../providers/FirebaseProvider";
 import CardTitle from "../../../ui/card/CardTitle";
@@ -9,6 +10,7 @@ interface IProps {
 }
 
 const ShareBanner: React.FC<IProps> = ({ isView }) => {
+  const {t}=useTranslation("hero-list")
   const [copy, setCopy] = useState(false);
   const [id] = useFirestoreWithBackup("%ID%", "user", "shareId", "", nanoid(10), isView);
   const { values } = useContext(FirebaseContext);
@@ -17,18 +19,18 @@ const ShareBanner: React.FC<IProps> = ({ isView }) => {
   if (id) {
     value = `https://afkalc.heycoucou.com/hero-list/${id}`;
   } else if (values.isAuth === false) {
-    value = "You need to be logged in to share yout list";
+    value = t("login-needed");
   }
 
   if (isView === true) {
-    return <CardTitle>Viewing somebody&apos;s list</CardTitle>;
+    return <CardTitle>{t("somebodys-list")}</CardTitle>;
   }
 
   return (
     <CardTitle>
-      Share your hero list with the URL:
+      {t("label-share")}
       {copy ? (
-        <div style={{ position: "absolute", top: "16px", right: "16px" }}>Link copied</div>
+        <div style={{ position: "absolute", top: "16px", right: "16px" }}>{t("label-copied")}</div>
       ) : null}
       <input
         className="hero-list__share"

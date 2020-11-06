@@ -1,4 +1,6 @@
+import i18n from "i18next";
 import React, { useState } from "react";
+import { useTranslation } from "react-i18next";
 import campaign from "../../../data/fastRewardCampaign.json";
 import player from "../../../data/fastRewardPlayer.json";
 import vip from "../../../data/fastRewardVip.json";
@@ -11,6 +13,8 @@ import SelectField from "../../ui/SelectField";
 import useMaxLevel from "./components/hooks/useMaxLevel";
 import DiamondLine from "./components/ui/DiamondLine";
 import Help from "./components/ui/Help";
+
+i18n.loadNamespaces("fast-reward");
 
 interface IProps {
   [key: string]: never;
@@ -27,6 +31,7 @@ const FastReward: React.FC<IProps> = () => {
     "12-40"
   );
 
+  const {t} = useTranslation("fast-reward");
   const onChange = useOnChangeNumber();
 
   const diams50 = useMaxLevel(50, playerLevel, vipLevel);
@@ -38,29 +43,29 @@ const FastReward: React.FC<IProps> = () => {
       <Help showHelp={showHelp} />
       <Card>
         <HelpButton onClick={() => setShowHelp(!showHelp)} />
-        <CardTitle>Enter your current progression</CardTitle>
+        <CardTitle>{t("form-title")}</CardTitle>
         <SelectField
           value={vipLevel}
           values={vip}
-          label="Your VIP level"
+          label={t("vip-level")}
           onChange={onChange(setVipLevel)}
         />
         <SelectField
           value={playerLevel}
           values={player}
-          label="Your player level"
+          label={t("player-level")}
           onChange={onChange(setPlayerLevel)}
         />
         <SelectField
           value={campaignLevel}
           values={campaign}
-          label="Campaign progression"
+          label={t("campaign-level")}
           onChange={setCampaignLevel}
         />
       </Card>
 
       <Card>
-        <CardTitle>You should use fast reward with:</CardTitle>
+        <CardTitle>{t("result-title")}</CardTitle>
         <DiamondLine campaignLevel={campaignLevel} diamsLevel={diams50} count={50} />
         <DiamondLine campaignLevel={campaignLevel} diamsLevel={diams80} count={80} />
         <DiamondLine campaignLevel={campaignLevel} diamsLevel={diams100} count={100} />
