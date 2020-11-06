@@ -1,4 +1,6 @@
+import i18n from "i18next";
 import React, { useState } from "react";
+import { useTranslation } from "react-i18next";
 import useFirestoreWithBackup from "../../hooks/useFirestoreWithBackup";
 import HelpButton from "../../ui/button/HelpButton";
 import Card from "../../ui/card/Card";
@@ -7,6 +9,8 @@ import InputField from "../../ui/InputField";
 import useChestLevel from "./components/hooks/useChestLevel";
 import Chest from "./components/ui/Chest";
 import PassNowLabel from "./components/ui/PassNowLabel";
+
+i18n.loadNamespaces("loot");
 
 interface IProps {
   [key: string]: never;
@@ -22,6 +26,7 @@ const Loot: React.FC<IProps> = () => {
     new Date().toLocaleString("en-US")
   );
 
+  const {t} = useTranslation("loot");
   const chests = useChestLevel(level);
   const passLabel = <PassNowLabel setPass={setPass} />;
   const isDateInvalid = Number.isNaN(new Date(pass).getTime());
@@ -30,22 +35,18 @@ const Loot: React.FC<IProps> = () => {
     <div>
       {showHelp ? (
         <Card>
-          <div style={{ padding: "16px" }}>
-            When you wait long enough before passing a level, you can ensure having some loots. By
-            having your campaign level and the last success date, you will have the timing for the
-            next loot you need.
-          </div>
+          <div style={{ padding: "16px" }}>{t("help")}</div>
         </Card>
       ) : null}
       <Card>
         <HelpButton onClick={() => setShowHelp(!showHelp)} />
-        <CardTitle>First, set your campaign progress</CardTitle>
-        <InputField value={level} label="Campaign level" onChange={setLevel} />
+        <CardTitle>{t("form-title")}</CardTitle>
+        <InputField value={level} label={t("label-campaign-level")} onChange={setLevel} />
         <InputField value={pass} label={passLabel} onChange={setPass} />
       </Card>
 
       <Card>
-        <CardTitle>You will have 100% chance drop by clearing the stage for :</CardTitle>
+        <CardTitle>{t("result-title")}</CardTitle>
 
         {isDateInvalid
           ? null

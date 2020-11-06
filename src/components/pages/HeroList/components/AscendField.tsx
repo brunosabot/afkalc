@@ -1,4 +1,5 @@
 import React from "react";
+import { useTranslation } from "react-i18next";
 import ascendLevels from "../../../../data/heroAscensionLevel.json";
 import HeroLevel from "../../../../types/HeroLevel";
 
@@ -10,6 +11,8 @@ interface IProps {
 }
 
 const AscendField: React.FC<IProps> = ({ id, setLevel, getValue, isView }) => {
+  const {t} = useTranslation("hero-list")
+
   if (isView) {
     const level = ascendLevels.find((e) => e.key === getValue(id, "ascend")) || ascendLevels[0];
 
@@ -24,7 +27,7 @@ const AscendField: React.FC<IProps> = ({ id, setLevel, getValue, isView }) => {
     >
       {ascendLevels.map((level) => (
         <option key={level.key} value={level.key}>
-          {level.name}
+          {t(`ascension-${level.name}`)}
         </option>
       ))}
     </select>

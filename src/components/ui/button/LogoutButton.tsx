@@ -1,4 +1,5 @@
 import React, { useContext } from "react";
+import { useTranslation } from "react-i18next";
 import { FirebaseContext } from "../../providers/FirebaseProvider";
 
 interface IProps {
@@ -7,6 +8,7 @@ interface IProps {
 
 const LogoutButton: React.FC<IProps> = () => {
   const { actions } = useContext(FirebaseContext);
+  const {t} = useTranslation("common");
 
   return (
     <div className="login-button__wrapper">
@@ -16,7 +18,7 @@ const LogoutButton: React.FC<IProps> = () => {
         onClick={actions.logOut}
         style={{ textDecoration: "underline" }}
       >
-        Se déconnecter
+        {t("menu.logout")}
       </button>
     </div>
   );

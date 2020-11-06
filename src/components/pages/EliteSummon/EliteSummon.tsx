@@ -1,4 +1,6 @@
+import i18n from "i18next";
 import React, { useState } from "react";
+import { useTranslation } from "react-i18next";
 import { getEstimatedDiamsForSummon } from "../../../lib/summon";
 import useOnChangeNumber from "../../hooks/useOnChangeNumber";
 import HelpButton from "../../ui/button/HelpButton";
@@ -6,6 +8,8 @@ import Card from "../../ui/card/Card";
 import CardTitle from "../../ui/card/CardTitle";
 import CardValue from "../../ui/card/CardValue";
 import InputField from "../../ui/InputField";
+
+i18n.loadNamespaces("elite-summon");
 
 interface IProps {
   [key: string]: never;
@@ -19,6 +23,7 @@ const EliteSummon: React.FC<IProps> = () => {
   const [legendaryP, setLegendaryP] = useState(0);
   const [mythic, setMythic] = useState(0);
   const [mythicP, setMythicP] = useState(0);
+  const {t} = useTranslation("elite-summon");
 
   const diams = getEstimatedDiamsForSummon(elite, eliteP, legendary, legendaryP, mythic, mythicP);
   const onChange = useOnChangeNumber();
@@ -27,43 +32,29 @@ const EliteSummon: React.FC<IProps> = () => {
     <div>
       {showHelp ? (
         <Card>
-          <div style={{ padding: "16px" }}>
-            This tool is aimed to give you an estimation of how many diamants you will need to get
-            enough hero copies to get an ascend hero
-          </div>
+          <div style={{ padding: "16px" }}>{t("help")}</div>
         </Card>
       ) : null}
       <Card>
         <HelpButton onClick={() => setShowHelp(!showHelp)} />
-        <CardTitle>Enter your desired hero current count:</CardTitle>
+        <CardTitle>{t("current-count-label")}</CardTitle>
 
-        <InputField value={elite} label="Elite heroes you have" onChange={onChange(setElite)} />
-        <InputField value={eliteP} label="Elite+ heroes you have" onChange={onChange(setEliteP)} />
-        <InputField
-          value={legendary}
-          label="Legendary heroes you have"
-          onChange={onChange(setLegendary)}
-        />
-        <InputField
-          value={legendaryP}
-          label="Legendary+ heroes you have"
-          onChange={onChange(setLegendaryP)}
-        />
-        <InputField value={mythic} label="Mythic heroes you have" onChange={onChange(setMythic)} />
-        <InputField
-          value={mythicP}
-          label="Mythic+ heroes you have"
-          onChange={onChange(setMythicP)}
-        />
+        <InputField value={elite} label={t("current-elite")} onChange={onChange(setElite)} />
+        <InputField value={eliteP} label={t("current-elite-p")} onChange={onChange(setEliteP)} />
+        <InputField value={legendary} label={t("current-legendary")} onChange={onChange(setLegendary)} />
+        <InputField value={legendaryP} label={t("current-legendary-p")} onChange={onChange(setLegendaryP)} />
+        <InputField value={mythic} label={t("current-mythic")} onChange={onChange(setMythic)} />
+        <InputField value={mythicP} label={t("current-mythic-p")} onChange={onChange(setMythicP)} />
       </Card>
 
       <Card>
-        <CardTitle>To have enough copy for an ascend hero, you need:</CardTitle>
+        <CardTitle>{t("required-count-label")}</CardTitle>
 
-        <CardValue>{diams > 0 ? `≈ ${diams} diams` : "Nothing, you're good to go!"}</CardValue>
+        <CardValue>{diams > 0 ? t("required-count", {diams}) : t("required-nothing")}</CardValue>
       </Card>
     </div>
   );
 };
+
 
 export default EliteSummon;

@@ -1,15 +1,49 @@
-import React from "react";
+import dayjs from "dayjs";
+import "dayjs/locale/en";
+import updateLocale from "dayjs/plugin/updateLocale";
+import i18n from "i18next";
+import LanguageDetector from "i18next-browser-languagedetector";
+import HttpApi from "i18next-http-backend";
+import React, { Suspense } from "react";
 import ReactDOM from "react-dom";
+import { initReactI18next } from "react-i18next";
 import App from "./components/App";
 import FirebaseProvider from "./components/providers/FirebaseProvider";
 import "./index.css";
 import * as serviceWorker from "./serviceWorker";
 
+dayjs.extend(updateLocale);
+
+i18n
+  .use(LanguageDetector)
+  .use(HttpApi)
+  .use(initReactI18next)
+  .init({
+    debug: process.env.NODE_ENV === "development",
+
+    fallbackLng: process.env.NODE_ENV === "development" ? "dev" : "en",
+    whitelist: process.env.NODE_ENV === "development" ? ["dev", "en"] : ["en"],
+
+    interpolation: {
+      escapeValue: false,
+    },
+
+    backend: {
+      loadPath: "/locales/{{lng}}/{{ns}}.json",
+    },
+  });
+
+  i18n.on("languageChanged", (lng) => {
+    dayjs.locale(lng);
+  });
+
 ReactDOM.render(
   <React.StrictMode>
-    <FirebaseProvider>
-      <App />
-    </FirebaseProvider>
+    <Suspense fallback={null}>
+      <FirebaseProvider>
+        <App />
+      </FirebaseProvider>
+    </Suspense>
   </React.StrictMode>,
   document.getElementById("root")
 );

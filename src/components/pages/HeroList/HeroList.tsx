@@ -1,4 +1,5 @@
 import firebase from "firebase/app";
+import i18n from "i18next";
 import React, { Fragment, useCallback, useEffect, useMemo, useState } from "react";
 import { useParams } from "react-router-dom";
 import factions from "../../../data/heroes.json";
@@ -13,6 +14,8 @@ import HeroLine from "./components/HeroLine";
 import RoleFilter from "./components/RoleFilter";
 import ShareBanner from "./components/ShareBanner";
 import TypeFilter from "./components/TypeFilter";
+
+i18n.loadNamespaces("hero-list");
 
 interface IHeroLevels {
   inn?: number;

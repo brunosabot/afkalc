@@ -1,0 +1,18 @@
+{
+  "welcome": "Welcome on Afkalc, the calculation tool for AFK Arena",
+  "menu": {
+    "home": "Home",
+    "signature-item": "SI Emblem",
+    "elite-summon": "Elite summon",
+    "loot": "Loot",
+    "hero-list": "Hero List (Beta",
+    "fast-reward": "Fast Reward",
+    "logout": "Logout"
+  },
+  "contribution": {
+    "edit-on-github": "Edit on GitHub"
+  },
+  "external": {
+    "reddit": "Reddit"
+  }
+}

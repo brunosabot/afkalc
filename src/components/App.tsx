@@ -1,13 +1,14 @@
-import React from "react";
+import React, { lazy } from "react";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import "./App.css";
 import Menu from "./functionnal/Menu";
-import EliteSummon from "./pages/EliteSummon/EliteSummon";
-import FastReward from "./pages/FastReward/FastReward";
-import HeroList from "./pages/HeroList/HeroList";
-import Home from "./pages/Home/Home";
-import Loot from "./pages/Loot/Loot";
-import SignatureItem from "./pages/SignatureItem/SignatureItem";
+
+const EliteSummon = lazy(() => import("./pages/EliteSummon/EliteSummon"));
+const FastReward = lazy(() => import("./pages/FastReward/FastReward"));
+const HeroList = lazy(() => import("./pages/HeroList/HeroList"));
+const Home = lazy(() => import("./pages/Home/Home"));
+const Loot = lazy(() => import("./pages/Loot/Loot"));
+const SignatureItem = lazy(() => import("./pages/SignatureItem/SignatureItem"));
 
 interface IProps {
   [key: string]: never;
