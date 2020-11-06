@@ -1,3 +1,4 @@
+import dayjs from "dayjs";
 import React from "react";
 import { useTranslation } from "react-i18next";
 
@@ -13,7 +14,7 @@ const PassNowLabel: React.FC<IProps> = ({ setPass }) => {
       {t("label-stage-date")}
       <button
         type="button"
-        onClick={() => setPass(new Date().toLocaleString("en-US"))}
+        onClick={() => setPass(dayjs().format("L LTS"))}
         className="input-field__label-link"
       >
         {t("label-stage-now")}

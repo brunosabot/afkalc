@@ -1,3 +1,4 @@
+import dayjs from "dayjs";
 import i18n from "i18next";
 import React, { useState } from "react";
 import { useTranslation } from "react-i18next";
@@ -23,7 +24,7 @@ const Loot: React.FC<IProps> = () => {
     "%ID%",
     "campaign",
     "pass",
-    new Date().toLocaleString("en-US")
+    dayjs().format("L LTS")
   );
 
   const {t} = useTranslation("loot");
