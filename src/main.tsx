@@ -1,5 +1,6 @@
 import dayjs from "dayjs";
 import "dayjs/locale/en";
+import localizedFormat from "dayjs/plugin/localizedFormat";
 import updateLocale from "dayjs/plugin/updateLocale";
 import i18n from "i18next";
 import LanguageDetector from "i18next-browser-languagedetector";
@@ -13,6 +14,9 @@ import "./index.css";
 import * as serviceWorker from "./serviceWorker";
 
 dayjs.extend(updateLocale);
+dayjs.extend(localizedFormat)
+
+const languages = ["en"];
 
 i18n
   .use(LanguageDetector)
@@ -22,7 +26,7 @@ i18n
     debug: process.env.NODE_ENV === "development",
 
     fallbackLng: process.env.NODE_ENV === "development" ? "dev" : "en",
-    whitelist: process.env.NODE_ENV === "development" ? ["dev", "en"] : ["en"],
+    whitelist: process.env.NODE_ENV === "development" ? ["dev", ...languages] : languages,
 
     interpolation: {
       escapeValue: false,
