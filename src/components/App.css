@@ -289,6 +289,7 @@ a {
   bottom: 0;
   border-color: transparent transparent #ffffff #ffffff;
 }
+.hero-list__image-wrapper--0,
 .hero-list__image-wrapper-- {
   filter: grayscale(0.8);
   opacity: 0.6;
@@ -345,7 +346,19 @@ a {
   margin: 0 4px;
   padding: 0 8px;
   width: 110px;
+  text-align: center;
+  box-sizing: border-box;
+  display: inline-flex;
+  align-items: center;
+  font-family: inherit;
+  font-size: 1em;
 }
+.hero-list__select:disabled {
+  background: transparent;
+  border-color: rgba(35, 15, 8, 0.2);
+  color: rgba(35, 15, 8, 0.2);
+}
+
 .hero-list__faction-name {
   flex-grow: 1;
 }
