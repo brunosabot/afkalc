@@ -1,5 +1,4 @@
 import dayjs from "dayjs";
-import "dayjs/locale/en";
 import localizedFormat from "dayjs/plugin/localizedFormat";
 import updateLocale from "dayjs/plugin/updateLocale";
 import i18n from "i18next";
@@ -14,7 +13,7 @@ import "./index.css";
 import * as serviceWorker from "./serviceWorker";
 
 dayjs.extend(updateLocale);
-dayjs.extend(localizedFormat)
+dayjs.extend(localizedFormat);
 
 const languages = ["en"];
 
@@ -37,9 +36,9 @@ i18n
     },
   });
 
-  i18n.on("languageChanged", (lng) => {
-    dayjs.locale(lng);
-  });
+i18n.on("languageChanged", (lng) => {
+  import(`dayjs/locale/${lng}`).then(() => dayjs.locale(lng));
+});
 
 ReactDOM.render(
   <React.StrictMode>

@@ -31,7 +31,7 @@ const FastReward: React.FC<IProps> = () => {
     "12-40"
   );
 
-  const {t} = useTranslation("fast-reward");
+  const { t } = useTranslation("fast-reward");
   const onChange = useOnChangeNumber();
 
   const diams50 = useMaxLevel(50, playerLevel, vipLevel);

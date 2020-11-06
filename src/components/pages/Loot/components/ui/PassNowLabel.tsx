@@ -7,7 +7,7 @@ interface IProps {
 }
 
 const PassNowLabel: React.FC<IProps> = ({ setPass }) => {
-  const {t} = useTranslation("loot");
+  const { t } = useTranslation("loot");
 
   return (
     <span>

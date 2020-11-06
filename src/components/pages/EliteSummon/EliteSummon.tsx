@@ -23,7 +23,7 @@ const EliteSummon: React.FC<IProps> = () => {
   const [legendaryP, setLegendaryP] = useState(0);
   const [mythic, setMythic] = useState(0);
   const [mythicP, setMythicP] = useState(0);
-  const {t} = useTranslation("elite-summon");
+  const { t } = useTranslation("elite-summon");
 
   const diams = getEstimatedDiamsForSummon(elite, eliteP, legendary, legendaryP, mythic, mythicP);
   const onChange = useOnChangeNumber();
@@ -41,8 +41,16 @@ const EliteSummon: React.FC<IProps> = () => {
 
         <InputField value={elite} label={t("current-elite")} onChange={onChange(setElite)} />
         <InputField value={eliteP} label={t("current-elite-p")} onChange={onChange(setEliteP)} />
-        <InputField value={legendary} label={t("current-legendary")} onChange={onChange(setLegendary)} />
-        <InputField value={legendaryP} label={t("current-legendary-p")} onChange={onChange(setLegendaryP)} />
+        <InputField
+          value={legendary}
+          label={t("current-legendary")}
+          onChange={onChange(setLegendary)}
+        />
+        <InputField
+          value={legendaryP}
+          label={t("current-legendary-p")}
+          onChange={onChange(setLegendaryP)}
+        />
         <InputField value={mythic} label={t("current-mythic")} onChange={onChange(setMythic)} />
         <InputField value={mythicP} label={t("current-mythic-p")} onChange={onChange(setMythicP)} />
       </Card>
@@ -50,11 +58,10 @@ const EliteSummon: React.FC<IProps> = () => {
       <Card>
         <CardTitle>{t("required-count-label")}</CardTitle>
 
-        <CardValue>{diams > 0 ? t("required-count", {diams}) : t("required-nothing")}</CardValue>
+        <CardValue>{diams > 0 ? t("required-count", { diams }) : t("required-nothing")}</CardValue>
       </Card>
     </div>
   );
 };
-
 
 export default EliteSummon;

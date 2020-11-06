@@ -27,7 +27,7 @@ const Loot: React.FC<IProps> = () => {
     dayjs().format("L LTS")
   );
 
-  const {t} = useTranslation("loot");
+  const { t } = useTranslation("loot");
   const chests = useChestLevel(level);
   const passLabel = <PassNowLabel setPass={setPass} />;
   const isDateInvalid = Number.isNaN(new Date(pass).getTime());

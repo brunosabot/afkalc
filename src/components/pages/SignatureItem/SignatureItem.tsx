@@ -15,7 +15,7 @@ interface IProps {
 }
 
 const SignatureItem: React.FC<IProps> = () => {
-  const {t} = useTranslation("signature-item");
+  const { t } = useTranslation("signature-item");
   const [currentLevel, setCurrentLevel] = useState(0);
   const [showHelp, setShowHelp] = useState(false);
 

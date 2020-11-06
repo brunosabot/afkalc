@@ -10,7 +10,7 @@ interface IProps {
 }
 
 const DiamondLine: React.FC<IProps> = ({ count, campaignLevel, diamsLevel }) => {
-  const {t}=useTranslation("fast-reward");
+  const { t } = useTranslation("fast-reward");
 
   if (compareChapter(campaignLevel, diamsLevel) < 0) {
     return null;

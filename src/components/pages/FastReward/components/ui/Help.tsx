@@ -9,7 +9,7 @@ interface IProps {
 }
 
 const Help: React.FC<IProps> = ({ showHelp }) => {
-  const {t} = useTranslation("fast-reward");
+  const { t } = useTranslation("fast-reward");
 
   if (showHelp === false) return null;
 

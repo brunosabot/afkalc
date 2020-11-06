@@ -8,7 +8,7 @@ interface IProps {
 
 const LogoutButton: React.FC<IProps> = () => {
   const { actions } = useContext(FirebaseContext);
-  const {t} = useTranslation("common");
+  const { t } = useTranslation("common");
 
   return (
     <div className="login-button__wrapper">

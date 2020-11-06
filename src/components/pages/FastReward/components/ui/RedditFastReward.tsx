@@ -1,13 +1,12 @@
 import React from "react";
 import { useTranslation } from "react-i18next";
 
-
 interface IProps {
   [key: string]: never;
 }
 
 const RedditFastReward: React.FC<IProps> = () => {
-  const {t} = useTranslation("common");
+  const { t } = useTranslation("common");
   return (
     <a
       target="_blank"
