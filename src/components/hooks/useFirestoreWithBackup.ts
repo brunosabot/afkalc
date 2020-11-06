@@ -16,11 +16,12 @@ export default function useFirestoreWithBackup<T>(
   isView: boolean = false
 ): [T, (value: T) => void] {
   const { values } = useContext(FirebaseContext);
-  const dbPath = useMemo(
-    () =>
-      values.uid === "" ? "" : `${localStoragePath}/${firestorePath}/`.replace("%ID%", values.uid),
-    [localStoragePath, firestorePath, values.uid]
-  );
+  const dbPath = useMemo(() => {
+    const path = `${localStoragePath}/${firestorePath}/`;
+    if (path.indexOf("%ID%") === -1) return path;
+
+    return values.uid === "" ? "" : path.replace("%ID%", values.uid);
+  }, [localStoragePath, firestorePath, values.uid]);
 
   const docRef = useMemo(() => (dbPath ? firestore.doc(dbPath) : null), [dbPath]);
   const partialUpdateRef = useFirestorePartialUpdateRef();

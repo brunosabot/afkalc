@@ -9,20 +9,27 @@ interface IProps {
   isView: boolean;
 }
 
-const AscendField: React.FC<IProps> = ({ id, setLevel, getValue, isView }) => (
-  <select
-    onChange={(e) => setLevel(id, "ascend")(parseInt(e.target.value || "0", 10))}
-    className="hero-list__select"
-    value={getValue(id, "ascend")}
-    disabled={isView}
-  >
-    {ascendLevels.map((level) => (
-      <option key={level.key} value={level.key}>
-        {level.name}
-      </option>
-    ))}
-  </select>
-);
+const AscendField: React.FC<IProps> = ({ id, setLevel, getValue, isView }) => {
+  if (isView) {
+    const level = ascendLevels.find((e) => e.key === getValue(id, "ascend")) || ascendLevels[0];
+
+    return <div className="hero-list__select">{level.name}</div>;
+  }
+
+  return (
+    <select
+      onChange={(e) => setLevel(id, "ascend")(parseInt(e.target.value || "0", 10))}
+      className="hero-list__select"
+      value={getValue(id, "ascend")}
+    >
+      {ascendLevels.map((level) => (
+        <option key={level.key} value={level.key}>
+          {level.name}
+        </option>
+      ))}
+    </select>
+  );
+};
 
 AscendField.propTypes = {};
 
