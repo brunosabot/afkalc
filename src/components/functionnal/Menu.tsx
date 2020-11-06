@@ -22,11 +22,11 @@ const Menu: React.FC<IProps> = () => {
       <MenuBurger setIsActive={setIsActive} />
 
       <MenuContent isActive={isActive} setIsActive={setIsActive}>
-        <div style={{display: "flex", justifyContent: "center"}}>
+        <div style={{ display: "flex", justifyContent: "center" }}>
           {process.env.NODE_ENV === "development" ? <LangButton lang="dev" emoji="👨‍💻" /> : null}
           <LangButton lang="en" emoji="🇺🇸‍" />
         </div>
-      
+
         <MenuItem to="/">{t("menu.home")}</MenuItem>
         <MenuItem to="/signature-item">{t("menu.signature-item")}</MenuItem>
         <MenuItem to="/elite-summon">{t("menu.elite-summon")}</MenuItem>

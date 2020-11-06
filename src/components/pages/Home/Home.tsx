@@ -14,12 +14,12 @@ interface IProps {
 
 const Home: React.FC<IProps> = () => {
   const { values } = useContext(FirebaseContext);
-  const {t} = useTranslation("common");
+  const { t } = useTranslation("common");
 
   return (
     <Card>
       <CardTitle>{t("welcome")}</CardTitle>
-      <div style={{display: "flex", justifyContent: "center"}}>
+      <div style={{ display: "flex", justifyContent: "center" }}>
         {process.env.NODE_ENV === "development" ? <LangButton lang="dev" emoji="👨‍💻" /> : null}
         <LangButton lang="en" emoji="🇺🇸‍" />
       </div>

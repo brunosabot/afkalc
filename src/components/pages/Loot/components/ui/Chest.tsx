@@ -15,7 +15,7 @@ interface IProps {
 }
 
 const Chest: React.FC<IProps> = ({ pass, chest }) => {
-  const {t} = useTranslation("loot")
+  const { t } = useTranslation("loot");
   const date = new Date(pass);
   const obtainedDate = new Date(date.getTime() + chest.CD * 1000);
   const isOK = obtainedDate <= new Date();
@@ -28,7 +28,12 @@ const Chest: React.FC<IProps> = ({ pass, chest }) => {
   );
 
   return (
-    <ColWithImage key={chest.Content} image={chest.image} title={t(`${chest.Content}`)} actions={actions} />
+    <ColWithImage
+      key={chest.Content}
+      image={chest.image}
+      title={t(`${chest.Content}`)}
+      actions={actions}
+    />
   );
 };
 

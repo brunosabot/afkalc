@@ -11,7 +11,7 @@ interface IProps {
 }
 
 const AscendField: React.FC<IProps> = ({ id, setLevel, getValue, isView }) => {
-  const {t} = useTranslation("hero-list")
+  const { t } = useTranslation("hero-list");
 
   if (isView) {
     const level = ascendLevels.find((e) => e.key === getValue(id, "ascend")) || ascendLevels[0];

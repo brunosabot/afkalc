@@ -10,7 +10,7 @@ interface IProps {
 }
 
 const ShareBanner: React.FC<IProps> = ({ isView }) => {
-  const {t}=useTranslation("hero-list")
+  const { t } = useTranslation("hero-list");
   const [copy, setCopy] = useState(false);
   const [id] = useFirestoreWithBackup("%ID%", "user", "shareId", "", nanoid(10), isView);
   const { values } = useContext(FirebaseContext);

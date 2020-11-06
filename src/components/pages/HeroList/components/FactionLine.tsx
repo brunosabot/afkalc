@@ -6,7 +6,7 @@ interface IProps {
 }
 
 const FactionLine: React.FC<IProps> = ({ name }) => {
-  const {t}=useTranslation("hero-list")
+  const { t } = useTranslation("hero-list");
   const fileName = name.toLowerCase().replace(/[^a-z]/g, "");
 
   return (
