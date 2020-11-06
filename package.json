@@ -26,23 +26,34 @@
   "devDependencies": {
     "@types/react-router-dom": "^5.1.6",
     "babel-eslint": "^10.1.0",
+    "cross-env": "^7.0.2",
     "eslint-config-airbnb": "^18.0.1",
     "eslint-config-prettier": "^6.15.0",
     "eslint-plugin-import": "^2.18.2",
     "eslint-plugin-jsx-a11y": "^6.4.1",
     "eslint-plugin-prettier": "^3.1.4",
     "eslint-plugin-react": "^7.21.5",
-    "prettier": "^2.1.2"
+    "husky": "^4.2.5",
+    "lint-staged": "^10.2.11",
+    "prettier": "^2.1.2",
+    "stylelint": "^13.6.1",
+    "stylelint-config-prettier": "^8.0.2",
+    "stylelint-config-standard": "^20.0.0",
+    "stylelint-order": "^4.1.0",
+    "stylelint-prettier": "^1.1.2"
   },
   "scripts": {
     "build": "react-scripts build",
     "eject": "react-scripts eject",
     "extract": "i18next --config i18next-parser.config.js",
-    "lint": "eslint --fix src/",
+    "lint": "npm run lint:css && npm run lint:js",
+    "lint:js": "eslint --fix --ext .js,.jsx,.ts,.tsx ./src",
+    "lint:css": "stylelint --fix \"src/**/*.css\"",
     "prettier": "prettier --write 'src/**/*.@(js|jsx|css)'",
     "start": "react-scripts start",
+    "test": "react-scripts test --env=jsdom",
     "test:coverage": "react-scripts test --env=jsdom --coverage",
-    "test": "react-scripts test --env=jsdom"
+    "test:lint-staged": "cross-env CI=true react-scripts test --findRelatedTests"
   },
   "eslintConfig": {
     "extends": "react-app"
@@ -58,5 +69,24 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "lint-staged": {
+    "*.css": [
+      "prettier --write",
+      "stylelint --fix"
+    ],
+    "*.{js,jsx,ts,tsx}": [
+      "yarn run test:lint-staged",
+      "eslint --ext .js,.jsx,.ts,.tsx",
+      "prettier --write"
+    ],
+    "*.{json,md}": [
+      "prettier --write"
+    ]
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
   }
 }
