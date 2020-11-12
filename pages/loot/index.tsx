@@ -1,0 +1,65 @@
+import dayjs from "dayjs";
+import i18n from "i18next";
+import React, { useState } from "react";
+import Head from 'next/head'
+import { useTranslation } from "../../i18n";
+import useFirestoreWithBackup from "../../components/hooks/useFirestoreWithBackup";
+import HelpButton from "../../components/ui/button/HelpButton";
+import Card from "../../components/ui/card/Card";
+import CardTitle from "../../components/ui/card/CardTitle";
+import InputField from "../../components/ui/InputField";
+import useChestLevel from "../../components/pages/Loot/hooks/useChestLevel";
+import Chest from "../../components/pages/Loot/ui/Chest";
+import PassNowLabel from "../../components/pages/Loot/ui/PassNowLabel";
+
+i18n.loadNamespaces("loot");
+
+interface IProps {
+  [key: string]: never;
+}
+
+const Loot: React.FC<IProps> = () => {
+  const [showHelp, setShowHelp] = useState(false);
+  const [level, setLevel] = useFirestoreWithBackup("%ID%", "campaign", "level", "1-1");
+  const [pass, setPass] = useFirestoreWithBackup(
+    "%ID%",
+    "campaign",
+    "pass",
+    dayjs().format("L LTS")
+  );
+
+  const { t } = useTranslation("loot");
+  const chests = useChestLevel(level);
+  const passLabel = <PassNowLabel setPass={setPass} />;
+  const isDateInvalid = Number.isNaN(new Date(pass).getTime());
+
+  return (
+    <div>
+      {showHelp ? (
+        <Card>
+          <div style={{ padding: "16px" }}>{t("help")}</div>
+        </Card>
+      ) : null}
+      <Card>
+        <Head>
+          <title>{`${t("common:menu.loot")} - Afkalc`}</title>
+          <meta name="description" content={t("help")} />
+        </Head>
+        <HelpButton onClick={() => setShowHelp(!showHelp)} />
+        <CardTitle>{t("form-title")}</CardTitle>
+        <InputField value={level} label={t("label-campaign-level")} onChange={setLevel} />
+        <InputField value={pass} label={passLabel} onChange={setPass} />
+      </Card>
+
+      <Card>
+        <CardTitle>{t("result-title")}</CardTitle>
+
+        {isDateInvalid
+          ? null
+          : chests.map((chest) => <Chest key={chest.Content} pass={pass} chest={chest} />)}
+      </Card>
+    </div>
+  );
+};
+
+export default Loot;

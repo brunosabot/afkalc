@@ -2,7 +2,34 @@
   "name": "afkalc",
   "version": "0.1.0",
   "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "extract": "i18next --config i18next-parser.config.js",
+    "lint": "npm run lint:css && npm run lint:js",
+    "lint:js": "eslint --fix --ext .js,.jsx,.ts,.tsx ./src",
+    "lint:css": "stylelint --fix \"src/**/*.css\"",
+    "prettier": "prettier --write '**/*.@(ts|tsx|js|jsx|css)'"
+  },
   "dependencies": {
+    "@svgr/webpack": "^5.4.0",
+    "dayjs": "^1.9.4",
+    "firebase": "^8.0.0",
+    "i18next": "^19.8.3",
+    "i18next-browser-languagedetector": "^6.0.1",
+    "i18next-http-backend": "^1.0.21",
+    "nanoid": "^3.1.16",
+    "next": "10.0.1",
+    "next-i18next": "^7.0.1",
+    "next-images": "^1.6.2",
+    "react": "17.0.1",
+    "react-dom": "17.0.1",
+    "react-helmet": "^6.1.0",
+    "react-i18next": "^11.7.3",
+    "typescript": "^4.0.5"
+  },
+  "devDependencies": {
     "@testing-library/jest-dom": "^5.11.5",
     "@testing-library/react": "^11.1.1",
     "@testing-library/user-event": "^12.2.0",
@@ -10,23 +37,7 @@
     "@types/node": "^14.14.6",
     "@types/react": "^16.9.55",
     "@types/react-dom": "^16.9.9",
-    "dayjs": "^1.9.4",
-    "firebase": "^8.0.0",
-    "i18next": "^19.8.3",
-    "i18next-browser-languagedetector": "^6.0.1",
-    "i18next-http-backend": "^1.0.21",
-    "nanoid": "^3.1.16",
-    "react": "^17.0.1",
-    "react-dom": "^17.0.1",
-    "react-helmet": "^6.1.0",
-    "react-i18next": "^11.7.3",
-    "react-router-dom": "^5.2.0",
-    "react-scripts": "4.0.0",
-    "typescript": "^4.0.5"
-  },
-  "devDependencies": {
     "@types/react-helmet": "^6.1.0",
-    "@types/react-router-dom": "^5.1.6",
     "babel-eslint": "^10.1.0",
     "cross-env": "^7.0.2",
     "eslint-config-airbnb": "^18.0.1",
@@ -43,52 +54,5 @@
     "stylelint-config-standard": "^20.0.0",
     "stylelint-order": "^4.1.0",
     "stylelint-prettier": "^1.1.2"
-  },
-  "scripts": {
-    "build": "react-scripts build",
-    "eject": "react-scripts eject",
-    "extract": "i18next --config i18next-parser.config.js",
-    "lint": "npm run lint:css && npm run lint:js",
-    "lint:js": "eslint --fix --ext .js,.jsx,.ts,.tsx ./src",
-    "lint:css": "stylelint --fix \"src/**/*.css\"",
-    "prettier": "prettier --write 'src/**/*.@(js|jsx|css)'",
-    "start": "react-scripts start",
-    "test": "react-scripts test --env=jsdom",
-    "test:coverage": "react-scripts test --env=jsdom --coverage",
-    "test:lint-staged": "cross-env CI=true react-scripts test --findRelatedTests"
-  },
-  "eslintConfig": {
-    "extends": "react-app"
-  },
-  "browserslist": {
-    "production": [
-      ">0.2%",
-      "not dead",
-      "not op_mini all"
-    ],
-    "development": [
-      "last 1 chrome version",
-      "last 1 firefox version",
-      "last 1 safari version"
-    ]
-  },
-  "lint-staged": {
-    "*.css": [
-      "prettier --write",
-      "stylelint --fix"
-    ],
-    "*.{js,jsx,ts,tsx}": [
-      "yarn run test:lint-staged",
-      "eslint --ext .js,.jsx,.ts,.tsx",
-      "prettier --write"
-    ],
-    "*.{json,md}": [
-      "prettier --write"
-    ]
-  },
-  "husky": {
-    "hooks": {
-      "pre-commit": "lint-staged"
-    }
   }
 }
