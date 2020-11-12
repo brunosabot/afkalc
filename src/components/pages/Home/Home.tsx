@@ -21,7 +21,7 @@ const Home: React.FC<IProps> = () => {
       <CardTitle>{t("welcome")}</CardTitle>
       <div style={{ display: "flex", justifyContent: "center" }}>
         {process.env.NODE_ENV === "development" ? <LangButton lang="dev" emoji="👨‍💻" /> : null}
-        <LangButton lang="fr" emoji="FR" />
+        <LangButton lang="fr" emoji="🇫🇷" />
         <LangButton lang="en" emoji="🇺🇸‍" />
       </div>
 
