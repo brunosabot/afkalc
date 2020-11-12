@@ -1,18 +1,19 @@
-import "../styles/globals.css";
-import Menu from "../components/functionnal/Menu";
 import dayjs from "dayjs";
 import "dayjs/locale/fr";
 import localizedFormat from "dayjs/plugin/localizedFormat";
 import updateLocale from "dayjs/plugin/updateLocale";
+import { I18nContext } from 'next-i18next';
+import type { AppProps } from 'next/app';
 import React, { useContext, useEffect } from "react";
+import Menu from "../components/functionnal/Menu";
 import FirebaseProvider from "../components/providers/FirebaseProvider";
-import { I18nContext } from 'next-i18next'
-import {appWithTranslation} from '../i18n'
+import { appWithTranslation } from '../i18n';
+import "../styles/globals.css";
 
 dayjs.extend(updateLocale);
 dayjs.extend(localizedFormat);
 
-function MyApp({ Component, pageProps }) {
+function MyApp({ Component, pageProps }: AppProps) {
 
   const { i18n: { language } } = useContext(I18nContext);
 
