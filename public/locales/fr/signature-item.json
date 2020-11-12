@@ -1,10 +1,10 @@
 {
-  "help": "This tool is aimed to give you the remaining emblems you need to get to the specified stages",
-  "form-title": "First, set your character informations",
-  "item-primordial-emblem": "Primordial emblem",
-  "item-amplifying-emblem": "Amplifying emblem",
-  "item-faction-emblem": "Faction emblem",
-  "item-celest-Hypogean-emblem": "Celest/Hypogean emblem",
+  "help": "Cet outil donne le nombre d'emblèmes restants dont vous avez besoin pour accéder aux paliers spécifiés",
+  "form-title": "Renseignez les informations suivantes",
+  "item-primordial-emblem": "Emblème primordial",
+  "item-amplifying-emblem": "Emblème amplificateur",
+  "item-faction-emblem": "Emblème de faction",
+  "item-celest-Hypogean-emblem": "Emblème Céleste/Hypogéenne",
   "label-si": "SI +{{si}}",
-  "label-current-si": "Current SI level"
+  "label-current-si": "Niveau actuel de votre SI (objet exclusif)"
 }
