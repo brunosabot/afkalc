@@ -36,11 +36,14 @@ const Home: React.FC<IProps> = () => {
         <NavLink className="home-link" to="/loot">
           {t("menu.loot")}
         </NavLink>
+        <NavLink className="home-link" to="/fast-reward">
+          {t("menu.fast-reward")}
+        </NavLink>
         <NavLink className="home-link" to="/hero-list">
           {t("menu.hero-list")}
         </NavLink>
-        <NavLink className="home-link" to="/fast-reward">
-          {t("menu.fast-reward")}
+        <NavLink className="home-link" to="/top-team">
+          {t("menu.top-team")}
         </NavLink>
       </div>
     </Card>

@@ -1,0 +1,36 @@
+[
+  {
+    "faction": "twistedRealm",
+    "characters": [
+      { "name": "Burning Brute", "id": 1 },
+      { "name": "Dark Nemora", "id": 2 },
+      { "name": "Evil Arden", "id": 3 },
+      { "name": "Ice Shemira", "id": 4 },
+      { "name": "Kane", "id": 5 }
+    ]
+  },
+  {
+    "faction": "guildFight",
+    "characters": [
+      { "name": "Wrizz", "id": 6 },
+      { "name": "Soren", "id": 7 }
+    ]
+  },
+  {
+    "faction": "kingsTower",
+    "characters": [
+      { "name": "King's Tower", "id": 8 },
+      { "name": "Lightbringers", "id": 9 },
+      { "name": "Maulers", "id": 10 },
+      { "name": "Wilders", "id": 11 },
+      { "name": "Graveborns", "id": 12 }
+    ]
+  },
+  {
+    "faction": "misc",
+    "characters": [
+      { "name": "Arena", "id": 13 },
+      { "name": "Campaign", "id": 14, "image": "xp.png" }
+    ]
+  }
+]

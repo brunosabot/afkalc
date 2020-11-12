@@ -1,0 +1,20 @@
+.Character {
+  background: transparent;
+  border: 0;
+  cursor: pointer;
+  height: 40px;
+  outline: 0;
+  padding: 0;
+  width: 40px;
+}
+.Image {
+  border-radius: 5px 0 5px 0;
+  box-shadow: 0 0 1px rgba(0, 0, 0, 1);
+  box-sizing: border-box;
+  height: 100%;
+  width: 100%;
+}
+.Highlight .Image {
+  border: 2px solid #fff;
+  box-shadow: 0 0 3px rgba(255, 255, 255, 1);
+}

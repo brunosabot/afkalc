@@ -9,6 +9,7 @@ const HeroList = lazy(() => import("./pages/HeroList/HeroList"));
 const Home = lazy(() => import("./pages/Home/Home"));
 const Loot = lazy(() => import("./pages/Loot/Loot"));
 const SignatureItem = lazy(() => import("./pages/SignatureItem/SignatureItem"));
+const TopTeam = lazy(() => import("./pages/TopTeam/TopTeam"));
 
 interface IProps {
   [key: string]: never;
@@ -20,23 +21,29 @@ const App: React.FC<IProps> = () => {
       <Menu />
       <div style={{ maxWidth: "480px", margin: "auto", marginTop: "40px" }}>
         <Switch>
-          <Route path="/fast-reward">
-            <FastReward />
-          </Route>
-          <Route path="/signature-item">
-            <SignatureItem />
-          </Route>
           <Route path="/elite-summon">
             <EliteSummon />
           </Route>
-          <Route path="/loot">
-            <Loot />
+          <Route path="/fast-reward">
+            <FastReward />
           </Route>
           <Route path="/hero-list/:id">
             <HeroList />
           </Route>
           <Route path="/hero-list">
             <HeroList />
+          </Route>
+          <Route path="/loot">
+            <Loot />
+          </Route>
+          <Route path="/signature-item">
+            <SignatureItem />
+          </Route>
+          <Route path="/top-team/:id">
+            <TopTeam />
+          </Route>
+          <Route path="/top-team">
+            <TopTeam />
           </Route>
           <Route path="/">
             <Home />

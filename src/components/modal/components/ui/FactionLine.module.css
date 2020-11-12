@@ -1,0 +1,13 @@
+.Faction {
+  align-items: center;
+  display: flex;
+  font-weight: 900;
+  padding: 8px 0 4px 0;
+}
+.Image {
+  height: 16px;
+  margin-right: 8px;
+}
+.Name {
+  flex-grow: 1;
+}
