@@ -1,6 +1,9 @@
 import React, { useCallback, useState } from "react";
+import { Helmet } from "react-helmet";
 import { useParams } from "react-router-dom";
 import Card from "../../ui/card/Card";
+import useDescription from "./components/hooks/useDescription";
+import useTitle from "./components/hooks/useTitle";
 import Board from "./components/ui/Board";
 import EnemiPosition from "./components/ui/EnemiPosition";
 import PlayerPosition from "./components/ui/PlayerPosition";
@@ -28,9 +31,15 @@ const TopTeam: React.FC<Props> = () => {
     },
     [team]
   );
+  const title = useTitle(team[6]);
+  const description = useDescription(team[1], team[2], team[3], team[4], team[5]);
 
   return (
     <Card>
+      <Helmet titleTemplate="%s - Afkalc">
+        <title>{title}</title>
+        <meta name="description" content={description} />
+      </Helmet>
       <Board>
         <ShareBanner data={team} />
         <PlayerPosition onSelect={onSelect} position={1} hero={team[1]} />
