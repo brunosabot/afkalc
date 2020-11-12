@@ -1,0 +1,24 @@
+.Label {
+  color: #fff;
+  fill: #fff;
+  paint-order: stroke;
+  stroke: #230f08;
+  stroke-width: 4;
+}
+.Input {
+  background: rgba(255, 255, 255, 0.8);
+  border: 2px solid #230f08;
+  border-radius: 4px;
+  box-sizing: border-box;
+  display: block;
+  font-family: inherit;
+  font-size: 0.9em;
+  padding: 2px;
+  text-align: center;
+  width: 100%;
+}
+.Copy {
+  left: 16px;
+  position: absolute;
+  top: 80px;
+}
