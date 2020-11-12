@@ -1,4 +1,5 @@
 import dayjs from "dayjs";
+import "dayjs/locale/fr";
 import localizedFormat from "dayjs/plugin/localizedFormat";
 import updateLocale from "dayjs/plugin/updateLocale";
 import i18n from "i18next";
@@ -15,7 +16,7 @@ import * as serviceWorker from "./serviceWorker";
 dayjs.extend(updateLocale);
 dayjs.extend(localizedFormat);
 
-const languages = ["en"];
+const languages = ["en", "fr"];
 
 i18n
   .use(LanguageDetector)

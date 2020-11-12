@@ -1,0 +1,19 @@
+{
+  "welcome": "Bienvenue sur Afkalc, l'outil de calcul pour AFK Arena",
+  "menu": {
+    "home": "Accueil",
+    "signature-item": "Emblèmes",
+    "elite-summon": "Invocation de héros souhaité",
+    "loot": "Récompenses AFK",
+    "hero-list": "Liste des héros (Bêta)",
+    "fast-reward": "Récompenses rapides",
+    "top-team": "Top compo (Bêta)",
+    "logout": "Se déconnecter"
+  },
+  "contribution": {
+    "edit-on-github": "GitHub"
+  },
+  "external": {
+    "reddit": "Reddit"
+  }
+}
