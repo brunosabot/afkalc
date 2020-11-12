@@ -427,6 +427,7 @@ a {
 }
 
 .help-button {
+  cursor: pointer;
   height: 24px;
   padding: 8px;
   position: absolute;

@@ -31,17 +31,15 @@ const TopTeam: React.FC<Props> = () => {
 
   return (
     <Card>
-      <div style={{ marginBottom: "16px" }}>
+      <Board>
         <ShareBanner data={team} />
-        <Board>
-          <PlayerPosition onSelect={onSelect} position={1} hero={team[1]} />
-          <PlayerPosition onSelect={onSelect} position={2} hero={team[2]} />
-          <PlayerPosition onSelect={onSelect} position={3} hero={team[3]} />
-          <PlayerPosition onSelect={onSelect} position={4} hero={team[4]} />
-          <PlayerPosition onSelect={onSelect} position={5} hero={team[5]} />
-          <EnemiPosition onSelect={onSelect} position={6} enemi={team[6]} />
-        </Board>
-      </div>
+        <PlayerPosition onSelect={onSelect} position={1} hero={team[1]} />
+        <PlayerPosition onSelect={onSelect} position={2} hero={team[2]} />
+        <PlayerPosition onSelect={onSelect} position={3} hero={team[3]} />
+        <PlayerPosition onSelect={onSelect} position={4} hero={team[4]} />
+        <PlayerPosition onSelect={onSelect} position={5} hero={team[5]} />
+        <EnemiPosition onSelect={onSelect} position={6} enemi={team[6]} />
+      </Board>
     </Card>
   );
 };

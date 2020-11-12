@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { useTranslation } from "react-i18next";
 import CardTitle from "../../../../ui/card/CardTitle";
+import styles from "./ShareBanner.module.css";
 
 interface IData {
   1?: number;
@@ -30,12 +31,27 @@ const ShareBanner: React.FC<IProps> = ({ data }) => {
 
   return (
     <CardTitle>
-      {t("label-share")}
+      <svg xmlns="http://www.w3.org/2000/svg" width="300" height="20" viewBox="0 0 300 20">
+        <text x="3" y="16" className={styles.Label}>
+          {t("label-share")}
+        </text>
+      </svg>
+
       {copy ? (
-        <div style={{ position: "absolute", top: "16px", right: "16px" }}>{t("label-copied")}</div>
+        <svg
+          className={styles.Copy}
+          xmlns="http://www.w3.org/2000/svg"
+          width="100"
+          height="20"
+          viewBox="0 0 100 20"
+        >
+          <text x="3" y="16" className={styles.Label}>
+            {t("label-copied")}
+          </text>
+        </svg>
       ) : null}
       <input
-        className="hero-list__share"
+        className={styles.Input}
         onClick={(e) => {
           (e.target as HTMLInputElement).select();
           document.execCommand("copy");

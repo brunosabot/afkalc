@@ -17,8 +17,8 @@
 }
 .Content {
   height: 100%;
-  left: 16px;
+  left: 0;
   position: absolute;
-  right: 16px;
+  right: 0;
   top: 0;
 }
