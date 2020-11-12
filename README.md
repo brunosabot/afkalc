@@ -21,7 +21,7 @@ In `main.tsx`, you need to activate the language for two concepts :
 To add a language for `dayjs`, you just need to add the language import at the top of the document. Exemple adding french:
 
 ```javascript
-import "dayjs/local/fr";
+import "dayjs/locale/fr";
 ```
 
 To add a language for `i18next`, you need to update the arrays in the `whitelist` feature of the configuration.

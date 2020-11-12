@@ -24,6 +24,7 @@ const Menu: React.FC<IProps> = () => {
       <MenuContent isActive={isActive} setIsActive={setIsActive}>
         <div style={{ display: "flex", justifyContent: "center" }}>
           {process.env.NODE_ENV === "development" ? <LangButton lang="dev" emoji="👨‍💻" /> : null}
+          <LangButton lang="fr" emoji="🇫🇷" />
           <LangButton lang="en" emoji="🇺🇸‍" />
         </div>
 
