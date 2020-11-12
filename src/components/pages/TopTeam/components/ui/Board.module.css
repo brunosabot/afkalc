@@ -1,0 +1,24 @@
+.Board {
+  background-image: url("./fight.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  border-radius: 4px;
+  height: 100%;
+  width: 100%;
+}
+.BoardWrapper {
+  margin: auto;
+  padding: 0 16px;
+  position: relative;
+}
+.Placeholder {
+  display: block;
+  width: 100%;
+}
+.Content {
+  height: 100%;
+  left: 16px;
+  position: absolute;
+  right: 16px;
+  top: 0;
+}

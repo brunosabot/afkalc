@@ -1,0 +1,8 @@
+.ChooseEnemi {
+  max-width: 348px;
+}
+.Enemies {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px;
+}

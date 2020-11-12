@@ -1,0 +1,41 @@
+.ModalWrapper {
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.3);
+  box-sizing: border-box;
+  display: flex;
+  height: 100%;
+  justify-content: center;
+  left: 0;
+  padding: 60px 32px;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 10;
+}
+.Modal {
+  background: #c59d65;
+  border-radius: 14px;
+  box-shadow: 0 10px 13px -6px rgba(0, 0, 0, 0.2), 0 20px 31px 3px rgba(0, 0, 0, 0.14),
+    0 8px 38px 7px rgba(0, 0, 0, 0.12);
+  box-sizing: border-box;
+  max-height: 100%;
+  max-width: 100%;
+  overflow: auto;
+  padding: 16px;
+  position: relative;
+}
+.Close {
+  border-radius: 50%;
+  cursor: pointer;
+  fill: #fff;
+  height: 20px;
+  padding: 8px;
+  position: absolute;
+  right: 4px;
+  top: 4px;
+  transition: all 0.15s cubic-bezier(0.4, 0, 0.6, 1);
+  width: 20px;
+}
+.Close:hover {
+  background: rgba(255, 255, 255, 0.15);
+}
