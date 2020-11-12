@@ -1,6 +1,8 @@
 import firebase from "firebase/app";
 import i18n from "i18next";
 import React, { Fragment, useCallback, useEffect, useMemo, useState } from "react";
+import { Helmet } from "react-helmet";
+import { useTranslation } from "react-i18next";
 import { useParams } from "react-router-dom";
 import factions from "../../../data/heroes.json";
 import HeroLevel from "../../../types/HeroLevel";
@@ -34,6 +36,7 @@ interface IProps {
 const firestore = firebase.firestore();
 
 const HeroList: React.FC<IProps> = () => {
+  const { t } = useTranslation("hero-list");
   const params = useParams<{ id: string }>();
   const isView = params.id !== undefined;
   const [viewId, setViewId] = useState("");
@@ -98,6 +101,10 @@ const HeroList: React.FC<IProps> = () => {
     <Card>
       <div style={{ marginBottom: "16px" }}>
         <ShareBanner isView={isView} />
+        <Helmet titleTemplate="%s - Afkalc">
+          <title>{t("common:menu.hero-list")}</title>
+          <meta name="description" content="" />
+        </Helmet>
 
         <FactionFilter filter={factionFilter} setFilter={setFactionFilter} imagePath="factions" />
         <TypeFilter filter={typeFilter} setFilter={setTypeFilter} imagePath="types" />

@@ -1,5 +1,6 @@
 import i18n from "i18next";
 import React, { useState } from "react";
+import { Helmet } from "react-helmet";
 import { useTranslation } from "react-i18next";
 import campaign from "../../../data/fastRewardCampaign.json";
 import player from "../../../data/fastRewardPlayer.json";
@@ -41,6 +42,10 @@ const FastReward: React.FC<IProps> = () => {
   return (
     <div>
       <Help showHelp={showHelp} />
+      <Helmet titleTemplate="%s - Afkalc">
+        <title>{t("common:menu.fast-reward")}</title>
+        <meta name="description" content={t("help")} />
+      </Helmet>
       <Card>
         <HelpButton onClick={() => setShowHelp(!showHelp)} />
         <CardTitle>{t("form-title")}</CardTitle>

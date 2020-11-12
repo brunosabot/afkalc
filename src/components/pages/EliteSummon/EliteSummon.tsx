@@ -1,5 +1,6 @@
 import i18n from "i18next";
 import React, { useState } from "react";
+import { Helmet } from "react-helmet";
 import { useTranslation } from "react-i18next";
 import { getEstimatedDiamsForSummon } from "../../../lib/summon";
 import useOnChangeNumber from "../../hooks/useOnChangeNumber";
@@ -36,6 +37,10 @@ const EliteSummon: React.FC<IProps> = () => {
         </Card>
       ) : null}
       <Card>
+        <Helmet titleTemplate="%s - Afkalc">
+          <title>{t("common:menu.elite-summon")}</title>
+          <meta name="description" content={t("help")} />
+        </Helmet>
         <HelpButton onClick={() => setShowHelp(!showHelp)} />
         <CardTitle>{t("current-count-label")}</CardTitle>
 

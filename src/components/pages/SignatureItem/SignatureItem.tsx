@@ -1,5 +1,6 @@
 import i18n from "i18next";
 import React, { useCallback, useState } from "react";
+import { Helmet } from "react-helmet";
 import { useTranslation } from "react-i18next";
 import HelpButton from "../../ui/button/HelpButton";
 import Card from "../../ui/card/Card";
@@ -39,6 +40,10 @@ const SignatureItem: React.FC<IProps> = () => {
         </Card>
       ) : null}
       <Card>
+        <Helmet titleTemplate="%s - Afkalc">
+          <title>{t("common:menu.signature-item")}</title>
+          <meta name="description" content={t("help")} />
+        </Helmet>
         <HelpButton onClick={() => setShowHelp(!showHelp)} />
         <CardTitle>{t("form-title")}</CardTitle>
         <InputField value={currentLevel} label={t("label-current-si")} onChange={onChange} />

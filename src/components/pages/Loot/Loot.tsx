@@ -1,6 +1,7 @@
 import dayjs from "dayjs";
 import i18n from "i18next";
 import React, { useState } from "react";
+import { Helmet } from "react-helmet";
 import { useTranslation } from "react-i18next";
 import useFirestoreWithBackup from "../../hooks/useFirestoreWithBackup";
 import HelpButton from "../../ui/button/HelpButton";
@@ -40,6 +41,10 @@ const Loot: React.FC<IProps> = () => {
         </Card>
       ) : null}
       <Card>
+        <Helmet titleTemplate="%s - Afkalc">
+          <title>{t("common:menu.loot")}</title>
+          <meta name="description" content={t("help")} />
+        </Helmet>
         <HelpButton onClick={() => setShowHelp(!showHelp)} />
         <CardTitle>{t("form-title")}</CardTitle>
         <InputField value={level} label={t("label-campaign-level")} onChange={setLevel} />

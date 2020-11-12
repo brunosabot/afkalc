@@ -1,4 +1,5 @@
 import React, { useContext } from "react";
+import { Helmet } from "react-helmet";
 import { useTranslation } from "react-i18next";
 import { NavLink } from "react-router-dom";
 import { FirebaseContext } from "../../providers/FirebaseProvider";
@@ -19,6 +20,10 @@ const Home: React.FC<IProps> = () => {
   return (
     <Card>
       <CardTitle>{t("welcome")}</CardTitle>
+      <Helmet titleTemplate="%s - Afkalc">
+        <title>{t("common:menu.home")}</title>
+        <meta name="description" content={t("welcome")} />
+      </Helmet>
       <div style={{ display: "flex", justifyContent: "center" }}>
         {process.env.NODE_ENV === "development" ? <LangButton lang="dev" emoji="👨‍💻" /> : null}
         <LangButton lang="fr" emoji="🇫🇷" />
