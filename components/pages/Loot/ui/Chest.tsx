@@ -1,3 +1,4 @@
+import dayjs from "dayjs";
 import React from "react";
 import { useTranslation } from "../../../../i18n";
 import { getDuration, getFrom } from "../../../../lib/time";
@@ -16,9 +17,9 @@ interface IProps {
 
 const Chest: React.FC<IProps> = ({ pass, chest }) => {
   const { t } = useTranslation("loot");
-  const date = new Date(pass);
-  const obtainedDate = new Date(date.getTime() + chest.CD * 1000);
-  const isOK = obtainedDate <= new Date();
+  const date = dayjs(pass, "L LTS");
+  const obtainedDate = date.add(chest.CD, "s");
+  const isOK = obtainedDate.isBefore(dayjs());
 
   const actions = (
     <>

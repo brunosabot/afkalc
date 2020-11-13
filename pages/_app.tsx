@@ -1,5 +1,6 @@
 import dayjs from "dayjs";
 import "dayjs/locale/fr";
+import customParseFormat from "dayjs/plugin/customParseFormat";
 import localizedFormat from "dayjs/plugin/localizedFormat";
 import updateLocale from "dayjs/plugin/updateLocale";
 import { I18nContext } from 'next-i18next';
@@ -10,6 +11,7 @@ import FirebaseProvider from "../components/providers/FirebaseProvider";
 import { appWithTranslation } from '../i18n';
 import "../styles/globals.css";
 
+dayjs.extend(customParseFormat)
 dayjs.extend(updateLocale);
 dayjs.extend(localizedFormat);
 

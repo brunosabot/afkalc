@@ -1,16 +1,16 @@
 import dayjs from "dayjs";
 import i18n from "i18next";
+import Head from 'next/head';
 import React, { useState } from "react";
-import Head from 'next/head'
-import { useTranslation } from "../../i18n";
 import useFirestoreWithBackup from "../../components/hooks/useFirestoreWithBackup";
+import useChestLevel from "../../components/pages/Loot/hooks/useChestLevel";
+import Chest from "../../components/pages/Loot/ui/Chest";
+import PassNowLabel from "../../components/pages/Loot/ui/PassNowLabel";
 import HelpButton from "../../components/ui/button/HelpButton";
 import Card from "../../components/ui/card/Card";
 import CardTitle from "../../components/ui/card/CardTitle";
 import InputField from "../../components/ui/InputField";
-import useChestLevel from "../../components/pages/Loot/hooks/useChestLevel";
-import Chest from "../../components/pages/Loot/ui/Chest";
-import PassNowLabel from "../../components/pages/Loot/ui/PassNowLabel";
+import { useTranslation } from "../../i18n";
 
 i18n.loadNamespaces("loot");
 
@@ -31,7 +31,7 @@ const Loot: React.FC<IProps> = () => {
   const { t } = useTranslation("loot");
   const chests = useChestLevel(level);
   const passLabel = <PassNowLabel setPass={setPass} />;
-  const isDateInvalid = Number.isNaN(new Date(pass).getTime());
+  const isDateInvalid = dayjs(pass, "L LTS").isValid() === false;
 
   return (
     <div>
