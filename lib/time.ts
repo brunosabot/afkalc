@@ -1,4 +1,4 @@
-import dayjs from "dayjs";
+import dayjs, { Dayjs } from "dayjs";
 import relativeTime from "dayjs/plugin/relativeTime";
 
 dayjs.extend(relativeTime);
@@ -16,6 +16,6 @@ export function getDuration(time: number) {
   }${seconds > 0 ? `${seconds}s ` : ""}`;
 }
 
-export function getFrom(date: Date, offset: number) {
-  return dayjs(new Date(date.getTime() + offset * 1000)).fromNow();
+export function getFrom(date: Dayjs, offset: number) {
+  return date.add(offset, "s").fromNow();
 }
