@@ -1,0 +1,59 @@
+[
+  { "id": 1, "name": "diamonds", "cost": 1, "image": "/loot/diamond.jpg" },
+  { "id": 2, "name": "guild-token", "cost": 0.08, "image": "/loot/guild-token.jpg" },
+  { "id": 3, "name": "hero-coin", "cost": 0.1, "image": "/loot/hero-coin.jpg" },
+  { "id": 4, "name": "labyrinth-token", "cost": 0.06, "image": "/loot/labyrinth-token.jpg" },
+  { "id": 5, "name": "challenger-token", "cost": 0.018, "image": "/loot/challenger-token.jpg" },
+  { "id": 6, "name": "poe-coin", "cost": 1, "image": "/loot/poe-coin.png" },
+  { "id": 7, "name": "dust", "cost": 0.6, "image": "/loot/dust.jpg" },
+  { "id": 8, "name": "2h-dust", "cost": 75, "image": "/loot/2h-dust.jpg" },
+  { "id": 9, "name": "6h-dust", "cost": 225, "image": "/loot/6h-dust.jpg" },
+  { "id": 10, "name": "8h-dust", "cost": 300, "image": "/loot/8h-dust.jpg" },
+  { "id": 11, "name": "6h-xp", "cost": 48, "image": "/loot/6h-xp.jpg" },
+  { "id": 12, "name": "24h-xp", "cost": 192, "image": "/loot/24h-xp.jpg" },
+  { "id": 13, "name": "2h-gold", "cost": 4, "image": "/loot/2h-gold.jpg" },
+  { "id": 14, "name": "6h-gold", "cost": 12, "image": "/loot/6h-gold.jpg" },
+  { "id": 15, "name": "8h-gold", "cost": 16, "image": "/loot/8h-gold.jpg" },
+  { "id": 16, "name": "24h-gold", "cost": 48, "image": "/loot/24h-gold.jpg" },
+  { "id": 17, "name": "scroll", "cost": 270, "image": "/loot/scroll.jpg" },
+  { "id": 18, "name": "stargazer", "cost": 500, "image": "/loot/stargazer.jpg" },
+  { "id": 19, "name": "rare-faction-card", "cost": 360, "image": "/loot/rare-faction-card.jpg" },
+  { "id": 20, "name": "rare-soulstone", "cost": 2.4, "image": "/loot/rare-soulstone.jpg" },
+  { "id": 21, "name": "elite-soulstone", "cost": 30, "image": "/loot/elite-soulstone.jpg" },
+  { "id": 22, "name": "mythic-gear", "cost": 2830.5, "image": "/loot/mythic-gear.jpg" },
+  {
+    "id": 23,
+    "name": "mythic-gear-dimensional",
+    "cost": 6740.8,
+    "image": "/loot/mythic-gear-dimensional.jpg"
+  },
+  {
+    "id": 24,
+    "name": "rare-enhancement-token",
+    "cost": 1.2,
+    "image": "/loot/rare-enhancement-token.gif"
+  },
+  {
+    "id": 25,
+    "name": "elite-enhancement-token",
+    "cost": 120,
+    "image": "/loot/elite-enhancement-token.jpg"
+  },
+  { "id": 26, "name": "t1-stone", "cost": 2946, "image": "/loot/t1-stone.jpg" },
+  { "id": 27, "name": "t2-stone", "cost": 3270, "image": "/loot/t2-stone.jpg" },
+  { "id": 28, "name": "primordial-emblem", "cost": 48, "image": "/loot/primordial-emblem.jpg" },
+  { "id": 29, "name": "amplifying-emblem", "cost": 78, "image": "/loot/amplifying-emblem.jpg" },
+  {
+    "id": 30,
+    "name": "fortuitous-emblem-chest",
+    "cost": 153,
+    "image": "/loot/fortuitous-emblem-chest.png"
+  },
+  {
+    "id": 31,
+    "name": "emblem-choice-chest",
+    "cost": 118.8,
+    "image": "/loot/emblem-choice-chest.jpg"
+  },
+  { "id": 32, "name": "twisted-essence", "cost": 10, "image": "/loot/twisted-essence.jpg" }
+]

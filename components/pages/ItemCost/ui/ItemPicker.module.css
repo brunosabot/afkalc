@@ -1,0 +1,23 @@
+.ItemPicker {
+  align-items: center;
+  border-radius: 6px 0 6px 0;
+  box-sizing: border-box;
+  cursor: pointer;
+  display: flex;
+  height: 40px;
+  justify-content: center;
+  width: 40px;
+  margin: 0 16px;
+}
+
+.Add {
+  background: transparent;
+  border: 0;
+  border: 1px solid #230f08;
+  border-radius: 6px 0 6px 0;
+  cursor: pointer;
+  font-size: 24px;
+  height: 100%;
+  outline: 0;
+  width: 100%;
+}

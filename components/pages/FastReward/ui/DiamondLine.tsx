@@ -19,7 +19,7 @@ const DiamondLine: React.FC<IProps> = ({ count, campaignLevel, diamsLevel }) => 
   return (
     <CardValue>
       {count}
-      <img className="diamond-line__image" src="/diamond.jpg" alt={t("diamonds")} />
+      <img className="diamond-line__image" src="/loot/diamond.jpg" alt={t("diamonds")} />
     </CardValue>
   );
 };

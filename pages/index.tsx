@@ -1,13 +1,13 @@
-import React, { useContext } from "react";
-import Head from 'next/head'
-import { useTranslation } from "../i18n";
+import Head from "next/head";
 import Link from "next/link";
+import React, { useContext } from "react";
 import { FirebaseContext } from "../components/providers/FirebaseProvider";
 import LangButton from "../components/ui/button/LangButton";
 import LoginButton from "../components/ui/button/LoginButton";
 import LogoutButton from "../components/ui/button/LogoutButton";
 import Card from "../components/ui/card/Card";
 import CardTitle from "../components/ui/card/CardTitle";
+import { useTranslation } from "../i18n";
 
 interface IProps {
   [key: string]: never;
@@ -50,6 +50,9 @@ const Home: React.FC<IProps> = () => {
         </Link>
         <Link href="/top-team">
           <a className="home-link">{t("menu.top-team")}</a>
+        </Link>
+        <Link href="/item-cost">
+          <a className="home-link">{t("menu.item-cost")}</a>
         </Link>
       </div>
     </Card>
