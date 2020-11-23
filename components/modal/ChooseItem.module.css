@@ -1,0 +1,11 @@
+.ChooseItem {
+  max-width: 348px;
+  gap: 8px;
+  display: flex;
+  flex-wrap: wrap;
+}
+.Items {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px;
+}
