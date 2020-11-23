@@ -19,7 +19,7 @@ const Help: React.FC<IProps> = ({ showHelp }) => {
         <p>{t("help-title")}</p>
         <p>
           <Trans
-            i18nKey="help-credit"
+            i18nKey="fast-reward:help-credit"
             components={{ who: <InSeason />, where: <RedditFastReward /> }}
           />
         </p>

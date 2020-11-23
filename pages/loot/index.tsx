@@ -1,6 +1,6 @@
 import dayjs from "dayjs";
 import i18n from "i18next";
-import Head from 'next/head';
+import Head from "next/head";
 import React, { useState } from "react";
 import useFirestoreWithBackup from "../../components/hooks/useFirestoreWithBackup";
 import useChestLevel from "../../components/pages/Loot/hooks/useChestLevel";

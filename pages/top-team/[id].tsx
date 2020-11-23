@@ -1,6 +1,6 @@
 import React, { useCallback, useState } from "react";
 import { useRouter } from "next/router";
-import Head from 'next/head'
+import Head from "next/head";
 import Card from "../../components/ui/card/Card";
 import useDescription from "../../components/pages/TopTeam/hooks/useDescription";
 import useTitle from "../../components/pages/TopTeam/hooks/useTitle";

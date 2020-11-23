@@ -13,7 +13,7 @@ const ModalAnimated: React.FC<Props> = ({ active, children, onClose }) => {
   const onCloseWrapper = (e: React.MouseEvent) => {
     if (e.target === e.currentTarget) {
       onClose();
-    }``
+    }
   };
 
   const onEchap = useCallback(

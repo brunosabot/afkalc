@@ -1,6 +1,6 @@
 import i18n from "i18next";
 import React, { useState } from "react";
-import Head from 'next/head'
+import Head from "next/head";
 import { useTranslation } from "../../i18n";
 import campaign from "../../data/fastRewardCampaign.json";
 import player from "../../data/fastRewardPlayer.json";
