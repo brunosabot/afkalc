@@ -20,9 +20,8 @@ const Modal: React.FC<Props> = ({ active, children }) => {
     return () => {
       if (elRef.current !== null) rootRef.current?.removeChild(elRef.current);
       setMounted(false);
-    }
+    };
   }, []);
-
 
   if (mounted === false) return null;
   if (active === false) return null;

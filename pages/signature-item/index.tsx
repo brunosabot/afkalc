@@ -1,6 +1,6 @@
 import i18n from "i18next";
 import React, { useCallback, useState } from "react";
-import Head from 'next/head'
+import Head from "next/head";
 import { useTranslation } from "../../i18n";
 import HelpButton from "../../components/ui/button/HelpButton";
 import Card from "../../components/ui/card/Card";

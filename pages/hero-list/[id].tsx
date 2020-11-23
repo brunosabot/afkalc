@@ -1,7 +1,7 @@
 import firebase from "firebase/app";
 import i18n from "i18next";
 import React, { Fragment, useCallback, useEffect, useMemo, useState } from "react";
-import Head from 'next/head'
+import Head from "next/head";
 import { useTranslation } from "../../i18n";
 import { useRouter } from "next/router";
 import factions from "../../data/heroes.json";

@@ -1,4 +1,7 @@
 export function compareChapter(chapterA: string, chapterB: string) {
+  if (chapterB === undefined) return 1;
+  if (chapterA === undefined) return -1;
+
   const splittedChapterA = chapterA.split("-").map((e) => parseInt(e, 10));
   const splittedChapterB = chapterB.split("-").map((e) => parseInt(e, 10));
 
