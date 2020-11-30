@@ -1,0 +1,13 @@
+.Wrapper {
+  padding: 16px;
+  text-align: center;
+}
+.LogoutButton {
+  background: transparent;
+  border: 0;
+  color: var(--text-color);
+  cursor: pointer;
+  font-family: inherit;
+  font-size: 1em;
+  padding: 0;
+}

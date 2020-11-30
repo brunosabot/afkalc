@@ -1,5 +1,6 @@
 import React from "react";
 import HeroLevel from "../../../../types/HeroLevel";
+import InputField from "../../../ui/InputField";
 
 interface IProps {
   id: number;
@@ -12,13 +13,16 @@ const SiField: React.FC<IProps> = ({ id, setLevel, getValue, isView }) => {
   const value = getValue(id, "si");
 
   return (
-    <input
-      onChange={(e) => setLevel(id, "si")(parseInt(e.target.value, 10))}
-      className="hero-list__number"
+    <InputField
+      label=""
+      small
+      onChange={(v) => setLevel(id, "si")(parseInt(v, 10))}
       value={value === 0 ? "" : value}
       disabled={getValue(id, "ascend") < 5}
       readOnly={isView}
       maxLength={2}
+      style={{ width: "32px", textAlign: "center" }}
+      name={`si-${id}`}
     />
   );
 };

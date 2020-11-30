@@ -1,5 +1,6 @@
 import React from "react";
 import { useTranslation } from "../../../../i18n";
+import styles from "./FactionLine.module.css";
 
 interface IProps {
   name: string;
@@ -10,12 +11,12 @@ const FactionLine: React.FC<IProps> = ({ name }) => {
   const fileName = name.toLowerCase().replace(/[^a-z]/g, "");
 
   return (
-    <div className="hero-list__faction">
-      <img className="hero-list__faction-image" src={`/factions/${fileName}.png`} alt={name} />
-      <div className="hero-list__faction-name">{t(`faction-${name}`)}</div>
-      <div className="hero-list__faction-label">{t("label-si")}</div>
-      <div className="hero-list__faction-label">{t("label-inn")}</div>
-      <div className="hero-list__faction-placeholder" />
+    <div className={styles.FactionLine}>
+      <img className={styles.Image} src={`/factions/${fileName}.png`} alt={name} />
+      <div className={styles.Name}>{t(`faction-${name}`)}</div>
+      <div className={styles.Label}>{t("label-si")}</div>
+      <div className={styles.Label}>{t("label-inn")}</div>
+      <div className={styles.Placeholder} />
     </div>
   );
 };

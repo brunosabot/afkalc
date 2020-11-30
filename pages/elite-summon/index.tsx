@@ -1,14 +1,16 @@
 import i18n from "i18next";
-import React, { useState } from "react";
 import Head from "next/head";
-import { useTranslation } from "../../i18n";
-import { getEstimatedDiamsForSummon } from "../../lib/summon";
+import React, { useState } from "react";
 import useOnChangeNumber from "../../components/hooks/useOnChangeNumber";
+import Item from "../../components/ui/afk/Item";
 import HelpButton from "../../components/ui/button/HelpButton";
 import Card from "../../components/ui/card/Card";
+import CardHelp from "../../components/ui/card/CardHelp";
 import CardTitle from "../../components/ui/card/CardTitle";
 import CardValue from "../../components/ui/card/CardValue";
 import InputField from "../../components/ui/InputField";
+import { useTranslation } from "../../i18n";
+import { getEstimatedDiamsForSummon } from "../../lib/summon";
 
 i18n.loadNamespaces("elite-summon");
 
@@ -31,11 +33,6 @@ const EliteSummon: React.FC<IProps> = () => {
 
   return (
     <div>
-      {showHelp ? (
-        <Card>
-          <div style={{ padding: "16px" }}>{t("help")}</div>
-        </Card>
-      ) : null}
       <Card>
         <Head>
           <title>{`${t("common:menu.elite-summon")} - Afkalc`}</title>
@@ -44,26 +41,60 @@ const EliteSummon: React.FC<IProps> = () => {
         <HelpButton onClick={() => setShowHelp(!showHelp)} />
         <CardTitle>{t("current-count-label")}</CardTitle>
 
-        <InputField value={elite} label={t("current-elite")} onChange={onChange(setElite)} />
-        <InputField value={eliteP} label={t("current-elite-p")} onChange={onChange(setEliteP)} />
+        {showHelp ? <CardHelp>{t("help")}</CardHelp> : null}
+
+        <InputField
+          value={elite}
+          name="current-elite"
+          label={t("current-elite")}
+          onChange={onChange(setElite)}
+        />
+        <InputField
+          value={eliteP}
+          name="current-elite-p"
+          label={t("current-elite-p")}
+          onChange={onChange(setEliteP)}
+        />
         <InputField
           value={legendary}
+          name="current-legendary"
           label={t("current-legendary")}
           onChange={onChange(setLegendary)}
         />
         <InputField
           value={legendaryP}
+          name="current-legendary-p"
           label={t("current-legendary-p")}
           onChange={onChange(setLegendaryP)}
         />
-        <InputField value={mythic} label={t("current-mythic")} onChange={onChange(setMythic)} />
-        <InputField value={mythicP} label={t("current-mythic-p")} onChange={onChange(setMythicP)} />
+        <InputField
+          value={mythic}
+          name="current-mythic"
+          label={t("current-mythic")}
+          onChange={onChange(setMythic)}
+        />
+        <InputField
+          value={mythicP}
+          name="current-mythic-p"
+          label={t("current-mythic-p")}
+          onChange={onChange(setMythicP)}
+        />
       </Card>
 
       <Card>
         <CardTitle>{t("required-count-label")}</CardTitle>
 
-        <CardValue>{diams > 0 ? t("required-count", { diams }) : t("required-nothing")}</CardValue>
+        <CardValue>
+          {diams > 0 ? (
+            <>
+              {t("required-count", { diams })}
+              &nbsp;
+              <Item name="diamond" size="small" />
+            </>
+          ) : (
+            t("required-nothing")
+          )}
+        </CardValue>
       </Card>
     </div>
   );

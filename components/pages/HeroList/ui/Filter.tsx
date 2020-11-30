@@ -1,4 +1,5 @@
 import React from "react";
+import styles from "./Filter.module.css";
 
 interface IProps {
   filter: string;
@@ -9,18 +10,16 @@ interface IProps {
 
 const Filter: React.FC<IProps> = ({ filter, setFilter, imagePath, data }) => {
   return (
-    <div className="hero-list__filter-wrapper">
+    <div className={styles.Wrapper}>
       {data.map((e) => {
+        const className = `${styles.Filter} ${filter === e ? styles.Active : ""}`;
+        const onCLick = () => {
+          setFilter(filter === e ? "" : e);
+        };
+
         return (
-          <button
-            key={e}
-            className={`hero-list__filter ${filter === e ? "hero-list__filter--active" : ""}`}
-            type="button"
-            onClick={() => {
-              setFilter(filter === e ? "" : e);
-            }}
-          >
-            <img alt={e} className="hero-list__filter-image" src={`/${imagePath}/${e}.png`} />
+          <button key={e} className={className} type="button" onClick={onCLick}>
+            <img alt={e} className={styles.Image} src={`/${imagePath}/${e}.png`} />
           </button>
         );
       })}

@@ -1,6 +1,7 @@
 import React, { useContext } from "react";
 import { useTranslation } from "../../../i18n";
 import { FirebaseContext } from "../../providers/FirebaseProvider";
+import styles from "./LogoutButton.module.css";
 
 interface IProps {
   [key: string]: never;
@@ -11,9 +12,9 @@ const LogoutButton: React.FC<IProps> = () => {
   const { t } = useTranslation("common");
 
   return (
-    <div className="login-button__wrapper">
+    <div className={styles.Wrapper}>
       <button
-        className="login-button"
+        className={styles.LogoutButton}
         type="button"
         onClick={actions.logOut}
         style={{ textDecoration: "underline" }}

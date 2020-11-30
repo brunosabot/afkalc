@@ -4,16 +4,25 @@ import Item from "../ui/afk/Item";
 import styles from "./ChooseItem.module.css";
 
 interface Props {
-  onSelect: (value: number) => void;
-  current: number;
+  onSelect: (value: string) => void;
+  current: string;
 }
 
 const ChooseItem: React.FC<Props> = ({ current, onSelect }) => {
   return (
     <div className={styles.ChooseItem}>
-      {resources.map(({ id, image }) => (
-        <Item key={id} id={id} image={image} onClick={onSelect} highlight={current === id} />
-      ))}
+      {resources
+        .filter((r) => r.cost !== undefined)
+        .map(({ name, info, secondaryInfo }) => (
+          <Item
+            key={name}
+            infos={info}
+            name={name}
+            secondaryInfos={secondaryInfo}
+            onClick={() => onSelect(name)}
+            highlight={current === name}
+          />
+        ))}
     </div>
   );
 };

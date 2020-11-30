@@ -1,10 +1,9 @@
 import { useMemo } from "react";
-import images from "../../../../data/lootImage.json";
 import stages from "../../../../data/stages.json";
 import ChestContentType from "../../../../types/ChestContentType";
 
 interface IChest {
-  Content: ChestContentType;
+  item: ChestContentType;
   CD: number;
 }
 
@@ -20,14 +19,7 @@ export default function useChestLevel(level: string) {
   const chests = useMemo(() => {
     const stage = (stages as IStage[]).find((s) => s.stage === currentLevel);
     if (stage) {
-      return stage.chests
-        .sort((a, b) => b.CD - a.CD)
-        .map((chest) => {
-          return {
-            ...chest,
-            image: images[chest.Content],
-          };
-        });
+      return stage.chests.sort((a, b) => b.CD - a.CD);
     }
     return [];
   }, [currentLevel]);

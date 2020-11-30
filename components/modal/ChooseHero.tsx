@@ -20,9 +20,8 @@ const ChooseHero: React.FC<Props> = ({ current, onSelect }) => {
               {faction.characters.map(({ id, name }) => (
                 <Character
                   key={id}
-                  id={id}
                   name={name}
-                  onClick={onSelect}
+                  onClick={() => onSelect(id)}
                   highlight={current === id}
                 />
               ))}

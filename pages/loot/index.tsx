@@ -8,6 +8,7 @@ import Chest from "../../components/pages/Loot/ui/Chest";
 import PassNowLabel from "../../components/pages/Loot/ui/PassNowLabel";
 import HelpButton from "../../components/ui/button/HelpButton";
 import Card from "../../components/ui/card/Card";
+import CardHelp from "../../components/ui/card/CardHelp";
 import CardTitle from "../../components/ui/card/CardTitle";
 import InputField from "../../components/ui/InputField";
 import { useTranslation } from "../../i18n";
@@ -35,11 +36,6 @@ const Loot: React.FC<IProps> = () => {
 
   return (
     <div>
-      {showHelp ? (
-        <Card>
-          <div style={{ padding: "16px" }}>{t("help")}</div>
-        </Card>
-      ) : null}
       <Card>
         <Head>
           <title>{`${t("common:menu.loot")} - Afkalc`}</title>
@@ -47,8 +43,16 @@ const Loot: React.FC<IProps> = () => {
         </Head>
         <HelpButton onClick={() => setShowHelp(!showHelp)} />
         <CardTitle>{t("form-title")}</CardTitle>
-        <InputField value={level} label={t("label-campaign-level")} onChange={setLevel} />
-        <InputField value={pass} label={passLabel} onChange={setPass} />
+
+        {showHelp ? <CardHelp>{t("help")}</CardHelp> : null}
+
+        <InputField
+          name="level"
+          value={level}
+          label={t("label-campaign-level")}
+          onChange={setLevel}
+        />
+        <InputField name="pass" value={pass} label={passLabel} onChange={setPass} />
       </Card>
 
       <Card>
@@ -56,7 +60,7 @@ const Loot: React.FC<IProps> = () => {
 
         {isDateInvalid
           ? null
-          : chests.map((chest) => <Chest key={chest.Content} pass={pass} chest={chest} />)}
+          : chests.map((chest) => <Chest key={chest.item} pass={pass} chest={chest} />)}
       </Card>
     </div>
   );

@@ -10,7 +10,7 @@
   width: 40px;
 }
 .EnemiPosition--6 {
-  background-color: #ded6cf;
+  background-color: var(--card-color);
   right: 14.286%;
   top: 53.333%;
 }
@@ -18,8 +18,9 @@
 .Add {
   background: transparent;
   border: 0;
-  border: 1px solid #230f08;
+  border: 1px solid var(--card-border-color);
   border-radius: 6px 0 6px 0;
+  color: var(--text-color);
   cursor: pointer;
   font-size: 24px;
   height: 100%;

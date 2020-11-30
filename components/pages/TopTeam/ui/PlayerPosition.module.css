@@ -10,36 +10,32 @@
   width: 40px;
 }
 .PlayerPosition--1 {
-  background-color: #ded6cf;
   left: 28.571%;
   top: 45.714%;
 }
 .PlayerPosition--2 {
-  background-color: #ded6cf;
   left: 28.571%;
   top: 60.952%;
 }
 .PlayerPosition--3 {
-  background-color: #ded6cf;
   left: 14.286%;
   top: 38.095%;
 }
 .PlayerPosition--4 {
-  background-color: #ded6cf;
   left: 14.286%;
   top: 53.333%;
 }
 .PlayerPosition--5 {
-  background-color: #ded6cf;
   left: 14.286%;
   top: 68.571%;
 }
 
 .Add {
-  background: transparent;
+  background-color: var(--card-color);
   border: 0;
-  border: 1px solid #230f08;
+  border: 1px solid var(--card-border-color);
   border-radius: 6px 0 6px 0;
+  color: var(--text-color);
   cursor: pointer;
   font-size: 24px;
   height: 100%;

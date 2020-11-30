@@ -1,0 +1,13 @@
+.Burger {
+  border-radius: 20px;
+  color: var(--accent-color);
+  height: 24px;
+  left: 0;
+  padding: 8px;
+  position: absolute;
+  top: 0;
+  width: 24px;
+}
+.Burger:hover {
+  background-color: var(--hover-color);
+}

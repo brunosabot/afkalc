@@ -20,7 +20,7 @@ const PlayerPosition: React.FC<Props> = ({ hero, position, onSelect }) => {
     <>
       <div className={`${styles.PlayerPosition} ${styles[`PlayerPosition--${position}`]}`}>
         {hero ? (
-          <Character id={id} name={name} onClick={() => setShowModal(true)} />
+          <Character name={name} onClick={() => setShowModal(true)} />
         ) : (
           <button type="button" className={styles.Add} onClick={() => setShowModal(true)}>
             +

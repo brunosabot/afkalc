@@ -6,20 +6,25 @@ import useItem from "../hooks/useItem";
 import styles from "./ItemPicker.module.css";
 
 interface Props {
-  item?: number;
-  onSelect: (value: number) => void;
+  item?: string;
+  onSelect: (value: string) => void;
 }
 
 const ItemPicker: React.FC<Props> = ({ item, onSelect }) => {
   const [showModal, setShowModal] = useState<boolean>(false);
   const { getItem } = useItem();
-  const { id, image } = getItem(item) ?? { id: 0, image: "" };
+  const { name, info, secondaryInfo } = getItem(item);
 
   return (
     <>
       <div className={styles.ItemPicker}>
         {item ? (
-          <Item id={id} image={image} onClick={() => setShowModal(true)} />
+          <Item 
+            infos={info}
+            name={name}
+            secondaryInfos={secondaryInfo}
+            onClick={() => setShowModal(true)}
+          />
         ) : (
           <button type="button" className={styles.Add} onClick={() => setShowModal(true)}>
             +
@@ -28,7 +33,7 @@ const ItemPicker: React.FC<Props> = ({ item, onSelect }) => {
       </div>
       <Modal active={showModal} onClose={() => setShowModal(false)}>
         <ChooseItem
-          current={id}
+          current={name}
           onSelect={(itemId) => {
             onSelect(itemId);
             setShowModal(false);

@@ -1,0 +1,12 @@
+.HeroLine {
+  align-items: center;
+  display: flex;
+  gap: 2px;
+  justify-content: space-between;
+  padding: 2px 16px 2px 16px;
+}
+.Name {
+  flex-grow: 1;
+  font-size: 14px;
+  margin-left: 8px;
+}

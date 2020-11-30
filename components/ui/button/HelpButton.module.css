@@ -1,0 +1,15 @@
+.HelpButton {
+  border-radius: 20px;
+  cursor: pointer;
+  fill: var(--accent-color);
+  height: 24px;
+  padding: 8px;
+  position: absolute;
+  right: -8px;
+  top: -40px;
+  width: 24px;
+  z-index: 1;
+}
+.HelpButton:hover {
+  background-color: var(--hover-color);
+}

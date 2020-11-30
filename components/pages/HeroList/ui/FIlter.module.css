@@ -1,0 +1,21 @@
+.Wrapper {
+  padding: 0 16px;
+}
+.Filter {
+  background: transparent;
+  border: 0;
+  cursor: pointer;
+  height: 40px;
+  opacity: 0.4;
+  outline: 0;
+  padding: 0;
+  padding: 4px;
+  width: 40px;
+}
+.Active {
+  opacity: 1;
+}
+.Image {
+  height: 100%;
+  width: 100%;
+}

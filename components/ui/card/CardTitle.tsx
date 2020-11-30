@@ -1,11 +1,12 @@
 import React from "react";
+import styles from "./CardTitle.module.css";
 
 interface IProps {
   children: React.ReactNode;
 }
 
 const CardTitle: React.FC<IProps> = ({ children }) => {
-  return <div className="card__title">{children}</div>;
+  return <div className={styles.CardTitle}>{children}</div>;
 };
 
 export default CardTitle;

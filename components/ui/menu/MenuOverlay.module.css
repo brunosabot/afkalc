@@ -1,0 +1,18 @@
+.Overlay {
+  background: var(--overlay-color);
+  border: 0;
+  height: 100%;
+  left: 0;
+  opacity: 0;
+  padding: 0;
+  pointer-events: none;
+  position: fixed;
+  top: 0;
+  transition: 0.2s all cubic-bezier(0.4, 0, 0.6, 1);
+  width: 100%;
+  z-index: 10;
+}
+.Active {
+  opacity: 1;
+  pointer-events: initial;
+}

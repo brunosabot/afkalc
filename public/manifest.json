@@ -1,25 +1,78 @@
 {
-  "short_name": "React App",
-  "name": "Create React App Sample",
+  "short_name": "Afkalc",
+  "name": "Afkalc",
+  "lang": "en",
+  "background_color": "#1f1f1f",
+  "theme_color": "#94492e",
+  "dir": "ltr",
+  "display": "standalone",
+  "orientation": "portrait",
   "icons": [
     {
-      "src": "favicon.ico",
-      "sizes": "64x64 32x32 24x24 16x16",
-      "type": "image/x-icon"
-    },
-    {
-      "src": "logo192.jpg",
-      "type": "image/jpg",
+      "src": "/android-icon-192x192.jpg",
+      "type": "image/png",
       "sizes": "192x192"
     },
     {
-      "src": "logo512.jpg",
-      "type": "image/jpg",
-      "sizes": "512x512"
+      "src": "/apple-icon-180x180.jpg",
+      "type": "image/png",
+      "sizes": "180x180"
+    },
+    {
+      "src": "/apple-icon-152x152.jpg",
+      "type": "image/png",
+      "sizes": "152x152"
+    },
+    {
+      "src": "/apple-icon-144x144.jpg",
+      "type": "image/png",
+      "sizes": "144x144"
+    },
+    {
+      "src": "/apple-icon-120x120.jpg",
+      "type": "image/png",
+      "sizes": "120x120"
+    },
+    {
+      "src": "/apple-icon-114x114.jpg",
+      "type": "image/png",
+      "sizes": "114x114"
+    },
+    {
+      "src": "/favicon-96x96.jpg",
+      "type": "image/png",
+      "sizes": "96x96"
+    },
+    {
+      "src": "/apple-icon-76x76.jpg",
+      "type": "image/png",
+      "sizes": "76x76"
+    },
+    {
+      "src": "/apple-icon-72x72.jpg",
+      "type": "image/png",
+      "sizes": "72x72"
+    },
+    {
+      "src": "/apple-icon-60x60.jpg",
+      "type": "image/png",
+      "sizes": "60x60"
+    },
+    {
+      "src": "/apple-icon-57x57.jpg",
+      "type": "image/png",
+      "sizes": "57x57"
+    },
+    {
+      "src": "/favicon-32x32.jpg",
+      "type": "image/png",
+      "sizes": "32x32"
+    },
+    {
+      "src": "/favicon-16x16.jpg",
+      "type": "image/png",
+      "sizes": "16x16"
     }
   ],
-  "start_url": ".",
-  "display": "standalone",
-  "theme_color": "#000000",
-  "background_color": "#ffffff"
+  "prefer_related_applications": "false"
 }

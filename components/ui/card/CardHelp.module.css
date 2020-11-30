@@ -1,0 +1,8 @@
+.CardHelp {
+  background-color: var(--help-background-color);
+  border-radius: 8px;
+  font-size: 15px;
+  font-weight: 300;
+  margin: 0 16px 16px 16px;
+  padding: 8px;
+}

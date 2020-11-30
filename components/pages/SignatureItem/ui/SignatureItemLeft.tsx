@@ -1,7 +1,9 @@
 import React from "react";
 import { useTranslation } from "../../../../i18n";
+import Item from "../../../ui/afk/Item";
 import Card from "../../../ui/card/Card";
-import EmblemChip from "./EmblemChip";
+import CardTitle from "../../../ui/card/CardTitle";
+import FlexGap from "../../../ui/list/FlexGap";
 
 interface IProps {
   step: number;
@@ -20,25 +22,13 @@ const SignatureItemLeft: React.FC<IProps> = ({ step, primordial, amplifying, fac
 
   return (
     <Card>
-      <div className="emblem-count__block">
-        <div className="emblem-count__title">{t("label-si", { si: step })}</div>
-        <EmblemChip
-          count={primordial}
-          image="/emblem/PrimEmb.jpg"
-          name={t("item-primordial-emblem")}
-        />
-        <EmblemChip
-          count={amplifying}
-          image="/emblem/ApmEmblem.jpg"
-          name={t("item-amplifying-emblem")}
-        />
-        <EmblemChip count={faction} image="/emblem/GbEmblem.jpg" name={t("item-faction-emblem")} />
-        <EmblemChip
-          count={celest}
-          image="/emblem/CeleEmb.jpg"
-          name={t("item-celest-Hypogean-emblem")}
-        />
-      </div>
+      <CardTitle>{t("label-si", { si: step })}</CardTitle>
+      <FlexGap gap={16}>
+        {primordial > 0 ? <Item count={primordial} size="large" name="primordial-emblem" /> : null}
+        {amplifying > 0 ? <Item count={amplifying} size="large" name="amplifying-emblem" /> : null}
+        {faction > 0 ? <Item count={faction} size="large" name="faction-emblem" /> : null}
+        {celest > 0 ? <Item count={celest} size="large" name="celhypo-emblem" /> : null}
+      </FlexGap>
     </Card>
   );
 };

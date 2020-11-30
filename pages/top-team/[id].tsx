@@ -1,13 +1,13 @@
-import React, { useCallback, useState } from "react";
-import { useRouter } from "next/router";
 import Head from "next/head";
-import Card from "../../components/ui/card/Card";
+import { useRouter } from "next/router";
+import React, { useCallback, useState } from "react";
 import useDescription from "../../components/pages/TopTeam/hooks/useDescription";
 import useTitle from "../../components/pages/TopTeam/hooks/useTitle";
 import Board from "../../components/pages/TopTeam/ui/Board";
 import EnemiPosition from "../../components/pages/TopTeam/ui/EnemiPosition";
 import PlayerPosition from "../../components/pages/TopTeam/ui/PlayerPosition";
 import ShareBanner from "../../components/pages/TopTeam/ui/ShareBanner";
+import Card from "../../components/ui/card/Card";
 
 interface Props {
   [key: string]: never;
@@ -24,14 +24,10 @@ const TopTeam: React.FC<Props> = () => {
 
   const [team, setTeam] = useState({ 1: t1, 2: t2, 3: t3, 4: t4, 5: t5, 6: t6 });
   const onSelect = useCallback(
-    (position) => (heroId: number) => {
-      setTeam({
-        ...team,
-        [position]: heroId,
-      });
-    },
+    (position) => (heroId: number) => setTeam({ ...team, [position]: heroId }),
     [team]
   );
+
   const title = useTitle(team[6]);
   const description = useDescription(team[1], team[2], team[3], team[4], team[5]);
 

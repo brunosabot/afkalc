@@ -1,6 +1,6 @@
 import React from "react";
-import { useTranslation } from "../../../../i18n";
 import { compareChapter } from "../../../../lib/chapter";
+import Item from "../../../ui/afk/Item";
 import CardValue from "../../../ui/card/CardValue";
 
 interface IProps {
@@ -10,8 +10,6 @@ interface IProps {
 }
 
 const DiamondLine: React.FC<IProps> = ({ count, campaignLevel, diamsLevel }) => {
-  const { t } = useTranslation("fast-reward");
-
   if (compareChapter(campaignLevel, diamsLevel) < 0) {
     return null;
   }
@@ -19,7 +17,8 @@ const DiamondLine: React.FC<IProps> = ({ count, campaignLevel, diamsLevel }) => 
   return (
     <CardValue>
       {count}
-      <img className="diamond-line__image" src="/loot/diamond.jpg" alt={t("diamonds")} />
+      &nbsp;
+      <Item name="diamond" size="small" />
     </CardValue>
   );
 };
