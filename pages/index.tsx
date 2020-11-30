@@ -1,5 +1,4 @@
 import Head from "next/head";
-import Link from "next/link";
 import React, { useContext } from "react";
 import { FirebaseContext } from "../components/providers/FirebaseProvider";
 import LangButton from "../components/ui/button/LangButton";
@@ -7,6 +6,7 @@ import LoginButton from "../components/ui/button/LoginButton";
 import LogoutButton from "../components/ui/button/LogoutButton";
 import Card from "../components/ui/card/Card";
 import CardTitle from "../components/ui/card/CardTitle";
+import MenuItem from "../components/ui/menu/MenuItem";
 import { useTranslation } from "../i18n";
 
 interface IProps {
@@ -32,28 +32,14 @@ const Home: React.FC<IProps> = () => {
 
       {values.isAuth ? <LogoutButton /> : <LoginButton />}
 
-      <div className="home-link__wrapper">
-        <Link href="/signature-item">
-          <a className="home-link">{t("menu.signature-item")}</a>
-        </Link>
-        <Link href="/elite-summon">
-          <a className="home-link">{t("menu.elite-summon")}</a>
-        </Link>
-        <Link href="/loot">
-          <a className="home-link">{t("menu.loot")}</a>
-        </Link>
-        <Link href="/fast-reward">
-          <a className="home-link">{t("menu.fast-reward")}</a>
-        </Link>
-        <Link href="/hero-list">
-          <a className="home-link">{t("menu.hero-list")}</a>
-        </Link>
-        <Link href="/top-team">
-          <a className="home-link">{t("menu.top-team")}</a>
-        </Link>
-        <Link href="/item-cost">
-          <a className="home-link">{t("menu.item-cost")}</a>
-        </Link>
+      <div style={{ padding: "0 16px 16px 16px" }}>
+        <MenuItem to="/signature-item">{t("menu.signature-item")}</MenuItem>
+        <MenuItem to="/elite-summon">{t("menu.elite-summon")}</MenuItem>
+        <MenuItem to="/loot">{t("menu.loot")}</MenuItem>
+        <MenuItem to="/fast-reward">{t("menu.fast-reward")}</MenuItem>
+        <MenuItem to="/hero-list">{t("menu.hero-list")}</MenuItem>
+        <MenuItem to="/top-team">{t("menu.top-team")}</MenuItem>
+        <MenuItem to="/item-cost">{t("menu.item-cost")}</MenuItem>
       </div>
     </Card>
   );

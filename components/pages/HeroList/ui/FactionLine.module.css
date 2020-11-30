@@ -1,0 +1,22 @@
+.FactionLine {
+  align-items: center;
+  display: flex;
+  font-weight: 500;
+  padding: 16px 16px 8px 16px;
+}
+.Image {
+  height: 16px;
+  margin-right: 8px;
+}
+.Name {
+  flex-grow: 1;
+}
+.Label {
+  margin: 0 2px 0 0;
+  text-align: center;
+  width: 32px;
+}
+.Placeholder {
+  margin: 0;
+  width: 105px;
+}

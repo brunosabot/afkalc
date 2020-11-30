@@ -1,13 +1,14 @@
 import i18n from "i18next";
-import React, { useCallback, useState } from "react";
 import Head from "next/head";
-import { useTranslation } from "../../i18n";
-import HelpButton from "../../components/ui/button/HelpButton";
-import Card from "../../components/ui/card/Card";
-import CardTitle from "../../components/ui/card/CardTitle";
-import InputField from "../../components/ui/InputField";
+import React, { useCallback, useState } from "react";
 import useCountEmblem from "../../components/pages/SignatureItem/hooks/useCountEmblem";
 import SignatureItemLeft from "../../components/pages/SignatureItem/ui/SignatureItemLeft";
+import HelpButton from "../../components/ui/button/HelpButton";
+import Card from "../../components/ui/card/Card";
+import CardHelp from "../../components/ui/card/CardHelp";
+import CardTitle from "../../components/ui/card/CardTitle";
+import InputField from "../../components/ui/InputField";
+import { useTranslation } from "../../i18n";
 
 i18n.loadNamespaces("signature-item");
 
@@ -34,11 +35,6 @@ const SignatureItem: React.FC<IProps> = () => {
 
   return (
     <div>
-      {showHelp ? (
-        <Card>
-          <div style={{ padding: "16px" }}>{t("help")}</div>
-        </Card>
-      ) : null}
       <Card>
         <Head>
           <title>{`${t("common:menu.signature-item")} - Afkalc`}</title>
@@ -46,7 +42,15 @@ const SignatureItem: React.FC<IProps> = () => {
         </Head>
         <HelpButton onClick={() => setShowHelp(!showHelp)} />
         <CardTitle>{t("form-title")}</CardTitle>
-        <InputField value={currentLevel} label={t("label-current-si")} onChange={onChange} />
+
+        {showHelp ? <CardHelp>{t("help")}</CardHelp> : null}
+
+        <InputField
+          name="current-si"
+          value={currentLevel}
+          label={t("label-current-si")}
+          onChange={onChange}
+        />
       </Card>
 
       <SignatureItemLeft

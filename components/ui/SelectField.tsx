@@ -1,4 +1,5 @@
 import React, { useMemo, useRef } from "react";
+import styles from "./SelectField.module.css";
 
 interface IValue {
   key: string;
@@ -10,10 +11,21 @@ interface IProps {
   value: string | number;
   onChange: (value: string) => void;
   values: IValue[];
+  small?: boolean;
+  style?: React.CSSProperties;
+  name: string;
 }
 
-const SelectField: React.FC<IProps> = ({ label, value, values, onChange }) => {
-  const refId = useRef(`input-field_${Math.random()}`);
+const SelectField: React.FC<IProps> = ({
+  name,
+  label,
+  value,
+  values,
+  onChange,
+  small = false,
+  style = {},
+}) => {
+  const refId = useRef(`input-field_${name}`);
 
   const localValue = useMemo(() => {
     if (value === 0) {
@@ -23,15 +35,18 @@ const SelectField: React.FC<IProps> = ({ label, value, values, onChange }) => {
   }, [value]);
 
   return (
-    <div className="select-field__wrapper">
-      <label className="select-field__label" htmlFor={refId.current}>
-        {label}
-      </label>
+    <div className={`${styles.Wrapper} ${small ? styles.Small : ""}`}>
+      {label === "" ? null : (
+        <label className={styles.Label} htmlFor={refId.current}>
+          {label}
+        </label>
+      )}
       <select
-        className="select-field"
+        className={styles.SelectField}
         id={refId.current}
         value={localValue}
         onChange={(e) => onChange(e.target.value)}
+        style={style}
       >
         {values.map((v) => (
           <option key={v.key} value={v.key}>

@@ -1,0 +1,30 @@
+.Link {
+  align-items: center;
+  color: inherit;
+  display: flex;
+  font-size: 16px;
+  font-weight: 400;
+  padding: 8px 0;
+  position: relative;
+  text-decoration: none;
+  z-index: 1;
+}
+.Link::before {
+  bottom: 0;
+  content: "";
+  left: -16px;
+  position: absolute;
+  right: -16px;
+  top: 0;
+  transition: 0.2s all cubic-bezier(0.4, 0, 0.6, 1);
+  z-index: -1;
+}
+.Link:hover::before {
+  background-color: var(--hover-color);
+}
+.Icon {
+  height: 24px;
+  margin-right: 8px;
+  transition: all 0.1s linear;
+  width: 24px;
+}

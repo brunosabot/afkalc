@@ -1,0 +1,83 @@
+{
+  "welcome": "Bienvenue sur Afkalc, l'outil de calcul pour AFK Arena",
+  "menu": {
+    "home": "Accueil",
+    "signature-item": "Emblèmes",
+    "elite-summon": "Invocation de héros souhaité",
+    "loot": "Récompenses AFK",
+    "hero-list": "Liste héros (Bêta)",
+    "fast-reward": "Récompenses rapides",
+    "top-team": "Top compo (Bêta)",
+    "item-cost": "Coût des objets (Bêta)",
+    "logout": "Se déconnecter"
+  },
+  "contribution": {
+    "edit-on-github": "GitHub"
+  },
+  "external": {
+    "reddit": "Reddit"
+  },
+  "improvment": {
+    "t1": "T1",
+    "t2": "T2"
+  },
+  "duration": {
+    "2-hours": "2 Heures",
+    "6-hours": "6 Heures",
+    "8-hours": "8 Heures",
+    "24-hours": "24 Heures"
+  },
+  "item": {
+    "24h-gold": "24h or",
+    "24h-xp": "24h expérience",
+    "2h-dust": "24h essence de héros",
+    "2h-gold": "2h or",
+    "6h-dust": "6h essence de héros",
+    "6h-gold": "6h or",
+    "6h-xp": "6h expérience",
+    "8h-dust": "8h essence de héros",
+    "8h-gold": "8h or",
+    "amplifying-emblem": "Emblème amplificateur",
+    "celestial-emblem": "Emblème de divinité",
+    "challenger-token": "Pièce de challenger",
+    "common-gear": "Équipement commun",
+    "crude": "Équipement rudimentaire",
+    "diamond": "Diamant",
+    "dimensional-emblem": "Emblème cosmique",
+    "dura-shard": "Fragment de Dura",
+    "dust": "Essence de héros",
+    "elite-enhancement-token": "Jeton d'amélioration élite",
+    "elite-gear": "Équipement élite",
+    "elite-p-gear": "Équipement élite+",
+    "elite-soulstone": "Pierre d'âme élite",
+    "emblem-choice-chest": "Coffre de choix d'emblème",
+    "faction-emblem": "Emblème de faction",
+    "fortuitous-emblem-chest": "Coffre d'emblème fortuit",
+    "graveborn-emblem": "Emblème de mort",
+    "guild-token": "Pièce de guilde",
+    "hero-coin": "Pièce de héros",
+    "hypogean-emblem": "Emblème de destruction",
+    "invigorating-essence": "Essence revigorante",
+    "labyrinth-token": "Pièce de labyrinthe",
+    "legendary-gear": "Équipement légendaire",
+    "legendary-p-gear": "Équipement légendaire+",
+    "lightbearer-emblem": "Emblème de lumière",
+    "mauler-emblem": "Emblème de puissance",
+    "mythic-gear-dimensional": "Équipement mythique - cosmique",
+    "mythic-gear": "Équipement mythique",
+    "mythic-stone": "Pierre mythique",
+    "poe-coin": "Piécette",
+    "primordial-emblem": "Emblème primordial",
+    "rare-enhancement-token": "Jeton d'amélioration commun",
+    "rare-faction-card": "Carte de faction rare",
+    "rare-gear": "Équipement rare",
+    "rare-p-gear": "Équipement rare+",
+    "rare-soulstone": "Pierre d'âme rare",
+    "scroll": "Parchemin",
+    "stargazer": "Observation des étoiles",
+    "t1-stone": "Pierre T1",
+    "t2-stone": "Pierre T2",
+    "twisted-essence": "Essence distordue",
+    "wilder-emblem": "Emblème de nature"
+  }
+}

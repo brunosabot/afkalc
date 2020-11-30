@@ -1,7 +1,9 @@
 import React from "react";
-import { useTranslation } from "../../../../i18n";
 import ascendLevels from "../../../../data/heroAscensionLevel.json";
+import { useTranslation } from "../../../../i18n";
 import HeroLevel from "../../../../types/HeroLevel";
+import InputField from "../../../ui/InputField";
+import SelectField from "../../../ui/SelectField";
 
 interface IProps {
   id: number;
@@ -16,21 +18,32 @@ const AscendField: React.FC<IProps> = ({ id, setLevel, getValue, isView }) => {
   if (isView) {
     const level = ascendLevels.find((e) => e.key === getValue(id, "ascend")) || ascendLevels[0];
 
-    return <div className="hero-list__select">{level.name}</div>;
+    return (
+      <InputField
+        style={{ width: "105px", padding: "0 8px" }}
+        label=""
+        small
+        readOnly
+        value={t(`ascension-${level.name}`) as string}
+        onChange={() => {}}
+        name={`ascension-${id}`}
+      />
+    );
   }
 
   return (
-    <select
-      onChange={(e) => setLevel(id, "ascend")(parseInt(e.target.value || "0", 10))}
-      className="hero-list__select"
+    <SelectField
+      name={`ascension-${id}`}
+      onChange={(value) => setLevel(id, "ascend")(parseInt(value || "0", 10))}
       value={getValue(id, "ascend")}
-    >
-      {ascendLevels.map((level) => (
-        <option key={level.key} value={level.key}>
-          {t(`ascension-${level.name}`)}
-        </option>
-      ))}
-    </select>
+      label=""
+      small
+      values={ascendLevels.map((level) => ({
+        key: `${level.key}`,
+        label: t(`ascension-${level.name}`),
+      }))}
+      style={{ width: "105px" }}
+    />
   );
 };
 

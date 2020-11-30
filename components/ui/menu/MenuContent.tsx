@@ -1,4 +1,5 @@
 import React from "react";
+import styles from "./MenuContent.module.css";
 
 interface IProps {
   isActive: boolean;
@@ -9,7 +10,7 @@ interface IProps {
 const MenuContent: React.FC<IProps> = ({ isActive, setIsActive, children }) => {
   return (
     <div
-      className={`menu__content${isActive ? " menu__content--active" : ""}`}
+      className={`${styles.Content} ${isActive ? styles.Active : ""}`}
       onClick={() => setIsActive(false)}
       role="button"
       tabIndex={-1}

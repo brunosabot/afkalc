@@ -1,6 +1,6 @@
 .ModalWrapper {
   align-items: center;
-  background-color: rgba(0, 0, 0, 0.3);
+  background-color: var(--overlay-color);
   box-sizing: border-box;
   display: flex;
   height: 100%;
@@ -13,10 +13,9 @@
   z-index: 10;
 }
 .Modal {
-  background: #c59d65;
+  background: var(--card-color);
   border-radius: 14px;
-  box-shadow: 0 10px 13px -6px rgba(0, 0, 0, 0.2), 0 20px 31px 3px rgba(0, 0, 0, 0.14),
-    0 8px 38px 7px rgba(0, 0, 0, 0.12);
+  box-shadow: var(--card-shadow);
   box-sizing: border-box;
   max-height: 100%;
   max-width: 100%;
@@ -27,7 +26,7 @@
 .Close {
   border-radius: 50%;
   cursor: pointer;
-  fill: #fff;
+  fill: var(--accent-color);
   height: 20px;
   padding: 8px;
   position: absolute;
@@ -37,5 +36,5 @@
   width: 20px;
 }
 .Close:hover {
-  background: rgba(255, 255, 255, 0.15);
+  background: var(--hover-color);
 }

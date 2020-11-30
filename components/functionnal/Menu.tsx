@@ -22,7 +22,7 @@ const Menu: React.FC<IProps> = () => {
       <MenuBurger setIsActive={setIsActive} />
 
       <MenuContent isActive={isActive} setIsActive={setIsActive}>
-        <div style={{ display: "flex", justifyContent: "center" }}>
+        <div style={{ display: "flex", justifyContent: "center", marginBottom: "16px" }}>
           {process.env.NODE_ENV === "development" ? <LangButton lang="dev" emoji="👨‍💻" /> : null}
           <LangButton lang="fr" emoji="🇫🇷" />
           <LangButton lang="en" emoji="🇺🇸‍" />

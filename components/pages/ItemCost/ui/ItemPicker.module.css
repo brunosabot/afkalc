@@ -6,15 +6,16 @@
   display: flex;
   height: 40px;
   justify-content: center;
+  margin: 0 0 0 16px;
   width: 40px;
-  margin: 0 16px;
 }
 
 .Add {
   background: transparent;
   border: 0;
-  border: 1px solid #230f08;
+  border: 1px solid var(--card-border-color);
   border-radius: 6px 0 6px 0;
+  color: var(--text-color);
   cursor: pointer;
   font-size: 24px;
   height: 100%;

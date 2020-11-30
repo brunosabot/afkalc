@@ -1,36 +1,24 @@
-import React, { useCallback, useState } from "react";
 import Head from "next/head";
-import { useRouter } from "next/router";
-import Card from "../../components/ui/card/Card";
+import React, { useCallback, useState } from "react";
 import useDescription from "../../components/pages/TopTeam/hooks/useDescription";
 import useTitle from "../../components/pages/TopTeam/hooks/useTitle";
 import Board from "../../components/pages/TopTeam/ui/Board";
 import EnemiPosition from "../../components/pages/TopTeam/ui/EnemiPosition";
 import PlayerPosition from "../../components/pages/TopTeam/ui/PlayerPosition";
 import ShareBanner from "../../components/pages/TopTeam/ui/ShareBanner";
+import Card from "../../components/ui/card/Card";
 
 interface Props {
   [key: string]: never;
 }
 
 const TopTeam: React.FC<Props> = () => {
-  const router = useRouter();
-  const [t1, t2, t3, t4, t5, t6] = ""
-    .split("")
-    .map((e) => decodeURIComponent(e))
-    .map((e) => e.charCodeAt(0))
-    .map((e) => +e - 48);
-
-  const [team, setTeam] = useState({ 1: t1, 2: t2, 3: t3, 4: t4, 5: t5, 6: t6 });
+  const [team, setTeam] = useState({ 1: 0, 2: 0, 3: 0, 4: 0, 5: 0, 6: 0 });
   const onSelect = useCallback(
-    (position) => (heroId: number) => {
-      setTeam({
-        ...team,
-        [position]: heroId,
-      });
-    },
+    (position) => (heroId: number) => setTeam({ ...team, [position]: heroId }),
     [team]
   );
+
   const title = useTitle(team[6]);
   const description = useDescription(team[1], team[2], team[3], team[4], team[5]);
 

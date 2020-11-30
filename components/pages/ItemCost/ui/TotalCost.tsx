@@ -1,4 +1,5 @@
 import React from "react";
+import Item from "../../../ui/afk/Item";
 import styles from "./TotalCost.module.css";
 
 interface Props {
@@ -9,7 +10,8 @@ interface Props {
 const TotalCost: React.FC<Props> = ({ isBest, children }) => {
   return (
     <div className={`${styles.TotalCost} ${isBest ? styles.Best : ""}`}>
-      <img className={styles.Diamond} src="/loot/diamond.jpg" />
+      <Item name="diamond" size="small" />
+      &nbsp;
       {children}
     </div>
   );

@@ -1,0 +1,14 @@
+.PassNowLabel {
+  display: flex;
+  justify-content: space-between;
+}
+.Now {
+  background: none;
+  border: 0;
+  color: var(--text-color);
+  cursor: pointer;
+  text-decoration: underline;
+}
+.Now:hover {
+  text-decoration: none;
+}

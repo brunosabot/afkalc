@@ -1,19 +1,67 @@
 .Item {
-  background: transparent;
-  border: 0;
-  cursor: pointer;
-  height: 40px;
-  outline: 0;
-  padding: 0;
+  border-radius: 4px;
   width: 40px;
 }
-.Image {
+.Wrapper {
+  align-items: center;
   border-radius: 4px;
   box-sizing: border-box;
-  height: 100%;
-  width: 100%;
+  display: flex;
+  font-weight: 500;
+  justify-content: space-between;
+  position: relative;
 }
-.Highlight .Image {
-  border: 2px solid #fff;
-  box-shadow: 0 0 3px rgba(255, 255, 255, 1);
+.Count {
+  bottom: 0;
+  color: var(--reverse-text-color);
+  font-size: 11px;
+  font-weight: 500;
+  padding: 2px 4px;
+  position: absolute;
+  right: 0;
+  text-shadow: var(--reverse-text-shadow);
+}
+.Infos {
+  color: var(--reverse-text-color);
+  font-size: 7.5px;
+  font-weight: 900;
+  left: 0;
+  position: absolute;
+  right: 0;
+  text-align: center;
+  text-shadow: var(--reverse-text-shadow);
+  top: 2px;
+}
+
+.SecondaryInfos {
+  background: var(--reverse-background);
+  border-radius: 0 6px 0 0;
+  bottom: 0;
+  color: var(--reverse-accent-text-color);
+  font-size: 9px;
+  font-weight: 900;
+  left: 0;
+  line-height: 1em;
+  padding: 2px 3px 2px 5px;
+  position: absolute;
+}
+
+.Large .Item {
+  border-radius: 8px;
+  width: 56px;
+}
+.Large .Count {
+  font-size: 14px;
+}
+
+.Small .Item {
+  border-radius: 3px;
+  width: 24px;
+}
+.Small .Count {
+  display: none;
+}
+
+.Highlight .Item {
+  border: 2px solid var(--accent-color);
 }

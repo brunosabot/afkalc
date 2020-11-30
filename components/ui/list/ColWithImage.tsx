@@ -1,17 +1,18 @@
 import React from "react";
+import styles from "./ColWithImage.module.css";
 
 interface IProps {
   actions: React.ReactNode;
-  image: string;
+  image: React.ReactNode;
   title: string;
 }
 
 const ColWithImage: React.FC<IProps> = ({ actions, image, title }) => {
   return (
-    <div className="col-with-image">
-      <img className="col-with-image__image" src={image} alt={title} />
+    <div className={styles.ColWithImage}>
+      <div className={styles.Image}>{image}</div>
       {title}
-      <div className="col-with-image__actions">{actions}</div>
+      <div className={styles.Actions}>{actions}</div>
     </div>
   );
 };

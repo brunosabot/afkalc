@@ -19,11 +19,9 @@ const ChooseEnemi: React.FC<Props> = ({ current, onSelect }) => {
             <div className={styles.Enemies}>
               {faction.characters.map(({ id, name, image }) => (
                 <Enemi
-                  key={id}
-                  id={id}
+                  key={name}
                   name={name}
-                  image={image}
-                  onClick={onSelect}
+                  onClick={() => onSelect(id)}
                   highlight={current === id}
                 />
               ))}

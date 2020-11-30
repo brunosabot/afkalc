@@ -1,8 +1,8 @@
 .ChooseItem {
-  max-width: 348px;
-  gap: 8px;
   display: flex;
   flex-wrap: wrap;
+  gap: 8px;
+  max-width: 348px;
 }
 .Items {
   display: flex;

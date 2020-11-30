@@ -1,29 +1,15 @@
 .ResourceDetail {
+  align-items: flex-start;
   display: flex;
-  align-items: center;
-  padding: 8px 0;
+  padding: 8px 0 0 0;
 }
 .Cost {
-  display: flex;
   align-items: center;
-  margin: 0 16px;
+  display: flex;
   line-height: 40px;
+  margin: 0 16px 0 0;
 }
 .Diamond {
   height: 20px;
   margin-right: 8px;
-}
-.Input {
-  background: rgba(35, 15, 8, 0.2);
-  border: 2px solid #230f08;
-  border-radius: 4px;
-  color: #230f08;
-  font-family: inherit;
-  font-size: 16px;
-  height: 28px;
-  padding: 4px 8px;
-}
-.Input:focus {
-  box-shadow: 0 0 5px #230f08;
-  outline: 0;
 }

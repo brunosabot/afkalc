@@ -1,21 +1,33 @@
 .Enemi {
-  background: transparent;
-  border: 0;
-  cursor: pointer;
-  height: 40px;
-  outline: 0;
-  padding: 0;
+  border-radius: 4px;
   width: 40px;
 }
-.Image {
-  border-radius: 5px 0 5px 0;
-  box-shadow: 0 0 1px rgba(0, 0, 0, 1);
+.Wrapper {
+  align-items: center;
+  border-radius: 4px;
   box-sizing: border-box;
-  height: 100%;
-  transform: scaleX(-1);
-  width: 100%;
+  display: flex;
+  font-weight: 500;
+  justify-content: space-between;
+  position: relative;
 }
-.Highlight .Image {
-  border: 2px solid #fff;
-  box-shadow: 0 0 3px rgba(255, 255, 255, 1);
+
+.Large .Enemi {
+  border-radius: 8px;
+  width: 56px;
+}
+.Large .Count {
+  font-size: 14px;
+}
+
+.Small .Enemi {
+  border-radius: 3px;
+  width: 24px;
+}
+.Small .Count {
+  display: none;
+}
+
+.Highlight .Enemi {
+  border: 2px solid var(--accent-color);
 }

@@ -1,20 +1,81 @@
 .Character {
-  background: transparent;
-  border: 0;
-  cursor: pointer;
+  border-radius: 6px 0 6px 0;
+  box-shadow: var(--afk-hero-shadow);
+  display: block;
+  width: 100%;
+  z-index: 1;
+}
+.Wrapper {
+  align-items: center;
+  border-radius: 7px 0 7px 0;
+  box-shadow: var(--afk-hero-shadow);
+  box-sizing: border-box;
+  display: flex;
+  flex-shrink: 0;
+  font-weight: 500;
   height: 40px;
-  outline: 0;
-  padding: 0;
+  justify-content: center;
+  position: relative;
   width: 40px;
 }
-.Image {
-  border-radius: 5px 0 5px 0;
-  box-shadow: 0 0 1px rgba(0, 0, 0, 1);
-  box-sizing: border-box;
-  height: 100%;
-  width: 100%;
+
+.Large .Character {
+  border-radius: 8px;
+  width: 56px;
 }
-.Highlight .Image {
-  border: 2px solid #fff;
-  box-shadow: 0 0 3px rgba(255, 255, 255, 1);
+.Large .Count {
+  font-size: 14px;
+}
+
+.Small .Character {
+  border-radius: 3px;
+  width: 24px;
+}
+.Small .Count {
+  display: none;
+}
+
+.Highlight .Character {
+  border: 2px solid var(--accent-color);
+}
+
+.Disabled {
+  filter: grayscale(0.8);
+  opacity: 0.6;
+}
+
+.Elite.Wrapper {
+  background: var(--afk-elite-color);
+  padding: 3px;
+}
+.Legendary.Wrapper {
+  background: var(--afk-legendary-color);
+  padding: 3px;
+}
+.Mythic.Wrapper {
+  background: var(--afk-mythic-color);
+  padding: 3px;
+}
+.Ascend.Wrapper {
+  background: var(--afk-ascend-color);
+  padding: 3px;
+}
+
+.Plus::after,
+.Plus::before {
+  border: 5px solid;
+  border-color: var(--afk-plus-color) var(--afk-plus-color) transparent transparent;
+  content: "";
+  display: block;
+  position: absolute;
+}
+.Plus::before {
+  border-color: var(--afk-plus-color) var(--afk-plus-color) transparent transparent;
+  right: 0;
+  top: 0;
+}
+.Plus::after {
+  border-color: transparent transparent var(--afk-plus-color) var(--afk-plus-color);
+  bottom: 0;
+  left: 0;
 }

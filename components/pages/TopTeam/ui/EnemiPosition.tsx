@@ -14,13 +14,13 @@ interface Props {
 const EnemiPosition: React.FC<Props> = ({ enemi, position, onSelect }) => {
   const [showModal, setShowModal] = useState<boolean>(false);
   const { getEnemi } = useEnemi();
-  const { id, image, name } = getEnemi(enemi) ?? { id: 0, name: "" };
+  const { id, name } = getEnemi(enemi) ?? { id: 0, name: "" };
 
   return (
     <>
       <div className={`${styles.EnemiPosition} ${styles[`EnemiPosition--${position}`]}`}>
         {enemi ? (
-          <Enemi id={id} name={name} image={image} onClick={() => setShowModal(true)} />
+          <Enemi name={name} size="large" onClick={() => setShowModal(true)} />
         ) : (
           <button type="button" className={styles.Add} onClick={() => setShowModal(true)}>
             +

@@ -1,16 +1,16 @@
 .TotalCost {
-  display: flex;
-  justify-content: center;
   align-items: center;
-  padding: 16px 0;
+  color: var(--error-text-color);
+  display: flex;
   font-size: 20px;
-  font-weight: 900;
-  color: #700;
+  font-weight: 500;
+  justify-content: center;
+  padding: 16px 0;
 }
 .Diamond {
   height: 30px;
   margin-right: 8px;
 }
 .Best {
-  color: #070;
+  color: var(--success-text-color);
 }

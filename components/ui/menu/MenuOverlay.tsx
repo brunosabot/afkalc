@@ -1,4 +1,5 @@
 import React from "react";
+import styles from "./MenuOverlay.module.css";
 
 interface IProps {
   isActive: boolean;
@@ -8,7 +9,7 @@ interface IProps {
 const MenuOverlay: React.FC<IProps> = ({ isActive, setIsActive }) => {
   return (
     <button
-      className={`menu__overlay${isActive ? " menu__overlay--active" : ""}`}
+      className={`${styles.Overlay} ${isActive ? styles.Active : ""}`}
       onClick={() => setIsActive(false)}
       type="button"
       aria-label="Menu close overlay"

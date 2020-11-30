@@ -1,30 +1,61 @@
-import React, { useCallback } from "react";
+import React from "react";
+import enemiesFactions from "../../../data/enemies.json";
 import styles from "./Enemi.module.css";
 
 interface IProps {
-  id: number;
+  size?: "large" | "small" | "default";
   name: string;
-  onClick?: (value: number) => void;
   highlight?: boolean;
-  image?: string;
+  onClick?: () => void;
 }
 
-const Enemi: React.FC<IProps> = ({ image, id, name, onClick, highlight = false }) => {
-  const enemiFileName = image || `${name.toLowerCase().replace(/[^a-z]/g, "")}.jpg`;
-  const clickWithId = useCallback(() => {
-    if (onClick) {
-      onClick(id);
-    }
-  }, [id, onClick]);
+interface IEnemi {
+  name: string;
+  id: number;
+  image: string;
+}
+
+interface IEnemiFaction {
+  faction: string;
+  characters: IEnemi[];
+}
+
+const enemiJson = enemiesFactions as IEnemiFaction[];
+const defaultEnemies: IEnemi[] = [];
+const enemies = enemiJson.reduce(
+  (acc, v: IEnemiFaction) => [...acc, ...v.characters],
+  defaultEnemies
+);
+
+/**
+ * TODO: Use i18n for name
+ */
+const Enemi: React.FC<IProps> = ({
+  name,
+  size = "default",
+  highlight = false,
+  onClick = () => {},
+}) => {
+  const resource = enemies.find((r) => r.name === name);
+
+  if (resource === undefined) return null;
+
+  const largeClassName = size === "large" ? styles.Large : "";
+  const smallClassName = size === "small" ? styles.Small : "";
+  const highlightClassName = highlight ? styles.Highlight : "";
 
   return (
-    <button
-      type="button"
-      className={`${styles.Enemi} ${highlight ? styles.Highlight : ""}`}
-      onClick={clickWithId}
+    <div
+      className={`${styles.Wrapper} ${largeClassName} ${smallClassName} ${highlightClassName}`}
+      onClick={onClick}
+      role="button"
+      tabIndex={-1}
+      onKeyPress={(event) => {
+        if (event.key === "Enter") onClick();
+      }}
     >
-      <img src={`/enemies/${enemiFileName}`} className={styles.Image} alt={name} />
-    </button>
+      <img src={resource.image} className={styles.Enemi} alt={resource?.name} />
+    </div>
   );
 };
 

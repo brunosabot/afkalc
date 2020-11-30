@@ -1,0 +1,83 @@
+{
+  "welcome": "Welcome on Afkalc, the calculation tool for AFK Arena",
+  "menu": {
+    "home": "Home",
+    "signature-item": "SI Emblem",
+    "elite-summon": "Elite summon",
+    "loot": "Loot",
+    "hero-list": "Hero List (Beta)",
+    "fast-reward": "Fast Reward",
+    "top-team": "Top Team (Beta)",
+    "item-cost": "Item cost (Beta)",
+    "logout": "Logout"
+  },
+  "contribution": {
+    "edit-on-github": "Edit on GitHub"
+  },
+  "external": {
+    "reddit": "Reddit"
+  },
+  "improvment": {
+    "t1": "T1",
+    "t2": "T2"
+  },
+  "duration": {
+    "2-hours": "2 Hours",
+    "6-hours": "6 Hours",
+    "8-hours": "8 Hours",
+    "24-hours": "24 Hours"
+  },
+  "item": {
+    "24h-gold": "24h gold",
+    "24h-xp": "24h experience",
+    "2h-dust": "24h hero's essence",
+    "2h-gold": "2h gold",
+    "6h-dust": "6h hero's essence",
+    "6h-gold": "6h gold",
+    "6h-xp": "6h experience",
+    "8h-dust": "8h hero's essence",
+    "8h-gold": "8h gold",
+    "amplifying-emblem": "Amplifying emblem",
+    "celestial-emblem": "Celestial Emblem",
+    "challenger-token": "Challenger Token",
+    "common-gear": "Common Gear",
+    "crude": "Crude",
+    "diamond": "Diamond",
+    "dimensional-emblem": "Dimensional Emblem",
+    "dura-shard": "Dura shard",
+    "dust": "Hero's essence",
+    "elite-enhancement-token": "Elite enhancement token",
+    "elite-gear": "Elite gear",
+    "elite-p-gear": "Elite+ gear",
+    "elite-soulstone": "Elite soulstone",
+    "emblem-choice-chest": "Emblem choice chest",
+    "faction-emblem": "Faction emblem",
+    "fortuitous-emblem-chest": "Fortuitous emblem chest",
+    "graveborn-emblem": "Graveborn emblem",
+    "guild-token": "Guild Token",
+    "hero-coin": "Hero Coin",
+    "hypogean-emblem": "Hypogean emblem",
+    "invigorating-essence": "Invigorating essence",
+    "labyrinth-token": "Labyrinth token",
+    "legendary-gear": "Legendary gear",
+    "legendary-p-gear": "Legendary+ gear",
+    "lightbearer-emblem": "Lightbearer emblem",
+    "mauler-emblem": "Mauler emblem",
+    "mythic-gear-dimensional": "Mythic gear - dimensional",
+    "mythic-gear": "Mythic gear",
+    "mythic-stone": "Mythic stone",
+    "poe-coin": "PoE coin",
+    "primordial-emblem": "Primordial emblem",
+    "rare-enhancement-token": "Rare enhancement token",
+    "rare-faction-card": "Rare faction card",
+    "rare-gear": "Rare gear",
+    "rare-p-gear": "Rare+ gear",
+    "rare-soulstone": "Rare soulstone",
+    "scroll": "Scroll",
+    "stargazer": "Stargazer",
+    "t1-stone": "T1 stone",
+    "t2-stone": "T2 stone",
+    "twisted-essence": "Twisted essence",
+    "wilder-emblem": "Wilder emblem"
+  }
+}

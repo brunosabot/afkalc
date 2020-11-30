@@ -1,23 +1,15 @@
 import React from "react";
 import { useTranslation } from "react-i18next";
-import Card from "../../../ui/card/Card";
+import CardHelp from "../../../ui/card/CardHelp";
 
 interface IProps {
-  showHelp: boolean;
+  [key: string]: never;
 }
 
-const Help: React.FC<IProps> = ({ showHelp }) => {
+const Help: React.FC<IProps> = () => {
   const { t } = useTranslation("item-cost");
 
-  if (showHelp === false) return null;
-
-  return (
-    <Card>
-      <div style={{ padding: "0 16px" }}>
-        <p>{t("help")}</p>
-      </div>
-    </Card>
-  );
+  return <CardHelp>{t("help")}</CardHelp>;
 };
 
 export default Help;

@@ -1,0 +1,7 @@
+.Card {
+  background-color: var(--card-color);
+  border-radius: 8px;
+  box-shadow: var(--card-shadow);
+  margin: 16px;
+  position: relative;
+}
