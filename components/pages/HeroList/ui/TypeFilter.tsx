@@ -1,5 +1,5 @@
 import React from "react";
-import Filter from "./Filter";
+import FilterButtons from "./FilterButtons";
 
 interface IProps {
   filter: string;
@@ -10,7 +10,7 @@ interface IProps {
 const TYPES = ["strength", "agility", "intelligence"];
 
 const TypeFilter: React.FC<IProps> = ({ filter, setFilter, imagePath }) => {
-  return <Filter filter={filter} setFilter={setFilter} imagePath={imagePath} data={TYPES} />;
+  return <FilterButtons filter={filter} setFilter={setFilter} imagePath={imagePath} data={TYPES} />;
 };
 
 export default TypeFilter;

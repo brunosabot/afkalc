@@ -1,6 +1,6 @@
 import React from "react";
 import factions from "../../../../data/heroFaction.json";
-import Filter from "./Filter";
+import FilterButtons from "./FilterButtons";
 
 interface IProps {
   filter: string;
@@ -9,7 +9,7 @@ interface IProps {
 }
 
 const FactionFilter: React.FC<IProps> = ({ filter, setFilter, imagePath }) => {
-  return <Filter filter={filter} setFilter={setFilter} imagePath={imagePath} data={factions} />;
+  return <FilterButtons filter={filter} setFilter={setFilter} imagePath={imagePath} data={factions} />;
 };
 
 export default FactionFilter;

@@ -1,6 +1,6 @@
 import React from "react";
 import roles from "../../../../data/heroRole.json";
-import Filter from "./Filter";
+import FilterButtons from "./FilterButtons";
 
 interface IProps {
   filter: string;
@@ -9,7 +9,7 @@ interface IProps {
 }
 
 const RoleFilter: React.FC<IProps> = ({ filter, setFilter, imagePath }) => {
-  return <Filter filter={filter} setFilter={setFilter} imagePath={imagePath} data={roles} />;
+  return <FilterButtons filter={filter} setFilter={setFilter} imagePath={imagePath} data={roles} />;
 };
 
 export default RoleFilter;
