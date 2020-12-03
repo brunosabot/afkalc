@@ -1,5 +1,5 @@
 type ChestContentType =
-  | "item-dust-x1"
+  | "item-hero-essence-x1"
   | "item-mythic-p-stone"
   | "item-mythic-gear"
   | "item-legendary-gear"
