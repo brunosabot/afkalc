@@ -16,7 +16,7 @@ if (!firebase.apps.length) {
   firebase.initializeApp(firebaseConfig);
 
   import("firebase/firestore").then(() => {
-    firebase.firestore().enablePersistence();
+    firebase.firestore();
   });
 }
 
