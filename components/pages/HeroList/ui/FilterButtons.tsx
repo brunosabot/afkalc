@@ -1,5 +1,5 @@
 import React from "react";
-import styles from "./Filter.module.css";
+import styles from "./FilterButtons.module.css";
 
 interface IProps {
   filter: string;
@@ -8,11 +8,11 @@ interface IProps {
   data: string[];
 }
 
-const Filter: React.FC<IProps> = ({ filter, setFilter, imagePath, data }) => {
+const FilterButtons: React.FC<IProps> = ({ filter, setFilter, imagePath, data }) => {
   return (
     <div className={styles.Wrapper}>
       {data.map((e) => {
-        const className = `${styles.Filter} ${filter === e ? styles.Active : ""}`;
+        const className = `${styles.FilterButtons} ${filter === e ? styles.Active : ""}`;
         const onCLick = () => {
           setFilter(filter === e ? "" : e);
         };
@@ -27,4 +27,4 @@ const Filter: React.FC<IProps> = ({ filter, setFilter, imagePath, data }) => {
   );
 };
 
-export default Filter;
+export default FilterButtons;
