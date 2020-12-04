@@ -23,6 +23,7 @@ body {
   --card-color: #fff;
   --card-border-color: #999;
   --card-shadow: 0 2px 3px rgba(0, 0, 0, 0.15);
+  --card-reverse-shadow: 0 -2px 3px rgba(0, 0, 0, 0.15);
   --afk-hero-shadow: 0 0 1px #000;
   --afk-ascend-color: #cbd9fe;
   --afk-elite-color: #8330e2;

@@ -26,14 +26,13 @@
 .Close {
   border-radius: 50%;
   cursor: pointer;
-  fill: var(--accent-color);
-  height: 20px;
-  padding: 8px;
+  fill: var(--text-color);
+  height: 32px;
   position: absolute;
   right: 4px;
   top: 4px;
   transition: all 0.15s cubic-bezier(0.4, 0, 0.6, 1);
-  width: 20px;
+  width: 32px;
 }
 .Close:hover {
   background: var(--hover-color);

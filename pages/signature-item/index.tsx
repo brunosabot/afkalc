@@ -34,7 +34,7 @@ const SignatureItem: React.FC<IProps> = () => {
   }, []);
 
   return (
-    <div>
+    <div style={{paddingTop: "8px"}}>
       <Card>
         <Head>
           <title>{`${t("common:menu.signature-item")} - Afkalc`}</title>

@@ -28,7 +28,7 @@ function MyApp({ Component, pageProps }: AppProps) {
   return (
     <FirebaseProvider>
       <Menu />
-      <div style={{ maxWidth: "480px", margin: "auto", marginTop: "40px" }}>
+      <div style={{ maxWidth: "480px", margin: "auto", marginTop: "16px", marginBottom: "76px" }}>
         <Component {...pageProps} />
       </div>
     </FirebaseProvider>

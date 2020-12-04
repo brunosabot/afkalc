@@ -1,5 +1,5 @@
 import React, { useCallback } from "react";
-import Close from "../svg/close.svg";
+import CloseThick from "../svg/close-thick.svg";
 import styles from "./Modal.module.css";
 import ModalPortal from "./ModalPortal";
 
@@ -36,7 +36,7 @@ const ModalAnimated: React.FC<Props> = ({ active, children, onClose }) => {
   return (
     <ModalPortal active={active}>
       <div className={styles.ModalWrapper} onClick={onCloseWrapper} role="presentation">
-        <Close className={styles.Close} onClick={onClose} />
+        <CloseThick className={styles.Close} onClick={onClose} />
         <div className={styles.Modal}>{children}</div>
       </div>
     </ModalPortal>

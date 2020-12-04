@@ -1,13 +1,20 @@
 .Burger {
-  border-radius: 20px;
-  color: var(--accent-color);
-  height: 24px;
-  left: 0;
-  padding: 8px;
-  position: absolute;
-  top: 0;
-  width: 24px;
-}
-.Burger:hover {
   background-color: var(--hover-color);
+  border-radius: 20px;
+  color: #fff;
+  height: 24px;
+  padding: 3px;
+  width: 24px;
+  margin-bottom: 4px;
+  fill: #fff;
+  position: absolute;
+  top: 6px;
+}
+
+.Image {
+  position: absolute;
+  width: 30px;
+  margin-bottom: 4px;
+  border-radius: 16px;
+  z-index: -1;
 }

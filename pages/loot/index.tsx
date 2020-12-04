@@ -35,7 +35,7 @@ const Loot: React.FC<IProps> = () => {
   const isDateInvalid = dayjs(pass, "L LTS").isValid() === false;
 
   return (
-    <div>
+    <div style={{paddingTop: "8px"}}>
       <Card>
         <Head>
           <title>{`${t("common:menu.loot")} - Afkalc`}</title>

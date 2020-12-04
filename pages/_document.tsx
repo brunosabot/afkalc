@@ -19,7 +19,7 @@ export default class MyDocument extends Document {
         </Head>
         <body>
           <Main />
-          <div id="modal-root" />
+          <div id="modal-root" style={{position:"fixed",zIndex: 100}} />
           <NextScript />
         </body>
       </Html>
