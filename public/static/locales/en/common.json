@@ -9,7 +9,11 @@
     "fast-reward": "Fast Reward",
     "top-team": "Top Team (Beta)",
     "item-cost": "Item cost (Beta)",
-    "logout": "Logout"
+    "logout": "Logout",
+    "short-loot": "Loot",
+    "short-hero-list": "Heroes",
+    "short-top-team": "Teams",
+    "short-item-cost": "Item cost"
   },
   "contribution": {
     "edit-on-github": "Edit on GitHub"

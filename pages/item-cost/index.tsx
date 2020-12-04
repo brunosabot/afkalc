@@ -26,7 +26,7 @@ const ItemCost: React.FC<IProps> = () => {
   const totalSecondPartValue = useTotal(secondPart);
 
   return (
-    <div>
+    <div style={{paddingTop: "8px"}}>
       <Head>
         <title>{`${t("common:menu.item-cost")} - Afkalc`}</title>
         <meta name="description" content={t("help")} />
