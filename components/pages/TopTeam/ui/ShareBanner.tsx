@@ -25,7 +25,7 @@ const ShareBanner: React.FC<IProps> = ({ data }) => {
   const d5 = String.fromCharCode((data[5] || 0) + 48);
   const d6 = String.fromCharCode((data[6] || 0) + 48);
   const code = encodeURIComponent(`${d1}${d2}${d3}${d4}${d5}${d6}`);
-  const value = `${window.location.origin}/top-team/${code}`;
+  const value = `https://afkalc.heycoucou.com/top-team/${code}`;
 
   return <CardShare label={t("label-share")}>{value}</CardShare>;
 };

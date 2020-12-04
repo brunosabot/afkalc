@@ -25,7 +25,7 @@ const ShareBanner: React.FC<IProps> = ({ isView }) => {
       shouldCopy={values.isAuth}
       style={{ backgroundColor: "var(--hover-color)" }}
     >
-      {id ? `${window.location.origin}/hero-list/${id}` : t("login-needed")}
+      {id ? `https://afkalc.heycoucou.com/hero-list/${id}` : t("login-needed")}
     </CardShare>
   );
 };
