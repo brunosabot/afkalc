@@ -40,9 +40,7 @@ const Chest: React.FC<IProps> = ({ pass, chest }) => {
   return (
     <ColWithImage
       key={chest.item}
-      image={(
-        <Item name={name} infos={info} secondaryInfos={secondaryInfo} />
-      )}
+      image={<Item name={name} infos={info} secondaryInfos={secondaryInfo} />}
       title={tc(`item.${chest.item}`)}
       actions={actions}
     />

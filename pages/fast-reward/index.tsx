@@ -40,7 +40,7 @@ const FastReward: React.FC<IProps> = () => {
   const diams100 = useMaxLevel(100, playerLevel, vipLevel);
 
   return (
-    <div style={{paddingTop: "8px"}}>
+    <div style={{ paddingTop: "8px" }}>
       <Head>
         <title>{`${t("common:menu.fast-reward")} - Afkalc`}</title>
         <meta name="description" content={t("help")} />

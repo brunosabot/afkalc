@@ -26,7 +26,7 @@ const ItemCost: React.FC<IProps> = () => {
   const totalSecondPartValue = useTotal(secondPart);
 
   return (
-    <div style={{paddingTop: "8px"}}>
+    <div style={{ paddingTop: "8px" }}>
       <Head>
         <title>{`${t("common:menu.item-cost")} - Afkalc`}</title>
         <meta name="description" content={t("help")} />
@@ -43,8 +43,8 @@ const ItemCost: React.FC<IProps> = () => {
             value={value}
             onSelect={(item) => {
               const newItem = { ...firstPart };
-              delete newItem[key]
-              setFirstPart({...newItem, [item]: 0})
+              delete newItem[key];
+              setFirstPart({ ...newItem, [item]: 0 });
             }}
             onValue={(v) => setFirstPart({ ...firstPart, [key]: parseInt(v, 10) })}
             resource={key}
@@ -69,8 +69,8 @@ const ItemCost: React.FC<IProps> = () => {
             value={value}
             onSelect={(item) => {
               const newItem = { ...secondPart };
-              delete newItem[key]
-              setSecondPart({...newItem, [item]: 0})
+              delete newItem[key];
+              setSecondPart({ ...newItem, [item]: 0 });
             }}
             onValue={(v) => setSecondPart({ ...secondPart, [key]: parseInt(v, 10) })}
             resource={key}

@@ -19,12 +19,19 @@ const Menu: React.FC<IProps> = () => {
           {t("menu.home")}
         </MenuToolbarLink>
 
-        <MenuToolbarLink to="/loot" image="/loot/small-h-gold.jpg">{t("menu.short-loot")}</MenuToolbarLink>
-        <MenuToolbarLink to="/hero-list" image="/heroes/belinda.jpg">{t("menu.short-hero-list")}</MenuToolbarLink>
-        <MenuToolbarLink to="/top-team" image="/enemies/wrizz.jpg">{t("menu.short-top-team")}</MenuToolbarLink>
-        <MenuToolbarLink to="/item-cost" image="/loot/diamond.jpg">{t("menu.short-item-cost")}</MenuToolbarLink>
+        <MenuToolbarLink to="/loot" image="/loot/small-h-gold.jpg">
+          {t("menu.short-loot")}
+        </MenuToolbarLink>
+        <MenuToolbarLink to="/hero-list" image="/heroes/belinda.jpg">
+          {t("menu.short-hero-list")}
+        </MenuToolbarLink>
+        <MenuToolbarLink to="/top-team" image="/enemies/wrizz.jpg">
+          {t("menu.short-top-team")}
+        </MenuToolbarLink>
+        <MenuToolbarLink to="/item-cost" image="/loot/diamond.jpg">
+          {t("menu.short-item-cost")}
+        </MenuToolbarLink>
       </MenuToolbar>
-
     </>
   );
 };

@@ -19,22 +19,27 @@ interface IProps {
 const SignatureItem: React.FC<IProps> = () => {
   const { t } = useTranslation("signature-item");
   const [currentLevel, setCurrentLevel] = useState(0);
+  const [targetLevel, setTargetLevel] = useState(40);
   const [showHelp, setShowHelp] = useState(false);
 
-  const [primordial10, amplifying10, faction10, celest10] = useCountEmblem(10, currentLevel);
-  const [primordial20, amplifying20, faction20, celest20] = useCountEmblem(20, currentLevel);
-  const [primordial30, amplifying30, faction30, celest30] = useCountEmblem(30, currentLevel);
-  const [primordial40, amplifying40, faction40, celest40] = useCountEmblem(40, currentLevel);
+  const twenty = useCountEmblem(20, currentLevel);
+  const thirty = useCountEmblem(30, currentLevel);
+  const target = useCountEmblem(targetLevel, currentLevel);
 
-  const onChange = useCallback((e) => {
-    const val = Number(e);
-    if (!Number.isNaN(val) && val >= 0 && val <= 40) {
-      setCurrentLevel(val);
-    }
-  }, []);
+  const onChange = useCallback(
+    (setter) => (e: string) => {
+      const val = Number(e);
+      if (!Number.isNaN(val) && val >= 0 && val <= 40) {
+        setter(val);
+      }
+    },
+    []
+  );
+
+  const levels = Array.from(new Set([20, 30, targetLevel]));
 
   return (
-    <div style={{paddingTop: "8px"}}>
+    <div style={{ paddingTop: "8px" }}>
       <Card>
         <Head>
           <title>{`${t("common:menu.signature-item")} - Afkalc`}</title>
@@ -49,38 +54,36 @@ const SignatureItem: React.FC<IProps> = () => {
           name="current-si"
           value={currentLevel}
           label={t("label-current-si")}
-          onChange={onChange}
+          onChange={onChange(setCurrentLevel)}
+        />
+        <InputField
+          name="target-si"
+          value={targetLevel}
+          label={t("label-target-si")}
+          onChange={onChange(setTargetLevel)}
         />
       </Card>
 
-      <SignatureItemLeft
-        step={40}
-        primordial={primordial40}
-        amplifying={amplifying40}
-        faction={faction40}
-        celest={celest40}
-      />
-      <SignatureItemLeft
-        step={30}
-        primordial={primordial30}
-        amplifying={amplifying30}
-        faction={faction30}
-        celest={celest30}
-      />
-      <SignatureItemLeft
-        step={20}
-        primordial={primordial20}
-        amplifying={amplifying20}
-        faction={faction20}
-        celest={celest20}
-      />
-      <SignatureItemLeft
-        step={10}
-        primordial={primordial10}
-        amplifying={amplifying10}
-        faction={faction10}
-        celest={celest10}
-      />
+      {levels
+        .sort((a, b) => b - a)
+        .map((level) => {
+          const [primordial, amplifying, faction, celest] = {
+            20: twenty,
+            30: thirty,
+            [targetLevel]: target,
+          }[level];
+
+          return (
+            <SignatureItemLeft
+              key={level}
+              step={level}
+              primordial={primordial}
+              amplifying={amplifying}
+              faction={faction}
+              celest={celest}
+            />
+          );
+        })}
     </div>
   );
 };

@@ -26,7 +26,7 @@ const Item: React.FC<IProps> = ({
   infos,
   secondaryInfos,
   onClick = () => {},
-  highlight=false
+  highlight = false,
 }) => {
   const { t } = useTranslation("common");
   const resource = resources.find((r) => r.name === name);
