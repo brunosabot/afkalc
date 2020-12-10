@@ -493,6 +493,14 @@
         "class": "mage",
         "role": "continuous",
         "image": "/heroes/zaphrael.jpg"
+      },
+      {
+        "name": "Alna",
+        "id": 74,
+        "type": "agility",
+        "class": "warrior",
+        "role": "debuffer",
+        "image": "/heroes/alna.jpg"
       }
     ]
   },
