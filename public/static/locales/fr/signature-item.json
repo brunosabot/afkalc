@@ -6,5 +6,6 @@
   "item-faction-emblem": "Emblème de faction",
   "item-celest-Hypogean-emblem": "Emblème Céleste/Hypogéenne",
   "label-si": "SI +{{si}}",
-  "label-current-si": "Niveau actuel de votre SI (objet exclusif)"
+  "label-current-si": "Niveau actuel de votre SI (objet exclusif)",
+  "label-target-si": "Niveau cible de votre SI"
 }

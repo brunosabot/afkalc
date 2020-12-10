@@ -8,9 +8,7 @@ interface IProps {
 const MenuToolbar: React.FC<IProps> = ({ children }) => {
   return (
     <div className={styles.Wrapper}>
-      <div className={styles.Toolbar}>
-        {children}
-      </div>
+      <div className={styles.Toolbar}>{children}</div>
     </div>
   );
 };

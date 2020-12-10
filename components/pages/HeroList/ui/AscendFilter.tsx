@@ -9,7 +9,9 @@ interface IProps {
 }
 
 const RoleFilter: React.FC<IProps> = ({ filter, setFilter, imagePath }) => {
-  return <FilterButtons filter={filter} setFilter={setFilter} imagePath={imagePath} data={ascension} />;
+  return (
+    <FilterButtons filter={filter} setFilter={setFilter} imagePath={imagePath} data={ascension} />
+  );
 };
 
 export default RoleFilter;

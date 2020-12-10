@@ -19,7 +19,7 @@ const ItemPicker: React.FC<Props> = ({ item, onSelect }) => {
     <>
       <div className={styles.ItemPicker}>
         {item ? (
-          <Item 
+          <Item
             infos={info}
             name={name}
             secondaryInfos={secondaryInfo}
