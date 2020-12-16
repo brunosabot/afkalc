@@ -1,0 +1,14 @@
+[
+  { "id": 1, "name": "grace", "image": "/artifacts/grace.jpg" },
+  { "id": 2, "name": "eye", "image": "/artifacts/eye.jpg" },
+  { "id": 3, "name": "call", "image": "/artifacts/call.jpg" },
+  { "id": 4, "name": "drape", "image": "/artifacts/drape.jpg" },
+  { "id": 5, "name": "blade", "image": "/artifacts/blade.jpg" },
+  { "id": 6, "name": "chalice", "image": "/artifacts/chalice.jpg" },
+  { "id": 7, "name": "conviction", "image": "/artifacts/conviction.jpg" },
+  { "id": 8, "name": "tank", "image": "/artifacts/tank.jpg" },
+  { "id": 9, "name": "warrior", "image": "/artifacts/warrior.jpg" },
+  { "id": 10, "name": "support", "image": "/artifacts/support.jpg" },
+  { "id": 11, "name": "mage", "image": "/artifacts/mage.jpg" },
+  { "id": 12, "name": "ranger", "image": "/artifacts/ranger.jpg" }
+]

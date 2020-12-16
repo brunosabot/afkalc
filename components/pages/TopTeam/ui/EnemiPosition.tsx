@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import Modal from "../../../functionnal/Modal";
 import ChooseEnemi from "../../../modal/ChooseEnemi";
+import { DetailType } from "../../../ui/afk/Character";
 import Enemi from "../../../ui/afk/Enemi";
 import useEnemi from "../hooks/useEnemi";
 import styles from "./EnemiPosition.module.css";
@@ -8,7 +9,7 @@ import styles from "./EnemiPosition.module.css";
 interface Props {
   position: number;
   enemi?: number;
-  onSelect: (position: number) => (value: number) => void;
+  onSelect: (type: DetailType, position: number) => (value: number) => void;
 }
 
 const EnemiPosition: React.FC<Props> = ({ enemi, position, onSelect }) => {
@@ -31,7 +32,7 @@ const EnemiPosition: React.FC<Props> = ({ enemi, position, onSelect }) => {
         <ChooseEnemi
           current={id}
           onSelect={(enemiId) => {
-            onSelect(position)(enemiId);
+            onSelect(DetailType.HERO, position)(enemiId);
             setShowModal(false);
           }}
         />

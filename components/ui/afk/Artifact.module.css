@@ -1,0 +1,17 @@
+.Artifact {
+  border-radius: 4px;
+  width: 40px;
+}
+.Wrapper {
+  align-items: center;
+  border-radius: 4px;
+  box-sizing: border-box;
+  display: flex;
+  font-weight: 500;
+  justify-content: space-between;
+  position: relative;
+}
+
+.Highlight .Artifact {
+  border: 2px solid var(--accent-color);
+}

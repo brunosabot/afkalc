@@ -21,6 +21,8 @@ const HeroLine: React.FC<IProps> = ({ id, name, setLevel, getValue, isView }) =>
         name={name}
         ascendLevel={getValue(id, "ascend")}
         disabled={getValue(id, "ascend") === 0}
+        siLevel={getValue(id, "si")}
+        innLevel={getValue(id, "inn")}
       />
       <span className={styles.Name}>{name}</span>
 
