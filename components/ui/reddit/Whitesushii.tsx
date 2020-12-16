@@ -4,12 +4,10 @@ interface IProps {
   [key: string]: never;
 }
 
-const InSeason: React.FC<IProps> = () => {
-  return (
-    <a target="_blank" rel="noreferrer" href="https://www.reddit.com/user/Whitesushii/">
-      u/Whitesushii
-    </a>
-  );
-};
+const InSeason: React.FC<IProps> = () => (
+  <a target="_blank" rel="noreferrer" href="https://www.reddit.com/user/Whitesushii/">
+    u/Whitesushii
+  </a>
+);
 
 export default InSeason;

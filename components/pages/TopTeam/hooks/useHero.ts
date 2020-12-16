@@ -16,14 +16,13 @@ interface Faction {
 const factionJson = factions as Faction[];
 
 const defaultHeroes: Hero[] = [];
-const heroes: Hero[] = factionJson.reduce((acc, faction: Faction) => {
-  return [...acc, ...faction.characters];
-}, defaultHeroes);
+const heroes: Hero[] = factionJson.reduce(
+  (acc, faction: Faction) => [...acc, ...faction.characters],
+  defaultHeroes
+);
 
 function getHero(hero?: number) {
-  return heroes.find((character) => {
-    return character.id === hero;
-  });
+  return heroes.find((character) => character.id === hero);
 }
 
 export default function useHero() {

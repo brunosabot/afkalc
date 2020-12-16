@@ -5,8 +5,8 @@ interface IProps {
   children: React.ReactNode;
 }
 
-const PrimaryText: React.FC<IProps> = ({ children }) => {
-  return <div className={styles.PrimaryText}>{children}</div>;
-};
+const PrimaryText: React.FC<IProps> = ({ children }) => (
+  <div className={styles.PrimaryText}>{children}</div>
+);
 
 export default PrimaryText;

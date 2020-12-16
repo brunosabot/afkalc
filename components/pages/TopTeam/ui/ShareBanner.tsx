@@ -42,7 +42,7 @@ interface IProps {
   artifact: IArtifact;
 }
 
-const ShareBanner: React.FC<IProps> = ({ team = {}, si={}, inn={}, artifact={} }) => {
+const ShareBanner: React.FC<IProps> = ({ team = {}, si = {}, inn = {}, artifact = {} }) => {
   const { t } = useTranslation("top-team");
 
   const t1 = String.fromCharCode((team[1] || 0) + 48);
@@ -70,7 +70,6 @@ const ShareBanner: React.FC<IProps> = ({ team = {}, si={}, inn={}, artifact={} }
   const a4 = String.fromCharCode((artifact[4] || 0) + 48);
   const a5 = String.fromCharCode((artifact[5] || 0) + 48);
   const aCode = encodeURIComponent(`${a1}${a2}${a3}${a4}${a5}`);
-
 
   const value = `https://afkalc.com/top-team/${tCode}-${sCode}-${iCode}-${aCode}`;
 

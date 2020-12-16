@@ -23,7 +23,13 @@ const PlayerPosition: React.FC<Props> = ({ hero, position, onSelect, si, inn, ar
     <>
       <div className={`${styles.PlayerPosition} ${styles[`PlayerPosition--${position}`]}`}>
         {hero ? (
-          <Character name={name} onClick={() => setShowModal(true)} siLevel={si} innLevel={inn} artifact={artifact} />
+          <Character
+            name={name}
+            onClick={() => setShowModal(true)}
+            siLevel={si}
+            innLevel={inn}
+            artifact={artifact}
+          />
         ) : (
           <button type="button" className={styles.Add} onClick={() => setShowModal(true)}>
             +
@@ -32,7 +38,7 @@ const PlayerPosition: React.FC<Props> = ({ hero, position, onSelect, si, inn, ar
       </div>
       <Modal active={showModal} onClose={() => setShowModal(false)}>
         <ChooseHero
-          current={[id, si||0, inn||0, artifact||0]}
+          current={[id, si || 0, inn || 0, artifact || 0]}
           onSelect={(type, heroId) => {
             onSelect(type, position)(heroId);
           }}

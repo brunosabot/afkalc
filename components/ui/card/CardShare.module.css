@@ -23,6 +23,7 @@
 .Copy {
   background: var(--card-color);
   border-radius: 4px;
+  bottom: -20px;
   box-shadow: var(--card-shadow);
   font-size: 14px;
   height: 20px;
@@ -30,7 +31,6 @@
   padding: 4px 8px;
   position: absolute;
   right: 16px;
-  bottom: -20px;
 }
 
 .Title {

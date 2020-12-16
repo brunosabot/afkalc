@@ -5,12 +5,10 @@ interface IProps {
   children: React.ReactNode;
 }
 
-const MenuToolbar: React.FC<IProps> = ({ children }) => {
-  return (
-    <div className={styles.Wrapper}>
-      <div className={styles.Toolbar}>{children}</div>
-    </div>
-  );
-};
+const MenuToolbar: React.FC<IProps> = ({ children }) => (
+  <div className={styles.Wrapper}>
+    <div className={styles.Toolbar}>{children}</div>
+  </div>
+);
 
 export default MenuToolbar;
