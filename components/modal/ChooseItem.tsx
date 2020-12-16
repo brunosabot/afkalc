@@ -8,23 +8,21 @@ interface Props {
   current: string;
 }
 
-const ChooseItem: React.FC<Props> = ({ current, onSelect }) => {
-  return (
-    <div className={styles.ChooseItem}>
-      {resources
-        .filter((r) => r.cost !== undefined)
-        .map(({ name, info, secondaryInfo }) => (
-          <Item
-            key={name}
-            infos={info}
-            name={name}
-            secondaryInfos={secondaryInfo}
-            onClick={() => onSelect(name)}
-            highlight={current === name}
-          />
-        ))}
-    </div>
-  );
-};
+const ChooseItem: React.FC<Props> = ({ current, onSelect }) => (
+  <div className={styles.ChooseItem}>
+    {resources
+      .filter((r) => r.cost !== undefined)
+      .map(({ name, info, secondaryInfo }) => (
+        <Item
+          key={name}
+          infos={info}
+          name={name}
+          secondaryInfos={secondaryInfo}
+          onClick={() => onSelect(name)}
+          highlight={current === name}
+        />
+      ))}
+  </div>
+);
 
 export default ChooseItem;

@@ -15,11 +15,7 @@ interface IProps {
 /**
  * TODO: Use i18n for name
  */
-const Artifact: React.FC<IProps> = ({
-  name,
-  onClick = () => {},
-  highlight = false,
-}) => {
+const Artifact: React.FC<IProps> = ({ name, onClick = () => {}, highlight = false }) => {
   const { t } = useTranslation("common");
   const artifact = artifacts.find((r) => r.name === name);
 

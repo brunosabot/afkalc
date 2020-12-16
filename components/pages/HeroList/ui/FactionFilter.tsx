@@ -8,10 +8,8 @@ interface IProps {
   imagePath: string;
 }
 
-const FactionFilter: React.FC<IProps> = ({ filter, setFilter, imagePath }) => {
-  return (
-    <FilterButtons filter={filter} setFilter={setFilter} imagePath={imagePath} data={factions} />
-  );
-};
+const FactionFilter: React.FC<IProps> = ({ filter, setFilter, imagePath }) => (
+  <FilterButtons filter={filter} setFilter={setFilter} imagePath={imagePath} data={factions} />
+);
 
 export default FactionFilter;

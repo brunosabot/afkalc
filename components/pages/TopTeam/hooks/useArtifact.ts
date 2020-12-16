@@ -8,11 +8,8 @@ export interface Artifact {
 
 const artifactsJson = artifacts as Artifact[];
 
-
 function getArtifact(artifact?: number): Artifact {
-  return artifactsJson.find((a) => {
-    return a.id === artifact;
-  }) || {name:"", id: 0, image: ""};
+  return artifactsJson.find((a) => a.id === artifact) || { name: "", id: 0, image: "" };
 }
 
 export default function useArtifact() {

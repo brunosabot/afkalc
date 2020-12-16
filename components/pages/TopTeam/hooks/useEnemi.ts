@@ -17,14 +17,13 @@ interface Faction {
 const factionJson = factions as Faction[];
 
 const defaultEnemies: Enemi[] = [];
-const enemies: Enemi[] = factionJson.reduce((acc, faction: Faction) => {
-  return [...acc, ...faction.characters];
-}, defaultEnemies);
+const enemies: Enemi[] = factionJson.reduce(
+  (acc, faction: Faction) => [...acc, ...faction.characters],
+  defaultEnemies
+);
 
 function getEnemi(enemi?: number) {
-  return enemies.find((character) => {
-    return character.id === enemi;
-  });
+  return enemies.find((character) => character.id === enemi);
 }
 
 export default function useEnemi() {

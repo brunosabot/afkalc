@@ -7,14 +7,12 @@ interface IProps {
   emoji: string;
 }
 
-const LangButton: React.FC<IProps> = ({ lang, emoji }) => {
-  return (
-    <button className={styles.LangButton} type="button" onClick={() => i18n.changeLanguage(lang)}>
-      <span role="img" aria-label={lang}>
-        {emoji}
-      </span>
-    </button>
-  );
-};
+const LangButton: React.FC<IProps> = ({ lang, emoji }) => (
+  <button className={styles.LangButton} type="button" onClick={() => i18n.changeLanguage(lang)}>
+    <span role="img" aria-label={lang}>
+      {emoji}
+    </span>
+  </button>
+);
 
 export default LangButton;

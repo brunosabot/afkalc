@@ -13,16 +13,14 @@ interface IHeroes {
 
 export default function useSetLevel(levels: IHeroes, setLevels: (value: IHeroes) => void) {
   return useCallback(
-    (key: number, field: HeroLevel) => {
-      return (value: number) => {
-        const data = levels[key] || {};
-        const newLevels = {
-          ...levels,
-          [key]: { ...data, [field]: value },
-        };
-
-        setLevels(newLevels);
+    (key: number, field: HeroLevel) => (value: number) => {
+      const data = levels[key] || {};
+      const newLevels = {
+        ...levels,
+        [key]: { ...data, [field]: value },
       };
+
+      setLevels(newLevels);
     },
     [levels, setLevels]
   );

@@ -1,13 +1,13 @@
 .MenuToolbarLink {
-  font-size: 12px;
+  align-items: center;
+  cursor: pointer;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  width: 52px;
+  font-size: 12px;
   height: 60px;
   justify-content: center;
   padding: 0 4px;
-  cursor: pointer;
+  width: 52px;
 }
 .MenuToolbarLink:hover {
   background-color: var(--hover-color);

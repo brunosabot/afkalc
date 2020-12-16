@@ -14,23 +14,21 @@ interface IProps {
   isView: boolean;
 }
 
-const HeroLine: React.FC<IProps> = ({ id, name, setLevel, getValue, isView }) => {
-  return (
-    <div key={id} className={styles.HeroLine}>
-      <Character
-        name={name}
-        ascendLevel={getValue(id, "ascend")}
-        disabled={getValue(id, "ascend") === 0}
-        siLevel={getValue(id, "si")}
-        innLevel={getValue(id, "inn")}
-      />
-      <span className={styles.Name}>{name}</span>
+const HeroLine: React.FC<IProps> = ({ id, name, setLevel, getValue, isView }) => (
+  <div key={id} className={styles.HeroLine}>
+    <Character
+      name={name}
+      ascendLevel={getValue(id, "ascend")}
+      disabled={getValue(id, "ascend") === 0}
+      siLevel={getValue(id, "si")}
+      innLevel={getValue(id, "inn")}
+    />
+    <span className={styles.Name}>{name}</span>
 
-      <SiField id={id} setLevel={setLevel} getValue={getValue} isView={isView} />
-      <InnField id={id} setLevel={setLevel} getValue={getValue} isView={isView} />
-      <AscendField id={id} setLevel={setLevel} getValue={getValue} isView={isView} />
-    </div>
-  );
-};
+    <SiField id={id} setLevel={setLevel} getValue={getValue} isView={isView} />
+    <InnField id={id} setLevel={setLevel} getValue={getValue} isView={isView} />
+    <AscendField id={id} setLevel={setLevel} getValue={getValue} isView={isView} />
+  </div>
+);
 
 export default HeroLine;

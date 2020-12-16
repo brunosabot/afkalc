@@ -2,19 +2,19 @@
   background-color: var(--hover-color);
   border-radius: 20px;
   color: #fff;
-  height: 24px;
-  padding: 3px;
-  width: 24px;
-  margin-bottom: 4px;
   fill: #fff;
+  height: 24px;
+  margin-bottom: 4px;
+  padding: 3px;
   position: absolute;
   top: 6px;
+  width: 24px;
 }
 
 .Image {
+  border-radius: 16px;
+  margin-bottom: 4px;
   position: absolute;
   width: 30px;
-  margin-bottom: 4px;
-  border-radius: 16px;
   z-index: -1;
 }

@@ -1,20 +1,20 @@
 .Toolbar {
-  height: 60px;
-  display: flex;
-  gap: 4px;
-  flex-direction: row;
   align-items: center;
+  display: flex;
+  flex-direction: row;
+  gap: 4px;
+  height: 60px;
   justify-content: space-evenly;
-  padding: 0 16px;
   margin: auto;
   max-width: 600px;
+  padding: 0 16px;
 }
 .Wrapper {
   background-color: var(--card-color);
-  box-shadow: var(--card-reverse-shadow);
-  position: fixed;
   bottom: 0;
+  box-shadow: var(--card-reverse-shadow);
   left: 0;
+  position: fixed;
   right: 0;
   z-index: 11;
 }

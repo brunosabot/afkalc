@@ -7,7 +7,6 @@ import useHero from "./useHero";
 
 i18n.loadNamespaces("common");
 
-
 interface ITeam {
   1?: number;
   2?: number;
@@ -41,30 +40,25 @@ interface IArtifact {
   5?: number;
 }
 
-function getSi(si: number|undefined) {
+function getSi(si: number | undefined) {
   if (si === undefined) return "";
-  if (si<= 0) return "";
+  if (si <= 0) return "";
   return ` +${si}`;
 }
 
-function getInn(inn: number|undefined) {
+function getInn(inn: number | undefined) {
   if (inn === undefined) return "";
-  if (inn<= 0) return "";
+  if (inn <= 0) return "";
   return ` ${inn}/9`;
 }
 
-function displayArtifact(t:TFunction, artifact:Artifact) {
+function displayArtifact(t: TFunction, artifact: Artifact) {
   const value = t(`artifact.${artifact.name}`);
   if (value) return `(${value})`;
   return "";
 }
 
-export default function useDescription(
-  heroes: ITeam,
-  si:ISi,
-  inn: IInn,
-  artifact: IArtifact
-) {
+export default function useDescription(heroes: ITeam, si: ISi, inn: IInn, artifact: IArtifact) {
   const { t } = useTranslation("common");
   const { getHero } = useHero();
   const { getArtifact } = useArtifact();
@@ -81,22 +75,32 @@ export default function useDescription(
     const artifact3Data = getArtifact(artifact[3]);
     const artifact4Data = getArtifact(artifact[4]);
     const artifact5Data = getArtifact(artifact[5]);
-    
+
     const description = [];
     if (hero1Data !== undefined) {
-      description.push(`${hero1Data.name}${getSi(si[1])}${getInn(inn[1])} ${displayArtifact(t, artifact1Data)}`);
+      description.push(
+        `${hero1Data.name}${getSi(si[1])}${getInn(inn[1])} ${displayArtifact(t, artifact1Data)}`
+      );
     }
     if (hero2Data !== undefined) {
-      description.push(`${hero2Data.name}${getSi(si[2])}${getInn(inn[2])} ${displayArtifact(t, artifact2Data)}`);
+      description.push(
+        `${hero2Data.name}${getSi(si[2])}${getInn(inn[2])} ${displayArtifact(t, artifact2Data)}`
+      );
     }
     if (hero3Data !== undefined) {
-      description.push(`${hero3Data.name}${getSi(si[3])}${getInn(inn[3])} ${displayArtifact(t, artifact3Data)}`);
+      description.push(
+        `${hero3Data.name}${getSi(si[3])}${getInn(inn[3])} ${displayArtifact(t, artifact3Data)}`
+      );
     }
     if (hero4Data !== undefined) {
-      description.push(`${hero4Data.name}${getSi(si[4])}${getInn(inn[4])} ${displayArtifact(t, artifact4Data)}`);
+      description.push(
+        `${hero4Data.name}${getSi(si[4])}${getInn(inn[4])} ${displayArtifact(t, artifact4Data)}`
+      );
     }
     if (hero5Data !== undefined) {
-      description.push(`${hero5Data.name}${getSi(si[5])}${getInn(inn[5])} ${displayArtifact(t, artifact5Data)}`);
+      description.push(
+        `${hero5Data.name}${getSi(si[5])}${getInn(inn[5])} ${displayArtifact(t, artifact5Data)}`
+      );
     }
 
     return description.join(" - ").replace(/\s\s+/g, " ");
