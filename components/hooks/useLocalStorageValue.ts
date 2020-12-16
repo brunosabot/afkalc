@@ -25,9 +25,9 @@ export default function useLocalStorageValue<T>(
   const setValue = useCallback(
     (value) => {
       localStorage.setItem(localStorageKey, JSON.stringify(value));
-      setLocalValue(value || defaultValue);
+      setLocalValue(value);
     },
-    [localStorageKey, defaultValue, setLocalValue]
+    [localStorageKey, setLocalValue]
   );
 
   return [localValue, setValue];

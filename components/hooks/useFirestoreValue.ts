@@ -1,5 +1,5 @@
 import firebase from "firebase";
-import { useCallback, useEffect, useState } from "react";
+import { useCallback, useEffect, useMemo, useState } from "react";
 import useFirestorePartialUpdateRef from "./useFirestorePartialUpdateRef";
 
 export default function useFirestoreValue<T>(
@@ -28,14 +28,12 @@ export default function useFirestoreValue<T>(
         if (forceCreate !== null && uid !== undefined) {
           partialUpdateRef(docRef, { [key]: forceCreate }, uid);
         }
-        setLocalValue(defaultValue);
       });
     }
   }, [
     isAuth,
     docRef,
     setLocalValue,
-    defaultValue,
     forceCreate,
     isView,
     key,
@@ -48,10 +46,9 @@ export default function useFirestoreValue<T>(
       if (docRef !== null) {
         partialUpdateRef(docRef, { [key]: value }, uid);
       }
-      setLocalValue(value);
     },
     [docRef, key, uid, partialUpdateRef]
   );
 
-  return [firestoreValue, setValue];
+  return useMemo(() => [firestoreValue, setValue], [firestoreValue, setValue]);
 }
