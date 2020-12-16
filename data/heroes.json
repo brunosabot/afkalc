@@ -8,7 +8,8 @@
         "type": "intelligence",
         "class": "mage",
         "role": "aoe",
-        "image": "/heroes/belinda.jpg"
+        "image": "/heroes/belinda.jpg",
+        "faction": "lightbearers"
       },
       {
         "name": "Cecilia",
@@ -16,7 +17,8 @@
         "type": "agility",
         "class": "ranger",
         "role": "assassin",
-        "image": "/heroes/cecilia.jpg"
+        "image": "/heroes/cecilia.jpg",
+        "faction": "lightbearers"
       },
       {
         "name": "Estrilda",
@@ -24,7 +26,8 @@
         "type": "strength",
         "class": "warrior",
         "role": "burst",
-        "image": "/heroes/estrilda.jpg"
+        "image": "/heroes/estrilda.jpg",
+        "faction": "lightbearers"
       },
       {
         "name": "Fawkes",
@@ -32,7 +35,8 @@
         "type": "agility",
         "class": "ranger",
         "role": "control",
-        "image": "/heroes/fawkes.jpg"
+        "image": "/heroes/fawkes.jpg",
+        "faction": "lightbearers"
       },
       {
         "name": "Gwyneth",
@@ -40,7 +44,8 @@
         "type": "strength",
         "class": "ranger",
         "role": "continuous",
-        "image": "/heroes/gwyneth.jpg"
+        "image": "/heroes/gwyneth.jpg",
+        "faction": "lightbearers"
       },
       {
         "name": "Hendrik",
@@ -48,7 +53,8 @@
         "type": "strength",
         "class": "tank",
         "role": "tank",
-        "image": "/heroes/hendrik.jpg"
+        "image": "/heroes/hendrik.jpg",
+        "faction": "lightbearers"
       },
       {
         "name": "Lucius",
@@ -56,7 +62,8 @@
         "type": "strength",
         "class": "tank",
         "role": "regen",
-        "image": "/heroes/lucius.jpg"
+        "image": "/heroes/lucius.jpg",
+        "faction": "lightbearers"
       },
       {
         "name": "Oscar",
@@ -64,7 +71,8 @@
         "type": "agility",
         "class": "ranger",
         "role": "assassin",
-        "image": "/heroes/oscar.jpg"
+        "image": "/heroes/oscar.jpg",
+        "faction": "lightbearers"
       },
       {
         "name": "Raine",
@@ -72,7 +80,8 @@
         "type": "agility",
         "class": "support",
         "role": "buffer",
-        "image": "/heroes/raine.jpg"
+        "image": "/heroes/raine.jpg",
+        "faction": "lightbearers"
       },
       {
         "name": "Rigby",
@@ -80,7 +89,8 @@
         "type": "strength",
         "class": "warrior",
         "role": "tank",
-        "image": "/heroes/rigby.jpg"
+        "image": "/heroes/rigby.jpg",
+        "faction": "lightbearers"
       },
       {
         "name": "Rosaline",
@@ -88,7 +98,8 @@
         "type": "intelligence",
         "class": "support",
         "role": "buffer",
-        "image": "/heroes/rosaline.jpg"
+        "image": "/heroes/rosaline.jpg",
+        "faction": "lightbearers"
       },
       {
         "name": "Rowan",
@@ -96,7 +107,8 @@
         "type": "intelligence",
         "class": "support",
         "role": "buffer",
-        "image": "/heroes/rowan.jpg"
+        "image": "/heroes/rowan.jpg",
+        "faction": "lightbearers"
       },
       {
         "name": "Thane",
@@ -104,7 +116,8 @@
         "type": "agility",
         "class": "ranger",
         "role": "assassin",
-        "image": "/heroes/thane.jpg"
+        "image": "/heroes/thane.jpg",
+        "faction": "lightbearers"
       }
     ]
   },
@@ -117,7 +130,8 @@
         "type": "strength",
         "class": "tank",
         "role": "control",
-        "image": "/heroes/anoki.jpg"
+        "image": "/heroes/anoki.jpg",
+        "faction": "maulers"
       },
       {
         "name": "Antandra",
@@ -125,7 +139,8 @@
         "type": "agility",
         "class": "warrior",
         "role": "tank",
-        "image": "/heroes/antandra.jpg"
+        "image": "/heroes/antandra.jpg",
+        "faction": "maulers"
       },
       {
         "name": "Brutus",
@@ -133,7 +148,8 @@
         "type": "strength",
         "class": "tank",
         "role": "tank",
-        "image": "/heroes/brutus.jpg"
+        "image": "/heroes/brutus.jpg",
+        "faction": "maulers"
       },
       {
         "name": "Drez",
@@ -141,7 +157,8 @@
         "type": "agility",
         "class": "ranger",
         "role": "burst",
-        "image": "/heroes/drez.jpg"
+        "image": "/heroes/drez.jpg",
+        "faction": "maulers"
       },
       {
         "name": "Khasos",
@@ -149,7 +166,8 @@
         "type": "strength",
         "class": "warrior",
         "role": "continuous",
-        "image": "/heroes/khasos.jpg"
+        "image": "/heroes/khasos.jpg",
+        "faction": "maulers"
       },
       {
         "name": "Numisu",
@@ -157,7 +175,8 @@
         "type": "intelligence",
         "class": "support",
         "role": "regen",
-        "image": "/heroes/numisu.jpg"
+        "image": "/heroes/numisu.jpg",
+        "faction": "maulers"
       },
       {
         "name": "Safiya",
@@ -165,7 +184,8 @@
         "type": "intelligence",
         "class": "mage",
         "role": "aoe",
-        "image": "/heroes/safiya.jpg"
+        "image": "/heroes/safiya.jpg",
+        "faction": "maulers"
       },
       {
         "name": "Satrana",
@@ -173,7 +193,8 @@
         "type": "intelligence",
         "class": "mage",
         "role": "burst",
-        "image": "/heroes/satrana.jpg"
+        "image": "/heroes/satrana.jpg",
+        "faction": "maulers"
       },
       {
         "name": "Skreg",
@@ -181,7 +202,8 @@
         "type": "strength",
         "class": "tank",
         "role": "tank",
-        "image": "/heroes/skreg.jpg"
+        "image": "/heroes/skreg.jpg",
+        "faction": "maulers"
       },
       {
         "name": "Skriath",
@@ -189,7 +211,8 @@
         "type": "intelligence",
         "class": "mage",
         "role": "aoe",
-        "image": "/heroes/skriath.jpg"
+        "image": "/heroes/skriath.jpg",
+        "faction": "maulers"
       },
       {
         "name": "Tidus",
@@ -197,7 +220,8 @@
         "type": "agility",
         "class": "ranger",
         "role": "continuous",
-        "image": "/heroes/tidus.jpg"
+        "image": "/heroes/tidus.jpg",
+        "faction": "maulers"
       },
       {
         "name": "Vurk",
@@ -205,7 +229,8 @@
         "type": "agility",
         "class": "ranger",
         "role": "aoe",
-        "image": "/heroes/vurk.jpg"
+        "image": "/heroes/vurk.jpg",
+        "faction": "maulers"
       },
       {
         "name": "Warek",
@@ -213,7 +238,8 @@
         "type": "strength",
         "class": "warrior",
         "role": "continuous",
-        "image": "/heroes/warek.jpg"
+        "image": "/heroes/warek.jpg",
+        "faction": "maulers"
       }
     ]
   },
@@ -226,7 +252,8 @@
         "type": "agility",
         "class": "ranger",
         "role": "aoe",
-        "image": "/heroes/eironn.jpg"
+        "image": "/heroes/eironn.jpg",
+        "faction": "wilders"
       },
       {
         "name": "Gorvo",
@@ -234,7 +261,8 @@
         "type": "strength",
         "class": "tank",
         "role": "tank",
-        "image": "/heroes/gorvo.jpg"
+        "image": "/heroes/gorvo.jpg",
+        "faction": "wilders"
       },
       {
         "name": "Kaz",
@@ -242,7 +270,8 @@
         "type": "agility",
         "class": "ranger",
         "role": "assassin",
-        "image": "/heroes/kaz.jpg"
+        "image": "/heroes/kaz.jpg",
+        "faction": "wilders"
       },
       {
         "name": "Lorsan",
@@ -250,7 +279,8 @@
         "type": "intelligence",
         "class": "mage",
         "role": "aoe",
-        "image": "/heroes/lorsan.jpg"
+        "image": "/heroes/lorsan.jpg",
+        "faction": "wilders"
       },
       {
         "name": "Lyca",
@@ -258,7 +288,8 @@
         "type": "agility",
         "class": "ranger",
         "role": "buffer",
-        "image": "/heroes/lyca.jpg"
+        "image": "/heroes/lyca.jpg",
+        "faction": "wilders"
       },
       {
         "name": "Nemora",
@@ -266,7 +297,8 @@
         "type": "intelligence",
         "class": "support",
         "role": "regen",
-        "image": "/heroes/nemora.jpg"
+        "image": "/heroes/nemora.jpg",
+        "faction": "wilders"
       },
       {
         "name": "Saurus",
@@ -274,7 +306,8 @@
         "type": "strength",
         "class": "warrior",
         "role": "continuous",
-        "image": "/heroes/saurus.jpg"
+        "image": "/heroes/saurus.jpg",
+        "faction": "wilders"
       },
       {
         "name": "Seirus",
@@ -282,7 +315,8 @@
         "type": "strength",
         "class": "warrior",
         "role": "tank",
-        "image": "/heroes/seirus.jpg"
+        "image": "/heroes/seirus.jpg",
+        "faction": "wilders"
       },
       {
         "name": "Solise",
@@ -290,7 +324,8 @@
         "type": "intelligence",
         "class": "mage",
         "role": "control",
-        "image": "/heroes/solise.jpg"
+        "image": "/heroes/solise.jpg",
+        "faction": "wilders"
       },
       {
         "name": "Tasi",
@@ -298,7 +333,8 @@
         "type": "intelligence",
         "class": "support",
         "role": "control",
-        "image": "/heroes/tasi.jpg"
+        "image": "/heroes/tasi.jpg",
+        "faction": "wilders"
       },
       {
         "name": "Ulmus",
@@ -306,7 +342,8 @@
         "type": "strength",
         "class": "tank",
         "role": "tank",
-        "image": "/heroes/ulmus.jpg"
+        "image": "/heroes/ulmus.jpg",
+        "faction": "wilders"
       },
       {
         "name": "Pippa",
@@ -314,7 +351,8 @@
         "type": "intelligence",
         "class": "mage",
         "role": "continuous",
-        "image": "/heroes/pippa.jpg"
+        "image": "/heroes/pippa.jpg",
+        "faction": "wilders"
       }
     ]
   },
@@ -327,7 +365,8 @@
         "type": "agility",
         "class": "warrior",
         "role": "continuous",
-        "image": "/heroes/baden.jpg"
+        "image": "/heroes/baden.jpg",
+        "faction": "graveborns"
       },
       {
         "name": "Daimon",
@@ -335,7 +374,8 @@
         "type": "strength",
         "class": "tank",
         "role": "tank",
-        "image": "/heroes/daimon.jpg"
+        "image": "/heroes/daimon.jpg",
+        "faction": "graveborns"
       },
       {
         "name": "Ferael",
@@ -343,7 +383,8 @@
         "type": "agility",
         "class": "ranger",
         "role": "continuous",
-        "image": "/heroes/ferael.jpg"
+        "image": "/heroes/ferael.jpg",
+        "faction": "graveborns"
       },
       {
         "name": "Grezhul",
@@ -351,7 +392,8 @@
         "type": "strength",
         "class": "tank",
         "role": "tank",
-        "image": "/heroes/grezhul.jpg"
+        "image": "/heroes/grezhul.jpg",
+        "faction": "graveborns"
       },
       {
         "name": "Isabella",
@@ -359,7 +401,8 @@
         "type": "intelligence",
         "class": "mage",
         "role": "continuous",
-        "image": "/heroes/isabella.jpg"
+        "image": "/heroes/isabella.jpg",
+        "faction": "graveborns"
       },
       {
         "name": "Izold",
@@ -367,7 +410,8 @@
         "type": "strength",
         "class": "warrior",
         "role": "tank",
-        "image": "/heroes/izold.jpg"
+        "image": "/heroes/izold.jpg",
+        "faction": "graveborns"
       },
       {
         "name": "Kelthur",
@@ -375,7 +419,8 @@
         "type": "agility",
         "class": "ranger",
         "role": "assassin",
-        "image": "/heroes/kelthur.jpg"
+        "image": "/heroes/kelthur.jpg",
+        "faction": "graveborns"
       },
       {
         "name": "Nara",
@@ -383,7 +428,8 @@
         "type": "strength",
         "class": "warrior",
         "role": "assassin",
-        "image": "/heroes/nara.jpg"
+        "image": "/heroes/nara.jpg",
+        "faction": "graveborns"
       },
       {
         "name": "Oden",
@@ -391,7 +437,8 @@
         "type": "intelligence",
         "class": "mage",
         "role": "aoe",
-        "image": "/heroes/oden.jpg"
+        "image": "/heroes/oden.jpg",
+        "faction": "graveborns"
       },
       {
         "name": "Shemira",
@@ -399,7 +446,8 @@
         "type": "intelligence",
         "class": "mage",
         "role": "aoe",
-        "image": "/heroes/shemira.jpg"
+        "image": "/heroes/shemira.jpg",
+        "faction": "graveborns"
       },
       {
         "name": "Theowyn",
@@ -407,7 +455,8 @@
         "type": "agility",
         "class": "ranger",
         "role": "continuous",
-        "image": "/heroes/theowyn.jpg"
+        "image": "/heroes/theowyn.jpg",
+        "faction": "graveborns"
       },
       {
         "name": "Thoran",
@@ -415,7 +464,8 @@
         "type": "strength",
         "class": "tank",
         "role": "tank",
-        "image": "/heroes/thoran.jpg"
+        "image": "/heroes/thoran.jpg",
+        "faction": "graveborns"
       },
       {
         "name": "Torne",
@@ -423,7 +473,8 @@
         "type": "strength",
         "class": "tank",
         "role": "tank",
-        "image": "/heroes/torne.jpg"
+        "image": "/heroes/torne.jpg",
+        "faction": "graveborns"
       },
       {
         "name": "Silas",
@@ -431,7 +482,8 @@
         "type": "intelligence",
         "class": "support",
         "role": "buffer",
-        "image": "/heroes/silas.jpg"
+        "image": "/heroes/silas.jpg",
+        "faction": "graveborns"
       }
     ]
   },
@@ -444,7 +496,8 @@
         "type": "agility",
         "class": "ranger",
         "role": "assassin",
-        "image": "/heroes/athalia.jpg"
+        "image": "/heroes/athalia.jpg",
+        "faction": "celestials"
       },
       {
         "name": "Elijah & Lailah",
@@ -452,7 +505,8 @@
         "type": "intelligence",
         "class": "support",
         "role": "buffer",
-        "image": "/heroes/elijahlailah.jpg"
+        "image": "/heroes/elijahlailah.jpg",
+        "faction": "celestials"
       },
       {
         "name": "Flora",
@@ -460,7 +514,8 @@
         "type": "intelligence",
         "class": "mage",
         "role": "continuous",
-        "image": "/heroes/flora.jpg"
+        "image": "/heroes/flora.jpg",
+        "faction": "celestials"
       },
       {
         "name": "Orthros",
@@ -468,7 +523,8 @@
         "type": "strength",
         "class": "tank",
         "role": "tank",
-        "image": "/heroes/orthros.jpg"
+        "image": "/heroes/orthros.jpg",
+        "faction": "celestials"
       },
       {
         "name": "Talene",
@@ -476,7 +532,8 @@
         "type": "agility",
         "class": "support",
         "role": "continuous",
-        "image": "/heroes/talene.jpg"
+        "image": "/heroes/talene.jpg",
+        "faction": "celestials"
       },
       {
         "name": "Wu Kong",
@@ -484,7 +541,8 @@
         "type": "strength",
         "class": "warrior",
         "role": "continuous",
-        "image": "/heroes/wukong.jpg"
+        "image": "/heroes/wukong.jpg",
+        "faction": "celestials"
       },
       {
         "name": "Zaphrael",
@@ -492,7 +550,8 @@
         "type": "intelligence",
         "class": "mage",
         "role": "continuous",
-        "image": "/heroes/zaphrael.jpg"
+        "image": "/heroes/zaphrael.jpg",
+        "faction": "celestials"
       },
       {
         "name": "Alna",
@@ -500,7 +559,8 @@
         "type": "agility",
         "class": "warrior",
         "role": "debuffer",
-        "image": "/heroes/alna.jpg"
+        "image": "/heroes/alna.jpg",
+        "faction": "celestials"
       }
     ]
   },
@@ -513,7 +573,8 @@
         "type": "strength",
         "class": "support",
         "role": "debuffer",
-        "image": "/heroes/ezizh.jpg"
+        "image": "/heroes/ezizh.jpg",
+        "faction": "hypogeans"
       },
       {
         "name": "Khazard",
@@ -521,7 +582,8 @@
         "type": "intelligence",
         "class": "mage",
         "role": "control",
-        "image": "/heroes/khazard.jpg"
+        "image": "/heroes/khazard.jpg",
+        "faction": "hypogeans"
       },
       {
         "name": "Lucretia",
@@ -529,7 +591,8 @@
         "type": "agility",
         "class": "ranger",
         "role": "assassin",
-        "image": "/heroes/lucretia.jpg"
+        "image": "/heroes/lucretia.jpg",
+        "faction": "hypogeans"
       },
       {
         "name": "Mehira",
@@ -537,7 +600,8 @@
         "type": "intelligence",
         "class": "mage",
         "role": "control",
-        "image": "/heroes/mehira.jpg"
+        "image": "/heroes/mehira.jpg",
+        "faction": "hypogeans"
       },
       {
         "name": "Mezoth",
@@ -545,7 +609,8 @@
         "type": "strength",
         "class": "tank",
         "role": "tank",
-        "image": "/heroes/mezoth.jpg"
+        "image": "/heroes/mezoth.jpg",
+        "faction": "hypogeans"
       },
       {
         "name": "Zolrath",
@@ -553,7 +618,8 @@
         "type": "agility",
         "class": "warrior",
         "role": "assassin",
-        "image": "/heroes/zolrath.jpg"
+        "image": "/heroes/zolrath.jpg",
+        "faction": "hypogeans"
       },
       {
         "name": "Mortas",
@@ -561,7 +627,8 @@
         "type": "agility",
         "class": "support",
         "role": "regen",
-        "image": "/heroes/mortas.jpg"
+        "image": "/heroes/mortas.jpg",
+        "faction": "hypogeans"
       }
     ]
   },
@@ -574,7 +641,8 @@
         "type": "strength",
         "class": "tank",
         "role": "tank",
-        "image": "/heroes/arthur.jpg"
+        "image": "/heroes/arthur.jpg",
+        "faction": "dimensionals"
       },
       {
         "name": "Ezio",
@@ -582,7 +650,8 @@
         "type": "agility",
         "class": "ranger",
         "role": "assassin",
-        "image": "/heroes/ezio.jpg"
+        "image": "/heroes/ezio.jpg",
+        "faction": "dimensionals"
       },
       {
         "name": "Nakoruru",
@@ -590,7 +659,8 @@
         "type": "agility",
         "class": "ranger",
         "role": "burst",
-        "image": "/heroes/nakoruru.jpg"
+        "image": "/heroes/nakoruru.jpg",
+        "faction": "dimensionals"
       },
       {
         "name": "Ukyo",
@@ -598,7 +668,8 @@
         "type": "agility",
         "class": "warrior",
         "role": "continuous",
-        "image": "/heroes/ukyo.jpg"
+        "image": "/heroes/ukyo.jpg",
+        "faction": "dimensionals"
       },
       {
         "name": "Albedo",
@@ -606,7 +677,8 @@
         "type": "strength",
         "class": "tank",
         "role": "tank",
-        "image": "/heroes/albedo.jpg"
+        "image": "/heroes/albedo.jpg",
+        "faction": "dimensionals"
       },
       {
         "name": "Ainz Ooal Gown",
@@ -614,7 +686,8 @@
         "type": "intelligence",
         "class": "mage",
         "role": "continuous",
-        "image": "/heroes/ainzooalgown.jpg"
+        "image": "/heroes/ainzooalgown.jpg",
+        "faction": "dimensionals"
       }
     ]
   }

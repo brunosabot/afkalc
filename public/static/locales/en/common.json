@@ -83,5 +83,23 @@
     "t2-stone": "T2 stone",
     "twisted-essence": "Twisted essence",
     "wilder-emblem": "Wilder emblem"
+  },
+  "artifact": {
+    "grace": "Dura's Grace",
+    "eye": "Dura's Eye",
+    "call": "Dura's Call",
+    "drape": "Dura's Drape",
+    "blade": "Dura's Blade",
+    "chalice": "Dura's Chalice of Vitality",
+    "conviction": "Dura's Conviction",
+    "tank": "The Barricade",
+    "warrior": "Chaos Bringer",
+    "support": "Tidebearer",
+    "mage": "Windbinder",
+    "ranger": "Shroud of Verdure"
+  },
+  "concept": {
+    "si": "SI",
+    "inn": "Inn"
   }
 }

@@ -83,5 +83,23 @@
     "t2-stone": "Pierre T2",
     "twisted-essence": "Essence distordue",
     "wilder-emblem": "Emblème de nature"
+  },
+  "artifact": {
+    "grace": "Grâce de Dura",
+    "eye": "Œil de Dura",
+    "call": "Appel de Dura",
+    "drape": "Drap de Dura",
+    "blade": "Lame de Dura",
+    "chalice": "Calice de vitalité de Dura",
+    "conviction": "Conviction de Dura",
+    "tank": "La barricade",
+    "warrior": "Héraut du chaos",
+    "support": "Vague irrésistible",
+    "mage": "Grimoire des vents",
+    "ranger": "Voile de verdure"
+  },
+  "concept": {
+    "si": "SI",
+    "inn": "Meuble"
   }
 }

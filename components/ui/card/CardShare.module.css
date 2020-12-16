@@ -1,5 +1,6 @@
 .Wrapper {
   padding: 16px;
+  position: relative;
 }
 .Content {
   align-items: center;
@@ -28,8 +29,8 @@
   line-height: 20px;
   padding: 4px 8px;
   position: absolute;
-  right: 0;
-  top: -34px;
+  right: 16px;
+  bottom: -20px;
 }
 
 .Title {
