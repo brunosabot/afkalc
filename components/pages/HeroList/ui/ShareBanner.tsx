@@ -1,6 +1,6 @@
 import { nanoid } from "nanoid";
 import React, { useContext } from "react";
-import { useTranslation } from "../../../../i18n";
+import { useTranslation } from "react-i18next";
 import useFirestoreWithBackup from "../../../hooks/useFirestoreWithBackup";
 import { FirebaseContext } from "../../../providers/FirebaseProvider";
 import CardShare from "../../../ui/card/CardShare";

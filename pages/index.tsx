@@ -1,5 +1,6 @@
 import Head from "next/head";
 import React, { useContext } from "react";
+import { useTranslation } from "react-i18next";
 import { FirebaseContext } from "../components/providers/FirebaseProvider";
 import LangButton from "../components/ui/button/LangButton";
 import LoginButton from "../components/ui/button/LoginButton";
@@ -8,7 +9,6 @@ import Card from "../components/ui/card/Card";
 import CardTitle from "../components/ui/card/CardTitle";
 import MenuItem from "../components/ui/menu/MenuItem";
 import MenuItemExternal from "../components/ui/menu/MenuItemExternal";
-import { useTranslation } from "../i18n";
 
 interface IProps {
   [key: string]: never;

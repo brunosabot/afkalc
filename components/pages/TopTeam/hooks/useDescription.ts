@@ -1,11 +1,8 @@
-import i18n from "i18next";
 import { TFunction } from "next-i18next";
 import { useMemo } from "react";
-import { useTranslation } from "../../../../i18n";
+import { useTranslation } from "react-i18next";
 import useArtifact, { Artifact } from "./useArtifact";
 import useHero from "./useHero";
-
-i18n.loadNamespaces("common");
 
 interface ITeam {
   1?: number;

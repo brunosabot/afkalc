@@ -1,6 +1,6 @@
-import i18n from "i18next";
 import Head from "next/head";
 import React, { useState } from "react";
+import { useTranslation } from "react-i18next";
 import useTotal from "../../components/pages/ItemCost/hooks/useTotal";
 import Help from "../../components/pages/ItemCost/ui/Help";
 import ResourceDetail from "../../components/pages/ItemCost/ui/ResourceDetail";
@@ -8,9 +8,6 @@ import TotalCost from "../../components/pages/ItemCost/ui/TotalCost";
 import HelpButton from "../../components/ui/button/HelpButton";
 import Card from "../../components/ui/card/Card";
 import CardTitle from "../../components/ui/card/CardTitle";
-import { useTranslation } from "../../i18n";
-
-i18n.loadNamespaces("item-cost");
 
 interface IProps {
   [key: string]: never;
