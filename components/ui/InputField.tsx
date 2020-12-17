@@ -1,4 +1,4 @@
-import React, { useRef } from "react";
+import React, { useMemo, useRef } from "react";
 import styles from "./InputField.module.css";
 
 interface IProps {
@@ -29,6 +29,13 @@ const InputField: React.FC<IProps> = ({
   const refId = useRef(`input-field_${name}`);
   const inputEl = useRef<HTMLInputElement>(null);
 
+  const localValue = useMemo(() => {
+    if (value === 0) {
+      return "";
+    }
+    return value;
+  }, [value]);
+
   // FIXME: Hack. Might be a better way than doing this
   const onChangeLocal = (e: any) => {
     const rightCharsCount = e.target.value.length - e.target.selectionEnd;
@@ -53,7 +60,7 @@ const InputField: React.FC<IProps> = ({
         id={refId.current}
         type={type}
         ref={inputEl}
-        value={value}
+        value={localValue}
         disabled={disabled}
         readOnly={readOnly}
         maxLength={maxLength}
