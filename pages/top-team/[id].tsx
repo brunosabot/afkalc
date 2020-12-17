@@ -18,7 +18,9 @@ const TopTeam: React.FC<Props> = () => {
   const router = useRouter();
   const { id } = router.query;
 
-  const [heroes, si, inn, artifact] = decodeURIComponent(id as string).split("-");
+  const [heroes = "", si = "", inn = "", artifact = ""] = decodeURIComponent(id as string).split(
+    "-"
+  );
   const [t1, t2, t3, t4, t5, t6] = heroes
     .split("")
     .map((e) => e.charCodeAt(0))
