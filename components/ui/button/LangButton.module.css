@@ -7,8 +7,8 @@
   line-height: 1em;
   margin: 0 2px;
   padding: 8px;
-  transition: 0.2s all cubic-bezier(0.4, 0, 0.6, 1);
   text-decoration: none;
+  transition: 0.2s all cubic-bezier(0.4, 0, 0.6, 1);
 }
 
 .LangButton:hover {
