@@ -1,4 +1,5 @@
 import { nanoid } from "nanoid";
+import { useRouter } from "next/router";
 import React, { useContext } from "react";
 import { useTranslation } from "react-i18next";
 import useFirestoreWithBackup from "../../../hooks/useFirestoreWithBackup";
@@ -14,6 +15,8 @@ const ShareBanner: React.FC<IProps> = ({ isView }) => {
   const { t } = useTranslation("hero-list");
   const [id] = useFirestoreWithBackup("%ID%", "user", "shareId", "", nanoid(10), isView);
   const { values } = useContext(FirebaseContext);
+  const router = useRouter();
+  const localePath = router.locale === router.defaultLocale ? "" : `/${router.locale}`;
 
   if (isView === true) {
     return <CardTitle>{t("somebodys-list")}</CardTitle>;
@@ -25,7 +28,7 @@ const ShareBanner: React.FC<IProps> = ({ isView }) => {
       shouldCopy={values.isAuth}
       style={{ backgroundColor: "var(--hover-color)" }}
     >
-      {id ? `https://afkalc.com/hero-list/${id}` : t("login-needed")}
+      {id ? `https://afkalc.com${localePath}/hero-list/${id}` : t("login-needed")}
     </CardShare>
   );
 };
