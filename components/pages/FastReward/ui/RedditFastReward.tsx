@@ -1,5 +1,5 @@
 import React from "react";
-import { useTranslation } from "../../../../i18n";
+import { useTranslation } from "react-i18next";
 
 interface IProps {
   [key: string]: never;

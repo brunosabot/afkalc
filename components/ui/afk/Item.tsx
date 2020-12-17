@@ -1,10 +1,7 @@
-import i18n from "i18next";
 import React from "react";
+import { useTranslation } from "react-i18next";
 import resources from "../../../data/resources.json";
-import { useTranslation } from "../../../i18n";
 import styles from "./Item.module.css";
-
-i18n.loadNamespaces("common");
 
 interface IProps {
   size?: "large" | "small" | "default";

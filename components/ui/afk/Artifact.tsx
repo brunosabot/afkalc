@@ -1,10 +1,7 @@
-import i18n from "i18next";
 import React from "react";
+import { useTranslation } from "react-i18next";
 import artifacts from "../../../data/artifacts.json";
-import { useTranslation } from "../../../i18n";
 import styles from "./Artifact.module.css";
-
-i18n.loadNamespaces("common");
 
 interface IProps {
   name: string;

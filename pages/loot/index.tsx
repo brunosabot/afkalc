@@ -1,7 +1,7 @@
 import dayjs from "dayjs";
-import i18n from "i18next";
 import Head from "next/head";
 import React, { useState } from "react";
+import { useTranslation } from "react-i18next";
 import useFirestoreWithBackup from "../../components/hooks/useFirestoreWithBackup";
 import useChestLevel from "../../components/pages/Loot/hooks/useChestLevel";
 import Chest from "../../components/pages/Loot/ui/Chest";
@@ -11,9 +11,6 @@ import Card from "../../components/ui/card/Card";
 import CardHelp from "../../components/ui/card/CardHelp";
 import CardTitle from "../../components/ui/card/CardTitle";
 import InputField from "../../components/ui/InputField";
-import { useTranslation } from "../../i18n";
-
-i18n.loadNamespaces("loot");
 
 interface IProps {
   [key: string]: never;

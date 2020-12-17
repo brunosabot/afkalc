@@ -3,28 +3,38 @@ import "dayjs/locale/fr";
 import customParseFormat from "dayjs/plugin/customParseFormat";
 import localizedFormat from "dayjs/plugin/localizedFormat";
 import updateLocale from "dayjs/plugin/updateLocale";
-import { I18nContext } from "next-i18next";
+import i18next from "i18next";
+import i18nextMiddleware from "i18next-http-middleware";
 import type { AppProps } from "next/app";
-import React, { useContext, useEffect } from "react";
+import React from "react";
+import { initReactI18next, withSSR } from "react-i18next";
 import Menu from "../components/functionnal/Menu";
 import FirebaseProvider from "../components/providers/FirebaseProvider";
-import { appWithTranslation } from "../i18n";
+import { resources } from "../i18n";
 import "../styles/globals.css";
 
 dayjs.extend(customParseFormat);
 dayjs.extend(updateLocale);
 dayjs.extend(localizedFormat);
 
-function MyApp({ Component, pageProps }: AppProps) {
-  const {
-    i18n: { language },
-  } = useContext(I18nContext);
+App.getInitialProps = async ({ router }: any) => {
+  await i18next
+    .use(initReactI18next)
+    .use(i18nextMiddleware.LanguageDetector)
+    .init({
+      resources,
+      lng: router.locale,
+      supportedLngs: ["dev", "en", "fr"],
+      fallbackLng: "en",
+      interpolation: {
+        escapeValue: false,
+      },
+    });
 
-  useEffect(() => {
-    const newLanguage = language === "dev" ? "en" : language;
-    import(`dayjs/locale/${newLanguage}`).then(() => dayjs.locale(newLanguage));
-  }, [language]);
+  return {};
+};
 
+function App({ Component, pageProps }: AppProps) {
   return (
     <FirebaseProvider>
       <Menu />
@@ -35,4 +45,6 @@ function MyApp({ Component, pageProps }: AppProps) {
   );
 }
 
-export default appWithTranslation(MyApp);
+const ExtendedApp = withSSR()(App);
+
+export default ExtendedApp;

@@ -1,6 +1,6 @@
 import React from "react";
+import { useTranslation } from "react-i18next";
 import ascendLevels from "../../../../data/heroAscensionLevel.json";
-import { useTranslation } from "../../../../i18n";
 import HeroLevel from "../../../../types/HeroLevel";
 import InputField from "../../../ui/InputField";
 import SelectField from "../../../ui/SelectField";

@@ -22,7 +22,7 @@
   text-decoration: underline;
 }
 .SelectField {
-  background: transparent;
+  background: var(--card-color);
   border: 1px solid var(--card-border-color);
   border-radius: 8px;
   box-sizing: border-box;

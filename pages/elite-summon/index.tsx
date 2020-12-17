@@ -1,6 +1,6 @@
-import i18n from "i18next";
 import Head from "next/head";
 import React, { useState } from "react";
+import { useTranslation } from "react-i18next";
 import useOnChangeNumber from "../../components/hooks/useOnChangeNumber";
 import Item from "../../components/ui/afk/Item";
 import HelpButton from "../../components/ui/button/HelpButton";
@@ -9,10 +9,7 @@ import CardHelp from "../../components/ui/card/CardHelp";
 import CardTitle from "../../components/ui/card/CardTitle";
 import CardValue from "../../components/ui/card/CardValue";
 import InputField from "../../components/ui/InputField";
-import { useTranslation } from "../../i18n";
 import { getEstimatedDiamsForSummon } from "../../lib/summon";
-
-i18n.loadNamespaces("elite-summon");
 
 interface IProps {
   [key: string]: never;

@@ -1,15 +1,12 @@
 import dayjs from "dayjs";
-import i18n from "i18next";
 import React from "react";
-import { useTranslation } from "../../../../i18n";
+import { useTranslation } from "react-i18next";
 import { getDuration, getFrom } from "../../../../lib/time";
 import Item from "../../../ui/afk/Item";
 import ColWithImage from "../../../ui/list/ColWithImage";
 import PrimaryText from "../../../ui/typography/PrimaryText";
 import SecondaryText from "../../../ui/typography/SecondaryText";
 import useItem from "../../ItemCost/hooks/useItem";
-
-i18n.loadNamespaces("common");
 
 interface IChest {
   item: string;

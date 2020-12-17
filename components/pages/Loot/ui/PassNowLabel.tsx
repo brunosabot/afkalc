@@ -1,6 +1,6 @@
 import dayjs from "dayjs";
 import React from "react";
-import { useTranslation } from "../../../../i18n";
+import { useTranslation } from "react-i18next";
 import styles from "./PassNowLabel.module.css";
 
 interface IProps {

@@ -30,16 +30,7 @@ export default function useFirestoreValue<T>(
         }
       });
     }
-  }, [
-    isAuth,
-    docRef,
-    setLocalValue,
-    forceCreate,
-    isView,
-    key,
-    partialUpdateRef,
-    uid,
-  ]);
+  }, [isAuth, docRef, setLocalValue, forceCreate, isView, key, partialUpdateRef, uid]);
 
   const setValue = useCallback(
     (value) => {

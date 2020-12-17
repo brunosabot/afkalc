@@ -1,7 +1,7 @@
-import i18n from "i18next";
 import Head from "next/head";
 import { useRouter } from "next/router";
 import React, { Fragment, useMemo, useState } from "react";
+import { useTranslation } from "react-i18next";
 import useFirestoreWithBackup from "../../components/hooks/useFirestoreWithBackup";
 import useGetValue from "../../components/pages/HeroList/hooks/useGetValue";
 import useLoadId from "../../components/pages/HeroList/hooks/useLoadId";
@@ -16,9 +16,6 @@ import ShareBanner from "../../components/pages/HeroList/ui/ShareBanner";
 import TypeFilter from "../../components/pages/HeroList/ui/TypeFilter";
 import Card from "../../components/ui/card/Card";
 import factions from "../../data/heroes.json";
-import { useTranslation } from "../../i18n";
-
-i18n.loadNamespaces("hero-list");
 
 interface IHeroLevels {
   inn?: number;

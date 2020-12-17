@@ -30,7 +30,7 @@ const InputField: React.FC<IProps> = ({
   const inputEl = useRef<HTMLInputElement>(null);
 
   // FIXME: Hack. Might be a better way than doing this
-  const onChangeLocal = (e:any) => {
+  const onChangeLocal = (e: any) => {
     const rightCharsCount = e.target.value.length - e.target.selectionEnd;
     const newPosition = e.target.value.length - rightCharsCount;
 

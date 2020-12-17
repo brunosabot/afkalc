@@ -1,5 +1,5 @@
 import React from "react";
-import { useTranslation } from "../../i18n";
+import { useTranslation } from "react-i18next";
 import MenuBurger from "../ui/menu/MenuBurger";
 import MenuToolbar from "../ui/menu/MenuToolbar";
 import MenuToolbarLink from "../ui/menu/MenuToolbarLink";

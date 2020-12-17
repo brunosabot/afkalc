@@ -4717,7 +4717,7 @@ i18next-http-backend@^1.0.17, i18next-http-backend@^1.0.21:
   dependencies:
     node-fetch "2.6.1"
 
-i18next-http-middleware@^3.0.2:
+i18next-http-middleware@^3.0.2, i18next-http-middleware@^3.0.6:
   version "3.0.6"
   resolved "https://registry.yarnpkg.com/i18next-http-middleware/-/i18next-http-middleware-3.0.6.tgz#79c4fbac8fbf5a610152ef7bd80e4ab02c5a3032"
   integrity sha512-zXZyLF+s2NexjFiJ9qV7GPdN8MCEaEk6NGirTQR994eT/PzOqSODlizewsl3n/BvfhTALgYclr1xPV50i+zxCA==
