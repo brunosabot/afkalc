@@ -1,3 +1,4 @@
+import { useRouter } from "next/router";
 import React from "react";
 import { useTranslation } from "react-i18next";
 import CardShare from "../../../ui/card/CardShare";
@@ -44,6 +45,8 @@ interface IProps {
 
 const ShareBanner: React.FC<IProps> = ({ team = {}, si = {}, inn = {}, artifact = {} }) => {
   const { t } = useTranslation("top-team");
+  const router = useRouter();
+  const localePath = router.locale === router.defaultLocale ? "" : `/${router.locale}`;
 
   const t1 = String.fromCharCode((team[1] || 0) + 48);
   const t2 = String.fromCharCode((team[2] || 0) + 48);
@@ -71,7 +74,7 @@ const ShareBanner: React.FC<IProps> = ({ team = {}, si = {}, inn = {}, artifact 
   const a5 = String.fromCharCode((artifact[5] || 0) + 48);
   const aCode = encodeURIComponent(`${a1}${a2}${a3}${a4}${a5}`);
 
-  const value = `https://afkalc.com/top-team/${tCode}-${sCode}-${iCode}-${aCode}`;
+  const value = `https://afkalc.com${localePath}/top-team/${tCode}-${sCode}-${iCode}-${aCode}`;
 
   return <CardShare label={t("label-share")}>{value}</CardShare>;
 };

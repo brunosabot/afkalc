@@ -21,8 +21,9 @@ jobs:
           docker build . --tag eu.gcr.io/${{ secrets.GCLOUD_PROJECT }}/${{ secrets.GCLOUD_APP_NAME }}
 
       - name: Authenticate into Google Cloud Platform
-        uses: GoogleCloudPlatform/github-actions/setup-gcloud@master
+        uses: google-github-actions/setup-gcloud@master
         with:
+          project_id: ${{ secrets.GCLOUD_PROJECT }}
           service_account_email: ${{ secrets.GCP_SA_EMAIL }}
           service_account_key: ${{ secrets.GCLOUD_AUTH }}
 
