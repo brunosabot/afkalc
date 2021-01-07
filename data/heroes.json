@@ -688,6 +688,24 @@
         "role": "continuous",
         "image": "/heroes/ainzooalgown.jpg",
         "faction": "dimensionals"
+      },
+      {
+        "name": "QUEEN",
+        "id": 75,
+        "type": "strength",
+        "class": "warrior",
+        "role": "continuous",
+        "image": "/heroes/queen.jpg",
+        "faction": "dimensionals"
+      },
+      {
+        "name": "JOKER",
+        "id": 76,
+        "type": "agility",
+        "class": "ranger",
+        "role": "continuous",
+        "image": "/heroes/joker.jpg",
+        "faction": "dimensionals"
       }
     ]
   }
