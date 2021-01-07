@@ -1,5 +1,5 @@
 import React from "react";
-import { useTranslation } from "react-i18next";
+import { useTranslation } from "../../../../i18n";
 import Item from "../../../ui/afk/Item";
 import Card from "../../../ui/card/Card";
 import CardTitle from "../../../ui/card/CardTitle";

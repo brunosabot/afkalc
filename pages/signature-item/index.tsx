@@ -1,6 +1,5 @@
 import Head from "next/head";
 import React, { useCallback, useState } from "react";
-import { useTranslation } from "react-i18next";
 import useCountEmblem from "../../components/pages/SignatureItem/hooks/useCountEmblem";
 import SignatureItemLeft from "../../components/pages/SignatureItem/ui/SignatureItemLeft";
 import HelpButton from "../../components/ui/button/HelpButton";
@@ -8,6 +7,7 @@ import Card from "../../components/ui/card/Card";
 import CardHelp from "../../components/ui/card/CardHelp";
 import CardTitle from "../../components/ui/card/CardTitle";
 import InputField from "../../components/ui/InputField";
+import { useTranslation } from "../../i18n";
 
 interface IProps {
   [key: string]: never;
