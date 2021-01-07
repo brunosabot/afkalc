@@ -17,6 +17,7 @@ dayjs.extend(localizedFormat);
 
 function App({ i18n, Component, pageProps }: any) {
   const router = useRouter();
+  dayjs.locale(router.locale)
 
   i18nextInit(router, pageProps.i18nNamespaces);
 
