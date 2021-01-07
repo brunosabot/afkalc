@@ -1,6 +1,6 @@
 import dayjs from "dayjs";
 import React from "react";
-import { useTranslation } from "react-i18next";
+import { useTranslation } from "../../../../i18n";
 import { getDuration, getFrom } from "../../../../lib/time";
 import Item from "../../../ui/afk/Item";
 import ColWithImage from "../../../ui/list/ColWithImage";

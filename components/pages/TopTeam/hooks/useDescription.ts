@@ -1,6 +1,6 @@
 import { TFunction } from "next-i18next";
 import { useMemo } from "react";
-import { useTranslation } from "react-i18next";
+import { useTranslation } from "../../../../i18n";
 import useArtifact, { Artifact } from "./useArtifact";
 import useHero from "./useHero";
 

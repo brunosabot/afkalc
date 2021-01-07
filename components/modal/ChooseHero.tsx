@@ -1,7 +1,7 @@
 import React from "react";
-import { useTranslation } from "react-i18next";
 import artifacts from "../../data/artifacts.json";
 import factions from "../../data/heroes.json";
+import { useTranslation } from "../../i18n";
 import Artifact from "../ui/afk/Artifact";
 import Character, { DetailType } from "../ui/afk/Character";
 import InputField from "../ui/InputField";

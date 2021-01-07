@@ -1,6 +1,5 @@
 import Head from "next/head";
 import React, { useState } from "react";
-import { useTranslation } from "react-i18next";
 import useFirestoreWithBackup from "../../components/hooks/useFirestoreWithBackup";
 import useOnChangeNumber from "../../components/hooks/useOnChangeNumber";
 import useMaxLevel from "../../components/pages/FastReward/hooks/useMaxLevel";
@@ -13,6 +12,7 @@ import SelectField from "../../components/ui/SelectField";
 import campaign from "../../data/fastRewardCampaign.json";
 import player from "../../data/fastRewardPlayer.json";
 import vip from "../../data/fastRewardVip.json";
+import { useTranslation } from "../../i18n";
 
 interface IProps {
   [key: string]: never;
