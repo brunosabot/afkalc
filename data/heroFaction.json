@@ -1,1 +1,9 @@
-["lightbearers", "maulers", "wilders", "graveborns", "celestials", "hypogeans", "dimensionals"]
+{
+  "lightbearers": 1,
+  "maulers": 2,
+  "wilders": 3,
+  "graveborns": 4,
+  "celestials": 5,
+  "hypogeans": 6,
+  "dimensionals": 7
+}

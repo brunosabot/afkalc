@@ -1,721 +1,761 @@
 [
   {
-    "faction": "lightbearers",
-    "characters": [
-      {
-        "name": "Belinda",
-        "id": 2,
-        "type": "intelligence",
-        "class": "mage",
-        "role": "aoe",
-        "image": "/heroes/belinda.jpg",
-        "faction": "lightbearers"
-      },
-      {
-        "name": "Cecilia",
-        "id": 53,
-        "type": "agility",
-        "class": "ranger",
-        "role": "assassin",
-        "image": "/heroes/cecilia.jpg",
-        "faction": "lightbearers"
-      },
-      {
-        "name": "Estrilda",
-        "id": 1,
-        "type": "strength",
-        "class": "warrior",
-        "role": "burst",
-        "image": "/heroes/estrilda.jpg",
-        "faction": "lightbearers"
-      },
-      {
-        "name": "Fawkes",
-        "id": 22,
-        "type": "agility",
-        "class": "ranger",
-        "role": "control",
-        "image": "/heroes/fawkes.jpg",
-        "faction": "lightbearers"
-      },
-      {
-        "name": "Gwyneth",
-        "id": 41,
-        "type": "strength",
-        "class": "ranger",
-        "role": "continuous",
-        "image": "/heroes/gwyneth.jpg",
-        "faction": "lightbearers"
-      },
-      {
-        "name": "Hendrik",
-        "id": 30,
-        "type": "strength",
-        "class": "tank",
-        "role": "tank",
-        "image": "/heroes/hendrik.jpg",
-        "faction": "lightbearers"
-      },
-      {
-        "name": "Lucius",
-        "id": 17,
-        "type": "strength",
-        "class": "tank",
-        "role": "regen",
-        "image": "/heroes/lucius.jpg",
-        "faction": "lightbearers"
-      },
-      {
-        "name": "Oscar",
-        "id": 56,
-        "type": "agility",
-        "class": "ranger",
-        "role": "assassin",
-        "image": "/heroes/oscar.jpg",
-        "faction": "lightbearers"
-      },
-      {
-        "name": "Raine",
-        "id": 3,
-        "type": "agility",
-        "class": "support",
-        "role": "buffer",
-        "image": "/heroes/raine.jpg",
-        "faction": "lightbearers"
-      },
-      {
-        "name": "Rigby",
-        "id": 44,
-        "type": "strength",
-        "class": "warrior",
-        "role": "tank",
-        "image": "/heroes/rigby.jpg",
-        "faction": "lightbearers"
-      },
-      {
-        "name": "Rosaline",
-        "id": 36,
-        "type": "intelligence",
-        "class": "support",
-        "role": "buffer",
-        "image": "/heroes/rosaline.jpg",
-        "faction": "lightbearers"
-      },
-      {
-        "name": "Rowan",
-        "id": 34,
-        "type": "intelligence",
-        "class": "support",
-        "role": "buffer",
-        "image": "/heroes/rowan.jpg",
-        "faction": "lightbearers"
-      },
-      {
-        "name": "Thane",
-        "id": 18,
-        "type": "agility",
-        "class": "ranger",
-        "role": "assassin",
-        "image": "/heroes/thane.jpg",
-        "faction": "lightbearers"
-      }
-    ]
+    "id": 1,
+    "name": "Estrilda",
+    "slug": "estrilda",
+    "type": "strength",
+    "class": "warrior",
+    "role": "burst",
+    "image": "/heroes/estrilda.jpg",
+    "faction": "lightbearers"
   },
   {
-    "faction": "maulers",
-    "characters": [
-      {
-        "name": "Anoki",
-        "id": 60,
-        "type": "strength",
-        "class": "tank",
-        "role": "control",
-        "image": "/heroes/anoki.jpg",
-        "faction": "maulers"
-      },
-      {
-        "name": "Antandra",
-        "id": 38,
-        "type": "agility",
-        "class": "warrior",
-        "role": "tank",
-        "image": "/heroes/antandra.jpg",
-        "faction": "maulers"
-      },
-      {
-        "name": "Brutus",
-        "id": 6,
-        "type": "strength",
-        "class": "tank",
-        "role": "tank",
-        "image": "/heroes/brutus.jpg",
-        "faction": "maulers"
-      },
-      {
-        "name": "Drez",
-        "id": 65,
-        "type": "agility",
-        "class": "ranger",
-        "role": "burst",
-        "image": "/heroes/drez.jpg",
-        "faction": "maulers"
-      },
-      {
-        "name": "Khasos",
-        "id": 5,
-        "type": "strength",
-        "class": "warrior",
-        "role": "continuous",
-        "image": "/heroes/khasos.jpg",
-        "faction": "maulers"
-      },
-      {
-        "name": "Numisu",
-        "id": 13,
-        "type": "intelligence",
-        "class": "support",
-        "role": "regen",
-        "image": "/heroes/numisu.jpg",
-        "faction": "maulers"
-      },
-      {
-        "name": "Safiya",
-        "id": 26,
-        "type": "intelligence",
-        "class": "mage",
-        "role": "aoe",
-        "image": "/heroes/safiya.jpg",
-        "faction": "maulers"
-      },
-      {
-        "name": "Satrana",
-        "id": 39,
-        "type": "intelligence",
-        "class": "mage",
-        "role": "burst",
-        "image": "/heroes/satrana.jpg",
-        "faction": "maulers"
-      },
-      {
-        "name": "Skreg",
-        "id": 23,
-        "type": "strength",
-        "class": "tank",
-        "role": "tank",
-        "image": "/heroes/skreg.jpg",
-        "faction": "maulers"
-      },
-      {
-        "name": "Skriath",
-        "id": 51,
-        "type": "intelligence",
-        "class": "mage",
-        "role": "aoe",
-        "image": "/heroes/skriath.jpg",
-        "faction": "maulers"
-      },
-      {
-        "name": "Tidus",
-        "id": 45,
-        "type": "agility",
-        "class": "ranger",
-        "role": "continuous",
-        "image": "/heroes/tidus.jpg",
-        "faction": "maulers"
-      },
-      {
-        "name": "Vurk",
-        "id": 4,
-        "type": "agility",
-        "class": "ranger",
-        "role": "aoe",
-        "image": "/heroes/vurk.jpg",
-        "faction": "maulers"
-      },
-      {
-        "name": "Warek",
-        "id": 15,
-        "type": "strength",
-        "class": "warrior",
-        "role": "continuous",
-        "image": "/heroes/warek.jpg",
-        "faction": "maulers"
-      },
-      {
-        "name": "Kren",
-        "id": 77,
-        "type": "agility",
-        "class": "ranger",
-        "role": "continuous",
-        "image": "/heroes/kren.jpg",
-        "faction": "maulers"
-      }
-    ]
+    "id": 2,
+    "name": "Belinda",
+    "slug": "belinda",
+    "type": "intelligence",
+    "class": "mage",
+    "role": "aoe",
+    "image": "/heroes/belinda.jpg",
+    "faction": "lightbearers"
   },
   {
-    "faction": "wilders",
-    "characters": [
-      {
-        "name": "Eironn",
-        "id": 27,
-        "type": "agility",
-        "class": "ranger",
-        "role": "aoe",
-        "image": "/heroes/eironn.jpg",
-        "faction": "wilders"
-      },
-      {
-        "name": "Gorvo",
-        "id": 33,
-        "type": "strength",
-        "class": "tank",
-        "role": "tank",
-        "image": "/heroes/gorvo.jpg",
-        "faction": "wilders"
-      },
-      {
-        "name": "Kaz",
-        "id": 8,
-        "type": "agility",
-        "class": "ranger",
-        "role": "assassin",
-        "image": "/heroes/kaz.jpg",
-        "faction": "wilders"
-      },
-      {
-        "name": "Lorsan",
-        "id": 43,
-        "type": "intelligence",
-        "class": "mage",
-        "role": "aoe",
-        "image": "/heroes/lorsan.jpg",
-        "faction": "wilders"
-      },
-      {
-        "name": "Lyca",
-        "id": 9,
-        "type": "agility",
-        "class": "ranger",
-        "role": "buffer",
-        "image": "/heroes/lyca.jpg",
-        "faction": "wilders"
-      },
-      {
-        "name": "Nemora",
-        "id": 7,
-        "type": "intelligence",
-        "class": "support",
-        "role": "regen",
-        "image": "/heroes/nemora.jpg",
-        "faction": "wilders"
-      },
-      {
-        "name": "Saurus",
-        "id": 58,
-        "type": "strength",
-        "class": "warrior",
-        "role": "continuous",
-        "image": "/heroes/saurus.jpg",
-        "faction": "wilders"
-      },
-      {
-        "name": "Seirus",
-        "id": 24,
-        "type": "strength",
-        "class": "warrior",
-        "role": "tank",
-        "image": "/heroes/seirus.jpg",
-        "faction": "wilders"
-      },
-      {
-        "name": "Solise",
-        "id": 52,
-        "type": "intelligence",
-        "class": "mage",
-        "role": "control",
-        "image": "/heroes/solise.jpg",
-        "faction": "wilders"
-      },
-      {
-        "name": "Tasi",
-        "id": 19,
-        "type": "intelligence",
-        "class": "support",
-        "role": "control",
-        "image": "/heroes/tasi.jpg",
-        "faction": "wilders"
-      },
-      {
-        "name": "Ulmus",
-        "id": 16,
-        "type": "strength",
-        "class": "tank",
-        "role": "tank",
-        "image": "/heroes/ulmus.jpg",
-        "faction": "wilders"
-      },
-      {
-        "name": "Pippa",
-        "id": 71,
-        "type": "intelligence",
-        "class": "mage",
-        "role": "continuous",
-        "image": "/heroes/pippa.jpg",
-        "faction": "wilders"
-      }
-    ]
+    "id": 3,
+    "name": "Raine",
+    "slug": "raine",
+    "type": "agility",
+    "class": "support",
+    "role": "buffer",
+    "image": "/heroes/raine.jpg",
+    "faction": "lightbearers"
   },
   {
-    "faction": "graveborns",
-    "characters": [
-      {
-        "name": "Baden",
-        "id": 29,
-        "type": "agility",
-        "class": "warrior",
-        "role": "continuous",
-        "image": "/heroes/baden.jpg",
-        "faction": "graveborns"
-      },
-      {
-        "name": "Daimon",
-        "id": 63,
-        "type": "strength",
-        "class": "tank",
-        "role": "tank",
-        "image": "/heroes/daimon.jpg",
-        "faction": "graveborns"
-      },
-      {
-        "name": "Ferael",
-        "id": 14,
-        "type": "agility",
-        "class": "ranger",
-        "role": "continuous",
-        "image": "/heroes/ferael.jpg",
-        "faction": "graveborns"
-      },
-      {
-        "name": "Grezhul",
-        "id": 11,
-        "type": "strength",
-        "class": "tank",
-        "role": "tank",
-        "image": "/heroes/grezhul.jpg",
-        "faction": "graveborns"
-      },
-      {
-        "name": "Isabella",
-        "id": 10,
-        "type": "intelligence",
-        "class": "mage",
-        "role": "continuous",
-        "image": "/heroes/isabella.jpg",
-        "faction": "graveborns"
-      },
-      {
-        "name": "Izold",
-        "id": 46,
-        "type": "strength",
-        "class": "warrior",
-        "role": "tank",
-        "image": "/heroes/izold.jpg",
-        "faction": "graveborns"
-      },
-      {
-        "name": "Kelthur",
-        "id": 31,
-        "type": "agility",
-        "class": "ranger",
-        "role": "assassin",
-        "image": "/heroes/kelthur.jpg",
-        "faction": "graveborns"
-      },
-      {
-        "name": "Nara",
-        "id": 28,
-        "type": "strength",
-        "class": "warrior",
-        "role": "assassin",
-        "image": "/heroes/nara.jpg",
-        "faction": "graveborns"
-      },
-      {
-        "name": "Oden",
-        "id": 55,
-        "type": "intelligence",
-        "class": "mage",
-        "role": "aoe",
-        "image": "/heroes/oden.jpg",
-        "faction": "graveborns"
-      },
-      {
-        "name": "Shemira",
-        "id": 12,
-        "type": "intelligence",
-        "class": "mage",
-        "role": "aoe",
-        "image": "/heroes/shemira.jpg",
-        "faction": "graveborns"
-      },
-      {
-        "name": "Theowyn",
-        "id": 66,
-        "type": "agility",
-        "class": "ranger",
-        "role": "continuous",
-        "image": "/heroes/theowyn.jpg",
-        "faction": "graveborns"
-      },
-      {
-        "name": "Thoran",
-        "id": 20,
-        "type": "strength",
-        "class": "tank",
-        "role": "tank",
-        "image": "/heroes/thoran.jpg",
-        "faction": "graveborns"
-      },
-      {
-        "name": "Torne",
-        "id": 59,
-        "type": "strength",
-        "class": "tank",
-        "role": "tank",
-        "image": "/heroes/torne.jpg",
-        "faction": "graveborns"
-      },
-      {
-        "name": "Silas",
-        "id": 72,
-        "type": "intelligence",
-        "class": "support",
-        "role": "buffer",
-        "image": "/heroes/silas.jpg",
-        "faction": "graveborns"
-      }
-    ]
+    "id": 4,
+    "name": "Vurk",
+    "slug": "vurk",
+    "type": "agility",
+    "class": "ranger",
+    "role": "aoe",
+    "image": "/heroes/vurk.jpg",
+    "faction": "maulers"
   },
   {
-    "faction": "celestials",
-    "characters": [
-      {
-        "name": "Athalia",
-        "id": 21,
-        "type": "agility",
-        "class": "ranger",
-        "role": "assassin",
-        "image": "/heroes/athalia.jpg",
-        "faction": "celestials"
-      },
-      {
-        "name": "Elijah & Lailah",
-        "id": 35,
-        "type": "intelligence",
-        "class": "support",
-        "role": "buffer",
-        "image": "/heroes/elijahlailah.jpg",
-        "faction": "celestials"
-      },
-      {
-        "name": "Flora",
-        "id": 61,
-        "type": "intelligence",
-        "class": "mage",
-        "role": "continuous",
-        "image": "/heroes/flora.jpg",
-        "faction": "celestials"
-      },
-      {
-        "name": "Orthros",
-        "id": 42,
-        "type": "strength",
-        "class": "tank",
-        "role": "tank",
-        "image": "/heroes/orthros.jpg",
-        "faction": "celestials"
-      },
-      {
-        "name": "Talene",
-        "id": 47,
-        "type": "agility",
-        "class": "support",
-        "role": "continuous",
-        "image": "/heroes/talene.jpg",
-        "faction": "celestials"
-      },
-      {
-        "name": "Wu Kong",
-        "id": 50,
-        "type": "strength",
-        "class": "warrior",
-        "role": "continuous",
-        "image": "/heroes/wukong.jpg",
-        "faction": "celestials"
-      },
-      {
-        "name": "Zaphrael",
-        "id": 67,
-        "type": "intelligence",
-        "class": "mage",
-        "role": "continuous",
-        "image": "/heroes/zaphrael.jpg",
-        "faction": "celestials"
-      },
-      {
-        "name": "Alna",
-        "id": 74,
-        "type": "agility",
-        "class": "warrior",
-        "role": "debuffer",
-        "image": "/heroes/alna.jpg",
-        "faction": "celestials"
-      }
-    ]
+    "id": 5,
+    "name": "Khasos",
+    "slug": "khasos",
+    "type": "strength",
+    "class": "warrior",
+    "role": "continuous",
+    "image": "/heroes/khasos.jpg",
+    "faction": "maulers"
   },
   {
-    "faction": "hypogeans",
-    "characters": [
-      {
-        "name": "Ezizh",
-        "id": 25,
-        "type": "strength",
-        "class": "support",
-        "role": "debuffer",
-        "image": "/heroes/ezizh.jpg",
-        "faction": "hypogeans"
-      },
-      {
-        "name": "Khazard",
-        "id": 49,
-        "type": "intelligence",
-        "class": "mage",
-        "role": "control",
-        "image": "/heroes/khazard.jpg",
-        "faction": "hypogeans"
-      },
-      {
-        "name": "Lucretia",
-        "id": 68,
-        "type": "agility",
-        "class": "ranger",
-        "role": "assassin",
-        "image": "/heroes/lucretia.jpg",
-        "faction": "hypogeans"
-      },
-      {
-        "name": "Mehira",
-        "id": 32,
-        "type": "intelligence",
-        "class": "mage",
-        "role": "control",
-        "image": "/heroes/mehira.jpg",
-        "faction": "hypogeans"
-      },
-      {
-        "name": "Mezoth",
-        "id": 54,
-        "type": "strength",
-        "class": "tank",
-        "role": "tank",
-        "image": "/heroes/mezoth.jpg",
-        "faction": "hypogeans"
-      },
-      {
-        "name": "Zolrath",
-        "id": 40,
-        "type": "agility",
-        "class": "warrior",
-        "role": "assassin",
-        "image": "/heroes/zolrath.jpg",
-        "faction": "hypogeans"
-      },
-      {
-        "name": "Mortas",
-        "id": 73,
-        "type": "agility",
-        "class": "support",
-        "role": "regen",
-        "image": "/heroes/mortas.jpg",
-        "faction": "hypogeans"
-      }
-    ]
+    "id": 6,
+    "name": "Brutus",
+    "slug": "brutus",
+    "type": "strength",
+    "class": "tank",
+    "role": "tank",
+    "image": "/heroes/brutus.jpg",
+    "faction": "maulers"
   },
   {
-    "faction": "dimensionals",
-    "characters": [
-      {
-        "name": "Arthur",
-        "id": 48,
-        "type": "strength",
-        "class": "tank",
-        "role": "tank",
-        "image": "/heroes/arthur.jpg",
-        "faction": "dimensionals"
-      },
-      {
-        "name": "Ezio",
-        "id": 64,
-        "type": "agility",
-        "class": "ranger",
-        "role": "assassin",
-        "image": "/heroes/ezio.jpg",
-        "faction": "dimensionals"
-      },
-      {
-        "name": "Nakoruru",
-        "id": 62,
-        "type": "agility",
-        "class": "ranger",
-        "role": "burst",
-        "image": "/heroes/nakoruru.jpg",
-        "faction": "dimensionals"
-      },
-      {
-        "name": "Ukyo",
-        "id": 57,
-        "type": "agility",
-        "class": "warrior",
-        "role": "continuous",
-        "image": "/heroes/ukyo.jpg",
-        "faction": "dimensionals"
-      },
-      {
-        "name": "Albedo",
-        "id": 69,
-        "type": "strength",
-        "class": "tank",
-        "role": "tank",
-        "image": "/heroes/albedo.jpg",
-        "faction": "dimensionals"
-      },
-      {
-        "name": "Ainz Ooal Gown",
-        "id": 70,
-        "type": "intelligence",
-        "class": "mage",
-        "role": "continuous",
-        "image": "/heroes/ainzooalgown.jpg",
-        "faction": "dimensionals"
-      },
-      {
-        "name": "QUEEN",
-        "id": 75,
-        "type": "strength",
-        "class": "warrior",
-        "role": "continuous",
-        "image": "/heroes/queen.jpg",
-        "faction": "dimensionals"
-      },
-      {
-        "name": "JOKER",
-        "id": 76,
-        "type": "agility",
-        "class": "ranger",
-        "role": "continuous",
-        "image": "/heroes/joker.jpg",
-        "faction": "dimensionals"
-      }
-    ]
+    "id": 7,
+    "name": "Nemora",
+    "slug": "nemora",
+    "type": "intelligence",
+    "class": "support",
+    "role": "regen",
+    "image": "/heroes/nemora.jpg",
+    "faction": "wilders"
+  },
+  {
+    "id": 8,
+    "name": "Kaz",
+    "slug": "kaz",
+    "type": "agility",
+    "class": "ranger",
+    "role": "assassin",
+    "image": "/heroes/kaz.jpg",
+    "faction": "wilders"
+  },
+  {
+    "id": 9,
+    "name": "Lyca",
+    "slug": "lyca",
+    "type": "agility",
+    "class": "ranger",
+    "role": "buffer",
+    "image": "/heroes/lyca.jpg",
+    "faction": "wilders"
+  },
+  {
+    "id": 10,
+    "name": "Isabella",
+    "slug": "isabella",
+    "type": "intelligence",
+    "class": "mage",
+    "role": "continuous",
+    "image": "/heroes/isabella.jpg",
+    "faction": "graveborns"
+  },
+  {
+    "id": 11,
+    "name": "Grezhul",
+    "slug": "grezhul",
+    "type": "strength",
+    "class": "tank",
+    "role": "tank",
+    "image": "/heroes/grezhul.jpg",
+    "faction": "graveborns"
+  },
+  {
+    "id": 12,
+    "name": "Shemira",
+    "slug": "shemira",
+    "type": "intelligence",
+    "class": "mage",
+    "role": "aoe",
+    "image": "/heroes/shemira.jpg",
+    "faction": "graveborns"
+  },
+  {
+    "id": 13,
+    "name": "Numisu",
+    "slug": "numisu",
+    "type": "intelligence",
+    "class": "support",
+    "role": "regen",
+    "image": "/heroes/numisu.jpg",
+    "faction": "maulers"
+  },
+  {
+    "id": 14,
+    "name": "Ferael",
+    "slug": "ferael",
+    "type": "agility",
+    "class": "ranger",
+    "role": "continuous",
+    "image": "/heroes/ferael.jpg",
+    "faction": "graveborns"
+  },
+  {
+    "id": 15,
+    "name": "Warek",
+    "slug": "warek",
+    "type": "strength",
+    "class": "warrior",
+    "role": "continuous",
+    "image": "/heroes/warek.jpg",
+    "faction": "maulers"
+  },
+  {
+    "id": 16,
+    "name": "Ulmus",
+    "slug": "ulmus",
+    "type": "strength",
+    "class": "tank",
+    "role": "tank",
+    "image": "/heroes/ulmus.jpg",
+    "faction": "wilders"
+  },
+  {
+    "id": 17,
+    "name": "Lucius",
+    "slug": "lucius",
+    "type": "strength",
+    "class": "tank",
+    "role": "regen",
+    "image": "/heroes/lucius.jpg",
+    "faction": "lightbearers"
+  },
+  {
+    "id": 18,
+    "name": "Thane",
+    "slug": "thane",
+    "type": "agility",
+    "class": "ranger",
+    "role": "assassin",
+    "image": "/heroes/thane.jpg",
+    "faction": "lightbearers"
+  },
+  {
+    "id": 19,
+    "name": "Tasi",
+    "slug": "tasi",
+    "type": "intelligence",
+    "class": "support",
+    "role": "control",
+    "image": "/heroes/tasi.jpg",
+    "faction": "wilders"
+  },
+  {
+    "id": 20,
+    "name": "Thoran",
+    "slug": "thoran",
+    "type": "strength",
+    "class": "tank",
+    "role": "tank",
+    "image": "/heroes/thoran.jpg",
+    "faction": "graveborns"
+  },
+  {
+    "id": 21,
+    "name": "Athalia",
+    "slug": "athalia",
+    "type": "agility",
+    "class": "ranger",
+    "role": "assassin",
+    "image": "/heroes/athalia.jpg",
+    "faction": "celestials"
+  },
+  {
+    "id": 22,
+    "name": "Fawkes",
+    "slug": "fawkes",
+    "type": "agility",
+    "class": "ranger",
+    "role": "control",
+    "image": "/heroes/fawkes.jpg",
+    "faction": "lightbearers"
+  },
+  {
+    "id": 23,
+    "name": "Skreg",
+    "slug": "skreg",
+    "type": "strength",
+    "class": "tank",
+    "role": "tank",
+    "image": "/heroes/skreg.jpg",
+    "faction": "maulers"
+  },
+  {
+    "id": 24,
+    "name": "Seirus",
+    "slug": "seirus",
+    "type": "strength",
+    "class": "warrior",
+    "role": "tank",
+    "image": "/heroes/seirus.jpg",
+    "faction": "wilders"
+  },
+  {
+    "id": 25,
+    "name": "Ezizh",
+    "slug": "ezizh",
+    "type": "strength",
+    "class": "support",
+    "role": "debuffer",
+    "image": "/heroes/ezizh.jpg",
+    "faction": "hypogeans"
+  },
+  {
+    "id": 26,
+    "name": "Safiya",
+    "slug": "safiya",
+    "type": "intelligence",
+    "class": "mage",
+    "role": "aoe",
+    "image": "/heroes/safiya.jpg",
+    "faction": "maulers"
+  },
+  {
+    "id": 27,
+    "name": "Eironn",
+    "slug": "eironn",
+    "type": "agility",
+    "class": "ranger",
+    "role": "aoe",
+    "image": "/heroes/eironn.jpg",
+    "faction": "wilders"
+  },
+  {
+    "id": 28,
+    "name": "Nara",
+    "slug": "nara",
+    "type": "strength",
+    "class": "warrior",
+    "role": "assassin",
+    "image": "/heroes/nara.jpg",
+    "faction": "graveborns"
+  },
+  {
+    "id": 29,
+    "name": "Baden",
+    "slug": "baden",
+    "type": "agility",
+    "class": "warrior",
+    "role": "continuous",
+    "image": "/heroes/baden.jpg",
+    "faction": "graveborns"
+  },
+  {
+    "id": 30,
+    "name": "Hendrik",
+    "slug": "hendrik",
+    "type": "strength",
+    "class": "tank",
+    "role": "tank",
+    "image": "/heroes/hendrik.jpg",
+    "faction": "lightbearers"
+  },
+  {
+    "id": 31,
+    "name": "Kelthur",
+    "slug": "kelthur",
+    "type": "agility",
+    "class": "ranger",
+    "role": "assassin",
+    "image": "/heroes/kelthur.jpg",
+    "faction": "graveborns"
+  },
+  {
+    "id": 32,
+    "name": "Mehira",
+    "slug": "mehira",
+    "type": "intelligence",
+    "class": "mage",
+    "role": "control",
+    "image": "/heroes/mehira.jpg",
+    "faction": "hypogeans"
+  },
+  {
+    "id": 33,
+    "name": "Gorvo",
+    "slug": "gorvo",
+    "type": "strength",
+    "class": "tank",
+    "role": "tank",
+    "image": "/heroes/gorvo.jpg",
+    "faction": "wilders"
+  },
+  {
+    "id": 34,
+    "name": "Rowan",
+    "slug": "rowan",
+    "type": "intelligence",
+    "class": "support",
+    "role": "buffer",
+    "image": "/heroes/rowan.jpg",
+    "faction": "lightbearers"
+  },
+  {
+    "id": 35,
+    "name": "Elijah & Lailah",
+    "slug": "elijahlailah",
+    "type": "intelligence",
+    "class": "support",
+    "role": "buffer",
+    "image": "/heroes/elijahlailah.jpg",
+    "faction": "celestials"
+  },
+  {
+    "id": 36,
+    "name": "Rosaline",
+    "slug": "rosaline",
+    "type": "intelligence",
+    "class": "support",
+    "role": "buffer",
+    "image": "/heroes/rosaline.jpg",
+    "faction": "lightbearers"
+  },
+  {
+    "id": 38,
+    "name": "Antandra",
+    "slug": "antandra",
+    "type": "agility",
+    "class": "warrior",
+    "role": "tank",
+    "image": "/heroes/antandra.jpg",
+    "faction": "maulers"
+  },
+  {
+    "id": 39,
+    "name": "Satrana",
+    "slug": "satrana",
+    "type": "intelligence",
+    "class": "mage",
+    "role": "burst",
+    "image": "/heroes/satrana.jpg",
+    "faction": "maulers"
+  },
+  {
+    "id": 40,
+    "name": "Zolrath",
+    "slug": "zolrath",
+    "type": "agility",
+    "class": "warrior",
+    "role": "assassin",
+    "image": "/heroes/zolrath.jpg",
+    "faction": "hypogeans"
+  },
+  {
+    "id": 41,
+    "name": "Gwyneth",
+    "slug": "gwyneth",
+    "type": "strength",
+    "class": "ranger",
+    "role": "continuous",
+    "image": "/heroes/gwyneth.jpg",
+    "faction": "lightbearers"
+  },
+  {
+    "id": 42,
+    "name": "Orthros",
+    "slug": "orthros",
+    "type": "strength",
+    "class": "tank",
+    "role": "tank",
+    "image": "/heroes/orthros.jpg",
+    "faction": "celestials"
+  },
+  {
+    "id": 43,
+    "name": "Lorsan",
+    "slug": "lorsan",
+    "type": "intelligence",
+    "class": "mage",
+    "role": "aoe",
+    "image": "/heroes/lorsan.jpg",
+    "faction": "wilders"
+  },
+  {
+    "id": 44,
+    "name": "Rigby",
+    "slug": "rigby",
+    "type": "strength",
+    "class": "warrior",
+    "role": "tank",
+    "image": "/heroes/rigby.jpg",
+    "faction": "lightbearers"
+  },
+  {
+    "id": 45,
+    "name": "Tidus",
+    "slug": "tidus",
+    "type": "agility",
+    "class": "ranger",
+    "role": "continuous",
+    "image": "/heroes/tidus.jpg",
+    "faction": "maulers"
+  },
+  {
+    "id": 46,
+    "name": "Izold",
+    "slug": "izold",
+    "type": "strength",
+    "class": "warrior",
+    "role": "tank",
+    "image": "/heroes/izold.jpg",
+    "faction": "graveborns"
+  },
+  {
+    "id": 47,
+    "name": "Talene",
+    "slug": "talene",
+    "type": "agility",
+    "class": "support",
+    "role": "continuous",
+    "image": "/heroes/talene.jpg",
+    "faction": "celestials"
+  },
+  {
+    "id": 48,
+    "name": "Arthur",
+    "slug": "arthur",
+    "type": "strength",
+    "class": "tank",
+    "role": "tank",
+    "image": "/heroes/arthur.jpg",
+    "faction": "dimensionals"
+  },
+  {
+    "id": 49,
+    "name": "Khazard",
+    "slug": "khazard",
+    "type": "intelligence",
+    "class": "mage",
+    "role": "control",
+    "image": "/heroes/khazard.jpg",
+    "faction": "hypogeans"
+  },
+  {
+    "id": 50,
+    "name": "Wu Kong",
+    "slug": "wukong",
+    "type": "strength",
+    "class": "warrior",
+    "role": "continuous",
+    "image": "/heroes/wukong.jpg",
+    "faction": "celestials"
+  },
+  {
+    "id": 51,
+    "name": "Skriath",
+    "slug": "skriath",
+    "type": "intelligence",
+    "class": "mage",
+    "role": "aoe",
+    "image": "/heroes/skriath.jpg",
+    "faction": "maulers"
+  },
+  {
+    "id": 52,
+    "name": "Solise",
+    "slug": "solise",
+    "type": "intelligence",
+    "class": "mage",
+    "role": "control",
+    "image": "/heroes/solise.jpg",
+    "faction": "wilders"
+  },
+  {
+    "id": 53,
+    "name": "Cecilia",
+    "slug": "cecilia",
+    "type": "agility",
+    "class": "ranger",
+    "role": "assassin",
+    "image": "/heroes/cecilia.jpg",
+    "faction": "lightbearers"
+  },
+  {
+    "id": 54,
+    "name": "Mezoth",
+    "slug": "mezoth",
+    "type": "strength",
+    "class": "tank",
+    "role": "tank",
+    "image": "/heroes/mezoth.jpg",
+    "faction": "hypogeans"
+  },
+  {
+    "id": 55,
+    "name": "Oden",
+    "slug": "oden",
+    "type": "intelligence",
+    "class": "mage",
+    "role": "aoe",
+    "image": "/heroes/oden.jpg",
+    "faction": "graveborns"
+  },
+  {
+    "id": 56,
+    "name": "Oscar",
+    "slug": "oscar",
+    "type": "agility",
+    "class": "ranger",
+    "role": "assassin",
+    "image": "/heroes/oscar.jpg",
+    "faction": "lightbearers"
+  },
+  {
+    "id": 57,
+    "name": "Ukyo",
+    "slug": "ukyo",
+    "type": "agility",
+    "class": "warrior",
+    "role": "continuous",
+    "image": "/heroes/ukyo.jpg",
+    "faction": "dimensionals"
+  },
+  {
+    "id": 58,
+    "name": "Saurus",
+    "slug": "saurus",
+    "type": "strength",
+    "class": "warrior",
+    "role": "continuous",
+    "image": "/heroes/saurus.jpg",
+    "faction": "wilders"
+  },
+  {
+    "id": 59,
+    "name": "Torne",
+    "slug": "torne",
+    "type": "strength",
+    "class": "tank",
+    "role": "tank",
+    "image": "/heroes/torne.jpg",
+    "faction": "graveborns"
+  },
+  {
+    "id": 60,
+    "name": "Anoki",
+    "slug": "anoki",
+    "type": "strength",
+    "class": "tank",
+    "role": "control",
+    "image": "/heroes/anoki.jpg",
+    "faction": "maulers"
+  },
+  {
+    "id": 61,
+    "name": "Flora",
+    "slug": "flora",
+    "type": "intelligence",
+    "class": "mage",
+    "role": "continuous",
+    "image": "/heroes/flora.jpg",
+    "faction": "celestials"
+  },
+  {
+    "id": 62,
+    "name": "Nakoruru",
+    "slug": "nakoruru",
+    "type": "agility",
+    "class": "ranger",
+    "role": "burst",
+    "image": "/heroes/nakoruru.jpg",
+    "faction": "dimensionals"
+  },
+  {
+    "id": 63,
+    "name": "Daimon",
+    "slug": "daimon",
+    "type": "strength",
+    "class": "tank",
+    "role": "tank",
+    "image": "/heroes/daimon.jpg",
+    "faction": "graveborns"
+  },
+  {
+    "id": 64,
+    "name": "Ezio",
+    "slug": "ezio",
+    "type": "agility",
+    "class": "ranger",
+    "role": "assassin",
+    "image": "/heroes/ezio.jpg",
+    "faction": "dimensionals"
+  },
+  {
+    "id": 65,
+    "name": "Drez",
+    "slug": "drez",
+    "type": "agility",
+    "class": "ranger",
+    "role": "burst",
+    "image": "/heroes/drez.jpg",
+    "faction": "maulers"
+  },
+  {
+    "id": 66,
+    "name": "Theowyn",
+    "slug": "theowyn",
+    "type": "agility",
+    "class": "ranger",
+    "role": "continuous",
+    "image": "/heroes/theowyn.jpg",
+    "faction": "graveborns"
+  },
+  {
+    "id": 67,
+    "name": "Zaphrael",
+    "slug": "zaphrael",
+    "type": "intelligence",
+    "class": "mage",
+    "role": "continuous",
+    "image": "/heroes/zaphrael.jpg",
+    "faction": "celestials"
+  },
+  {
+    "id": 68,
+    "name": "Lucretia",
+    "slug": "lucretia",
+    "type": "agility",
+    "class": "ranger",
+    "role": "assassin",
+    "image": "/heroes/lucretia.jpg",
+    "faction": "hypogeans"
+  },
+  {
+    "id": 69,
+    "name": "Albedo",
+    "slug": "albedo",
+    "type": "strength",
+    "class": "tank",
+    "role": "tank",
+    "image": "/heroes/albedo.jpg",
+    "faction": "dimensionals"
+  },
+  {
+    "id": 70,
+    "name": "Ainz Ooal Gown",
+    "slug": "ainzooalgown",
+    "type": "intelligence",
+    "class": "mage",
+    "role": "continuous",
+    "image": "/heroes/ainzooalgown.jpg",
+    "faction": "dimensionals"
+  },
+  {
+    "id": 71,
+    "name": "Pippa",
+    "slug": "pippa",
+    "type": "intelligence",
+    "class": "mage",
+    "role": "continuous",
+    "image": "/heroes/pippa.jpg",
+    "faction": "wilders"
+  },
+  {
+    "id": 72,
+    "name": "Silas",
+    "slug": "silas",
+    "type": "intelligence",
+    "class": "support",
+    "role": "buffer",
+    "image": "/heroes/silas.jpg",
+    "faction": "graveborns"
+  },
+  {
+    "id": 73,
+    "name": "Mortas",
+    "slug": "mortas",
+    "type": "agility",
+    "class": "support",
+    "role": "regen",
+    "image": "/heroes/mortas.jpg",
+    "faction": "hypogeans"
+  },
+  {
+    "id": 74,
+    "name": "Alna",
+    "slug": "alna",
+    "type": "agility",
+    "class": "warrior",
+    "role": "debuffer",
+    "image": "/heroes/alna.jpg",
+    "faction": "celestials"
+  },
+  {
+    "id": 75,
+    "name": "QUEEN",
+    "slug": "queen",
+    "type": "strength",
+    "class": "warrior",
+    "role": "continuous",
+    "image": "/heroes/queen.jpg",
+    "faction": "dimensionals"
+  },
+  {
+    "id": 76,
+    "name": "JOKER",
+    "slug": "joker",
+    "type": "agility",
+    "class": "ranger",
+    "role": "continuous",
+    "image": "/heroes/joker.jpg",
+    "faction": "dimensionals"
+  },
+  {
+    "name": "Kren",
+    "id": 77,
+    "type": "agility",
+    "class": "ranger",
+    "role": "continuous",
+    "image": "/heroes/kren.jpg",
+    "faction": "maulers"
   }
 ]

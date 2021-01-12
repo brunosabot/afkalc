@@ -1,11 +1,32 @@
 import React from "react";
 import artifacts from "../../data/artifacts.json";
-import factions from "../../data/heroes.json";
+import heroes from "../../data/heroes.json";
 import { useTranslation } from "../../i18n";
+import ICharacter from "../../types/ICharacter";
 import Artifact from "../ui/afk/Artifact";
 import Character, { DetailType } from "../ui/afk/Character";
 import InputField from "../ui/InputField";
 import styles from "./ChooseHero.module.css";
+
+interface IFactions {
+  [key: string]: ICharacter[];
+}
+
+const factions: IFactions = (heroes as ICharacter[]).reduce(
+  (acc, value) => ({
+    ...acc,
+    [value.faction]: [...acc[value.faction], value],
+  }),
+  {
+    lightbearers: [],
+    maulers: [],
+    wilders: [],
+    graveborns: [],
+    celestials: [],
+    hypogeans: [],
+    dimensionals: [],
+  }
+);
 
 interface Props {
   onSelect: (type: DetailType, value: number) => void;
@@ -50,10 +71,10 @@ const ChooseHero: React.FC<Props> = ({
         ))}
       </div>
 
-      {factions.map((faction) => (
-        <React.Fragment key={faction.faction}>
+      {Object.keys(factions).map((faction) => (
+        <React.Fragment key={faction}>
           <div className={styles.Heroes}>
-            {faction.characters.map(({ id, name }) => (
+            {factions[faction].map(({ id, name }) => (
               <Character
                 key={id}
                 name={name}

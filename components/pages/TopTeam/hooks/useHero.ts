@@ -1,28 +1,10 @@
-import factions from "../../../../data/heroes.json";
+import heroes from "../../../../data/heroes.json";
+import ICharacter from "../../../../types/ICharacter";
 
-interface Hero {
-  name: string;
-  id: number;
-  type: string;
-  class: string;
-  role: string;
-}
-
-interface Faction {
-  faction: string;
-  characters: Hero[];
-}
-
-const factionJson = factions as Faction[];
-
-const defaultHeroes: Hero[] = [];
-const heroes: Hero[] = factionJson.reduce(
-  (acc, faction: Faction) => [...acc, ...faction.characters],
-  defaultHeroes
-);
+const typedHeroes: ICharacter[] = heroes as ICharacter[];
 
 function getHero(hero?: number) {
-  return heroes.find((character) => character.id === hero);
+  return typedHeroes.find((character) => character.id === hero);
 }
 
 export default function useHero() {
