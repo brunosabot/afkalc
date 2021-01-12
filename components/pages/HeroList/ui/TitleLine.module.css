@@ -1,4 +1,4 @@
-.FactionLine {
+.TitleLine {
   align-items: center;
   display: flex;
   font-weight: 500;
@@ -6,6 +6,7 @@
 }
 .Image {
   height: 16px;
+  width: 16px;
   margin-right: 8px;
 }
 .Name {

@@ -5,8 +5,8 @@ const NextI18NextInstance = new NextI18Next({
   defaultLanguage: "en",
   localePath: resolve("./public/static/locales"),
   localeSubpaths: {
-    dev: 'dev',
-    fr: 'fr',
+    dev: "dev",
+    fr: "fr",
   },
   otherLanguages: ["dev", "fr"],
   ns: [
@@ -18,14 +18,14 @@ const NextI18NextInstance = new NextI18Next({
     "loot",
     "signature-item",
     "top-team",
-    "translation"
+    "translation",
   ],
 });
 
-export const {appWithTranslation} = NextI18NextInstance;
-export const {withTranslation} = NextI18NextInstance;
-export const {useTranslation} = NextI18NextInstance;
-export const {Trans} = NextI18NextInstance;
-export const {i18n} = NextI18NextInstance;
+export const { appWithTranslation } = NextI18NextInstance;
+export const { withTranslation } = NextI18NextInstance;
+export const { useTranslation } = NextI18NextInstance;
+export const { Trans } = NextI18NextInstance;
+export const { i18n } = NextI18NextInstance;
 
 export default NextI18NextInstance;

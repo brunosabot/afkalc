@@ -21,17 +21,15 @@ interface IProps {
 const Loot: React.FC<IProps> = () => {
   const [showHelp, setShowHelp] = useState(false);
   const [level, setLevel] = useFirestoreWithBackup("%ID%", "campaign", "level", "1-1");
-  const [_pass, _setPass] = useFirestoreWithBackup(
-    "%ID%",
-    "campaign",
-    "pass",
-    currentDate
-  );
+  const [_pass, _setPass] = useFirestoreWithBackup("%ID%", "campaign", "pass", currentDate);
 
   const pass = useMemo(() => dayjs(new Date(_pass)).format("L LTS"), [_pass]);
-  const setPass = useCallback((value)=> {
-    _setPass(dayjs(value, "L LTS").toDate().toISOString());
-  }, [_setPass])
+  const setPass = useCallback(
+    (value) => {
+      _setPass(dayjs(value, "L LTS").toDate().toISOString());
+    },
+    [_setPass]
+  );
 
   const { t } = useTranslation("loot");
   const chests = useChestLevel(level);
@@ -61,7 +59,9 @@ const Loot: React.FC<IProps> = () => {
       <Card>
         <CardTitle>{t("result-title")}</CardTitle>
 
-        {chests.map((chest) => <Chest key={chest.item} pass={pass} chest={chest} />)}
+        {chests.map((chest) => (
+          <Chest key={chest.item} pass={pass} chest={chest} />
+        ))}
       </Card>
     </div>
   );

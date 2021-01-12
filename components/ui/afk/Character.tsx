@@ -1,7 +1,10 @@
 import React from "react";
 import artifacts from "../../../data/artifacts.json";
-import heroesFactions from "../../../data/heroes.json";
+import heroes from "../../../data/heroes.json";
+import ICharacter from "../../../types/ICharacter";
 import styles from "./Character.module.css";
+
+const typedHeroes: ICharacter[] = heroes as ICharacter[];
 
 export enum DetailType {
   SI,
@@ -22,28 +25,6 @@ interface IProps {
   artifact?: number;
 }
 
-interface ICharacter {
-  name: string;
-  id: number;
-  type: string;
-  class: string;
-  role: string;
-  image: string;
-  faction: string;
-}
-
-interface ICharacterFaction {
-  faction: string;
-  characters: ICharacter[];
-}
-
-const heroJson = heroesFactions as ICharacterFaction[];
-const defaultCharacteres: ICharacter[] = [];
-const heroes = heroJson.reduce(
-  (acc, v: ICharacterFaction) => [...acc, ...v.characters],
-  defaultCharacteres
-);
-
 /**
  * TODO: Use i18n for name
  */
@@ -58,7 +39,7 @@ const Character: React.FC<IProps> = ({
   innLevel = undefined,
   artifact = undefined,
 }) => {
-  const resource = heroes.find((r) => r.name === name);
+  const resource = typedHeroes.find((r) => r.name === name);
   const activeArtifact = artifacts.find((a) => a.id === artifact);
 
   if (resource === undefined) return null;

@@ -15,7 +15,7 @@ const LangButton: React.FC<IProps> = ({ lang, emoji }) => (
     type="button"
     className={styles.LangButton}
     onClick={() => {
-      i18n.changeLanguage(lang)
+      i18n.changeLanguage(lang);
       dayjs.locale(lang);
     }}
   >
