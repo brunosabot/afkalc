@@ -1,0 +1,31 @@
+.ListItem {
+  border-bottom: 1px solid var(--list-border);
+  display: flex;
+  margin: 0 16px;
+  text-decoration: none;
+  position: relative;
+  height: 45px;
+  z-index: 1;
+}
+.ListItem::before {
+  content: "";
+  top: -1px;
+  left: -16px;
+  right: -16px;
+  bottom: -1px;
+  position: absolute;
+  transition: var(--transition);
+  z-index: -1;
+}
+.ListItem:hover::before {
+  background-color: var(--hover-color);
+}
+
+.ListItem:first-child {
+  border-top: 1px solid var(--list-border);
+}
+.ListItem > * {
+  flex-grow: 1;
+  display: flex;
+  align-items: center;
+}

@@ -8,16 +8,21 @@
   position: relative;
   text-decoration: none;
   z-index: 1;
+  border-bottom: 1px solid var(--list-border);
+  gap: 8px;
+}
+.Link:last-child {
+  border-bottom: 0;
 }
 .Link::before {
-  bottom: 0;
+  bottom: -1px;
   content: "";
   left: -16px;
   position: absolute;
   right: -16px;
-  top: 0;
-  z-index: -1;
+  top: -1px;
   transition: var(--transition);
+  z-index: -1;
 }
 .Link:hover::before {
   background-color: var(--hover-color);

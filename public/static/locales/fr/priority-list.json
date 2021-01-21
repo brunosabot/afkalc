@@ -13,5 +13,6 @@
   "label-value": "Valeur",
   "label-none": "Aucun",
   "label-si": "SI",
-  "label-fi": "FI"
+  "label-fi": "FI",
+  "label-no-list": "Vous n'avez pas de liste pour le moment"
 }

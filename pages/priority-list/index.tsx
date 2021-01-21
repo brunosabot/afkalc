@@ -7,6 +7,7 @@ import useUserFirestoreCollection from "../../components/hooks/useUserFirestoreC
 import useUserFirestoreDocument from "../../components/hooks/useUserFirestoreDocument";
 import Create from "../../components/pages/PriorityList/ui/Create";
 import ListItem from "../../components/pages/PriorityList/ui/ListItem";
+import ListItemEmpty from "../../components/pages/PriorityList/ui/ListItemEmpty";
 import { FirebaseContext } from "../../components/providers/FirebaseProvider";
 import LoginButton from "../../components/ui/button/LoginButton";
 import Card from "../../components/ui/card/Card";
@@ -20,7 +21,7 @@ interface IProps {
   [key: string]: never;
 }
 
-interface List {
+interface IList {
   owner: string;
   heroes: number[];
   id: string;
@@ -56,13 +57,16 @@ const PriorityList: React.FC<IProps> = () => {
 
   const favorites = Object.entries<string>(favoriteResult?.data ?? {})
     .filter(([key]) => key !== "id")
-    .map(([key, value]) => [key.replace("$", "/"), value]);
+    .map<[string, string]>(([key, value]) => [key.replace("$", "/"), value])
+    .concat()
+    .sort((a, b) => a[1].localeCompare(b[1]));
 
   const shareId = userResult?.data?.shareId;
-  const created: [string, string][] = (result?.data ?? []).map((list: List) => [
-    `${shareId}/${list.id}`,
-    list.title,
-  ]);
+  const createdData: IList[] = result?.data ?? [];
+  const created = createdData
+    .map<[string, string]>((list) => [`${shareId}/${list.id}`, list.title])
+    .concat()
+    .sort((a, b) => a[1].localeCompare(b[1]));
 
   return (
     <Card>
@@ -70,6 +74,7 @@ const PriorityList: React.FC<IProps> = () => {
 
       <CardSubTitle>Listes favorites</CardSubTitle>
       <List>
+        {favorites.length === 0 ? <ListItemEmpty>{t("label-no-list")}</ListItemEmpty> : null}
         {favorites.map(([key, value]) => (
           <ListItem href={`/priority-list/${key}`} key={key}>
             {value}
@@ -79,6 +84,7 @@ const PriorityList: React.FC<IProps> = () => {
 
       <CardSubTitle>Listes crées</CardSubTitle>
       <List>
+        {created.length === 0 ? <ListItemEmpty>{t("label-no-list")}</ListItemEmpty> : null}
         {created.map(([key, value]) => (
           <ListItem href={`/priority-list/${key}`} key={key}>
             {value}

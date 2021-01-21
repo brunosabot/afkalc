@@ -1,6 +1,7 @@
 {
   "welcome": "Welcome on Afkalc, the calculation tool for AFK Arena",
   "require-login": "You must log in to access this feature",
+  "credit-desc": "For their help in data collection, providing great content or for the app development, thanks to:",
   "menu": {
     "home": "Home",
     "signature-item": "SI Emblem",
@@ -11,6 +12,7 @@
     "top-team": "Top Team (Beta)",
     "item-cost": "Item cost (Beta)",
     "priority-list": "Priority list (Beta)",
+    "credit": "Credits",
     "logout": "Logout",
     "short-loot": "Loot",
     "short-hero-list": "Heroes",
