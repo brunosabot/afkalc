@@ -31,4 +31,4 @@ const HeroLine: React.FC<IProps> = ({ id, name, setLevel, getValue, isView }) =>
   </div>
 );
 
-export default HeroLine;
+export default React.memo(HeroLine);

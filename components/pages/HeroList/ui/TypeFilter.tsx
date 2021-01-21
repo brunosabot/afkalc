@@ -13,4 +13,4 @@ const TypeFilter: React.FC<IProps> = ({ filter, setFilter, imagePath }) => (
   <FilterButtons filter={filter} setFilter={setFilter} imagePath={imagePath} data={TYPES} />
 );
 
-export default TypeFilter;
+export default React.memo(TypeFilter);

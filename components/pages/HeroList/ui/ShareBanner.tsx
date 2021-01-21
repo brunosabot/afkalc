@@ -33,4 +33,4 @@ const ShareBanner: React.FC<IProps> = ({ isView }) => {
   );
 };
 
-export default ShareBanner;
+export default React.memo(ShareBanner);
