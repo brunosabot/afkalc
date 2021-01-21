@@ -240,6 +240,15 @@
         "role": "continuous",
         "image": "/heroes/warek.jpg",
         "faction": "maulers"
+      },
+      {
+        "name": "Kren",
+        "id": 77,
+        "type": "agility",
+        "class": "ranger",
+        "role": "continuous",
+        "image": "/heroes/kren.jpg",
+        "faction": "maulers"
       }
     ]
   },
