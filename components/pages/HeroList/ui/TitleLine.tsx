@@ -20,4 +20,4 @@ const TitleLine: React.FC<IProps> = () => {
   );
 };
 
-export default TitleLine;
+export default React.memo(TitleLine);

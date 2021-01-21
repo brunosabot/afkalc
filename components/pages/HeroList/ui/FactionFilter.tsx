@@ -12,4 +12,4 @@ const FactionFilter: React.FC<IProps> = ({ filter, setFilter, imagePath }) => (
   <FilterButtons filter={filter} setFilter={setFilter} imagePath={imagePath} data={Object.keys(factions)} />
 );
 
-export default FactionFilter;
+export default React.memo(FactionFilter);
