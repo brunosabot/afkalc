@@ -1,6 +1,7 @@
 {
   "welcome": "Bienvenue sur Afkalc, l'outil de calcul pour AFK Arena",
   "require-login": "Vous devez être connecté pour utiliser la fonctionnalité",
+  "credit-desc": "Pour leur aide dans la collecte de données, la création d'excellents guides ou le développement de l'app, merci à :",
   "menu": {
     "home": "Accueil",
     "signature-item": "Emblèmes",
@@ -11,6 +12,7 @@
     "top-team": "Top compo (Bêta)",
     "item-cost": "Coût des objets (Bêta)",
     "priority-list": "Listes de priorité (Bêta)",
+    "credit": "Crédits",
     "logout": "Se déconnecter",
     "short-loot": "Butin",
     "short-hero-list": "Héros",

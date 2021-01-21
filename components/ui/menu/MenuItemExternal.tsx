@@ -1,4 +1,6 @@
+import { mdiCircleSmall } from "@mdi/js";
 import React from "react";
+import Svg from "../Svg";
 import styles from "./MenuItemExternal.module.css";
 
 interface IProps {
@@ -7,11 +9,10 @@ interface IProps {
   icon?: string;
 }
 
-const MenuItemExternal: React.FC<IProps> = ({ children, to, icon }) => (
+const MenuItemExternal: React.FC<IProps> = ({ children, to, icon=undefined }) => (
   <a className={styles.Link} href={to} target="__blank">
-    <svg className={styles.Icon} viewBox="0 0 24 24">
-      <path fill="currentColor" d={icon} />
-    </svg>
+    <Svg d={icon===undefined?mdiCircleSmall:icon} />
+
     {children}
   </a>
 );
