@@ -104,7 +104,7 @@ const HeroList: React.FC<IProps> = () => {
 
         {characters.map((character, i) => (
           <>
-            {i % 15 === 0 ? <TitleLine /> : null}
+            {character.faction !== characters[i - 1]?.faction ? <TitleLine /> : null}
             <HeroLine
               key={character.id}
               id={character.id}
