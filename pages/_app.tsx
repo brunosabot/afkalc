@@ -16,7 +16,9 @@ dayjs.extend(updateLocale);
 dayjs.extend(localizedFormat);
 
 function MyApp({ Component, pageProps, i18nServerInstance, ...rest }: any) {
-  dayjs.locale((i18nServerInstance || i18n).language);
+  const {language} = i18nServerInstance || i18n;
+  dayjs.locale(language);
+  document.getElementsByTagName("html")[0].lang = language;
 
   return (
     <FirebaseProvider>
