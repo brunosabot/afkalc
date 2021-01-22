@@ -1,4 +1,5 @@
 const { nextI18NextRewrites } = require("next-i18next/rewrites");
+const generateSitemap = require("./scripts/generateSitemap");
 
 const localeSubpaths = {
   dev: "dev",
@@ -10,11 +11,15 @@ module.exports = {
   publicRuntimeConfig: {
     localeSubpaths,
   },
-  webpack(config) {
+  webpack(config, { isServer }) {
     config.module.rules.push({
       test: /\.svg$/,
       use: ["@svgr/webpack"],
     });
+
+    if (isServer) {
+      generateSitemap();
+    }
 
     return config;
   },
