@@ -44,7 +44,7 @@ function toW3CString(date) {
   return `${year}-${month}-${day}T${hours}:${minutes}:${seconds}${offsetSign}${offsetHours}:${offsetMinutes}`;
 }
 
-export default async function generateSiteMap() {
+module.exports = async function generateSiteMap() {
   const pages = await globby(["pages/**/*.tsx", "!pages/**/[id].tsx", "!pages/**/_*.tsx"]);
 
   const sitemap = [
@@ -67,4 +67,4 @@ export default async function generateSiteMap() {
   sitemap.push(`</urlset>`);
 
   fs.writeFileSync("public/sitemap.xml", sitemap.join("\n"));
-}
+};

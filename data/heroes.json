@@ -833,5 +833,15 @@
     "image": "/heroes/kren.jpg",
     "faction": "maulers",
     "usage": []
+  },
+  {
+    "name": "Respen",
+    "id": 78,
+    "type": "agility",
+    "class": "ranger",
+    "role": "burst",
+    "image": "/heroes/respen.jpg",
+    "faction": "wilders",
+    "usage": []
   }
 ]
