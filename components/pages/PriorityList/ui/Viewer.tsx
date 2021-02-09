@@ -33,7 +33,7 @@ const Viewer: React.FC<IProps> = ({document}) => {
       {heroes.map((hero:number) => {
         const { id, name } = getHero(hero) ?? { id: 0, name: "" };
 
-        const isOk = (
+        const isOk = heroResult.data.levels[hero] && (
           result.data.type === "SI" && result.data.value <= heroResult.data.levels[hero].si ||
           result.data.type === "FI" && result.data.value <= heroResult.data.levels[hero].inn
         )
