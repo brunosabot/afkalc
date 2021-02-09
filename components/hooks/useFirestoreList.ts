@@ -4,7 +4,7 @@ import useMemoCompare from "./useMemoCompare";
 
 interface Action {
   type: string;
-  payload?: any
+  payload?: any;
 }
 
 interface State {
@@ -26,47 +26,44 @@ const reducer = (state: State, action: Action) => {
     default:
       throw new Error("invalid action");
   }
-}
+};
 
-export default function useFirestoreList(query: firebase.firestore.CollectionReference | undefined) {
-  const initialState = { 
-    status: query ? "loading" : "idle", 
-    data: undefined, 
-    error: undefined 
+export default function useFirestoreList(
+  query: firebase.firestore.CollectionReference | undefined
+) {
+  const initialState = {
+    status: query ? "loading" : "idle",
+    data: undefined,
+    error: undefined,
   };
-  
+
   const [state, dispatch] = useReducer(reducer, initialState);
-  
-  const queryCached = useMemoCompare(query, prevQuery => 
-    {
-      if (prevQuery && query) {
-        return query.isEqual(prevQuery);
-      }
-      return false;
+
+  const queryCached = useMemoCompare(query, (prevQuery) => {
+    if (prevQuery && query) {
+      return query.isEqual(prevQuery);
     }
-  );
+    return false;
+  });
 
   useEffect(() => {
     if (!queryCached) {
       dispatch({ type: "idle" });
       return () => {};
     }
-    
+
     dispatch({ type: "loading" });
 
     return queryCached.onSnapshot(
-      (response:any) => {
-        const data = response.docs
-          ? getCollectionData(response)
-          : getDocData(response);
-        
+      (response: any) => {
+        const data = response.docs ? getCollectionData(response) : getDocData(response);
+
         dispatch({ type: "success", payload: data });
       },
-      (error:any) => {
+      (error: any) => {
         dispatch({ type: "error", payload: error });
       }
     );
-    
   }, [queryCached]);
 
   return state;

@@ -1,5 +1,6 @@
 {
   "welcome": "Bienvenue sur Afkalc, l'outil de calcul pour AFK Arena",
+  "require-login": "Vous devez être connecté pour utiliser la fonctionnalité",
   "menu": {
     "home": "Accueil",
     "signature-item": "Emblèmes",

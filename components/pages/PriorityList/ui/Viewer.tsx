@@ -12,7 +12,7 @@ interface IProps {
   document: firebase.firestore.DocumentReference;
 }
 
-const Viewer: React.FC<IProps> = ({document}) => {
+const Viewer: React.FC<IProps> = ({ document }) => {
   const { getHero } = useHero();
   const result = useFirestoreQuery(document);
   const heroDocument = useUserFirestoreDocument(`hero-list/%ID%`);
@@ -30,20 +30,21 @@ const Viewer: React.FC<IProps> = ({document}) => {
     <>
       <CardTitle>{title}</CardTitle>
 
-      {heroes.map((hero:number) => {
+      {heroes.map((hero: number) => {
         const { id, name } = getHero(hero) ?? { id: 0, name: "" };
 
-        const isOk = heroResult.data.levels[hero] && (
-          result.data.type === "SI" && result.data.value <= heroResult.data.levels[hero].si ||
-          result.data.type === "FI" && result.data.value <= heroResult.data.levels[hero].inn
-        )
-        
-        return(
-          <div key={id} className={`${styles.Item} ${isOk?styles.IsOk:""}`}>
+        const isOk =
+          heroResult.data.levels[hero] &&
+          ((result.data.type === "SI" && result.data.value <= heroResult.data.levels[hero].si) ||
+            (result.data.type === "FI" && result.data.value <= heroResult.data.levels[hero].inn));
+
+        return (
+          <div key={id} className={`${styles.Item} ${isOk ? styles.IsOk : ""}`}>
             <Character name={name} />
             {name}
           </div>
-        )})}
+        );
+      })}
     </>
   );
 };

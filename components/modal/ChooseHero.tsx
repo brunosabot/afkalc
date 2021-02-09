@@ -73,7 +73,7 @@ const ChooseHero: React.FC<Props> = ({
               highlight={currentArtifact === artifact.id}
               onClick={() => onSelect(DetailType.ARTIFACT, artifact.id)}
             />
-        ))}
+          ))}
         </div>
       ) : null}
 

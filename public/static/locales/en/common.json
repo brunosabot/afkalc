@@ -1,5 +1,6 @@
 {
   "welcome": "Welcome on Afkalc, the calculation tool for AFK Arena",
+  "require-login": "You must log in to access this feature",
   "menu": {
     "home": "Home",
     "signature-item": "SI Emblem",

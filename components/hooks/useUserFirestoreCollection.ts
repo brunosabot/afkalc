@@ -4,7 +4,7 @@ import { FirebaseContext } from "../providers/FirebaseProvider";
 
 const firestore = firebase.firestore();
 
-export default function useUserFirestoreCollection(path:string) {
+export default function useUserFirestoreCollection(path: string) {
   const { values } = useContext(FirebaseContext);
 
   return useMemo(() => {
@@ -19,5 +19,5 @@ export default function useUserFirestoreCollection(path:string) {
     }
 
     return firestore.collection(formattedPath);
-  }, [path, values.uid])
+  }, [path, values.uid]);
 }

@@ -4,7 +4,7 @@ import { FirebaseContext } from "../providers/FirebaseProvider";
 
 const firestore = firebase.firestore();
 
-export default function useUserFirestoreDocument(path:string|undefined) {
+export default function useUserFirestoreDocument(path: string | undefined) {
   const { values } = useContext(FirebaseContext);
 
   return useMemo(() => {
@@ -23,5 +23,5 @@ export default function useUserFirestoreDocument(path:string|undefined) {
     }
 
     return firestore.doc(formattedPath);
-  }, [path, values.uid])
+  }, [path, values.uid]);
 }

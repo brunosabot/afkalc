@@ -7,7 +7,9 @@ import Owner from "../../../components/pages/PriorityList/ui/Owner";
 import Preview from "../../../components/pages/PriorityList/ui/Preview";
 import Viewer from "../../../components/pages/PriorityList/ui/Viewer";
 import { FirebaseContext } from "../../../components/providers/FirebaseProvider";
+import LoginButton from "../../../components/ui/button/LoginButton";
 import Card from "../../../components/ui/card/Card";
+import CardTitle from "../../../components/ui/card/CardTitle";
 import { useTranslation } from "../../../i18n";
 
 interface IProps {
@@ -25,7 +27,9 @@ const PriorityList: React.FC<IProps> = () => {
 
   const isOwner = values.uid === userId;
 
-  const document = useUserFirestoreDocument(userId ? `user/${userId}/priority-list/${id}`:undefined);
+  const document = useUserFirestoreDocument(
+    userId ? `user/${userId}/priority-list/${id}` : undefined
+  );
 
   if (document === undefined) {
     return null;
@@ -39,9 +43,32 @@ const PriorityList: React.FC<IProps> = () => {
           <meta name="description" content="" />
         </Head>
 
-        {isOwner && isForcedViewer === false ? <Owner document={document} listId={id as string} userId={user as string} /> : <Viewer document={document} />}
+        {values.isAuth ? (
+          <>
+            {isOwner && isForcedViewer === false ? (
+              <Owner document={document} listId={id as string} userId={user as string} />
+            ) : (
+              <Viewer document={document} />
+            )}
 
-        {isOwner ? <Preview onClick={() => {setIsForcedViewer(!isForcedViewer)}}>{isForcedViewer?t("label-edit"):t("label-preview")}</Preview>:null}
+            {isOwner ? (
+              <Preview
+                onClick={() => {
+                  setIsForcedViewer(!isForcedViewer);
+                }}
+              >
+                {isForcedViewer ? t("label-edit") : t("label-preview")}
+              </Preview>
+            ) : null}
+          </>
+        ) : (
+          <>
+            <CardTitle>
+              {t("common:require-login")}
+            </CardTitle>
+            <LoginButton />
+          </>
+        )}
       </div>
     </Card>
   );
