@@ -113,18 +113,22 @@ const Owner: React.FC<IProps> = ({listId, userId, document}) => {
         onChange={setValue}
       />
 
-      {heroes.map((hero:number, i:number) => (
-        <HeroLine
-          onDelete={onDelete}
-          onUp={onUp}
-          onDown={onDown}
-          index={i}
-          hero={hero}
-          key={hero}
-          length={heroes.length}
-          onSelect={updateHero}
-        />
-        ))}
+      {heroes.map((hero:number, i:number) => 
+        /* eslint-disable react/no-array-index-key */
+        (
+          <HeroLine
+            onDelete={onDelete}
+            onUp={onUp}
+            onDown={onDown}
+            index={i}
+            hero={hero}
+            key={`${hero}-${i}`}
+            length={heroes.length}
+            onSelect={updateHero}
+          />
+        )
+        /* eslint-enable react/no-array-index-key */
+        )}
       <HeroLine onSelect={addHero} index={heroes.length} length={heroes.length} />
     </>
   );
