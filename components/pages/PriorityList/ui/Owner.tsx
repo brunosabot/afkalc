@@ -21,7 +21,7 @@ interface IProps {
   userId: string;
 }
 
-const Owner: React.FC<IProps> = ({listId, userId, document}) => {
+const Owner: React.FC<IProps> = ({ listId, userId, document }) => {
   const router = useRouter();
   const { values } = useContext(FirebaseContext);
   const { t } = useTranslation("priority-list");
@@ -29,43 +29,63 @@ const Owner: React.FC<IProps> = ({listId, userId, document}) => {
   const result = useFirestoreQuery(document);
 
   const heroes = result.data?.heroes ?? [];
-  const setHeroes = useCallback((newHeroes: number[]) => {
-    if (document !== undefined) {
-      document.update({heroes: newHeroes}).catch(() => document.set({
-        heroes: newHeroes,
-        owner: values.uid
-      }));
-    }
-  }, [document, values.uid]);
-  const setTitle = useCallback((newTitle: string) => {
-    if (document !== undefined) {
-      document.update({title: newTitle}).catch(() => document.set({
-        title: newTitle,
-        owner: values.uid
-      }));
-    }
-  }, [document, values.uid]);
-  const setValue = useCallback((newValue: string) => {
-    if (document !== undefined) {
-      document.update({value: newValue}).catch(() => document.set({
-        value: parseInt(newValue, 10),
-        owner: values.uid
-      }));
-    }
-  }, [document, values.uid]);
-  const setType = useCallback((newType: string) => {
-    if (document !== undefined) {
-      document.update({type: newType}).catch(() => document.set({
-        type: newType,
-        owner: values.uid
-      }));
-    }
-  }, [document, values.uid]);
+  const setHeroes = useCallback(
+    (newHeroes: number[]) => {
+      if (document !== undefined) {
+        document.update({ heroes: newHeroes }).catch(() =>
+          document.set({
+            heroes: newHeroes,
+            owner: values.uid,
+          })
+        );
+      }
+    },
+    [document, values.uid]
+  );
+  const setTitle = useCallback(
+    (newTitle: string) => {
+      if (document !== undefined) {
+        document.update({ title: newTitle }).catch(() =>
+          document.set({
+            title: newTitle,
+            owner: values.uid,
+          })
+        );
+      }
+    },
+    [document, values.uid]
+  );
+  const setValue = useCallback(
+    (newValue: string) => {
+      if (document !== undefined) {
+        document.update({ value: newValue }).catch(() =>
+          document.set({
+            value: parseInt(newValue, 10),
+            owner: values.uid,
+          })
+        );
+      }
+    },
+    [document, values.uid]
+  );
+  const setType = useCallback(
+    (newType: string) => {
+      if (document !== undefined) {
+        document.update({ type: newType }).catch(() =>
+          document.set({
+            type: newType,
+            owner: values.uid,
+          })
+        );
+      }
+    },
+    [document, values.uid]
+  );
   const onDeleteList = useCallback(() => {
     document?.delete().then(() => {
-      router.push("/priority-list")
+      router.push("/priority-list");
     });
-  }, [document, router])
+  }, [document, router]);
 
   const title = result.data?.title ?? "Unknown";
   const value = result.data?.value ?? 0;
@@ -87,12 +107,7 @@ const Owner: React.FC<IProps> = ({listId, userId, document}) => {
 
       <ShareBanner listId={listId} userId={userId} />
 
-      <InputField
-        label={t("label-list-name")}
-        name="title"
-        value={title}
-        onChange={setTitle}
-      />
+      <InputField label={t("label-list-name")} name="title" value={title} onChange={setTitle} />
 
       <SelectField
         onChange={setType}
@@ -100,22 +115,17 @@ const Owner: React.FC<IProps> = ({listId, userId, document}) => {
         label={t("label-list-type")}
         name="type"
         values={[
-          {key: "", label:t("label-none")},
-          {key:"SI", label:t("label-si") },
-          {key:"FI", label:t("label-fi") }
+          { key: "", label: t("label-none") },
+          { key: "SI", label: t("label-si") },
+          { key: "FI", label: t("label-fi") },
         ]}
       />
 
-      <InputField
-        label={t("label-value")}
-        name="value"
-        value={value}
-        onChange={setValue}
-      />
+      <InputField label={t("label-value")} name="value" value={value} onChange={setValue} />
 
-      {heroes.map((hero:number, i:number) => 
-        /* eslint-disable react/no-array-index-key */
-        (
+      {heroes.map(
+        (hero: number, i: number) => (
+          /* eslint-disable react/no-array-index-key */
           <HeroLine
             onDelete={onDelete}
             onUp={onUp}
@@ -128,7 +138,7 @@ const Owner: React.FC<IProps> = ({listId, userId, document}) => {
           />
         )
         /* eslint-enable react/no-array-index-key */
-        )}
+      )}
       <HeroLine onSelect={addHero} index={heroes.length} length={heroes.length} />
     </>
   );

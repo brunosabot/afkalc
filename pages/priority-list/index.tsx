@@ -6,6 +6,7 @@ import useUserFirestoreCollection from "../../components/hooks/useUserFirestoreC
 import useUserFirestoreDocument from "../../components/hooks/useUserFirestoreDocument";
 import Create from "../../components/pages/PriorityList/ui/Create";
 import { FirebaseContext } from "../../components/providers/FirebaseProvider";
+import LoginButton from "../../components/ui/button/LoginButton";
 import Card from "../../components/ui/card/Card";
 import CardTitle from "../../components/ui/card/CardTitle";
 import { useTranslation } from "../../i18n";
@@ -33,22 +34,36 @@ const PriorityList: React.FC<IProps> = () => {
     document?.doc(nanoid(11)).set({
       title: "Unknown",
       owner: values.uid,
-      heroes: []
+      heroes: [],
     });
-  }, [document, values.uid])
+  }, [document, values.uid]);
 
   return (
     <Card>
-      <CardTitle>
-        {t("title-priority-list")}
-      </CardTitle>
-      {result?.data?.map((list:List) => (
-        <a href={`/priority-list/${userResult?.data?.shareId}/${list.id}`} key={list.id} style={{padding: "16px", display: "block"}}>
-          {list.title}
-        </a>
-      ))}
-        
-      <Create onClick={onCreate} />
+      {values.isAuth ? (
+        <>
+          <CardTitle>{t("title-priority-list")}</CardTitle>
+
+          {result?.data?.map((list: List) => (
+            <a
+              href={`/priority-list/${userResult?.data?.shareId}/${list.id}`}
+              key={list.id}
+              style={{ padding: "16px", display: "block" }}
+            >
+              {list.title}
+            </a>
+          ))}
+
+          <Create onClick={onCreate} />
+        </>
+      ) : (
+        <>
+          <CardTitle>
+            {t("common:require-login")}
+          </CardTitle>
+          <LoginButton />
+        </>
+      )}
     </Card>
   );
 };
