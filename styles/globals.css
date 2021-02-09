@@ -32,6 +32,8 @@ body {
   --afk-plus-color: #fff;
   --success-text-color: #070;
   --error-text-color: #700;
+  --success-background-color: #7c7;
+  --error-background-color: #f77;
   --help-background-color: rgba(0, 127, 255, 0.2);
 }
 @media (prefers-color-scheme: dark) {

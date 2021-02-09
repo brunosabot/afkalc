@@ -1,0 +1,9 @@
+.Preview {
+  margin: 16px 16px 0 auto;
+  background: transparent;
+  border: 1px solid var(--card-border-color);
+  padding: 8px 16px;
+  border-radius: 4px;
+  display: block;
+  cursor: pointer;
+}
