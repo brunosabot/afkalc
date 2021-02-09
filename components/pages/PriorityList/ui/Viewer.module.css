@@ -1,0 +1,19 @@
+.Item {
+  display: flex;
+  align-items: center;
+  padding: 8px 24px;
+  gap: 16px;
+  position: relative;
+}
+.IsOk::after {
+  content: "";
+  left: 16px;
+  right: 0;
+  height: 7px;
+  background-color: var(--error-background-color);
+  opacity: 0.5;
+  position: absolute;
+  width: 170px;
+  transform: rotate(-3deg);
+  z-index: 1;
+}

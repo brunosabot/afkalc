@@ -1,0 +1,22 @@
+.HeroLine {
+  padding: 4px 16px;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+.Add {
+  background-color: var(--card-color);
+  border: 0;
+  border: 1px solid var(--card-border-color);
+  border-radius: 6px 0 6px 0;
+  color: var(--text-color);
+  cursor: pointer;
+  font-size: 24px;
+  height: 40px;
+  outline: 0;
+  width: 40px;
+}
+.Arrow {
+  height: 24px;
+  width: 24px;
+}

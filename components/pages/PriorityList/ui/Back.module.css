@@ -1,0 +1,22 @@
+.Back {
+  display: flex;
+  align-items: center;
+  padding: 16px;
+}
+
+.Link {
+  display: block;
+  flex-grow: 1;
+  display: flex;
+  align-items: center;
+}
+
+.Icon {
+  width: 24px;
+  margin-right: 16px;
+}
+
+.Delete {
+  width: 24px;
+  margin-left: 16px;
+}

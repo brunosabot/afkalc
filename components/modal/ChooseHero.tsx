@@ -31,9 +31,11 @@ const factions: IFactions = (heroes as ICharacter[]).reduce(
 interface Props {
   onSelect: (type: DetailType, value: number) => void;
   current: number[];
+  onlyHero?: boolean;
 }
 
 const ChooseHero: React.FC<Props> = ({
+  onlyHero = false,
   current: [currentId, si, inn, currentArtifact],
   onSelect,
 }) => {
@@ -41,35 +43,39 @@ const ChooseHero: React.FC<Props> = ({
 
   return (
     <div className={styles.ChooseHero}>
-      <div className={styles.InputWrapper}>
-        <InputField
-          style={{ width: "60px" }}
-          small
-          name="si"
-          label={t(`concept.si`)}
-          value={si}
-          onChange={(value) => onSelect(DetailType.SI, parseInt(value, 10))}
-        />
-        <InputField
-          style={{ width: "60px" }}
-          small
-          name="inn"
-          label={t(`concept.inn`)}
-          value={inn}
-          onChange={(value) => onSelect(DetailType.INN, parseInt(value, 10))}
-        />
-      </div>
-
-      <div className={styles.Heroes}>
-        {artifacts.map((artifact) => (
-          <Artifact
-            key={artifact.id}
-            name={artifact.name}
-            highlight={currentArtifact === artifact.id}
-            onClick={() => onSelect(DetailType.ARTIFACT, artifact.id)}
+      {onlyHero === false ? (
+        <div className={styles.InputWrapper}>
+          <InputField
+            style={{ width: "60px" }}
+            small
+            name="si"
+            label={t(`concept.si`)}
+            value={si}
+            onChange={(value) => onSelect(DetailType.SI, parseInt(value, 10))}
           />
+          <InputField
+            style={{ width: "60px" }}
+            small
+            name="inn"
+            label={t(`concept.inn`)}
+            value={inn}
+            onChange={(value) => onSelect(DetailType.INN, parseInt(value, 10))}
+          />
+        </div>
+      ) : null}
+
+      {onlyHero === false ? (
+        <div className={styles.Heroes}>
+          {artifacts.map((artifact) => (
+            <Artifact
+              key={artifact.id}
+              name={artifact.name}
+              highlight={currentArtifact === artifact.id}
+              onClick={() => onSelect(DetailType.ARTIFACT, artifact.id)}
+            />
         ))}
-      </div>
+        </div>
+      ) : null}
 
       {Object.keys(factions).map((faction) => (
         <React.Fragment key={faction}>
