@@ -21,7 +21,7 @@ body {
   --hover-color: rgba(149, 74, 46, 0.1);
   --focus-color: rgba(149, 74, 46, 0.3);
   --card-color: #fff;
-  --card-border-color: #999;
+  --card-border-color: rgba(0, 0, 0, 0.38);
   --card-shadow: 0 2px 3px rgba(0, 0, 0, 0.15);
   --card-reverse-shadow: 0 -2px 3px rgba(0, 0, 0, 0.15);
   --afk-hero-shadow: 0 0 1px #000;
@@ -35,6 +35,9 @@ body {
   --success-background-color: #7c7;
   --error-background-color: #f77;
   --help-background-color: rgba(0, 127, 255, 0.2);
+  --like-color: rgb(224, 36, 94);
+  --list-border: rgba(0, 0, 0, 0.1);
+  --transition: all 0.5s cubic-bezier(0.4, 0, 0.6, 1);
 }
 @media (prefers-color-scheme: dark) {
   body {

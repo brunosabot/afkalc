@@ -1,0 +1,4 @@
+.CardActions {
+  display: flex;
+  justify-content: flex-end;
+}

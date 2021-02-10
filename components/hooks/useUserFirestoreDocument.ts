@@ -21,7 +21,7 @@ export default function useUserFirestoreDocument(path: string | undefined) {
 
       formattedPath = formattedPath.replace("%ID%", values.uid);
     }
-
+    console.log(formattedPath);
     return firestore.doc(formattedPath);
   }, [path, values.uid]);
 }

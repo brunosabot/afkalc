@@ -9,6 +9,7 @@
   top: -40px;
   width: 24px;
   z-index: 1;
+  transition: var(--transition);
 }
 .HelpButton:hover {
   background-color: var(--hover-color);

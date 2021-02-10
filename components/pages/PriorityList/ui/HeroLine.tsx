@@ -1,7 +1,9 @@
+import { mdiArrowDownBold, mdiArrowUpBold, mdiDelete } from "@mdi/js";
 import React, { useState } from "react";
 import Modal from "../../../functionnal/Modal";
 import ChooseHero from "../../../modal/ChooseHero";
 import Character from "../../../ui/afk/Character";
+import Svg from "../../../ui/Svg";
 import useHero from "../hooks/useHero";
 import styles from "./HeroLine.module.css";
 
@@ -28,39 +30,19 @@ const HeroLine: React.FC<Props> = ({
   const { getHero } = useHero();
   const { id, name } = getHero(hero) ?? { id: 0, name: "" };
 
-  return (
-    <>
-      <div className={styles.HeroLine}>
-        <svg className={styles.Arrow} viewBox="0 0 24 24" onClick={() => onDelete(id, index)}>
-          {hero ? (
-            <path
-              fill="currentColor"
-              d="M19,4H15.5L14.5,3H9.5L8.5,4H5V6H19M6,19A2,2 0 0,0 8,21H16A2,2 0 0,0 18,19V7H6V19Z"
-            />
-          ) : null}
-        </svg>
-        <svg className={styles.Arrow} viewBox="0 0 24 24" onClick={() => onUp(id, index)}>
-          {hero && index > 0 ? (
-            <path fill="currentColor" d="M15,20H9V12H4.16L12,4.16L19.84,12H15V20Z" />
-          ) : null}
-        </svg>
-        <svg className={styles.Arrow} viewBox="0 0 24 24" onClick={() => onDown(id, index)}>
-          {hero && index + 1 < length ? (
-            <path fill="currentColor" d="M9,4H15V12H19.84L12,19.84L4.16,12H9V4Z" />
-          ) : null}
-        </svg>
+  const canMoveUp = hero && index > 0;
+  const canMoveDown = hero && index + 1 < length;
 
-        {hero ? (
-          <>
-            <Character name={name} onClick={() => setShowModal(true)} />
-            {name}
-          </>
-        ) : (
-          <button type="button" className={styles.Add} onClick={() => setShowModal(true)}>
-            +
-          </button>
-        )}
-      </div>
+  return (
+    <div className={styles.HeroLine}>
+
+      <Character name={name} onClick={() => setShowModal(true)} />
+      <span className={styles.Name}>{name}</span>
+
+      <Svg d={canMoveUp ? mdiArrowUpBold :""} onClick={() => canMoveUp&&onUp(id, index)} />
+      <Svg d={canMoveDown ? mdiArrowDownBold :""} onClick={() => canMoveDown&& onDown(id, index)} />
+      <Svg d={mdiDelete} onClick={() => onDelete(id, index)} />
+
       <Modal active={showModal} onClose={() => setShowModal(false)}>
         <ChooseHero
           onlyHero
@@ -71,7 +53,7 @@ const HeroLine: React.FC<Props> = ({
           }}
         />
       </Modal>
-    </>
+    </div>
   );
 };
 
