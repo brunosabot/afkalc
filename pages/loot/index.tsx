@@ -36,7 +36,7 @@ const Loot: React.FC<IProps> = () => {
   const passLabel = <PassNowLabel setPass={setPass} />;
 
   return (
-    <div style={{ paddingTop: "24px", gap: "16px", display:"grid" }}>
+    <div style={{ paddingTop: "24px", gap: "16px", display: "grid" }}>
       <Card>
         <Head>
           <title>{`${t("common:menu.loot")} - Afkalc`}</title>

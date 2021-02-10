@@ -35,12 +35,14 @@ const HeroLine: React.FC<Props> = ({
 
   return (
     <div className={styles.HeroLine}>
-
       <Character name={name} onClick={() => setShowModal(true)} />
       <span className={styles.Name}>{name}</span>
 
-      <Svg d={canMoveUp ? mdiArrowUpBold :""} onClick={() => canMoveUp&&onUp(id, index)} />
-      <Svg d={canMoveDown ? mdiArrowDownBold :""} onClick={() => canMoveDown&& onDown(id, index)} />
+      <Svg d={canMoveUp ? mdiArrowUpBold : ""} onClick={() => canMoveUp && onUp(id, index)} />
+      <Svg
+        d={canMoveDown ? mdiArrowDownBold : ""}
+        onClick={() => canMoveDown && onDown(id, index)}
+      />
       <Svg d={mdiDelete} onClick={() => onDelete(id, index)} />
 
       <Modal active={showModal} onClose={() => setShowModal(false)}>

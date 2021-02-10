@@ -19,7 +19,9 @@ const FavoriteButton: React.FC<IProps> = ({ title, listId, userId }) => {
     (newValue: boolean) => () => {
       if (favoriteDocument !== undefined) {
         if (newValue) {
-          favoriteDocument.set({ [key]: title });
+          favoriteDocument
+            .update({ [key]: title })
+            .catch(() => favoriteDocument.set({ [key]: title }));
         } else {
           favoriteDocument.update({ [key]: firebase.firestore.FieldValue.delete() });
         }

@@ -23,7 +23,18 @@ function MyApp({ Component, pageProps, i18nServerInstance, ...rest }: any) {
   return (
     <FirebaseProvider>
       <Menu />
-      <div style={{display: "flex",flexWrap:"wrap", justifyContent:"center", margin: "auto", marginBottom: "76px", gap: "16px", padding: "16px", alignItems:"flex-start" }}>
+      <div
+        style={{
+          display: "flex",
+          flexWrap: "wrap",
+          justifyContent: "center",
+          margin: "auto",
+          marginBottom: "76px",
+          gap: "16px",
+          padding: "16px",
+          alignItems: "flex-start",
+        }}
+      >
         <Component {...pageProps} />
       </div>
     </FirebaseProvider>

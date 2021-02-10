@@ -36,7 +36,7 @@ const SignatureItem: React.FC<IProps> = () => {
   const levels = Array.from(new Set([20, 30, targetLevel]));
 
   return (
-    <div style={{ paddingTop: "24px", gap: "16px", display:"grid" }}>
+    <div style={{ paddingTop: "24px", gap: "16px", display: "grid" }}>
       <Card>
         <Head>
           <title>{`${t("common:menu.signature-item")} - Afkalc`}</title>

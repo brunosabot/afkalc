@@ -34,7 +34,10 @@ const Viewer: React.FC<IProps> = ({ listId, userId, document }) => {
   return (
     <>
       <Card>
-        <CardTitle icon={mdiPlaylistCheck} action={<FavoriteButton title={title} listId={listId} userId={userId} />}>
+        <CardTitle
+          icon={mdiPlaylistCheck}
+          action={<FavoriteButton title={title} listId={listId} userId={userId} />}
+        >
           {title}
         </CardTitle>
 
@@ -54,7 +57,7 @@ const Viewer: React.FC<IProps> = ({ listId, userId, document }) => {
           );
         })}
 
-        {heroes.length ? <div style={{paddingTop: "16px"}} />:null}
+        {heroes.length ? <div style={{ paddingTop: "16px" }} /> : null}
       </Card>
     </>
   );
