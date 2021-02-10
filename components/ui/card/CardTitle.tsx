@@ -10,7 +10,7 @@ interface IProps {
 
 const CardTitle: React.FC<IProps> = ({ action = undefined, icon, children }) => (
   <div className={`${styles.CardTitle} ${action ? styles.HasAction : ""}`}>
-    {icon ?<Svg d={icon} />:null}
+    {icon ? <Svg d={icon} /> : null}
     {children}
     <div className={styles.Action}>{action}</div>
   </div>

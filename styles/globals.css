@@ -37,7 +37,7 @@ body {
   --help-background-color: rgba(0, 127, 255, 0.2);
   --like-color: rgb(224, 36, 94);
   --list-border: rgba(0, 0, 0, 0.1);
-  --transition: all 0.5s cubic-bezier(0.4, 0, 0.6, 1);
+  --transition: all 0.15s cubic-bezier(0.4, 0, 0.6, 1);
 }
 @media (prefers-color-scheme: dark) {
   body {

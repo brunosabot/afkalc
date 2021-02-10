@@ -1,4 +1,4 @@
-import { mdiPlaylistStar } from '@mdi/js';
+import { mdiPlaylistStar } from "@mdi/js";
 import { nanoid } from "nanoid";
 import React, { useCallback, useContext } from "react";
 import useFirestoreList from "../../components/hooks/useFirestoreList";
@@ -55,18 +55,18 @@ const PriorityList: React.FC<IProps> = () => {
   }
 
   const favorites = Object.entries<string>(favoriteResult?.data ?? {})
-    .filter(([key])=> key!=="id")
-    .map(([key, value])=>[key.replace("$", "/"), value]);
+    .filter(([key]) => key !== "id")
+    .map(([key, value]) => [key.replace("$", "/"), value]);
 
   const shareId = userResult?.data?.shareId;
-  const created:[string, string][] = (result?.data ?? [])
-    .map((list: List)=>[`${shareId}/${list.id}`, list.title]);
+  const created: [string, string][] = (result?.data ?? []).map((list: List) => [
+    `${shareId}/${list.id}`,
+    list.title,
+  ]);
 
   return (
     <Card>
-      <CardTitle icon={mdiPlaylistStar}>
-        {t("title-priority-list")}
-      </CardTitle>
+      <CardTitle icon={mdiPlaylistStar}>{t("title-priority-list")}</CardTitle>
 
       <CardSubTitle>Listes favorites</CardSubTitle>
       <List>

@@ -5,7 +5,7 @@ import Svg from "../../../ui/Svg";
 import styles from "./Back.module.css";
 
 interface Props {
-  [key:string]:never;
+  [key: string]: never;
 }
 
 const Back: React.FC<Props> = () => {

@@ -9,9 +9,7 @@ interface Props {
 
 const CardAction: React.FC<Props> = ({ onClick, children, icon }) => (
   <button type="button" className={styles.CardAction} onClick={onClick}>
-    {icon ? (
-      <Svg d={icon} />
-    ) : null}
+    {icon ? <Svg d={icon} /> : null}
 
     {children}
   </button>

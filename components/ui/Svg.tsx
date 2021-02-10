@@ -3,15 +3,16 @@ import styles from "./Svg.module.css";
 
 interface IProps {
   d: string;
-  onClick?: ()=>void;
+  onClick?: () => void;
 }
 
-const Svg: React.FC<IProps> = ({d, onClick=undefined}) => (
-  <svg className={`${styles.Svg} ${onClick ? styles.OnClick : ""}`} viewBox="0 0 24 24" onClick={onClick}>
-    <path
-      fill="currentColor"
-      d={d}
-    />
+const Svg: React.FC<IProps> = ({ d, onClick = undefined }) => (
+  <svg
+    className={`${styles.Svg} ${onClick ? styles.OnClick : ""}`}
+    viewBox="0 0 24 24"
+    onClick={onClick}
+  >
+    <path fill="currentColor" d={d} />
   </svg>
 );
 

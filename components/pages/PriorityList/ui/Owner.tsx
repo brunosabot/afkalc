@@ -116,9 +116,7 @@ const Owner: React.FC<IProps> = ({ listId, userId, document }) => {
       <Back />
 
       <Card>
-        <CardTitle icon={mdiPlaylistEdit}>
-          {t("title-edit")}
-        </CardTitle>
+        <CardTitle icon={mdiPlaylistEdit}>{t("title-edit")}</CardTitle>
         <ShareBanner listId={listId} userId={userId} />
 
         <InputField label={t("label-list-name")} name="title" value={title} onChange={setTitle} />
@@ -138,38 +136,42 @@ const Owner: React.FC<IProps> = ({ listId, userId, document }) => {
         <InputField label={t("label-value")} name="value" value={value} onChange={setValue} />
 
         <CardActions>
-          <CardAction icon={mdiDelete} onClick={onDeleteList}>{t("label-delete")}</CardAction>
-          <CardAction icon={mdiEye} onClick={()=>setIsForcedViewer(!isForcedViewer)}>{isForcedViewer ? t("label-edit") : t("label-preview")}</CardAction>
+          <CardAction icon={mdiDelete} onClick={onDeleteList}>
+            {t("label-delete")}
+          </CardAction>
+          <CardAction icon={mdiEye} onClick={() => setIsForcedViewer(!isForcedViewer)}>
+            {isForcedViewer ? t("label-edit") : t("label-preview")}
+          </CardAction>
         </CardActions>
-
       </Card>
 
       {isForcedViewer ? <Viewer document={document} listId={listId} userId={userId} /> : null}
-          
+
       {isForcedViewer ? null : (
         <Card>
-          <CardTitle icon={mdiPlaylistCheck}>
-            {title}
-          </CardTitle>
+          <CardTitle icon={mdiPlaylistCheck}>{title}</CardTitle>
 
-          {heroes.map((hero: number, i: number) => (
-            /* eslint-disable react/no-array-index-key */
-            <HeroLine
-              onDelete={onDelete}
-              onUp={onUp}
-              onDown={onDown}
-              index={i}
-              hero={hero}
-              key={`${hero}-${i}`}
-              length={heroes.length}
-              onSelect={updateHero}
-            />
-          )
-          /* eslint-enable react/no-array-index-key */
+          {heroes.map(
+            (hero: number, i: number) => (
+              /* eslint-disable react/no-array-index-key */
+              <HeroLine
+                onDelete={onDelete}
+                onUp={onUp}
+                onDown={onDown}
+                index={i}
+                hero={hero}
+                key={`${hero}-${i}`}
+                length={heroes.length}
+                onSelect={updateHero}
+              />
+            )
+            /* eslint-enable react/no-array-index-key */
           )}
 
           <CardActions>
-            <CardAction icon={mdiPlus} onClick={()=>setShowModal(true)}>Ajouter</CardAction>
+            <CardAction icon={mdiPlus} onClick={() => setShowModal(true)}>
+              Ajouter
+            </CardAction>
           </CardActions>
 
           <Modal active={showModal} onClose={() => setShowModal(false)}>
@@ -177,13 +179,13 @@ const Owner: React.FC<IProps> = ({ listId, userId, document }) => {
               onlyHero
               current={[]}
               onSelect={(_, heroId) => {
-              addHero(heroId);
-              setShowModal(false);
-            }}
+                addHero(heroId);
+                setShowModal(false);
+              }}
             />
           </Modal>
         </Card>
-)}
+      )}
     </>
   );
 };
