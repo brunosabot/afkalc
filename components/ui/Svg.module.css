@@ -1,0 +1,16 @@
+.Svg {
+  height: 24px;
+  width: 24px;
+  flex-shrink: 0;
+}
+.OnClick {
+  background-color: transparent;
+  cursor: pointer;
+  margin: -8px;
+  padding: 8px;
+  transition: var(--transition);
+  border-radius: 50%;
+}
+.OnClick:hover {
+  background-color: var(--hover-color);
+}

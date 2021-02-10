@@ -1,9 +1,16 @@
+import { mdiDelete, mdiEye, mdiPlaylistCheck, mdiPlaylistEdit, mdiPlus } from "@mdi/js";
 import firebase from "firebase";
 import { useRouter } from "next/router";
-import React, { useCallback, useContext } from "react";
+import React, { useCallback, useContext, useState } from "react";
 import { useTranslation } from "../../../../i18n";
+import Modal from "../../../functionnal/Modal";
 import useFirestoreQuery from "../../../hooks/useFirestoreQuery";
+import ChooseHero from "../../../modal/ChooseHero";
 import { FirebaseContext } from "../../../providers/FirebaseProvider";
+import Card from "../../../ui/card/Card";
+import CardAction from "../../../ui/card/CardAction";
+import CardActions from "../../../ui/card/CardActions";
+import CardTitle from "../../../ui/card/CardTitle";
 import InputField from "../../../ui/InputField";
 import SelectField from "../../../ui/SelectField";
 import useAdd from "../hooks/useAdd";
@@ -14,6 +21,7 @@ import useUpdate from "../hooks/useUpdate";
 import Back from "./Back";
 import HeroLine from "./HeroLine";
 import ShareBanner from "./ShareBanner";
+import Viewer from "./Viewer";
 
 interface IProps {
   document: firebase.firestore.DocumentReference;
@@ -25,6 +33,8 @@ const Owner: React.FC<IProps> = ({ listId, userId, document }) => {
   const router = useRouter();
   const { values } = useContext(FirebaseContext);
   const { t } = useTranslation("priority-list");
+  const [isForcedViewer, setIsForcedViewer] = useState(false);
+  const [showModal, setShowModal] = useState(false);
 
   const result = useFirestoreQuery(document);
 
@@ -103,43 +113,77 @@ const Owner: React.FC<IProps> = ({ listId, userId, document }) => {
 
   return (
     <>
-      <Back onDelete={onDeleteList} />
+      <Back />
 
-      <ShareBanner listId={listId} userId={userId} />
+      <Card>
+        <CardTitle icon={mdiPlaylistEdit}>
+          {t("title-edit")}
+        </CardTitle>
+        <ShareBanner listId={listId} userId={userId} />
 
-      <InputField label={t("label-list-name")} name="title" value={title} onChange={setTitle} />
+        <InputField label={t("label-list-name")} name="title" value={title} onChange={setTitle} />
 
-      <SelectField
-        onChange={setType}
-        value={type}
-        label={t("label-list-type")}
-        name="type"
-        values={[
-          { key: "", label: t("label-none") },
-          { key: "SI", label: t("label-si") },
-          { key: "FI", label: t("label-fi") },
-        ]}
-      />
+        <SelectField
+          onChange={setType}
+          value={type}
+          label={t("label-list-type")}
+          name="type"
+          values={[
+            { key: "", label: t("label-none") },
+            { key: "SI", label: t("label-si") },
+            { key: "FI", label: t("label-fi") },
+          ]}
+        />
 
-      <InputField label={t("label-value")} name="value" value={value} onChange={setValue} />
+        <InputField label={t("label-value")} name="value" value={value} onChange={setValue} />
 
-      {heroes.map(
-        (hero: number, i: number) => (
-          /* eslint-disable react/no-array-index-key */
-          <HeroLine
-            onDelete={onDelete}
-            onUp={onUp}
-            onDown={onDown}
-            index={i}
-            hero={hero}
-            key={`${hero}-${i}`}
-            length={heroes.length}
-            onSelect={updateHero}
-          />
-        )
-        /* eslint-enable react/no-array-index-key */
-      )}
-      <HeroLine onSelect={addHero} index={heroes.length} length={heroes.length} />
+        <CardActions>
+          <CardAction icon={mdiDelete} onClick={onDeleteList}>{t("label-delete")}</CardAction>
+          <CardAction icon={mdiEye} onClick={()=>setIsForcedViewer(!isForcedViewer)}>{isForcedViewer ? t("label-edit") : t("label-preview")}</CardAction>
+        </CardActions>
+
+      </Card>
+
+      {isForcedViewer ? <Viewer document={document} listId={listId} userId={userId} /> : null}
+          
+      {isForcedViewer ? null : (
+        <Card>
+          <CardTitle icon={mdiPlaylistCheck}>
+            {title}
+          </CardTitle>
+
+          {heroes.map((hero: number, i: number) => (
+            /* eslint-disable react/no-array-index-key */
+            <HeroLine
+              onDelete={onDelete}
+              onUp={onUp}
+              onDown={onDown}
+              index={i}
+              hero={hero}
+              key={`${hero}-${i}`}
+              length={heroes.length}
+              onSelect={updateHero}
+            />
+          )
+          /* eslint-enable react/no-array-index-key */
+          )}
+
+          <CardActions>
+            <CardAction icon={mdiPlus} onClick={()=>setShowModal(true)}>Ajouter</CardAction>
+          </CardActions>
+
+          <Modal active={showModal} onClose={() => setShowModal(false)}>
+            <ChooseHero
+              onlyHero
+              current={[]}
+              onSelect={(_, heroId) => {
+              addHero(heroId);
+              setShowModal(false);
+            }}
+            />
+          </Modal>
+        </Card>
+)}
     </>
   );
 };

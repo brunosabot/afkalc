@@ -1,7 +1,6 @@
 import { useRouter } from "next/router";
 import React from "react";
-import { useTranslation } from "../../../../i18n";
-import CardShare from "../../../ui/card/CardShare";
+import CardShareNew from "../../../ui/card/CardShareNew";
 
 interface IProps {
   userId: string;
@@ -9,14 +8,13 @@ interface IProps {
 }
 
 const ShareBanner: React.FC<IProps> = ({ userId, listId }) => {
-  const { t } = useTranslation("priority-list");
   const router = useRouter();
   const localePath = router.locale === router.defaultLocale ? "" : `/${router.locale}`;
 
   return (
-    <CardShare label={t("label-share")} style={{ backgroundColor: "var(--hover-color)" }}>
+    <CardShareNew label="" style={{ backgroundColor: "var(--hover-color)" }}>
       {`https://afkalc.com${localePath}/priority-list/${userId}/${listId}`}
-    </CardShare>
+    </CardShareNew>
   );
 };
 

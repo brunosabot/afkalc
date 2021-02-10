@@ -4,7 +4,6 @@ import React, { useContext, useState } from "react";
 import useUserFirestoreDocument from "../../../components/hooks/useUserFirestoreDocument";
 import useUserId from "../../../components/pages/PriorityList/hooks/useUserId";
 import Owner from "../../../components/pages/PriorityList/ui/Owner";
-import Preview from "../../../components/pages/PriorityList/ui/Preview";
 import Viewer from "../../../components/pages/PriorityList/ui/Viewer";
 import { FirebaseContext } from "../../../components/providers/FirebaseProvider";
 import LoginButton from "../../../components/ui/button/LoginButton";
@@ -22,7 +21,6 @@ const PriorityList: React.FC<IProps> = () => {
   const { values } = useContext(FirebaseContext);
   const { user, id } = router.query;
   const [userId, setUserId] = useState("");
-  const [isForcedViewer, setIsForcedViewer] = useState(false);
   useUserId(user as string, setUserId);
 
   const isOwner = values.uid === userId;
@@ -35,42 +33,28 @@ const PriorityList: React.FC<IProps> = () => {
     return null;
   }
 
+  if (values.isAuth === false) {
+    return (
+      <Card>
+        <CardTitle>{t("common:require-login")}</CardTitle>
+        <LoginButton />
+      </Card>
+    );
+  }
+
   return (
-    <Card>
-      <div style={{ padding: "0 0 16px 0" }}>
-        <Head>
-          <title>{`${t("common:menu.priority-list")} - Afkalc`}</title>
-          <meta name="description" content="" />
-        </Head>
+    <>
+      <Head>
+        <title>{`${t("common:menu.priority-list")} - Afkalc`}</title>
+        <meta name="description" content="" />
+      </Head>
 
-        {values.isAuth ? (
-          <>
-            {isOwner && isForcedViewer === false ? (
-              <Owner document={document} listId={id as string} userId={user as string} />
-            ) : (
-              <Viewer document={document} />
-            )}
-
-            {isOwner ? (
-              <Preview
-                onClick={() => {
-                  setIsForcedViewer(!isForcedViewer);
-                }}
-              >
-                {isForcedViewer ? t("label-edit") : t("label-preview")}
-              </Preview>
-            ) : null}
-          </>
-        ) : (
-          <>
-            <CardTitle>
-              {t("common:require-login")}
-            </CardTitle>
-            <LoginButton />
-          </>
-        )}
-      </div>
-    </Card>
+      {isOwner ? (
+        <Owner document={document} listId={id as string} userId={user as string} />
+      ) : (
+        <Viewer document={document} listId={id as string} userId={user as string} />
+      )}
+    </>
   );
 };
 

@@ -1,9 +1,11 @@
 {
   "label-preview": "Preview",
+  "label-delete": "Delete",
   "label-edit": "Edit",
+  "title-edit": "Edit your list",
   "title-priority-list": "Your priority lists",
   "label-back": "Back to the list",
-  "label-add": "Add a new list",
+  "label-add": "New list",
   "label-share": "Share your list",
   "no-name": "No Name",
   "label-list-name": "List name",

@@ -1,5 +1,17 @@
 .CardTitle {
+  display: flex;
+  align-items: center;
   font-weight: 500;
   padding: 16px;
   position: relative;
+  gap: 8px;
+}
+.Action {
+  position: absolute;
+  right: 0;
+  top: 0;
+  padding: 8px;
+}
+.HasAction {
+  padding-right: 56px;
 }

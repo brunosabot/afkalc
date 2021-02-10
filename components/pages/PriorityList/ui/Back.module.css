@@ -1,14 +1,15 @@
 .Back {
   display: flex;
   align-items: center;
-  padding: 16px;
+  width: 100%;
 }
 
 .Link {
-  display: block;
   flex-grow: 1;
   display: flex;
   align-items: center;
+  gap: 8px;
+  text-decoration: none;
 }
 
 .Icon {

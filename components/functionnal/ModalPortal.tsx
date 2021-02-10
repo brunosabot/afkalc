@@ -6,7 +6,7 @@ interface Props {
   children: React.ReactNode;
 }
 
-const Modal: React.FC<Props> = ({ active, children }) => {
+const ModalPortal: React.FC<Props> = ({ active, children }) => {
   const rootRef = useRef<HTMLElement | null>(null);
   const elRef = useRef<HTMLDivElement | null>(null);
   const [mounted, setMounted] = useState(false);
@@ -30,4 +30,4 @@ const Modal: React.FC<Props> = ({ active, children }) => {
   return createPortal(children, elRef.current);
 };
 
-export default Modal;
+export default ModalPortal;

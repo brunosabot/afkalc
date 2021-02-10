@@ -29,7 +29,7 @@ const EliteSummon: React.FC<IProps> = () => {
   const onChange = useOnChangeNumber();
 
   return (
-    <div style={{ paddingTop: "8px" }}>
+    <div style={{ paddingTop: "24px", gap: "16px", display:"grid" }}>
       <Card>
         <Head>
           <title>{`${t("common:menu.elite-summon")} - Afkalc`}</title>

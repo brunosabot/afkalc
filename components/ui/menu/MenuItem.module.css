@@ -16,7 +16,7 @@
   position: absolute;
   right: -16px;
   top: 0;
-  transition: 0.2s all cubic-bezier(0.4, 0, 0.6, 1);
+  transition: var(--transition);
   z-index: -1;
 }
 .Link:hover::before {

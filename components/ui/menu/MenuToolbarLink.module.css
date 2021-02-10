@@ -8,6 +8,7 @@
   justify-content: center;
   padding: 0 4px;
   width: 52px;
+  transition: var(--transition);
 }
 .MenuToolbarLink:hover {
   background-color: var(--hover-color);
