@@ -4,6 +4,9 @@
   display: block;
   width: 100%;
   z-index: 1;
+  width: 40px;
+  height: 40px;
+  box-sizing: border-box;
 }
 .Wrapper {
   align-items: center;
@@ -17,11 +20,13 @@
   justify-content: center;
   position: relative;
   width: 40px;
+  outline: 0;
 }
 
 .Large .Character {
   border-radius: 8px;
   width: 56px;
+  height: 56px;
 }
 .Large .Count {
   font-size: 14px;
@@ -30,6 +35,7 @@
 .Small .Character {
   border-radius: 3px;
   width: 24px;
+  height: 24px;
 }
 .Small .Count {
   display: none;

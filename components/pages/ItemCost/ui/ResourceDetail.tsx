@@ -1,6 +1,8 @@
+import { mdiDelete } from "@mdi/js";
 import React from "react";
 import Item from "../../../ui/afk/Item";
 import InputField from "../../../ui/InputField";
+import Svg from "../../../ui/Svg";
 import useItem from "../hooks/useItem";
 import ItemPicker from "./ItemPicker";
 import styles from "./ResourceDetail.module.css";
@@ -8,12 +10,13 @@ import styles from "./ResourceDetail.module.css";
 interface Props {
   resource?: string;
   value?: number;
+  onDelete: () => void;
   onSelect: (value: string) => void;
   onValue: (value: string) => void;
   side: number;
 }
 
-const ResourceDetail: React.FC<Props> = ({ resource, value = 0, onSelect, onValue, side }) => {
+const ResourceDetail: React.FC<Props> = ({ resource, value = 0, onSelect, onValue, onDelete, side }) => {
   const { getItem } = useItem();
 
   const itemCost = getItem(resource).cost ?? 0;
@@ -23,19 +26,23 @@ const ResourceDetail: React.FC<Props> = ({ resource, value = 0, onSelect, onValu
     <div className={styles.ResourceDetail}>
       <ItemPicker item={resource} onSelect={onSelect} />
       <InputField
+        small
         label=""
         value={value}
         onChange={(v) => onValue(v || "0")}
-        disabled={resource === ""}
         name={`resource-count-${side}-${resource}`}
+        autoFocus
+        style={{width:"90px"}}
       />
-      {cost <= 0 ? null : (
-        <div className={styles.Cost}>
-          <Item name="diamond" size="small" />
-          &nbsp;
-          {cost}
-        </div>
-      )}
+      <div className={styles.Cost}>
+        {cost <= 0 ? null : (
+          <>
+            <Item name="diamond" size="small" />
+            {cost}
+          </>
+          )}
+      </div>
+      <Svg d={mdiDelete} onClick={onDelete} />
     </div>
   );
 };

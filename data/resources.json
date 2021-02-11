@@ -57,6 +57,7 @@
   { "name": "legendary-gear", "image": "/loot/legendary-gear.jpg" },
   { "name": "legendary-p-gear", "image": "/loot/legendary-p-gear.jpg" },
   { "name": "mythic-gear", "cost": 2830.5, "image": "/loot/mythic-gear.jpg" },
+  { "name": "mythic-gear-faction", "cost": 6750.8, "image": "/loot/mythic-gear-faction.jpg" },
   {
     "name": "mythic-gear-dimensional",
     "cost": 6740.8,

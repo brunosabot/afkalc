@@ -12,6 +12,7 @@ interface IProps {
   style?: React.CSSProperties;
   small?: boolean;
   name: string;
+  autoFocus?: boolean;
 }
 
 const InputField: React.FC<IProps> = ({
@@ -24,6 +25,7 @@ const InputField: React.FC<IProps> = ({
   readOnly = false,
   style = undefined,
   maxLength = undefined,
+  autoFocus=undefined,
   name,
 }) => {
   const refId = useRef(`input-field_${name}`);
@@ -66,6 +68,8 @@ const InputField: React.FC<IProps> = ({
         maxLength={maxLength}
         style={style}
         onChange={onChangeLocal}
+        // eslint-disable-next-line jsx-a11y/no-autofocus
+        autoFocus={autoFocus}
       />
     </div>
   );

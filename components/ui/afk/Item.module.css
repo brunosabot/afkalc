@@ -1,6 +1,7 @@
 .Item {
   border-radius: 4px;
   width: 40px;
+  height: 40px;
 }
 .Wrapper {
   align-items: center;
@@ -32,6 +33,13 @@
   text-shadow: var(--reverse-text-shadow);
   top: 2px;
 }
+.OnClick {
+  cursor: pointer;
+  transition: var(--transition);
+}
+.OnClick:hover {
+  opacity: 0.7;
+}
 
 .SecondaryInfos {
   background: var(--reverse-background);
@@ -49,6 +57,7 @@
 .Large .Item {
   border-radius: 8px;
   width: 56px;
+  height: 56px;
 }
 .Large .Count {
   font-size: 14px;
@@ -57,6 +66,7 @@
 .Small .Item {
   border-radius: 3px;
   width: 24px;
+  height: 24px;
 }
 .Small .Count {
   display: none;

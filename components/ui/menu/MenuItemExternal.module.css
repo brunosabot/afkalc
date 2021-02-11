@@ -10,6 +10,8 @@
   z-index: 1;
   border-bottom: 1px solid var(--list-border);
   gap: 8px;
+  height: 48px;
+  box-sizing: border-box;
 }
 .Link:last-child {
   border-bottom: 0;

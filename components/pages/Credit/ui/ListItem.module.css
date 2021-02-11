@@ -4,7 +4,7 @@
   margin: 0 16px;
   text-decoration: none;
   position: relative;
-  height: 45px;
+  height: 48px;
   z-index: 1;
 }
 .ListItem::before {
