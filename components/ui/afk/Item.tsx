@@ -22,7 +22,7 @@ const Item: React.FC<IProps> = ({
   size = "default",
   infos,
   secondaryInfos,
-  onClick = () => {},
+  onClick = undefined,
   highlight = false,
 }) => {
   const { t } = useTranslation("common");
@@ -33,15 +33,16 @@ const Item: React.FC<IProps> = ({
   const largeClassName = size === "large" ? styles.Large : "";
   const smallClassName = size === "small" ? styles.Small : "";
   const highlightClassName = highlight ? styles.Highlight : "";
+  const onClickClassName = onClick ? styles.OnClick : "";
 
   return (
     <div
-      className={`${styles.Wrapper} ${largeClassName} ${smallClassName} ${highlightClassName}`}
+      className={`${styles.Wrapper} ${largeClassName} ${smallClassName} ${highlightClassName} ${onClickClassName}`}
       onClick={onClick}
       role="button"
       tabIndex={-1}
       onKeyPress={(event) => {
-        if (event.key === "Enter") onClick();
+        if (event.key === "Enter" && onClick) onClick();
       }}
     >
       <img src={resource.image} className={styles.Item} alt={t(`item.${name}`)} />

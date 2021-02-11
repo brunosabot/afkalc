@@ -45,7 +45,7 @@ const Viewer: React.FC<IProps> = ({ listId, userId, document }) => {
           const { id, name } = getHero(hero) ?? { id: 0, name: "" };
 
           const isOk =
-            heroResult.data.levels[hero] &&
+            heroResult.data?.levels[hero] &&
             ((result.data.type === "SI" && result.data.value <= heroResult.data.levels[hero].si) ||
               (result.data.type === "FI" && result.data.value <= heroResult.data.levels[hero].inn));
 

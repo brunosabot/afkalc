@@ -6,10 +6,12 @@
   { "id": 5, "name": "blade", "image": "/artifacts/blade.jpg" },
   { "id": 6, "name": "chalice", "image": "/artifacts/chalice.jpg" },
   { "id": 7, "name": "conviction", "image": "/artifacts/conviction.jpg" },
-  { "id": 8, "name": "tank_shield", "image": "/artifacts/tank_shield.jpg" },
-  { "id": 13, "name": "tank_belt", "image": "/artifacts/tank_belt.jpg" },
-  { "id": 9, "name": "warrior", "image": "/artifacts/warrior.jpg" },
-  { "id": 10, "name": "support", "image": "/artifacts/support.jpg" },
-  { "id": 11, "name": "mage", "image": "/artifacts/mage.jpg" },
-  { "id": 12, "name": "ranger", "image": "/artifacts/ranger.jpg" }
+  { "id": 8, "name": "barricade", "image": "/artifacts/barricade.jpg" },
+  { "id": 13, "name": "waistband", "image": "/artifacts/waistband.jpg" },
+  { "id": 9, "name": "chaos-bringer", "image": "/artifacts/chaos-bringer.jpg" },
+  { "id": 14, "name": "carnage", "image": "/artifacts/carnage.jpg" },
+  { "id": 11, "name": "windbinder", "image": "/artifacts/windbinder.jpg" },
+  { "id": 15, "name": "warden", "image": "/artifacts/warden.jpg" },
+  { "id": 10, "name": "tidebearer", "image": "/artifacts/tidebearer.jpg" },
+  { "id": 12, "name": "shroud", "image": "/artifacts/shroud.jpg" }
 ]

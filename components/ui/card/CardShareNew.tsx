@@ -5,13 +5,12 @@ import Svg from "../Svg";
 import styles from "./CardShareNew.module.css";
 
 interface IProps {
-  label: string;
   children: string;
   shouldCopy?: boolean;
   style?: React.CSSProperties;
 }
 
-const CardShareNew: React.FC<IProps> = ({ label, children, shouldCopy = true, style = {} }) => {
+const CardShareNew: React.FC<IProps> = ({ children, shouldCopy = true, style = {} }) => {
   const { t } = useTranslation("top-team");
   const [copy, setCopy] = useState(false);
 

@@ -12,7 +12,7 @@ const ShareBanner: React.FC<IProps> = ({ userId, listId }) => {
   const localePath = router.locale === router.defaultLocale ? "" : `/${router.locale}`;
 
   return (
-    <CardShareNew label="" style={{ backgroundColor: "var(--hover-color)" }}>
+    <CardShareNew>
       {`https://afkalc.com${localePath}/priority-list/${userId}/${listId}`}
     </CardShareNew>
   );
