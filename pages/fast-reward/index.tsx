@@ -1,3 +1,4 @@
+import { mdiFastForward, mdiHelpBox } from "@mdi/js";
 import Head from "next/head";
 import React, { useState } from "react";
 import useFirestoreWithBackup from "../../components/hooks/useFirestoreWithBackup";
@@ -5,10 +6,10 @@ import useOnChangeNumber from "../../components/hooks/useOnChangeNumber";
 import useMaxLevel from "../../components/pages/FastReward/hooks/useMaxLevel";
 import DiamondLine from "../../components/pages/FastReward/ui/DiamondLine";
 import Help from "../../components/pages/FastReward/ui/Help";
-import HelpButton from "../../components/ui/button/HelpButton";
 import Card from "../../components/ui/card/Card";
 import CardTitle from "../../components/ui/card/CardTitle";
 import SelectField from "../../components/ui/SelectField";
+import Svg from "../../components/ui/Svg";
 import campaign from "../../data/fastRewardCampaign.json";
 import player from "../../data/fastRewardPlayer.json";
 import vip from "../../data/fastRewardVip.json";
@@ -37,14 +38,26 @@ const FastReward: React.FC<IProps> = () => {
   const diams100 = useMaxLevel(100, playerLevel, vipLevel);
 
   return (
-    <div style={{ paddingTop: "24px", gap: "16px", display: "grid" }}>
+    <div style={{
+      paddingTop: "24px",
+      gap: "16px",
+      display: "flex",
+      flexDirection: "column",
+      flexGrow: 1,
+      alignItems: "center"
+    }}
+    >
       <Head>
         <title>{`${t("common:menu.fast-reward")} - Afkalc`}</title>
         <meta name="description" content={t("help")} />
       </Head>
       <Card>
-        <HelpButton onClick={() => setShowHelp(!showHelp)} />
-        <CardTitle>{t("form-title")}</CardTitle>
+        <CardTitle
+          icon={mdiFastForward}
+          action={<Svg onClick={() => setShowHelp(!showHelp)} d={mdiHelpBox} />}
+        >
+          {t("form-title")}
+        </CardTitle>
 
         {showHelp ? <Help /> : null}
 
@@ -73,9 +86,11 @@ const FastReward: React.FC<IProps> = () => {
 
       <Card>
         <CardTitle>{t("result-title")}</CardTitle>
-        <DiamondLine campaignLevel={campaignLevel} diamsLevel={diams50} count={50} />
-        <DiamondLine campaignLevel={campaignLevel} diamsLevel={diams80} count={80} />
-        <DiamondLine campaignLevel={campaignLevel} diamsLevel={diams100} count={100} />
+        <div style={{display: "flex", alignItems: "center", justifyContent: "center"}}>
+          <DiamondLine campaignLevel={campaignLevel} diamsLevel={diams50} count={50} />
+          <DiamondLine campaignLevel={campaignLevel} diamsLevel={diams80} count={80} />
+          <DiamondLine campaignLevel={campaignLevel} diamsLevel={diams100} count={100} />
+        </div>
       </Card>
     </div>
   );

@@ -1,3 +1,4 @@
+import { mdiChevronTripleUp } from "@mdi/js";
 import React from "react";
 import { useTranslation } from "../../../../i18n";
 import Item from "../../../ui/afk/Item";
@@ -22,7 +23,9 @@ const SignatureItemLeft: React.FC<IProps> = ({ step, primordial, amplifying, fac
 
   return (
     <Card>
-      <CardTitle>{t("label-si", { si: step })}</CardTitle>
+      <CardTitle icon={mdiChevronTripleUp}>
+        {t("label-si", { si: step })}
+      </CardTitle>
       <FlexGap gap={16}>
         {primordial > 0 ? <Item count={primordial} size="large" name="primordial-emblem" /> : null}
         {amplifying > 0 ? <Item count={amplifying} size="large" name="amplifying-emblem" /> : null}

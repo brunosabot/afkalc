@@ -1,13 +1,14 @@
+import { mdiHelpBox, mdiScript } from "@mdi/js";
 import Head from "next/head";
 import React, { useState } from "react";
 import useOnChangeNumber from "../../components/hooks/useOnChangeNumber";
 import Item from "../../components/ui/afk/Item";
-import HelpButton from "../../components/ui/button/HelpButton";
 import Card from "../../components/ui/card/Card";
 import CardHelp from "../../components/ui/card/CardHelp";
 import CardTitle from "../../components/ui/card/CardTitle";
 import CardValue from "../../components/ui/card/CardValue";
 import InputField from "../../components/ui/InputField";
+import Svg from "../../components/ui/Svg";
 import { useTranslation } from "../../i18n";
 import { getEstimatedDiamsForSummon } from "../../lib/summon";
 
@@ -29,14 +30,26 @@ const EliteSummon: React.FC<IProps> = () => {
   const onChange = useOnChangeNumber();
 
   return (
-    <div style={{ paddingTop: "24px", gap: "16px", display: "grid" }}>
+    <div style={{
+      paddingTop: "24px",
+      gap: "16px",
+      display: "flex",
+      flexDirection: "column",
+      flexGrow: 1,
+      alignItems: "center"
+    }}
+    >
       <Card>
         <Head>
           <title>{`${t("common:menu.elite-summon")} - Afkalc`}</title>
           <meta name="description" content={t("help")} />
         </Head>
-        <HelpButton onClick={() => setShowHelp(!showHelp)} />
-        <CardTitle>{t("current-count-label")}</CardTitle>
+        <CardTitle
+          icon={mdiScript}
+          action={<Svg onClick={() => setShowHelp(!showHelp)} d={mdiHelpBox} />}
+        >
+          {t("current-count-label")}
+        </CardTitle>
 
         {showHelp ? <CardHelp>{t("help")}</CardHelp> : null}
 

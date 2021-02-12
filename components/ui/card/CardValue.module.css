@@ -1,10 +1,8 @@
 .CardValue {
   display: block;
   padding: 16px;
+  margin: 16px;
   text-align: center;
-}
-.CardValue + .CardValue {
-  padding-top: 0;
 }
 .Value {
   align-items: center;
