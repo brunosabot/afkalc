@@ -7,9 +7,10 @@ interface IProps {
   setLevel: (id: number, field: "inn") => (value: number) => void;
   getValue: (id: number, field: HeroLevel) => number;
   isView: boolean;
+  shouldUnlock: boolean;
 }
 
-const InnField: React.FC<IProps> = ({ id, setLevel, getValue, isView }) => {
+const InnField: React.FC<IProps> = ({ id, setLevel, getValue, isView, shouldUnlock = false }) => {
   const value = getValue(id, "inn");
 
   return (
@@ -18,7 +19,7 @@ const InnField: React.FC<IProps> = ({ id, setLevel, getValue, isView }) => {
       small
       onChange={(v) => setLevel(id, "inn")(parseInt(v, 10))}
       value={value === 0 ? "" : value}
-      disabled={getValue(id, "ascend") < 7}
+      disabled={getValue(id, "ascend") < 7 && shouldUnlock === false}
       readOnly={isView}
       maxLength={1}
       style={{ width: "32px", textAlign: "center" }}

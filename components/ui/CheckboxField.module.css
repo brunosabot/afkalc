@@ -1,0 +1,63 @@
+.Wrapper {
+  display: flex;
+  padding: 0 16px 16px 16px;
+  align-items: center;
+  cursor: pointer;
+}
+.Label {
+  color: var(--text-color);
+  flex-grow: 1;
+  padding-left: 16px;
+  cursor: pointer;
+}
+
+.CheckboxField {
+  appearance: none;
+  border-radius: 7px;
+  cursor: pointer;
+  flex-shrink: 0;
+  height: 32px;
+  margin: 0;
+  outline: 0;
+  position: relative;
+  transition: all 0.28s cubic-bezier(0.4, 0, 0.2, 1);
+  width: 34px;
+}
+.CheckboxField::before {
+  background: var(--reverse-background);
+  border-radius: 7px;
+  content: "";
+  cursor: pointer;
+  display: inline-block;
+  flex-shrink: 0;
+  height: 12px;
+  left: 2px;
+  opacity: 0.4;
+  outline: 0;
+  position: absolute;
+  top: 10px;
+  transition: all 0.28s cubic-bezier(0.4, 0, 0.2, 1);
+  width: 30px;
+}
+.CheckboxField:checked::before {
+  background: var(--accent-color);
+}
+.CheckboxField::after {
+  background: var(--reverse-background);
+  border-radius: 10px;
+  box-shadow: 0 3px 1px -2px rgba(0, 0, 0, 0.2), 0 2px 2px 0 rgba(0, 0, 0, 0.14),
+    0 1px 5px 0 rgba(0, 0, 0, 0.12);
+  content: "";
+  display: block;
+  height: 20px;
+  left: 2px;
+  margin-left: -2px;
+  position: absolute;
+  top: 5px;
+  transition: all 0.28s cubic-bezier(0.4, 0, 0.2, 1);
+  width: 20px;
+}
+.CheckboxField:checked::after {
+  background: var(--accent-color);
+  margin-left: 12px;
+}

@@ -1,9 +1,11 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import firebase from "../../../providers/firebase";
 
 const firestore = firebase.firestore();
 
-export default function useLoadId(id: string, setViewId: (value: string) => void) {
+export default function useLoadId(id: string) {
+  const [viewId, setViewId] = useState("");
+
   useEffect(() => {
     firestore
       .collection("user")
@@ -15,4 +17,6 @@ export default function useLoadId(id: string, setViewId: (value: string) => void
         }
       });
   }, [id, setViewId]);
+
+  return viewId;
 }

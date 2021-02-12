@@ -13,7 +13,7 @@ interface IProps {
 const MenuItem: React.FC<IProps> = ({ children, to, icon = undefined }) => (
   <Link href={to}>
     <a className={styles.Link} href={to}>
-      <Svg d={icon===undefined?mdiCircleSmall:icon} />
+      <Svg d={icon === undefined ? mdiCircleSmall : icon} />
 
       {children}
     </a>

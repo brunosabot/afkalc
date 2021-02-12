@@ -25,7 +25,7 @@ const InputField: React.FC<IProps> = ({
   readOnly = false,
   style = undefined,
   maxLength = undefined,
-  autoFocus=undefined,
+  autoFocus = undefined,
   name,
 }) => {
   const refId = useRef(`input-field_${name}`);

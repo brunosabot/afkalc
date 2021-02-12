@@ -16,7 +16,14 @@ interface Props {
   side: number;
 }
 
-const ResourceDetail: React.FC<Props> = ({ resource, value = 0, onSelect, onValue, onDelete, side }) => {
+const ResourceDetail: React.FC<Props> = ({
+  resource,
+  value = 0,
+  onSelect,
+  onValue,
+  onDelete,
+  side,
+}) => {
   const { getItem } = useItem();
 
   const itemCost = getItem(resource).cost ?? 0;
@@ -32,7 +39,7 @@ const ResourceDetail: React.FC<Props> = ({ resource, value = 0, onSelect, onValu
         onChange={(v) => onValue(v || "0")}
         name={`resource-count-${side}-${resource}`}
         autoFocus
-        style={{width:"90px"}}
+        style={{ width: "90px" }}
       />
       <div className={styles.Cost}>
         {cost <= 0 ? null : (
@@ -40,7 +47,7 @@ const ResourceDetail: React.FC<Props> = ({ resource, value = 0, onSelect, onValu
             <Item name="diamond" size="small" />
             {cost}
           </>
-          )}
+        )}
       </div>
       <Svg d={mdiDelete} onClick={onDelete} />
     </div>

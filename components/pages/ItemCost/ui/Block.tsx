@@ -7,27 +7,24 @@ import CardActions from "../../../ui/card/CardActions";
 import ResourceDetail from "./ResourceDetail";
 
 interface IProps {
-  values: { [key: string]: number },
-  setValues:(values: { [key: string]: number })=>void
+  values: { [key: string]: number };
+  setValues: (values: { [key: string]: number }) => void;
 }
 
-const Block: React.FC<IProps> = ({
-  values,
-  setValues
-}) => {
+const Block: React.FC<IProps> = ({ values, setValues }) => {
   const [showModal, setShowModal] = useState(false);
 
-  return(
+  return (
     <>
       {Object.entries(values).map(([key, value]) => (
         <ResourceDetail
           key={key}
           value={value}
           onSelect={(item) => {
-              const newItem = { ...values };
-              delete newItem[key];
-              setValues({ ...newItem, [item]: 0 });
-            }}
+            const newItem = { ...values };
+            delete newItem[key];
+            setValues({ ...newItem, [item]: 0 });
+          }}
           onDelete={() => {
             const newItem = { ...values };
             delete newItem[key];
@@ -38,7 +35,7 @@ const Block: React.FC<IProps> = ({
           side={1}
         />
       ))}
-      {Object.entries(values).length ? <div style={{paddingTop: "8px"}} />:null}
+      {Object.entries(values).length ? <div style={{ paddingTop: "8px" }} /> : null}
 
       <Modal active={showModal} onClose={() => setShowModal(false)}>
         <ChooseItem
@@ -51,10 +48,12 @@ const Block: React.FC<IProps> = ({
       </Modal>
 
       <CardActions>
-        <CardAction onClick={() => setShowModal(true)} icon={mdiPlus}>Ajouter</CardAction>
+        <CardAction onClick={() => setShowModal(true)} icon={mdiPlus}>
+          Ajouter
+        </CardAction>
       </CardActions>
     </>
   );
-}
+};
 
 export default Block;

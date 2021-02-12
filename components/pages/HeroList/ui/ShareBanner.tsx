@@ -1,10 +1,9 @@
 import { nanoid } from "nanoid";
 import { useRouter } from "next/router";
-import React, { useContext } from "react";
+import React from "react";
 import { useTranslation } from "../../../../i18n";
 import useFirestoreWithBackup from "../../../hooks/useFirestoreWithBackup";
-import { FirebaseContext } from "../../../providers/FirebaseProvider";
-import CardShare from "../../../ui/card/CardShare";
+import CardShareNew from "../../../ui/card/CardShareNew";
 import CardTitle from "../../../ui/card/CardTitle";
 
 interface IProps {
@@ -14,7 +13,7 @@ interface IProps {
 const ShareBanner: React.FC<IProps> = ({ isView }) => {
   const { t } = useTranslation("hero-list");
   const [id] = useFirestoreWithBackup("%ID%", "user", "shareId", "", nanoid(10), isView);
-  const { values } = useContext(FirebaseContext);
+
   const router = useRouter();
   const localePath = router.locale === router.defaultLocale ? "" : `/${router.locale}`;
 
@@ -23,13 +22,9 @@ const ShareBanner: React.FC<IProps> = ({ isView }) => {
   }
 
   return (
-    <CardShare
-      label={t("label-share")}
-      shouldCopy={values.isAuth}
-      style={{ backgroundColor: "var(--hover-color)" }}
-    >
+    <CardShareNew>
       {id ? `https://afkalc.com${localePath}/hero-list/${id}` : t("login-needed")}
-    </CardShare>
+    </CardShareNew>
   );
 };
 

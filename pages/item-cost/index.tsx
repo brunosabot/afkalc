@@ -30,7 +30,12 @@ const ItemCost: React.FC<IProps> = () => {
         <meta name="description" content={t("help")} />
       </Head>
       <Card>
-        <CardTitle icon={mdiDiamondStone} action={<Svg onClick={() => setShowHelp(!showHelp)} d={mdiHelpBox} />}>{t("form-title-1")}</CardTitle>
+        <CardTitle
+          icon={mdiDiamondStone}
+          action={<Svg onClick={() => setShowHelp(!showHelp)} d={mdiHelpBox} />}
+        >
+          {t("form-title-1")}
+        </CardTitle>
 
         {showHelp ? <Help /> : null}
 

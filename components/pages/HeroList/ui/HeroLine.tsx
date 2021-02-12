@@ -12,9 +12,17 @@ interface IProps {
   setLevel: (id: number, field: HeroLevel) => (value: number) => void;
   getValue: (id: number, field: HeroLevel) => number;
   isView: boolean;
+  shouldUnlockFi?: boolean;
 }
 
-const HeroLine: React.FC<IProps> = ({ id, name, setLevel, getValue, isView }) => (
+const HeroLine: React.FC<IProps> = ({
+  id,
+  name,
+  setLevel,
+  getValue,
+  isView,
+  shouldUnlockFi = false,
+}) => (
   <div key={id} className={styles.HeroLine}>
     <Character
       name={name}
@@ -26,7 +34,13 @@ const HeroLine: React.FC<IProps> = ({ id, name, setLevel, getValue, isView }) =>
     <span className={styles.Name}>{name}</span>
 
     <SiField id={id} setLevel={setLevel} getValue={getValue} isView={isView} />
-    <InnField id={id} setLevel={setLevel} getValue={getValue} isView={isView} />
+    <InnField
+      id={id}
+      setLevel={setLevel}
+      getValue={getValue}
+      isView={isView}
+      shouldUnlock={shouldUnlockFi}
+    />
     <AscendField id={id} setLevel={setLevel} getValue={getValue} isView={isView} />
   </div>
 );
