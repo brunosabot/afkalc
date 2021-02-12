@@ -1,12 +1,13 @@
+import { mdiChevronTripleUp, mdiHelpBox } from "@mdi/js";
 import Head from "next/head";
 import React, { useCallback, useState } from "react";
 import useCountEmblem from "../../components/pages/SignatureItem/hooks/useCountEmblem";
 import SignatureItemLeft from "../../components/pages/SignatureItem/ui/SignatureItemLeft";
-import HelpButton from "../../components/ui/button/HelpButton";
 import Card from "../../components/ui/card/Card";
 import CardHelp from "../../components/ui/card/CardHelp";
 import CardTitle from "../../components/ui/card/CardTitle";
 import InputField from "../../components/ui/InputField";
+import Svg from "../../components/ui/Svg";
 import { useTranslation } from "../../i18n";
 
 interface IProps {
@@ -36,14 +37,26 @@ const SignatureItem: React.FC<IProps> = () => {
   const levels = Array.from(new Set([20, 30, targetLevel]));
 
   return (
-    <div style={{ paddingTop: "24px", gap: "16px", display: "grid" }}>
+    <div style={{
+      paddingTop: "24px",
+      gap: "16px",
+      display: "flex",
+      flexDirection: "column",
+      flexGrow: 1,
+      alignItems: "center"
+    }}
+    >
       <Card>
         <Head>
           <title>{`${t("common:menu.signature-item")} - Afkalc`}</title>
           <meta name="description" content={t("help")} />
         </Head>
-        <HelpButton onClick={() => setShowHelp(!showHelp)} />
-        <CardTitle>{t("form-title")}</CardTitle>
+        <CardTitle
+          icon={mdiChevronTripleUp}
+          action={<Svg onClick={() => setShowHelp(!showHelp)} d={mdiHelpBox} />}
+        >
+          {t("common:menu.signature-item")}
+        </CardTitle>
 
         {showHelp ? <CardHelp>{t("help")}</CardHelp> : null}
 

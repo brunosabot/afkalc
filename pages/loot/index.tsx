@@ -1,3 +1,4 @@
+import { mdiHelpBox, mdiUpdate } from "@mdi/js";
 import dayjs from "dayjs";
 import Head from "next/head";
 import React, { useCallback, useMemo, useState } from "react";
@@ -5,11 +6,11 @@ import useFirestoreWithBackup from "../../components/hooks/useFirestoreWithBacku
 import useChestLevel from "../../components/pages/Loot/hooks/useChestLevel";
 import Chest from "../../components/pages/Loot/ui/Chest";
 import PassNowLabel from "../../components/pages/Loot/ui/PassNowLabel";
-import HelpButton from "../../components/ui/button/HelpButton";
 import Card from "../../components/ui/card/Card";
 import CardHelp from "../../components/ui/card/CardHelp";
 import CardTitle from "../../components/ui/card/CardTitle";
 import InputField from "../../components/ui/InputField";
+import Svg from "../../components/ui/Svg";
 import { useTranslation } from "../../i18n";
 
 const currentDate = new Date().toISOString();
@@ -36,14 +37,22 @@ const Loot: React.FC<IProps> = () => {
   const passLabel = <PassNowLabel setPass={setPass} />;
 
   return (
-    <div style={{ paddingTop: "24px", gap: "16px", display: "grid" }}>
+    <div style={{
+      paddingTop: "24px",
+      gap: "16px",
+      display: "flex",
+      flexDirection: "column",
+      flexGrow: 1,
+      alignItems: "center"
+    }}
+    >
       <Card>
         <Head>
           <title>{`${t("common:menu.loot")} - Afkalc`}</title>
           <meta name="description" content={t("help")} />
         </Head>
-        <HelpButton onClick={() => setShowHelp(!showHelp)} />
-        <CardTitle>{t("form-title")}</CardTitle>
+
+        <CardTitle icon={mdiUpdate} action={<Svg onClick={() => setShowHelp(!showHelp)} d={mdiHelpBox} />}>{t("form-title")}</CardTitle>
 
         {showHelp ? <CardHelp>{t("help")}</CardHelp> : null}
 
