@@ -6,9 +6,7 @@ interface IProps {
 }
 
 const ListItem: React.FC<IProps> = ({ children }) => (
-  <div className={styles.ListItem}>
-    {children}
-  </div>
+  <div className={styles.ListItem}>{children}</div>
 );
 
 export default ListItem;

@@ -1,3 +1,4 @@
+import firebase from "firebase";
 import { useCallback } from "react";
 import HeroLevel from "../../../../types/HeroLevel";
 
@@ -11,17 +12,22 @@ interface IHeroes {
   [key: number]: IHeroLevels;
 }
 
-export default function useSetLevel(levels: IHeroes, setLevels: (value: IHeroes) => void) {
+export default function useSetLevel(
+  levels: IHeroes,
+  document: firebase.firestore.DocumentReference | undefined
+) {
   return useCallback(
     (key: number, field: HeroLevel) => (value: number) => {
-      const data = levels[key] || {};
-      const newLevels = {
-        ...levels,
-        [key]: { ...data, [field]: value },
-      };
+      if (document === undefined) return null;
 
-      setLevels(newLevels);
+      const prevHero = levels[key] || {};
+      const newLevels = { ...levels };
+      newLevels[key] = { ...prevHero, [field]: value };
+
+      return document
+        .update({ levels: newLevels })
+        .catch(() => document.set({ levels: newLevels }));
     },
-    [levels, setLevels]
+    [document, levels]
   );
 }

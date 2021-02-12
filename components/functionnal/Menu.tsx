@@ -1,5 +1,6 @@
-import React from "react";
+import React, { useContext } from "react";
 import { useTranslation } from "../../i18n";
+import UserContext from "../providers/UserContext";
 import MenuBurger from "../ui/menu/MenuBurger";
 import MenuToolbar from "../ui/menu/MenuToolbar";
 import MenuToolbarLink from "../ui/menu/MenuToolbarLink";
@@ -10,6 +11,7 @@ interface IProps {
 
 const Menu: React.FC<IProps> = () => {
   const { t } = useTranslation("common");
+  const { values } = useContext(UserContext);
 
   return (
     <>
@@ -22,7 +24,7 @@ const Menu: React.FC<IProps> = () => {
         <MenuToolbarLink to="/loot" image="/loot/small-h-gold.jpg">
           {t("menu.short-loot")}
         </MenuToolbarLink>
-        <MenuToolbarLink to="/hero-list" image="/heroes/belinda.jpg">
+        <MenuToolbarLink to={`/hero-list/${values.shareId}`} image="/heroes/belinda.jpg">
           {t("menu.short-hero-list")}
         </MenuToolbarLink>
         <MenuToolbarLink to="/top-team" image="/enemies/wrizz.jpg">

@@ -37,7 +37,9 @@ const Home: React.FC<IProps> = () => {
         <ListItem>
           <WilordFR />
         </ListItem>
-        <ListItem><span>infherna</span></ListItem>
+        <ListItem>
+          <span>infherna</span>
+        </ListItem>
       </List>
     </Card>
   );

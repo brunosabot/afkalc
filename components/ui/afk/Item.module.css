@@ -14,23 +14,25 @@
 }
 .Count {
   bottom: 0;
-  color: var(--reverse-text-color);
+  color: #fafafa;
   font-size: 11px;
   font-weight: 500;
   padding: 2px 4px;
   position: absolute;
   right: 0;
-  text-shadow: var(--reverse-text-shadow);
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.65), -1px -1px 2px rgba(0, 0, 0, 0.65),
+    -1px 1px 2px rgba(0, 0, 0, 0.65), 1px -1px 2px rgba(0, 0, 0, 0.65);
 }
 .Infos {
-  color: var(--reverse-text-color);
+  color: #fafafa;
   font-size: 7.5px;
   font-weight: 900;
   left: 0;
   position: absolute;
   right: 0;
   text-align: center;
-  text-shadow: var(--reverse-text-shadow);
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.65), -1px -1px 2px rgba(0, 0, 0, 0.65),
+    -1px 1px 2px rgba(0, 0, 0, 0.65), 1px -1px 2px rgba(0, 0, 0, 0.65);
   top: 2px;
 }
 .OnClick {
@@ -42,10 +44,10 @@
 }
 
 .SecondaryInfos {
-  background: var(--reverse-background);
+  background: rgba(0, 0, 0, 0.9);
   border-radius: 0 6px 0 0;
   bottom: 0;
-  color: var(--reverse-accent-text-color);
+  color: #f9eb88;
   font-size: 9px;
   font-weight: 900;
   left: 0;

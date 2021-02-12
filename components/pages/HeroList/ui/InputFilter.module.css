@@ -1,0 +1,36 @@
+.Wrapper {
+  display: flex;
+  gap: 8px;
+  padding: 4px 24px;
+  align-items: center;
+}
+
+.Label {
+  min-width: 100px;
+}
+.Select {
+  width: 48px;
+  height: 32px;
+  border: 1px solid var(--card-border-color);
+  border-radius: 4px;
+  box-sizing: border-box;
+  color: inherit;
+  font-family: inherit;
+  font-size: 16px;
+  padding: 0 4px;
+  background: transparent;
+  color: inherit;
+}
+.Value {
+  width: 32px;
+  height: 32px;
+  border: 1px solid var(--card-border-color);
+  border-radius: 4px;
+  box-sizing: border-box;
+  color: inherit;
+  font-family: inherit;
+  font-size: 16px;
+  padding: 0 4px;
+  background: transparent;
+  color: inherit;
+}

@@ -1,0 +1,8 @@
+@media (min-width: 1008px) {
+  .TwoColsSticky {
+    top: 0;
+    position: sticky;
+    width: 100%;
+    max-width: 480px;
+  }
+}

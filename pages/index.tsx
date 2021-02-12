@@ -1,7 +1,20 @@
-import { mdiAccountGroup, mdiAccountHeart, mdiChevronTripleUp, mdiDiamondStone, mdiFastForward, mdiGithub, mdiHome, mdiPlaylistCheck, mdiScript, mdiUpdate, mdiViewList } from "@mdi/js";
+import {
+  mdiAccountGroup,
+  mdiAccountHeart,
+  mdiChevronTripleUp,
+  mdiDiamondStone,
+  mdiFastForward,
+  mdiGithub,
+  mdiHome,
+  mdiPlaylistCheck,
+  mdiScript,
+  mdiUpdate,
+  mdiViewList,
+} from "@mdi/js";
 import Head from "next/head";
 import React, { useContext } from "react";
 import { FirebaseContext } from "../components/providers/FirebaseProvider";
+import UserContext from "../components/providers/UserContext";
 import LangButton from "../components/ui/button/LangButton";
 import LoginButton from "../components/ui/button/LoginButton";
 import LogoutButton from "../components/ui/button/LogoutButton";
@@ -17,6 +30,7 @@ interface IProps {
 
 const Home: React.FC<IProps> = () => {
   const { values } = useContext(FirebaseContext);
+  const { values: userValues } = useContext(UserContext);
   const { t } = useTranslation("common");
 
   return (
@@ -34,25 +48,37 @@ const Home: React.FC<IProps> = () => {
         </div>
 
         {values.isAuth ? <LogoutButton /> : <LoginButton />}
-
       </Card>
       <Card>
-
-
         <div style={{ padding: "8px 16px" }}>
-          <MenuItem to="/signature-item" icon={mdiChevronTripleUp}>{t("common:menu.signature-item")}</MenuItem>
-          <MenuItem to="/elite-summon" icon={mdiScript}>{t("common:menu.elite-summon")}</MenuItem>
-          <MenuItem to="/loot" icon={mdiUpdate}>{t("common:menu.loot")}</MenuItem>
-          <MenuItem to="/fast-reward" icon={mdiFastForward}>{t("common:menu.fast-reward")}</MenuItem>
-          <MenuItem to="/hero-list" icon={mdiViewList}>{t("common:menu.hero-list")}</MenuItem>
-          <MenuItem to="/top-team" icon={mdiAccountGroup}>{t("common:menu.top-team")}</MenuItem>
-          <MenuItem to="/item-cost" icon={mdiDiamondStone}>{t("common:menu.item-cost")}</MenuItem>
-          <MenuItem to="/priority-list" icon={mdiPlaylistCheck}>{t("common:menu.priority-list")}</MenuItem>
-          <MenuItem to="/credit" icon={mdiAccountHeart}>{t("common:menu.credit")}</MenuItem>
-          <MenuItemExternal
-            to="https://github.com/brunosabot/afkalc"
-            icon={mdiGithub}
-          >
+          <MenuItem to="/signature-item" icon={mdiChevronTripleUp}>
+            {t("common:menu.signature-item")}
+          </MenuItem>
+          <MenuItem to="/elite-summon" icon={mdiScript}>
+            {t("common:menu.elite-summon")}
+          </MenuItem>
+          <MenuItem to="/loot" icon={mdiUpdate}>
+            {t("common:menu.loot")}
+          </MenuItem>
+          <MenuItem to="/fast-reward" icon={mdiFastForward}>
+            {t("common:menu.fast-reward")}
+          </MenuItem>
+          <MenuItem to={`/hero-list/${userValues.shareId}`} icon={mdiViewList}>
+            {t("common:menu.hero-list")}
+          </MenuItem>
+          <MenuItem to="/top-team" icon={mdiAccountGroup}>
+            {t("common:menu.top-team")}
+          </MenuItem>
+          <MenuItem to="/item-cost" icon={mdiDiamondStone}>
+            {t("common:menu.item-cost")}
+          </MenuItem>
+          <MenuItem to="/priority-list" icon={mdiPlaylistCheck}>
+            {t("common:menu.priority-list")}
+          </MenuItem>
+          <MenuItem to="/credit" icon={mdiAccountHeart}>
+            {t("common:menu.credit")}
+          </MenuItem>
+          <MenuItemExternal to="https://github.com/brunosabot/afkalc" icon={mdiGithub}>
             {t("common:contribution.edit-on-github")}
           </MenuItemExternal>
         </div>

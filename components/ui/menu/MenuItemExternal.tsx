@@ -9,9 +9,9 @@ interface IProps {
   icon?: string;
 }
 
-const MenuItemExternal: React.FC<IProps> = ({ children, to, icon=undefined }) => (
+const MenuItemExternal: React.FC<IProps> = ({ children, to, icon = undefined }) => (
   <a className={styles.Link} href={to} target="__blank">
-    <Svg d={icon===undefined?mdiCircleSmall:icon} />
+    <Svg d={icon === undefined ? mdiCircleSmall : icon} />
 
     {children}
   </a>
