@@ -37,14 +37,15 @@ const SignatureItem: React.FC<IProps> = () => {
   const levels = Array.from(new Set([20, 30, targetLevel]));
 
   return (
-    <div style={{
-      paddingTop: "24px",
-      gap: "16px",
-      display: "flex",
-      flexDirection: "column",
-      flexGrow: 1,
-      alignItems: "center"
-    }}
+    <div
+      style={{
+        paddingTop: "24px",
+        gap: "16px",
+        display: "flex",
+        flexDirection: "column",
+        flexGrow: 1,
+        alignItems: "center",
+      }}
     >
       <Card>
         <Head>

@@ -17,3 +17,30 @@
   transform: rotate(-3deg);
   z-index: 1;
 }
+.Name {
+  flex-grow: 1;
+}
+.Button {
+  background-color: transparent;
+  border: 0;
+  align-items: center;
+  display: flex;
+  gap: 8px;
+  color: inherit;
+  font-weight: 500;
+  transition: var(--transition);
+  outline: 0;
+  padding: 0 16px 0 12px;
+  height: 36px;
+  border-radius: 4px;
+  font-size: 14px;
+  cursor: pointer;
+  margin-right: -16px;
+}
+.Button:hover {
+  background-color: var(--hover-color);
+}
+.Button svg {
+  height: 18px;
+  width: 18px;
+}

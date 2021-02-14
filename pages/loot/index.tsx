@@ -37,14 +37,15 @@ const Loot: React.FC<IProps> = () => {
   const passLabel = <PassNowLabel setPass={setPass} />;
 
   return (
-    <div style={{
-      paddingTop: "24px",
-      gap: "16px",
-      display: "flex",
-      flexDirection: "column",
-      flexGrow: 1,
-      alignItems: "center"
-    }}
+    <div
+      style={{
+        paddingTop: "24px",
+        gap: "16px",
+        display: "flex",
+        flexDirection: "column",
+        flexGrow: 1,
+        alignItems: "center",
+      }}
     >
       <Card>
         <Head>
@@ -52,7 +53,12 @@ const Loot: React.FC<IProps> = () => {
           <meta name="description" content={t("help")} />
         </Head>
 
-        <CardTitle icon={mdiUpdate} action={<Svg onClick={() => setShowHelp(!showHelp)} d={mdiHelpBox} />}>{t("form-title")}</CardTitle>
+        <CardTitle
+          icon={mdiUpdate}
+          action={<Svg onClick={() => setShowHelp(!showHelp)} d={mdiHelpBox} />}
+        >
+          {t("form-title")}
+        </CardTitle>
 
         {showHelp ? <CardHelp>{t("help")}</CardHelp> : null}
 

@@ -38,14 +38,15 @@ const FastReward: React.FC<IProps> = () => {
   const diams100 = useMaxLevel(100, playerLevel, vipLevel);
 
   return (
-    <div style={{
-      paddingTop: "24px",
-      gap: "16px",
-      display: "flex",
-      flexDirection: "column",
-      flexGrow: 1,
-      alignItems: "center"
-    }}
+    <div
+      style={{
+        paddingTop: "24px",
+        gap: "16px",
+        display: "flex",
+        flexDirection: "column",
+        flexGrow: 1,
+        alignItems: "center",
+      }}
     >
       <Head>
         <title>{`${t("common:menu.fast-reward")} - Afkalc`}</title>
@@ -86,7 +87,7 @@ const FastReward: React.FC<IProps> = () => {
 
       <Card>
         <CardTitle>{t("result-title")}</CardTitle>
-        <div style={{display: "flex", alignItems: "center", justifyContent: "center"}}>
+        <div style={{ display: "flex", alignItems: "center", justifyContent: "center" }}>
           <DiamondLine campaignLevel={campaignLevel} diamsLevel={diams50} count={50} />
           <DiamondLine campaignLevel={campaignLevel} diamsLevel={diams80} count={80} />
           <DiamondLine campaignLevel={campaignLevel} diamsLevel={diams100} count={100} />
