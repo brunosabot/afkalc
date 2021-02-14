@@ -30,14 +30,15 @@ const EliteSummon: React.FC<IProps> = () => {
   const onChange = useOnChangeNumber();
 
   return (
-    <div style={{
-      paddingTop: "24px",
-      gap: "16px",
-      display: "flex",
-      flexDirection: "column",
-      flexGrow: 1,
-      alignItems: "center"
-    }}
+    <div
+      style={{
+        paddingTop: "24px",
+        gap: "16px",
+        display: "flex",
+        flexDirection: "column",
+        flexGrow: 1,
+        alignItems: "center",
+      }}
     >
       <Card>
         <Head>

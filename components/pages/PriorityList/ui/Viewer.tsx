@@ -1,4 +1,4 @@
-import { mdiPlaylistCheck } from "@mdi/js";
+import { mdiCheck, mdiPlaylistCheck } from "@mdi/js";
 import firebase from "firebase";
 import React from "react";
 import { useTranslation } from "../../../../i18n";
@@ -7,6 +7,8 @@ import useUserFirestoreDocument from "../../../hooks/useUserFirestoreDocument";
 import Character from "../../../ui/afk/Character";
 import Card from "../../../ui/card/Card";
 import CardTitle from "../../../ui/card/CardTitle";
+import Svg from "../../../ui/Svg";
+import useSetLevel from "../../HeroList/hooks/useSetLevel";
 import useHero from "../hooks/useHero";
 import FavoriteButton from "./FavoriteButton";
 import styles from "./Viewer.module.css";
@@ -23,6 +25,9 @@ const Viewer: React.FC<IProps> = ({ listId, userId, document }) => {
   const heroDocument = useUserFirestoreDocument(`hero-list/%ID%`);
   const heroResult = useFirestoreQuery(heroDocument);
   const { t } = useTranslation("priority-list");
+  const levels = heroResult.data?.levels || [];
+
+  const setLevel = useSetLevel(levels, heroDocument);
 
   if (result.status !== "success" || heroResult.status !== "success") {
     return null;
@@ -49,10 +54,20 @@ const Viewer: React.FC<IProps> = ({ listId, userId, document }) => {
             ((result.data.type === "SI" && result.data.value <= heroResult.data.levels[hero].si) ||
               (result.data.type === "FI" && result.data.value <= heroResult.data.levels[hero].inn));
 
+          let onDone;
+          if (result.data.type === "SI") onDone = () => setLevel(id, "si")(result.data.value);
+          if (result.data.type === "FI") onDone = () => setLevel(id, "inn")(result.data.value);
+
           return (
             <div key={id} className={`${styles.Item} ${isOk ? styles.IsOk : ""}`}>
               <Character name={name} />
-              {name}
+              <span className={styles.Name}>{name}</span>
+              {isOk ? null : (
+                <button className={styles.Button} type="button" onClick={onDone}>
+                  <Svg d={mdiCheck} />
+                  Fait
+                </button>
+              )}
             </div>
           );
         })}
