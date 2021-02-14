@@ -1,14 +1,17 @@
-import { mdiCheck, mdiPlaylistCheck } from "@mdi/js";
+import { mdiCheck, mdiContentCopy, mdiPlaylistCheck } from "@mdi/js";
 import firebase from "firebase";
-import React from "react";
+import React, { useMemo } from "react";
 import { useTranslation } from "../../../../i18n";
 import useFirestoreQuery from "../../../hooks/useFirestoreQuery";
 import useUserFirestoreDocument from "../../../hooks/useUserFirestoreDocument";
 import Character from "../../../ui/afk/Character";
 import Card from "../../../ui/card/Card";
+import CardAction from "../../../ui/card/CardAction";
+import CardActions from "../../../ui/card/CardActions";
 import CardTitle from "../../../ui/card/CardTitle";
 import Svg from "../../../ui/Svg";
 import useSetLevel from "../../HeroList/hooks/useSetLevel";
+import useDuplicateList from "../hooks/useDuplicateList";
 import useHero from "../hooks/useHero";
 import FavoriteButton from "./FavoriteButton";
 import styles from "./Viewer.module.css";
@@ -27,14 +30,16 @@ const Viewer: React.FC<IProps> = ({ listId, userId, document }) => {
   const { t } = useTranslation("priority-list");
   const levels = heroResult.data?.levels || [];
 
+  const onDuplicateList = useDuplicateList(result.data);
+
   const setLevel = useSetLevel(levels, heroDocument);
+
+  const heroes = useMemo(() => result.data?.heroes ?? [], [result.data?.heroes]);
+  const title = result.data?.title ?? t("no-name");
 
   if (result.status !== "success" || heroResult.status !== "success") {
     return null;
   }
-
-  const heroes = result.data?.heroes ?? [];
-  const title = result.data?.title ?? t("no-name");
 
   return (
     <>
@@ -72,7 +77,11 @@ const Viewer: React.FC<IProps> = ({ listId, userId, document }) => {
           );
         })}
 
-        {heroes.length ? <div style={{ paddingTop: "16px" }} /> : null}
+        <CardActions>
+          <CardAction icon={mdiContentCopy} onClick={onDuplicateList}>
+            {t("label-duplicate")}
+          </CardAction>
+        </CardActions>
       </Card>
     </>
   );

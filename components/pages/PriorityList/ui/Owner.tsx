@@ -1,7 +1,7 @@
-import { mdiDelete, mdiEye, mdiPlaylistCheck, mdiPlaylistEdit, mdiPlus } from "@mdi/js";
+import { mdiContentCopy, mdiDelete, mdiEye, mdiPlaylistCheck, mdiPlaylistEdit, mdiPlus } from "@mdi/js";
 import firebase from "firebase";
 import { useRouter } from "next/router";
-import React, { useCallback, useContext, useState } from "react";
+import React, { useCallback, useContext, useMemo, useState } from "react";
 import { useTranslation } from "../../../../i18n";
 import Modal from "../../../functionnal/Modal";
 import useFirestoreQuery from "../../../hooks/useFirestoreQuery";
@@ -16,6 +16,7 @@ import SelectField from "../../../ui/SelectField";
 import useAdd from "../hooks/useAdd";
 import useDelete from "../hooks/useDelete";
 import useDown from "../hooks/useDown";
+import useDuplicateList from "../hooks/useDuplicateList";
 import useUp from "../hooks/useUp";
 import useUpdate from "../hooks/useUpdate";
 import Back from "./Back";
@@ -37,8 +38,9 @@ const Owner: React.FC<IProps> = ({ listId, userId, document }) => {
   const [showModal, setShowModal] = useState(false);
 
   const result = useFirestoreQuery(document);
+  const onDuplicateList = useDuplicateList(result.data);
 
-  const heroes = result.data?.heroes ?? [];
+  const heroes = useMemo(() => result.data?.heroes ?? [], [result.data?.heroes]);
   const setHeroes = useCallback(
     (newHeroes: number[]) => {
       if (document !== undefined) {
@@ -92,10 +94,13 @@ const Owner: React.FC<IProps> = ({ listId, userId, document }) => {
     [document, values.uid]
   );
   const onDeleteList = useCallback(() => {
-    document?.delete().then(() => {
-      router.push("/priority-list");
-    });
-  }, [document, router]);
+    // eslint-disable-next-line no-alert
+    if (window.confirm(t("label-confirm-delete"))) {
+      document?.delete().then(() => {
+        router.push("/priority-list");
+      });
+    }
+  }, [document, router, t]);
 
   const title = result.data?.title ?? "Unknown";
   const value = result.data?.value ?? 0;
@@ -169,6 +174,9 @@ const Owner: React.FC<IProps> = ({ listId, userId, document }) => {
           )}
 
           <CardActions>
+            <CardAction icon={mdiContentCopy} onClick={onDuplicateList}>
+              {t("label-duplicate")}
+            </CardAction>
             <CardAction icon={mdiPlus} onClick={() => setShowModal(true)}>
               Ajouter
             </CardAction>
