@@ -15,7 +15,8 @@ export enum DetailType {
 
 interface IProps {
   size?: "large" | "small" | "default";
-  name: string;
+  name?: string;
+  id?: number;
   highlight?: boolean;
   disabled?: boolean;
   ascendLevel?: number;
@@ -30,6 +31,7 @@ interface IProps {
  */
 const Character: React.FC<IProps> = ({
   name,
+  id,
   size = "default",
   highlight = false,
   disabled = false,
@@ -39,8 +41,10 @@ const Character: React.FC<IProps> = ({
   innLevel = undefined,
   artifact = undefined,
 }) => {
-  const resource = typedHeroes.find((r) => r.name === name);
+  const resource = typedHeroes.find((r) => (id ? r.id === id : r.name === name));
   const activeArtifact = artifacts.find((a) => a.id === artifact);
+
+  if (name === undefined && id === undefined) throw new Error("Define a name or an id");
 
   if (resource === undefined) return null;
 

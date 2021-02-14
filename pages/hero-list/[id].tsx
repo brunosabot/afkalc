@@ -88,6 +88,8 @@ const HeroList: React.FC<IProps> = () => {
                   setLevel={setLevel}
                   getValue={getValue}
                   isView={isSelf === false}
+                  faction={character.faction}
+                  link={character.link}
                   shouldUnlockFi={unlockFi}
                 />
               </React.Fragment>
