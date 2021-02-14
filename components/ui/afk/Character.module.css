@@ -32,12 +32,19 @@
   font-size: 14px;
 }
 
+.Small.Wrapper {
+  width: 24px;
+  height: 24px;
+}
 .Small .Character {
   border-radius: 3px;
   width: 24px;
   height: 24px;
 }
 .Small .Count {
+  display: none;
+}
+.Small .NoSi {
   display: none;
 }
 
