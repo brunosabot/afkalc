@@ -1,6 +1,8 @@
 {
   "label-preview": "Prévisualiser",
   "label-delete": "Supprimer",
+  "label-duplicate": "Clôner la liste",
+  "label-confirm-delete": "Êtes-vous sûr de vouloir supprimer la liste ? La suppression est définitive !",
   "label-edit": "Éditer",
   "title-edit": "Éditer votre liste",
   "title-priority-list": "Vos listes de priorité",
