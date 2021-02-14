@@ -1,5 +1,6 @@
 import { mdiPlaylistStar } from "@mdi/js";
 import { nanoid } from "nanoid";
+import { useRouter } from "next/router";
 import React, { useCallback, useContext } from "react";
 import useFirestoreList from "../../components/hooks/useFirestoreList";
 import useFirestoreQuery from "../../components/hooks/useFirestoreQuery";
@@ -9,6 +10,7 @@ import Create from "../../components/pages/PriorityList/ui/Create";
 import ListItem from "../../components/pages/PriorityList/ui/ListItem";
 import ListItemEmpty from "../../components/pages/PriorityList/ui/ListItemEmpty";
 import { FirebaseContext } from "../../components/providers/FirebaseProvider";
+import UserContext from "../../components/providers/UserContext";
 import LoginButton from "../../components/ui/button/LoginButton";
 import Card from "../../components/ui/card/Card";
 import CardActions from "../../components/ui/card/CardActions";
@@ -29,7 +31,9 @@ interface IList {
 }
 
 const PriorityList: React.FC<IProps> = () => {
+  const router = useRouter();
   const { values } = useContext(FirebaseContext);
+  const { values:userValues } = useContext(UserContext);
   const { t } = useTranslation("priority-list");
   const document = useUserFirestoreCollection(`user/%ID%/priority-list`);
   const favoriteDocument = useUserFirestoreDocument(`user/%ID%/favorite/priority-list`);
@@ -39,12 +43,16 @@ const PriorityList: React.FC<IProps> = () => {
   const favoriteResult = useFirestoreQuery(favoriteDocument);
 
   const onCreate = useCallback(() => {
-    document?.doc(nanoid(11)).set({
+    const id = nanoid(11);
+
+    document?.doc(id).set({
       title: "Unknown",
       owner: values.uid,
       heroes: [],
     });
-  }, [document, values.uid]);
+
+    router.push(`/priority-list/${userValues.shareId}/${id}`);
+  }, [document, router, userValues.shareId, values.uid]);
 
   if (values.isAuth === false) {
     return (
