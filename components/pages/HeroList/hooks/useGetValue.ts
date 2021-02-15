@@ -5,6 +5,7 @@ interface IHeroLevels {
   inn?: number;
   si?: number;
   ascend?: number;
+  link?: number;
 }
 
 interface IHeroes {
