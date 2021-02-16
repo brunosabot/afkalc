@@ -13,7 +13,9 @@ import Filters from "../../components/pages/HeroList/ui/Filters";
 import HeroLine from "../../components/pages/HeroList/ui/HeroLine";
 import ShareBanner from "../../components/pages/HeroList/ui/ShareBanner";
 import TitleLine from "../../components/pages/HeroList/ui/TitleLine";
+import { FirebaseContext } from "../../components/providers/FirebaseProvider";
 import UserContext from "../../components/providers/UserContext";
+import LoginButton from "../../components/ui/button/LoginButton";
 import Card from "../../components/ui/card/Card";
 import CardHelp from "../../components/ui/card/CardHelp";
 import CardTitle from "../../components/ui/card/CardTitle";
@@ -32,9 +34,10 @@ interface IProps {
 const HeroList: React.FC<IProps> = () => {
   const { t } = useTranslation("hero-list");
   const router = useRouter();
-  const { values } = useContext(UserContext);
+  const { values } = useContext(FirebaseContext);
+  const { values:userValues } = useContext(UserContext);
   const { id } = router.query;
-  const isSelf = id === values.shareId;
+  const isSelf = id === userValues.shareId;
 
   const [unlockFi, setUnlockFi] = useState(false);
   const [state, dispatch] = useFilters();
@@ -49,6 +52,15 @@ const HeroList: React.FC<IProps> = () => {
   const getValue = useGetValue(levels);
 
   const characters = useFilteredHeroes(typedHeroes, levels, state);
+
+  if (values.isAuth === false) {
+    return (
+      <Card>
+        <CardTitle>{t("common:require-login")}</CardTitle>
+        <LoginButton />
+      </Card>
+    );
+  }
 
   return (
     <>
