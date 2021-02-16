@@ -76,7 +76,7 @@ const HeroLine: React.FC<IProps> = ({
       />
       <AscendField id={id} setLevel={setLevel} getValue={getValue} isView={isView} />
 
-      {faction === "dimensionals" ? (
+      {faction === "dimensionals" && isView === false ? (
         <Modal active={showModal} onClose={() => setShowModal(false)}>
           <ChooseHero
             onlyHero
