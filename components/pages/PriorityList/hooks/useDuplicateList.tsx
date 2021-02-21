@@ -10,13 +10,13 @@ interface IData {
   title?: string;
   value?: number;
   type: string;
-  heroes: number[]
+  heroes: number[];
 }
 
 function useDuplicateList(data: IData) {
   const router = useRouter();
   const { values } = useContext(FirebaseContext);
-  const { values:userValues } = useContext(UserContext);
+  const { values: userValues } = useContext(UserContext);
   const { t } = useTranslation("priority-list");
   const listCollection = useUserFirestoreCollection(`user/%ID%/priority-list`);
 
@@ -32,10 +32,10 @@ function useDuplicateList(data: IData) {
       owner: values.uid,
       heroes,
       value,
-      type
+      type,
     });
     router.push(`/priority-list/${userValues.shareId}/${id}`);
   }, [heroes, listCollection, router, title, type, userValues.shareId, value, values.uid]);
-};
+}
 
 export default useDuplicateList;

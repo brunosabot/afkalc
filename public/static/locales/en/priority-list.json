@@ -8,6 +8,7 @@
   "title-priority-list": "Your priority lists",
   "label-back": "Back to the list",
   "label-add": "New list",
+  "label-also-require": "Also require:",
   "label-share": "Share your list",
   "no-name": "No Name",
   "label-list-name": "List name",
@@ -16,5 +17,6 @@
   "label-none": "None",
   "label-si": "SI",
   "label-fi": "FI",
+  "label-ascend": "Ascend",
   "label-no-list": "You don't have any list here yet"
 }

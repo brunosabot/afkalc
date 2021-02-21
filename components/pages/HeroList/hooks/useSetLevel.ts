@@ -17,12 +17,18 @@ export default function useSetLevel(
   document: firebase.firestore.DocumentReference | undefined
 ) {
   return useCallback(
-    (key: number, field: HeroLevel) => (value: number) => {
+    (key: number, field: HeroLevel|HeroLevel[]) => (value: number|number[]) => {
       if (document === undefined) return null;
 
-      const prevHero = levels[key] || {};
-      const newLevels = { ...levels };
-      newLevels[key] = { ...prevHero, [field]: value };
+      const newLevels = { ...levels, [key]: levels[key]||{} };
+
+      if (field instanceof Array && value instanceof Array) {
+        field.forEach((f, i) => {
+          newLevels[key] = { ...newLevels[key], [f]: value[i] };
+        });
+      } else if (!(field instanceof Array) && !(value instanceof Array)) {
+        newLevels[key] = { ...newLevels[key], [field]: value };
+      }
 
       return document
         .update({ levels: newLevels })

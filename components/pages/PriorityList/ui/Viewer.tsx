@@ -1,20 +1,18 @@
-import { mdiCheck, mdiContentCopy, mdiPlaylistCheck } from "@mdi/js";
+import { mdiContentCopy, mdiPlaylistCheck } from "@mdi/js";
 import firebase from "firebase";
-import React, { useMemo } from "react";
+import React from "react";
 import { useTranslation } from "../../../../i18n";
+import IHeroDetails from "../../../../types/IHeroDetails";
 import useFirestoreQuery from "../../../hooks/useFirestoreQuery";
 import useUserFirestoreDocument from "../../../hooks/useUserFirestoreDocument";
-import Character from "../../../ui/afk/Character";
 import Card from "../../../ui/card/Card";
 import CardAction from "../../../ui/card/CardAction";
 import CardActions from "../../../ui/card/CardActions";
 import CardTitle from "../../../ui/card/CardTitle";
-import Svg from "../../../ui/Svg";
 import useSetLevel from "../../HeroList/hooks/useSetLevel";
 import useDuplicateList from "../hooks/useDuplicateList";
-import useHero from "../hooks/useHero";
 import FavoriteButton from "./FavoriteButton";
-import styles from "./Viewer.module.css";
+import HeroLineViewer from "./HeroLineViewer";
 
 interface IProps {
   document: firebase.firestore.DocumentReference;
@@ -23,7 +21,6 @@ interface IProps {
 }
 
 const Viewer: React.FC<IProps> = ({ listId, userId, document }) => {
-  const { getHero } = useHero();
   const result = useFirestoreQuery(document);
   const heroDocument = useUserFirestoreDocument(`hero-list/%ID%`);
   const heroResult = useFirestoreQuery(heroDocument);
@@ -34,7 +31,10 @@ const Viewer: React.FC<IProps> = ({ listId, userId, document }) => {
 
   const setLevel = useSetLevel(levels, heroDocument);
 
-  const heroes = useMemo(() => result.data?.heroes ?? [], [result.data?.heroes]);
+  const heroes: IHeroDetails[] = (result.data?.heroes ?? []).map((hero: IHeroDetails) => {
+    if (typeof hero === "number") return { id: hero };
+    return hero;
+  });
   const title = result.data?.title ?? t("no-name");
 
   if (result.status !== "success" || heroResult.status !== "success") {
@@ -51,29 +51,17 @@ const Viewer: React.FC<IProps> = ({ listId, userId, document }) => {
           {title}
         </CardTitle>
 
-        {heroes.map((hero: number) => {
-          const { id, name } = getHero(hero) ?? { id: 0, name: "" };
-
-          const isOk =
-            heroResult.data?.levels[hero] &&
-            ((result.data.type === "SI" && result.data.value <= heroResult.data.levels[hero].si) ||
-              (result.data.type === "FI" && result.data.value <= heroResult.data.levels[hero].inn));
-
-          let onDone;
-          if (result.data.type === "SI") onDone = () => setLevel(id, "si")(result.data.value);
-          if (result.data.type === "FI") onDone = () => setLevel(id, "inn")(result.data.value);
+        {heroes.map((hero: IHeroDetails) => {
+          if (hero.id === undefined) return null;
 
           return (
-            <div key={id} className={`${styles.Item} ${isOk ? styles.IsOk : ""}`}>
-              <Character name={name} />
-              <span className={styles.Name}>{name}</span>
-              {isOk ? null : (
-                <button className={styles.Button} type="button" onClick={onDone}>
-                  <Svg d={mdiCheck} />
-                  Fait
-                </button>
-              )}
-            </div>
+            <HeroLineViewer
+              key={`${hero.id}-${hero.ascend}-${hero.fi}-${hero.si}`}
+              hero={hero}
+              setLevel={setLevel}
+              heroLevels={heroResult.data?.levels[hero.id]}
+              priorityList={result.data}
+            />
           );
         })}
 

@@ -35,7 +35,7 @@ const HeroList: React.FC<IProps> = () => {
   const { t } = useTranslation("hero-list");
   const router = useRouter();
   const { values } = useContext(FirebaseContext);
-  const { values:userValues } = useContext(UserContext);
+  const { values: userValues } = useContext(UserContext);
   const { id } = router.query;
   const isSelf = id === userValues.shareId;
 

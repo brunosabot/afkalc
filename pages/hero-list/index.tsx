@@ -14,7 +14,7 @@ interface IProps {
 const HeroList: React.FC<IProps> = () => {
   const router = useRouter();
   const { values } = useContext(FirebaseContext);
-  const { values:userValues } = useContext(UserContext);
+  const { values: userValues } = useContext(UserContext);
   const { t } = useTranslation("hero-list");
 
   if (values.isAuth && userValues.shareId) {
