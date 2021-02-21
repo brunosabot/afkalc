@@ -14,29 +14,34 @@ export default function useIsValidSelf(
     return false;
   }
 
+  const heroLevelAscend = theHeroLevels.ascend || 0;
+  const heroLevelSi = theHeroLevels.si || 0;
+  const heroLevelFi = theHeroLevels.inn || 0;
+
+  const heroRequirementAscend = theHeroRequirement.ascend || 0;
+  const heroRequirementSi = theHeroRequirement.si || 0;
+  const heroRequirementFi = theHeroRequirement.inn || 0;
+
   const hasSelfRequirement =
-    theHeroRequirement.ascend !== undefined ||
-    theHeroRequirement.si !== undefined ||
-    theHeroRequirement.fi !== undefined;
+    heroRequirementAscend > 0 || heroRequirementSi > 0 || heroRequirementFi > 0;
 
   // If no requirements has been set, it could not be valid
   if (hasSelfRequirement === false) {
     return false;
   }
 
-  let isValidAscend = theHeroRequirement.ascend === undefined;
-  let isValidFi = theHeroRequirement.ascend === undefined;
-  let isValidSi = theHeroRequirement.ascend === undefined;
+  let isValidAscend = heroRequirementAscend === 0;
+  let isValidFi = heroRequirementSi === 0;
+  let isValidSi = heroRequirementFi === 0;
 
-  if (theHeroRequirement.ascend !== undefined) {
-    isValidAscend =
-      theHeroLevels.ascend !== undefined && theHeroRequirement.ascend <= theHeroLevels.ascend;
+  if (heroRequirementAscend > 0) {
+    isValidAscend = heroRequirementAscend <= heroLevelAscend;
   }
-  if (theHeroRequirement.si !== undefined) {
-    isValidSi = theHeroLevels.si !== undefined && theHeroRequirement.si <= theHeroLevels.si;
+  if (heroRequirementSi > 0) {
+    isValidSi = heroRequirementSi <= heroLevelSi;
   }
-  if (theHeroRequirement.fi !== undefined) {
-    isValidFi = theHeroLevels.inn !== undefined && theHeroRequirement.fi <= theHeroLevels.inn;
+  if (heroRequirementFi > 0) {
+    isValidFi = heroRequirementFi <= heroLevelFi;
   }
 
   const isSelfValid = isValidAscend && isValidSi && isValidFi;

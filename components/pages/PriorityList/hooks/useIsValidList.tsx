@@ -16,6 +16,8 @@ export default function useIsValidList(priorityList: IList, theHeroLevels?: IHer
   if (priorityList.type === "SI") {
     if (theHeroLevels.si === undefined) {
       isValidListSi = false;
+    } else if (priorityList.value === undefined) {
+      isValidListSi = true;
     } else {
       isValidListSi = priorityList.value <= theHeroLevels.si;
     }
@@ -25,6 +27,8 @@ export default function useIsValidList(priorityList: IList, theHeroLevels?: IHer
   if (priorityList.type === "FI") {
     if (theHeroLevels.inn === undefined) {
       isValidListFi = false;
+    } else if (priorityList.value === undefined) {
+      isValidListFi = true;
     } else {
       isValidListFi = priorityList.value <= theHeroLevels.inn;
     }
@@ -34,6 +38,8 @@ export default function useIsValidList(priorityList: IList, theHeroLevels?: IHer
   if (priorityList.type === "ASCEND") {
     if (theHeroLevels.ascend === undefined) {
       isValidListAscend = false;
+    } else if (priorityList.value === undefined) {
+      isValidListAscend = true;
     } else {
       isValidListAscend = priorityList.value <= theHeroLevels.ascend;
     }
