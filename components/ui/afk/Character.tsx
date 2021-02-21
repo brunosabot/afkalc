@@ -11,6 +11,7 @@ export enum DetailType {
   INN,
   ARTIFACT,
   HERO,
+  ASCEND,
 }
 
 interface IProps {

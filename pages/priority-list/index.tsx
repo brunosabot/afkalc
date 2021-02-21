@@ -33,7 +33,7 @@ interface IList {
 const PriorityList: React.FC<IProps> = () => {
   const router = useRouter();
   const { values } = useContext(FirebaseContext);
-  const { values:userValues } = useContext(UserContext);
+  const { values: userValues } = useContext(UserContext);
   const { t } = useTranslation("priority-list");
   const document = useUserFirestoreCollection(`user/%ID%/priority-list`);
   const favoriteDocument = useUserFirestoreDocument(`user/%ID%/favorite/priority-list`);

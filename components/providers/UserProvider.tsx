@@ -10,14 +10,14 @@ interface IProps {
 }
 
 const UserProvider: React.FC<IProps> = ({ children }) => {
-  const {values}=useContext(FirebaseContext);
+  const { values } = useContext(FirebaseContext);
   const userDocument = useUserFirestoreDocument(`user/%ID%`);
   const userResult = useFirestoreQuery(userDocument);
 
   const shareId = userResult?.data?.shareId ?? "";
 
   if (userResult.status === "success" && values.uid !== "" && shareId === "") {
-    userDocument?.set({ shareId:nanoid(10) });
+    userDocument?.set({ shareId: nanoid(10) });
   }
 
   const value = useMemo(

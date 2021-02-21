@@ -1,11 +1,20 @@
-import { mdiContentCopy, mdiDelete, mdiEye, mdiPlaylistCheck, mdiPlaylistEdit, mdiPlus } from "@mdi/js";
+import {
+  mdiContentCopy,
+  mdiDelete,
+  mdiEye,
+  mdiPlaylistCheck,
+  mdiPlaylistEdit,
+  mdiPlus,
+} from "@mdi/js";
 import firebase from "firebase";
 import { useRouter } from "next/router";
-import React, { useCallback, useContext, useMemo, useState } from "react";
+import React, { useCallback, useContext, useState } from "react";
+import ascendLevels from "../../../../data/heroAscensionLevel.json";
 import { useTranslation } from "../../../../i18n";
+import IHeroDetails from "../../../../types/IHeroDetails";
 import Modal from "../../../functionnal/Modal";
 import useFirestoreQuery from "../../../hooks/useFirestoreQuery";
-import ChooseHero from "../../../modal/ChooseHero";
+import ChoosePriorityHero from "../../../modal/ChoosePriorityHero";
 import { FirebaseContext } from "../../../providers/FirebaseProvider";
 import Card from "../../../ui/card/Card";
 import CardAction from "../../../ui/card/CardAction";
@@ -34,15 +43,19 @@ const Owner: React.FC<IProps> = ({ listId, userId, document }) => {
   const router = useRouter();
   const { values } = useContext(FirebaseContext);
   const { t } = useTranslation("priority-list");
+  const { t: tHero } = useTranslation("hero-list");
   const [isForcedViewer, setIsForcedViewer] = useState(false);
   const [showModal, setShowModal] = useState(false);
 
   const result = useFirestoreQuery(document);
   const onDuplicateList = useDuplicateList(result.data);
 
-  const heroes = useMemo(() => result.data?.heroes ?? [], [result.data?.heroes]);
+  const heroes: IHeroDetails[] = (result.data?.heroes ?? []).map((hero: IHeroDetails) => {
+    if (typeof hero === "number") return { id: hero };
+    return hero;
+  });
   const setHeroes = useCallback(
-    (newHeroes: number[]) => {
+    (newHeroes: IHeroDetails[]) => {
       if (document !== undefined) {
         document.update({ heroes: newHeroes }).catch(() =>
           document.set({
@@ -106,11 +119,13 @@ const Owner: React.FC<IProps> = ({ listId, userId, document }) => {
   const value = result.data?.value ?? 0;
   const type = result.data?.type ?? "";
 
-  const addHero = useAdd(heroes, setHeroes);
-  const updateHero = useUpdate(heroes, setHeroes);
-  const onUp = useUp(heroes, setHeroes);
-  const onDown = useDown(heroes, setHeroes);
-  const onDelete = useDelete(heroes, setHeroes);
+  const addHero = useAdd<IHeroDetails>(heroes, setHeroes);
+  const updateHero = useUpdate<IHeroDetails>(heroes, setHeroes);
+  const onUp = useUp<IHeroDetails>(heroes, setHeroes);
+  const onDown = useDown<IHeroDetails>(heroes, setHeroes);
+  const onDelete = useDelete<IHeroDetails>(heroes, setHeroes);
+
+  const [theNewHero, setTheNewHero] = useState<IHeroDetails>({});
 
   if (result.status !== "success") {
     return null;
@@ -135,10 +150,24 @@ const Owner: React.FC<IProps> = ({ listId, userId, document }) => {
             { key: "", label: t("label-none") },
             { key: "SI", label: t("label-si") },
             { key: "FI", label: t("label-fi") },
+            { key: "ASCEND", label: t("label-ascend") },
           ]}
         />
 
-        <InputField label={t("label-value")} name="value" value={value} onChange={setValue} />
+        {type === "ASCEND" ? (
+          <SelectField
+            label={t("label-value")}
+            name="value"
+            onChange={setValue}
+            value={value}
+            values={ascendLevels.map((level) => ({
+              key: `${level.key}`,
+              label: tHero(`ascension-${level.name}`),
+            }))}
+          />
+        ) : (
+          <InputField label={t("label-value")} name="value" value={value} onChange={setValue} />
+        )}
 
         <CardActions>
           <CardAction icon={mdiDelete} onClick={onDeleteList}>
@@ -157,7 +186,7 @@ const Owner: React.FC<IProps> = ({ listId, userId, document }) => {
           <CardTitle icon={mdiPlaylistCheck}>{title}</CardTitle>
 
           {heroes.map(
-            (hero: number, i: number) => (
+            (hero: IHeroDetails, i: number) => (
               /* eslint-disable react/no-array-index-key */
               <HeroLine
                 onDelete={onDelete}
@@ -165,7 +194,7 @@ const Owner: React.FC<IProps> = ({ listId, userId, document }) => {
                 onDown={onDown}
                 index={i}
                 hero={hero}
-                key={`${hero}-${i}`}
+                key={`${hero.id}-${hero.ascend}-${hero.si}-${hero.fi}`}
                 length={heroes.length}
                 onSelect={updateHero}
               />
@@ -182,14 +211,20 @@ const Owner: React.FC<IProps> = ({ listId, userId, document }) => {
             </CardAction>
           </CardActions>
 
-          <Modal active={showModal} onClose={() => setShowModal(false)}>
-            <ChooseHero
-              onlyHero
-              current={[]}
-              onSelect={(_, heroId) => {
-                addHero(heroId);
-                setShowModal(false);
-              }}
+          <Modal
+            active={showModal}
+            onClose={() => {
+              addHero(theNewHero);
+              setTheNewHero({});
+              setShowModal(false);
+            }}
+          >
+            <ChoosePriorityHero
+              id={theNewHero.id}
+              si={theNewHero.si}
+              fi={theNewHero.fi}
+              ascend={theNewHero.ascend}
+              onSelect={setTheNewHero}
             />
           </Modal>
         </Card>
