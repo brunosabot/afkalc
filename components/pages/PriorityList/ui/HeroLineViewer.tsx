@@ -12,10 +12,12 @@ import useIsValidSelf from "../hooks/useIsValidSelf";
 import InfoDetails from "./InfoDetails";
 import styles from "./Viewer.module.css";
 
-
 interface IProps {
   hero: IHeroDetails;
-  setLevel: (key: number, field: HeroLevel|HeroLevel[]) => (value: number|number[]) => Promise<void> | null;
+  setLevel: (
+    key: number,
+    field: HeroLevel | HeroLevel[]
+  ) => (value: number | number[]) => Promise<void> | null;
   heroLevels?: { si?: number; inn?: number; ascend?: number };
   priorityList: { value: number; type: string };
 }
@@ -26,16 +28,16 @@ const HeroLineViewer: React.FC<IProps> = ({ hero, priorityList, setLevel, heroLe
   const isValidList = useIsValidList(priorityList, heroLevels);
   const isValidSelf = useIsValidSelf(hero, heroLevels);
   const { t } = useTranslation("priority-list");
-  const { t:tHero } = useTranslation("hero-list");
+  const { t: tHero } = useTranslation("hero-list");
 
   if (hero.id === undefined) return null;
 
   const { id, name } = getHero(hero.id) ?? { id: 0, name: "" };
 
-  const hasSelfRequirements = 
+  const hasSelfRequirements =
     [0, undefined].includes(hero.ascend) === false ||
-    [0, undefined].includes(hero.si)===false ||
-    [0, undefined].includes(hero.fi)===false;
+    [0, undefined].includes(hero.si) === false ||
+    [0, undefined].includes(hero.fi) === false;
 
   let onDone;
   if (priorityList.type === "SI") onDone = () => setLevel(id, "si")(priorityList.value);
@@ -44,7 +46,7 @@ const HeroLineViewer: React.FC<IProps> = ({ hero, priorityList, setLevel, heroLe
   if (hasSelfRequirements) {
     onDone = async () => {
       const levels: HeroLevel[] = [];
-      const values: number[] = []
+      const values: number[] = [];
 
       if (hero.si) {
         levels.push("si");
@@ -65,9 +67,9 @@ const HeroLineViewer: React.FC<IProps> = ({ hero, priorityList, setLevel, heroLe
     };
   }
 
-  const isDone = isValidList && (isValidSelf || hasSelfRequirements === false)
+  const isDone = isValidList && (isValidSelf || hasSelfRequirements === false);
 
-  const ascendLevelName = (ascendLevels.find(l=>l.key === hero.ascend) || {}).name;
+  const ascendLevelName = (ascendLevels.find((l) => l.key === hero.ascend) || {}).name;
 
   return (
     <div key={id} className={`${styles.Item} ${isDone ? styles.IsOk : ""}`}>
@@ -75,7 +77,9 @@ const HeroLineViewer: React.FC<IProps> = ({ hero, priorityList, setLevel, heroLe
       <div className={styles.Infos}>
         <span className={styles.Name}>{name}</span>
         <span>
-          <span className={styles.DetailsTitle}>{hasSelfRequirements ? t("label-also-require") : null}</span>
+          <span className={styles.DetailsTitle}>
+            {hasSelfRequirements ? t("label-also-require") : null}
+          </span>
           <InfoDetails value={hero.ascend}>{tHero(`ascension-${ascendLevelName}`)}</InfoDetails>
           <InfoDetails value={hero.si}>{`SI +${hero.si}`}</InfoDetails>
           <InfoDetails value={hero.fi}>{`FI ${hero.fi}/9`}</InfoDetails>
