@@ -23,10 +23,10 @@ export default function useIsValidList(priorityList: IList, theHeroLevels?: IHer
 
   let isValidListFi = false;
   if (priorityList.type === "FI") {
-    if (theHeroLevels.fi === undefined) {
+    if (theHeroLevels.inn === undefined) {
       isValidListFi = false;
     } else {
-      isValidListFi = priorityList.value <= theHeroLevels.fi;
+      isValidListFi = priorityList.value <= theHeroLevels.inn;
     }
   }
 
