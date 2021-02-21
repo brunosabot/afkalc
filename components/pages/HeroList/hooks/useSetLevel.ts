@@ -17,10 +17,10 @@ export default function useSetLevel(
   document: firebase.firestore.DocumentReference | undefined
 ) {
   return useCallback(
-    (key: number, field: HeroLevel|HeroLevel[]) => (value: number|number[]) => {
+    (key: number, field: HeroLevel | HeroLevel[]) => (value: number | number[]) => {
       if (document === undefined) return null;
 
-      const newLevels = { ...levels, [key]: levels[key]||{} };
+      const newLevels = { ...levels, [key]: levels[key] || {} };
 
       if (field instanceof Array && value instanceof Array) {
         field.forEach((f, i) => {

@@ -214,8 +214,10 @@ const Owner: React.FC<IProps> = ({ listId, userId, document }) => {
           <Modal
             active={showModal}
             onClose={() => {
-              addHero(theNewHero);
-              setTheNewHero({});
+              if (theNewHero.id !== undefined && theNewHero.id > 0) {
+                addHero(theNewHero);
+                setTheNewHero({});
+              }
               setShowModal(false);
             }}
           >
@@ -231,6 +233,7 @@ const Owner: React.FC<IProps> = ({ listId, userId, document }) => {
       )}
     </>
   );
+  ``;
 };
 
 export default Owner;
