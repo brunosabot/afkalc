@@ -233,7 +233,6 @@ const Owner: React.FC<IProps> = ({ listId, userId, document }) => {
       )}
     </>
   );
-  ``;
 };
 
 export default Owner;
