@@ -78,7 +78,8 @@ const HeroLineViewer: React.FC<IProps> = ({ hero, priorityList, setLevel, heroLe
         <span className={styles.Name}>{name}</span>
         <span>
           <span className={styles.DetailsTitle}>
-            {hasSelfRequirements ? t("label-also-require") : null}
+            {hasSelfRequirements && priorityList.value ? t("label-also-require") : null}
+            {hasSelfRequirements && !priorityList.value ? t("label-require") : null}
           </span>
           <InfoDetails value={hero.ascend}>{tHero(`ascension-${ascendLevelName}`)}</InfoDetails>
           <InfoDetails value={hero.si}>{`SI +${hero.si}`}</InfoDetails>
