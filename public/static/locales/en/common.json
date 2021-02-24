@@ -5,19 +5,20 @@
   "menu": {
     "home": "Home",
     "signature-item": "SI Emblem",
-    "elite-summon": "Elite summon",
+    "elite-summon": "Elite Summon",
     "loot": "Loot",
     "hero-list": "Hero List",
     "fast-reward": "Fast Reward",
     "top-team": "Top Team",
-    "item-cost": "Item cost",
-    "priority-list": "Priority list (Beta)",
+    "item-cost": "Item Cost",
+    "priority-list": "Priority List (Beta)",
     "credit": "Credits",
+    "abex-relic": "Abyssal Rxpedition Relics",
     "logout": "Logout",
     "short-loot": "Loot",
     "short-hero-list": "Heroes",
     "short-top-team": "Teams",
-    "short-item-cost": "Item cost"
+    "short-item-cost": "Item Cost"
   },
   "contribution": {
     "edit-on-github": "Edit on GitHub"

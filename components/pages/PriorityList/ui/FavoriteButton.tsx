@@ -1,4 +1,4 @@
-import firebase from "firebase";
+import firebase from "firebase/app";
 import React, { useCallback } from "react";
 import useFirestoreQuery from "../../../hooks/useFirestoreQuery";
 import useUserFirestoreDocument from "../../../hooks/useUserFirestoreDocument";
