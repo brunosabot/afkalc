@@ -1,0 +1,113 @@
+{
+  "relicQuality": { "1": "common", "2": "rare", "3": "epic", "4": "legendary", "5": "mythic" },
+  "campType": [
+    {
+      "id": 8,
+      "essencePerHour": 320,
+      "essenceBonusAscendingLevel": 10,
+      "essenceBonusPercentage": 20,
+      "relicQuality": 4,
+      "relicCooldown": 535500,
+      "name": "t8"
+    },
+    {
+      "id": 7,
+      "essencePerHour": 280,
+      "essenceBonusAscendingLevel": 10,
+      "essenceBonusPercentage": 20,
+      "relicQuality": 4,
+      "relicCooldown": 612000,
+      "name": "t7"
+    },
+    {
+      "id": 96,
+      "essencePerHour": 180,
+      "essenceBonusAscendingLevel": 0,
+      "essenceBonusPercentage": 20,
+      "relicQuality": 4,
+      "relicCooldown": 1224000,
+      "name": "p4"
+    },
+    {
+      "id": 6,
+      "essencePerHour": 240,
+      "essenceBonusAscendingLevel": 8,
+      "essenceBonusPercentage": 20,
+      "relicQuality": 3,
+      "relicCooldown": 172333,
+      "name": "t6"
+    },
+    {
+      "id": 5,
+      "essencePerHour": 200,
+      "essenceBonusAscendingLevel": 6,
+      "essenceBonusPercentage": 20,
+      "relicQuality": 3,
+      "relicCooldown": 206800,
+      "name": "t5"
+    },
+    {
+      "id": 97,
+      "essencePerHour": 160,
+      "essenceBonusAscendingLevel": 0,
+      "essenceBonusPercentage": 20,
+      "relicQuality": 3,
+      "relicCooldown": 413600,
+      "name": "p3"
+    },
+    {
+      "id": 4,
+      "essencePerHour": 120,
+      "essenceBonusAscendingLevel": 6,
+      "essenceBonusPercentage": 20,
+      "relicQuality": 2,
+      "relicCooldown": 137307,
+      "name": "t4"
+    },
+    {
+      "id": 3,
+      "essencePerHour": 80,
+      "essenceBonusAscendingLevel": 4,
+      "essenceBonusPercentage": 20,
+      "relicQuality": 2,
+      "relicCooldown": 178500,
+      "name": "t3"
+    },
+    {
+      "id": 98,
+      "essencePerHour": 100,
+      "essenceBonusAscendingLevel": 0,
+      "essenceBonusPercentage": 20,
+      "relicQuality": 2,
+      "relicCooldown": 357000,
+      "name": "p2"
+    },
+    {
+      "id": 2,
+      "essencePerHour": 60,
+      "essenceBonusAscendingLevel": 4,
+      "essenceBonusPercentage": 20,
+      "relicQuality": 1,
+      "relicCooldown": 80800,
+      "name": "t2"
+    },
+    {
+      "id": 1,
+      "essencePerHour": 40,
+      "essenceBonusAscendingLevel": 4,
+      "essenceBonusPercentage": 20,
+      "relicQuality": 1,
+      "relicCooldown": 121200,
+      "name": "t1"
+    },
+    {
+      "id": 99,
+      "essencePerHour": 30,
+      "essenceBonusAscendingLevel": 0,
+      "essenceBonusPercentage": 20,
+      "relicQuality": 1,
+      "relicCooldown": 242400,
+      "name": "p1"
+    }
+  ]
+}

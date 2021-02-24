@@ -1,5 +1,5 @@
 import { mdiContentCopy, mdiPlaylistCheck } from "@mdi/js";
-import firebase from "firebase";
+import firebase from "firebase/app";
 import React from "react";
 import { useTranslation } from "../../../../i18n";
 import IHeroDetails from "../../../../types/IHeroDetails";

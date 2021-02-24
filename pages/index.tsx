@@ -6,6 +6,7 @@ import {
   mdiFastForward,
   mdiGithub,
   mdiHome,
+  mdiMap,
   mdiPlaylistCheck,
   mdiScript,
   mdiUpdate,
@@ -74,6 +75,9 @@ const Home: React.FC<IProps> = () => {
           </MenuItem>
           <MenuItem to="/priority-list" icon={mdiPlaylistCheck}>
             {t("common:menu.priority-list")}
+          </MenuItem>
+          <MenuItem to="/abex-relic" icon={mdiMap}>
+            {t("common:menu.abex-relic")}
           </MenuItem>
           <MenuItem to="/credit" icon={mdiAccountHeart}>
             {t("common:menu.credit")}

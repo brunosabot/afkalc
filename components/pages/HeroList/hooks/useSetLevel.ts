@@ -1,4 +1,4 @@
-import firebase from "firebase";
+import firebase from "firebase/app";
 import { useCallback } from "react";
 import HeroLevel from "../../../../types/HeroLevel";
 

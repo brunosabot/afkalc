@@ -28,6 +28,8 @@ body {
   --afk-hero-shadow: 0 0 1px #000;
   --afk-ascend-color: #cbd9fe;
   --afk-elite-color: #8330e2;
+  --afk-common-color: #00a050;
+  --afk-rare-color: #007fff;
   --afk-legendary-color: #f7c02b;
   --afk-mythic-color: #e4444c;
   --afk-plus-color: #fff;

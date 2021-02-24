@@ -1,0 +1,100 @@
+.Quality1 {
+  color: var(--afk-common-color);
+}
+.Quality2 {
+  color: var(--afk-rare-color);
+}
+.Quality3 {
+  color: var(--afk-elite-color);
+}
+.Quality4 {
+  color: var(--afk-legendary-color);
+}
+
+.Form {
+  display: flex;
+  padding: 0 16px 0 16px;
+  gap: 8px;
+}
+.FormItem {
+  display: flex;
+  flex-direction: column;
+  font-size: 14px;
+  color: var(--secondary-text-color);
+  gap: 4px;
+}
+.FormItemInput {
+  height: 32px;
+  padding: 0 8px;
+  width: 120px;
+  border: 1px solid var(--card-border-color);
+  border-radius: 4px;
+  font-size: 16px;
+  box-sizing: border-box;
+  background-color: transparent;
+  color: inherit;
+}
+
+.Details {
+  display: flex;
+  justify-content: space-between;
+  padding: 16px;
+}
+
+.RemainingTime {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+.RemainingTime svg {
+  height: 18px;
+}
+
+.Progress {
+  appearance: none;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  border-radius: 0 0 8px 8px;
+  height: 6px;
+}
+.Progress[value]::-webkit-progress-inner-element {
+  border-radius: 0 0 8px 8px;
+  overflow: hidden;
+  height: 6px;
+}
+.Progress[value]::-webkit-progress-bar {
+  background-color: transparent;
+}
+.Progress[value]::-webkit-progress-value {
+  background-color: var(--accent-color);
+  background-image: -webkit-linear-gradient(top, rgba(255, 255, 255, 0.25), rgba(0, 0, 0, 0.25)),
+    -webkit-linear-gradient(left, var(--afk-legendary-color), var(--afk-mythic-color));
+
+  border-radius: 2px;
+  background-size: 35px 20px, 100% 100%, 100% 100%;
+  border-radius: 0 6px 0 0;
+}
+
+.Button {
+  background: transparent;
+  display: inline-flex;
+  align-items: center;
+  padding: 0 16px;
+  height: 36px;
+  font-family: inherit;
+  border: 0;
+  color: inherit;
+  border-radius: 4px;
+  font-size: 14px;
+  min-width: 64px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: var(--transition);
+  outline: 0;
+}
+.Button:hover {
+  background-color: var(--hover-color);
+}
