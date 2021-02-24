@@ -20,7 +20,7 @@ export default function useIsValidSelf(
 
   const heroRequirementAscend = theHeroRequirement.ascend || 0;
   const heroRequirementSi = theHeroRequirement.si || 0;
-  const heroRequirementFi = theHeroRequirement.inn || 0;
+  const heroRequirementFi = theHeroRequirement.fi || 0;
 
   const hasSelfRequirement =
     heroRequirementAscend > 0 || heroRequirementSi > 0 || heroRequirementFi > 0;
@@ -31,8 +31,8 @@ export default function useIsValidSelf(
   }
 
   let isValidAscend = heroRequirementAscend === 0;
-  let isValidFi = heroRequirementSi === 0;
-  let isValidSi = heroRequirementFi === 0;
+  let isValidFi = heroRequirementFi === 0;
+  let isValidSi = heroRequirementSi === 0;
 
   if (heroRequirementAscend > 0) {
     isValidAscend = heroRequirementAscend <= heroLevelAscend;
