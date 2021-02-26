@@ -843,5 +843,15 @@
     "image": "/heroes/respen.jpg",
     "faction": "wilders",
     "usage": []
+  },
+  {
+    "name": "Eluard",
+    "id": 79,
+    "type": "intelligence",
+    "class": "mage",
+    "role": "aoe",
+    "image": "/heroes/Clergy.jpg",
+    "faction": "lightbearers",
+    "usage": []
   }
 ]
