@@ -5,8 +5,23 @@ interface IList {
   value: number;
 }
 
-export default function useIsValidList(priorityList: IList, theHeroLevels?: IHeroDetails) {
+export default function useIsValidList(priorityList: IList, theHeroRequirement: IHeroDetails, theHeroLevels?: IHeroDetails) {
   let isValidListSi = false;
+
+  const priorityType = priorityList.type || "";
+  const priorityValue = priorityList.type || 0;
+
+  const heroRequirementAscend = theHeroRequirement.ascend || 0;
+  const heroRequirementSi = theHeroRequirement.si || 0;
+  const heroRequirementFi = theHeroRequirement.fi || 0;
+
+  const hasSelfRequirement =
+    heroRequirementAscend > 0 || heroRequirementSi > 0 || heroRequirementFi > 0;
+
+  // If the list has no type or no value but the character has requirement. The list should not be invalid
+  if ((priorityType || priorityValue === 0) && hasSelfRequirement) {
+    return true;
+  }
 
   // If the user has no levels for this character, it could not be valid
   if (theHeroLevels === undefined) {
