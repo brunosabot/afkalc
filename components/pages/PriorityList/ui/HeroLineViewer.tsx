@@ -25,7 +25,7 @@ interface IProps {
 const HeroLineViewer: React.FC<IProps> = ({ hero, priorityList, setLevel, heroLevels }) => {
   const { getHero } = useHero();
 
-  const isValidList = useIsValidList(priorityList, heroLevels);
+  const isValidList = useIsValidList(priorityList, hero, heroLevels);
   const isValidSelf = useIsValidSelf(hero, heroLevels);
   const { t } = useTranslation("priority-list");
   const { t: tHero } = useTranslation("hero-list");
@@ -78,8 +78,8 @@ const HeroLineViewer: React.FC<IProps> = ({ hero, priorityList, setLevel, heroLe
         <span className={styles.Name}>{name}</span>
         <span>
           <span className={styles.DetailsTitle}>
-            {hasSelfRequirements && priorityList.value ? t("label-also-require") : null}
-            {hasSelfRequirements && !priorityList.value ? t("label-require") : null}
+            {hasSelfRequirements && (priorityList.value && priorityList.type) ? t("label-also-require") : null}
+            {hasSelfRequirements && !(priorityList.value && priorityList.type) ? t("label-require") : null}
           </span>
           <InfoDetails value={hero.ascend}>{tHero(`ascension-${ascendLevelName}`)}</InfoDetails>
           <InfoDetails value={hero.si}>{`SI +${hero.si}`}</InfoDetails>
