@@ -2,6 +2,7 @@ import {
   mdiAccountGroup,
   mdiAccountHeart,
   mdiChevronTripleUp,
+  mdiCircleMultiple,
   mdiDiamondStone,
   mdiFastForward,
   mdiGithub,
@@ -78,6 +79,9 @@ const Home: React.FC<IProps> = () => {
           </MenuItem>
           <MenuItem to="/abex-relic" icon={mdiMap}>
             {t("common:menu.abex-relic")}
+          </MenuItem>
+          <MenuItem to="/abex-relic-sell" icon={mdiCircleMultiple}>
+            {t("common:menu.abex-relic-sell")}
           </MenuItem>
           <MenuItem to="/credit" icon={mdiAccountHeart}>
             {t("common:menu.credit")}

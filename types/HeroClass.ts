@@ -1,4 +1,4 @@
-enum Class {
+enum HeroClass {
   mage = "mage",
   tank = "tank",
   warrior = "warrior",
@@ -6,4 +6,4 @@ enum Class {
   support = "support",
 }
 
-export default Class;
+export default HeroClass;

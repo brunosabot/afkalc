@@ -1,0 +1,29 @@
+.RelicFilter {
+  background: transparent;
+  outline: 0;
+  border: 0;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background-image: linear-gradient(135deg, rgba(255, 255, 255, 0.2), rgba(0, 0, 0, 0.2));
+  color: transparent;
+}
+.RelicFilter--0 {
+  border: 1px solid var(--card-border-color);
+}
+.RelicFilter--1 {
+  background-color: var(--afk-common-color);
+}
+.RelicFilter--2 {
+  background-color: var(--afk-rare-color);
+}
+.RelicFilter--3 {
+  background-color: var(--afk-elite-color);
+}
+.RelicFilter--4 {
+  background-color: var(--afk-legendary-color);
+}
+
+.Active {
+  border: 2px solid var(--reverse-background);
+}

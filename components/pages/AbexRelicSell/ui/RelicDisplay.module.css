@@ -1,0 +1,73 @@
+.Relic {
+  position: absolute;
+  padding: 4px;
+  box-sizing: border-box;
+  border-radius: 50%;
+  height: 50px;
+  width: 50px;
+  border: 0;
+  outline: 0;
+  cursor: pointer;
+}
+
+.Relic--1 {
+  background-color: var(--afk-common-color);
+  color: var(--afk-common-color);
+}
+.Relic--2 {
+  background-color: var(--afk-rare-color);
+  color: var(--afk-rare-color);
+}
+.Relic--3 {
+  background-color: var(--afk-elite-color);
+  color: var(--afk-elite-color);
+}
+.Relic--4 {
+  background-color: var(--afk-legendary-color);
+  color: var(--afk-legendary-color);
+}
+.Relic--5 {
+  background-color: var(--afk-mythic-color);
+  color: var(--afk-mythic-color);
+}
+
+.Position--1 {
+  bottom: 0;
+  left: 25%;
+  transform: translate(-50%, 0);
+}
+.Position--2 {
+  top: 50%;
+  left: 0px;
+  transform: translate(0, -50%);
+}
+.Position--3 {
+  top: 0;
+  left: 25%;
+  transform: translate(-50%, 0);
+}
+.Position--4 {
+  top: 0;
+  right: 25%;
+  transform: translate(50%, 0);
+}
+.Position--5 {
+  top: 50%;
+  right: 0;
+  transform: translate(0, -50%);
+}
+.Position--6 {
+  bottom: 0;
+  right: 25%;
+  transform: translate(50%, 0);
+}
+
+.Check {
+  padding: 4px;
+  border-radius: 50%;
+  background: var(--card-color);
+  position: absolute;
+  bottom: -8px;
+  right: -8px;
+  display: flex;
+}

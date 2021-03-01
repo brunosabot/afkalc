@@ -1,0 +1,7 @@
+.CardTabs {
+  border-top: 1px solid var(--list-border);
+  border-bottom: 1px solid var(--list-border);
+  display: flex;
+  justify-content: space-evenly;
+  margin-bottom: 8px;
+}

@@ -1,0 +1,38 @@
+import React from "react";
+import styles from "./Relic.module.css";
+
+interface Props {
+  relic: number;
+  level: number;
+  counter: number;
+  quantity: number;
+  setQuantity: (relicId: number, value: number) => void;
+}
+
+const Relic: React.FC<Props> = ({ counter, relic, level, quantity, setQuantity }) => (
+  <div className={styles.Wrapper}>
+    <div className={`${styles.Relic} ${styles[`Relic--${level}`]}`}>
+      <img
+        className={styles.Image}
+        key={relic}
+        src={`/relics/relic_${relic}.png`}
+        alt={`${relic}`}
+      />
+      {counter > 0 ? (
+        <span data-testid="counter" className={styles.Counter}>
+          {counter}
+        </span>
+      ) : null}
+    </div>
+    <input
+      inputMode="numeric"
+      className={styles.Input}
+      value={quantity || ""}
+      onChange={(e) => {
+        setQuantity(relic, parseInt(e.target.value, 10) || 0);
+      }}
+    />
+  </div>
+);
+
+export default Relic;

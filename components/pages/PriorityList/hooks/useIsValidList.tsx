@@ -5,7 +5,11 @@ interface IList {
   value: number;
 }
 
-export default function useIsValidList(priorityList: IList, theHeroRequirement: IHeroDetails, theHeroLevels?: IHeroDetails) {
+export default function useIsValidList(
+  priorityList: IList,
+  theHeroRequirement: IHeroDetails,
+  theHeroLevels?: IHeroDetails
+) {
   let isValidListSi = false;
 
   const priorityType = priorityList.type || "";

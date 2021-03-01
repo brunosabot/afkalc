@@ -1,0 +1,43 @@
+.Button {
+  color: transparent;
+  border: 0;
+  outline: 0;
+  height: 32px;
+  width: 32px;
+  border-radius: 50%;
+  background-image: linear-gradient(135deg, rgba(255, 255, 255, 0.2), rgba(0, 0, 0, 0.2));
+  position: relative;
+  padding: 0;
+  cursor: pointer;
+}
+.Button--1 {
+  background-color: var(--afk-common-color);
+}
+.Button--2 {
+  background-color: var(--afk-rare-color);
+}
+.Button--3 {
+  background-color: var(--afk-elite-color);
+}
+.Button--4 {
+  background-color: var(--afk-legendary-color);
+}
+.Button--5 {
+  background-color: var(--afk-mythic-color);
+}
+
+.Image {
+  height: 100%;
+  width: 100%;
+}
+
+.Current {
+  border: 2px solid var(--reverse-background);
+  height: 100%;
+  width: 100%;
+  border-radius: 50%;
+  box-sizing: border-box;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
