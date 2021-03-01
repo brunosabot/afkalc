@@ -80,6 +80,7 @@ const Camp: React.FC<IProps> = ({ data, camp, now, set }) => {
             min="0"
             max="40"
             value={amount}
+            inputMode="numeric"
             onChange={localSet("amount")}
           />
         </div>
@@ -92,6 +93,7 @@ const Camp: React.FC<IProps> = ({ data, camp, now, set }) => {
               min="0"
               value={garrison}
               max={amount}
+              inputMode="numeric"
               onChange={localSet("garrison")}
             />
           </div>
@@ -101,7 +103,8 @@ const Camp: React.FC<IProps> = ({ data, camp, now, set }) => {
         <progress className={styles.Progress} value={totalEssence} max={camp.relicCooldown} />
         <span className={styles.RemainingTime}>
           <Svg d={mdiChartLineVariant} />
-          {amount * camp.essencePerHour + (garrison * camp.essenceBonusPercentage) / 100}
+          {amount * camp.essencePerHour +
+            (garrison * camp.essencePerHour * camp.essenceBonusPercentage) / 100}
           {t("label-per-hour")}
         </span>
         {amount ? (
