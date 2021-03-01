@@ -24,6 +24,7 @@ const InnField: React.FC<IProps> = ({ id, setLevel, getValue, isView, shouldUnlo
       maxLength={1}
       style={{ width: "32px", textAlign: "center" }}
       name={`inn-${id}`}
+      inputMode="numeric"
     />
   );
 };
