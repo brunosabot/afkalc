@@ -1,5 +1,5 @@
-import Class from "./Class";
 import Faction from "./Faction";
+import Class from "./HeroClass";
 import Role from "./Role";
 import Type from "./Type";
 

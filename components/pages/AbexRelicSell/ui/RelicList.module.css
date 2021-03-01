@@ -1,0 +1,14 @@
+.Filters {
+  display: flex;
+  padding: 16px;
+  gap: 16px;
+  justify-content: center;
+}
+.Relics {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, 40px);
+  flex-wrap: wrap;
+  gap: 8px;
+  padding: 16px;
+  justify-content: space-between;
+}

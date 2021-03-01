@@ -1,0 +1,13 @@
+{
+  "abex-relic-sell-desc": "Calcul des reliques à vendre",
+  "help": "Saisissez les reliques débloquées, saisissez votre objectif, saisissez les reliques de votre inventaire. Une pastille apparaitra pour vous indiquer celles dont vous n'avez plus besoin",
+  "label-goal": "Objectif",
+  "label-current": "Actuel",
+  "label-inventory": "Inventaire",
+  "elevation-level-0": "Aucun",
+  "elevation-level-1": "Commun",
+  "elevation-level-2": "Rare",
+  "elevation-level-3": "Élite",
+  "elevation-level-4": "Légendaire",
+  "elevation-level-5": "Mythique"
+}

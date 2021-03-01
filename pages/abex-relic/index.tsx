@@ -55,7 +55,7 @@ const AbexRelic: React.FC<IProps> = () => {
   };
 
   function setData(relicList: { [key: number]: DataLine }) {
-    return document?.set({ relicList });
+    return document?.set({ relicList }, { merge: true });
   }
 
   if (result.status !== "success") return null;

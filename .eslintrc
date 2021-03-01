@@ -24,7 +24,11 @@
       }
     ],
     "no-shadow": "off",
-    "@typescript-eslint/no-shadow": ["error"]
+    "@typescript-eslint/no-shadow": ["error"],
+    "import/no-extraneous-dependencies": [
+      "error",
+      { "devDependencies": ["**/*.test.ts", "**/*.test.tsx"] }
+    ]
   },
   "settings": {
     "import/extensions": [".ts", ".tsx"],

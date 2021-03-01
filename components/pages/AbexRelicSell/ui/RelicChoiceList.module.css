@@ -1,0 +1,11 @@
+.Wrapper {
+  display: flex;
+  justify-content: space-between;
+  padding: 16px 16px 24px 16px;
+}
+
+.Box {
+  position: relative;
+  height: 200px;
+  width: 200px;
+}

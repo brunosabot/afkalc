@@ -2,5 +2,22 @@
   "editor.codeActionsOnSave": {
     "source.organizeImports": true
   },
-  "jest.pathToJest": "npm test --"
+  "jest.pathToJest": "npm test --",
+  "workbench.colorCustomizations": {
+    "activityBar.activeBackground": "#76151b",
+    "activityBar.activeBorder": "#1f8718",
+    "activityBar.background": "#76151b",
+    "activityBar.foreground": "#e7e7e7",
+    "activityBar.inactiveForeground": "#e7e7e799",
+    "activityBarBadge.background": "#1f8718",
+    "activityBarBadge.foreground": "#e7e7e7",
+    "statusBar.background": "#4b0d11",
+    "statusBar.foreground": "#e7e7e7",
+    "statusBarItem.hoverBackground": "#76151b",
+    "titleBar.activeBackground": "#4b0d11",
+    "titleBar.activeForeground": "#e7e7e7",
+    "titleBar.inactiveBackground": "#4b0d1199",
+    "titleBar.inactiveForeground": "#e7e7e799"
+  },
+  "peacock.color": "#4b0d11"
 }
