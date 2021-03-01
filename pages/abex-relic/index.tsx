@@ -65,6 +65,7 @@ const AbexRelic: React.FC<IProps> = () => {
   return (
     <div
       style={{
+        maxWidth: "100%",
         paddingTop: "24px",
         gap: "16px",
         display: "flex",
