@@ -1,12 +1,14 @@
 import { mdiHelpBox, mdiMap } from "@mdi/js";
 import Head from "next/head";
-import React, { useCallback, useMemo, useState } from "react";
+import React, { useCallback, useContext, useMemo, useState } from "react";
 import useFirestoreQuery from "../../components/hooks/useFirestoreQuery";
 import useUserFirestoreDocument from "../../components/hooks/useUserFirestoreDocument";
 import useCurrentToGoal from "../../components/pages/AbexRelicSell/hooks/useCurrentToGoal";
 import Current from "../../components/pages/AbexRelicSell/types/Current";
 import RelicChoiceList from "../../components/pages/AbexRelicSell/ui/RelicChoiceList";
 import RelicList from "../../components/pages/AbexRelicSell/ui/RelicList";
+import { FirebaseContext } from "../../components/providers/FirebaseProvider";
+import LoginButton from "../../components/ui/button/LoginButton";
 import Card from "../../components/ui/card/Card";
 import CardHelp from "../../components/ui/card/CardHelp";
 import CardTab from "../../components/ui/card/CardTab";
@@ -40,6 +42,7 @@ function toCurrent(data: any): Current {
 
 const AbexRelicSell: React.FC<IProps> = () => {
   const { t } = useTranslation("abex-relic-sell");
+  const { values } = useContext(FirebaseContext);
   const [tab, setTab] = useState(0);
   const [showHelp, setShowHelp] = useState(false);
 
@@ -83,6 +86,15 @@ const AbexRelicSell: React.FC<IProps> = () => {
   ]);
 
   useCurrentToGoal(currentRelic, goalRelic);
+
+  if (values.isAuth === false) {
+    return (
+      <Card>
+        <CardTitle>{t("common:require-login")}</CardTitle>
+        <LoginButton />
+      </Card>
+    );
+  }
 
   if (result.status !== "success") return null;
 

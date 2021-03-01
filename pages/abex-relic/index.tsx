@@ -1,9 +1,11 @@
 import { mdiMap } from "@mdi/js";
 import Head from "next/head";
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import useFirestoreQuery from "../../components/hooks/useFirestoreQuery";
 import useUserFirestoreDocument from "../../components/hooks/useUserFirestoreDocument";
 import Camp from "../../components/pages/AbexRelic/Camp";
+import { FirebaseContext } from "../../components/providers/FirebaseProvider";
+import LoginButton from "../../components/ui/button/LoginButton";
 import Card from "../../components/ui/card/Card";
 import CardAction from "../../components/ui/card/CardAction";
 import CardActions from "../../components/ui/card/CardActions";
@@ -25,6 +27,7 @@ interface IProps {
 
 const AbexRelic: React.FC<IProps> = () => {
   const { t } = useTranslation("abex-relic");
+  const { values } = useContext(FirebaseContext);
 
   const document = useUserFirestoreDocument(`abex/%ID%`);
   const result = useFirestoreQuery(document);
@@ -56,6 +59,15 @@ const AbexRelic: React.FC<IProps> = () => {
 
   function setData(relicList: { [key: number]: DataLine }) {
     return document?.set({ relicList }, { merge: true });
+  }
+  
+  if (values.isAuth === false) {
+    return (
+      <Card>
+        <CardTitle>{t("common:require-login")}</CardTitle>
+        <LoginButton />
+      </Card>
+    );
   }
 
   if (result.status !== "success") return null;
