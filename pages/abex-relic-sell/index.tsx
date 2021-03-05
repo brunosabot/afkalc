@@ -75,14 +75,16 @@ const AbexRelicSell: React.FC<IProps> = () => {
       ),
     [result.data?.goalRelic]
   );
+  const inventory = useMemo(() => result.data?.inventory ?? {}, [result.data?.inventory]);
 
-  const setCurrentRelic = useCallback(() => document?.set({ currentRelic }, { merge: true }), [
-    document,
-    currentRelic,
+  const setCurrentRelic = useCallback((newCurrentRelic) => document?.set({ currentRelic: newCurrentRelic }, { merge: true }), [
+    document
   ]);
-  const setGoalRelic = useCallback(() => document?.set({ goalRelic }, { merge: true }), [
+  const setGoalRelic = useCallback((newGoalRelic) => document?.set({ goalRelic: newGoalRelic }, { merge: true }), [
     document,
-    goalRelic,
+  ]);
+  const setInventory = useCallback((newInventory) => document?.set({ inventory: newInventory }, { merge: true }), [
+    document,
   ]);
 
   useCurrentToGoal(currentRelic, goalRelic);
@@ -127,7 +129,7 @@ const AbexRelicSell: React.FC<IProps> = () => {
 
       {tab === 0 ? <RelicChoiceList current={currentRelic} setCurrent={setCurrentRelic} /> : null}
       {tab === 1 ? <RelicChoiceList current={goalRelic} setCurrent={setGoalRelic} /> : null}
-      {tab === 2 ? <RelicList current={currentRelic} goal={goalRelic} /> : null}
+      {tab === 2 ? <RelicList inventory={inventory} setInventory={setInventory} current={currentRelic} goal={goalRelic} /> : null}
     </Card>
   );
 };
