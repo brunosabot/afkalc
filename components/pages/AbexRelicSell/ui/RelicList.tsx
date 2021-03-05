@@ -10,17 +10,18 @@ import styles from "./RelicList.module.css";
 interface Props {
   goal: Current;
   current: Current;
+  inventory: { [key: number]: number };
+  setInventory: (value: { [key: number]: number }) =>void
 }
 
-const RelicList: React.FC<Props> = ({ current, goal }) => {
+const RelicList: React.FC<Props> = ({ current, goal, inventory, setInventory }) => {
   const [filter, setFilter] = useState(0);
-  const [relics, setRelics] = useState<{ [key: number]: number }>({});
 
-  const flatRelics = Object.keys(relics).reduce<number[]>((acc, key) => {
+  const flatRelics = Object.keys(inventory).reduce<number[]>((acc, key) => {
     const intKey = parseInt(key, 10);
 
     if (intKey > 0) {
-      return [...acc, ...new Array(relics[intKey]).fill(intKey)];
+      return [...acc, ...new Array(inventory[intKey]).fill(intKey)];
     }
 
     return acc;
@@ -60,9 +61,9 @@ const RelicList: React.FC<Props> = ({ current, goal }) => {
             <Relic
               key={relicId}
               setQuantity={(id, quantity) => {
-                setRelics({ ...relics, [id]: quantity });
+                setInventory({ ...inventory, [id]: quantity });
               }}
-              quantity={relics[relicId]}
+              quantity={inventory[relicId]}
               relic={relicId}
               level={relicLevel}
               counter={offsetByRelic[relicId]}

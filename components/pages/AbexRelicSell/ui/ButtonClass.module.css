@@ -33,6 +33,7 @@
 
 .Current {
   border: 2px solid var(--reverse-background);
+  box-shadow: inset 0 0 0 2px var(--card-color);
   height: 100%;
   width: 100%;
   border-radius: 50%;
