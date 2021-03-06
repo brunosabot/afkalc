@@ -23,6 +23,11 @@ export default function useCurrentToGoal(currents: Current, goals: Current) {
           neededRelics.push(theTree[position]);
           newLevel = `${parseInt(newLevel, 10) - 1}` as Level;
           theTree = theClassTree[newLevel];
+
+          // The relic is the current one, we don't need to go further
+          if (theTree[position] === currents[theHeroClass][position]) {
+            break;
+          }
         }
       }
     });
