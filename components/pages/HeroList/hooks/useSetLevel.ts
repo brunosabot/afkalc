@@ -12,6 +12,19 @@ interface IHeroes {
   [key: number]: IHeroLevels;
 }
 
+function cleanRequirements(levels: IHeroes, key: number) {
+  const cleanedLevels = {...levels};
+  const theHeroLevels = cleanedLevels[key];
+  const theHeroLevelSi = theHeroLevels.si ?? 0;
+  const theHeroLevelAscend = theHeroLevels.ascend ?? 0;
+
+  if (theHeroLevels !== undefined && theHeroLevelSi > 0 && theHeroLevelAscend < 5) {
+    cleanedLevels[key].si = 0;
+  }
+
+  return cleanedLevels;
+}
+
 export default function useSetLevel(
   levels: IHeroes,
   document: firebase.firestore.DocumentReference | undefined
@@ -30,8 +43,10 @@ export default function useSetLevel(
         newLevels[key] = { ...newLevels[key], [field]: value };
       }
 
+      const cleanedLevels = cleanRequirements(newLevels, key);
+
       return document
-        .update({ levels: newLevels })
+        .update({ levels: cleanedLevels })
         .catch(() => document.set({ levels: newLevels }));
     },
     [document, levels]
