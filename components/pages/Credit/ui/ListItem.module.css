@@ -2,10 +2,13 @@
   border-bottom: 1px solid var(--list-border);
   display: flex;
   margin: 0 16px;
+  padding: 8px 0;
   text-decoration: none;
   position: relative;
-  height: 48px;
+  min-height: 48px;
   z-index: 1;
+  align-items: center;
+  box-sizing: border-box;
 }
 .ListItem::before {
   content: "";

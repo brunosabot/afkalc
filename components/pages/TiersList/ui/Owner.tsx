@@ -45,7 +45,6 @@ const Owner: React.FC<IProps> = ({ listId, result }) => {
     actions: { deleteList, setHeroes, setTitle, setRequirementValue, setRequirement },
   } = useContext(PriorityListContext);
   const { t } = useTranslation("priority-list");
-  const { t: tHero } = useTranslation("hero-list");
   const [isForcedViewer, setIsForcedViewer] = useState(false);
   const [showModal, setShowModal] = useState(false);
 
@@ -128,7 +127,7 @@ const Owner: React.FC<IProps> = ({ listId, result }) => {
             value={requirementValue}
             values={ascendLevels.map((level) => ({
               key: `${level.key}`,
-              label: tHero(`ascension-${level.name}`),
+              label: t(`common:ascension-${level.name}`),
             }))}
           />
         ) : (

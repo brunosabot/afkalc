@@ -22,7 +22,7 @@ export const getStaticProps = async ({ locale }: { locale: string }) => ({
 
 export const getStaticPaths: GetStaticPaths<{ slug: string }> = async () => ({
   paths: [],
-  fallback: 'blocking'
+  fallback: "blocking",
 });
 
 interface IProps {

@@ -3,6 +3,7 @@ import {
   mdiAccountHeart,
   mdiChevronTripleUp,
   mdiCircleMultiple,
+  mdiCog,
   mdiDiamondStone,
   mdiDiscord,
   mdiFastForward,
@@ -12,7 +13,7 @@ import {
   mdiPlaylistCheck,
   mdiScript,
   mdiUpdate,
-  mdiViewList,
+  mdiViewList
 } from "@mdi/js";
 import { useTranslation } from "next-i18next";
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
@@ -42,7 +43,7 @@ const Home: React.FC<IProps> = () => {
   const { t } = useTranslation("common");
 
   return (
-    <div style={{ gap: "16px", display: "grid" }}>
+    <div style={{ gap: "16px", display: "grid", justifyContent: "center" }}>
       <Card>
         <CardTitle icon={mdiHome}>{t("common:welcome")}</CardTitle>
         <Head>
@@ -91,6 +92,9 @@ const Home: React.FC<IProps> = () => {
           </MenuItem>
           <MenuItem to="/credit" icon={mdiAccountHeart}>
             {t("common:menu.credit")}
+          </MenuItem>
+          <MenuItem to="/settings" icon={mdiCog}>
+            {t("common:menu.settings")}
           </MenuItem>
           <MenuItemExternal to="https://discord.gg/NSZFSdr9BW" icon={mdiDiscord}>
             Discord 🇫🇷
