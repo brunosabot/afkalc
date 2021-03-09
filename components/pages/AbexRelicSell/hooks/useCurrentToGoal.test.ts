@@ -71,4 +71,27 @@ describe("Test useCurrentToGoal", () => {
 
     expect(result.current).toEqual([5106]);
   });
+
+  it("If current is higher than goal, should return empty array", () => {
+    const { result } = renderHook(() =>
+      useCurrentToGoal(
+        {
+          [HeroClass.ranger]: [0, 0, 0, 0, 0, 0],
+          [HeroClass.mage]: [0, 0, 0, 0, 0, 0],
+          [HeroClass.tank]: [0, 0, 0, 0, 0, 0],
+          [HeroClass.warrior]: [0, 0, 0, 0, 0, 5106],
+          [HeroClass.support]: [0, 0, 0, 0, 0, 0],
+        },
+        {
+          [HeroClass.ranger]: [0, 0, 0, 0, 0, 0],
+          [HeroClass.mage]: [0, 0, 0, 0, 0, 0],
+          [HeroClass.tank]: [0, 0, 0, 0, 0, 0],
+          [HeroClass.warrior]: [0, 0, 0, 0, 0, 1106],
+          [HeroClass.support]: [0, 0, 0, 0, 0, 0],
+        }
+      )
+    );
+
+    expect(result.current).toEqual([]);
+  });
 });

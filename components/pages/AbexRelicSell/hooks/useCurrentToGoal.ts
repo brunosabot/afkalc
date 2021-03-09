@@ -12,8 +12,11 @@ export default function useCurrentToGoal(currents: Current, goals: Current) {
     const theClassTree = abexRelicData.tree[theHeroClass];
 
     goals[theHeroClass].forEach((relic, index) => {
-      if (currents[theHeroClass][index] !== relic) {
-        const level = `${Math.floor(relic / 1000)}` as Level;
+      const goalRelicLevel = Math.floor(relic / 1000);
+      const currentRelicLevel = Math.floor(currents[theHeroClass][index] / 1000);
+
+      if (goalRelicLevel > currentRelicLevel) {
+        const level = `${goalRelicLevel}` as Level;
         const position = theClassTree[level].indexOf(relic);
 
         let newLevel = level;
