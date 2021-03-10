@@ -1,30 +1,43 @@
 [
   { "name": "diamond", "cost": 1, "image": "/loot/diamond.jpg" },
+  { "name": "hero-essence", "cost": 0.6, "image": "/loot/hero-essence.jpg" },
   {
     "name": "2h-hero-essence",
     "cost": 75,
     "image": "/loot/small-h-hero-essence.jpg",
     "info": "2-hours"
   },
-  { "name": "2h-gold", "cost": 4, "image": "/loot/small-h-gold.jpg", "info": "2-hours" },
   {
     "name": "6h-hero-essence",
     "cost": 225,
     "image": "/loot/small-h-hero-essence.jpg",
     "info": "6-hours"
   },
-  { "name": "6h-gold", "cost": 12, "image": "/loot/small-h-gold.jpg", "info": "6-hours" },
-  { "name": "6h-xp", "cost": 48, "image": "/loot/small-h-xp.jpg", "info": "6-hours" },
   {
     "name": "8h-hero-essence",
     "cost": 300,
     "image": "/loot/high-h-hero-essence.jpg",
     "info": "8-hours"
   },
+  {
+    "name": "24h-hero-essence",
+    "cost": 900,
+    "image": "/loot/high-h-hero-essence.jpg",
+    "info": "24-hours"
+  },
+  { "name": "2h-gold", "cost": 4, "image": "/loot/small-h-gold.jpg", "info": "2-hours" },
+  { "name": "6h-gold", "cost": 12, "image": "/loot/small-h-gold.jpg", "info": "6-hours" },
   { "name": "8h-gold", "cost": 16, "image": "/loot/high-h-gold.jpg", "info": "8-hours" },
   { "name": "24h-gold", "cost": 48, "image": "/loot/high-h-gold.jpg", "info": "24-hours" },
+  { "name": "2h-xp", "cost": 16, "image": "/loot/small-h-xp.jpg", "info": "2-hours" },
+  { "name": "6h-xp", "cost": 48, "image": "/loot/small-h-xp.jpg", "info": "6-hours" },
+  {
+    "name": "8h-hero-xp",
+    "cost": 64,
+    "image": "/loot/high-h-xp.jpg",
+    "info": "8-hours"
+  },
   { "name": "24h-xp", "cost": 192, "image": "/loot/high-h-xp.jpg", "info": "24-hours" },
-  { "name": "hero-essence", "cost": 0.6, "image": "/loot/hero-essence.jpg" },
   { "name": "primordial-emblem", "cost": 48, "image": "/loot/primordial-emblem.jpg" },
   { "name": "amplifying-emblem", "cost": 78, "image": "/loot/amplifying-emblem.jpg" },
   { "name": "lightbearer-emblem", "image": "/loot/lightbearer-emblem.jpg" },
