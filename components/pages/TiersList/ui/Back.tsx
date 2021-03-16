@@ -13,7 +13,7 @@ const Back: React.FC<Props> = () => {
 
   return (
     <div className={styles.Back}>
-      <a href="/priority-list" className={styles.Link}>
+      <a href="/tiers-list" className={styles.Link}>
         <Svg d={mdiArrowLeft} />
 
         {t("label-back")}

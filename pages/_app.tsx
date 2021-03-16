@@ -7,7 +7,10 @@ import App from "next/app";
 // import { useRouter } from "next/router";
 import React from "react";
 import Menu from "../components/functionnal/Menu";
+import AbyssalExpeditionProvider from "../components/providers/AbyssalExpeditionProvider";
 import FirebaseProvider from "../components/providers/FirebaseProvider";
+import PriorityListProvider from "../components/providers/PriorityListProvider";
+import ProfileProvider from "../components/providers/ProfileProvider";
 import UserProvider from "../components/providers/UserProvider";
 import { appWithTranslation, i18n } from "../i18n";
 import "../styles/globals.css";
@@ -23,12 +26,18 @@ function MyApp({ Component, pageProps, i18nServerInstance, ...rest }: any) {
 
   return (
     <FirebaseProvider>
-      <UserProvider>
-        <Menu />
-        <div id="page">
-          <Component {...pageProps} />
-        </div>
-      </UserProvider>
+      <ProfileProvider>
+        <PriorityListProvider>
+          <AbyssalExpeditionProvider>
+            <UserProvider>
+              <Menu />
+              <div id="page">
+                <Component {...pageProps} />
+              </div>
+            </UserProvider>
+          </AbyssalExpeditionProvider>
+        </PriorityListProvider>
+      </ProfileProvider>
     </FirebaseProvider>
   );
 }

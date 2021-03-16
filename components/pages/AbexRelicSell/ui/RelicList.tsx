@@ -1,17 +1,17 @@
 import React, { useState } from "react";
 import abexRelicData from "../../../../data/abex-relics.json";
+import { IFirebaseAbyssalExpeditionClassRelics } from "../../../providers/types/IFirebaseAbyssalExpedition";
 import useCurrentToGoal from "../hooks/useCurrentToGoal";
 import useRelicOffset from "../hooks/useRelicOffset";
-import Current from "../types/Current";
 import Relic from "./Relic";
 import RelicFilter from "./RelicFilter";
 import styles from "./RelicList.module.css";
 
 interface Props {
-  goal: Current;
-  current: Current;
+  goal: IFirebaseAbyssalExpeditionClassRelics;
+  current: IFirebaseAbyssalExpeditionClassRelics;
   inventory: { [key: number]: number };
-  setInventory: (value: { [key: number]: number }) =>void
+  setInventory: (value: { [key: number]: number }) => void;
 }
 
 const RelicList: React.FC<Props> = ({ current, goal, inventory, setInventory }) => {

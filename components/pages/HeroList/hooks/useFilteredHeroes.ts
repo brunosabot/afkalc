@@ -45,7 +45,7 @@ export default function useFilteredHeroes(
           ...c,
           ascend: getValue(c.id, "ascend"),
           si: getValue(c.id, "si"),
-          fi: getValue(c.id, "inn"),
+          fi: getValue(c.id, "fi"),
           link: getValue(c.id, "link"),
         }))
         .filter((c) => filters.type === "" || c.type === filters.type)

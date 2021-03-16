@@ -1,7 +1,6 @@
 import { useRouter } from "next/router";
 import React, { useContext } from "react";
-import { FirebaseContext } from "../../components/providers/FirebaseProvider";
-import UserContext from "../../components/providers/UserContext";
+import ProfileContext from "../../components/providers/ProfileContext";
 import LoginButton from "../../components/ui/button/LoginButton";
 import Card from "../../components/ui/card/Card";
 import CardTitle from "../../components/ui/card/CardTitle";
@@ -13,12 +12,11 @@ interface IProps {
 
 const HeroList: React.FC<IProps> = () => {
   const router = useRouter();
-  const { values } = useContext(FirebaseContext);
-  const { values: userValues } = useContext(UserContext);
+  const { values } = useContext(ProfileContext);
   const { t } = useTranslation("hero-list");
 
-  if (values.isAuth && userValues.shareId) {
-    router.push(`/hero-list/${userValues.shareId}`);
+  if (values.isAuth && values.userId) {
+    router.push(`/hero-list/${values.userId}`);
   }
 
   return (

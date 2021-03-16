@@ -1,9 +1,8 @@
 import { mdiMap } from "@mdi/js";
 import Head from "next/head";
 import React, { useContext, useEffect, useState } from "react";
-import useFirestoreQuery from "../../components/hooks/useFirestoreQuery";
-import useUserFirestoreDocument from "../../components/hooks/useUserFirestoreDocument";
 import Camp from "../../components/pages/AbexRelic/Camp";
+import AbyssalExpeditionContext from "../../components/providers/AbyssalExpeditionContext";
 import { FirebaseContext } from "../../components/providers/FirebaseProvider";
 import LoginButton from "../../components/ui/button/LoginButton";
 import Card from "../../components/ui/card/Card";
@@ -14,13 +13,6 @@ import Grid from "../../components/ui/layout/Grid";
 import abexData from "../../data/abex.json";
 import { useTranslation } from "../../i18n";
 
-interface DataLine {
-  amount: number;
-  garrison: number;
-  timer: number;
-  timestamp: number;
-}
-
 interface IProps {
   [key: string]: never;
 }
@@ -28,11 +20,11 @@ interface IProps {
 const AbexRelic: React.FC<IProps> = () => {
   const { t } = useTranslation("abex-relic");
   const { values } = useContext(FirebaseContext);
+  const { actions, values: abexValues } = useContext(AbyssalExpeditionContext);
 
-  const document = useUserFirestoreDocument(`abex/%ID%`);
-  const result = useFirestoreQuery(document);
   const [now, setNow] = useState(Math.round(Date.now() / 1000));
 
+  useEffect(() => actions.load());
   useEffect(() => {
     const interval = setInterval(() => setNow(Math.round(Date.now() / 1000)), 1000);
     return () => clearInterval(interval);
@@ -41,26 +33,17 @@ const AbexRelic: React.FC<IProps> = () => {
   const resetTimers = () => {
     // eslint-disable-next-line no-alert
     if (window.confirm(t("confirm-reset-timers"))) {
-      const newData = { ...data };
-      Object.keys(newData).forEach((key) => {
-        newData[parseInt(key, 10)].timestamp = now;
-        newData[parseInt(key, 10)].timer = 0;
-      });
-      setData(newData);
+      actions.resetTilesTimers();
     }
   };
 
   const resetFields = () => {
     // eslint-disable-next-line no-alert
     if (window.confirm("confirm-reset-box")) {
-      setData({});
+      actions.resetTiles();
     }
   };
 
-  function setData(relicList: { [key: number]: DataLine }) {
-    return document?.set({ relicList }, { merge: true });
-  }
-  
   if (values.isAuth === false) {
     return (
       <Card>
@@ -69,10 +52,6 @@ const AbexRelic: React.FC<IProps> = () => {
       </Card>
     );
   }
-
-  if (result.status !== "success") return null;
-
-  const data = result.data?.relicList ?? {};
 
   return (
     <div
@@ -101,11 +80,11 @@ const AbexRelic: React.FC<IProps> = () => {
       <Grid>
         {abexData.campType.map((camp) => (
           <Camp
-            set={(id, d) => setData({ ...data, [id]: d })}
+            set={(id, d) => actions.setTiles({ ...abexValues.tiles, [id]: d })}
             key={camp.id}
             now={now}
             camp={camp}
-            data={data}
+            data={abexValues.tiles}
           />
         ))}
       </Grid>

@@ -1,12 +1,10 @@
 import { mdiHelpBox, mdiMap } from "@mdi/js";
 import Head from "next/head";
-import React, { useCallback, useContext, useMemo, useState } from "react";
-import useFirestoreQuery from "../../components/hooks/useFirestoreQuery";
-import useUserFirestoreDocument from "../../components/hooks/useUserFirestoreDocument";
+import React, { useContext, useEffect, useState } from "react";
 import useCurrentToGoal from "../../components/pages/AbexRelicSell/hooks/useCurrentToGoal";
-import Current from "../../components/pages/AbexRelicSell/types/Current";
 import RelicChoiceList from "../../components/pages/AbexRelicSell/ui/RelicChoiceList";
 import RelicList from "../../components/pages/AbexRelicSell/ui/RelicList";
+import AbyssalExpeditionContext from "../../components/providers/AbyssalExpeditionContext";
 import { FirebaseContext } from "../../components/providers/FirebaseProvider";
 import LoginButton from "../../components/ui/button/LoginButton";
 import Card from "../../components/ui/card/Card";
@@ -16,28 +14,9 @@ import CardTabs from "../../components/ui/card/CardTabs";
 import CardTitle from "../../components/ui/card/CardTitle";
 import Svg from "../../components/ui/Svg";
 import { useTranslation } from "../../i18n";
-import HeroClass from "../../types/HeroClass";
 
 interface IProps {
   [key: string]: never;
-}
-
-type StringHeroClass = "ranger" | "mage" | "tank" | "warrior" | "support";
-
-function toCurrent(data: any): Current {
-  const output: Current = {
-    [HeroClass.ranger]: [0, 0, 0, 0, 0, 0],
-    [HeroClass.mage]: [0, 0, 0, 0, 0, 0],
-    [HeroClass.tank]: [0, 0, 0, 0, 0, 0],
-    [HeroClass.warrior]: [0, 0, 0, 0, 0, 0],
-    [HeroClass.support]: [0, 0, 0, 0, 0, 0],
-  };
-  Object.keys(data).forEach((theClass: string) => {
-    const heroClass = HeroClass[theClass as StringHeroClass];
-    output[heroClass] = data[theClass];
-  });
-
-  return output;
 }
 
 const AbexRelicSell: React.FC<IProps> = () => {
@@ -45,49 +24,10 @@ const AbexRelicSell: React.FC<IProps> = () => {
   const { values } = useContext(FirebaseContext);
   const [tab, setTab] = useState(0);
   const [showHelp, setShowHelp] = useState(false);
+  const { actions, values: abexValues } = useContext(AbyssalExpeditionContext);
 
-  const document = useUserFirestoreDocument(`abex/%ID%`);
-  const result = useFirestoreQuery(document);
-
-  const currentRelic: Current = useMemo(
-    () =>
-      toCurrent(
-        result.data?.currentRelic ?? {
-          [HeroClass.ranger]: [0, 0, 0, 0, 0, 0],
-          [HeroClass.mage]: [0, 0, 0, 0, 0, 0],
-          [HeroClass.tank]: [0, 0, 0, 0, 0, 0],
-          [HeroClass.warrior]: [0, 0, 0, 0, 0, 0],
-          [HeroClass.support]: [0, 0, 0, 0, 0, 0],
-        }
-      ),
-    [result.data?.currentRelic]
-  );
-  const goalRelic: Current = useMemo(
-    () =>
-      toCurrent(
-        result.data?.goalRelic ?? {
-          [HeroClass.ranger]: [5205, 5104, 5204, 5304, 5305, 5306],
-          [HeroClass.mage]: [5405, 5404, 5202, 5304, 5305, 5406],
-          [HeroClass.tank]: [5205, 5202, 5204, 5201, 5203, 5206],
-          [HeroClass.warrior]: [5205, 5104, 5204, 5105, 5203, 5106],
-          [HeroClass.support]: [5205, 5505, 5202, 5504, 5404, 5506],
-        }
-      ),
-    [result.data?.goalRelic]
-  );
-  const inventory = useMemo(() => result.data?.inventory ?? {}, [result.data?.inventory]);
-
-  const setCurrentRelic = useCallback((newCurrentRelic) => document?.set({ currentRelic: newCurrentRelic }, { merge: true }), [
-    document
-  ]);
-  const setGoalRelic = useCallback((newGoalRelic) => document?.set({ goalRelic: newGoalRelic }, { merge: true }), [
-    document,
-  ]);
-  const setInventory = useCallback((newInventory) => document?.set({ inventory: newInventory }, { merge: true }), [
-    document,
-  ]);
-
-  useCurrentToGoal(currentRelic, goalRelic);
+  useEffect(() => actions.load());
+  useCurrentToGoal(abexValues.currentRelics, abexValues.goalRelics);
 
   if (values.isAuth === false) {
     return (
@@ -97,8 +37,6 @@ const AbexRelicSell: React.FC<IProps> = () => {
       </Card>
     );
   }
-
-  if (result.status !== "success") return null;
 
   return (
     <Card>
@@ -127,9 +65,20 @@ const AbexRelicSell: React.FC<IProps> = () => {
         </CardTab>
       </CardTabs>
 
-      {tab === 0 ? <RelicChoiceList current={currentRelic} setCurrent={setCurrentRelic} /> : null}
-      {tab === 1 ? <RelicChoiceList current={goalRelic} setCurrent={setGoalRelic} /> : null}
-      {tab === 2 ? <RelicList inventory={inventory} setInventory={setInventory} current={currentRelic} goal={goalRelic} /> : null}
+      {tab === 0 ? (
+        <RelicChoiceList current={abexValues.currentRelics} setCurrent={actions.setCurrentRelics} />
+      ) : null}
+      {tab === 1 ? (
+        <RelicChoiceList current={abexValues.goalRelics} setCurrent={actions.setGoalRelics} />
+      ) : null}
+      {tab === 2 ? (
+        <RelicList
+          inventory={abexValues.relicInventory}
+          setInventory={actions.setRelicInventory}
+          current={abexValues.currentRelics}
+          goal={abexValues.goalRelics}
+        />
+      ) : null}
     </Card>
   );
 };

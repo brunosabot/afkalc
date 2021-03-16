@@ -1,7 +1,7 @@
 import { nanoid } from "nanoid";
 import React, { useContext, useMemo } from "react";
-import useFirestoreQuery from "../hooks/useFirestoreQuery";
-import useUserFirestoreDocument from "../hooks/useUserFirestoreDocument";
+import useFirestoreDocument from "../hooks/useFirestoreDocument";
+import useFirestoreDocumentReference from "../hooks/useFirestoreDocumentReference";
 import { FirebaseContext } from "./FirebaseProvider";
 import UserContext from "./UserContext";
 
@@ -11,8 +11,8 @@ interface IProps {
 
 const UserProvider: React.FC<IProps> = ({ children }) => {
   const { values } = useContext(FirebaseContext);
-  const userDocument = useUserFirestoreDocument(`user/%ID%`);
-  const userResult = useFirestoreQuery(userDocument);
+  const userDocument = useFirestoreDocumentReference(`user/%ID%`);
+  const userResult = useFirestoreDocument<{shareId: string}>(userDocument);
 
   const shareId = userResult?.data?.shareId ?? "";
 

@@ -13,13 +13,13 @@ interface IStage {
 }
 
 export default function useChestLevel(level: string) {
-  const [chapter] = level.split("-").map((e) => parseInt(e, 10));
-  const currentLevel = chapter >= 33 ? "33-1" : level;
+  const [chapter, stage] = level.split("-").map((e) => parseInt(e, 10));
+  const currentLevel = chapter >= 33 ? "33-1" : `${chapter}-${stage}`;
 
   const chests = useMemo(() => {
-    const stage = (stages as IStage[]).find((s) => s.stage === currentLevel);
-    if (stage) {
-      return stage.chests.sort((a, b) => b.CD - a.CD);
+    const stageRewards = (stages as IStage[]).find((s) => s.stage === currentLevel);
+    if (stageRewards) {
+      return stageRewards.chests.sort((a, b) => b.CD - a.CD);
     }
     return [];
   }, [currentLevel]);
