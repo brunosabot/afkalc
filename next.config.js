@@ -8,6 +8,15 @@ const localeSubpaths = {
 
 module.exports = {
   rewrites: async () => nextI18NextRewrites(localeSubpaths),
+  async redirects() {
+    return [
+      {
+        source: "/priority-list",
+        destination: "/tiers-list",
+        permanent: true,
+      },
+    ];
+  },
   publicRuntimeConfig: {
     localeSubpaths,
   },

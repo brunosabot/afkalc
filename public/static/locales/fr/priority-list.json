@@ -19,5 +19,7 @@
   "label-si": "SI",
   "label-fi": "FI",
   "label-ascend": "Ascension",
-  "label-no-list": "Vous n'avez pas de liste pour le moment"
+  "label-no-list": "Vous n'avez pas de liste pour le moment",
+  "label-moved": "Les listes ont été déplacées. Trouvez votre lien ci-dessous",
+  "label-moved-no-list": "La liste n'a pas encore été migrée. Contactez son créateur"
 }

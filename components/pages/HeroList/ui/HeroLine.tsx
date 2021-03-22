@@ -1,20 +1,20 @@
 import { mdiLink } from "@mdi/js";
 import React, { useState } from "react";
-import HeroLevel from "../../../../types/HeroLevel";
 import Modal from "../../../functionnal/Modal";
 import ChooseHero from "../../../modal/ChooseHero";
+import { IFirebaseHeroesHero } from "../../../providers/types/IFirebaseHeroes";
 import Character from "../../../ui/afk/Character";
 import Svg from "../../../ui/Svg";
 import AscendField from "./AscendField";
+import InnField from "./FiField";
 import styles from "./HeroLine.module.css";
-import InnField from "./InnField";
 import SiField from "./SiField";
 
 interface IProps {
   id: number;
   name: string;
-  setLevel: (id: number, field: HeroLevel) => (value: number) => void;
-  getValue: (id: number, field: HeroLevel) => number;
+  setLevel: (id: number, field: keyof IFirebaseHeroesHero, value: number) => void;
+  getValue: (id: number, field: keyof IFirebaseHeroesHero) => number;
   isView: boolean;
   shouldUnlockFi?: boolean;
   faction: string;
@@ -59,7 +59,7 @@ const HeroLine: React.FC<IProps> = ({
         ascendLevel={getValue(id, "ascend")}
         disabled={getValue(id, "ascend") === 0}
         siLevel={getValue(id, "si")}
-        innLevel={getValue(id, "inn")}
+        innLevel={getValue(id, "fi")}
       />
 
       {linkElement}
@@ -82,7 +82,7 @@ const HeroLine: React.FC<IProps> = ({
             onlyHero
             current={link ? [link] : []}
             onSelect={(_, heroId) => {
-              setLevel(id, "link")(heroId);
+              setLevel(id, "link", heroId);
               setShowModal(false);
             }}
           />

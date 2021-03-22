@@ -1,20 +1,9 @@
 import { useCallback } from "react";
-import HeroLevel from "../../../../types/HeroLevel";
+import { IFirebaseHeroesHero, IFirebaseHeroList } from "../../../providers/types/IFirebaseHeroes";
 
-interface IHeroLevels {
-  inn?: number;
-  si?: number;
-  ascend?: number;
-  link?: number;
-}
-
-interface IHeroes {
-  [key: number]: IHeroLevels;
-}
-
-export default function useGetValue(levels: IHeroes) {
+export default function useGetValue(levels: IFirebaseHeroList) {
   return useCallback(
-    (key: number, index: HeroLevel) => {
+    (key: number, index: keyof IFirebaseHeroesHero) => {
       if (levels[key] === undefined) return 0;
       if (levels[key][index] === undefined) return 0;
       if (levels[key][index] === 0) return 0;

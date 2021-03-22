@@ -2,8 +2,8 @@ import React, { useCallback, useState } from "react";
 import abexRelicData from "../../../../data/abex-relics.json";
 import heroClassData from "../../../../data/heroClass.json";
 import HeroClass from "../../../../types/HeroClass";
+import { IFirebaseAbyssalExpeditionClassRelics } from "../../../providers/types/IFirebaseAbyssalExpedition";
 import EvenColumn from "../../../ui/layout/EvenColumn";
-import Current from "../types/Current";
 import ButtonClass from "./ButtonClass";
 import ButtonLevel from "./ButtonLevel";
 import styles from "./RelicChoiceList.module.css";
@@ -12,8 +12,8 @@ import RelicDisplay from "./RelicDisplay";
 const heroClasses = heroClassData as HeroClass[];
 
 interface IProps {
-  current: Current;
-  setCurrent: (value: Current) => void;
+  current: IFirebaseAbyssalExpeditionClassRelics;
+  setCurrent: (value: IFirebaseAbyssalExpeditionClassRelics) => void;
 }
 
 type RelicLevel = 1 | 2 | 3 | 4 | 5;

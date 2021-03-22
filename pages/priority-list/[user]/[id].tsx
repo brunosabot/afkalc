@@ -1,14 +1,16 @@
 import Head from "next/head";
 import { useRouter } from "next/router";
-import React, { useContext, useState } from "react";
-import useUserFirestoreDocument from "../../../components/hooks/useUserFirestoreDocument";
-import useUserId from "../../../components/pages/PriorityList/hooks/useUserId";
-import Owner from "../../../components/pages/PriorityList/ui/Owner";
-import Viewer from "../../../components/pages/PriorityList/ui/Viewer";
+import React, { useContext } from "react";
+import useFirestoreQuery from "../../../components/hooks/useFirestoreQuery";
+import useFirestoreQueryReference from "../../../components/hooks/useFirestoreQueryReference";
+import ListItem from "../../../components/pages/TiersList/ui/ListItem";
+import ListItemEmpty from "../../../components/pages/TiersList/ui/ListItemEmpty";
 import { FirebaseContext } from "../../../components/providers/FirebaseProvider";
+import IFirebasePriorityList from "../../../components/providers/types/IFirebasePriorityList";
 import LoginButton from "../../../components/ui/button/LoginButton";
 import Card from "../../../components/ui/card/Card";
 import CardTitle from "../../../components/ui/card/CardTitle";
+import List from "../../../components/ui/list/List";
 import { useTranslation } from "../../../i18n";
 
 interface IProps {
@@ -20,18 +22,15 @@ const PriorityList: React.FC<IProps> = () => {
   const { t } = useTranslation("priority-list");
   const { values } = useContext(FirebaseContext);
   const { user, id } = router.query;
-  const [userId, setUserId] = useState("");
-  useUserId(user as string, setUserId);
 
-  const isOwner = values.uid === userId;
-
-  const document = useUserFirestoreDocument(
-    userId ? `user/${userId}/priority-list/${id}` : undefined
+  const favoriteQuery = useFirestoreQueryReference(
+    "priority-list",
+    "legacyId",
+    "==",
+    `${user}$${id}`
   );
 
-  if (document === undefined) {
-    return null;
-  }
+  const favoriteResult = useFirestoreQuery<IFirebasePriorityList[]>(favoriteQuery);
 
   if (values.isAuth === false) {
     return (
@@ -49,11 +48,19 @@ const PriorityList: React.FC<IProps> = () => {
         <meta name="description" content="" />
       </Head>
 
-      {isOwner ? (
-        <Owner document={document} listId={id as string} userId={user as string} />
-      ) : (
-        <Viewer document={document} listId={id as string} userId={user as string} />
-      )}
+      <Card>
+        <CardTitle>{t("label-moved")}</CardTitle>
+        <List>
+          {favoriteResult?.data?.length === 0 ? (
+            <ListItemEmpty>{t("label-moved-no-list")}</ListItemEmpty>
+          ) : null}
+          {favoriteResult?.data?.map((list) => (
+            <ListItem href={`/tiers-list/${list.id}`} key={list.id}>
+              {list.title}
+            </ListItem>
+          ))}
+        </List>
+      </Card>
     </>
   );
 };

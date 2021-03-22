@@ -13,7 +13,7 @@ interface IHeroes {
 }
 
 function cleanRequirements(levels: IHeroes, key: number) {
-  const cleanedLevels = {...levels};
+  const cleanedLevels = { ...levels };
   const theHeroLevels = cleanedLevels[key];
   const theHeroLevelSi = theHeroLevels.si ?? 0;
   const theHeroLevelAscend = theHeroLevels.ascend ?? 0;

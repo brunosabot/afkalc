@@ -2,30 +2,33 @@ import { mdiViewList } from "@mdi/js";
 import Head from "next/head";
 import { useRouter } from "next/router";
 import React, { useContext, useState } from "react";
-import useFirestoreQuery from "../../components/hooks/useFirestoreQuery";
-import useUserFirestoreDocument from "../../components/hooks/useUserFirestoreDocument";
+import useFirestoreDocument from "../../components/hooks/useFirestoreDocument";
+import useFirestoreDocumentReference from "../../components/hooks/useFirestoreDocumentReference";
 import useFilteredHeroes from "../../components/pages/HeroList/hooks/useFilteredHeroes";
 import useFilters from "../../components/pages/HeroList/hooks/useFilters";
 import useGetValue from "../../components/pages/HeroList/hooks/useGetValue";
 import useLoadId from "../../components/pages/HeroList/hooks/useLoadId";
-import useSetLevel from "../../components/pages/HeroList/hooks/useSetLevel";
 import Filters from "../../components/pages/HeroList/ui/Filters";
 import HeroLine from "../../components/pages/HeroList/ui/HeroLine";
 import ShareBanner from "../../components/pages/HeroList/ui/ShareBanner";
 import TitleLine from "../../components/pages/HeroList/ui/TitleLine";
-import { FirebaseContext } from "../../components/providers/FirebaseProvider";
-import UserContext from "../../components/providers/UserContext";
+import useSetLevel from "../../components/pages/TiersList/hooks/useSetLevel";
+import ProfileContext from "../../components/providers/ProfileContext";
+import IFirebaseHeroes, {
+  IFirebaseHeroesHero,
+} from "../../components/providers/types/IFirebaseHeroes";
+import { IFirebasePriorityListRequirement } from "../../components/providers/types/IFirebasePriorityList";
 import LoginButton from "../../components/ui/button/LoginButton";
 import Card from "../../components/ui/card/Card";
 import CardHelp from "../../components/ui/card/CardHelp";
 import CardTitle from "../../components/ui/card/CardTitle";
 import CheckboxField from "../../components/ui/CheckboxField";
 import TwoColsSticky from "../../components/ui/layout/TwoColsSticky";
-import heroes from "../../data/heroes.json";
+import heroesJson from "../../data/heroes.json";
 import { useTranslation } from "../../i18n";
 import ICharacter from "../../types/ICharacter";
 
-const typedHeroes: ICharacter[] = heroes as ICharacter[];
+const typedHeroes: ICharacter[] = heroesJson as ICharacter[];
 
 interface IProps {
   [key: string]: never;
@@ -34,24 +37,23 @@ interface IProps {
 const HeroList: React.FC<IProps> = () => {
   const { t } = useTranslation("hero-list");
   const router = useRouter();
-  const { values } = useContext(FirebaseContext);
-  const { values: userValues } = useContext(UserContext);
+  const { values } = useContext(ProfileContext);
   const { id } = router.query;
-  const isSelf = id === userValues.shareId;
 
   const [unlockFi, setUnlockFi] = useState(false);
   const [state, dispatch] = useFilters();
 
   const userId = useLoadId(id as string);
 
-  const document = useUserFirestoreDocument(userId ? `hero-list/${userId}` : undefined);
-  const result = useFirestoreQuery(document);
-  const levels = result.data?.levels || [];
+  const document = useFirestoreDocumentReference(userId ? `heroes/${userId}` : undefined);
+  const result = useFirestoreDocument<IFirebaseHeroes>(document);
+  const heroes = result.data?.heroes || [];
+  const isSelf = userId === values.userId;
 
-  const setLevel = useSetLevel(levels, document);
-  const getValue = useGetValue(levels);
+  const setLevel = useSetLevel(document, heroes);
+  const getValue = useGetValue(heroes);
 
-  const characters = useFilteredHeroes(typedHeroes, levels, state);
+  const characters = useFilteredHeroes(typedHeroes, heroes, state);
 
   if (values.isAuth === false) {
     return (
@@ -67,6 +69,8 @@ const HeroList: React.FC<IProps> = () => {
       <TwoColsSticky>
         <Card>
           <CardTitle icon={mdiViewList}>{t("common:menu.hero-list")}</CardTitle>
+
+          {id && id.length < 12 ? <CardHelp>{t("moved")}</CardHelp> : null}
 
           <ShareBanner isView={isSelf === false} />
           <Head>
@@ -97,7 +101,10 @@ const HeroList: React.FC<IProps> = () => {
                 <HeroLine
                   id={character.id}
                   name={character.name}
-                  setLevel={setLevel}
+                  setLevel={(heroId: number, key: keyof IFirebaseHeroesHero, value: number) => {
+                    const type = key.toUpperCase() as IFirebasePriorityListRequirement;
+                    setLevel(heroId, type, value).commit();
+                  }}
                   getValue={getValue}
                   isView={isSelf === false}
                   faction={character.faction}

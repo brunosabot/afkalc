@@ -7,3 +7,6 @@
 .Name {
   flex-grow: 1;
 }
+.HeroLine > svg {
+  padding: 8px;
+}

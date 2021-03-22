@@ -1,14 +1,14 @@
 import React from "react";
 import ascendLevels from "../../../../data/heroAscensionLevel.json";
 import { useTranslation } from "../../../../i18n";
-import HeroLevel from "../../../../types/HeroLevel";
+import { IFirebaseHeroesHero } from "../../../providers/types/IFirebaseHeroes";
 import InputField from "../../../ui/InputField";
 import SelectField from "../../../ui/SelectField";
 
 interface IProps {
   id: number;
-  setLevel: (id: number, field: "ascend") => (value: number) => void;
-  getValue: (id: number, field: HeroLevel) => number;
+  setLevel: (id: number, field: "ascend", value: number) => void;
+  getValue: (id: number, field: keyof IFirebaseHeroesHero) => number;
   isView: boolean;
 }
 
@@ -34,7 +34,7 @@ const AscendField: React.FC<IProps> = ({ id, setLevel, getValue, isView }) => {
   return (
     <SelectField
       name={`ascension-${id}`}
-      onChange={(value) => setLevel(id, "ascend")(parseInt(value || "0", 10))}
+      onChange={(value) => setLevel(id, "ascend", parseInt(value || "0", 10))}
       value={getValue(id, "ascend")}
       label=""
       small

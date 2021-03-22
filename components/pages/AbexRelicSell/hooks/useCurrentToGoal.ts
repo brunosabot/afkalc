@@ -1,10 +1,13 @@
 import abexRelicData from "../../../../data/abex-relics.json";
 import HeroClass from "../../../../types/HeroClass";
-import Current from "../types/Current";
+import { IFirebaseAbyssalExpeditionClassRelics } from "../../../providers/types/IFirebaseAbyssalExpedition";
 
 type Level = "1" | "2" | "3" | "4" | "5";
 
-export default function useCurrentToGoal(currents: Current, goals: Current) {
+export default function useCurrentToGoal(
+  currents: IFirebaseAbyssalExpeditionClassRelics,
+  goals: IFirebaseAbyssalExpeditionClassRelics
+) {
   const neededRelics: number[] = [];
 
   Object.keys(goals).forEach((theClass) => {

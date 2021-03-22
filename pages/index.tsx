@@ -15,8 +15,7 @@ import {
 } from "@mdi/js";
 import Head from "next/head";
 import React, { useContext } from "react";
-import { FirebaseContext } from "../components/providers/FirebaseProvider";
-import UserContext from "../components/providers/UserContext";
+import ProfileContext from "../components/providers/ProfileContext";
 import LangButton from "../components/ui/button/LangButton";
 import LoginButton from "../components/ui/button/LoginButton";
 import LogoutButton from "../components/ui/button/LogoutButton";
@@ -31,8 +30,7 @@ interface IProps {
 }
 
 const Home: React.FC<IProps> = () => {
-  const { values } = useContext(FirebaseContext);
-  const { values: userValues } = useContext(UserContext);
+  const { values } = useContext(ProfileContext);
   const { t } = useTranslation("common");
 
   return (
@@ -65,7 +63,7 @@ const Home: React.FC<IProps> = () => {
           <MenuItem to="/fast-reward" icon={mdiFastForward}>
             {t("common:menu.fast-reward")}
           </MenuItem>
-          <MenuItem to={`/hero-list/${userValues.shareId}`} icon={mdiViewList}>
+          <MenuItem to={`/hero-list/${values.userId}`} icon={mdiViewList}>
             {t("common:menu.hero-list")}
           </MenuItem>
           <MenuItem to="/top-team" icon={mdiAccountGroup}>
@@ -74,7 +72,7 @@ const Home: React.FC<IProps> = () => {
           <MenuItem to="/item-cost" icon={mdiDiamondStone}>
             {t("common:menu.item-cost")}
           </MenuItem>
-          <MenuItem to="/priority-list" icon={mdiPlaylistCheck}>
+          <MenuItem to="/tiers-list" icon={mdiPlaylistCheck}>
             {t("common:menu.priority-list")}
           </MenuItem>
           <MenuItem to="/abex-relic" icon={mdiMap}>

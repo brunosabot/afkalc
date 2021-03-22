@@ -4,10 +4,14 @@ import { FirebaseContext } from "../providers/FirebaseProvider";
 
 const firestore = firebase.firestore();
 
-export default function useUserFirestoreCollection(path: string) {
+export default function useFirestoreDocumentReference(path: string | undefined) {
   const { values } = useContext(FirebaseContext);
 
   return useMemo(() => {
+    if (path === undefined) {
+      return undefined;
+    }
+
     let formattedPath = path;
 
     if (path.indexOf("%ID%") > -1) {
@@ -18,6 +22,6 @@ export default function useUserFirestoreCollection(path: string) {
       formattedPath = formattedPath.replace("%ID%", values.uid);
     }
 
-    return firestore.collection(formattedPath);
+    return firestore.doc(formattedPath);
   }, [path, values.uid]);
 }

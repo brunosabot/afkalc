@@ -1,17 +1,16 @@
 import { mdiFastForward, mdiHelpBox } from "@mdi/js";
 import Head from "next/head";
-import React, { useState } from "react";
-import useFirestoreWithBackup from "../../components/hooks/useFirestoreWithBackup";
+import React, { useContext, useState } from "react";
 import useOnChangeNumber from "../../components/hooks/useOnChangeNumber";
 import useMaxLevel from "../../components/pages/FastReward/hooks/useMaxLevel";
 import DiamondLine from "../../components/pages/FastReward/ui/DiamondLine";
 import Help from "../../components/pages/FastReward/ui/Help";
+import ProfileContext from "../../components/providers/ProfileContext";
 import Card from "../../components/ui/card/Card";
 import CardTitle from "../../components/ui/card/CardTitle";
+import InputField from "../../components/ui/InputField";
 import SelectField from "../../components/ui/SelectField";
 import Svg from "../../components/ui/Svg";
-import campaign from "../../data/fastRewardCampaign.json";
-import player from "../../data/fastRewardPlayer.json";
 import vip from "../../data/fastRewardVip.json";
 import { useTranslation } from "../../i18n";
 
@@ -20,22 +19,18 @@ interface IProps {
 }
 
 const FastReward: React.FC<IProps> = () => {
-  const [showHelp, setShowHelp] = useState(false);
-  const [vipLevel, setVipLevel] = useFirestoreWithBackup("%ID%", "fast-reward", "vip", 6);
-  const [playerLevel, setPlayerLevel] = useFirestoreWithBackup("%ID%", "fast-reward", "player", 0);
-  const [campaignLevel, setCampaignLevel] = useFirestoreWithBackup<string>(
-    "%ID%",
-    "fast-reward",
-    "campaign",
-    "12-40"
-  );
+  const {
+    actions: { setPlayerLevel, setPlayerVipLevel, setCampaignLevel },
+    values: { playerLevel, playerVipLevel, campaignLevel },
+  } = useContext(ProfileContext);
 
+  const [showHelp, setShowHelp] = useState(false);
   const { t } = useTranslation("fast-reward");
   const onChange = useOnChangeNumber();
 
-  const diams50 = useMaxLevel(50, playerLevel, vipLevel);
-  const diams80 = useMaxLevel(80, playerLevel, vipLevel);
-  const diams100 = useMaxLevel(100, playerLevel, vipLevel);
+  const diams50 = useMaxLevel(50, playerLevel, playerVipLevel);
+  const diams80 = useMaxLevel(80, playerLevel, playerVipLevel);
+  const diams100 = useMaxLevel(100, playerLevel, playerVipLevel);
 
   return (
     <div
@@ -64,22 +59,21 @@ const FastReward: React.FC<IProps> = () => {
 
         <SelectField
           name="vip-level"
-          value={vipLevel}
+          value={playerVipLevel}
           values={vip}
           label={t("vip-level")}
-          onChange={onChange(setVipLevel)}
+          onChange={onChange(setPlayerVipLevel)}
         />
-        <SelectField
+        <InputField
+          inputMode="numeric"
           name="player-level"
           value={playerLevel}
-          values={player}
           label={t("player-level")}
           onChange={onChange(setPlayerLevel)}
         />
-        <SelectField
+        <InputField
           name="campaign-level"
           value={campaignLevel}
-          values={campaign}
           label={t("campaign-level")}
           onChange={setCampaignLevel}
         />

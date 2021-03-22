@@ -3,7 +3,7 @@ import ascendLevels from "../../data/heroAscensionLevel.json";
 import heroes from "../../data/heroes.json";
 import { useTranslation } from "../../i18n";
 import ICharacter from "../../types/ICharacter";
-import IHeroDetails from "../../types/IHeroDetails";
+import { IFirebasePriorityListHero } from "../providers/types/IFirebasePriorityList";
 import Character from "../ui/afk/Character";
 import InputField from "../ui/InputField";
 import SelectField from "../ui/SelectField";
@@ -30,8 +30,8 @@ const factions: IFactions = (heroes as ICharacter[]).reduce(
 );
 
 interface Props {
-  onSelect: (value: IHeroDetails) => void;
-  id?: number;
+  onSelect: (value: IFirebasePriorityListHero) => void;
+  hero?: number;
   fi?: number;
   ascend?: number;
   si?: number;
@@ -41,7 +41,7 @@ const ChoosePriorityHero: React.FC<Props> = ({
   si = 0,
   fi = 0,
   ascend = 0,
-  id = 0,
+  hero = 0,
   // current: [currentId, si, inn, ascend],
   onSelect,
 }) => {
@@ -59,7 +59,7 @@ const ChoosePriorityHero: React.FC<Props> = ({
           value={si}
           onChange={(value) =>
             onSelect({
-              id,
+              hero,
               fi,
               ascend,
               si: parseInt(value, 10) || 0,
@@ -74,7 +74,7 @@ const ChoosePriorityHero: React.FC<Props> = ({
           value={fi}
           onChange={(value) =>
             onSelect({
-              id,
+              hero,
               fi: parseInt(value, 10) || 0,
               ascend,
               si,
@@ -93,7 +93,7 @@ const ChoosePriorityHero: React.FC<Props> = ({
           value={ascend}
           onChange={(value) =>
             onSelect({
-              id,
+              hero,
               fi,
               ascend: parseInt(value, 10) || 0,
               si,
@@ -105,19 +105,19 @@ const ChoosePriorityHero: React.FC<Props> = ({
       {Object.keys(factions).map((faction) => (
         <React.Fragment key={faction}>
           <div className={styles.Heroes}>
-            {factions[faction].map(({ id: thisId, name }) => (
+            {factions[faction].map(({ id, name }) => (
               <Character
-                key={thisId}
+                key={id}
                 name={name}
                 onClick={() =>
                   onSelect({
-                    id: thisId,
+                    hero: id,
                     fi,
                     ascend,
                     si,
                   })
                 }
-                highlight={thisId === id}
+                highlight={id === hero}
               />
             ))}
           </div>

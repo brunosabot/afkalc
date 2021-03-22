@@ -28,7 +28,7 @@ const reducer = (state: State, action: Action) => {
   }
 };
 
-export default function useFirestoreList(
+export default function useFirestoreCollection(
   query: firebase.firestore.CollectionReference | undefined
 ) {
   const initialState = {

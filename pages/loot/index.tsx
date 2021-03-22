@@ -1,11 +1,11 @@
 import { mdiHelpBox, mdiUpdate } from "@mdi/js";
 import dayjs from "dayjs";
 import Head from "next/head";
-import React, { useCallback, useMemo, useState } from "react";
-import useFirestoreWithBackup from "../../components/hooks/useFirestoreWithBackup";
+import React, { useCallback, useContext, useMemo, useState } from "react";
 import useChestLevel from "../../components/pages/Loot/hooks/useChestLevel";
 import Chest from "../../components/pages/Loot/ui/Chest";
 import PassNowLabel from "../../components/pages/Loot/ui/PassNowLabel";
+import ProfileContext from "../../components/providers/ProfileContext";
 import Card from "../../components/ui/card/Card";
 import CardHelp from "../../components/ui/card/CardHelp";
 import CardTitle from "../../components/ui/card/CardTitle";
@@ -13,27 +13,29 @@ import InputField from "../../components/ui/InputField";
 import Svg from "../../components/ui/Svg";
 import { useTranslation } from "../../i18n";
 
-const currentDate = new Date().toISOString();
-
 interface IProps {
   [key: string]: never;
 }
 
 const Loot: React.FC<IProps> = () => {
   const [showHelp, setShowHelp] = useState(false);
-  const [level, setLevel] = useFirestoreWithBackup("%ID%", "campaign", "level", "1-1");
-  const [_pass, _setPass] = useFirestoreWithBackup("%ID%", "campaign", "pass", currentDate);
+  const {
+    actions: { setCampaignLevel, setCampaignSuccessDate },
+    values: { campaignLevel, campaignSuccessDate },
+  } = useContext(ProfileContext);
 
-  const pass = useMemo(() => dayjs(new Date(_pass)).format("L LTS"), [_pass]);
+  const pass = useMemo(() => dayjs(new Date(campaignSuccessDate)).format("L LTS"), [
+    campaignSuccessDate,
+  ]);
   const setPass = useCallback(
     (value) => {
-      _setPass(dayjs(value, "L LTS").toDate().toISOString());
+      setCampaignSuccessDate(dayjs(value, "L LTS").toDate().toISOString());
     },
-    [_setPass]
+    [setCampaignSuccessDate]
   );
 
   const { t } = useTranslation("loot");
-  const chests = useChestLevel(level);
+  const chests = useChestLevel(campaignLevel);
   const passLabel = <PassNowLabel setPass={setPass} />;
 
   return (
@@ -64,9 +66,9 @@ const Loot: React.FC<IProps> = () => {
 
         <InputField
           name="level"
-          value={level}
+          value={campaignLevel}
           label={t("label-campaign-level")}
-          onChange={setLevel}
+          onChange={setCampaignLevel}
         />
         <InputField name="pass" value={pass} label={passLabel} onChange={setPass} />
       </Card>

@@ -1,19 +1,15 @@
 import IHeroDetails from "../../../../types/IHeroDetails";
-
-interface IList {
-  type: string;
-  value: number;
-}
+import IFirebasePriorityList from "../../../providers/types/IFirebasePriorityList";
 
 export default function useIsValidList(
-  priorityList: IList,
+  priorityList: IFirebasePriorityList,
   theHeroRequirement: IHeroDetails,
   theHeroLevels?: IHeroDetails
 ) {
   let isValidListSi = false;
 
-  const priorityType = priorityList.type || "";
-  const priorityValue = priorityList.type || 0;
+  const priorityType = priorityList.requirement || "";
+  const priorityValue = priorityList.requirement || 0;
 
   const heroRequirementAscend = theHeroRequirement.ascend || 0;
   const heroRequirementSi = theHeroRequirement.si || 0;
@@ -32,35 +28,35 @@ export default function useIsValidList(
     return false;
   }
 
-  if (priorityList.type === "SI") {
+  if (priorityList.requirement === "SI") {
     if (theHeroLevels.si === undefined) {
       isValidListSi = false;
-    } else if (priorityList.value === undefined) {
+    } else if (priorityList.requirementValue === undefined) {
       isValidListSi = true;
     } else {
-      isValidListSi = priorityList.value <= theHeroLevels.si;
+      isValidListSi = priorityList.requirementValue <= theHeroLevels.si;
     }
   }
 
   let isValidListFi = false;
-  if (priorityList.type === "FI") {
+  if (priorityList.requirement === "FI") {
     if (theHeroLevels.inn === undefined) {
       isValidListFi = false;
-    } else if (priorityList.value === undefined) {
+    } else if (priorityList.requirementValue === undefined) {
       isValidListFi = true;
     } else {
-      isValidListFi = priorityList.value <= theHeroLevels.inn;
+      isValidListFi = priorityList.requirementValue <= theHeroLevels.inn;
     }
   }
 
   let isValidListAscend = false;
-  if (priorityList.type === "ASCEND") {
+  if (priorityList.requirement === "ASCEND") {
     if (theHeroLevels.ascend === undefined) {
       isValidListAscend = false;
-    } else if (priorityList.value === undefined) {
+    } else if (priorityList.requirementValue === undefined) {
       isValidListAscend = true;
     } else {
-      isValidListAscend = priorityList.value <= theHeroLevels.ascend;
+      isValidListAscend = priorityList.requirementValue <= theHeroLevels.ascend;
     }
   }
 

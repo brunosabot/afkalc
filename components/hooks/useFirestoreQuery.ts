@@ -7,13 +7,13 @@ interface Action {
   payload?: any;
 }
 
-interface State {
+interface State<T> {
   status: string;
-  data?: any;
+  data?: T | undefined;
   error?: any;
 }
 
-const reducer = (state: State, action: Action) => {
+function reducer<T>(state: State<T>, action: Action) {
   switch (action.type) {
     case "idle":
       return { status: "idle", data: undefined, error: undefined };
@@ -26,9 +26,12 @@ const reducer = (state: State, action: Action) => {
     default:
       throw new Error("invalid action");
   }
-};
+}
 
-export default function useFirestoreQuery(query: firebase.firestore.DocumentReference | undefined) {
+export default function useFirestoreQuery<T>(
+  query: firebase.firestore.Query | undefined,
+  lazy: boolean = false
+): State<T> {
   const initialState = {
     status: query ? "loading" : "idle",
     data: undefined,
@@ -45,7 +48,7 @@ export default function useFirestoreQuery(query: firebase.firestore.DocumentRefe
   });
 
   useEffect(() => {
-    if (!queryCached) {
+    if (!queryCached || lazy) {
       dispatch({ type: "idle" });
       return () => {};
     }
@@ -54,15 +57,13 @@ export default function useFirestoreQuery(query: firebase.firestore.DocumentRefe
 
     return queryCached.onSnapshot(
       (response: any) => {
-        const data = response.docs ? getCollectionData(response) : getDocData(response);
-
-        dispatch({ type: "success", payload: data });
+        dispatch({ type: "success", payload: getQueryData(response) });
       },
       (error: any) => {
         dispatch({ type: "error", payload: error });
       }
     );
-  }, [queryCached]);
+  }, [queryCached, lazy]);
 
   return state;
 }
@@ -71,6 +72,6 @@ function getDocData(doc: firebase.firestore.DocumentSnapshot) {
   return doc.exists === true ? { id: doc.id, ...doc.data() } : null;
 }
 
-function getCollectionData(collection: any) {
+function getQueryData(collection: any) {
   return collection.docs.map(getDocData);
 }
