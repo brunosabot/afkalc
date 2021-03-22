@@ -12,7 +12,7 @@ interface IProps {
 const UserProvider: React.FC<IProps> = ({ children }) => {
   const { values } = useContext(FirebaseContext);
   const userDocument = useFirestoreDocumentReference(`user/%ID%`);
-  const userResult = useFirestoreDocument<{shareId: string}>(userDocument);
+  const userResult = useFirestoreDocument<{ shareId: string }>(userDocument);
 
   const shareId = userResult?.data?.shareId ?? "";
 

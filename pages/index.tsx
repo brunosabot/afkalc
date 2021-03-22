@@ -4,6 +4,7 @@ import {
   mdiChevronTripleUp,
   mdiCircleMultiple,
   mdiDiamondStone,
+  mdiDiscord,
   mdiFastForward,
   mdiGithub,
   mdiHome,
@@ -84,6 +85,9 @@ const Home: React.FC<IProps> = () => {
           <MenuItem to="/credit" icon={mdiAccountHeart}>
             {t("common:menu.credit")}
           </MenuItem>
+          <MenuItemExternal to="https://discord.gg/NSZFSdr9BW" icon={mdiDiscord}>
+            Discord 🇫🇷
+          </MenuItemExternal>
           <MenuItemExternal to="https://github.com/brunosabot/afkalc" icon={mdiGithub}>
             {t("common:contribution.edit-on-github")}
           </MenuItemExternal>

@@ -4,7 +4,7 @@ import {
   mdiEye,
   mdiPlaylistCheck,
   mdiPlaylistEdit,
-  mdiPlus
+  mdiPlus,
 } from "@mdi/js";
 import { useRouter } from "next/router";
 import React, { useCallback, useContext, useState } from "react";
@@ -15,7 +15,7 @@ import ChoosePriorityHero from "../../../modal/ChoosePriorityHero";
 import PriorityListContext from "../../../providers/PriorityListContext";
 import IFirebasePriorityList, {
   IFirebasePriorityListHero,
-  IFirebasePriorityListRequirement
+  IFirebasePriorityListRequirement,
 } from "../../../providers/types/IFirebasePriorityList";
 import Card from "../../../ui/card/Card";
 import CardAction from "../../../ui/card/CardAction";
