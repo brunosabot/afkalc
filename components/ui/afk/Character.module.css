@@ -126,7 +126,7 @@
   fill: rgba(255, 255, 255, 1);
 }
 
-.Inn {
+.Fi {
   display: flex;
   fill: #fff;
   filter: drop-shadow(0 0 1px #000);
@@ -138,7 +138,7 @@
   width: 10px;
   z-index: 1;
 }
-.InnInner {
+.FiInner {
   fill: var(--afk-mythic-color);
   stroke: #000;
   stroke-linecap: round;

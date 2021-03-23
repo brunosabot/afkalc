@@ -23,7 +23,7 @@ interface IProps {
   ascendLevel?: number;
   onClick?: () => void;
   siLevel?: number;
-  innLevel?: number;
+  fiLevel?: number;
   artifact?: number;
 }
 
@@ -39,7 +39,7 @@ const Character: React.FC<IProps> = ({
   onClick = () => {},
   ascendLevel = 0,
   siLevel = undefined,
-  innLevel = undefined,
+  fiLevel = undefined,
   artifact = undefined,
 }) => {
   const resource = typedHeroes.find((r) => (id ? r.id === id : r.name === name));
@@ -124,15 +124,15 @@ const Character: React.FC<IProps> = ({
         </svg>
       )}
 
-      {innLevel === undefined ? null : (
-        <svg viewBox={innLevel >= 9 ? "0 0 160 150" : "0 0 100 150"} className={styles.Inn}>
-          {innLevel >= 3 ? <path d="M0 75L50 0L100 75L50 150L0 75" /> : null}
-          {innLevel >= 9 ? <path d="M60 75L110 0L160 75L110 150L60 75" /> : null}
-          {innLevel >= 3 ? (
-            <path d="M20 75L50 20L80 75L50 130L20 75" className={styles.InnInner} />
+      {fiLevel === undefined ? null : (
+        <svg viewBox={fiLevel >= 9 ? "0 0 160 150" : "0 0 100 150"} className={styles.Fi}>
+          {fiLevel >= 3 ? <path d="M0 75L50 0L100 75L50 150L0 75" /> : null}
+          {fiLevel >= 9 ? <path d="M60 75L110 0L160 75L110 150L60 75" /> : null}
+          {fiLevel >= 3 ? (
+            <path d="M20 75L50 20L80 75L50 130L20 75" className={styles.FiInner} />
           ) : null}
-          {innLevel >= 9 ? (
-            <path d="M80 75L110 20L140 75L110 130L80 75" className={styles.InnInner} />
+          {fiLevel >= 9 ? (
+            <path d="M80 75L110 20L140 75L110 130L80 75" className={styles.FiInner} />
           ) : null}
         </svg>
       )}

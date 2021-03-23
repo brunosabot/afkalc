@@ -48,8 +48,6 @@ export default function migratePriorityList(id: string): Promise<void> {
                 legacyId: `${userData.shareId}$${list.id}`,
               };
 
-              console.log(data, newPriorityList)
-
               return newPriorityListCollection.add(newPriorityList);
             });
 

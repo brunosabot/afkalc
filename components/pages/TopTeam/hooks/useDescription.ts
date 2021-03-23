@@ -21,7 +21,7 @@ interface ISi {
   5?: number;
 }
 
-interface IInn {
+interface IFi {
   1?: number;
   2?: number;
   3?: number;
@@ -43,10 +43,10 @@ function getSi(si: number | undefined) {
   return ` +${si}`;
 }
 
-function getInn(inn: number | undefined) {
-  if (inn === undefined) return "";
-  if (inn <= 0) return "";
-  return ` ${inn}/9`;
+function getFi(fi: number | undefined) {
+  if (fi === undefined) return "";
+  if (fi <= 0) return "";
+  return ` ${fi}/9`;
 }
 
 function displayArtifact(t: TFunction, artifact: Artifact) {
@@ -55,7 +55,7 @@ function displayArtifact(t: TFunction, artifact: Artifact) {
   return "";
 }
 
-export default function useDescription(heroes: ITeam, si: ISi, inn: IInn, artifact: IArtifact) {
+export default function useDescription(heroes: ITeam, si: ISi, fi: IFi, artifact: IArtifact) {
   const { t } = useTranslation("common");
   const { getHero } = useHero();
   const { getArtifact } = useArtifact();
@@ -76,30 +76,30 @@ export default function useDescription(heroes: ITeam, si: ISi, inn: IInn, artifa
     const description = [];
     if (hero1Data !== undefined) {
       description.push(
-        `${hero1Data.name}${getSi(si[1])}${getInn(inn[1])} ${displayArtifact(t, artifact1Data)}`
+        `${hero1Data.name}${getSi(si[1])}${getFi(fi[1])} ${displayArtifact(t, artifact1Data)}`
       );
     }
     if (hero2Data !== undefined) {
       description.push(
-        `${hero2Data.name}${getSi(si[2])}${getInn(inn[2])} ${displayArtifact(t, artifact2Data)}`
+        `${hero2Data.name}${getSi(si[2])}${getFi(fi[2])} ${displayArtifact(t, artifact2Data)}`
       );
     }
     if (hero3Data !== undefined) {
       description.push(
-        `${hero3Data.name}${getSi(si[3])}${getInn(inn[3])} ${displayArtifact(t, artifact3Data)}`
+        `${hero3Data.name}${getSi(si[3])}${getFi(fi[3])} ${displayArtifact(t, artifact3Data)}`
       );
     }
     if (hero4Data !== undefined) {
       description.push(
-        `${hero4Data.name}${getSi(si[4])}${getInn(inn[4])} ${displayArtifact(t, artifact4Data)}`
+        `${hero4Data.name}${getSi(si[4])}${getFi(fi[4])} ${displayArtifact(t, artifact4Data)}`
       );
     }
     if (hero5Data !== undefined) {
       description.push(
-        `${hero5Data.name}${getSi(si[5])}${getInn(inn[5])} ${displayArtifact(t, artifact5Data)}`
+        `${hero5Data.name}${getSi(si[5])}${getFi(fi[5])} ${displayArtifact(t, artifact5Data)}`
       );
     }
 
     return description.join(" - ").replace(/\s\s+/g, " ");
-  }, [artifact, getArtifact, getHero, heroes, inn, si, t]);
+  }, [artifact, getArtifact, getHero, heroes, fi, si, t]);
 }

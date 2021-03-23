@@ -20,7 +20,7 @@ interface ISi {
   5?: number;
 }
 
-interface IInn {
+interface IFi {
   1?: number;
   2?: number;
   3?: number;
@@ -39,11 +39,11 @@ interface IArtifact {
 interface IProps {
   team: ITeam;
   si: ISi;
-  inn: IInn;
+  fi: IFi;
   artifact: IArtifact;
 }
 
-const ShareBanner: React.FC<IProps> = ({ team = {}, si = {}, inn = {}, artifact = {} }) => {
+const ShareBanner: React.FC<IProps> = ({ team = {}, si = {}, fi = {}, artifact = {} }) => {
   const { t } = useTranslation("top-team");
   const router = useRouter();
   const localePath = router.locale === router.defaultLocale ? "" : `/${router.locale}`;
@@ -61,11 +61,11 @@ const ShareBanner: React.FC<IProps> = ({ team = {}, si = {}, inn = {}, artifact 
   const s4 = String.fromCharCode((si[4] || 0) + 48);
   const s5 = String.fromCharCode((si[5] || 0) + 48);
   const sCode = encodeURIComponent(`${s1}${s2}${s3}${s4}${s5}`);
-  const i1 = String.fromCharCode((inn[1] || 0) + 48);
-  const i2 = String.fromCharCode((inn[2] || 0) + 48);
-  const i3 = String.fromCharCode((inn[3] || 0) + 48);
-  const i4 = String.fromCharCode((inn[4] || 0) + 48);
-  const i5 = String.fromCharCode((inn[5] || 0) + 48);
+  const i1 = String.fromCharCode((fi[1] || 0) + 48);
+  const i2 = String.fromCharCode((fi[2] || 0) + 48);
+  const i3 = String.fromCharCode((fi[3] || 0) + 48);
+  const i4 = String.fromCharCode((fi[4] || 0) + 48);
+  const i5 = String.fromCharCode((fi[5] || 0) + 48);
   const iCode = encodeURIComponent(`${i1}${i2}${i3}${i4}${i5}`);
   const a1 = String.fromCharCode((artifact[1] || 0) + 48);
   const a2 = String.fromCharCode((artifact[2] || 0) + 48);
