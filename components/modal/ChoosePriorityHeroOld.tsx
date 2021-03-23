@@ -62,7 +62,8 @@ const ChoosePriorityHeroOld: React.FC<Props> = ({
               fi,
               ascend,
               si: parseInt(value, 10) || 0,
-            })}
+            })
+          }
         />
         <InputField
           style={{ width: "60px" }}
@@ -76,7 +77,8 @@ const ChoosePriorityHeroOld: React.FC<Props> = ({
               fi: parseInt(value, 10) || 0,
               ascend,
               si,
-            })}
+            })
+          }
         />
         <SelectField
           values={ascendLevels.map((level) => ({
@@ -94,7 +96,8 @@ const ChoosePriorityHeroOld: React.FC<Props> = ({
               fi,
               ascend: parseInt(value, 10) || 0,
               si,
-            })}
+            })
+          }
         />
       </div>
 
@@ -111,7 +114,8 @@ const ChoosePriorityHeroOld: React.FC<Props> = ({
                     fi,
                     ascend,
                     si,
-                  })}
+                  })
+                }
                 highlight={thisId === id}
               />
             ))}

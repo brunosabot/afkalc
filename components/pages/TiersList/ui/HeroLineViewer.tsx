@@ -1,5 +1,5 @@
-import { mdiCheck } from "@mdi/js";
-import React from "react";
+import { mdiCheck, mdiRestore } from "@mdi/js";
+import React, { useCallback } from "react";
 import ascendLevels from "../../../../data/heroAscensionLevel.json";
 import { useTranslation } from "../../../../i18n";
 import { IFirebaseHeroesHero } from "../../../providers/types/IFirebaseHeroes";
@@ -20,10 +20,22 @@ interface IProps {
   hero: IFirebasePriorityListHero;
   setLevel: UseSetLevelReturn;
   heroLevels?: IFirebaseHeroesHero;
+  initialHeroLevels?: IFirebaseHeroesHero;
   priorityList: IFirebasePriorityList;
 }
 
-const HeroLineViewer: React.FC<IProps> = ({ hero, priorityList, setLevel, heroLevels }) => {
+function compare(a: IFirebaseHeroesHero | undefined, b: IFirebaseHeroesHero | undefined) {
+  if (a === b) return true;
+  return a?.ascend === b?.ascend && a?.si === b?.si && a?.fi === b?.fi && a?.link === b?.link;
+}
+
+const HeroLineViewer: React.FC<IProps> = ({
+  hero,
+  priorityList,
+  setLevel,
+  heroLevels,
+  initialHeroLevels,
+}) => {
   const { getHero } = useHero();
   const { requirement, requirementValue } = priorityList;
 
@@ -39,11 +51,22 @@ const HeroLineViewer: React.FC<IProps> = ({ hero, priorityList, setLevel, heroLe
 
   const onDone = useOnDone(requirement, requirementValue, hero, setLevel, hasSelfRequirements);
 
-  if (hero.hero === undefined) return null;
-
   const { id, name } = getHero(hero.hero) ?? { id: 0, name: "" };
   const isDone = isValidList && (isValidSelf || hasSelfRequirements === false);
   const ascendLevelName = (ascendLevels.find((l) => l.key === hero.ascend) || {}).name;
+
+  const onRestore = useCallback(() => {
+    setLevel(hero.hero, "SI", initialHeroLevels?.si ?? 0)
+      .again(hero.hero, "FI", initialHeroLevels?.fi ?? 0)
+      .again(hero.hero, "ASCEND", initialHeroLevels?.ascend ?? 0)
+      .commit();
+  }, [
+    hero.hero,
+    initialHeroLevels?.ascend,
+    initialHeroLevels?.fi,
+    initialHeroLevels?.si,
+    setLevel,
+  ]);
 
   return (
     <div key={id} className={`${styles.Item} ${isDone ? styles.IsOk : ""}`}>
@@ -66,9 +89,15 @@ const HeroLineViewer: React.FC<IProps> = ({ hero, priorityList, setLevel, heroLe
       {isDone ? null : (
         <button className={styles.Button} type="button" onClick={onDone}>
           <Svg d={mdiCheck} />
-          Fait
+          {t("label-done")}
         </button>
       )}
+      {isDone && compare(initialHeroLevels, heroLevels) === false ? (
+        <button className={styles.Button} type="button" onClick={onRestore}>
+          <Svg d={mdiRestore} />
+          {t("label-restore")}
+        </button>
+      ) : null}
     </div>
   );
 };
