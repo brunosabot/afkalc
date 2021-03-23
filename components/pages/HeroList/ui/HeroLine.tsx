@@ -5,15 +5,16 @@ import ChooseHero from "../../../modal/ChooseHero";
 import { IFirebaseHeroesHero } from "../../../providers/types/IFirebaseHeroes";
 import Character from "../../../ui/afk/Character";
 import Svg from "../../../ui/Svg";
+import { UseSetLevelReturn } from "../../TiersList/hooks/useSetLevel";
 import AscendField from "./AscendField";
-import InnField from "./FiField";
+import FiField from "./FiField";
 import styles from "./HeroLine.module.css";
 import SiField from "./SiField";
 
 interface IProps {
   id: number;
   name: string;
-  setLevel: (id: number, field: keyof IFirebaseHeroesHero, value: number) => void;
+  setLevel: UseSetLevelReturn;
   getValue: (id: number, field: keyof IFirebaseHeroesHero) => number;
   isView: boolean;
   shouldUnlockFi?: boolean;
@@ -67,7 +68,7 @@ const HeroLine: React.FC<IProps> = ({
       <span className={styles.Name}>{name}</span>
 
       <SiField id={id} setLevel={setLevel} getValue={getValue} isView={isView} />
-      <InnField
+      <FiField
         id={id}
         setLevel={setLevel}
         getValue={getValue}
@@ -82,7 +83,7 @@ const HeroLine: React.FC<IProps> = ({
             onlyHero
             current={link ? [link] : []}
             onSelect={(_, heroId) => {
-              setLevel(id, "link", heroId);
+              setLevel(id, "LINK", heroId).commit();
               setShowModal(false);
             }}
           />

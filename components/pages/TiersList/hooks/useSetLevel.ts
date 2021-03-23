@@ -38,11 +38,10 @@ export default function useSetLevel(
       };
 
     const lowercaseKey = key.toLowerCase() as keyof IFirebaseHeroesHero;
-    const currentValue = (newHeroes[hero] ? newHeroes[hero][lowercaseKey] : null) ?? 0;
 
-    if (key !== "" && currentValue < value) {
+    if (key !== "") {
       newHeroes[hero] = newHeroes[hero] || {};
-      newHeroes[hero][lowercaseKey] = value;
+      newHeroes[hero][lowercaseKey] = value || 0;
     }
 
     return {

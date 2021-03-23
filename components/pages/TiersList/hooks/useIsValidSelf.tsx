@@ -16,7 +16,7 @@ export default function useIsValidSelf(
 
   const heroLevelAscend = theHeroLevels.ascend || 0;
   const heroLevelSi = theHeroLevels.si || 0;
-  const heroLevelFi = theHeroLevels.inn || 0;
+  const heroLevelFi = theHeroLevels.fi || 0;
 
   const heroRequirementAscend = theHeroRequirement.ascend || 0;
   const heroRequirementSi = theHeroRequirement.si || 0;

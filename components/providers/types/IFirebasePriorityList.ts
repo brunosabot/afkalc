@@ -1,4 +1,4 @@
-export type IFirebasePriorityListRequirement = "" | "SI" | "FI" | "ASCEND";
+export type IFirebasePriorityListRequirement = "" | "SI" | "FI" | "ASCEND" | "LINK";
 
 export interface IFirebasePriorityListHero {
   fi: number;

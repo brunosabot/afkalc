@@ -4,10 +4,11 @@ import { useTranslation } from "../../../../i18n";
 import { IFirebaseHeroesHero } from "../../../providers/types/IFirebaseHeroes";
 import InputField from "../../../ui/InputField";
 import SelectField from "../../../ui/SelectField";
+import { UseSetLevelReturn } from "../../TiersList/hooks/useSetLevel";
 
 interface IProps {
   id: number;
-  setLevel: (id: number, field: "ascend", value: number) => void;
+  setLevel: UseSetLevelReturn;
   getValue: (id: number, field: keyof IFirebaseHeroesHero) => number;
   isView: boolean;
 }
@@ -34,7 +35,7 @@ const AscendField: React.FC<IProps> = ({ id, setLevel, getValue, isView }) => {
   return (
     <SelectField
       name={`ascension-${id}`}
-      onChange={(value) => setLevel(id, "ascend", parseInt(value || "0", 10))}
+      onChange={(value) => setLevel(id, "ASCEND", parseInt(value || "0", 10)).commit()}
       value={getValue(id, "ascend")}
       label=""
       small
