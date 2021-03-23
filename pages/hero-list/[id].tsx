@@ -14,10 +14,7 @@ import ShareBanner from "../../components/pages/HeroList/ui/ShareBanner";
 import TitleLine from "../../components/pages/HeroList/ui/TitleLine";
 import useSetLevel from "../../components/pages/TiersList/hooks/useSetLevel";
 import ProfileContext from "../../components/providers/ProfileContext";
-import IFirebaseHeroes, {
-  IFirebaseHeroesHero,
-} from "../../components/providers/types/IFirebaseHeroes";
-import { IFirebasePriorityListRequirement } from "../../components/providers/types/IFirebasePriorityList";
+import IFirebaseHeroes from "../../components/providers/types/IFirebaseHeroes";
 import LoginButton from "../../components/ui/button/LoginButton";
 import Card from "../../components/ui/card/Card";
 import CardHelp from "../../components/ui/card/CardHelp";
@@ -101,10 +98,7 @@ const HeroList: React.FC<IProps> = () => {
                 <HeroLine
                   id={character.id}
                   name={character.name}
-                  setLevel={(heroId: number, key: keyof IFirebaseHeroesHero, value: number) => {
-                    const type = key.toUpperCase() as IFirebasePriorityListRequirement;
-                    setLevel(heroId, type, value).commit();
-                  }}
+                  setLevel={setLevel}
                   getValue={getValue}
                   isView={isSelf === false}
                   faction={character.faction}

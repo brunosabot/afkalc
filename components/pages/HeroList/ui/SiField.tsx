@@ -1,10 +1,11 @@
 import React from "react";
 import { IFirebaseHeroesHero } from "../../../providers/types/IFirebaseHeroes";
 import InputField from "../../../ui/InputField";
+import { UseSetLevelReturn } from "../../TiersList/hooks/useSetLevel";
 
 interface IProps {
   id: number;
-  setLevel: (id: number, field: "si", value: number) => void;
+  setLevel: UseSetLevelReturn;
   getValue: (id: number, field: keyof IFirebaseHeroesHero) => number;
   isView: boolean;
 }
@@ -16,7 +17,7 @@ const SiField: React.FC<IProps> = ({ id, setLevel, getValue, isView }) => {
     <InputField
       label=""
       small
-      onChange={(v) => setLevel(id, "si", parseInt(v, 10))}
+      onChange={(v) => setLevel(id, "SI", parseInt(v, 10)).commit()}
       value={value === 0 ? "" : value}
       disabled={getValue(id, "ascend") < 5}
       readOnly={isView}

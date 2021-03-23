@@ -26,16 +26,25 @@ export default function migratePriorityList(id: string): Promise<void> {
               const newPriorityList: IFirebasePriorityList = {
                 ownerId: data.owner,
                 title: data.title,
-                heroes: data.heroes.map((priorityHero: any) => ({
-                  fi: priorityHero.fi,
-                  si: priorityHero.si,
-                  ascend: priorityHero.ascend,
-                  hero: priorityHero.id,
-                })),
+                heroes: data.heroes.map((priorityHero: any) => {
+                  console.log(priorityHero, typeof priorityHero)
+                  if (typeof priorityHero === "number") {
+                    return { hero: priorityHero };
+                  }
+
+                  return {
+                    fi: priorityHero.fi,
+                    si: priorityHero.si,
+                    ascend: priorityHero.ascend,
+                    hero: priorityHero.id,
+                  };
+                }),
                 requirement: data.type ?? "",
                 requirementValue: data.value ?? 0,
                 legacyId: `${userData.shareId}$${list.id}`,
               };
+
+              console.log(data, newPriorityList)
 
               return newPriorityListCollection.add(newPriorityList);
             });
