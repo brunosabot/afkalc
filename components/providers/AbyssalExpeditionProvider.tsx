@@ -3,7 +3,7 @@ import useFirestoreDocument from "../hooks/useFirestoreDocument";
 import useFirestoreDocumentReference from "../hooks/useFirestoreDocumentReference";
 import AbyssalExpeditionContext, {
   defaultValues,
-  IAbyssalExpeditionContext,
+  IAbyssalExpeditionContext
 } from "./AbyssalExpeditionContext";
 import IFirebaseAbyssalExpedition from "./types/IFirebaseAbyssalExpedition";
 
@@ -22,20 +22,20 @@ const AbyssalExpeditionProvider: React.FC<IProps> = ({ children }) => {
   const load = useCallback(() => setLazy(false), []);
 
   const setCurrentRelics = useCallback(
-    async (newCurrentRelic) => {
-      await abyssalExpeditionDocument?.set({ currentRelic: newCurrentRelic }, { merge: true });
+    async (newCurrentRelics) => {
+      await abyssalExpeditionDocument?.set({ currentRelics: newCurrentRelics }, { merge: true });
     },
     [abyssalExpeditionDocument]
   );
   const setGoalRelics = useCallback(
-    async (newGoalRelic) => {
-      await abyssalExpeditionDocument?.set({ goalRelic: newGoalRelic }, { merge: true });
+    async (newGoalRelics) => {
+      await abyssalExpeditionDocument?.set({ goalRelics: newGoalRelics }, { merge: true });
     },
     [abyssalExpeditionDocument]
   );
   const setRelicInventory = useCallback(
-    async (newInventory) => {
-      await abyssalExpeditionDocument?.set({ inventory: newInventory }, { merge: true });
+    async (newRelicInventory) => {
+      await abyssalExpeditionDocument?.set({ relicInventory: newRelicInventory }, { merge: true });
     },
     [abyssalExpeditionDocument]
   );
