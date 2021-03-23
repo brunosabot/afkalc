@@ -1,7 +1,7 @@
 {
   "help": "When you wait long enough before passing a level, you can ensure having some loots. By having your campaign level and the last success date, you will have the timing for the next loot you need.",
   "form-title": "First, set your campaign progress",
-  "label-campaign-level": "Campaign level",
+  "label-campaign-level": "Campaign level (eg. 34-40)",
   "result-title": "You will have 100% chance drop by clearing the stage for :",
   "label-stage-date": "Stage start date",
   "label-stage-now": "Set now",

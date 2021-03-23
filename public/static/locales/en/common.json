@@ -98,11 +98,15 @@
     "blade": "Dura's Blade",
     "chalice": "Dura's Chalice of Vitality",
     "conviction": "Dura's Conviction",
-    "tank": "The Barricade",
-    "warrior": "Chaos Bringer",
-    "support": "Tidebearer",
-    "mage": "Windbinder",
-    "ranger": "Shroud of Verdure"
+    "barricade": "The Barricade",
+    "waistband": "Waistband of Resilience",
+    "chaos-bringer": "Chaos Bringer",
+    "carnage": "Carnage",
+    "windbinder": "Windbinder",
+    "warden": "Warden of the Arcane",
+    "tidebearer": "Tidebearer",
+    "seraphic-tide": "Seraphic Tide",
+    "shroud": "Shroud of Verdure"
   },
   "concept": {
     "si": "SI",

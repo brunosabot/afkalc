@@ -98,11 +98,15 @@
     "blade": "Lame de Dura",
     "chalice": "Calice de vitalité de Dura",
     "conviction": "Conviction de Dura",
-    "tank": "La barricade",
-    "warrior": "Héraut du chaos",
-    "support": "Vague irrésistible",
-    "mage": "Grimoire des vents",
-    "ranger": "Voile de verdure"
+    "barricade": "La barricade",
+    "waistband": "Ceinturon de résilience",
+    "chaos-bringer": "Héraut du chaos",
+    "carnage": "Carnage",
+    "windbinder": "Grimoire des vents",
+    "warden": "Gardien de l'arcane",
+    "tidebearer": "Vague irrésistible",
+    "seraphic-tide": "Onde séraphique",
+    "shroud": "Voile de verdure"
   },
   "concept": {
     "si": "SI",
