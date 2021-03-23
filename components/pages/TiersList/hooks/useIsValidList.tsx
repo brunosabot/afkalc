@@ -40,12 +40,12 @@ export default function useIsValidList(
 
   let isValidListFi = false;
   if (priorityList.requirement === "FI") {
-    if (theHeroLevels.inn === undefined) {
+    if (theHeroLevels.fi === undefined) {
       isValidListFi = false;
     } else if (priorityList.requirementValue === undefined) {
       isValidListFi = true;
     } else {
-      isValidListFi = priorityList.requirementValue <= theHeroLevels.inn;
+      isValidListFi = priorityList.requirementValue <= theHeroLevels.fi;
     }
   }
 

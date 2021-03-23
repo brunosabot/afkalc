@@ -3,7 +3,7 @@ import React from "react";
 import ascendLevels from "../../../../data/heroAscensionLevel.json";
 import { useTranslation } from "../../../../i18n";
 import IFirebasePriorityList, {
-  IFirebasePriorityListHero,
+  IFirebasePriorityListHero
 } from "../../../providers/types/IFirebasePriorityList";
 import Character from "../../../ui/afk/Character";
 import Svg from "../../../ui/Svg";
@@ -18,7 +18,7 @@ import styles from "./Viewer.module.css";
 interface IProps {
   hero: IFirebasePriorityListHero;
   setLevel: UseSetLevelReturn;
-  heroLevels?: { si?: number; inn?: number; ascend?: number };
+  heroLevels?: IFirebasePriorityListHero;
   priorityList: IFirebasePriorityList;
 }
 
@@ -46,7 +46,7 @@ const HeroLineViewer: React.FC<IProps> = ({ hero, priorityList, setLevel, heroLe
 
   return (
     <div key={id} className={`${styles.Item} ${isDone ? styles.IsOk : ""}`}>
-      <Character id={id} ascendLevel={hero.ascend} innLevel={hero.fi} siLevel={hero.si} />
+      <Character id={id} ascendLevel={hero.ascend} fiLevel={hero.fi} siLevel={hero.si} />
       <div className={styles.Infos}>
         <span className={styles.Name}>{name}</span>
         <span>

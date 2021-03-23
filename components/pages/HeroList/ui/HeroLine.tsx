@@ -60,7 +60,7 @@ const HeroLine: React.FC<IProps> = ({
         ascendLevel={getValue(id, "ascend")}
         disabled={getValue(id, "ascend") === 0}
         siLevel={getValue(id, "si")}
-        innLevel={getValue(id, "fi")}
+        fiLevel={getValue(id, "fi")}
       />
 
       {linkElement}

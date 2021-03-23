@@ -43,7 +43,7 @@ const HeroLine: React.FC<Props> = ({
         onClick={() => setShowModal(true)}
         ascendLevel={theHero.ascend}
         siLevel={theHero.si}
-        innLevel={theHero.fi}
+        fiLevel={theHero.fi}
       />
       <span className={styles.Name}>{name}</span>
 

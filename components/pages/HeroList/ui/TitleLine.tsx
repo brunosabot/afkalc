@@ -14,7 +14,7 @@ const TitleLine: React.FC<IProps> = () => {
       <span className={styles.Image} />
       <div className={styles.Name} />
       <div className={styles.Label}>{t("label-si")}</div>
-      <div className={styles.Label}>{t("label-inn")}</div>
+      <div className={styles.Label}>{t("label-fi")}</div>
       <div className={styles.Placeholder} />
     </div>
   );

@@ -36,7 +36,7 @@ interface Props {
 
 const ChooseHero: React.FC<Props> = ({
   onlyHero = false,
-  current: [currentId, si, inn, currentArtifact],
+  current: [currentId, si, fi, currentArtifact],
   onSelect,
 }) => {
   const { t } = useTranslation("common");
@@ -56,9 +56,9 @@ const ChooseHero: React.FC<Props> = ({
           <InputField
             style={{ width: "60px" }}
             small
-            name="inn"
-            label={t(`concept.inn`)}
-            value={inn}
+            name="fi"
+            label={t(`concept.fi`)}
+            value={fi}
             onChange={(value) => onSelect(DetailType.INN, parseInt(value, 10))}
           />
         </div>

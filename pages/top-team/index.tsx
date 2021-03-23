@@ -15,21 +15,21 @@ interface Props {
 const TopTeam: React.FC<Props> = () => {
   const [team, setTeam] = useState({ 1: 0, 2: 0, 3: 0, 4: 0, 5: 0, 6: 0 });
   const [siList, setSiList] = useState({ 1: 0, 2: 0, 3: 0, 4: 0, 5: 0 });
-  const [innList, setInnList] = useState({ 1: 0, 2: 0, 3: 0, 4: 0, 5: 0 });
+  const [fiList, setFiList] = useState({ 1: 0, 2: 0, 3: 0, 4: 0, 5: 0 });
   const [artifactList, setArtifactList] = useState({ 1: 0, 2: 0, 3: 0, 4: 0, 5: 0 });
 
   const onSelect = useCallback(
     (type: DetailType, position: number) => (value: number) => {
       if (type === DetailType.HERO) setTeam({ ...team, [position]: value });
       if (type === DetailType.SI) setSiList({ ...siList, [position]: value });
-      if (type === DetailType.INN) setInnList({ ...innList, [position]: value });
+      if (type === DetailType.INN) setFiList({ ...fiList, [position]: value });
       if (type === DetailType.ARTIFACT) setArtifactList({ ...artifactList, [position]: value });
     },
-    [artifactList, innList, siList, team]
+    [artifactList, fiList, siList, team]
   );
 
   const title = useTitle(team[6]);
-  const description = useDescription(team, siList, innList, artifactList);
+  const description = useDescription(team, siList, fiList, artifactList);
 
   return (
     <Card>
@@ -38,13 +38,13 @@ const TopTeam: React.FC<Props> = () => {
         <meta name="description" content={description} />
       </Head>
       <Board>
-        <ShareBanner team={team} si={siList} inn={innList} artifact={artifactList} />
+        <ShareBanner team={team} si={siList} fi={fiList} artifact={artifactList} />
         <PlayerPosition
           onSelect={onSelect}
           position={1}
           hero={team[1]}
           si={siList[1]}
-          inn={innList[1]}
+          fi={fiList[1]}
           artifact={artifactList[1]}
         />
         <PlayerPosition
@@ -52,7 +52,7 @@ const TopTeam: React.FC<Props> = () => {
           position={2}
           hero={team[2]}
           si={siList[2]}
-          inn={innList[2]}
+          fi={fiList[2]}
           artifact={artifactList[2]}
         />
         <PlayerPosition
@@ -60,7 +60,7 @@ const TopTeam: React.FC<Props> = () => {
           position={3}
           hero={team[3]}
           si={siList[3]}
-          inn={innList[3]}
+          fi={fiList[3]}
           artifact={artifactList[3]}
         />
         <PlayerPosition
@@ -68,7 +68,7 @@ const TopTeam: React.FC<Props> = () => {
           position={4}
           hero={team[4]}
           si={siList[4]}
-          inn={innList[4]}
+          fi={fiList[4]}
           artifact={artifactList[4]}
         />
         <PlayerPosition
@@ -76,7 +76,7 @@ const TopTeam: React.FC<Props> = () => {
           position={5}
           hero={team[5]}
           si={siList[5]}
-          inn={innList[5]}
+          fi={fiList[5]}
           artifact={artifactList[5]}
         />
       </Board>

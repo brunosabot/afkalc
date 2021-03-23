@@ -5,7 +5,7 @@ import { State } from "./useFilters";
 import useGetValue from "./useGetValue";
 
 interface IHeroLevels {
-  inn?: number;
+  fi?: number;
   si?: number;
   ascend?: number;
   link?: number;

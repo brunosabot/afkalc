@@ -1,7 +1,7 @@
 export default interface IHeroDetails {
   id?: number;
   fi?: number;
-  inn?: number;
+  fi?: number;
   ascend?: number;
   si?: number;
 }

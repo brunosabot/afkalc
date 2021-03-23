@@ -9,12 +9,12 @@ interface Props {
   position: number;
   hero?: number;
   si?: number;
-  inn?: number;
+  fi?: number;
   artifact?: number;
   onSelect: (type: DetailType, position: number) => (value: number) => void;
 }
 
-const PlayerPosition: React.FC<Props> = ({ hero, position, onSelect, si, inn, artifact }) => {
+const PlayerPosition: React.FC<Props> = ({ hero, position, onSelect, si, fi, artifact }) => {
   const [showModal, setShowModal] = useState<boolean>(false);
   const { getHero } = useHero();
   const { id, name } = getHero(hero) ?? { id: 0, name: "" };
@@ -27,7 +27,7 @@ const PlayerPosition: React.FC<Props> = ({ hero, position, onSelect, si, inn, ar
             name={name}
             onClick={() => setShowModal(true)}
             siLevel={si}
-            innLevel={inn}
+            fiLevel={fi}
             artifact={artifact}
           />
         ) : (
@@ -38,7 +38,7 @@ const PlayerPosition: React.FC<Props> = ({ hero, position, onSelect, si, inn, ar
       </div>
       <Modal active={showModal} onClose={() => setShowModal(false)}>
         <ChooseHero
-          current={[id, si || 0, inn || 0, artifact || 0]}
+          current={[id, si || 0, fi || 0, artifact || 0]}
           onSelect={(type, heroId) => {
             onSelect(type, position)(heroId);
           }}

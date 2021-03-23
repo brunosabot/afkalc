@@ -42,7 +42,6 @@ const ChoosePriorityHeroOld: React.FC<Props> = ({
   fi = 0,
   ascend = 0,
   id = 0,
-  // current: [currentId, si, inn, ascend],
   onSelect,
 }) => {
   const { t } = useTranslation("common");
@@ -63,14 +62,13 @@ const ChoosePriorityHeroOld: React.FC<Props> = ({
               fi,
               ascend,
               si: parseInt(value, 10) || 0,
-            })
-          }
+            })}
         />
         <InputField
           style={{ width: "60px" }}
           small
           name="fi"
-          label={t(`concept.inn`)}
+          label={t(`concept.fi`)}
           value={fi}
           onChange={(value) =>
             onSelect({
@@ -78,8 +76,7 @@ const ChoosePriorityHeroOld: React.FC<Props> = ({
               fi: parseInt(value, 10) || 0,
               ascend,
               si,
-            })
-          }
+            })}
         />
         <SelectField
           values={ascendLevels.map((level) => ({
@@ -97,8 +94,7 @@ const ChoosePriorityHeroOld: React.FC<Props> = ({
               fi,
               ascend: parseInt(value, 10) || 0,
               si,
-            })
-          }
+            })}
         />
       </div>
 
@@ -115,8 +111,7 @@ const ChoosePriorityHeroOld: React.FC<Props> = ({
                     fi,
                     ascend,
                     si,
-                  })
-                }
+                  })}
                 highlight={thisId === id}
               />
             ))}

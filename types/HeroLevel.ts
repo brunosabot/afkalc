@@ -1,3 +1,3 @@
-type HeroLevel = "inn" | "si" | "ascend" | "link";
+type HeroLevel = "fi" | "si" | "ascend" | "link";
 
 export default HeroLevel;

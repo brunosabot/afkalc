@@ -3,7 +3,7 @@ import { useCallback } from "react";
 import HeroLevel from "../../../../types/HeroLevel";
 
 interface IHeroLevels {
-  inn?: number;
+  fi?: number;
   si?: number;
   ascend?: number;
 }
