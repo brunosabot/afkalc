@@ -2,6 +2,7 @@ import { mdiCheck } from "@mdi/js";
 import React from "react";
 import ascendLevels from "../../../../data/heroAscensionLevel.json";
 import { useTranslation } from "../../../../i18n";
+import { IFirebaseHeroesHero } from "../../../providers/types/IFirebaseHeroes";
 import IFirebasePriorityList, {
   IFirebasePriorityListHero
 } from "../../../providers/types/IFirebasePriorityList";
@@ -18,7 +19,7 @@ import styles from "./Viewer.module.css";
 interface IProps {
   hero: IFirebasePriorityListHero;
   setLevel: UseSetLevelReturn;
-  heroLevels?: IFirebasePriorityListHero;
+  heroLevels?: IFirebaseHeroesHero;
   priorityList: IFirebasePriorityList;
 }
 
