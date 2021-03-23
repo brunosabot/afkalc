@@ -1,6 +1,6 @@
 import {
   IFirebasePriorityListHero,
-  IFirebasePriorityListRequirement
+  IFirebasePriorityListRequirement,
 } from "../../../providers/types/IFirebasePriorityList";
 import { UseSetLevelReturn } from "./useSetLevel";
 
@@ -11,19 +11,20 @@ export default function useOnDone(
   setLevel: UseSetLevelReturn,
   hasSelfRequirements: boolean = false
 ): () => Promise<any> {
-  if (requirement === "SI") {
-    return () => setLevel(hero.hero, "SI", requirementValue).commit();
-  }
-  if (requirement === "FI") {
-    return () => setLevel(hero.hero, "FI", requirementValue).commit();
-  }
-  if (requirement === "ASCEND") {
-    return () => setLevel(hero.hero, "ASCEND", requirementValue).commit();
-  }
-  if (hasSelfRequirements) {
-    return async () => {
-      let levelSet = setLevel(hero.hero, "", 0);
+  return async () => {
+    let levelSet = setLevel(hero.hero, "", 0);
 
+    if (requirement === "SI") {
+      levelSet = levelSet.again(hero.hero, "SI", requirementValue);
+    }
+    if (requirement === "FI") {
+      levelSet = levelSet.again(hero.hero, "FI", requirementValue);
+    }
+    if (requirement === "ASCEND") {
+      levelSet = levelSet.again(hero.hero, "ASCEND", requirementValue);
+    }
+
+    if (hasSelfRequirements) {
       if (hero.si) {
         levelSet = levelSet.again(hero.hero, "SI", hero.si);
       }
@@ -35,10 +36,8 @@ export default function useOnDone(
       if (hero.ascend) {
         levelSet = levelSet.again(hero.hero, "ASCEND", hero.ascend);
       }
+    }
 
-      await levelSet.commit();
-    };
-  }
-
-  return () => Promise.resolve(undefined);
+    await levelSet.commit();
+  };
 }

@@ -1,9 +1,9 @@
 import { mdiContentCopy, mdiPlaylistCheck } from "@mdi/js";
-import React from "react";
+import React, { useEffect, useMemo, useState } from "react";
 import { useTranslation } from "../../../../i18n";
 import useFirestoreDocument from "../../../hooks/useFirestoreDocument";
 import useFirestoreDocumentReference from "../../../hooks/useFirestoreDocumentReference";
-import IFirebaseHeroes from "../../../providers/types/IFirebaseHeroes";
+import IFirebaseHeroes, { IFirebaseHeroList } from "../../../providers/types/IFirebaseHeroes";
 import IFirebasePriorityList from "../../../providers/types/IFirebasePriorityList";
 import Card from "../../../ui/card/Card";
 import CardAction from "../../../ui/card/CardAction";
@@ -23,11 +23,21 @@ const Viewer: React.FC<IProps> = ({ listId, result }) => {
   const heroDocument = useFirestoreDocumentReference(`heroes/%ID%`);
   const heroResult = useFirestoreDocument<IFirebaseHeroes>(heroDocument);
   const { t } = useTranslation("priority-list");
-  const heroes = heroResult.data?.heroes || [];
+  const heroes = useMemo(() => heroResult.data?.heroes || [], [heroResult.data?.heroes]);
+  const listHeroes = result.heroes.filter((hero) => hero.hero);
   const title = result?.title ?? t("no-name");
+
+  const [initialHeroes, setInitialHeroes] = useState<IFirebaseHeroList>({});
+  useEffect(() => {
+    if (Object.keys(heroes).length > 0 && Object.keys(initialHeroes).length === 0) {
+      setInitialHeroes(JSON.parse(JSON.stringify(heroes)));
+    }
+  }, [heroes, initialHeroes]);
 
   const onDuplicateList = useDuplicateList(result);
   const setLevel = useSetLevel(heroDocument, heroes);
+
+  if (heroResult.status !== "success") return null;
 
   return (
     <>
@@ -39,19 +49,16 @@ const Viewer: React.FC<IProps> = ({ listId, result }) => {
           {title}
         </CardTitle>
 
-        {result.heroes.map((hero) => {
-          if (hero.hero === undefined) return null;
-
-          return (
-            <HeroLineViewer
-              key={`${hero.hero}-${hero.ascend}-${hero.fi}-${hero.si}`}
-              hero={hero}
-              setLevel={setLevel}
-              heroLevels={heroResult.data?.heroes[hero.hero]}
-              priorityList={result}
-            />
-          );
-        })}
+        {listHeroes.map((hero, index) => (
+          <HeroLineViewer
+            key={`${hero.hero}-${hero.ascend}-${hero.fi}-${hero.si}`}
+            hero={hero}
+            setLevel={setLevel}
+            heroLevels={heroes[hero.hero]}
+            priorityList={result}
+            initialHeroLevels={initialHeroes[hero.hero]}
+          />
+        ))}
 
         <CardActions>
           <CardAction icon={mdiContentCopy} onClick={onDuplicateList}>

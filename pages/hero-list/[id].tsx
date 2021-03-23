@@ -56,7 +56,7 @@ const HeroList: React.FC<IProps> = () => {
     if (id && id.length < 12 && userId) {
       window.location.replace(`/hero-list/${userId}`);
     }
-  }, [id, userId])
+  }, [id, userId]);
 
   if (values.isAuth === false) {
     return (
