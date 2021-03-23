@@ -50,8 +50,10 @@ function getFi(fi: number | undefined) {
 }
 
 function displayArtifact(t: TFunction, artifact: Artifact) {
-  const value = t(`artifact.${artifact.name}`);
-  if (value) return `(${value})`;
+  if (artifact.name) {
+    const value = t(`artifact.${artifact.name}`);
+    if (value) return `(${value})`;
+  }
   return "";
 }
 
