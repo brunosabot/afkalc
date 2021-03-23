@@ -1,7 +1,7 @@
 import { mdiViewList } from "@mdi/js";
 import Head from "next/head";
 import { useRouter } from "next/router";
-import React, { useContext, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import useFirestoreDocument from "../../components/hooks/useFirestoreDocument";
 import useFirestoreDocumentReference from "../../components/hooks/useFirestoreDocumentReference";
 import useFilteredHeroes from "../../components/pages/HeroList/hooks/useFilteredHeroes";
@@ -52,6 +52,12 @@ const HeroList: React.FC<IProps> = () => {
 
   const characters = useFilteredHeroes(typedHeroes, heroes, state);
 
+  useEffect(() => {
+    if (id && id.length < 12 && userId) {
+      window.location.replace(`/hero-list/${userId}`);
+    }
+  }, [id, userId])
+
   if (values.isAuth === false) {
     return (
       <Card>
@@ -67,7 +73,8 @@ const HeroList: React.FC<IProps> = () => {
         <Card>
           <CardTitle icon={mdiViewList}>{t("common:menu.hero-list")}</CardTitle>
 
-          {id && id.length < 12 ? <CardHelp>{t("moved")}</CardHelp> : null}
+          {/* TODO: remove when everyone is migrated */}
+          <CardHelp>{t("moved")}</CardHelp>
 
           <ShareBanner isView={isSelf === false} />
           <Head>
