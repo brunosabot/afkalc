@@ -12,7 +12,7 @@ describe("Test RelicDisplay component", () => {
         position={1}
         level={5}
         theClass={HeroClass.ranger}
-        isActive
+        active={0}
         onClick={onClick}
       />
     );
@@ -20,33 +20,6 @@ describe("Test RelicDisplay component", () => {
     fireEvent.click(getByRole("button", {}));
 
     expect(onClick).toHaveBeenCalledTimes(1);
-    expect(onClick).toHaveBeenCalledWith(1, "ranger", 1106);
-  });
-
-  it("Should display the check if active", () => {
-    const { rerender, getByTestId } = render(
-      <RelicDisplay
-        relic={1106}
-        position={1}
-        level={5}
-        theClass={HeroClass.ranger}
-        isActive
-        onClick={jest.fn()}
-      />
-    );
-
-    expect(() => getByTestId("check")).not.toThrow();
-
-    rerender(
-      <RelicDisplay
-        relic={1106}
-        position={1}
-        level={5}
-        theClass={HeroClass.ranger}
-        onClick={jest.fn()}
-      />
-    );
-
-    expect(() => getByTestId("check")).toThrow();
+    expect(onClick).toHaveBeenCalledWith(1, "ranger", 1106, 5);
   });
 });

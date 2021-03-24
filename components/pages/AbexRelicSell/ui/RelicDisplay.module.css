@@ -71,3 +71,8 @@
   right: -8px;
   display: flex;
 }
+
+.Inactive {
+  opacity: 0.5;
+  filter: grayscale(0.8);
+}

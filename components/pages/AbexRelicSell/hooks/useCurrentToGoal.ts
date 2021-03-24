@@ -31,7 +31,7 @@ export default function useCurrentToGoal(
           theTree = theClassTree[newLevel];
 
           // The relic is the current one, we don't need to go further
-          if (theTree[position] === currents[theHeroClass][position]) {
+          if (theTree && theTree[position] === currents[theHeroClass][position]) {
             break;
           }
         }

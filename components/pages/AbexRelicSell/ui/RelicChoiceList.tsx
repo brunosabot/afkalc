@@ -10,6 +10,7 @@ import styles from "./RelicChoiceList.module.css";
 import RelicDisplay from "./RelicDisplay";
 
 const heroClasses = heroClassData as HeroClass[];
+const abexTree = abexRelicData.tree as Record<HeroClass, Record<RelicLevel, number[]>>
 
 interface IProps {
   current: IFirebaseAbyssalExpeditionClassRelics;
@@ -23,19 +24,31 @@ const RelicChoiceList: React.FC<IProps> = ({ current, setCurrent }) => {
   const [theClass, setTheClass] = useState<HeroClass>(HeroClass.ranger);
 
   const updateCurrent = useCallback(
-    (position: number, relicClass: HeroClass, relic: number) => {
+    (position: number, relicClass: HeroClass, relic: number, currentLevel: number) => {
       const newCurrent = { ...current };
-      newCurrent[relicClass][position - 1] = relic;
+      const currentRelic = newCurrent[relicClass][position-1]
+      const currentRelicLevel = Math.floor(currentRelic / 1000);
+      const targetRelicLevel = Math.floor(relic / 1000);
+
+      if (currentRelicLevel >= targetRelicLevel) {
+        const classTree = abexTree[theClass];
+        const previousLevel = (currentLevel < 1 ? 0 : currentLevel - 1) as RelicLevel;
+
+        newCurrent[relicClass][position - 1] = classTree[previousLevel][position-1];
+      } else {
+        newCurrent[relicClass][position - 1] = relic;
+      }
+
       setCurrent(newCurrent);
     },
-    [current, setCurrent]
+    [current, setCurrent, theClass]
   );
 
   return (
     <div className={styles.Wrapper}>
       <EvenColumn>
         {heroClasses.map((classItem) => (
-          <ButtonClass current={theClass} theClass={HeroClass[classItem]} onClick={setTheClass} />
+          <ButtonClass key={classItem} current={theClass} theClass={HeroClass[classItem]} onClick={setTheClass} />
         ))}
       </EvenColumn>
 
@@ -47,7 +60,7 @@ const RelicChoiceList: React.FC<IProps> = ({ current, setCurrent }) => {
             position={i + 1}
             relic={relic}
             theClass={theClass}
-            isActive={current[theClass].includes(relic)}
+            active={current[theClass][i]}
             onClick={updateCurrent}
           />
         ))}

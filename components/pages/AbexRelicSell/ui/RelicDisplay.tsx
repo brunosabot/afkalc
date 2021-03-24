@@ -1,7 +1,5 @@
-import { mdiCheckBold } from "@mdi/js";
 import React from "react";
 import HeroClass from "../../../../types/HeroClass";
-import Svg from "../../../ui/Svg";
 import styles from "./RelicDisplay.module.css";
 
 interface Props {
@@ -9,8 +7,8 @@ interface Props {
   position: number;
   level: number;
   theClass: HeroClass;
-  isActive?: boolean;
-  onClick: (position: number, theClass: HeroClass, relic: number) => void;
+  active?: number;
+  onClick: (position: number, theClass: HeroClass, relic: number, level:number) => void;
 }
 
 const RelicDisplay: React.FC<Props> = ({
@@ -18,17 +16,18 @@ const RelicDisplay: React.FC<Props> = ({
   position,
   level,
   theClass,
-  isActive = false,
+  active=0,
   onClick,
 }) => {
   const relicClass = styles[`Relic--${level}`];
   const positionClass = styles[`Position--${position}`];
+  const isActive = active >= relic;
 
   return (
     <button
       type="button"
-      className={`${styles.Relic} ${relicClass} ${positionClass}`}
-      onClick={() => onClick(position, theClass, relic)}
+      className={`${styles.Relic} ${relicClass} ${positionClass} ${isActive ? "" : styles.Inactive}`}
+      onClick={() => onClick(position, theClass, relic, level)}
     >
       <img
         key={relic}
@@ -37,12 +36,6 @@ const RelicDisplay: React.FC<Props> = ({
         style={{ height: "100%" }}
         alt={`${relic}`}
       />
-
-      {isActive ? (
-        <span className={styles.Check} data-testid="check">
-          <Svg d={mdiCheckBold} />
-        </span>
-      ) : null}
     </button>
   );
 };
