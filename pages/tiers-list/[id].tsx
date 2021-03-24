@@ -1,3 +1,4 @@
+import { GetStaticPaths } from "next";
 import { useTranslation } from "next-i18next";
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 import Head from "next/head";
@@ -18,6 +19,12 @@ export const getStaticProps = async ({ locale }: { locale: string }) => ({
     ...(await serverSideTranslations(locale, ["common", "priority-list"])),
   },
 });
+
+export const getStaticPaths: GetStaticPaths<{ slug: string }> = async () => ({
+  paths: [],
+  fallback: 'blocking'
+});
+
 interface IProps {
   [key: string]: never;
 }
