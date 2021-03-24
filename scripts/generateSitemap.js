@@ -58,7 +58,7 @@ module.exports = async function generateSiteMap() {
     const route = path.replace("/index", "").replace(/^\//, "");
     languages.forEach((lang) => {
       sitemap.push(`  <url>`);
-      sitemap.push(`    <loc>${`https://afkalc.com/${lang}${route}`.replace("//", "/")}</loc>`);
+      sitemap.push(`    <loc>https://afkalc.com${`/${lang}${route}`.replace("//", "/")}</loc>`);
       sitemap.push(`    <lastmod>${toW3CString(stats.ctime)}</lastmod>`);
       sitemap.push(`  </url>`);
     });

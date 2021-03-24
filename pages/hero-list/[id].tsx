@@ -1,4 +1,5 @@
 import { mdiViewList } from "@mdi/js";
+import { GetStaticPaths } from "next";
 import { useTranslation } from "next-i18next";
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 import Head from "next/head";
@@ -31,6 +32,12 @@ export const getStaticProps = async ({ locale }: { locale: string }) => ({
     ...(await serverSideTranslations(locale, ["common", "hero-list"])),
   },
 });
+
+export const getStaticPaths: GetStaticPaths<{ slug: string }> = async () => ({
+  paths: [],
+  fallback: 'blocking'
+});
+
 const typedHeroes: ICharacter[] = heroesJson as ICharacter[];
 
 interface IProps {
