@@ -1,4 +1,6 @@
 import { mdiChevronTripleUp, mdiHelpBox } from "@mdi/js";
+import { useTranslation } from "next-i18next";
+import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 import Head from "next/head";
 import React, { useCallback, useState } from "react";
 import useCountEmblem from "../../components/pages/SignatureItem/hooks/useCountEmblem";
@@ -8,8 +10,12 @@ import CardHelp from "../../components/ui/card/CardHelp";
 import CardTitle from "../../components/ui/card/CardTitle";
 import InputField from "../../components/ui/InputField";
 import Svg from "../../components/ui/Svg";
-import { useTranslation } from "../../i18n";
 
+export const getStaticProps = async ({ locale }: { locale: string }) => ({
+  props: {
+    ...(await serverSideTranslations(locale, ["common", "signature-item"])),
+  },
+});
 interface IProps {
   [key: string]: never;
 }

@@ -14,6 +14,8 @@ import {
   mdiUpdate,
   mdiViewList,
 } from "@mdi/js";
+import { useTranslation } from "next-i18next";
+import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 import Head from "next/head";
 import React, { useContext } from "react";
 import ProfileContext from "../components/providers/ProfileContext";
@@ -24,7 +26,12 @@ import Card from "../components/ui/card/Card";
 import CardTitle from "../components/ui/card/CardTitle";
 import MenuItem from "../components/ui/menu/MenuItem";
 import MenuItemExternal from "../components/ui/menu/MenuItemExternal";
-import { useTranslation } from "../i18n";
+
+export const getStaticProps = async ({ locale }: { locale: string }) => ({
+  props: {
+    ...(await serverSideTranslations(locale, ["common"])),
+  },
+});
 
 interface IProps {
   [key: string]: never;

@@ -1,6 +1,6 @@
+import { useTranslation } from "next-i18next";
 import { useRouter } from "next/router";
 import React from "react";
-import { useTranslation } from "../../../../i18n";
 import CardShare from "../../../ui/card/CardShare";
 
 interface ITeam {

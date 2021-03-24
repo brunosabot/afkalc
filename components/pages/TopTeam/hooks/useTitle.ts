@@ -1,5 +1,5 @@
+import { useTranslation } from "next-i18next";
 import { useMemo } from "react";
-import { useTranslation } from "../../../../i18n";
 import useEnemi from "./useEnemi";
 
 export default function useTitle(enemi: number) {

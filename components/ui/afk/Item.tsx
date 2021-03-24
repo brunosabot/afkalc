@@ -1,6 +1,6 @@
+import { useTranslation } from "next-i18next";
 import React from "react";
 import resources from "../../../data/resources.json";
-import { useTranslation } from "../../../i18n";
 import styles from "./Item.module.css";
 
 interface IProps {

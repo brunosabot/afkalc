@@ -1,4 +1,6 @@
 import { mdiHelpBox, mdiMap } from "@mdi/js";
+import { useTranslation } from "next-i18next";
+import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 import Head from "next/head";
 import React, { useContext, useEffect, useState } from "react";
 import useCurrentToGoal from "../../components/pages/AbexRelicSell/hooks/useCurrentToGoal";
@@ -13,8 +15,12 @@ import CardTab from "../../components/ui/card/CardTab";
 import CardTabs from "../../components/ui/card/CardTabs";
 import CardTitle from "../../components/ui/card/CardTitle";
 import Svg from "../../components/ui/Svg";
-import { useTranslation } from "../../i18n";
 
+export const getStaticProps = async ({ locale }: { locale: string }) => ({
+  props: {
+    ...(await serverSideTranslations(locale, ["common", "abex-relic-sell"])),
+  },
+});
 interface IProps {
   [key: string]: never;
 }

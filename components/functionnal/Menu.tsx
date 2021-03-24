@@ -1,5 +1,5 @@
+import { useTranslation } from "next-i18next";
 import React, { useContext } from "react";
-import { useTranslation } from "../../i18n";
 import ProfileContext from "../providers/ProfileContext";
 import MenuBurger from "../ui/menu/MenuBurger";
 import MenuToolbar from "../ui/menu/MenuToolbar";

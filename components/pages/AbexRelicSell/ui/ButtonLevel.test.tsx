@@ -2,7 +2,7 @@ import { fireEvent, render } from "@testing-library/react";
 import React from "react";
 import ButtonLevel from "./ButtonLevel";
 
-jest.mock("../../../../i18n");
+// jest.mock("../../../../i18n");
 
 describe("Test ButtonLevel component", () => {
   it("Should give the right level on click", async () => {

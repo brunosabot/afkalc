@@ -1,3 +1,5 @@
+import { useTranslation } from "next-i18next";
+import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 import Head from "next/head";
 import { useRouter } from "next/router";
 import React, { useContext } from "react";
@@ -10,8 +12,12 @@ import IFirebasePriorityList from "../../components/providers/types/IFirebasePri
 import LoginButton from "../../components/ui/button/LoginButton";
 import Card from "../../components/ui/card/Card";
 import CardTitle from "../../components/ui/card/CardTitle";
-import { useTranslation } from "../../i18n";
 
+export const getStaticProps = async ({ locale }: { locale: string }) => ({
+  props: {
+    ...(await serverSideTranslations(locale, ["common", "priority-list"])),
+  },
+});
 interface IProps {
   [key: string]: never;
 }

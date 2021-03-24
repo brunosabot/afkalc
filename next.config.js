@@ -1,4 +1,4 @@
-const { nextI18NextRewrites } = require("next-i18next/rewrites");
+const { i18n } = require("./next-i18next.config");
 const generateSitemap = require("./scripts/generateSitemap");
 
 const localeSubpaths = {
@@ -7,7 +7,7 @@ const localeSubpaths = {
 };
 
 module.exports = {
-  rewrites: async () => nextI18NextRewrites(localeSubpaths),
+  i18n,
   async redirects() {
     return [
       {

@@ -1,6 +1,6 @@
 import { mdiChevronTripleUp } from "@mdi/js";
+import { useTranslation } from "next-i18next";
 import React from "react";
-import { useTranslation } from "../../../../i18n";
 import Item from "../../../ui/afk/Item";
 import Card from "../../../ui/card/Card";
 import CardTitle from "../../../ui/card/CardTitle";

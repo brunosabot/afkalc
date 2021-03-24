@@ -1,3 +1,4 @@
+import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 import Head from "next/head";
 import React, { useCallback, useState } from "react";
 import useDescription from "../../components/pages/TopTeam/hooks/useDescription";
@@ -8,6 +9,11 @@ import ShareBanner from "../../components/pages/TopTeam/ui/ShareBanner";
 import { DetailType } from "../../components/ui/afk/Character";
 import Card from "../../components/ui/card/Card";
 
+export const getStaticProps = async ({ locale }: { locale: string }) => ({
+  props: {
+    ...(await serverSideTranslations(locale, ["common", "top-team"])),
+  },
+});
 interface Props {
   [key: string]: never;
 }

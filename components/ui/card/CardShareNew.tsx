@@ -1,6 +1,6 @@
 import { mdiContentCopy } from "@mdi/js";
+import { useTranslation } from "next-i18next";
 import React, { useCallback, useState } from "react";
-import { useTranslation } from "../../../i18n";
 import Svg from "../Svg";
 import styles from "./CardShareNew.module.css";
 

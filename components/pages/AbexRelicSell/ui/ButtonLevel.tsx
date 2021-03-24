@@ -1,5 +1,5 @@
+import { useTranslation } from "next-i18next";
 import React from "react";
-import { useTranslation } from "../../../../i18n";
 import styles from "./ButtonLevel.module.css";
 
 type RelicLevel = 1 | 2 | 3 | 4 | 5;

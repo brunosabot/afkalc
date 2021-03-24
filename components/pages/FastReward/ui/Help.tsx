@@ -1,5 +1,5 @@
+import { Trans, useTranslation } from "next-i18next";
 import React from "react";
-import { Trans, useTranslation } from "../../../../i18n";
 import CardHelp from "../../../ui/card/CardHelp";
 import InSeason from "../../../ui/reddit/InSeason";
 import RedditFastReward from "./RedditFastReward";
