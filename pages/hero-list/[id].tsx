@@ -1,4 +1,6 @@
 import { mdiViewList } from "@mdi/js";
+import { useTranslation } from "next-i18next";
+import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 import Head from "next/head";
 import { useRouter } from "next/router";
 import React, { useContext, useEffect, useState } from "react";
@@ -22,9 +24,13 @@ import CardTitle from "../../components/ui/card/CardTitle";
 import CheckboxField from "../../components/ui/CheckboxField";
 import TwoColsSticky from "../../components/ui/layout/TwoColsSticky";
 import heroesJson from "../../data/heroes.json";
-import { useTranslation } from "../../i18n";
 import ICharacter from "../../types/ICharacter";
 
+export const getStaticProps = async ({ locale }: { locale: string }) => ({
+  props: {
+    ...(await serverSideTranslations(locale, ["common", "hero-list"])),
+  },
+});
 const typedHeroes: ICharacter[] = heroesJson as ICharacter[];
 
 interface IProps {

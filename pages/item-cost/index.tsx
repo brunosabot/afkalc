@@ -1,4 +1,6 @@
 import { mdiDiamondStone, mdiHelpBox } from "@mdi/js";
+import { useTranslation } from "next-i18next";
+import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 import Head from "next/head";
 import React, { useState } from "react";
 import useTotal from "../../components/pages/ItemCost/hooks/useTotal";
@@ -8,8 +10,12 @@ import TotalCost from "../../components/pages/ItemCost/ui/TotalCost";
 import Card from "../../components/ui/card/Card";
 import CardTitle from "../../components/ui/card/CardTitle";
 import Svg from "../../components/ui/Svg";
-import { useTranslation } from "../../i18n";
 
+export const getStaticProps = async ({ locale }: { locale: string }) => ({
+  props: {
+    ...(await serverSideTranslations(locale, ["common", "item-cost"])),
+  },
+});
 interface IProps {
   [key: string]: never;
 }

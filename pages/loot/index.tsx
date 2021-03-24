@@ -1,5 +1,7 @@
 import { mdiHelpBox, mdiUpdate } from "@mdi/js";
 import dayjs from "dayjs";
+import { useTranslation } from "next-i18next";
+import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 import Head from "next/head";
 import React, { useCallback, useContext, useMemo, useState } from "react";
 import useChestLevel from "../../components/pages/Loot/hooks/useChestLevel";
@@ -11,11 +13,16 @@ import CardHelp from "../../components/ui/card/CardHelp";
 import CardTitle from "../../components/ui/card/CardTitle";
 import InputField from "../../components/ui/InputField";
 import Svg from "../../components/ui/Svg";
-import { useTranslation } from "../../i18n";
 
 interface IProps {
   [key: string]: never;
 }
+
+export const getStaticProps = async ({ locale }: { locale: string }) => ({
+  props: {
+    ...(await serverSideTranslations(locale, ["common", "loot"])),
+  },
+});
 
 const Loot: React.FC<IProps> = () => {
   const [showHelp, setShowHelp] = useState(false);

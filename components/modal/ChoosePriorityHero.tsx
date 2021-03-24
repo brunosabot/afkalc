@@ -1,7 +1,7 @@
+import { useTranslation } from "next-i18next";
 import React from "react";
 import ascendLevels from "../../data/heroAscensionLevel.json";
 import heroes from "../../data/heroes.json";
-import { useTranslation } from "../../i18n";
 import ICharacter from "../../types/ICharacter";
 import { IFirebasePriorityListHero } from "../providers/types/IFirebasePriorityList";
 import Character from "../ui/afk/Character";

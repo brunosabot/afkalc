@@ -1,4 +1,6 @@
 import { mdiHelpBox, mdiScript } from "@mdi/js";
+import { useTranslation } from "next-i18next";
+import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 import Head from "next/head";
 import React, { useState } from "react";
 import useOnChangeNumber from "../../components/hooks/useOnChangeNumber";
@@ -9,9 +11,13 @@ import CardTitle from "../../components/ui/card/CardTitle";
 import CardValue from "../../components/ui/card/CardValue";
 import InputField from "../../components/ui/InputField";
 import Svg from "../../components/ui/Svg";
-import { useTranslation } from "../../i18n";
 import { getEstimatedDiamsForSummon } from "../../lib/summon";
 
+export const getStaticProps = async ({ locale }: { locale: string }) => ({
+  props: {
+    ...(await serverSideTranslations(locale, ["common", "elite-summon"])),
+  },
+});
 interface IProps {
   [key: string]: never;
 }

@@ -1,6 +1,6 @@
+import { useTranslation } from "next-i18next";
 import React, { useState } from "react";
 import ascendLevels from "../../../../data/heroAscensionLevel.json";
-import { useTranslation } from "../../../../i18n";
 import CheckboxField from "../../../ui/CheckboxField";
 import ClassFilter from "./ClassFilter";
 import FactionFilter from "./FactionFilter";

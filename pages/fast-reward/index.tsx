@@ -1,4 +1,6 @@
 import { mdiFastForward, mdiHelpBox } from "@mdi/js";
+import { useTranslation } from "next-i18next";
+import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 import Head from "next/head";
 import React, { useContext, useState } from "react";
 import useOnChangeNumber from "../../components/hooks/useOnChangeNumber";
@@ -12,8 +14,12 @@ import InputField from "../../components/ui/InputField";
 import SelectField from "../../components/ui/SelectField";
 import Svg from "../../components/ui/Svg";
 import vip from "../../data/fastRewardVip.json";
-import { useTranslation } from "../../i18n";
 
+export const getStaticProps = async ({ locale }: { locale: string }) => ({
+  props: {
+    ...(await serverSideTranslations(locale, ["common", "fast-reward"])),
+  },
+});
 interface IProps {
   [key: string]: never;
 }

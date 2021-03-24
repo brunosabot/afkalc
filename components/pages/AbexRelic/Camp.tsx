@@ -1,8 +1,7 @@
 import { mdiChartLineVariant, mdiClockOutline } from "@mdi/js";
-import { TFunction } from "next-i18next";
+import { TFunction, useTranslation } from "next-i18next";
 import React from "react";
 import abexData from "../../../data/abex.json";
-import { useTranslation } from "../../../i18n";
 import Card from "../../ui/card/Card";
 import CardTitle from "../../ui/card/CardTitle";
 import Svg from "../../ui/Svg";

@@ -1,7 +1,7 @@
+import { useTranslation } from "next-i18next";
 import React from "react";
 import artifacts from "../../data/artifacts.json";
 import heroes from "../../data/heroes.json";
-import { useTranslation } from "../../i18n";
 import ICharacter from "../../types/ICharacter";
 import Artifact from "../ui/afk/Artifact";
 import Character, { DetailType } from "../ui/afk/Character";

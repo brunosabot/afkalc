@@ -1,4 +1,6 @@
 import { mdiAccountHeart } from "@mdi/js";
+import { useTranslation } from "next-i18next";
+import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 import Head from "next/head";
 import React from "react";
 import ListItem from "../../components/pages/Credit/ui/ListItem";
@@ -8,8 +10,12 @@ import List from "../../components/ui/list/List";
 import InSeason from "../../components/ui/reddit/InSeason";
 import Whitesushii from "../../components/ui/reddit/Whitesushii";
 import WilordFR from "../../components/ui/reddit/WilordFR";
-import { useTranslation } from "../../i18n";
 
+export const getStaticProps = async ({ locale }: { locale: string }) => ({
+  props: {
+    ...(await serverSideTranslations(locale, ["common"])),
+  },
+});
 interface IProps {
   [key: string]: never;
 }

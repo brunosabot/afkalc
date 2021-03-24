@@ -6,10 +6,10 @@ import {
   mdiPlaylistEdit,
   mdiPlus,
 } from "@mdi/js";
+import { useTranslation } from "next-i18next";
 import { useRouter } from "next/router";
 import React, { useCallback, useContext, useState } from "react";
 import ascendLevels from "../../../../data/heroAscensionLevel.json";
-import { useTranslation } from "../../../../i18n";
 import Modal from "../../../functionnal/Modal";
 import ChoosePriorityHero from "../../../modal/ChoosePriorityHero";
 import PriorityListContext from "../../../providers/PriorityListContext";

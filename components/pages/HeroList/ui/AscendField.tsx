@@ -1,6 +1,6 @@
+import { useTranslation } from "next-i18next";
 import React from "react";
 import ascendLevels from "../../../../data/heroAscensionLevel.json";
-import { useTranslation } from "../../../../i18n";
 import { IFirebaseHeroesHero } from "../../../providers/types/IFirebaseHeroes";
 import InputField from "../../../ui/InputField";
 import SelectField from "../../../ui/SelectField";

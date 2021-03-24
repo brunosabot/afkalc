@@ -1,5 +1,5 @@
+import { useTranslation } from "next-i18next";
 import React, { useContext } from "react";
-import { useTranslation } from "../../../i18n";
 import { FirebaseContext } from "../../providers/FirebaseProvider";
 import styles from "./LogoutButton.module.css";
 

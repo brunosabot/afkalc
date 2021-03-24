@@ -3,8 +3,7 @@ import "dayjs/locale/fr";
 import customParseFormat from "dayjs/plugin/customParseFormat";
 import localizedFormat from "dayjs/plugin/localizedFormat";
 import updateLocale from "dayjs/plugin/updateLocale";
-import App from "next/app";
-// import { useRouter } from "next/router";
+import { appWithTranslation } from "next-i18next";
 import React from "react";
 import Menu from "../components/functionnal/Menu";
 import AbyssalExpeditionProvider from "../components/providers/AbyssalExpeditionProvider";
@@ -12,17 +11,15 @@ import FirebaseProvider from "../components/providers/FirebaseProvider";
 import PriorityListProvider from "../components/providers/PriorityListProvider";
 import ProfileProvider from "../components/providers/ProfileProvider";
 import UserProvider from "../components/providers/UserProvider";
-import { appWithTranslation, i18n } from "../i18n";
 import "../styles/globals.css";
 
 dayjs.extend(customParseFormat);
 dayjs.extend(updateLocale);
 dayjs.extend(localizedFormat);
 
-function MyApp({ Component, pageProps, i18nServerInstance, ...rest }: any) {
-  const { language } = i18nServerInstance || i18n;
-  dayjs.locale(language);
-  // document.getElementsByTagName("html")[0].lang = language;
+function MyApp({ Component, pageProps }: any) {
+  // eslint-disable-next-line no-underscore-dangle
+  dayjs.locale(pageProps._nextI18Next.initialLocale);
 
   return (
     <FirebaseProvider>
@@ -41,7 +38,5 @@ function MyApp({ Component, pageProps, i18nServerInstance, ...rest }: any) {
     </FirebaseProvider>
   );
 }
-
-MyApp.getInitialProps = async (appContext: any) => ({ ...(await App.getInitialProps(appContext)) });
 
 export default appWithTranslation(MyApp);

@@ -1,6 +1,6 @@
+import { useTranslation } from "next-i18next";
 import { useRouter } from "next/router";
 import { useCallback, useContext } from "react";
-import { useTranslation } from "../../../../i18n";
 import useFirestoreCollectionReference from "../../../hooks/useFirestoreCollectionReference";
 import ProfileContext from "../../../providers/ProfileContext";
 import IFirebasePriorityList from "../../../providers/types/IFirebasePriorityList";

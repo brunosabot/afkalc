@@ -1,6 +1,6 @@
+import { useTranslation } from "next-i18next";
 import React from "react";
 import artifacts from "../../../data/artifacts.json";
-import { useTranslation } from "../../../i18n";
 import styles from "./Artifact.module.css";
 
 interface IProps {

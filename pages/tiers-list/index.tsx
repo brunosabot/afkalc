@@ -1,4 +1,6 @@
 import { mdiPlaylistStar } from "@mdi/js";
+import { useTranslation } from "next-i18next";
+import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 import { useRouter } from "next/router";
 import React, { useCallback, useContext, useEffect } from "react";
 import Create from "../../components/pages/TiersList/ui/Create";
@@ -12,8 +14,12 @@ import CardActions from "../../components/ui/card/CardActions";
 import CardSubTitle from "../../components/ui/card/CardSubTitle";
 import CardTitle from "../../components/ui/card/CardTitle";
 import List from "../../components/ui/list/List";
-import { useTranslation } from "../../i18n";
 
+export const getStaticProps = async ({ locale }: { locale: string }) => ({
+  props: {
+    ...(await serverSideTranslations(locale, ["common", "priority-list"])),
+  },
+});
 interface IProps {
   [key: string]: never;
 }
@@ -51,7 +57,7 @@ const PriorityList: React.FC<IProps> = () => {
     <Card>
       <CardTitle icon={mdiPlaylistStar}>{t("title-priority-list")}</CardTitle>
 
-      <CardSubTitle>Listes favorites</CardSubTitle>
+      <CardSubTitle>{t("label-favorites")}</CardSubTitle>
       <List>
         {favorites.length === 0 ? <ListItemEmpty>{t("label-no-list")}</ListItemEmpty> : null}
         {favorites.map((list) => (
@@ -61,7 +67,7 @@ const PriorityList: React.FC<IProps> = () => {
         ))}
       </List>
 
-      <CardSubTitle>Listes crées</CardSubTitle>
+      <CardSubTitle>{t("label-created")}</CardSubTitle>
       <List>
         {priorityList.length === 0 ? <ListItemEmpty>{t("label-no-list")}</ListItemEmpty> : null}
         {priorityList.map((list) => (

@@ -1,6 +1,6 @@
 import { mdiContentCopy, mdiPlaylistCheck } from "@mdi/js";
+import { useTranslation } from "next-i18next";
 import React, { useEffect, useMemo, useState } from "react";
-import { useTranslation } from "../../../../i18n";
 import useFirestoreDocument from "../../../hooks/useFirestoreDocument";
 import useFirestoreDocumentReference from "../../../hooks/useFirestoreDocumentReference";
 import IFirebaseHeroes, { IFirebaseHeroList } from "../../../providers/types/IFirebaseHeroes";

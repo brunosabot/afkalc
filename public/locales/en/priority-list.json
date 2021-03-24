@@ -21,6 +21,8 @@
   "label-si": "SI",
   "label-fi": "FI",
   "label-ascend": "Ascend",
+  "label-favorites": "Favorite lists",
+  "label-created": "Created lists",
   "label-no-list": "You don't have any list here yet",
   "label-moved": "Lists have moved. Find your link below",
   "label-moved-no-list": "The list has not been moved yet. Please contact the creator"

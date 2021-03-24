@@ -1,6 +1,6 @@
+import { useTranslation } from "next-i18next";
 import { useRouter } from "next/router";
 import React, { useContext } from "react";
-import { useTranslation } from "../../../../i18n";
 import ProfileContext from "../../../providers/ProfileContext";
 import CardShareNew from "../../../ui/card/CardShareNew";
 import CardTitle from "../../../ui/card/CardTitle";
