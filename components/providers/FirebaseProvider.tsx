@@ -3,20 +3,28 @@ import firebase from "./firebase";
 
 const provider = new firebase.auth.GoogleAuthProvider();
 
-const logOut = () => {
-  firebase.auth().signOut();
-};
+async function logOut() {
+  await firebase.auth().signOut();
+}
 
-const logIn = () => {
-  firebase
+async function logIn() {
+  await firebase
     .auth()
     .setPersistence(firebase.auth.Auth.Persistence.LOCAL)
     .then(() => firebase.auth().signInWithPopup(provider));
-};
+}
+
+async function reLogIn() {
+  const { currentUser } = firebase.auth();
+  if (currentUser) {
+    await currentUser.reauthenticateWithPopup(provider);
+  }
+}
 
 interface IFirebaseActions {
-  logIn: () => void;
-  logOut: () => void;
+  logIn: () => Promise<void>;
+  logOut: () => Promise<void>;
+  reLogIn: () => Promise<void>;
 }
 
 interface IfirebaseValues {
@@ -34,7 +42,11 @@ interface IProps {
 }
 
 export const FirebaseContext = React.createContext<IFirebaseContext>({
-  actions: { logIn: () => undefined, logOut: () => undefined },
+  actions: {
+    reLogIn: () => Promise.resolve(),
+    logIn: () => Promise.resolve(),
+    logOut: () => Promise.resolve(),
+  },
   values: { uid: "", isAuth: false },
 });
 
@@ -51,7 +63,7 @@ const FirebaseProvider: React.FC<IProps> = ({ children }) => {
 
   const value = useMemo(
     () => ({
-      actions: { logIn, logOut },
+      actions: { reLogIn, logIn, logOut },
       values: { uid, isAuth },
     }),
     [uid, isAuth]

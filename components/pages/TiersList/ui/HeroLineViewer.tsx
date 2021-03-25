@@ -42,7 +42,6 @@ const HeroLineViewer: React.FC<IProps> = ({
   const isValidList = useIsValidList(priorityList, hero, heroLevels);
   const isValidSelf = useIsValidSelf(hero, heroLevels);
   const { t } = useTranslation("priority-list");
-  const { t: tHero } = useTranslation("hero-list");
 
   const hasSelfRequirements =
     [0, undefined].includes(hero.ascend) === false ||
@@ -80,7 +79,7 @@ const HeroLineViewer: React.FC<IProps> = ({
               : null}
             {hasSelfRequirements && !(requirementValue && requirement) ? t("label-require") : null}
           </span>
-          <InfoDetails value={hero.ascend}>{tHero(`ascension-${ascendLevelName}`)}</InfoDetails>
+          <InfoDetails value={hero.ascend}>{t(`common:ascension-${ascendLevelName}`)}</InfoDetails>
           <InfoDetails value={hero.si}>{`SI +${hero.si}`}</InfoDetails>
           <InfoDetails value={hero.fi}>{`FI ${hero.fi}/9`}</InfoDetails>
         </span>

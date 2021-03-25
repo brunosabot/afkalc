@@ -45,7 +45,6 @@ const ChoosePriorityHeroOld: React.FC<Props> = ({
   onSelect,
 }) => {
   const { t } = useTranslation("common");
-  const { t: tHero } = useTranslation("hero-list");
 
   return (
     <div className={styles.ChoosePriorityHeroOld}>
@@ -83,7 +82,7 @@ const ChoosePriorityHeroOld: React.FC<Props> = ({
         <SelectField
           values={ascendLevels.map((level) => ({
             key: `${level.key}`,
-            label: tHero(`ascension-${level.name}`),
+            label: t(`ascension-${level.name}`),
           }))}
           style={{ width: "110px" }}
           small

@@ -17,15 +17,14 @@ import List from "../../../components/ui/list/List";
 
 export const getStaticProps = async ({ locale }: { locale: string }) => ({
   props: {
-    ...(await serverSideTranslations(locale, ["common", "priority-list"])),
+    ...(await serverSideTranslations(locale, ["common", "hero-list", "priority-list"])),
   },
 });
 
 export const getStaticPaths: GetStaticPaths<{ slug: string }> = async () => ({
   paths: [],
-  fallback: 'blocking'
+  fallback: "blocking",
 });
-
 
 interface IProps {
   [key: string]: never;

@@ -89,7 +89,7 @@ const Filters: React.FC<IProps> = ({ state, dispatch }) => {
             name="ascend"
             values={ascendLevels.map((level) => ({
               key: `${level.key}`,
-              label: t(`ascension-${level.name}`),
+              label: t(`common:ascension-${level.name}`),
             }))}
           />
           <div style={{ paddingTop: "16px" }} />

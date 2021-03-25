@@ -25,7 +25,7 @@ const AscendField: React.FC<IProps> = ({ id, setLevel, getValue, isView }) => {
         label=""
         small
         readOnly
-        value={t(`ascension-${level.name}`) as string}
+        value={t(`common:ascension-${level.name}`) as string}
         onChange={() => {}}
         name={`ascension-${id}`}
       />
@@ -41,7 +41,7 @@ const AscendField: React.FC<IProps> = ({ id, setLevel, getValue, isView }) => {
       small
       values={ascendLevels.map((level) => ({
         key: `${level.key}`,
-        label: t(`ascension-${level.name}`),
+        label: t(`common:ascension-${level.name}`),
       }))}
       style={{ width: "105px" }}
     />

@@ -19,7 +19,7 @@ dayjs.extend(localizedFormat);
 
 function MyApp({ Component, pageProps }: any) {
   // eslint-disable-next-line no-underscore-dangle
-  dayjs.locale(pageProps._nextI18Next.initialLocale);
+  dayjs.locale(pageProps?._nextI18Next?.initialLocale ?? "en");
 
   return (
     <FirebaseProvider>
