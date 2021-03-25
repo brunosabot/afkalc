@@ -853,5 +853,25 @@
     "image": "/heroes/Clergy.jpg",
     "faction": "lightbearers",
     "usage": []
+  },
+  {
+    "name": "Peggy",
+    "id": 80,
+    "type": "intelligence",
+    "class": "support",
+    "role": "regen",
+    "image": "/heroes/Princess.jpg",
+    "faction": "lightbearers",
+    "usage": []
+  },
+  {
+    "name": "Raku",
+    "id": 81,
+    "type": "agility",
+    "class": "ranger",
+    "role": "burst",
+    "image": "/heroes/TricRacoon.jpg",
+    "faction": "wilders",
+    "usage": []
   }
 ]
