@@ -23,6 +23,7 @@ import ProfileContext from "../components/providers/ProfileContext";
 import LangButton from "../components/ui/button/LangButton";
 import LoginButton from "../components/ui/button/LoginButton";
 import LogoutButton from "../components/ui/button/LogoutButton";
+import BuyMeACoffee from "../components/ui/BuyMeACoffee";
 import Card from "../components/ui/card/Card";
 import CardTitle from "../components/ui/card/CardTitle";
 import MenuItem from "../components/ui/menu/MenuItem";
@@ -103,6 +104,8 @@ const Home: React.FC<IProps> = () => {
             {t("common:contribution.edit-on-github")}
           </MenuItemExternal>
         </div>
+
+        <BuyMeACoffee />
       </Card>
     </div>
   );
