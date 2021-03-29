@@ -1,0 +1,9 @@
+.BuyMeACoffee {
+  margin: 16px auto;
+  display: flex;
+  justify-content: center;
+}
+.BuyMeACoffeeImage {
+  height: 40px;
+  width: 145px;
+}
