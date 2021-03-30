@@ -19,5 +19,7 @@
   "faction-guildFight": "Boss de guilde",
   "faction-kingsTower": "Tour du roi",
   "faction-misc": "Campagne et arène",
-  "moved": "Le format d'URL a changé. Merci de mettre à jour vos liens avant la désactiviation"
+  "moved": "Le format d'URL a changé. Merci de mettre à jour vos liens avant la désactiviation",
+  "hero-list-of": "Liste de héros de {{userName}}",
+  "hero-list-of-unknown": "Liste de héros"
 }

@@ -8,7 +8,7 @@ interface Props {
   level: number;
   theClass: HeroClass;
   active?: number;
-  onClick: (position: number, theClass: HeroClass, relic: number, level:number) => void;
+  onClick: (position: number, theClass: HeroClass, relic: number, level: number) => void;
 }
 
 const RelicDisplay: React.FC<Props> = ({
@@ -16,7 +16,7 @@ const RelicDisplay: React.FC<Props> = ({
   position,
   level,
   theClass,
-  active=0,
+  active = 0,
   onClick,
 }) => {
   const relicClass = styles[`Relic--${level}`];
@@ -26,7 +26,9 @@ const RelicDisplay: React.FC<Props> = ({
   return (
     <button
       type="button"
-      className={`${styles.Relic} ${relicClass} ${positionClass} ${isActive ? "" : styles.Inactive}`}
+      className={`${styles.Relic} ${relicClass} ${positionClass} ${
+        isActive ? "" : styles.Inactive
+      }`}
       onClick={() => onClick(position, theClass, relic, level)}
     >
       <img

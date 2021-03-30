@@ -4,6 +4,7 @@ export default interface IFirebaseProfile {
   campaignSuccessDate?: string;
   playerLevel?: number;
   playerVipLevel?: number;
+  playerName?: string;
   shareId?: string;
   favoritePriorityList?: string[];
 }

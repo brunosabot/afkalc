@@ -18,6 +18,7 @@ import TitleLine from "../../components/pages/HeroList/ui/TitleLine";
 import useSetLevel from "../../components/pages/TiersList/hooks/useSetLevel";
 import ProfileContext from "../../components/providers/ProfileContext";
 import IFirebaseHeroes from "../../components/providers/types/IFirebaseHeroes";
+import IFirebaseProfile from "../../components/providers/types/IFirebaseProfile";
 import LoginButton from "../../components/ui/button/LoginButton";
 import Card from "../../components/ui/card/Card";
 import CardHelp from "../../components/ui/card/CardHelp";
@@ -57,7 +58,10 @@ const HeroList: React.FC<IProps> = () => {
 
   const document = useFirestoreDocumentReference(userId ? `heroes/${userId}` : undefined);
   const result = useFirestoreDocument<IFirebaseHeroes>(document);
+  const profileDocument = useFirestoreDocumentReference(userId ? `profile/${userId}` : undefined);
+  const profileResult = useFirestoreDocument<IFirebaseProfile>(profileDocument);
   const heroes = result.data?.heroes || [];
+  const userName = profileResult.data?.playerName;
   const isSelf = userId === values.userId;
 
   const setLevel = useSetLevel(document, heroes);
@@ -107,7 +111,9 @@ const HeroList: React.FC<IProps> = () => {
       </TwoColsSticky>
 
       <Card>
-        <CardTitle icon={mdiViewList}>{t("common:menu.hero-list")}</CardTitle>
+        <CardTitle icon={mdiViewList}>
+          {t(userName ? "hero-list-of" : "hero-list-of-unknown", { userName })}
+        </CardTitle>
         {characters.length === 0 ? (
           <CardHelp>{t("label-empty")}</CardHelp>
         ) : (

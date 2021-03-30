@@ -89,6 +89,7 @@ a {
   box-sizing: border-box;
   overflow: auto;
   height: 100%;
+  align-content: flex-start;
 }
 @media (max-width: 1007px) {
   #page > * {

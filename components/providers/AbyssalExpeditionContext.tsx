@@ -3,7 +3,7 @@ import HeroClass from "../../types/HeroClass";
 import {
   IFirebaseAbyssalExpeditionClassRelics,
   IFirebaseAbyssalExpeditionInventory,
-  IFirebaseAbyssalExpeditionTilesList
+  IFirebaseAbyssalExpeditionTilesList,
 } from "./types/IFirebaseAbyssalExpedition";
 
 export interface IAbyssalExpeditionActions {
@@ -34,7 +34,7 @@ export const defaultValues: IAbyssalExpeditionValues = {
     [HeroClass.mage]: [5405, 5304, 5305, 5202, 5404, 5406],
     [HeroClass.tank]: [5205, 5203, 5201, 5202, 5204, 5206],
     [HeroClass.warrior]: [5105, 5204, 5203, 5205, 5104, 5106],
-    [HeroClass.support]: [5505, 5202, 5305, 5404, 5504, 5506]
+    [HeroClass.support]: [5505, 5202, 5305, 5404, 5504, 5506],
   },
   currentRelics: {
     [HeroClass.ranger]: [0, 0, 0, 0, 0, 0],

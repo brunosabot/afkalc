@@ -13,7 +13,7 @@ import {
   mdiPlaylistCheck,
   mdiScript,
   mdiUpdate,
-  mdiViewList
+  mdiViewList,
 } from "@mdi/js";
 import { useTranslation } from "next-i18next";
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";

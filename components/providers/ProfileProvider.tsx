@@ -3,6 +3,7 @@ import useFirestoreDocument from "../hooks/useFirestoreDocument";
 import useFirestoreDocumentReference from "../hooks/useFirestoreDocumentReference";
 import { FirebaseContext } from "./FirebaseProvider";
 import useMigration from "./hooks/useMigration";
+import useProfileActions from "./hooks/useProfileActions";
 import useProfileSetters from "./hooks/useProfileSetters";
 import ProfileContext, { defaultValues, IProfileContext } from "./ProfileContext";
 import IFirebaseProfile from "./types/IFirebaseProfile";
@@ -22,7 +23,9 @@ const ProfileProvider: React.FC<IProps> = ({ children }) => {
     setCampaignSuccessDate,
     setPlayerLevel,
     setPlayerVipLevel,
+    setPlayerName,
   } = useProfileSetters();
+  const { deleteUser, downloadData } = useProfileActions();
 
   useMigration(result);
 
@@ -33,7 +36,10 @@ const ProfileProvider: React.FC<IProps> = ({ children }) => {
         setCampaignSuccessDate,
         setPlayerLevel,
         setPlayerVipLevel,
+        setPlayerName,
         setFavoritePriorityList,
+        deleteUser,
+        downloadData,
       },
       values: {
         ...defaultValues,
@@ -47,7 +53,10 @@ const ProfileProvider: React.FC<IProps> = ({ children }) => {
       setCampaignSuccessDate,
       setPlayerLevel,
       setPlayerVipLevel,
+      setPlayerName,
       setFavoritePriorityList,
+      deleteUser,
+      downloadData,
       result?.data,
       values.uid,
       values.isAuth,
