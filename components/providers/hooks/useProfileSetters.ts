@@ -38,6 +38,14 @@ export default function useProfileSetters() {
     [document, values.uid]
   );
 
+  const setPlayerName = useCallback(
+    (playerName) => {
+      if (values.uid === "") return;
+      document?.set({ ownerId: values.uid, playerName }, { merge: true });
+    },
+    [document, values.uid]
+  );
+
   const setFavoritePriorityList = useCallback(
     (favoritePriorityList: string[]) => {
       if (values.uid === "") return;
@@ -52,5 +60,6 @@ export default function useProfileSetters() {
     setCampaignSuccessDate,
     setPlayerLevel,
     setPlayerVipLevel,
+    setPlayerName,
   };
 }

@@ -38,7 +38,10 @@ interface IProfileActions {
   setCampaignSuccessDate: (newCampaignSuccessDate: string) => void;
   setPlayerLevel: (newPlayerLevel: number) => void;
   setPlayerVipLevel: (newPlayerVipLevel: number) => void;
+  setPlayerName: (newPlayerName: string) => void;
   setFavoritePriorityList: (newFavoritePriorityList: string[]) => void;
+  deleteUser: () => void;
+  downloadData: () => void;
 }
 
 interface IProfileValues {
@@ -49,6 +52,7 @@ interface IProfileValues {
   campaignSuccessDate: string;
   playerLevel: number;
   playerVipLevel: number;
+  playerName: string;
   shareId?: string;
   abexGoalRelics: IAbexRelic;
   abexCurrentRelics: IAbexRelic;
@@ -70,6 +74,7 @@ export const defaultValues: IProfileValues = {
   campaignSuccessDate: new Date().toISOString(),
   playerLevel: 1,
   playerVipLevel: 1,
+  playerName: "",
   shareId: undefined,
   abexGoalRelics: {
     [HeroClass.ranger]: [5205, 5104, 5204, 5304, 5305, 5306],
@@ -96,7 +101,10 @@ export default createContext<IProfileContext>({
     setCampaignSuccessDate: () => undefined,
     setPlayerLevel: () => undefined,
     setPlayerVipLevel: () => undefined,
+    setPlayerName: () => undefined,
     setFavoritePriorityList: () => undefined,
+    deleteUser: () => undefined,
+    downloadData: () => undefined,
   },
   values: defaultValues,
 });

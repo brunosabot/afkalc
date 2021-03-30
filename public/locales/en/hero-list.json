@@ -19,5 +19,7 @@
   "faction-guildFight": "Guild Boss",
   "faction-kingsTower": "King's Tower",
   "faction-misc": "Arena & campaign",
-  "moved": "THe URL format has changed. Please update your links before deactivation"
+  "moved": "The URL format has changed. Please update your links before deactivation",
+  "hero-list-of": "{{userName}}'s hero list",
+  "hero-list-of-unknown": "Hero list"
 }
