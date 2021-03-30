@@ -26,7 +26,7 @@ function compare(direction: string, a: number, b: number) {
   if (direction === ">=") return a >= b;
   if (direction === "=") return a === b;
   if (direction === "<=") return a <= b;
-  if (direction === "=") return a < b;
+  if (direction === "<") return a < b;
 
   return false;
 }
