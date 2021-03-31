@@ -14,6 +14,7 @@ export interface IAbyssalExpeditionActions {
   setTiles: (newTiles: IFirebaseAbyssalExpeditionTilesList) => Promise<void>;
   resetTilesTimers: () => Promise<void>;
   resetTiles: () => Promise<void>;
+  resetRelicsAndInventory: () => Promise<void>;
 }
 
 export interface IAbyssalExpeditionValues {
@@ -56,6 +57,7 @@ export default createContext<IAbyssalExpeditionContext>({
     setTiles: () => Promise.resolve(undefined),
     resetTilesTimers: () => Promise.resolve(undefined),
     resetTiles: () => Promise.resolve(undefined),
+    resetRelicsAndInventory: () => Promise.resolve(undefined),
   },
   values: defaultValues,
 });
