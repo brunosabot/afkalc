@@ -17,6 +17,7 @@ import InfoDetails from "./InfoDetails";
 import styles from "./Viewer.module.css";
 
 interface IProps {
+  shouldShowChecked: boolean;
   hero: IFirebasePriorityListHero;
   setLevel: UseSetLevelReturn;
   heroLevels?: IFirebaseHeroesHero;
@@ -30,6 +31,7 @@ function compare(a: IFirebaseHeroesHero | undefined, b: IFirebaseHeroesHero | un
 }
 
 const HeroLineViewer: React.FC<IProps> = ({
+  shouldShowChecked,
   hero,
   priorityList,
   setLevel,
@@ -66,6 +68,8 @@ const HeroLineViewer: React.FC<IProps> = ({
     initialHeroLevels?.si,
     setLevel,
   ]);
+
+  if (isDone && shouldShowChecked === false) return null;
 
   return (
     <div key={id} className={`${styles.Item} ${isDone ? styles.IsOk : ""}`}>

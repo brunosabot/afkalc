@@ -11,6 +11,7 @@ import CardActions from "../../../ui/card/CardActions";
 import CardTitle from "../../../ui/card/CardTitle";
 import useDuplicateList from "../hooks/useDuplicateList";
 import useSetLevel from "../hooks/useSetLevel";
+import CheckedButton from "./CheckedButton";
 import FavoriteButton from "./FavoriteButton";
 import HeroLineViewer from "./HeroLineViewer";
 
@@ -20,6 +21,7 @@ interface IProps {
 }
 
 const Viewer: React.FC<IProps> = ({ listId, result }) => {
+  const [showChecked, setShowChecked] = useState<boolean>(true);
   const heroDocument = useFirestoreDocumentReference(`heroes/%ID%`);
   const heroResult = useFirestoreDocument<IFirebaseHeroes>(heroDocument);
   const { t } = useTranslation("priority-list");
@@ -44,7 +46,12 @@ const Viewer: React.FC<IProps> = ({ listId, result }) => {
       <Card>
         <CardTitle
           icon={mdiPlaylistCheck}
-          action={<FavoriteButton title={title} listId={listId} />}
+          action={
+            <>
+              <CheckedButton showChecked={showChecked} setShowChecked={setShowChecked} />
+              <FavoriteButton title={title} listId={listId} />
+            </>
+          }
         >
           {title}
         </CardTitle>
@@ -57,6 +64,7 @@ const Viewer: React.FC<IProps> = ({ listId, result }) => {
             heroLevels={heroes[hero.hero]}
             priorityList={result}
             initialHeroLevels={initialHeroes[hero.hero]}
+            shouldShowChecked={showChecked}
           />
         ))}
 
