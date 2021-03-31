@@ -3,10 +3,9 @@ import { useTranslation } from "next-i18next";
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 import Head from "next/head";
 import React, { useContext, useEffect, useState } from "react";
+import withLayoutPrivate from "../../components/layout/withLayoutPrivate";
 import Camp from "../../components/pages/AbexRelic/Camp";
 import AbyssalExpeditionContext from "../../components/providers/AbyssalExpeditionContext";
-import { FirebaseContext } from "../../components/providers/FirebaseProvider";
-import LoginButton from "../../components/ui/button/LoginButton";
 import Card from "../../components/ui/card/Card";
 import CardAction from "../../components/ui/card/CardAction";
 import CardActions from "../../components/ui/card/CardActions";
@@ -25,8 +24,7 @@ interface IProps {
 
 const AbexRelic: React.FC<IProps> = () => {
   const { t } = useTranslation("abex-relic");
-  const { values } = useContext(FirebaseContext);
-  const { actions, values: abexValues } = useContext(AbyssalExpeditionContext);
+  const { actions, values } = useContext(AbyssalExpeditionContext);
 
   const [now, setNow] = useState(Math.round(Date.now() / 1000));
 
@@ -50,27 +48,8 @@ const AbexRelic: React.FC<IProps> = () => {
     }
   };
 
-  if (values.isAuth === false) {
-    return (
-      <Card>
-        <CardTitle>{t("common:require-login")}</CardTitle>
-        <LoginButton />
-      </Card>
-    );
-  }
-
   return (
-    <div
-      style={{
-        maxWidth: "100%",
-        paddingTop: "24px",
-        gap: "16px",
-        display: "flex",
-        flexDirection: "column",
-        flexGrow: 1,
-        alignItems: "center",
-      }}
-    >
+    <>
       <Card>
         <CardTitle icon={mdiMap}>{t("common:menu.abex-relic")}</CardTitle>
         <Head>
@@ -86,16 +65,16 @@ const AbexRelic: React.FC<IProps> = () => {
       <Grid>
         {abexData.campType.map((camp) => (
           <Camp
-            set={(id, d) => actions.setTiles({ ...abexValues.tiles, [id]: d })}
+            set={(id, d) => actions.setTiles({ ...values.tiles, [id]: d })}
             key={camp.id}
             now={now}
             camp={camp}
-            data={abexValues.tiles}
+            data={values.tiles}
           />
         ))}
       </Grid>
-    </div>
+    </>
   );
 };
 
-export default AbexRelic;
+export default withLayoutPrivate(AbexRelic);

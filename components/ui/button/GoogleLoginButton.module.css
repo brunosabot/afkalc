@@ -1,11 +1,12 @@
 .Wrapper {
   padding: 16px;
   text-align: center;
+  display: flex;
+  justify-content: center;
 }
-.LoginButton {
+.GoogleLoginButton {
   background: transparent;
   border: 0;
-  color: var(--text-color);
   cursor: pointer;
   font-family: inherit;
   font-size: 1em;

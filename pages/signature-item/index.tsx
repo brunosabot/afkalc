@@ -3,6 +3,7 @@ import { useTranslation } from "next-i18next";
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 import Head from "next/head";
 import React, { useCallback, useState } from "react";
+import withLayoutPrivateColumn from "../../components/layout/withLayoutPrivateColumn";
 import useCountEmblem from "../../components/pages/SignatureItem/hooks/useCountEmblem";
 import SignatureItemLeft from "../../components/pages/SignatureItem/ui/SignatureItemLeft";
 import Card from "../../components/ui/card/Card";
@@ -43,16 +44,7 @@ const SignatureItem: React.FC<IProps> = () => {
   const levels = Array.from(new Set([20, 30, targetLevel]));
 
   return (
-    <div
-      style={{
-        paddingTop: "24px",
-        gap: "16px",
-        display: "flex",
-        flexDirection: "column",
-        flexGrow: 1,
-        alignItems: "center",
-      }}
-    >
+    <>
       <Card>
         <Head>
           <title>{`${t("common:menu.signature-item")} - Afkalc`}</title>
@@ -101,8 +93,8 @@ const SignatureItem: React.FC<IProps> = () => {
             />
           );
         })}
-    </div>
+    </>
   );
 };
 
-export default SignatureItem;
+export default withLayoutPrivateColumn(SignatureItem);

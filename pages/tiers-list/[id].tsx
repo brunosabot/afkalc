@@ -6,13 +6,11 @@ import { useRouter } from "next/router";
 import React, { useContext } from "react";
 import useFirestoreDocument from "../../components/hooks/useFirestoreDocument";
 import useFirestoreDocumentReference from "../../components/hooks/useFirestoreDocumentReference";
+import withLayoutPrivate from "../../components/layout/withLayoutPrivate";
 import Owner from "../../components/pages/TiersList/ui/Owner";
 import Viewer from "../../components/pages/TiersList/ui/Viewer";
 import ProfileContext from "../../components/providers/ProfileContext";
 import IFirebasePriorityList from "../../components/providers/types/IFirebasePriorityList";
-import LoginButton from "../../components/ui/button/LoginButton";
-import Card from "../../components/ui/card/Card";
-import CardTitle from "../../components/ui/card/CardTitle";
 
 export const getStaticProps = async ({ locale }: { locale: string }) => ({
   props: {
@@ -48,15 +46,6 @@ const TiersList: React.FC<IProps> = () => {
     return null;
   }
 
-  if (values.isAuth === false) {
-    return (
-      <Card>
-        <CardTitle>{t("common:require-login")}</CardTitle>
-        <LoginButton />
-      </Card>
-    );
-  }
-
   const Component = isOwner ? Owner : Viewer;
 
   return (
@@ -71,4 +60,4 @@ const TiersList: React.FC<IProps> = () => {
   );
 };
 
-export default TiersList;
+export default withLayoutPrivate(TiersList);

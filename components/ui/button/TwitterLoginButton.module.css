@@ -1,0 +1,27 @@
+.Wrapper {
+  padding: 0 16px 16px 16px;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+}
+.TwitterLoginButton {
+  background: #1da1f2;
+  border: 0;
+  color: #ffffff;
+  cursor: pointer;
+  font-family: inherit;
+  font-size: 14px;
+  font-weight: 500;
+  padding: 0 10px;
+  height: 40px;
+  width: 185px;
+  margin: 3px;
+  border-radius: 3px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.TwitterLoginButton svg {
+  height: 20px;
+  width: 20px;
+}
