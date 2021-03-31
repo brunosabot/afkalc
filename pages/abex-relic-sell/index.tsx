@@ -1,4 +1,4 @@
-import { mdiHelpBox, mdiMap } from "@mdi/js";
+import { mdiBackupRestore, mdiHelpBox, mdiMap } from "@mdi/js";
 import { useTranslation } from "next-i18next";
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 import Head from "next/head";
@@ -9,6 +9,8 @@ import RelicChoiceList from "../../components/pages/AbexRelicSell/ui/RelicChoice
 import RelicList from "../../components/pages/AbexRelicSell/ui/RelicList";
 import AbyssalExpeditionContext from "../../components/providers/AbyssalExpeditionContext";
 import Card from "../../components/ui/card/Card";
+import CardAction from "../../components/ui/card/CardAction";
+import CardActions from "../../components/ui/card/CardActions";
 import CardHelp from "../../components/ui/card/CardHelp";
 import CardTab from "../../components/ui/card/CardTab";
 import CardTabs from "../../components/ui/card/CardTabs";
@@ -74,6 +76,12 @@ const AbexRelicSell: React.FC<IProps> = () => {
           goal={abexValues.goalRelics}
         />
       ) : null}
+
+      <CardActions>
+        <CardAction onClick={actions.resetRelicsAndInventory} icon={mdiBackupRestore}>
+          {t("reset-box")}
+        </CardAction>
+      </CardActions>
     </Card>
   );
 };

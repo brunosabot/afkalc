@@ -39,6 +39,16 @@ const AbyssalExpeditionProvider: React.FC<IProps> = ({ children }) => {
     },
     [abyssalExpeditionDocument]
   );
+  const resetRelicsAndInventory = useCallback(async () => {
+    await abyssalExpeditionDocument?.set(
+      {
+        relicInventory: defaultValues.relicInventory,
+        goalRelics: defaultValues.goalRelics,
+        currentRelics: defaultValues.currentRelics,
+      },
+      { merge: true }
+    );
+  }, [abyssalExpeditionDocument]);
   const setTiles = useCallback(
     async (newTiles) => {
       await abyssalExpeditionDocument?.set({ tiles: newTiles }, { merge: true });
@@ -67,6 +77,7 @@ const AbyssalExpeditionProvider: React.FC<IProps> = ({ children }) => {
         setTiles,
         resetTilesTimers,
         resetTiles,
+        resetRelicsAndInventory,
       },
       values: {
         ...defaultValues,
@@ -81,6 +92,7 @@ const AbyssalExpeditionProvider: React.FC<IProps> = ({ children }) => {
       setTiles,
       resetTilesTimers,
       resetTiles,
+      resetRelicsAndInventory,
       abyssalExpeditionResult?.data,
     ]
   );
