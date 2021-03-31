@@ -4,6 +4,7 @@ import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 import Head from "next/head";
 import React, { useState } from "react";
 import useOnChangeNumber from "../../components/hooks/useOnChangeNumber";
+import withLayoutPrivateColumn from "../../components/layout/withLayoutPrivateColumn";
 import Item from "../../components/ui/afk/Item";
 import Card from "../../components/ui/card/Card";
 import CardHelp from "../../components/ui/card/CardHelp";
@@ -36,16 +37,7 @@ const EliteSummon: React.FC<IProps> = () => {
   const onChange = useOnChangeNumber();
 
   return (
-    <div
-      style={{
-        paddingTop: "24px",
-        gap: "16px",
-        display: "flex",
-        flexDirection: "column",
-        flexGrow: 1,
-        alignItems: "center",
-      }}
-    >
+    <>
       <Card>
         <Head>
           <title>{`${t("common:menu.elite-summon")} - Afkalc`}</title>
@@ -113,8 +105,8 @@ const EliteSummon: React.FC<IProps> = () => {
           )}
         </CardValue>
       </Card>
-    </div>
+    </>
   );
 };
 
-export default EliteSummon;
+export default withLayoutPrivateColumn(EliteSummon);

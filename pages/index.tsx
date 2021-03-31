@@ -13,15 +13,15 @@ import {
   mdiPlaylistCheck,
   mdiScript,
   mdiUpdate,
-  mdiViewList,
+  mdiViewList
 } from "@mdi/js";
 import { useTranslation } from "next-i18next";
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 import Head from "next/head";
 import React, { useContext } from "react";
+import withLayoutPrivate from "../components/layout/withLayoutPrivate";
 import ProfileContext from "../components/providers/ProfileContext";
 import LangButton from "../components/ui/button/LangButton";
-import LoginButton from "../components/ui/button/LoginButton";
 import LogoutButton from "../components/ui/button/LogoutButton";
 import BuyMeACoffee from "../components/ui/BuyMeACoffee";
 import Card from "../components/ui/card/Card";
@@ -44,7 +44,7 @@ const Home: React.FC<IProps> = () => {
   const { t } = useTranslation("common");
 
   return (
-    <div style={{ gap: "16px", display: "grid", justifyContent: "center" }}>
+    <>
       <Card>
         <CardTitle icon={mdiHome}>{t("common:welcome")}</CardTitle>
         <Head>
@@ -57,7 +57,7 @@ const Home: React.FC<IProps> = () => {
           <LangButton lang="en" emoji="🇺🇸‍" />
         </div>
 
-        {values.isAuth ? <LogoutButton /> : <LoginButton />}
+        <LogoutButton />
       </Card>
       <Card>
         <div style={{ padding: "8px 16px" }}>
@@ -107,8 +107,8 @@ const Home: React.FC<IProps> = () => {
 
         <BuyMeACoffee />
       </Card>
-    </div>
+    </>
   );
 };
 
-export default Home;
+export default withLayoutPrivate(Home);

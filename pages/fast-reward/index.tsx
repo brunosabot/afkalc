@@ -4,6 +4,7 @@ import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 import Head from "next/head";
 import React, { useContext, useState } from "react";
 import useOnChangeNumber from "../../components/hooks/useOnChangeNumber";
+import withLayoutPrivateColumn from "../../components/layout/withLayoutPrivateColumn";
 import useMaxLevel from "../../components/pages/FastReward/hooks/useMaxLevel";
 import DiamondLine from "../../components/pages/FastReward/ui/DiamondLine";
 import Help from "../../components/pages/FastReward/ui/Help";
@@ -39,16 +40,7 @@ const FastReward: React.FC<IProps> = () => {
   const diams100 = useMaxLevel(100, playerLevel, playerVipLevel);
 
   return (
-    <div
-      style={{
-        paddingTop: "24px",
-        gap: "16px",
-        display: "flex",
-        flexDirection: "column",
-        flexGrow: 1,
-        alignItems: "center",
-      }}
-    >
+    <>
       <Head>
         <title>{`${t("common:menu.fast-reward")} - Afkalc`}</title>
         <meta name="description" content={t("help")} />
@@ -93,8 +85,8 @@ const FastReward: React.FC<IProps> = () => {
           <DiamondLine campaignLevel={campaignLevel} diamsLevel={diams100} count={100} />
         </div>
       </Card>
-    </div>
+    </>
   );
 };
 
-export default FastReward;
+export default withLayoutPrivateColumn(FastReward);

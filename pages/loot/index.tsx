@@ -4,6 +4,7 @@ import { useTranslation } from "next-i18next";
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 import Head from "next/head";
 import React, { useCallback, useContext, useMemo, useState } from "react";
+import withLayoutPrivateColumn from "../../components/layout/withLayoutPrivateColumn";
 import useChestLevel from "../../components/pages/Loot/hooks/useChestLevel";
 import Chest from "../../components/pages/Loot/ui/Chest";
 import PassNowLabel from "../../components/pages/Loot/ui/PassNowLabel";
@@ -46,16 +47,7 @@ const Loot: React.FC<IProps> = () => {
   const passLabel = <PassNowLabel setPass={setPass} />;
 
   return (
-    <div
-      style={{
-        paddingTop: "24px",
-        gap: "16px",
-        display: "flex",
-        flexDirection: "column",
-        flexGrow: 1,
-        alignItems: "center",
-      }}
-    >
+    <>
       <Card>
         <Head>
           <title>{`${t("common:menu.loot")} - Afkalc`}</title>
@@ -87,8 +79,8 @@ const Loot: React.FC<IProps> = () => {
           <Chest key={chest.item} pass={pass} chest={chest} />
         ))}
       </Card>
-    </div>
+    </>
   );
 };
 
-export default Loot;
+export default withLayoutPrivateColumn(Loot);

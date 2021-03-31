@@ -1,6 +1,7 @@
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 import Head from "next/head";
 import React, { useCallback, useState } from "react";
+import withLayoutPrivate from "../../components/layout/withLayoutPrivate";
 import useDescription from "../../components/pages/TopTeam/hooks/useDescription";
 import useTitle from "../../components/pages/TopTeam/hooks/useTitle";
 import Board from "../../components/pages/TopTeam/ui/Board";
@@ -90,4 +91,4 @@ const TopTeam: React.FC<Props> = () => {
   );
 };
 
-export default TopTeam;
+export default withLayoutPrivate(TopTeam);

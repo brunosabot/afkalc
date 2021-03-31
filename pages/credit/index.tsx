@@ -3,6 +3,7 @@ import { useTranslation } from "next-i18next";
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 import Head from "next/head";
 import React from "react";
+import withLayoutPrivate from "../../components/layout/withLayoutPrivate";
 import ListItem from "../../components/pages/Credit/ui/ListItem";
 import Card from "../../components/ui/card/Card";
 import CardTitle from "../../components/ui/card/CardTitle";
@@ -20,7 +21,7 @@ interface IProps {
   [key: string]: never;
 }
 
-const Home: React.FC<IProps> = () => {
+const Credit: React.FC<IProps> = () => {
   const { t } = useTranslation("common");
 
   return (
@@ -51,4 +52,4 @@ const Home: React.FC<IProps> = () => {
   );
 };
 
-export default Home;
+export default withLayoutPrivate(Credit);

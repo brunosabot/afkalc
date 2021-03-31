@@ -3,12 +3,11 @@ import { useTranslation } from "next-i18next";
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 import Head from "next/head";
 import React, { useContext, useEffect, useState } from "react";
+import withLayoutPrivate from "../../components/layout/withLayoutPrivate";
 import useCurrentToGoal from "../../components/pages/AbexRelicSell/hooks/useCurrentToGoal";
 import RelicChoiceList from "../../components/pages/AbexRelicSell/ui/RelicChoiceList";
 import RelicList from "../../components/pages/AbexRelicSell/ui/RelicList";
 import AbyssalExpeditionContext from "../../components/providers/AbyssalExpeditionContext";
-import { FirebaseContext } from "../../components/providers/FirebaseProvider";
-import LoginButton from "../../components/ui/button/LoginButton";
 import Card from "../../components/ui/card/Card";
 import CardHelp from "../../components/ui/card/CardHelp";
 import CardTab from "../../components/ui/card/CardTab";
@@ -27,22 +26,12 @@ interface IProps {
 
 const AbexRelicSell: React.FC<IProps> = () => {
   const { t } = useTranslation("abex-relic-sell");
-  const { values } = useContext(FirebaseContext);
   const [tab, setTab] = useState(0);
   const [showHelp, setShowHelp] = useState(false);
   const { actions, values: abexValues } = useContext(AbyssalExpeditionContext);
 
   useEffect(() => actions.load());
   useCurrentToGoal(abexValues.currentRelics, abexValues.goalRelics);
-
-  if (values.isAuth === false) {
-    return (
-      <Card>
-        <CardTitle>{t("common:require-login")}</CardTitle>
-        <LoginButton />
-      </Card>
-    );
-  }
 
   return (
     <Card>
@@ -89,4 +78,4 @@ const AbexRelicSell: React.FC<IProps> = () => {
   );
 };
 
-export default AbexRelicSell;
+export default withLayoutPrivate(AbexRelicSell);

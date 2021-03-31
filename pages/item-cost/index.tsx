@@ -3,6 +3,7 @@ import { useTranslation } from "next-i18next";
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 import Head from "next/head";
 import React, { useState } from "react";
+import withLayoutPrivate from "../../components/layout/withLayoutPrivate";
 import useTotal from "../../components/pages/ItemCost/hooks/useTotal";
 import Block from "../../components/pages/ItemCost/ui/Block";
 import Help from "../../components/pages/ItemCost/ui/Help";
@@ -64,4 +65,4 @@ const ItemCost: React.FC<IProps> = () => {
   );
 };
 
-export default ItemCost;
+export default withLayoutPrivate(ItemCost);

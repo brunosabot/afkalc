@@ -3,12 +3,11 @@ import { useTranslation } from "next-i18next";
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 import { useRouter } from "next/router";
 import React, { useCallback, useContext, useEffect } from "react";
+import withLayoutPrivate from "../../components/layout/withLayoutPrivate";
 import Create from "../../components/pages/TiersList/ui/Create";
 import ListItem from "../../components/pages/TiersList/ui/ListItem";
 import ListItemEmpty from "../../components/pages/TiersList/ui/ListItemEmpty";
 import PriorityListContext from "../../components/providers/PriorityListContext";
-import ProfileContext from "../../components/providers/ProfileContext";
-import LoginButton from "../../components/ui/button/LoginButton";
 import Card from "../../components/ui/card/Card";
 import CardActions from "../../components/ui/card/CardActions";
 import CardSubTitle from "../../components/ui/card/CardSubTitle";
@@ -29,9 +28,6 @@ const PriorityList: React.FC<IProps> = () => {
   const { t } = useTranslation("priority-list");
 
   const {
-    values: { isAuth },
-  } = useContext(ProfileContext);
-  const {
     actions: { createList, load },
     values: { favorites, priorityList },
   } = useContext(PriorityListContext);
@@ -43,15 +39,6 @@ const PriorityList: React.FC<IProps> = () => {
       router.push(`/tiers-list/${newId}`);
     });
   }, [createList, router]);
-
-  if (isAuth === false) {
-    return (
-      <Card>
-        <CardTitle>{t("common:require-login")}</CardTitle>
-        <LoginButton />
-      </Card>
-    );
-  }
 
   return (
     <Card>
@@ -84,4 +71,4 @@ const PriorityList: React.FC<IProps> = () => {
   );
 };
 
-export default PriorityList;
+export default withLayoutPrivate(PriorityList);

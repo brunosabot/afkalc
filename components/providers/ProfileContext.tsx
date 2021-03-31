@@ -46,6 +46,10 @@ interface IProfileActions {
 
 interface IProfileValues {
   isAuth: boolean;
+  isAnonymous: boolean;
+  isGoogle: boolean;
+  isFacebook: boolean;
+  isTwitter: boolean;
   userId: string;
   ownerId?: string;
   campaignLevel: string;
@@ -68,6 +72,10 @@ export interface IProfileContext {
 
 export const defaultValues: IProfileValues = {
   isAuth: false,
+  isAnonymous: false,
+  isGoogle: false,
+  isFacebook: false,
+  isTwitter: false,
   userId: "",
   ownerId: undefined,
   campaignLevel: "1-1",

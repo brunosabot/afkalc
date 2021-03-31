@@ -7,6 +7,7 @@ import { useRouter } from "next/router";
 import React, { useContext, useEffect, useState } from "react";
 import useFirestoreDocument from "../../components/hooks/useFirestoreDocument";
 import useFirestoreDocumentReference from "../../components/hooks/useFirestoreDocumentReference";
+import withLayoutPrivate from "../../components/layout/withLayoutPrivate";
 import useFilteredHeroes from "../../components/pages/HeroList/hooks/useFilteredHeroes";
 import useFilters from "../../components/pages/HeroList/hooks/useFilters";
 import useGetValue from "../../components/pages/HeroList/hooks/useGetValue";
@@ -19,7 +20,6 @@ import useSetLevel from "../../components/pages/TiersList/hooks/useSetLevel";
 import ProfileContext from "../../components/providers/ProfileContext";
 import IFirebaseHeroes from "../../components/providers/types/IFirebaseHeroes";
 import IFirebaseProfile from "../../components/providers/types/IFirebaseProfile";
-import LoginButton from "../../components/ui/button/LoginButton";
 import Card from "../../components/ui/card/Card";
 import CardHelp from "../../components/ui/card/CardHelp";
 import CardTitle from "../../components/ui/card/CardTitle";
@@ -74,15 +74,6 @@ const HeroList: React.FC<IProps> = () => {
       window.location.replace(`/hero-list/${userId}`);
     }
   }, [id, userId]);
-
-  if (values.isAuth === false) {
-    return (
-      <Card>
-        <CardTitle>{t("common:require-login")}</CardTitle>
-        <LoginButton />
-      </Card>
-    );
-  }
 
   return (
     <>
@@ -140,4 +131,4 @@ const HeroList: React.FC<IProps> = () => {
   );
 };
 
-export default HeroList;
+export default withLayoutPrivate(HeroList);

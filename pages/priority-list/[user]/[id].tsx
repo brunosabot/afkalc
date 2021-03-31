@@ -3,14 +3,13 @@ import { useTranslation } from "next-i18next";
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 import Head from "next/head";
 import { useRouter } from "next/router";
-import React, { useContext } from "react";
+import React from "react";
 import useFirestoreQuery from "../../../components/hooks/useFirestoreQuery";
 import useFirestoreQueryReference from "../../../components/hooks/useFirestoreQueryReference";
+import withLayoutPrivate from "../../../components/layout/withLayoutPrivate";
 import ListItem from "../../../components/pages/TiersList/ui/ListItem";
 import ListItemEmpty from "../../../components/pages/TiersList/ui/ListItemEmpty";
-import { FirebaseContext } from "../../../components/providers/FirebaseProvider";
 import IFirebasePriorityList from "../../../components/providers/types/IFirebasePriorityList";
-import LoginButton from "../../../components/ui/button/LoginButton";
 import Card from "../../../components/ui/card/Card";
 import CardTitle from "../../../components/ui/card/CardTitle";
 import List from "../../../components/ui/list/List";
@@ -33,7 +32,6 @@ interface IProps {
 const PriorityList: React.FC<IProps> = () => {
   const router = useRouter();
   const { t } = useTranslation("priority-list");
-  const { values } = useContext(FirebaseContext);
   const { user, id } = router.query;
 
   const favoriteQuery = useFirestoreQueryReference(
@@ -44,15 +42,6 @@ const PriorityList: React.FC<IProps> = () => {
   );
 
   const favoriteResult = useFirestoreQuery<IFirebasePriorityList[]>(favoriteQuery);
-
-  if (values.isAuth === false) {
-    return (
-      <Card>
-        <CardTitle>{t("common:require-login")}</CardTitle>
-        <LoginButton />
-      </Card>
-    );
-  }
 
   return (
     <>
@@ -78,4 +67,4 @@ const PriorityList: React.FC<IProps> = () => {
   );
 };
 
-export default PriorityList;
+export default withLayoutPrivate(PriorityList);

@@ -1,0 +1,20 @@
+.Wrapper {
+  padding: 0 16px 16px 16px;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+}
+.AnonymousLoginButton {
+  background: transparent;
+  border: 0;
+  color: var(--text-color);
+  cursor: pointer;
+  font-family: inherit;
+  font-size: 1em;
+  padding: 0 16px;
+  height: 46px;
+  outline: 0;
+}
+.AnonymousLoginButton:hover {
+  text-decoration: underline;
+}
