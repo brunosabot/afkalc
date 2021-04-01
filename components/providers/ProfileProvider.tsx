@@ -49,6 +49,7 @@ const ProfileProvider: React.FC<IProps> = ({ children }) => {
         isAnonymous: values.isAnonymous,
         isGoogle: values.isGoogle,
         isTwitter: values.isTwitter,
+        isFacebook: values.isFacebook,
       },
     }),
     [
@@ -66,6 +67,7 @@ const ProfileProvider: React.FC<IProps> = ({ children }) => {
       values.isAnonymous,
       values.isGoogle,
       values.isTwitter,
+      values.isFacebook,
     ]
   );
 
