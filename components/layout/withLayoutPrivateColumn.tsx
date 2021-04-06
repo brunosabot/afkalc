@@ -13,7 +13,9 @@ const withLayoutPrivateColumn = <P extends object>(Component: React.ComponentTyp
     <>
       <Menu />
       <div id="page">
-        <div style={{ display: "flex", flexDirection: "column", gap: "16px" }}>
+        <div
+          style={{ display: "flex", flexDirection: "column", gap: "16px", alignItems: "center" }}
+        >
           <AnonymousBanner />
           {values.isAuth ? <Component {...pageProps} /> : <LoginBox />}
         </div>

@@ -50,6 +50,7 @@ interface IProfileValues {
   isGoogle: boolean;
   isFacebook: boolean;
   isTwitter: boolean;
+  isPassword: boolean;
   userId: string;
   ownerId?: string;
   campaignLevel: string;
@@ -76,6 +77,7 @@ export const defaultValues: IProfileValues = {
   isGoogle: false,
   isFacebook: false,
   isTwitter: false,
+  isPassword: false,
   userId: "",
   ownerId: undefined,
   campaignLevel: "1-1",

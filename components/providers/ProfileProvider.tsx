@@ -50,6 +50,7 @@ const ProfileProvider: React.FC<IProps> = ({ children }) => {
         isGoogle: values.isGoogle,
         isTwitter: values.isTwitter,
         isFacebook: values.isFacebook,
+        isPassword: values.isPassword,
       },
     }),
     [
@@ -68,6 +69,7 @@ const ProfileProvider: React.FC<IProps> = ({ children }) => {
       values.isGoogle,
       values.isTwitter,
       values.isFacebook,
+      values.isPassword,
     ]
   );
 
