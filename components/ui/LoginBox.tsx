@@ -2,7 +2,9 @@ import React from "react";
 import { useTranslation } from "react-i18next";
 import AnonymousLoginButton from "./button/AnonymousLoginButton";
 import FacebookLoginButton from "./button/FacebookLoginButton";
+import ForgottenPassword from "./button/ForgottenPassword";
 import GoogleLoginButton from "./button/GoogleLoginButton";
+import PasswordLoginButton from "./button/PasswordLoginButton";
 import TwitterLoginButton from "./button/TwitterLoginButton";
 import Card from "./card/Card";
 import CardTitle from "./card/CardTitle";
@@ -19,7 +21,9 @@ const LoginBox: React.FC<Props> = () => {
       <GoogleLoginButton />
       <FacebookLoginButton />
       <TwitterLoginButton />
+      <PasswordLoginButton />
       <AnonymousLoginButton />
+      <ForgottenPassword />
     </Card>
   );
 };

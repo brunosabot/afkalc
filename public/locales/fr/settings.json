@@ -5,5 +5,9 @@
   "label-rgpd": "En vous connectant, vous fournissez à AFKalc votre email. Celui-ci n'est pas utilisé à d'autres fins que celui de vous connecter. Les données stockées par l'application sont vos données liées à : l'expéditon abyssale, la liste des héroes, votre progression campagne et vip, vos listes de priorités et vos favoris. Vous pouvez à tout moment supprimer votre compte sur cette page.",
   "label-download-data": "Télécharger mes données",
   "user-data": "Données utilisateur",
-  "player-name": "Nom de joueur"
+  "player-name": "Nom de joueur",
+  "title-change-password": "Changer mon mot de passe",
+  "label-old-password": "Ancien mot de passe",
+  "label-new-password": "Nouveau mot de passe",
+  "title-link-account": "Lier mon compte"
 }
