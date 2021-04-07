@@ -3,6 +3,6 @@
   border-radius: 8px;
   box-shadow: var(--card-shadow);
   position: relative;
-  width: 100%;
-  max-width: 480px;
+  max-width: 100%;
+  width: 480px;
 }
