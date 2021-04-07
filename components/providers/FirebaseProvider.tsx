@@ -123,6 +123,7 @@ export const FirebaseContext = React.createContext<IFirebaseContext>({
 });
 
 const FirebaseProvider: React.FC<IProps> = ({ children }) => {
+  const [loaded, setLoaded] = useState<boolean>(false);
   const [isGoogle, setIsGoogle] = useState<boolean>(false);
   const [isFacebook, setIsFacebook] = useState<boolean>(false);
   const [isTwitter, setIsTwitter] = useState<boolean>(false);
@@ -151,6 +152,7 @@ const FirebaseProvider: React.FC<IProps> = ({ children }) => {
 
   useEffect(() => {
     firebase.auth().onAuthStateChanged((user) => {
+      setLoaded(true);
       handleUser(user);
     });
   }, [handleUser]);
@@ -247,6 +249,10 @@ const FirebaseProvider: React.FC<IProps> = ({ children }) => {
       isPassword,
     ]
   );
+
+  if (loaded === false) {
+    return <div>Loading</div>;
+  }
 
   return <FirebaseContext.Provider value={value}>{children}</FirebaseContext.Provider>;
 };

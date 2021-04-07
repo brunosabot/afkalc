@@ -1,0 +1,13 @@
+{
+  "members": "Membres",
+  "hero-search": "Recherche de héros",
+  "title-player-name": "Renseignez votre nom de joueur",
+  "label-player-name": "Votre nom de joueur",
+  "label-update": "Mettre à jour",
+  "title-join-guild": "Rejoindre une guilde",
+  "label-guild-name": "Nom de la guilde",
+  "title-create-guild": "Créer une guilde",
+  "label-find-guild": "Trouver une guilde",
+  "confirm-kick": "Voulez-vous vraiment expulser cette personne de la guilde ?",
+  "label-player-unknown": "Inconnu"
+}

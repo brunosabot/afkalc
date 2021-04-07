@@ -4,6 +4,7 @@
   align-items: center;
   flex-grow: 1;
   display: flex;
+  flex-basis: 100%;
   align-items: center;
   justify-content: center;
   box-sizing: border-box;
