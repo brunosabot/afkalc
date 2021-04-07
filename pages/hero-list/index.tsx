@@ -16,10 +16,12 @@ const HeroList: React.FC<IProps> = () => {
   const router = useRouter();
   const { values } = useContext(ProfileContext);
 
-  if (values.userId) {
-    router.push(`/hero-list/${values.userId}`);
-  } else {
-    router.push(`/`);
+  if (process.browser){
+    if (values.userId) {
+      router.push(`/hero-list/${values.userId}`);
+    } else {
+      router.push(`/`);
+    }
   }
 
   return <div />;

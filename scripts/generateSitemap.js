@@ -3,7 +3,7 @@ const fs = require("fs");
 // eslint-disable-next-line import/no-extraneous-dependencies
 const globby = require("globby");
 
-const languages = ["", "fr/"];
+const alternativeLanguages = ["fr"];
 
 function toW3CString(date) {
   const year = date.getFullYear();
@@ -49,19 +49,24 @@ module.exports = async function generateSiteMap() {
 
   const sitemap = [
     `<?xml version="1.0" encoding="UTF-8"?>`,
-    `<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">`,
+    `<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">`,
   ];
 
   pages.forEach((page) => {
     const stats = fs.statSync(page);
     const path = page.replace("pages", "").replace(".tsx", "").replace(".md", "");
     const route = path.replace("/index", "").replace(/^\//, "");
-    languages.forEach((lang) => {
-      sitemap.push(`  <url>`);
-      sitemap.push(`    <loc>https://afkalc.com${`/${lang}${route}`.replace("//", "/")}</loc>`);
-      sitemap.push(`    <lastmod>${toW3CString(stats.ctime)}</lastmod>`);
-      sitemap.push(`  </url>`);
+
+    sitemap.push(`  <url>`);
+    sitemap.push(`    <loc>https://afkalc.com${`/${route}`.replace("//", "/")}</loc>`);
+    sitemap.push(`    <lastmod>${toW3CString(stats.ctime)}</lastmod>`);
+
+    alternativeLanguages.forEach((lang) => {
+      const url = `https://afkalc.com${`/${lang}/${route}`.replace("//", "/")}`;
+      sitemap.push(`    <xhtml:link rel="alternate" hreflang="${lang}" href="${url}"/>`);
     });
+
+    sitemap.push(`  </url>`);
   });
 
   sitemap.push(`</urlset>`);
