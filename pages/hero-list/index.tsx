@@ -16,7 +16,7 @@ const HeroList: React.FC<IProps> = () => {
   const router = useRouter();
   const { values } = useContext(ProfileContext);
 
-  if (process.browser){
+  if (process.browser) {
     if (values.userId) {
       router.push(`/hero-list/${values.userId}`);
     } else {

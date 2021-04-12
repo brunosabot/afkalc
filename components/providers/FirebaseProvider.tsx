@@ -1,4 +1,5 @@
 import React, { useCallback, useEffect, useMemo, useState } from "react";
+import Spinner from "../ui/Spinner";
 import firebase from "./firebase";
 
 const googleAuthProvider = new firebase.auth.GoogleAuthProvider();
@@ -251,7 +252,7 @@ const FirebaseProvider: React.FC<IProps> = ({ children }) => {
   );
 
   if (loaded === false) {
-    return <div>Loading</div>;
+    return <Spinner />;
   }
 
   return <FirebaseContext.Provider value={value}>{children}</FirebaseContext.Provider>;
