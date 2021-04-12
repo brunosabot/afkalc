@@ -25,16 +25,18 @@ const TabMemberList: React.FC<IProps> = () => {
               values.guild.applications.find((application) => application === member.id) !==
               undefined
           )
-          .map((member) => (
-            <ApplicationListItem
-              key={member.id}
-              id={member.id}
-              onAccept={actions.acceptJoinGuild}
-              onReject={actions.rejectJoinGuild}
-            >
-              {member.playerName || t("label-player-unknown")}
-            </ApplicationListItem>
-          ))}
+          .map((member) =>
+            member.id ? (
+              <ApplicationListItem
+                key={member.id}
+                id={member.id}
+                onAccept={actions.acceptJoinGuild}
+                onReject={actions.rejectJoinGuild}
+              >
+                {member.playerName || t("label-player-unknown")}
+              </ApplicationListItem>
+            ) : null
+          )}
 
       {/* Membres */}
       {values.members
@@ -43,16 +45,18 @@ const TabMemberList: React.FC<IProps> = () => {
           (member) =>
             values.guild.applications.find((application) => application === member.id) === undefined
         )
-        .map((member) => (
-          <MemberListItem
-            key={member.id}
-            id={member.id}
-            isOwner={values.guild.ownerId === member.id}
-            isDeputy={values.guild.deputies.includes(member.id)}
-          >
-            {member.playerName || t("label-player-unknown")}
-          </MemberListItem>
-        ))}
+        .map((member) =>
+          member.id ? (
+            <MemberListItem
+              key={member.id}
+              id={member.id}
+              isOwner={values.guild.ownerId === member.id}
+              isDeputy={values.guild.deputies.includes(member.id)}
+            >
+              {member.playerName || t("label-player-unknown")}
+            </MemberListItem>
+          ) : null
+        )}
     </>
   );
 };
