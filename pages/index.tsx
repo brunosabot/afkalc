@@ -1,7 +1,6 @@
 import {
   mdiAccountGroup,
   mdiAccountHeart,
-  mdiAccountSupervisor,
   mdiChevronTripleUp,
   mdiCircleMultiple,
   mdiCog,
@@ -92,9 +91,9 @@ const Home: React.FC<IProps> = () => {
           <MenuItem to="/abex-relic-sell" icon={mdiCircleMultiple}>
             {t("common:menu.abex-relic-sell")}
           </MenuItem>
-          <MenuItem to="/guild" icon={mdiAccountSupervisor}>
+          {/* <MenuItem to="/guild" icon={mdiAccountSupervisor}>
             {t("common:menu.guild")}
-          </MenuItem>
+          </MenuItem> */}
           <MenuItem to="/credit" icon={mdiAccountHeart}>
             {t("common:menu.credit")}
           </MenuItem>
