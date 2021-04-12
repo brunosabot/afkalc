@@ -79,12 +79,14 @@ const HeroList: React.FC<IProps> = () => {
     <>
       <TwoColsSticky>
         <Card>
-          <CardTitle icon={mdiViewList}>{t("common:menu.hero-list")}</CardTitle>
+          <CardTitle icon={mdiViewList}>
+            {t(userName ? "hero-list-of" : "hero-list-of-unknown", { userName })}
+          </CardTitle>
 
           {/* TODO: remove when everyone is migrated */}
           <CardHelp>{t("moved")}</CardHelp>
 
-          <ShareBanner isView={isSelf === false} />
+          <ShareBanner />
           <Head>
             <title>{`${t("common:menu.hero-list")} - Afkalc`}</title>
             <meta name="description" content="" />
