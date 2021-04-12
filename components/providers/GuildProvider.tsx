@@ -1,5 +1,7 @@
 import React, { useCallback, useContext, useMemo, useState } from "react";
 import useFirestoreCollectionReference from "../hooks/useFirestoreCollectionReference";
+import useFirestoreInQuery from "../hooks/useFirestoreInQuery";
+import useFirestoreInQueryReference from "../hooks/useFirestoreInQueryReference";
 import useFirestoreQuery from "../hooks/useFirestoreQuery";
 import useFirestoreQueryReference from "../hooks/useFirestoreQueryReference";
 import firebase from "./firebase";
@@ -79,20 +81,18 @@ const GuildProvider: React.FC<IProps> = ({ children }) => {
     return [...members, ...applications];
   }, [guildResult?.data]);
 
-  const membersQuery = useFirestoreQueryReference(
+  const membersQuery = useFirestoreInQueryReference(
     `profile`,
     firebase.firestore.FieldPath.documentId(),
-    "in",
-    memberIds
+    [...memberIds]
   );
-  const members = useFirestoreQuery<IFirebaseProfile[]>(membersQuery, lazyMember);
-  const boxQuery = useFirestoreQueryReference(
+  const members = useFirestoreInQuery<IFirebaseProfile>(membersQuery, lazyMember);
+  const boxQuery = useFirestoreInQueryReference(
     `heroes`,
     firebase.firestore.FieldPath.documentId(),
-    "in",
-    memberIds
+    [...memberIds]
   );
-  const box = useFirestoreQuery<IFirebaseHeroes[]>(boxQuery, lazyBox);
+  const box = useFirestoreInQuery<IFirebaseHeroes>(boxQuery, lazyBox);
 
   const load = useCallback(() => {
     setLazyGuild(false);
