@@ -1,4 +1,5 @@
 export default interface IFirebaseProfile {
+  id: string;
   version?: number;
   campaignLevel?: string;
   campaignSuccessDate?: string;

@@ -7,6 +7,7 @@ import { appWithTranslation } from "next-i18next";
 import React from "react";
 import AbyssalExpeditionProvider from "../components/providers/AbyssalExpeditionProvider";
 import FirebaseProvider from "../components/providers/FirebaseProvider";
+import GuildProvider from "../components/providers/GuildProvider";
 import PriorityListProvider from "../components/providers/PriorityListProvider";
 import ProfileProvider from "../components/providers/ProfileProvider";
 import UserProvider from "../components/providers/UserProvider";
@@ -25,9 +26,11 @@ function MyApp({ Component, pageProps }: any) {
       <ProfileProvider>
         <PriorityListProvider>
           <AbyssalExpeditionProvider>
-            <UserProvider>
-              <Component {...pageProps} />
-            </UserProvider>
+            <GuildProvider>
+              <UserProvider>
+                <Component {...pageProps} />
+              </UserProvider>
+            </GuildProvider>
           </AbyssalExpeditionProvider>
         </PriorityListProvider>
       </ProfileProvider>

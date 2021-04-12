@@ -1,0 +1,13 @@
+{
+  "members": "Members",
+  "hero-search": "Hero search",
+  "title-player-name": "Enter you player name",
+  "label-player-name": "Your player name",
+  "label-update": "Update",
+  "title-join-guild": "Join a guild",
+  "label-guild-name": "Guild name",
+  "title-create-guild": "Create a guild",
+  "label-find-guild": "Find a guild",
+  "confirm-kick": "Do you really want to kick the player from the guild?",
+  "label-player-unknown": "Unknown"
+}

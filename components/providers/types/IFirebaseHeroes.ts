@@ -11,4 +11,5 @@ export interface IFirebaseHeroList {
 
 export default interface IFirebaseHeroes {
   heroes: IFirebaseHeroList;
+  id: string;
 }
