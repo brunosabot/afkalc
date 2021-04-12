@@ -3,13 +3,12 @@ import { useRouter } from "next/router";
 import React, { useContext } from "react";
 import ProfileContext from "../../../providers/ProfileContext";
 import CardShareNew from "../../../ui/card/CardShareNew";
-import CardTitle from "../../../ui/card/CardTitle";
 
 interface IProps {
-  isView: boolean;
+  [key: string]: never;
 }
 
-const ShareBanner: React.FC<IProps> = ({ isView }) => {
+const ShareBanner: React.FC<IProps> = () => {
   const { t } = useTranslation("hero-list");
   const {
     values: { userId },
@@ -17,10 +16,6 @@ const ShareBanner: React.FC<IProps> = ({ isView }) => {
 
   const router = useRouter();
   const localePath = router.locale === router.defaultLocale ? "" : `/${router.locale}`;
-
-  if (isView === true) {
-    return <CardTitle>{t("somebodys-list")}</CardTitle>;
-  }
 
   return (
     <CardShareNew>
