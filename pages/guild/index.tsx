@@ -23,13 +23,13 @@ const Guild: React.FC<IProps> = () => {
   useEffect(() => actions.load());
 
   return (
-    <div>
+    <>
       <Head>
         <title>{`${t("common:menu.guild")} - Afkalc`}</title>
         <meta name="description" content={t("common:guild-desc")} />
       </Head>
       {values.guild?.id ? <View /> : <Register />}
-    </div>
+    </>
   );
 };
 

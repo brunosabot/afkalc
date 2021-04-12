@@ -14,9 +14,11 @@ const AnonymousBanner: React.FC<Props> = () => {
 
   if (values.isAuth && values.isAnonymous) {
     return (
-      <CardHelp>
-        {t("temporary-account")} <Link href="/settings">{t("go-registration")}</Link>
-      </CardHelp>
+      <div style={{ maxWidth: "800px", margin: "16px auto -16px auto" }}>
+        <CardHelp>
+          {t("temporary-account")} <Link href="/settings">{t("go-registration")}</Link>
+        </CardHelp>
+      </div>
     );
   }
 
