@@ -62,6 +62,7 @@ const TabSearchHero: React.FC<IProps> = () => {
         .map((member) => (
           <MemberListItem
             id={member?.id ?? ""}
+            key={member?.id ?? ""}
             isOwner={values.guild.ownerId === member?.id}
             isDeputy={values.guild.deputies.includes(member?.id ?? "")}
           >
