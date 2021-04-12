@@ -12,10 +12,8 @@ const withLayoutPrivate = <P extends object>(Component: React.ComponentType<P>) 
   return (
     <>
       <Menu />
-      <div id="page">
-        <AnonymousBanner />
-        {values.isAuth ? <Component {...pageProps} /> : <LoginBox />}
-      </div>
+      <AnonymousBanner />
+      <div id="page">{values.isAuth ? <Component {...pageProps} /> : <LoginBox />}</div>
     </>
   );
 };
