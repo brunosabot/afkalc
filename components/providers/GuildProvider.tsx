@@ -74,6 +74,12 @@ const GuildProvider: React.FC<IProps> = ({ children }) => {
     [guildCollection, guildResult?.data]
   );
 
+  const removeGuild = useCallback(
+    (id: string) =>
+      guildCollection?.doc(guildResult?.data?.[0].id)?.delete() ?? Promise.resolve(undefined),
+    [guildCollection, guildResult?.data]
+  );
+
   const memberIds = useMemo(() => {
     const members = guildResult?.data?.[0]?.members ?? [];
     const applications = guildResult?.data?.[0]?.applications ?? [];
@@ -121,6 +127,7 @@ const GuildProvider: React.FC<IProps> = ({ children }) => {
         acceptJoinGuild,
         rejectJoinGuild,
         removeFromGuild,
+        removeGuild,
         load,
       },
       values: {
@@ -137,6 +144,7 @@ const GuildProvider: React.FC<IProps> = ({ children }) => {
       acceptJoinGuild,
       rejectJoinGuild,
       removeFromGuild,
+      removeGuild,
       load,
       box.data,
       members.data,

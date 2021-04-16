@@ -1,4 +1,4 @@
-import React, { useContext, useState } from "react";
+import React, { useContext, useMemo, useState } from "react";
 import { useTranslation } from "react-i18next";
 import ascendLevels from "../../../../data/heroAscensionLevel.json";
 import Modal from "../../../functionnal/Modal";
@@ -6,6 +6,7 @@ import ChoosePriorityHero from "../../../modal/ChoosePriorityHero";
 import GuildContext from "../../../providers/GuildContext";
 import IFirebaseHeroes from "../../../providers/types/IFirebaseHeroes";
 import Character from "../../../ui/afk/Character";
+import Chip from "../../../ui/Chip";
 import useHero from "../../TiersList/hooks/useHero";
 import MemberListItem from "./MemberListItem";
 import styles from "./TabSearchHero.module.css";
@@ -42,6 +43,14 @@ const TabSearchHero: React.FC<IProps> = () => {
   if (si > 0) searchString.push(`${t("common:concept.si")} +${si}`);
   if (fi > 0) searchString.push(`${t("common:concept.fi")} ${fi}/9`);
 
+  const foundBoxes = useMemo(
+    () =>
+      values.boxes
+        .filter(filterHeroes(hero, si, fi, ascend))
+        .map((box) => values.members.find((member) => member.id === box.id)),
+    [ascend, fi, hero, si, values.boxes, values.members]
+  );
+
   return (
     <>
       <div className={styles.SearchBox}>
@@ -53,22 +62,22 @@ const TabSearchHero: React.FC<IProps> = () => {
           onClick={() => setShowModal(true)}
         />
         {searchString.join(", ")}
+        <Chip>{foundBoxes.length}</Chip>
       </div>
 
-      {values.boxes
-        .filter(filterHeroes(hero, si, fi, ascend))
-        .map((box) => values.members.find((member) => member.id === box.id))
-        .filter((member) => member)
-        .map((member) => (
+      {foundBoxes.map((member) => {
+        if (member === undefined) return null;
+        return (
           <MemberListItem
-            id={member?.id ?? ""}
+            member={member}
             key={member?.id ?? ""}
             isOwner={values.guild.ownerId === member?.id}
             isDeputy={values.guild.deputies.includes(member?.id ?? "")}
           >
             {member?.playerName || t("label-player-unknown")}
           </MemberListItem>
-        ))}
+        );
+      })}
 
       <Modal active={showModal} onClose={() => setShowModal(false)}>
         <ChoosePriorityHero

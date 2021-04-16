@@ -9,6 +9,7 @@ interface IGuildActions {
   acceptJoinGuild: (id: string) => void;
   rejectJoinGuild: (id: string) => void;
   removeFromGuild: (id: string) => void;
+  removeGuild: (id: string) => void;
   createGuild: (name: string) => void;
 }
 
@@ -50,6 +51,7 @@ export default React.createContext<IGuildContext>({
     acceptJoinGuild: () => {},
     rejectJoinGuild: () => {},
     removeFromGuild: () => {},
+    removeGuild: () => {},
     createGuild: () => {},
   },
   values: { members: [], boxes: [], guild: { ...defaultGuildValues }, application: {} },

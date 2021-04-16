@@ -1,18 +1,16 @@
 .CardTab {
-  height: 48px;
-  display: flex;
   align-items: center;
-  flex-grow: 1;
+  background: transparent;
+  border-width: 3px;
+  border: solid transparent;
+  box-sizing: border-box;
+  color: inherit;
   display: flex;
   flex-basis: 100%;
-  align-items: center;
-  justify-content: center;
-  box-sizing: border-box;
-  border: solid transparent;
-  border-width: 3px;
-  background: transparent;
-  color: inherit;
+  flex-grow: 1;
   font-size: inherit;
+  height: 48px;
+  justify-content: center;
   outline: 0;
 }
 .Active {

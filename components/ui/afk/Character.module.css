@@ -108,7 +108,6 @@
 }
 .Si {
   fill: #f5a400;
-  filter: drop-shadow(0 0 1px #000);
   height: 22px;
   left: -7px;
   position: absolute;
@@ -129,7 +128,6 @@
 .Fi {
   display: flex;
   fill: #fff;
-  filter: drop-shadow(0 0 1px #000);
   height: 10px;
   justify-content: center;
   left: -1px;
@@ -147,7 +145,6 @@
 
 .Artifact {
   border-radius: 11px;
-  filter: drop-shadow(0 0 1px #000);
   height: 22px;
   left: 50%;
   position: absolute;
