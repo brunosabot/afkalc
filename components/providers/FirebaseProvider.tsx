@@ -1,5 +1,4 @@
 import React, { useCallback, useEffect, useMemo, useState } from "react";
-import Spinner from "../ui/Spinner";
 import firebase from "./firebase";
 
 const googleAuthProvider = new firebase.auth.GoogleAuthProvider();
@@ -75,10 +74,12 @@ interface IFirebaseActions {
   sendPasswordMail: (email: string) => Promise<void>;
   logOut: () => Promise<void>;
   reLogIn: () => Promise<void>;
+  // setIsLoaded: () => void;
 }
 
 interface IfirebaseValues {
   uid: string;
+  isLoaded: boolean;
   isAuth: boolean;
   isAnonymous: boolean;
   isGoogle: boolean;
@@ -115,6 +116,7 @@ export const FirebaseContext = React.createContext<IFirebaseContext>({
   values: {
     uid: "",
     isAnonymous: true,
+    isLoaded: false,
     isGoogle: false,
     isFacebook: false,
     isTwitter: false,
@@ -124,7 +126,7 @@ export const FirebaseContext = React.createContext<IFirebaseContext>({
 });
 
 const FirebaseProvider: React.FC<IProps> = ({ children }) => {
-  const [loaded, setLoaded] = useState<boolean>(false);
+  const [isLoaded, setIsLoaded] = useState<boolean>(false);
   const [isGoogle, setIsGoogle] = useState<boolean>(false);
   const [isFacebook, setIsFacebook] = useState<boolean>(false);
   const [isTwitter, setIsTwitter] = useState<boolean>(false);
@@ -153,7 +155,7 @@ const FirebaseProvider: React.FC<IProps> = ({ children }) => {
 
   useEffect(() => {
     firebase.auth().onAuthStateChanged((user) => {
-      setLoaded(true);
+      setIsLoaded(true);
       handleUser(user);
     });
   }, [handleUser]);
@@ -233,7 +235,7 @@ const FirebaseProvider: React.FC<IProps> = ({ children }) => {
         sendPasswordMail,
         logOut,
       },
-      values: { uid, isAuth, isAnonymous, isGoogle, isFacebook, isTwitter, isPassword },
+      values: { uid, isLoaded, isAuth, isAnonymous, isGoogle, isFacebook, isTwitter, isPassword },
     }),
     [
       linkWithGoogle,
@@ -242,6 +244,7 @@ const FirebaseProvider: React.FC<IProps> = ({ children }) => {
       linkWithPassword,
       changePassword,
       uid,
+      isLoaded,
       isAuth,
       isAnonymous,
       isGoogle,
@@ -250,10 +253,6 @@ const FirebaseProvider: React.FC<IProps> = ({ children }) => {
       isPassword,
     ]
   );
-
-  if (loaded === false) {
-    return <Spinner />;
-  }
 
   return <FirebaseContext.Provider value={value}>{children}</FirebaseContext.Provider>;
 };

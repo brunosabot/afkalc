@@ -1,5 +1,6 @@
 import firebase from "firebase/app";
 import { useEffect, useReducer } from "react";
+import IFirebaseDataState from "../providers/types/IFirebaseDataState";
 import useMemoCompare from "./useMemoCompare";
 
 interface Action {
@@ -7,13 +8,7 @@ interface Action {
   payload?: any[];
 }
 
-interface State<T> {
-  status: string;
-  data?: T[];
-  error?: any;
-}
-
-function reducer<T>(state: State<T>, action: Action) {
+function reducer<T>(state: IFirebaseDataState<T>, action: Action) {
   switch (action.type) {
     case "idle":
       return { status: "idle", data: [], error: undefined };
@@ -31,7 +26,7 @@ function reducer<T>(state: State<T>, action: Action) {
 export default function useFirestoreInQuery<T>(
   queries: firebase.firestore.Query[] | undefined,
   lazy: boolean = false
-): State<T> {
+): IFirebaseDataState<T> {
   const initialState = {
     status: queries ? "loading" : "idle",
     data: undefined,
@@ -88,7 +83,7 @@ export default function useFirestoreInQuery<T>(
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [queriesCached, lazy]);
 
-  return state;
+  return (state as unknown) as IFirebaseDataState<T>;
 }
 
 function getDocData(doc: firebase.firestore.DocumentSnapshot) {

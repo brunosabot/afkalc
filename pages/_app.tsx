@@ -5,7 +5,6 @@ import localizedFormat from "dayjs/plugin/localizedFormat";
 import updateLocale from "dayjs/plugin/updateLocale";
 import { appWithTranslation } from "next-i18next";
 import React from "react";
-import AbyssalExpeditionProvider from "../components/providers/AbyssalExpeditionProvider";
 import FirebaseProvider from "../components/providers/FirebaseProvider";
 import GuildProvider from "../components/providers/GuildProvider";
 import PriorityListProvider from "../components/providers/PriorityListProvider";
@@ -25,13 +24,11 @@ function MyApp({ Component, pageProps }: any) {
     <FirebaseProvider>
       <ProfileProvider>
         <PriorityListProvider>
-          <AbyssalExpeditionProvider>
-            <GuildProvider>
-              <UserProvider>
-                <Component {...pageProps} />
-              </UserProvider>
-            </GuildProvider>
-          </AbyssalExpeditionProvider>
+          <GuildProvider>
+            <UserProvider>
+              <Component {...pageProps} />
+            </UserProvider>
+          </GuildProvider>
         </PriorityListProvider>
       </ProfileProvider>
     </FirebaseProvider>

@@ -1,5 +1,4 @@
 import React from "react";
-import IFirebaseHeroes from "./types/IFirebaseHeroes";
 import IFirebaseProfile from "./types/IFirebaseProfile";
 
 interface IGuildActions {
@@ -26,10 +25,9 @@ interface IGuildValues {
   guild: IGuildGuild;
   application: Partial<IGuildGuild>;
   members: IFirebaseProfile[];
-  boxes: IFirebaseHeroes[];
 }
 
-interface IGuildContext {
+export interface IGuildContext {
   actions: IGuildActions;
   values: IGuildValues;
 }
@@ -54,5 +52,5 @@ export default React.createContext<IGuildContext>({
     removeGuild: () => {},
     createGuild: () => {},
   },
-  values: { members: [], boxes: [], guild: { ...defaultGuildValues }, application: {} },
+  values: { members: [], guild: { ...defaultGuildValues }, application: {} },
 });

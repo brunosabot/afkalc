@@ -4,11 +4,11 @@ import ascendLevels from "../../../../data/heroAscensionLevel.json";
 import Modal from "../../../functionnal/Modal";
 import ChoosePriorityHero from "../../../modal/ChoosePriorityHero";
 import GuildContext from "../../../providers/GuildContext";
-import IFirebaseHeroes from "../../../providers/types/IFirebaseHeroes";
+import IFirebaseProfile from "../../../providers/types/IFirebaseProfile";
 import Character from "../../../ui/afk/Character";
 import Chip from "../../../ui/Chip";
 import useHero from "../../TiersList/hooks/useHero";
-import MemberListItem from "./MemberListItem";
+import SearchListItem from "./SearchListItem";
 import styles from "./TabSearchHero.module.css";
 
 interface IProps {
@@ -16,7 +16,7 @@ interface IProps {
 }
 
 function filterHeroes(hero: number, si: number, fi: number, ascend: number) {
-  return (box: IFirebaseHeroes) => {
+  return (box: IFirebaseProfile) => {
     const vAscend = box?.heroes?.[hero]?.ascend ?? -1;
     const vSi = box?.heroes?.[hero]?.si ?? 0;
     const vFi = box?.heroes?.[hero]?.fi ?? 0;
@@ -45,10 +45,10 @@ const TabSearchHero: React.FC<IProps> = () => {
 
   const foundBoxes = useMemo(
     () =>
-      values.boxes
+      values.members
         .filter(filterHeroes(hero, si, fi, ascend))
         .map((box) => values.members.find((member) => member.id === box.id)),
-    [ascend, fi, hero, si, values.boxes, values.members]
+    [ascend, fi, hero, si, values.members]
   );
 
   return (
@@ -68,14 +68,19 @@ const TabSearchHero: React.FC<IProps> = () => {
       {foundBoxes.map((member) => {
         if (member === undefined) return null;
         return (
-          <MemberListItem
+          <SearchListItem
             member={member}
-            key={member?.id ?? ""}
-            isOwner={values.guild.ownerId === member?.id}
-            isDeputy={values.guild.deputies.includes(member?.id ?? "")}
+            key={member.id ?? ""}
+            isOwner={values.guild.ownerId === member.id}
+            isDeputy={values.guild.deputies.includes(member.id ?? "")}
           >
-            {member?.playerName || t("label-player-unknown")}
-          </MemberListItem>
+            <Character
+              id={hero}
+              siLevel={member.heroes[hero].si}
+              ascendLevel={member.heroes[hero].ascend}
+              fiLevel={member.heroes[hero].fi}
+            />
+          </SearchListItem>
         );
       })}
 

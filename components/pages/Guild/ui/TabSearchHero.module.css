@@ -3,4 +3,5 @@
   display: flex;
   align-items: center;
   gap: 16px;
+  background-color: var(--hover-color);
 }

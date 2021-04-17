@@ -1,37 +1,11 @@
 import { createContext } from "react";
 import HeroClass from "../../types/HeroClass";
-
-interface IAbexTile {
-  amount: number;
-  garrison: number;
-  timer: number;
-  timestamp: number;
-}
-
-interface IAbexTiles {
-  [key: number]: IAbexTile;
-}
-
-interface IAbexInventory {
-  [key: number]: number;
-}
-
-interface IRelicPosition {
-  0: number;
-  1: number;
-  2: number;
-  3: number;
-  4: number;
-  5: number;
-}
-
-interface IAbexRelic {
-  [HeroClass.mage]: IRelicPosition;
-  [HeroClass.ranger]: IRelicPosition;
-  [HeroClass.support]: IRelicPosition;
-  [HeroClass.tank]: IRelicPosition;
-  [HeroClass.warrior]: IRelicPosition;
-}
+import {
+  IFirebaseAbyssalExpeditionClassRelics,
+  IFirebaseAbyssalExpeditionInventory,
+  IFirebaseAbyssalExpeditionTilesList,
+} from "./types/IFirebaseAbyssalExpedition";
+import { IFirebaseHeroList } from "./types/IFirebaseHeroes";
 
 interface IProfileActions {
   setCampaignLevel: (newCampaignLevel: string) => void;
@@ -42,6 +16,13 @@ interface IProfileActions {
   setFavoritePriorityList: (newFavoritePriorityList: string[]) => void;
   deleteUser: () => void;
   downloadData: () => void;
+  setAbexCurrentRelics: (newCurrentRelics: IFirebaseAbyssalExpeditionClassRelics) => Promise<void>;
+  setAbexGoalRelics: (newGoalRelics: IFirebaseAbyssalExpeditionClassRelics) => Promise<void>;
+  setAbexRelicInventory: (newRelicInventory: IFirebaseAbyssalExpeditionInventory) => Promise<void>;
+  setAbexTiles: (newTiles: IFirebaseAbyssalExpeditionTilesList) => Promise<void>;
+  resetAbexTilesTimers: () => Promise<void>;
+  resetAbexTiles: () => Promise<void>;
+  resetAbexRelicsAndInventory: () => Promise<void>;
 }
 
 interface IProfileValues {
@@ -59,11 +40,12 @@ interface IProfileValues {
   playerVipLevel: number;
   playerName: string;
   shareId?: string;
-  abexGoalRelics: IAbexRelic;
-  abexCurrentRelics: IAbexRelic;
-  abexRelicInventory: IAbexInventory;
-  abexTiles: IAbexTiles;
   favoritePriorityList: string[];
+  abexGoalRelics: IFirebaseAbyssalExpeditionClassRelics;
+  abexCurrentRelics: IFirebaseAbyssalExpeditionClassRelics;
+  abexRelicInventory: IFirebaseAbyssalExpeditionInventory;
+  abexTiles: IFirebaseAbyssalExpeditionTilesList;
+  heroes: IFirebaseHeroList;
 }
 
 export interface IProfileContext {
@@ -103,6 +85,7 @@ export const defaultValues: IProfileValues = {
   abexRelicInventory: {},
   abexTiles: {},
   favoritePriorityList: [],
+  heroes: {},
 };
 
 export default createContext<IProfileContext>({
@@ -115,6 +98,14 @@ export default createContext<IProfileContext>({
     setFavoritePriorityList: () => undefined,
     deleteUser: () => undefined,
     downloadData: () => undefined,
+    // Abyssal Expedition
+    setAbexCurrentRelics: () => Promise.resolve(undefined),
+    setAbexGoalRelics: () => Promise.resolve(undefined),
+    setAbexRelicInventory: () => Promise.resolve(undefined),
+    setAbexTiles: () => Promise.resolve(undefined),
+    resetAbexTilesTimers: () => Promise.resolve(undefined),
+    resetAbexTiles: () => Promise.resolve(undefined),
+    resetAbexRelicsAndInventory: () => Promise.resolve(undefined),
   },
   values: defaultValues,
 });

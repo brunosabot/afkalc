@@ -2,12 +2,12 @@ import { mdiBackupRestore, mdiHelpBox, mdiMap } from "@mdi/js";
 import { useTranslation } from "next-i18next";
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 import Head from "next/head";
-import React, { useContext, useEffect, useState } from "react";
+import React, { useContext, useState } from "react";
 import withLayoutPrivate from "../../components/layout/withLayoutPrivate";
 import useCurrentToGoal from "../../components/pages/AbexRelicSell/hooks/useCurrentToGoal";
 import RelicChoiceList from "../../components/pages/AbexRelicSell/ui/RelicChoiceList";
 import RelicList from "../../components/pages/AbexRelicSell/ui/RelicList";
-import AbyssalExpeditionContext from "../../components/providers/AbyssalExpeditionContext";
+import ProfileContext from "../../components/providers/ProfileContext";
 import Card from "../../components/ui/card/Card";
 import CardAction from "../../components/ui/card/CardAction";
 import CardActions from "../../components/ui/card/CardActions";
@@ -30,10 +30,9 @@ const AbexRelicSell: React.FC<IProps> = () => {
   const { t } = useTranslation("abex-relic-sell");
   const [tab, setTab] = useState(0);
   const [showHelp, setShowHelp] = useState(false);
-  const { actions, values: abexValues } = useContext(AbyssalExpeditionContext);
+  const { actions, values } = useContext(ProfileContext);
 
-  useEffect(() => actions.load());
-  useCurrentToGoal(abexValues.currentRelics, abexValues.goalRelics);
+  useCurrentToGoal(values.abexCurrentRelics, values.abexGoalRelics);
 
   return (
     <Card>
@@ -63,22 +62,25 @@ const AbexRelicSell: React.FC<IProps> = () => {
       </CardTabs>
 
       {tab === 0 ? (
-        <RelicChoiceList current={abexValues.currentRelics} setCurrent={actions.setCurrentRelics} />
+        <RelicChoiceList
+          current={values.abexCurrentRelics}
+          setCurrent={actions.setAbexCurrentRelics}
+        />
       ) : null}
       {tab === 1 ? (
-        <RelicChoiceList current={abexValues.goalRelics} setCurrent={actions.setGoalRelics} />
+        <RelicChoiceList current={values.abexGoalRelics} setCurrent={actions.setAbexGoalRelics} />
       ) : null}
       {tab === 2 ? (
         <RelicList
-          inventory={abexValues.relicInventory}
-          setInventory={actions.setRelicInventory}
-          current={abexValues.currentRelics}
-          goal={abexValues.goalRelics}
+          inventory={values.abexRelicInventory}
+          setInventory={actions.setAbexRelicInventory}
+          current={values.abexCurrentRelics}
+          goal={values.abexGoalRelics}
         />
       ) : null}
 
       <CardActions>
-        <CardAction onClick={actions.resetRelicsAndInventory} icon={mdiBackupRestore}>
+        <CardAction onClick={actions.resetAbexRelicsAndInventory} icon={mdiBackupRestore}>
           {t("reset-box")}
         </CardAction>
       </CardActions>

@@ -18,7 +18,6 @@ import ShareBanner from "../../components/pages/HeroList/ui/ShareBanner";
 import TitleLine from "../../components/pages/HeroList/ui/TitleLine";
 import useSetLevel from "../../components/pages/TiersList/hooks/useSetLevel";
 import ProfileContext from "../../components/providers/ProfileContext";
-import IFirebaseHeroes from "../../components/providers/types/IFirebaseHeroes";
 import IFirebaseProfile from "../../components/providers/types/IFirebaseProfile";
 import Card from "../../components/ui/card/Card";
 import CardHelp from "../../components/ui/card/CardHelp";
@@ -56,12 +55,10 @@ const HeroList: React.FC<IProps> = () => {
 
   const userId = useLoadId(id as string);
 
-  const document = useFirestoreDocumentReference(userId ? `heroes/${userId}` : undefined);
-  const result = useFirestoreDocument<IFirebaseHeroes>(document);
-  const profileDocument = useFirestoreDocumentReference(userId ? `profile/${userId}` : undefined);
-  const profileResult = useFirestoreDocument<IFirebaseProfile>(profileDocument);
+  const document = useFirestoreDocumentReference(userId ? `profile/${userId}` : undefined);
+  const result = useFirestoreDocument<IFirebaseProfile>(document);
   const heroes = result.data?.heroes || [];
-  const userName = profileResult.data?.playerName;
+  const userName = result.data?.playerName;
   const isSelf = userId === values.userId;
 
   const setLevel = useSetLevel(document, heroes);
