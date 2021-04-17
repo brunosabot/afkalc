@@ -46,6 +46,7 @@ interface IProfileValues {
   abexRelicInventory: IFirebaseAbyssalExpeditionInventory;
   abexTiles: IFirebaseAbyssalExpeditionTilesList;
   heroes: IFirebaseHeroList;
+  heroesLastUpdate: string;
 }
 
 export interface IProfileContext {
@@ -86,6 +87,7 @@ export const defaultValues: IProfileValues = {
   abexTiles: {},
   favoritePriorityList: [],
   heroes: {},
+  heroesLastUpdate: "",
 };
 
 export default createContext<IProfileContext>({

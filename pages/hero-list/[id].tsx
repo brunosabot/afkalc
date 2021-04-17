@@ -1,10 +1,11 @@
 import { mdiViewList } from "@mdi/js";
+import dayjs from "dayjs";
 import { GetStaticPaths } from "next";
 import { useTranslation } from "next-i18next";
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 import Head from "next/head";
 import { useRouter } from "next/router";
-import React, { useContext, useEffect, useState } from "react";
+import React, { useContext, useEffect, useMemo, useState } from "react";
 import useFirestoreDocument from "../../components/hooks/useFirestoreDocument";
 import useFirestoreDocumentReference from "../../components/hooks/useFirestoreDocumentReference";
 import withLayoutPrivate from "../../components/layout/withLayoutPrivate";
@@ -72,6 +73,10 @@ const HeroList: React.FC<IProps> = () => {
     }
   }, [id, userId]);
 
+  const lastUpdate = useMemo(() => dayjs(new Date(values.heroesLastUpdate)).fromNow(), [
+    values.heroesLastUpdate,
+  ]);
+
   return (
     <>
       <TwoColsSticky>
@@ -80,8 +85,11 @@ const HeroList: React.FC<IProps> = () => {
             {t(userName ? "hero-list-of" : "hero-list-of-unknown", { userName })}
           </CardTitle>
 
-          {/* TODO: remove when everyone is migrated */}
-          <CardHelp>{t("moved")}</CardHelp>
+          {values.heroesLastUpdate !== "" ? (
+            <div style={{ marginBottom: "-16px" }}>
+              <CardHelp>{`${t("last-update")} ${lastUpdate}`}</CardHelp>
+            </div>
+          ) : null}
 
           <ShareBanner />
           <Head>

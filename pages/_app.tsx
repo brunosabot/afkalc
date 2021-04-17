@@ -2,6 +2,7 @@ import dayjs from "dayjs";
 import "dayjs/locale/fr";
 import customParseFormat from "dayjs/plugin/customParseFormat";
 import localizedFormat from "dayjs/plugin/localizedFormat";
+import relativeTime from "dayjs/plugin/relativeTime";
 import updateLocale from "dayjs/plugin/updateLocale";
 import { appWithTranslation } from "next-i18next";
 import React from "react";
@@ -15,6 +16,7 @@ import "../styles/globals.css";
 dayjs.extend(customParseFormat);
 dayjs.extend(updateLocale);
 dayjs.extend(localizedFormat);
+dayjs.extend(relativeTime);
 
 function MyApp({ Component, pageProps }: any) {
   // eslint-disable-next-line no-underscore-dangle
