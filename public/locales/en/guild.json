@@ -12,5 +12,6 @@
   "label-player-unknown": "Unknown",
   "label-campaign": "Campaign",
   "guildmate-search": "Search a guildmate",
-  "confirm-drop-guild": "Do you really want to remove this guild permanently?"
+  "confirm-drop-guild": "Do you really want to remove this guild permanently?",
+  "reverse-search": "Search for players without this hero"
 }

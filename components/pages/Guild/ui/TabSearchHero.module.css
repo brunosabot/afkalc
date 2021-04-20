@@ -1,7 +1,13 @@
 .SearchBox {
-  padding: 8px 16px;
+  padding: 8px 0 0 0;
+  background-color: var(--hover-color);
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+.SearchCharacter {
   display: flex;
   align-items: center;
   gap: 16px;
-  background-color: var(--hover-color);
+  padding: 0 16px;
 }

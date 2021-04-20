@@ -4,7 +4,7 @@ const serviceAccount = require("./key.json");
 
 admin.initializeApp({
   credential: admin.credential.cert(serviceAccount),
-  databaseURL: "https://afkalc-dev-default-rtdb.europe-west1.firebasedatabase.app",
+  databaseURL: "https://afkalc.firebaseio.com",
 });
 
 export default admin;
