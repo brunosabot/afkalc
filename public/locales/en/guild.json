@@ -9,5 +9,9 @@
   "title-create-guild": "Create a guild",
   "label-find-guild": "Find a guild",
   "confirm-kick": "Do you really want to kick the player from the guild?",
-  "label-player-unknown": "Unknown"
+  "label-player-unknown": "Unknown",
+  "label-campaign": "Campaign",
+  "guildmate-search": "Search a guildmate",
+  "confirm-drop-guild": "Do you really want to remove this guild permanently?",
+  "reverse-search": "Search for players without this hero"
 }

@@ -5,6 +5,7 @@ import Card from "../../../ui/card/Card";
 import CardTab from "../../../ui/card/CardTab";
 import CardTabs from "../../../ui/card/CardTabs";
 import CardTitle from "../../../ui/card/CardTitle";
+import Chip from "../../../ui/Chip";
 import TabMemberList from "./TabMemberList";
 import TabSearchHero from "./TabSearchHero";
 
@@ -23,6 +24,7 @@ const View: React.FC<IProps> = () => {
       <CardTabs>
         <CardTab active={tab === 0} onClick={() => setTab(0)}>
           {t("members")}
+          {tab === 0 ? <Chip>{values.members.length}</Chip> : null}
         </CardTab>
         <CardTab active={tab === 1} onClick={() => setTab(1)}>
           {t("hero-search")}

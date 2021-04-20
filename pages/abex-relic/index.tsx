@@ -5,7 +5,7 @@ import Head from "next/head";
 import React, { useContext, useEffect, useState } from "react";
 import withLayoutPrivate from "../../components/layout/withLayoutPrivate";
 import Camp from "../../components/pages/AbexRelic/Camp";
-import AbyssalExpeditionContext from "../../components/providers/AbyssalExpeditionContext";
+import ProfileContext from "../../components/providers/ProfileContext";
 import Card from "../../components/ui/card/Card";
 import CardAction from "../../components/ui/card/CardAction";
 import CardActions from "../../components/ui/card/CardActions";
@@ -24,11 +24,10 @@ interface IProps {
 
 const AbexRelic: React.FC<IProps> = () => {
   const { t } = useTranslation("abex-relic");
-  const { actions, values } = useContext(AbyssalExpeditionContext);
+  const { actions, values } = useContext(ProfileContext);
 
   const [now, setNow] = useState(Math.round(Date.now() / 1000));
 
-  useEffect(() => actions.load());
   useEffect(() => {
     const interval = setInterval(() => setNow(Math.round(Date.now() / 1000)), 1000);
     return () => clearInterval(interval);
@@ -37,14 +36,14 @@ const AbexRelic: React.FC<IProps> = () => {
   const resetTimers = () => {
     // eslint-disable-next-line no-alert
     if (window.confirm(t("confirm-reset-timers"))) {
-      actions.resetTilesTimers();
+      actions.resetAbexTilesTimers();
     }
   };
 
   const resetFields = () => {
     // eslint-disable-next-line no-alert
     if (window.confirm("confirm-reset-box")) {
-      actions.resetTiles();
+      actions.resetAbexTiles();
     }
   };
 
@@ -65,11 +64,11 @@ const AbexRelic: React.FC<IProps> = () => {
       <Grid>
         {abexData.campType.map((camp) => (
           <Camp
-            set={(id, d) => actions.setTiles({ ...values.tiles, [id]: d })}
+            set={(id, d) => actions.setAbexTiles({ ...values.abexTiles, [id]: d })}
             key={camp.id}
             now={now}
             camp={camp}
-            data={values.tiles}
+            data={values.abexTiles}
           />
         ))}
       </Grid>

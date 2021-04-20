@@ -6,9 +6,8 @@ import useFirestoreQuery from "../hooks/useFirestoreQuery";
 import useFirestoreQueryReference from "../hooks/useFirestoreQueryReference";
 import firebase from "./firebase";
 import { FirebaseContext } from "./FirebaseProvider";
-import GuildContext, { defaultGuildValues } from "./GuildContext";
+import GuildContext, { defaultGuildValues, IGuildContext } from "./GuildContext";
 import IFirebaseGuild from "./types/IFirebaseGuild";
-import IFirebaseHeroes from "./types/IFirebaseHeroes";
 import IFirebaseProfile from "./types/IFirebaseProfile";
 
 interface IProps {
@@ -18,7 +17,6 @@ interface IProps {
 const GuildProvider: React.FC<IProps> = ({ children }) => {
   const { values } = useContext(FirebaseContext);
   const [lazyMember, setLazyMember] = useState<boolean>(true);
-  const [lazyBox, setLazyBox] = useState<boolean>(true);
   const [lazyGuild, setLazyGuild] = useState<boolean>(true);
   const guildQuery = useFirestoreQueryReference(`guild`, "members", "array-contains", values.uid);
   const guildResult = useFirestoreQuery<IFirebaseGuild[]>(guildQuery, lazyGuild);
@@ -74,6 +72,12 @@ const GuildProvider: React.FC<IProps> = ({ children }) => {
     [guildCollection, guildResult?.data]
   );
 
+  const removeGuild = useCallback(
+    (id: string) =>
+      guildCollection?.doc(guildResult?.data?.[0].id)?.delete() ?? Promise.resolve(undefined),
+    [guildCollection, guildResult?.data]
+  );
+
   const memberIds = useMemo(() => {
     const members = guildResult?.data?.[0]?.members ?? [];
     const applications = guildResult?.data?.[0]?.applications ?? [];
@@ -86,18 +90,11 @@ const GuildProvider: React.FC<IProps> = ({ children }) => {
     firebase.firestore.FieldPath.documentId(),
     [...memberIds]
   );
-  const members = useFirestoreInQuery<IFirebaseProfile>(membersQuery, lazyMember);
-  const boxQuery = useFirestoreInQueryReference(
-    `heroes`,
-    firebase.firestore.FieldPath.documentId(),
-    [...memberIds]
-  );
-  const box = useFirestoreInQuery<IFirebaseHeroes>(boxQuery, lazyBox);
+  const members = useFirestoreInQuery<IFirebaseProfile[]>(membersQuery, lazyMember);
 
   const load = useCallback(() => {
     setLazyGuild(false);
     setLazyMember(false);
-    setLazyBox(false);
   }, []);
 
   const createGuild = useCallback(
@@ -112,7 +109,7 @@ const GuildProvider: React.FC<IProps> = ({ children }) => {
     [guildCollection, values.uid]
   );
 
-  const value = useMemo(
+  const value = useMemo<IGuildContext>(
     () => ({
       actions: {
         createGuild,
@@ -121,10 +118,10 @@ const GuildProvider: React.FC<IProps> = ({ children }) => {
         acceptJoinGuild,
         rejectJoinGuild,
         removeFromGuild,
+        removeGuild,
         load,
       },
       values: {
-        boxes: box.data ?? [],
         members: members.data ?? [],
         guild: { ...defaultGuildValues, ...guildResult?.data?.[0] },
         application: { ...guildApplicationResult.data?.[0] },
@@ -137,8 +134,8 @@ const GuildProvider: React.FC<IProps> = ({ children }) => {
       acceptJoinGuild,
       rejectJoinGuild,
       removeFromGuild,
+      removeGuild,
       load,
-      box.data,
       members.data,
       guildResult?.data,
       guildApplicationResult.data,

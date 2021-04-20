@@ -49,7 +49,13 @@ export default function useSetLevel(
       commit() {
         if (document === undefined) return Promise.resolve(undefined);
 
-        return document.set({ heroes: cleanRequirements(newHeroes, hero) }, { merge: true });
+        return document.set(
+          {
+            heroesLastUpdate: new Date().toISOString(),
+            heroes: cleanRequirements(newHeroes, hero),
+          },
+          { merge: true }
+        );
       },
     };
   }

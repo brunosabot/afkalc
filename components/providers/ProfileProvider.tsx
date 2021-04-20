@@ -1,7 +1,9 @@
 import React, { useContext, useMemo } from "react";
 import useFirestoreDocument from "../hooks/useFirestoreDocument";
 import useFirestoreDocumentReference from "../hooks/useFirestoreDocumentReference";
+import Spinner from "../ui/Spinner";
 import { FirebaseContext } from "./FirebaseProvider";
+import useAbyssalExpeditionSetters from "./hooks/useAbyssalExpeditionSetters";
 import useMigration from "./hooks/useMigration";
 import useProfileActions from "./hooks/useProfileActions";
 import useProfileSetters from "./hooks/useProfileSetters";
@@ -27,6 +29,16 @@ const ProfileProvider: React.FC<IProps> = ({ children }) => {
   } = useProfileSetters();
   const { deleteUser, downloadData } = useProfileActions();
 
+  const {
+    setAbexCurrentRelics,
+    setAbexGoalRelics,
+    setAbexRelicInventory,
+    resetAbexRelicsAndInventory,
+    setAbexTiles,
+    resetAbexTilesTimers,
+    resetAbexTiles,
+  } = useAbyssalExpeditionSetters(result);
+
   useMigration(result);
 
   const value = useMemo<IProfileContext>(
@@ -40,6 +52,13 @@ const ProfileProvider: React.FC<IProps> = ({ children }) => {
         setFavoritePriorityList,
         deleteUser,
         downloadData,
+        setAbexCurrentRelics,
+        setAbexGoalRelics,
+        setAbexRelicInventory,
+        resetAbexRelicsAndInventory,
+        setAbexTiles,
+        resetAbexTilesTimers,
+        resetAbexTiles,
       },
       values: {
         ...defaultValues,
@@ -62,6 +81,13 @@ const ProfileProvider: React.FC<IProps> = ({ children }) => {
       setFavoritePriorityList,
       deleteUser,
       downloadData,
+      setAbexCurrentRelics,
+      setAbexGoalRelics,
+      setAbexRelicInventory,
+      resetAbexRelicsAndInventory,
+      setAbexTiles,
+      resetAbexTilesTimers,
+      resetAbexTiles,
       result?.data,
       values.uid,
       values.isAuth,
@@ -72,6 +98,10 @@ const ProfileProvider: React.FC<IProps> = ({ children }) => {
       values.isPassword,
     ]
   );
+
+  if (values.isLoaded === false || (values.isAuth === true && result.status !== "success")) {
+    return <Spinner />;
+  }
 
   return <ProfileContext.Provider value={value}>{children}</ProfileContext.Provider>;
 };

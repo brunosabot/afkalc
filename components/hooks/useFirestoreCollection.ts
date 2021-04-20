@@ -1,5 +1,6 @@
 import firebase from "firebase/app";
 import { useEffect, useReducer } from "react";
+import IFirebaseDataState from "../providers/types/IFirebaseDataState";
 import useMemoCompare from "./useMemoCompare";
 
 interface Action {
@@ -7,13 +8,7 @@ interface Action {
   payload?: any;
 }
 
-interface State {
-  status: string;
-  data?: any;
-  error?: any;
-}
-
-const reducer = (state: State, action: Action) => {
+function reducer<T>(state: IFirebaseDataState<T>, action: Action) {
   switch (action.type) {
     case "idle":
       return { status: "idle", data: undefined, error: undefined };
@@ -26,7 +21,7 @@ const reducer = (state: State, action: Action) => {
     default:
       throw new Error("invalid action");
   }
-};
+}
 
 export default function useFirestoreCollection(
   query: firebase.firestore.CollectionReference | undefined

@@ -9,5 +9,9 @@
   "title-create-guild": "Créer une guilde",
   "label-find-guild": "Trouver une guilde",
   "confirm-kick": "Voulez-vous vraiment expulser cette personne de la guilde ?",
-  "label-player-unknown": "Inconnu"
+  "label-player-unknown": "Inconnu",
+  "label-campaign": "Campagne",
+  "guildmate-search": "Rechercher un membre",
+  "confirm-drop-guild": "Voulez-vous vraiment supprimer définitivement cette guilde ?",
+  "reverse-search": "Rechercher les joueurs sans ce héros"
 }

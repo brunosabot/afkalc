@@ -1,5 +1,6 @@
 import firebase from "firebase/app";
 import { useEffect, useReducer } from "react";
+import IFirebaseDataState from "../providers/types/IFirebaseDataState";
 import useMemoCompare from "./useMemoCompare";
 
 interface Action {
@@ -7,13 +8,7 @@ interface Action {
   payload?: any;
 }
 
-interface State<T> {
-  status: string;
-  data?: T | undefined;
-  error?: any;
-}
-
-function reducer<T>(state: State<T>, action: Action) {
+function reducer<T>(state: IFirebaseDataState<T>, action: Action) {
   switch (action.type) {
     case "idle":
       return { status: "idle", data: undefined, error: undefined };
@@ -31,7 +26,7 @@ function reducer<T>(state: State<T>, action: Action) {
 export default function useFirestoreQuery<T>(
   query: firebase.firestore.Query | undefined,
   lazy: boolean = false
-): State<T> {
+): IFirebaseDataState<T> {
   const initialState = {
     status: query ? "loading" : "idle",
     data: undefined,

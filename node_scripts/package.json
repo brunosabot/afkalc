@@ -1,0 +1,19 @@
+{
+  "name": "migration",
+  "version": "1.0.0",
+  "description": "",
+  "main": "firebase.js",
+  "scripts": {
+    "test": "ts-node --require='ts-node/register' ",
+    "migrate": "fireway migrate --require='ts-node/register'"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@google-cloud/firestore": "^4.9.9",
+    "firebase": "^8.4.1",
+    "firebase-admin": "^9.6.0",
+    "fireway": "^1.0.2",
+    "ts-node": "^9.1.1"
+  }
+}
