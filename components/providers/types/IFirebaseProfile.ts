@@ -17,7 +17,7 @@ export default interface IFirebaseProfile {
   favoritePriorityList?: string[];
 
   // Hero List
-  heroes: IFirebaseHeroList;
+  heroes?: IFirebaseHeroList;
 
   // Abyssal expedition
   abexGoalRelics?: IFirebaseAbyssalExpeditionClassRelics;

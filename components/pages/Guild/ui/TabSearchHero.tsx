@@ -90,10 +90,10 @@ const TabSearchHero: React.FC<IProps> = () => {
           >
             <Character
               id={hero}
-              siLevel={member.heroes[hero]?.si}
-              ascendLevel={member.heroes[hero]?.ascend}
-              fiLevel={member.heroes[hero]?.fi}
-              disabled={member.heroes[hero]?.ascend === undefined}
+              siLevel={member.heroes?.[hero]?.si}
+              ascendLevel={member.heroes?.[hero]?.ascend}
+              fiLevel={member.heroes?.[hero]?.fi}
+              disabled={member.heroes?.[hero]?.ascend === undefined}
             />
           </SearchListItem>
         );
