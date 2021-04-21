@@ -17,12 +17,22 @@ export async function migrate() {
       const data = abyssalExpedition.data();
 
       const newData: any = {};
-      newData.abexGoalRelics = data.goalRelics;
-      newData.abexCurrentRelics = data.currentRelics;
-      newData.abexRelicInventory = data.relicInventory;
-      newData.abexTiles = data.tiles;
+      if (data.goalRelics) {
+        newData.abexGoalRelics = data.goalRelics;
+      }
+      if (data.currentRelics) {
+        newData.abexCurrentRelics = data.currentRelics;
+      }
+      if (data.relicInventory) {
+        newData.abexRelicInventory = data.relicInventory;
+      }
+      if (data.tiles) {
+        newData.abexTiles = data.tiles;
+      }
 
-      profileCollection.doc(abyssalExpedition.id).set({ ...newData }, { merge: true });
+      if (Object.keys(newData).length > 0) {
+        profileCollection.doc(abyssalExpedition.id).set({ ...newData }, { merge: true });
+      }
     });
   });
 }

@@ -12,7 +12,7 @@ export default function useIsValidList(
   let priorityValue = priorityList.requirementValue || 0;
 
   if (priorityType === "" && priorityValue === 0) {
-    priorityType = "SI";
+    priorityType = "ASCEND";
     priorityValue = 1;
   }
 
