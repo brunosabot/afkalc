@@ -10,6 +10,7 @@
   { "id": 13, "name": "waistband", "image": "/artifacts/waistband.jpg" },
   { "id": 9, "name": "chaos-bringer", "image": "/artifacts/chaos-bringer.jpg" },
   { "id": 14, "name": "carnage", "image": "/artifacts/carnage.jpg" },
+  { "id": 17, "name": "pauldronofburningfury", "image": "pauldronofburningfury.jpg"}
   { "id": 11, "name": "windbinder", "image": "/artifacts/windbinder.jpg" },
   { "id": 15, "name": "warden", "image": "/artifacts/warden.jpg" },
   { "id": 10, "name": "tidebearer", "image": "/artifacts/tidebearer.jpg" },
