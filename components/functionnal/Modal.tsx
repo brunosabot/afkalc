@@ -9,7 +9,7 @@ interface Props {
   onClose: () => void;
 }
 
-const ModalAnimated: React.FC<Props> = ({ active, children, onClose }) => {
+const Modal: React.FC<Props> = ({ active, children, onClose }) => {
   const onCloseWrapper = (e: React.MouseEvent) => {
     if (e.target === e.currentTarget) {
       onClose();
@@ -43,4 +43,4 @@ const ModalAnimated: React.FC<Props> = ({ active, children, onClose }) => {
   );
 };
 
-export default ModalAnimated;
+export default Modal;

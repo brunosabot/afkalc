@@ -3,5 +3,6 @@ export default interface IFirebaseGuild {
   ownerId: string;
   name: string;
   members: string[];
+  deputies: string[];
   applications: string[];
 }

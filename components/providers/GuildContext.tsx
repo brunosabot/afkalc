@@ -8,8 +8,11 @@ interface IGuildActions {
   acceptJoinGuild: (id: string) => void;
   rejectJoinGuild: (id: string) => void;
   removeFromGuild: (id: string) => void;
-  removeGuild: (id: string) => void;
+  removeGuild: () => void;
   createGuild: (name: string) => void;
+  addDeputy: (id: string) => void;
+  removeDeputy: (id: string) => void;
+  quitGuild: () => void;
 }
 
 interface IGuildGuild {
@@ -25,6 +28,9 @@ interface IGuildValues {
   guild: IGuildGuild;
   application: Partial<IGuildGuild>;
   members: IFirebaseProfile[];
+  applications: IFirebaseProfile[];
+  isOwner: boolean;
+  isDeputy: boolean;
 }
 
 export interface IGuildContext {
@@ -51,6 +57,16 @@ export default React.createContext<IGuildContext>({
     removeFromGuild: () => {},
     removeGuild: () => {},
     createGuild: () => {},
+    addDeputy: () => {},
+    removeDeputy: () => {},
+    quitGuild: () => {},
   },
-  values: { members: [], guild: { ...defaultGuildValues }, application: {} },
+  values: {
+    members: [],
+    applications: [],
+    guild: { ...defaultGuildValues },
+    application: {},
+    isOwner: false,
+    isDeputy: false,
+  },
 });

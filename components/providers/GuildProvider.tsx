@@ -1,5 +1,4 @@
 import React, { useCallback, useContext, useMemo, useState } from "react";
-import useFirestoreCollectionReference from "../hooks/useFirestoreCollectionReference";
 import useFirestoreInQuery from "../hooks/useFirestoreInQuery";
 import useFirestoreInQueryReference from "../hooks/useFirestoreInQueryReference";
 import useFirestoreQuery from "../hooks/useFirestoreQuery";
@@ -7,6 +6,7 @@ import useFirestoreQueryReference from "../hooks/useFirestoreQueryReference";
 import firebase from "./firebase";
 import { FirebaseContext } from "./FirebaseProvider";
 import GuildContext, { defaultGuildValues, IGuildContext } from "./GuildContext";
+import useGuildSetters from "./hooks/useGuildSetters";
 import IFirebaseGuild from "./types/IFirebaseGuild";
 import IFirebaseProfile from "./types/IFirebaseProfile";
 
@@ -30,53 +30,18 @@ const GuildProvider: React.FC<IProps> = ({ children }) => {
     guildApplicationQuery,
     lazyGuild
   );
-  const guildCollection = useFirestoreCollectionReference(`guild`);
-
-  const joinGuild = useCallback(
-    (id: string) =>
-      guildCollection?.doc(id)?.update({
-        applications: firebase.firestore.FieldValue.arrayUnion(values.uid),
-      }) ?? Promise.resolve(undefined),
-    [guildCollection, values.uid]
-  );
-  const cancelJoinGuild = useCallback(
-    (id: string) =>
-      guildCollection?.doc(id)?.update({
-        applications: firebase.firestore.FieldValue.arrayRemove(values.uid),
-      }) ?? Promise.resolve(undefined),
-    [guildCollection, values.uid]
-  );
-
-  const acceptJoinGuild = useCallback(
-    (id: string) =>
-      guildCollection?.doc(guildResult?.data?.[0].id)?.update({
-        applications: firebase.firestore.FieldValue.arrayRemove(id),
-        members: firebase.firestore.FieldValue.arrayUnion(id),
-      }) ?? Promise.resolve(undefined),
-    [guildCollection, guildResult?.data]
-  );
-
-  const rejectJoinGuild = useCallback(
-    (id: string) =>
-      guildCollection?.doc(guildResult?.data?.[0].id)?.update({
-        applications: firebase.firestore.FieldValue.arrayRemove(id),
-      }) ?? Promise.resolve(undefined),
-    [guildCollection, guildResult?.data]
-  );
-
-  const removeFromGuild = useCallback(
-    (id: string) =>
-      guildCollection?.doc(guildResult?.data?.[0].id)?.update({
-        members: firebase.firestore.FieldValue.arrayRemove(id),
-      }) ?? Promise.resolve(undefined),
-    [guildCollection, guildResult?.data]
-  );
-
-  const removeGuild = useCallback(
-    (id: string) =>
-      guildCollection?.doc(guildResult?.data?.[0].id)?.delete() ?? Promise.resolve(undefined),
-    [guildCollection, guildResult?.data]
-  );
+  const {
+    joinGuild,
+    cancelJoinGuild,
+    acceptJoinGuild,
+    rejectJoinGuild,
+    removeFromGuild,
+    removeGuild,
+    createGuild,
+    addDeputy,
+    removeDeputy,
+    quitGuild,
+  } = useGuildSetters(guildResult?.data?.[0]?.id);
 
   const memberIds = useMemo(() => {
     const members = guildResult?.data?.[0]?.members ?? [];
@@ -84,6 +49,9 @@ const GuildProvider: React.FC<IProps> = ({ children }) => {
 
     return [...members, ...applications];
   }, [guildResult?.data]);
+
+  const isOwner = values.uid === guildResult?.data?.[0]?.ownerId;
+  const isDeputy = guildResult?.data?.[0]?.deputies.includes(values.uid) ?? false;
 
   const membersQuery = useFirestoreInQueryReference(
     `profile`,
@@ -97,20 +65,17 @@ const GuildProvider: React.FC<IProps> = ({ children }) => {
     setLazyMember(false);
   }, []);
 
-  const createGuild = useCallback(
-    async (name: string) => {
-      await guildCollection?.add({
-        name,
-        ownerId: values.uid,
-        members: [values.uid],
-        applications: [],
-      });
-    },
-    [guildCollection, values.uid]
-  );
+  const value = useMemo<IGuildContext>(() => {
+    const guild = { ...defaultGuildValues, ...guildResult?.data?.[0] };
+    const fullMembers = members.data ?? [];
+    const guildMembers = fullMembers
+      .filter((member) => member.id && guild.applications.includes(member.id) === false)
+      .sort((a, b) => a.playerName?.localeCompare(b.playerName ?? "") ?? 0);
+    const applicationMembers = fullMembers
+      .filter((member) => member.id && guild.applications.includes(member.id) === true)
+      .sort((a, b) => a.playerName?.localeCompare(b.playerName ?? "") ?? 0);
 
-  const value = useMemo<IGuildContext>(
-    () => ({
+    return {
       actions: {
         createGuild,
         joinGuild,
@@ -119,28 +84,38 @@ const GuildProvider: React.FC<IProps> = ({ children }) => {
         rejectJoinGuild,
         removeFromGuild,
         removeGuild,
+        quitGuild,
         load,
+        addDeputy,
+        removeDeputy,
       },
       values: {
-        members: members.data ?? [],
-        guild: { ...defaultGuildValues, ...guildResult?.data?.[0] },
+        members: guildMembers,
+        applications: applicationMembers,
+        guild,
         application: { ...guildApplicationResult.data?.[0] },
+        isOwner,
+        isDeputy,
       },
-    }),
-    [
-      createGuild,
-      joinGuild,
-      cancelJoinGuild,
-      acceptJoinGuild,
-      rejectJoinGuild,
-      removeFromGuild,
-      removeGuild,
-      load,
-      members.data,
-      guildResult?.data,
-      guildApplicationResult.data,
-    ]
-  );
+    };
+  }, [
+    guildResult?.data,
+    members.data,
+    createGuild,
+    joinGuild,
+    cancelJoinGuild,
+    acceptJoinGuild,
+    rejectJoinGuild,
+    removeFromGuild,
+    removeGuild,
+    quitGuild,
+    load,
+    addDeputy,
+    removeDeputy,
+    guildApplicationResult.data,
+    isOwner,
+    isDeputy,
+  ]);
 
   return <GuildContext.Provider value={value}>{children}</GuildContext.Provider>;
 };

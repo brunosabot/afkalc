@@ -13,5 +13,13 @@
   "label-campaign": "Campaign",
   "guildmate-search": "Search a guildmate",
   "confirm-drop-guild": "Do you really want to remove this guild permanently?",
-  "reverse-search": "Search for players without this hero"
+  "reverse-search": "Search for players without this hero",
+  "label-deputy-name": "Add a guild deputy",
+  "title-deputies": "Deputies",
+  "title-dangerous-zone": "Dangerous zone",
+  "label-drop-guild": "Drop guild",
+  "title-player": "Player details",
+  "label-campaign-level": "Campaign level (eg. 35-4)",
+  "confirm-quit-guild": "Do you really want to quit this guild?",
+  "label-quit-guild": "Quit guild"
 }
