@@ -5,6 +5,7 @@ import heroes from "../../data/heroes.json";
 import ICharacter from "../../types/ICharacter";
 import Artifact from "../ui/afk/Artifact";
 import Character, { DetailType } from "../ui/afk/Character";
+import CheckboxField from "../ui/CheckboxField";
 import InputField from "../ui/InputField";
 import styles from "./ChooseHero.module.css";
 
@@ -30,13 +31,13 @@ const factions: IFactions = (heroes as ICharacter[]).reduce(
 
 interface Props {
   onSelect: (type: DetailType, value: number) => void;
-  current: number[];
+  current: [number, number, number, number, number];
   onlyHero?: boolean;
 }
 
 const ChooseHero: React.FC<Props> = ({
   onlyHero = false,
-  current: [currentId, si, fi, currentArtifact],
+  current: [currentId, si, fi, currentArtifact, linkKey],
   onSelect,
 }) => {
   const { t } = useTranslation("common");
@@ -75,6 +76,17 @@ const ChooseHero: React.FC<Props> = ({
             />
           ))}
         </div>
+      ) : null}
+
+      {onlyHero ? (
+        <>
+          <CheckboxField
+            label={t("has-cosmic-key")}
+            name="cosmic-key"
+            onChange={(value) => onSelect(DetailType.LINKKEY, value ? 1 : 0)}
+            value={linkKey === 1}
+          />
+        </>
       ) : null}
 
       {Object.keys(factions).map((faction) => (

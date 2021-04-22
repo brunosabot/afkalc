@@ -38,7 +38,7 @@ const PlayerPosition: React.FC<Props> = ({ hero, position, onSelect, si, fi, art
       </div>
       <Modal active={showModal} onClose={() => setShowModal(false)}>
         <ChooseHero
-          current={[id, si || 0, fi || 0, artifact || 0]}
+          current={[id, si || 0, fi || 0, artifact || 0, 0]}
           onSelect={(type, heroId) => {
             onSelect(type, position)(heroId);
           }}

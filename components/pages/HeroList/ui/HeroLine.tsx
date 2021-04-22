@@ -3,7 +3,7 @@ import React, { useState } from "react";
 import Modal from "../../../functionnal/Modal";
 import ChooseHero from "../../../modal/ChooseHero";
 import { IFirebaseHeroesHero } from "../../../providers/types/IFirebaseHeroes";
-import Character from "../../../ui/afk/Character";
+import Character, { DetailType } from "../../../ui/afk/Character";
 import Svg from "../../../ui/Svg";
 import { UseSetLevelReturn } from "../../TiersList/hooks/useSetLevel";
 import AscendField from "./AscendField";
@@ -20,6 +20,7 @@ interface IProps {
   shouldUnlockFi?: boolean;
   faction: string;
   link?: number;
+  linkKey?: number;
 }
 
 const HeroLine: React.FC<IProps> = ({
@@ -30,6 +31,7 @@ const HeroLine: React.FC<IProps> = ({
   isView,
   faction,
   link,
+  linkKey,
   shouldUnlockFi = false,
 }) => {
   const [showModal, setShowModal] = useState(false);
@@ -43,7 +45,12 @@ const HeroLine: React.FC<IProps> = ({
         </div>
       );
     } else if (link) {
-      linkElement = <Character id={link} size="small" onClick={() => setShowModal(true)} />;
+      linkElement = (
+        <>
+          <Character id={link} size="small" onClick={() => setShowModal(true)} />
+          {linkKey ? <img src="/loot/cosmic-key.jpg" className={styles.CosmicKey} alt="" /> : null}
+        </>
+      );
     } else {
       linkElement = (
         <div className={styles.Link}>
@@ -52,6 +59,8 @@ const HeroLine: React.FC<IProps> = ({
       );
     }
   }
+
+  const linkkey = getValue(id, "linkkey");
 
   return (
     <div key={id} className={styles.HeroLine}>
@@ -81,10 +90,13 @@ const HeroLine: React.FC<IProps> = ({
         <Modal active={showModal} onClose={() => setShowModal(false)}>
           <ChooseHero
             onlyHero
-            current={link ? [link] : []}
-            onSelect={(_, heroId) => {
-              setLevel(id, "LINK", heroId).commit();
-              setShowModal(false);
+            current={link ? [link, 0, 0, 0, linkkey] : [0, 0, 0, 0, 0]}
+            onSelect={(type, value) => {
+              if (type === DetailType.LINKKEY) {
+                setLevel(id, "LINKKEY", value).commit();
+              } else {
+                setLevel(id, "LINK", value).commit();
+              }
             }}
           />
         </Modal>

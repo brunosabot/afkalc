@@ -12,6 +12,7 @@ export enum DetailType {
   ARTIFACT,
   HERO,
   ASCEND,
+  LINKKEY,
 }
 
 interface IProps {
