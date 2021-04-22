@@ -42,7 +42,7 @@ const ChooseHero: React.FC<Props> = ({
   const { t } = useTranslation("common");
 
   return (
-    <div className={styles.ChooseHero}>
+    <>
       {onlyHero === false ? (
         <div className={styles.InputWrapper}>
           <InputField
@@ -91,7 +91,7 @@ const ChooseHero: React.FC<Props> = ({
           </div>
         </React.Fragment>
       ))}
-    </div>
+    </>
   );
 };
 

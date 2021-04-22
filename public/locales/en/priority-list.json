@@ -25,5 +25,6 @@
   "label-created": "Created lists",
   "label-no-list": "You don't have any list here yet",
   "label-moved": "Lists have moved. Find your link below",
-  "label-moved-no-list": "The list has not been moved yet. Please contact the creator"
+  "label-moved-no-list": "The list has not been moved yet. Please contact the creator",
+  "last-update": "Last update:"
 }

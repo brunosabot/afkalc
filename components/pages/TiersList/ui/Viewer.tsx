@@ -1,6 +1,7 @@
 import { mdiContentCopy, mdiPlaylistCheck } from "@mdi/js";
+import dayjs from "dayjs";
 import { useTranslation } from "next-i18next";
-import React, { useContext, useEffect, useState } from "react";
+import React, { useContext, useEffect, useMemo, useState } from "react";
 import useFirestoreDocumentReference from "../../../hooks/useFirestoreDocumentReference";
 import ProfileContext from "../../../providers/ProfileContext";
 import { IFirebaseHeroList } from "../../../providers/types/IFirebaseHeroes";
@@ -8,6 +9,7 @@ import IFirebasePriorityList from "../../../providers/types/IFirebasePriorityLis
 import Card from "../../../ui/card/Card";
 import CardAction from "../../../ui/card/CardAction";
 import CardActions from "../../../ui/card/CardActions";
+import CardHelp from "../../../ui/card/CardHelp";
 import CardTitle from "../../../ui/card/CardTitle";
 import useDuplicateList from "../hooks/useDuplicateList";
 import useSetLevel from "../hooks/useSetLevel";
@@ -39,6 +41,10 @@ const Viewer: React.FC<IProps> = ({ listId, result }) => {
   const onDuplicateList = useDuplicateList(result);
   const setLevel = useSetLevel(heroDocument, values.heroes);
 
+  const lastUpdate = useMemo(() => dayjs(new Date(result?.priorityListLastUpdate)).fromNow(), [
+    result?.priorityListLastUpdate,
+  ]);
+
   return (
     <>
       <Card>
@@ -53,6 +59,12 @@ const Viewer: React.FC<IProps> = ({ listId, result }) => {
         >
           {title}
         </CardTitle>
+
+        {result?.priorityListLastUpdate !== "" ? (
+          <div>
+            <CardHelp>{`${t("last-update")} ${lastUpdate}`}</CardHelp>
+          </div>
+        ) : null}
 
         {listHeroes.map((hero, index) => (
           <HeroLineViewer

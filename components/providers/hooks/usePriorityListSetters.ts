@@ -12,7 +12,10 @@ export default function usePriorityListSetters() {
 
   const setHeroes = useCallback(
     (id: string, newHeroes: IFirebasePriorityListHero[]) => {
-      const newData: Partial<IFirebasePriorityList> = { heroes: newHeroes };
+      const newData: Partial<IFirebasePriorityList> = {
+        heroes: newHeroes,
+        priorityListLastUpdate: new Date().toISOString(),
+      };
       return collection?.doc(id)?.set(newData, { merge: true }) ?? Promise.resolve(undefined);
     },
     [collection]
@@ -20,7 +23,10 @@ export default function usePriorityListSetters() {
 
   const setTitle = useCallback(
     (id: string, newTitle: string) => {
-      const newData: Partial<IFirebasePriorityList> = { title: newTitle };
+      const newData: Partial<IFirebasePriorityList> = {
+        title: newTitle,
+        priorityListLastUpdate: new Date().toISOString(),
+      };
       return collection?.doc(id)?.set(newData, { merge: true }) ?? Promise.resolve(undefined);
     },
     [collection]
@@ -28,7 +34,10 @@ export default function usePriorityListSetters() {
 
   const setRequirementValue = useCallback(
     (id: string, newRequirementValue: number) => {
-      const newData: Partial<IFirebasePriorityList> = { requirementValue: newRequirementValue };
+      const newData: Partial<IFirebasePriorityList> = {
+        requirementValue: newRequirementValue,
+        priorityListLastUpdate: new Date().toISOString(),
+      };
       return collection?.doc(id)?.set(newData, { merge: true }) ?? Promise.resolve(undefined);
     },
     [collection]
@@ -36,14 +45,22 @@ export default function usePriorityListSetters() {
 
   const setRequirement = useCallback(
     (id: string, newRequirement: IFirebasePriorityListRequirement) => {
-      const newData: Partial<IFirebasePriorityList> = { requirement: newRequirement };
+      const newData: Partial<IFirebasePriorityList> = {
+        requirement: newRequirement,
+        priorityListLastUpdate: new Date().toISOString(),
+      };
       return collection?.doc(id)?.set(newData, { merge: true }) ?? Promise.resolve(undefined);
     },
     [collection]
   );
 
   const createList = useCallback(async () => {
-    const docRef = await collection?.add({ title: "Unknown", ownerId: values.userId, heroes: [] });
+    const docRef = await collection?.add({
+      title: "Unknown",
+      ownerId: values.userId,
+      heroes: [],
+      priorityListLastUpdate: new Date().toISOString(),
+    });
     return docRef?.id ?? undefined;
   }, [collection, values.userId]);
 
