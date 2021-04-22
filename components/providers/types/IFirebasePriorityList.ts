@@ -15,4 +15,5 @@ export default interface IFirebasePriorityList {
   requirement: IFirebasePriorityListRequirement;
   requirementValue: number;
   legacyId?: string;
+  priorityListLastUpdate: string;
 }

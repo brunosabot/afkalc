@@ -1,6 +1,3 @@
-.ChooseHero {
-  max-width: 348px;
-}
 .Heroes {
   display: flex;
   flex-wrap: wrap;
