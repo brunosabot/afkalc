@@ -3,6 +3,7 @@ export interface IFirebaseHeroesHero {
   si?: number;
   ascend?: number;
   link?: number;
+  linkkey?: number;
 }
 
 export interface IFirebaseHeroList {

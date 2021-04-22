@@ -9,6 +9,7 @@ interface IHeroLevels {
   si?: number;
   ascend?: number;
   link?: number;
+  linkkey?: number;
 }
 
 const sortChars = (a: ICharacter, b: ICharacter) => {
@@ -47,6 +48,7 @@ export default function useFilteredHeroes(
           si: getValue(c.id, "si"),
           fi: getValue(c.id, "fi"),
           link: getValue(c.id, "link"),
+          linkkey: getValue(c.id, "linkkey"),
         }))
         .filter((c) => filters.type === "" || c.type === filters.type)
         .filter((c) => filters.class === "" || c.class === filters.class)

@@ -127,6 +127,7 @@ const HeroList: React.FC<IProps> = () => {
                   isView={isSelf === false}
                   faction={character.faction}
                   link={character.link}
+                  linkKey={character.linkkey}
                   shouldUnlockFi={unlockFi}
                 />
               </React.Fragment>
