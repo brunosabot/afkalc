@@ -10,6 +10,7 @@ import CardTitle from "../../../ui/card/CardTitle";
 import Chip from "../../../ui/Chip";
 import Svg from "../../../ui/Svg";
 import GuildParams from "./GuildParams";
+import TabAbex from "./TabAbex";
 import TabMemberList from "./TabMemberList";
 import TabSearchHero from "./TabSearchHero";
 
@@ -36,10 +37,14 @@ const View: React.FC<IProps> = () => {
         <CardTab active={tab === 1} onClick={() => setTab(1)}>
           {t("hero-search")}
         </CardTab>
+        <CardTab active={tab === 2} onClick={() => setTab(2)}>
+          {t("abyssal-expedition")}
+        </CardTab>
       </CardTabs>
 
       {tab === 0 ? <TabMemberList /> : null}
       {tab === 1 ? <TabSearchHero /> : null}
+      {tab === 2 ? <TabAbex /> : null}
 
       <Modal
         active={showParams}
