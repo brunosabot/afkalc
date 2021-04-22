@@ -873,5 +873,15 @@
     "image": "/heroes/TricRacoon.jpg",
     "faction": "wilders",
     "usage": []
+  },
+  {
+    "name": "Morael",
+    "id": 82,
+    "type": "intelligence",
+    "class": "mage",
+    "role": "continuous",
+    "image": "/heroes/AstroM.jpg",
+    "faction": "celestials",
+    "usage": []
   }
 ]
