@@ -1,4 +1,4 @@
-import { mdiAccountRemove, mdiCrown, mdiNuke, mdiOctagramOutline, mdiViewList } from "@mdi/js";
+import { mdiAccountRemove, mdiCrown, mdiOctagramOutline, mdiViewList } from "@mdi/js";
 import Link from "next/link";
 import React, { useCallback, useContext } from "react";
 import { useTranslation } from "react-i18next";
@@ -26,13 +26,6 @@ const MemberListItem: React.FC<IProps> = ({ member, isOwner, isDeputy }) => {
     }
   }, [actions, member.id, t]);
 
-  const onRemoveGuild = useCallback(() => {
-    // eslint-disable-next-line no-alert
-    if (member.id && window.confirm(t("confirm-drop-guild"))) {
-      actions.removeGuild(member.id);
-    }
-  }, [actions, member.id, t]);
-
   return (
     <div className={styles.MemberListItem}>
       <span className={styles.Content}>
@@ -51,10 +44,6 @@ const MemberListItem: React.FC<IProps> = ({ member, isOwner, isDeputy }) => {
       <div className={styles.Actions}>
         {member.id !== profileValues.userId && values.guild.ownerId === profileValues.userId ? (
           <Svg d={mdiAccountRemove} onClick={onRemove} />
-        ) : null}
-
-        {member.id === values.guild.ownerId && values.guild.ownerId === profileValues.userId ? (
-          <Svg d={mdiNuke} onClick={onRemoveGuild} />
         ) : null}
 
         <Link href={`/hero-list/${member.id}`}>

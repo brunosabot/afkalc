@@ -22,6 +22,7 @@
   overflow: auto;
   padding: 16px;
   position: relative;
+  width: 480px;
 }
 .Close {
   border-radius: 50%;
