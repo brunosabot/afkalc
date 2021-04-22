@@ -56,7 +56,7 @@ const TabAbex: React.FC<IProps> = () => {
                         src={`/classes/${className}.png`}
                         alt={`${className}`}
                       />
-                      {level}.{amount}
+                      {amount === 6 ? `${level + 1}.0` : `${level}.${amount}`}
                     </React.Fragment>
                   );
                 })}
