@@ -7,4 +7,6 @@
 .vscode
 build
 node_modules
+functions/node_modules
+node_scripts/node_modules
 README.md
