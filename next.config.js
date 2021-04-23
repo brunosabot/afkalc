@@ -1,3 +1,4 @@
+const { withSentryConfig } = require("@sentry/nextjs");
 const { i18n } = require("./next-i18next.config");
 const generateSitemap = require("./scripts/generateSitemap");
 
@@ -6,7 +7,7 @@ const localeSubpaths = {
   fr: "fr",
 };
 
-module.exports = {
+const moduleExports = {
   i18n,
   async redirects() {
     return [
@@ -33,3 +34,12 @@ module.exports = {
     return config;
   },
 };
+
+const SentryWebpackPluginOptions = {};
+
+const finalExports =
+  process.env.NODE_ENV === "development"
+    ? moduleExports
+    : withSentryConfig(moduleExports, SentryWebpackPluginOptions);
+
+module.exports = finalExports;

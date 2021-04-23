@@ -12,6 +12,8 @@ const httpsOptions = {
   cert: fs.readFileSync("./certificates/localhost.crt"),
 };
 
+process.env.NODE_ENV = "development";
+
 app.prepare().then(() => {
   createServer(httpsOptions, (req, res) => {
     const parsedUrl = parse(req.url, true);
