@@ -55,7 +55,7 @@ const TabMemberList: React.FC<IProps> = () => {
           <MemberListItem
             key={member.id}
             isOwner={values.guild.ownerId === member.id}
-            isDeputy={values.guild.deputies.includes(member.id)}
+            isDeputy={(values.guild.deputies || []).includes(member.id)}
             member={member}
           />
         ) : null
