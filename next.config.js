@@ -1,6 +1,9 @@
 const { withSentryConfig } = require("@sentry/nextjs");
+const fs = require("fs");
 const { i18n } = require("./next-i18next.config");
 const generateSitemap = require("./scripts/generateSitemap");
+
+const data = JSON.parse(fs.readFileSync("./package.json")).version;
 
 const localeSubpaths = {
   dev: "dev",
@@ -35,7 +38,11 @@ const moduleExports = {
   },
 };
 
-const SentryWebpackPluginOptions = {};
+const SentryWebpackPluginOptions = {
+  release: data,
+  org: process.env.SENTRY_DEFAULTS_ORG,
+  project: process.env.SENTRY_DEFAULTS_PROJECT,
+};
 
 const finalExports =
   process.env.NODE_ENV === "development"
