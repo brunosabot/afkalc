@@ -23,6 +23,10 @@
   "ascension-ascend-4": "Élevé 4*",
   "ascension-ascend-5": "Élevé 5*",
   "loading": "Chargement",
+  "user-on-app": "Rejoingnez les {{counter}} joueurs qui utilisent l'app !",
+  "logged-user-on-app": "Vous êtes {{counter}} joueurs à utiliser l'app ! Merci !",
+  "earnings": "Dons",
+  "spendings": "Coûts",
   "menu": {
     "home": "Accueil",
     "signature-item": "Emblèmes",
