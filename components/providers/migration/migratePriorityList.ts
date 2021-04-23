@@ -26,6 +26,7 @@ export default function migratePriorityList(id: string): Promise<void> {
               const newPriorityList: IFirebasePriorityList = {
                 ownerId: data.owner ?? id,
                 title: data.title ?? "",
+                priorityListLastUpdate: "",
                 heroes: data.heroes.map((priorityHero: any) => {
                   if (typeof priorityHero === "number") {
                     return {
