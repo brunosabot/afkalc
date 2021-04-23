@@ -21,11 +21,13 @@ import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 import Head from "next/head";
 import React, { useContext } from "react";
 import withLayoutPrivate from "../components/layout/withLayoutPrivate";
+import { FirebaseContext } from "../components/providers/FirebaseProvider";
 import ProfileContext from "../components/providers/ProfileContext";
 import LangButton from "../components/ui/button/LangButton";
 import LogoutButton from "../components/ui/button/LogoutButton";
 import BuyMeACoffee from "../components/ui/BuyMeACoffee";
 import Card from "../components/ui/card/Card";
+import CardHelp from "../components/ui/card/CardHelp";
 import CardTitle from "../components/ui/card/CardTitle";
 import MenuItem from "../components/ui/menu/MenuItem";
 import MenuItemExternal from "../components/ui/menu/MenuItemExternal";
@@ -42,6 +44,7 @@ interface IProps {
 
 const Home: React.FC<IProps> = () => {
   const { values } = useContext(ProfileContext);
+  const { values: firebaseValues } = useContext(FirebaseContext);
   const { t } = useTranslation("common");
 
   return (
@@ -52,6 +55,9 @@ const Home: React.FC<IProps> = () => {
           <title>{`${t("common:menu.home")} - Afkalc`}</title>
           <meta name="description" content={t("common:welcome")} />
         </Head>
+        <CardHelp>
+          {t("common:logged-user-on-app", { counter: firebaseValues.userCounter })}
+        </CardHelp>
         <div style={{ display: "flex", justifyContent: "center" }}>
           {process.env.NODE_ENV === "development" ? <LangButton lang="dev" emoji="👨‍💻" /> : null}
           <LangButton lang="fr" emoji="🇫🇷" />

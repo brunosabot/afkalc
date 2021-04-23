@@ -1,5 +1,6 @@
-import React from "react";
+import React, { useContext } from "react";
 import { useTranslation } from "react-i18next";
+import { FirebaseContext } from "../providers/FirebaseProvider";
 import AnonymousLoginButton from "./button/AnonymousLoginButton";
 import FacebookLoginButton from "./button/FacebookLoginButton";
 import ForgottenPassword from "./button/ForgottenPassword";
@@ -7,6 +8,7 @@ import GoogleLoginButton from "./button/GoogleLoginButton";
 import PasswordLoginButton from "./button/PasswordLoginButton";
 import TwitterLoginButton from "./button/TwitterLoginButton";
 import Card from "./card/Card";
+import CardHelp from "./card/CardHelp";
 import CardTitle from "./card/CardTitle";
 
 interface Props {
@@ -14,10 +16,12 @@ interface Props {
 }
 
 const LoginBox: React.FC<Props> = () => {
+  const { values } = useContext(FirebaseContext);
   const { t } = useTranslation();
   return (
     <Card>
       <CardTitle>{t("common:welcome")}</CardTitle>
+      <CardHelp>{t("common:user-on-app", { counter: values.userCounter })}</CardHelp>
       <GoogleLoginButton />
       <FacebookLoginButton />
       <TwitterLoginButton />

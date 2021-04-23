@@ -23,6 +23,10 @@
   "ascension-ascend-4": "Ascend 4*",
   "ascension-ascend-5": "Ascend 5*",
   "loading": "Loading",
+  "user-on-app": "Join {{counter}} users already using the app!",
+  "logged-user-on-app": "You are {{counter}} users using the app! Thank you!",
+  "earnings": "Donations",
+  "spendings": "Costs",
   "menu": {
     "home": "Home",
     "signature-item": "SI Emblem",

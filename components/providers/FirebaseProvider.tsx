@@ -1,6 +1,9 @@
 import React, { useCallback, useEffect, useMemo, useState } from "react";
 import firebase from "./firebase";
 
+const userCounterRef = firebase.database().ref("counters/users");
+const costsRef = firebase.database().ref("costs");
+
 const googleAuthProvider = new firebase.auth.GoogleAuthProvider();
 const facebookAuthProvider = new firebase.auth.FacebookAuthProvider();
 const twitterAuthProvider = new firebase.auth.TwitterAuthProvider();
@@ -86,6 +89,9 @@ interface IfirebaseValues {
   isFacebook: boolean;
   isTwitter: boolean;
   isPassword: boolean;
+  userCounter: number;
+  earning: number;
+  spending: number;
 }
 
 interface IFirebaseContext {
@@ -122,6 +128,9 @@ export const FirebaseContext = React.createContext<IFirebaseContext>({
     isTwitter: false,
     isPassword: false,
     isAuth: false,
+    userCounter: 0,
+    earning: 0,
+    spending: 0,
   },
 });
 
@@ -134,6 +143,8 @@ const FirebaseProvider: React.FC<IProps> = ({ children }) => {
   const [isAnonymous, setIsAnonymous] = useState<boolean>(false);
   const [isAuth, setIsAuth] = useState<boolean>(false);
   const [uid, setUid] = useState<string>("");
+  const [userCounter, setUserCounter] = useState(0);
+  const [costs, setCosts] = useState({ earning: 0, spending: 0 });
 
   const handleUser = useCallback((user: firebase.User | null) => {
     setIsAuth(user !== null);
@@ -151,6 +162,21 @@ const FirebaseProvider: React.FC<IProps> = ({ children }) => {
     setIsPassword(
       user?.providerData.some((provider) => provider?.providerId === "password") ?? false
     );
+  }, []);
+
+  useEffect(() => {
+    const cb = userCounterRef.on("value", (snapshot) => {
+      setUserCounter(snapshot.val());
+    });
+
+    return () => userCounterRef.off("value", cb);
+  }, []);
+  useEffect(() => {
+    const cb = costsRef.on("value", (snapshot) => {
+      setCosts(snapshot.val());
+    });
+
+    return () => userCounterRef.off("value", cb);
   }, []);
 
   useEffect(() => {
@@ -235,14 +261,26 @@ const FirebaseProvider: React.FC<IProps> = ({ children }) => {
         sendPasswordMail,
         logOut,
       },
-      values: { uid, isLoaded, isAuth, isAnonymous, isGoogle, isFacebook, isTwitter, isPassword },
+      values: {
+        uid,
+        isLoaded,
+        isAuth,
+        isAnonymous,
+        isGoogle,
+        isFacebook,
+        isTwitter,
+        isPassword,
+        userCounter,
+        earning: costs.earning,
+        spending: costs.spending,
+      },
     }),
     [
+      changePassword,
       linkWithGoogle,
       linkWithFacebook,
       linkWithTwitter,
       linkWithPassword,
-      changePassword,
       uid,
       isLoaded,
       isAuth,
@@ -251,6 +289,9 @@ const FirebaseProvider: React.FC<IProps> = ({ children }) => {
       isFacebook,
       isTwitter,
       isPassword,
+      userCounter,
+      costs.earning,
+      costs.spending,
     ]
   );
 
