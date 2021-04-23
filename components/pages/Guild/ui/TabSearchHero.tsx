@@ -86,7 +86,7 @@ const TabSearchHero: React.FC<IProps> = () => {
             member={member}
             key={member.id ?? ""}
             isOwner={values.guild.ownerId === member.id}
-            isDeputy={values.guild.deputies.includes(member.id ?? "")}
+            isDeputy={(values.guild.deputies || []).includes(member.id ?? "")}
           >
             <Character
               id={hero}

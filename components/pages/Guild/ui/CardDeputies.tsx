@@ -21,7 +21,7 @@ const CardDeputies: React.FC<IProps> = () => {
   const isOwner = values.guild.ownerId === profileValues.userId;
 
   const deputies = useMemo(
-    () => values.members.filter((member) => values.guild.deputies.includes(member.id ?? "-")),
+    () => values.members.filter((member) => (values.guild.deputies || []).includes(member.id ?? "-")),
     [values.guild.deputies, values.members]
   );
 

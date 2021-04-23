@@ -52,7 +52,7 @@ const GuildProvider: React.FC<IProps> = ({ children }) => {
   }, [guildResult?.data]);
 
   const isOwner = values.uid === guildResult?.data?.[0]?.ownerId;
-  const isDeputy = guildResult?.data?.[0]?.deputies.includes(values.uid) ?? false;
+  const isDeputy = guildResult?.data?.[0]?.deputies?.includes(values.uid) ?? false;
 
   const membersQuery = useFirestoreInQueryReference(
     `profile`,
