@@ -20,6 +20,11 @@
   padding: 0 4px;
   background: transparent;
   color: inherit;
+  appearance: none;
+  background: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='24px' height='24px'><path fill='currentColor' d='M7,10L12,15L17,10H7Z' /></svg>");
+  background-size: 20px;
+  background-position: 100% center;
+  background-repeat: no-repeat;
 }
 .Value {
   width: 32px;
