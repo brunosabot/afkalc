@@ -83,6 +83,7 @@ const HeroList: React.FC<IProps> = () => {
         <Card>
           <CardTitle icon={mdiViewList}>
             {t(userName ? "hero-list-of" : "hero-list-of-unknown", { userName })}
+            {result.data?.campaignLevel ? ` (${result.data?.campaignLevel})` : null}
           </CardTitle>
 
           {values.heroesLastUpdate !== "" ? (
