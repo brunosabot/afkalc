@@ -13,6 +13,7 @@ interface IGuildActions {
   addDeputy: (id: string) => void;
   removeDeputy: (id: string) => void;
   quitGuild: () => void;
+  setShowAbexTab: (value: boolean) => void;
 }
 
 interface IGuildGuild {
@@ -22,6 +23,7 @@ interface IGuildGuild {
   members: string[];
   applications: string[];
   deputies: string[];
+  showAbexTab: boolean;
 }
 
 interface IGuildValues {
@@ -45,6 +47,7 @@ export const defaultGuildValues: IGuildGuild = {
   members: [],
   deputies: [],
   applications: [],
+  showAbexTab: false,
 };
 
 export default React.createContext<IGuildContext>({
@@ -60,6 +63,7 @@ export default React.createContext<IGuildContext>({
     addDeputy: () => {},
     removeDeputy: () => {},
     quitGuild: () => {},
+    setShowAbexTab: () => {},
   },
   values: {
     members: [],

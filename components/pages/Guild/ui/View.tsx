@@ -37,9 +37,11 @@ const View: React.FC<IProps> = () => {
         <CardTab active={tab === 1} onClick={() => setTab(1)}>
           {t("hero-search")}
         </CardTab>
-        <CardTab active={tab === 2} onClick={() => setTab(2)}>
-          {t("abyssal-expedition")}
-        </CardTab>
+        {values.guild.showAbexTab || values.isDeputy || values.isOwner ? (
+          <CardTab active={tab === 2} onClick={() => setTab(2)}>
+            {t("abyssal-expedition")}
+          </CardTab>
+        ) : null}
       </CardTabs>
 
       {tab === 0 ? <TabMemberList /> : null}
