@@ -22,5 +22,7 @@
   "label-campaign-level": "Campaign level (eg. 35-4)",
   "confirm-quit-guild": "Do you really want to quit this guild?",
   "label-quit-guild": "Quit guild",
-  "abyssal-expedition": "Abyssal Expedition"
+  "abyssal-expedition": "Abyssal Expedition",
+  "title-configuration": "Guild configuration",
+  "label-show-abex-tab": "Show Abyssal Expedition tab to all members"
 }

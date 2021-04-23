@@ -41,6 +41,7 @@ const GuildProvider: React.FC<IProps> = ({ children }) => {
     addDeputy,
     removeDeputy,
     quitGuild,
+    setShowAbexTab,
   } = useGuildSetters(guildResult?.data?.[0]?.id);
 
   const memberIds = useMemo(() => {
@@ -88,6 +89,7 @@ const GuildProvider: React.FC<IProps> = ({ children }) => {
         load,
         addDeputy,
         removeDeputy,
+        setShowAbexTab,
       },
       values: {
         members: guildMembers,
@@ -112,6 +114,7 @@ const GuildProvider: React.FC<IProps> = ({ children }) => {
     load,
     addDeputy,
     removeDeputy,
+    setShowAbexTab,
     guildApplicationResult.data,
     isOwner,
     isDeputy,

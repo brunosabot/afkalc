@@ -89,6 +89,13 @@ export default function useGuildSetters(guildId: string | undefined) {
     [guildCollection, guildId, values.uid]
   );
 
+  const setShowAbexTab = useCallback(
+    (value: boolean) =>
+      guildCollection?.doc(guildId)?.set({ showAbexTab: value }, { merge: true }) ??
+      Promise.resolve(undefined),
+    [guildCollection, guildId]
+  );
+
   return {
     joinGuild,
     cancelJoinGuild,
@@ -100,5 +107,6 @@ export default function useGuildSetters(guildId: string | undefined) {
     addDeputy,
     removeDeputy,
     quitGuild,
+    setShowAbexTab,
   };
 }
