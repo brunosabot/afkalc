@@ -37,7 +37,12 @@ const Loot: React.FC<IProps> = () => {
   ]);
   const setPass = useCallback(
     (value) => {
-      setCampaignSuccessDate(dayjs(value, "L LTS").toDate().toISOString());
+      try {
+        const successDate = dayjs(value, "L LTS").toDate().toISOString();
+        setCampaignSuccessDate(successDate);
+      } catch (e) {
+        // Invalid date, no update needed
+      }
     },
     [setCampaignSuccessDate]
   );

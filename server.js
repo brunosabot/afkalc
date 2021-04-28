@@ -3,6 +3,8 @@ const { parse } = require("url");
 const next = require("next");
 const fs = require("fs");
 
+process.env.NODE_ENV = process.env.NODE_ENV || "development";
+
 const dev = process.env.NODE_ENV !== "production";
 const app = next({ dev });
 const handle = app.getRequestHandler();
@@ -11,8 +13,6 @@ const httpsOptions = {
   key: fs.readFileSync("./certificates/localhost.key"),
   cert: fs.readFileSync("./certificates/localhost.crt"),
 };
-
-process.env.NODE_ENV = "development";
 
 app.prepare().then(() => {
   createServer(httpsOptions, (req, res) => {
