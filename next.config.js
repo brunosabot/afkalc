@@ -39,9 +39,8 @@ const moduleExports = {
 };
 
 const SentryWebpackPluginOptions = {
-  release: data,
-  org: process.env.SENTRY_DEFAULTS_ORG,
-  project: process.env.SENTRY_DEFAULTS_PROJECT,
+  release: `afkalc@${data}`,
+  environment: process.env.NODE_ENV,
 };
 
 const finalExports =

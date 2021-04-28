@@ -8,11 +8,12 @@
     "start": "next start",
     "extract": "i18next --config i18next-parser.config.js",
     "lint": "npm run lint:css && npm run lint:js && npm run lint:ts",
-    "lint:js": "eslint --fix --ext .js,.jsx,.ts,.tsx ./",
+    "lint:js": "eslint --fix --ext .ts,.tsx ./",
     "lint:css": "stylelint --fix \"**/*.css\"",
     "lint:ts": "tsc -p tsconfig.json",
     "prettier": "prettier --write '**/*.@(ts|tsx|js|jsx|css)'",
     "test": "jest --watch",
+    "test:lint-staged": "cross-env CI=true jest --findRelatedTests",
     "test:watch": "jest --watch"
   },
   "dependencies": {
@@ -76,5 +77,19 @@
       "\\.(jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2|mp4|webm|wav|mp3|m4a|aac|oga)$": "<rootDir>/__mocks__/fileMock.js",
       "\\.(css|less)$": "identity-obj-proxy"
     }
+  },
+  "lint-staged": {
+    "*.css": [
+      "prettier --write",
+      "stylelint --fix"
+    ],
+    "*.{js,jsx,ts,tsx}": [
+      "yarn run test:lint-staged",
+      "eslint --ext .js,.jsx,.ts,.tsx",
+      "prettier --write"
+    ],
+    "*.{json,md}": [
+      "prettier --write"
+    ]
   }
 }
