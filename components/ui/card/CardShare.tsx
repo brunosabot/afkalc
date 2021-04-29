@@ -10,7 +10,7 @@ interface IProps {
 }
 
 const CardShare: React.FC<IProps> = ({ label, children, shouldCopy = true, style = {} }) => {
-  const { t } = useTranslation("top-team");
+  const { t } = useTranslation("common");
   const [copy, setCopy] = useState(false);
 
   const onClick = useCallback(
