@@ -883,5 +883,15 @@
     "image": "/heroes/AstroM.jpg",
     "faction": "celestials",
     "usage": []
+  },
+  {
+    "name": "Prince of Persia",
+    "id": 83,
+    "type": "agility",
+    "class": "ranger",
+    "role": "burst",
+    "image": "/heroes/POP.jpg",
+    "faction": "dimensionals",
+    "usage": []
   }
 ]
