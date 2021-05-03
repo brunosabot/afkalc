@@ -1,16 +1,12 @@
 import React, { useContext, useMemo, useState } from "react";
 import { useTranslation } from "react-i18next";
-import ascendLevels from "../../../../data/heroAscensionLevel.json";
-import Modal from "../../../functionnal/Modal";
-import ChoosePriorityHero from "../../../modal/ChoosePriorityHero";
 import GuildContext from "../../../providers/GuildContext";
 import IFirebaseProfile from "../../../providers/types/IFirebaseProfile";
 import Character from "../../../ui/afk/Character";
-import CheckboxField from "../../../ui/CheckboxField";
-import Chip from "../../../ui/Chip";
-import useHero from "../../TiersList/hooks/useHero";
+import CardAction from "../../../ui/card/CardAction";
+import CardActions from "../../../ui/card/CardActions";
+import SearchHero from "./SearchHero";
 import SearchListItem from "./SearchListItem";
-import styles from "./TabSearchHero.module.css";
 
 interface IProps {
   [key: string]: never;
@@ -28,56 +24,50 @@ function filterHeroes(hero: number, si: number, fi: number, ascend: number, reve
   };
 }
 
-function getAscendName(ascend: number) {
-  return ascendLevels.find((level) => level.key === ascend)?.name;
-}
-
 const TabSearchHero: React.FC<IProps> = () => {
-  const { values } = useContext(GuildContext);
   const { t } = useTranslation("guild");
-  const [showModal, setShowModal] = useState(false);
-  const [hero, setHero] = useState<number>(1);
-  const [si, setSi] = useState<number>(0);
-  const [fi, setFi] = useState<number>(0);
-  const [reverse, setReverse] = useState<boolean>(false);
-  const [ascend, setAscend] = useState<number>(0);
-  const { getHero } = useHero();
+  const { values } = useContext(GuildContext);
+  const [heroes, setHeroes] = useState([{ hero: 1, si: 0, fi: 0, ascend: 0, reverse: false }]);
 
-  const searchString = [getHero(hero)?.name];
-  if (ascend > 0) searchString.push(t(`common:ascension-${getAscendName(ascend)}`));
-  if (si > 0) searchString.push(`${t("common:concept.si")} +${si}`);
-  if (fi > 0) searchString.push(`${t("common:concept.fi")} ${fi}/9`);
+  const foundBoxes = useMemo(() => {
+    let { members } = values;
 
-  const foundBoxes = useMemo(
-    () =>
-      values.members
-        .filter(filterHeroes(hero, si, fi, ascend, reverse))
-        .sort((a, b) => a.playerName?.localeCompare(b.playerName ?? "") ?? 0)
-        .map((box) => values.members.find((member) => member.id === box.id)),
-    [ascend, fi, hero, reverse, si, values.members]
-  );
+    heroes.forEach((h) => {
+      members = members.filter(filterHeroes(h.hero, h.si, h.fi, h.ascend, h.reverse));
+    });
+
+    return members
+      .sort((a, b) => a.playerName?.localeCompare(b.playerName ?? "") ?? 0)
+      .map((box) => values.members.find((member) => member.id === box.id));
+  }, [heroes, values]);
 
   return (
     <>
-      <div className={styles.SearchBox}>
-        <div className={styles.SearchCharacter}>
-          <Character
-            id={hero}
-            ascendLevel={ascend}
-            siLevel={si}
-            fiLevel={fi}
-            onClick={() => setShowModal(true)}
-          />
-          {searchString.join(", ")}
-          <Chip>{foundBoxes.length}</Chip>
-        </div>
-        <CheckboxField
-          label={t("reverse-search")}
-          name="reverse"
-          onChange={setReverse}
-          value={reverse}
+      <CardActions>
+        <CardAction
+          onClick={() =>
+            setHeroes([...heroes, { hero: 1, si: 0, fi: 0, ascend: 0, reverse: false }])
+          }
+        >
+          {t("label-another-character")}
+        </CardAction>
+      </CardActions>
+
+      {heroes.map((hero, i) => (
+        <SearchHero
+          index={i}
+          hero={hero}
+          onChange={(h) => {
+            const newHeroes = [...heroes];
+            if (h === null) {
+              newHeroes.splice(i, 1);
+            } else {
+              newHeroes[i] = h;
+            }
+            setHeroes(newHeroes);
+          }}
         />
-      </div>
+      ))}
 
       {foundBoxes.map((member) => {
         if (member === undefined) return null;
@@ -89,30 +79,15 @@ const TabSearchHero: React.FC<IProps> = () => {
             isDeputy={(values.guild.deputies || []).includes(member.id ?? "")}
           >
             <Character
-              id={hero}
-              siLevel={member.heroes?.[hero]?.si}
-              ascendLevel={member.heroes?.[hero]?.ascend}
-              fiLevel={member.heroes?.[hero]?.fi}
-              disabled={member.heroes?.[hero]?.ascend === undefined}
+              id={heroes[0].hero}
+              siLevel={member.heroes?.[heroes[0].hero]?.si}
+              ascendLevel={member.heroes?.[heroes[0].hero]?.ascend}
+              fiLevel={member.heroes?.[heroes[0].hero]?.fi}
+              disabled={member.heroes?.[heroes[0].hero]?.ascend === undefined}
             />
           </SearchListItem>
         );
       })}
-
-      <Modal active={showModal} onClose={() => setShowModal(false)}>
-        <ChoosePriorityHero
-          si={si}
-          fi={fi}
-          hero={hero}
-          ascend={ascend}
-          onSelect={(selectedHero) => {
-            setHero(selectedHero.hero);
-            setSi(selectedHero.si);
-            setFi(selectedHero.fi);
-            setAscend(selectedHero.ascend);
-          }}
-        />
-      </Modal>
     </>
   );
 };
