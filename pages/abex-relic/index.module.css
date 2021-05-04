@@ -1,0 +1,31 @@
+.Tiles {
+  align-items: center;
+  display: flex;
+  margin-bottom: 16px;
+  margin-left: 8px;
+  margin-right: 16px;
+  margin-top: 4px;
+}
+.TileLevel {
+  align-items: center;
+  background-color: var(--help-background-color);
+  border-radius: 20px;
+  display: inline-block;
+  display: flex;
+  font-size: 0.7em;
+  height: 20px;
+  justify-content: center;
+  margin: 0 4px 0 8px;
+  padding: 0;
+  width: 20px;
+}
+
+.RemainingTime {
+  align-items: center;
+  display: flex;
+  gap: 6px;
+  margin: 16px 16px;
+}
+.RemainingTime svg {
+  height: 18px;
+}
