@@ -32,7 +32,7 @@
   { "name": "2h-xp", "cost": 16, "image": "/loot/small-h-xp.jpg", "info": "2-hours" },
   { "name": "6h-xp", "cost": 48, "image": "/loot/small-h-xp.jpg", "info": "6-hours" },
   {
-    "name": "8h-hero-xp",
+    "name": "8h-xp",
     "cost": 64,
     "image": "/loot/high-h-xp.jpg",
     "info": "8-hours"
