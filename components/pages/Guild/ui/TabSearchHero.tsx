@@ -1,5 +1,5 @@
+import { useTranslation } from "next-i18next";
 import React, { useContext, useMemo, useState } from "react";
-import { useTranslation } from "react-i18next";
 import GuildContext from "../../../providers/GuildContext";
 import IFirebaseProfile from "../../../providers/types/IFirebaseProfile";
 import Character from "../../../ui/afk/Character";

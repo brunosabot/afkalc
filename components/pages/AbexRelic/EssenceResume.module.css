@@ -20,12 +20,12 @@
   width: 20px;
 }
 
-.RemainingTime {
+.EssenceCount {
   align-items: center;
   display: flex;
   gap: 6px;
   margin: 16px 16px;
 }
-.RemainingTime svg {
+.EssenceCount svg {
   height: 18px;
 }

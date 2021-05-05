@@ -1,6 +1,6 @@
 import { mdiMagnify, mdiPlus } from "@mdi/js";
+import { useTranslation } from "next-i18next";
 import React, { useContext, useState } from "react";
-import { useTranslation } from "react-i18next";
 import useFirestoreQuery from "../../../hooks/useFirestoreQuery";
 import useFirestoreQueryReference from "../../../hooks/useFirestoreQueryReference";
 import GuildContext from "../../../providers/GuildContext";

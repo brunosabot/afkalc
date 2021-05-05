@@ -1,10 +1,7 @@
 .Tiles {
   align-items: center;
   display: flex;
-  margin-bottom: 16px;
-  margin-left: 0;
-  margin-right: 16px;
-  margin-top: 4px;
+  margin: 4px 16px 0 0;
 }
 .TileLevel {
   align-items: center;
@@ -20,12 +17,12 @@
   width: 20px;
 }
 
-.RemainingTime {
+.TilesCount {
   align-items: center;
   display: flex;
   gap: 6px;
-  margin: 16px 16px;
+  margin: 4px 16px 0 16px;
 }
-.RemainingTime svg {
+.TilesCount svg {
   height: 18px;
 }

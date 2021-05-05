@@ -1,6 +1,6 @@
 import { mdiCog } from "@mdi/js";
+import { useTranslation } from "next-i18next";
 import React, { useContext, useState } from "react";
-import { useTranslation } from "react-i18next";
 import Modal from "../../../functionnal/Modal";
 import GuildContext from "../../../providers/GuildContext";
 import Card from "../../../ui/card/Card";

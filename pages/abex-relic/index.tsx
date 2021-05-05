@@ -1,19 +1,19 @@
-import { mdiChartLineVariant, mdiMap } from "@mdi/js";
+import { mdiMap } from "@mdi/js";
 import { useTranslation } from "next-i18next";
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 import Head from "next/head";
 import React, { useContext, useEffect, useState } from "react";
 import withLayoutPrivate from "../../components/layout/withLayoutPrivate";
 import Camp from "../../components/pages/AbexRelic/Camp";
+import EssenceResume from "../../components/pages/AbexRelic/EssenceResume";
+import TileResume from "../../components/pages/AbexRelic/TileResume";
 import ProfileContext from "../../components/providers/ProfileContext";
 import Card from "../../components/ui/card/Card";
 import CardAction from "../../components/ui/card/CardAction";
 import CardActions from "../../components/ui/card/CardActions";
 import CardTitle from "../../components/ui/card/CardTitle";
 import Grid from "../../components/ui/layout/Grid";
-import Svg from "../../components/ui/Svg";
 import abexData from "../../data/abex.json";
-import styles from "./index.module.css";
 
 export const getStaticProps = async ({ locale }: { locale: string }) => ({
   props: {
@@ -25,7 +25,7 @@ interface IProps {
 }
 
 const AbexRelic: React.FC<IProps> = () => {
-  const { t } = useTranslation("abex-relic");
+  const { t } = useTranslation("`abex-relic`");
   const { actions, values } = useContext(ProfileContext);
 
   const [now, setNow] = useState(Math.round(Date.now() / 1000));
@@ -49,15 +49,6 @@ const AbexRelic: React.FC<IProps> = () => {
     }
   };
 
-  const total = abexData.campType.reduce(
-    (acc, camp) =>
-      acc +
-      values.abexTiles[camp.id]?.amount * camp.essencePerHour +
-      (values.abexTiles[camp.id]?.garrison * camp.essencePerHour * camp.essenceBonusPercentage) /
-        100,
-    0
-  );
-
   return (
     <>
       <Card>
@@ -67,31 +58,8 @@ const AbexRelic: React.FC<IProps> = () => {
           <meta name="description" content={t("common:abex-relic-desc")} />
         </Head>
 
-        <div className={styles.Tiles}>
-          {Object.keys(values.abexTiles).map((tile) => {
-            const tileId = +tile;
-
-            if (values.abexTiles[tileId].amount === 0) return null;
-
-            return (
-              <React.Fragment key={tileId}>
-                <span className={styles.TileLevel}>
-                  {tileId > 50 ? "P" : "T"}
-                  {tileId > 50 ? 100 - tileId : tileId}
-                </span>
-                {values.abexTiles[tileId].amount}
-              </React.Fragment>
-            );
-          })}
-        </div>
-
-        {total ? (
-          <span className={styles.RemainingTime}>
-            <Svg d={mdiChartLineVariant} />
-            {total}
-            {t("label-per-hour")}
-          </span>
-        ) : null}
+        <TileResume />
+        <EssenceResume />
 
         <CardActions>
           <CardAction onClick={resetTimers}>{t("reset-timers")}</CardAction>

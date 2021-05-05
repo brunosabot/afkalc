@@ -1,7 +1,7 @@
+import { useTranslation } from "next-i18next";
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 import Head from "next/head";
 import React, { useContext, useEffect } from "react";
-import { useTranslation } from "react-i18next";
 import withLayoutPrivateColumn from "../../components/layout/withLayoutPrivateColumn";
 import Register from "../../components/pages/Guild/ui/Register";
 import View from "../../components/pages/Guild/ui/View";

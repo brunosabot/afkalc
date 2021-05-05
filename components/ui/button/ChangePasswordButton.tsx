@@ -1,6 +1,6 @@
 import { mdiClose, mdiSend } from "@mdi/js";
+import { useTranslation } from "next-i18next";
 import React, { useCallback, useContext, useState } from "react";
-import { useTranslation } from "react-i18next";
 import { FirebaseContext } from "../../providers/FirebaseProvider";
 import Svg from "../Svg";
 import styles from "./ChangePasswordButton.module.css";
