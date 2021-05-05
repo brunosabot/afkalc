@@ -30,7 +30,7 @@ const Artifact: React.FC<IProps> = ({ name, onClick = () => {}, highlight = fals
         if (event.key === "Enter") onClick();
       }}
     >
-      <img src={artifact.image} className={styles.Artifact} alt={t(`item.${name}`)} />
+      <img src={artifact.image} className={styles.Artifact} alt={t(`artifact.${name}`)} />
     </div>
   );
 };

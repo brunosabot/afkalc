@@ -28,7 +28,7 @@ const SignatureItemLeft: React.FC<IProps> = ({ step, primordial, amplifying, fac
         {primordial > 0 ? <Item count={primordial} size="large" name="primordial-emblem" /> : null}
         {amplifying > 0 ? <Item count={amplifying} size="large" name="amplifying-emblem" /> : null}
         {faction > 0 ? <Item count={faction} size="large" name="faction-emblem" /> : null}
-        {celest > 0 ? <Item count={celest} size="large" name="celhypo-emblem" /> : null}
+        {celest > 0 ? <Item count={celest} size="large" name="celepo-emblem" /> : null}
       </FlexGap>
     </Card>
   );

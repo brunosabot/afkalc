@@ -25,7 +25,7 @@ interface IProps {
 }
 
 const AbexRelic: React.FC<IProps> = () => {
-  const { t } = useTranslation("`abex-relic`");
+  const { t } = useTranslation("abex-relic");
   const { actions, values } = useContext(ProfileContext);
 
   const [now, setNow] = useState(Math.round(Date.now() / 1000));
@@ -55,7 +55,7 @@ const AbexRelic: React.FC<IProps> = () => {
         <CardTitle icon={mdiMap}>{t("common:menu.abex-relic")}</CardTitle>
         <Head>
           <title>{`${t("common:menu.abex-relic")} - Afkalc`}</title>
-          <meta name="description" content={t("common:abex-relic-desc")} />
+          <meta name="description" content={t("abex-relic-desc")} />
         </Head>
 
         <TileResume />
