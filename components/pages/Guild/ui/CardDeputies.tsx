@@ -1,6 +1,6 @@
 import { mdiAccountPlus, mdiAccountRemove } from "@mdi/js";
+import { useTranslation } from "next-i18next";
 import React, { useCallback, useContext, useMemo, useState } from "react";
-import { useTranslation } from "react-i18next";
 import GuildContext from "../../../providers/GuildContext";
 import ProfileContext from "../../../providers/ProfileContext";
 import CardTitle from "../../../ui/card/CardTitle";
@@ -21,7 +21,8 @@ const CardDeputies: React.FC<IProps> = () => {
   const isOwner = values.guild.ownerId === profileValues.userId;
 
   const deputies = useMemo(
-    () => values.members.filter((member) => (values.guild.deputies || []).includes(member.id ?? "-")),
+    () =>
+      values.members.filter((member) => (values.guild.deputies || []).includes(member.id ?? "-")),
     [values.guild.deputies, values.members]
   );
 

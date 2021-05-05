@@ -1,7 +1,7 @@
 import { mdiCrown, mdiOctagramOutline, mdiViewList } from "@mdi/js";
+import { useTranslation } from "next-i18next";
 import Link from "next/link";
 import React from "react";
-import { useTranslation } from "react-i18next";
 import IFirebaseProfile from "../../../providers/types/IFirebaseProfile";
 import Svg from "../../../ui/Svg";
 import styles from "./SearchListItem.module.css";

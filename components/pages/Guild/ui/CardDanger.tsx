@@ -1,6 +1,6 @@
 import { mdiDoor, mdiNuke } from "@mdi/js";
+import { useTranslation } from "next-i18next";
 import React, { useCallback, useContext } from "react";
-import { useTranslation } from "react-i18next";
 import GuildContext from "../../../providers/GuildContext";
 import ProfileContext from "../../../providers/ProfileContext";
 import CardAction from "../../../ui/card/CardAction";
