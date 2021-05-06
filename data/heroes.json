@@ -893,5 +893,15 @@
     "image": "/heroes/POP.jpg",
     "faction": "dimensionals",
     "usage": []
+  },
+  {
+    "name": "Desira",
+    "id": 84,
+    "type": "intelligence",
+    "class": "support",
+    "role": "regen",
+    "image": "/heroes/Siren.jpg",
+    "faction": "graveborns",
+    "usage": []
   }
 ]
