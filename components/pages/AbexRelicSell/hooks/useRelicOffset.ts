@@ -45,6 +45,11 @@ export default function useRelicOffset(ids: number[], artefacts: number[]) {
       let dependencies = [...theArtefact.needs];
       let { cost } = theArtefact;
 
+      // Remove self
+      if (artefactStock.indexOf(id) > -1) {
+        artefactStock.splice(artefactStock.indexOf(id), 1);
+      }
+
       // 4 iteration to convert from level 4 to level 1
       [cost, dependencies, artefactStock] = reduceDependencies(cost, dependencies, artefactStock);
       [cost, dependencies, artefactStock] = reduceDependencies(cost, dependencies, artefactStock);
