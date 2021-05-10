@@ -1,0 +1,11 @@
+{
+  "help": "Esta ferramenta tem como objetivo fornecer os emblemas restantes de que você precisa para chegar aos estágios especificados",
+  "form-title": "Primeiro, defina as informações do seu personagem",
+  "item-primordial-emblem": "Emblema primordial",
+  "item-amplifying-emblem": "Emblema de amplificação",
+  "item-faction-emblem": "Emblema de facção",
+  "item-celest-Hypogean-emblem": "Emblema Celepogeu",
+  "label-si": "SI +{{si}}",
+  "label-current-si": "Nível atual do SI",
+  "label-target-si": "Nível de SI Desejável"
+}

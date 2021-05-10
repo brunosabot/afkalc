@@ -1,0 +1,13 @@
+{
+  "confirm-remove": "Todos os dados serão excluídos permanentemente. Você ainda quer continuar?",
+  "label-remove-account": "Remover minha conta",
+  "label-no-need-rgpd": "Como você não está logado, o aplicativo não armazena nenhum dos seus dados pessoais",
+  "label-rgpd": "Ao fazer o login, você fornece seu e-mail para AFKalc. Ele nunca é usado senão para permitir seu login. Os dados armazenados pelo aplicativo são todos ligados a: a expedição abissal, a lista de heróis, sua campanha e sua progressão de vips, suas listas de prioridades e seus favoritos. Você pode excluir sua conta a qualquer momento na página.",
+  "label-download-data": "Baixar meus dados",
+  "user-data": "Dados de usuário",
+  "player-name": "Nome do jogador",
+  "title-change-password": "Alterar a senha",
+  "label-old-password": "Senha antiga",
+  "label-new-password": "Nova senha",
+  "title-link-account": "Ligar minha conta"
+}

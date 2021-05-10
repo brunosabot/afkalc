@@ -8,6 +8,7 @@ import ListItem from "../../components/pages/Credit/ui/ListItem";
 import Card from "../../components/ui/card/Card";
 import CardTitle from "../../components/ui/card/CardTitle";
 import List from "../../components/ui/list/List";
+import Aidan from "../../components/ui/reddit/Aidan";
 import InSeason from "../../components/ui/reddit/InSeason";
 import Whitesushii from "../../components/ui/reddit/Whitesushii";
 import WilordFR from "../../components/ui/reddit/WilordFR";
@@ -46,6 +47,9 @@ const Credit: React.FC<IProps> = () => {
         </ListItem>
         <ListItem>
           <span>infherna</span>
+        </ListItem>
+        <ListItem>
+          <Aidan />
         </ListItem>
       </List>
     </Card>

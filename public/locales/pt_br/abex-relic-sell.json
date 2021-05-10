@@ -1,0 +1,14 @@
+{
+  "abex-relic-sell-desc": "Calculadora para vender relíquias",
+  "reset-box": "Reiniciar tudo",
+  "help": "Selecione as relíquias que você já tem desbloqueadas, depois selecione quais relíquias você deseja obter, insira as relíquias do seu inventário. Uma indicação aparecerá informando quais você não precisa mais",
+  "label-goal": "Meta",
+  "label-current": "Atual",
+  "label-inventory": "Inventário",
+  "elevation-level-0": "Nenhum",
+  "elevation-level-1": "Comum",
+  "elevation-level-2": "Raro",
+  "elevation-level-3": "Elite",
+  "elevation-level-4": "Lendário",
+  "elevation-level-5": "Mítico"
+}
