@@ -8,6 +8,7 @@ const data = JSON.parse(fs.readFileSync("./package.json")).version;
 const localeSubpaths = {
   dev: "dev",
   fr: "fr",
+  pt_br: "pt_br",
 };
 
 const moduleExports = {

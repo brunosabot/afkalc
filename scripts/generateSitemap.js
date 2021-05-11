@@ -3,7 +3,7 @@ const fs = require("fs");
 // eslint-disable-next-line import/no-extraneous-dependencies
 const globby = require("globby");
 
-const alternativeLanguages = ["fr"];
+const alternativeLanguages = ["fr", "pt-BR"];
 
 function toW3CString(date) {
   const year = date.getFullYear();
@@ -62,7 +62,10 @@ module.exports = async function generateSiteMap() {
     sitemap.push(`    <lastmod>${toW3CString(stats.ctime)}</lastmod>`);
 
     alternativeLanguages.forEach((lang) => {
-      const url = `https://afkalc.com${`/${lang}/${route}`.replace("//", "/")}`;
+      const url = `https://afkalc.com${`/${lang.toLowerCase().replace("-", "_")}/${route}`.replace(
+        "//",
+        "/"
+      )}`;
       sitemap.push(`    <xhtml:link rel="alternate" hreflang="${lang}" href="${url}"/>`);
     });
 

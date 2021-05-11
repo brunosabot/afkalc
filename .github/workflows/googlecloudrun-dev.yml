@@ -1,4 +1,4 @@
-name: Deploy the application to Google Cloud Run
+name: Deploy the beta application to Google Cloud Run
 on:
   push:
     branches:
