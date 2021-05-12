@@ -1,0 +1,28 @@
+.Tiles {
+  align-items: center;
+  display: flex;
+  margin-top: 4px;
+}
+.TileLevel {
+  align-items: center;
+  background-color: var(--help-background-color);
+  border-radius: 20px;
+  display: inline-block;
+  display: flex;
+  font-size: 0.7em;
+  height: 20px;
+  justify-content: center;
+  margin: 0 4px 0 8px;
+  padding: 0;
+  width: 20px;
+}
+
+.EssenceCount {
+  align-items: center;
+  display: flex;
+  gap: 6px;
+  margin: 0 16px 0 0;
+}
+.EssenceCount svg {
+  height: 18px;
+}
