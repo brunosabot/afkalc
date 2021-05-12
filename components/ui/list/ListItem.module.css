@@ -3,14 +3,20 @@
   border-top: 1px solid var(--list-border);
   box-sizing: border-box;
   display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
   margin: 0 16px;
   min-height: 48px;
-  padding: 8px 0;
   position: relative;
   text-decoration: none;
   z-index: 1;
+}
+
+.ListItemTitle {
+  align-self: stretch;
+  display: flex;
+  flex-grow: 1;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  padding: 8px 0;
 }
 
 .ListItem:first-child {
