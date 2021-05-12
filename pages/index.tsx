@@ -25,10 +25,10 @@ import { FirebaseContext } from "../components/providers/FirebaseProvider";
 import ProfileContext from "../components/providers/ProfileContext";
 import LangButton from "../components/ui/button/LangButton";
 import LogoutButton from "../components/ui/button/LogoutButton";
-import BuyMeACoffee from "../components/ui/BuyMeACoffee";
 import Card from "../components/ui/card/Card";
 import CardHelp from "../components/ui/card/CardHelp";
 import CardTitle from "../components/ui/card/CardTitle";
+import Donate from "../components/ui/Donate";
 import MenuItem from "../components/ui/menu/MenuItem";
 import MenuItemExternal from "../components/ui/menu/MenuItemExternal";
 
@@ -116,7 +116,7 @@ const Home: React.FC<IProps> = () => {
           </MenuItemExternal>
         </div>
 
-        <BuyMeACoffee />
+        <Donate />
       </Card>
     </>
   );

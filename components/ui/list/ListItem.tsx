@@ -8,7 +8,7 @@ interface IProps {
 
 const ListItem: React.FC<IProps> = ({ children, actions }) => (
   <div className={styles.ListItem}>
-    {children}
+    <div className={styles.ListItemTitle}>{children}</div>
     {actions ? <div className={styles.ListItemAction}>{actions}</div> : null}
   </div>
 );
