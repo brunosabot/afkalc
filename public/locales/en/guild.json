@@ -26,5 +26,6 @@
   "abyssal-expedition": "Abyssal Expedition",
   "title-configuration": "Guild configuration",
   "label-show-abex-tab": "Show Abyssal Expedition tab to all members",
-  "label-another-character": "Add another character"
+  "label-another-character": "Add another character",
+  "label-per-hour": "/h"
 }
