@@ -8,7 +8,7 @@ import Character from "../../../ui/afk/Character";
 import CheckboxField from "../../../ui/CheckboxField";
 import Svg from "../../../ui/Svg";
 import useHero from "../../TiersList/hooks/useHero";
-import styles from "./TabSearchHero.module.css";
+import styles from "./SearchHero.module.css";
 
 interface IProps {
   index: number;

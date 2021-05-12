@@ -1,5 +1,5 @@
 import { useTranslation } from "next-i18next";
-import React, { useContext, useMemo, useState } from "react";
+import React, { useContext, useEffect, useMemo, useState } from "react";
 import GuildContext from "../../../providers/GuildContext";
 import IFirebaseProfile from "../../../providers/types/IFirebaseProfile";
 import Character from "../../../ui/afk/Character";
@@ -9,7 +9,7 @@ import SearchHero from "./SearchHero";
 import SearchListItem from "./SearchListItem";
 
 interface IProps {
-  [key: string]: never;
+  onSearch: (value: number) => void;
 }
 
 function filterHeroes(hero: number, si: number, fi: number, ascend: number, reverse: boolean) {
@@ -24,7 +24,7 @@ function filterHeroes(hero: number, si: number, fi: number, ascend: number, reve
   };
 }
 
-const TabSearchHero: React.FC<IProps> = () => {
+const TabSearchHero: React.FC<IProps> = ({ onSearch }) => {
   const { t } = useTranslation("guild");
   const { values } = useContext(GuildContext);
   const [heroes, setHeroes] = useState([{ hero: 1, si: 0, fi: 0, ascend: 0, reverse: false }]);
@@ -40,6 +40,10 @@ const TabSearchHero: React.FC<IProps> = () => {
       .sort((a, b) => a.playerName?.localeCompare(b.playerName ?? "") ?? 0)
       .map((box) => values.members.find((member) => member.id === box.id));
   }, [heroes, values]);
+
+  useEffect(() => {
+    onSearch(foundBoxes.length);
+  }, [foundBoxes, onSearch]);
 
   return (
     <>

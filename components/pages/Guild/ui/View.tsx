@@ -23,6 +23,7 @@ const View: React.FC<IProps> = () => {
   const { values } = useContext(GuildContext);
   const [tab, setTab] = useState<number>(0);
   const [showParams, setShowParams] = useState<boolean>(false);
+  const [search, setSearch] = useState<number>(0);
 
   return (
     <Card>
@@ -36,6 +37,7 @@ const View: React.FC<IProps> = () => {
         </CardTab>
         <CardTab active={tab === 1} onClick={() => setTab(1)}>
           {t("hero-search")}
+          {tab === 1 ? <Chip>{search}</Chip> : null}
         </CardTab>
         {values.guild.showAbexTab || values.isDeputy || values.isOwner ? (
           <CardTab active={tab === 2} onClick={() => setTab(2)}>
@@ -45,7 +47,7 @@ const View: React.FC<IProps> = () => {
       </CardTabs>
 
       {tab === 0 ? <TabMemberList /> : null}
-      {tab === 1 ? <TabSearchHero /> : null}
+      {tab === 1 ? <TabSearchHero onSearch={setSearch} /> : null}
       {tab === 2 ? <TabAbex /> : null}
 
       <Modal
