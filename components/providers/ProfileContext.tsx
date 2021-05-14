@@ -5,15 +5,17 @@ import {
   IFirebaseAbyssalExpeditionInventory,
   IFirebaseAbyssalExpeditionTilesList,
 } from "./types/IFirebaseAbyssalExpedition";
+import { IFirebaseElderTree } from "./types/IFirebaseElderTree";
 import { IFirebaseHeroList } from "./types/IFirebaseHeroes";
 
-interface IProfileActions {
+export interface IProfileActions {
   setCampaignLevel: (newCampaignLevel: string) => void;
   setCampaignSuccessDate: (newCampaignSuccessDate: string) => void;
   setPlayerLevel: (newPlayerLevel: number) => void;
   setPlayerVipLevel: (newPlayerVipLevel: number) => void;
   setPlayerName: (newPlayerName: string) => void;
   setFavoritePriorityList: (newFavoritePriorityList: string[]) => void;
+  setFavoriteTreeList: (newTreePriorityList: string[]) => void;
   deleteUser: () => void;
   downloadData: () => void;
   setAbexCurrentRelics: (newCurrentRelics: IFirebaseAbyssalExpeditionClassRelics) => Promise<void>;
@@ -23,9 +25,14 @@ interface IProfileActions {
   resetAbexTilesTimers: () => Promise<void>;
   resetAbexTiles: () => Promise<void>;
   resetAbexRelicsAndInventory: () => Promise<void>;
+  setWarriorElderTree: (value: number) => Promise<void>;
+  setTankElderTree: (value: number) => Promise<void>;
+  setRangerElderTree: (value: number) => Promise<void>;
+  setMageElderTree: (value: number) => Promise<void>;
+  setSupportElderTree: (value: number) => Promise<void>;
 }
 
-interface IProfileValues {
+export interface IProfileValues {
   isAuth: boolean;
   isAnonymous: boolean;
   isGoogle: boolean;
@@ -41,12 +48,14 @@ interface IProfileValues {
   playerName: string;
   shareId?: string;
   favoritePriorityList: string[];
+  favoriteTreeList: string[];
   abexGoalRelics: IFirebaseAbyssalExpeditionClassRelics;
   abexCurrentRelics: IFirebaseAbyssalExpeditionClassRelics;
   abexRelicInventory: IFirebaseAbyssalExpeditionInventory;
   abexTiles: IFirebaseAbyssalExpeditionTilesList;
   heroes: IFirebaseHeroList;
   heroesLastUpdate: string;
+  elderTree: IFirebaseElderTree;
 }
 
 export interface IProfileContext {
@@ -86,8 +95,16 @@ export const defaultValues: IProfileValues = {
   abexRelicInventory: {},
   abexTiles: {},
   favoritePriorityList: [],
+  favoriteTreeList: [],
   heroes: {},
   heroesLastUpdate: "",
+  elderTree: {
+    warrior: 37,
+    tank: 32,
+    ranger: 50,
+    mage: 25,
+    support: 47,
+  },
 };
 
 export default createContext<IProfileContext>({
@@ -98,6 +115,7 @@ export default createContext<IProfileContext>({
     setPlayerVipLevel: () => undefined,
     setPlayerName: () => undefined,
     setFavoritePriorityList: () => undefined,
+    setFavoriteTreeList: () => undefined,
     deleteUser: () => undefined,
     downloadData: () => undefined,
     // Abyssal Expedition
@@ -108,6 +126,12 @@ export default createContext<IProfileContext>({
     resetAbexTilesTimers: () => Promise.resolve(undefined),
     resetAbexTiles: () => Promise.resolve(undefined),
     resetAbexRelicsAndInventory: () => Promise.resolve(undefined),
+    // Elder Tree
+    setWarriorElderTree: () => Promise.resolve(undefined),
+    setTankElderTree: () => Promise.resolve(undefined),
+    setRangerElderTree: () => Promise.resolve(undefined),
+    setMageElderTree: () => Promise.resolve(undefined),
+    setSupportElderTree: () => Promise.resolve(undefined),
   },
   values: defaultValues,
 });

@@ -11,7 +11,7 @@
 }
 
 .ListItemTitle {
-  align-self: stretch;
+  align-items: center;
   display: flex;
   flex-grow: 1;
   flex-wrap: wrap;
@@ -24,4 +24,8 @@
 }
 .ListItemAction {
   flex-grow: 0;
+}
+
+.ListItem svg:first-child {
+  margin-right: 8px;
 }

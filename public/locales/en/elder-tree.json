@@ -1,0 +1,15 @@
+{
+  "simulate": "Simulate",
+  "current-tree": "Current tree",
+  "hp": "HP",
+  "hpPerc": "HP%",
+  "atk": "ATK",
+  "atkPerc": "ATK%",
+  "def": "DEF",
+  "defPerc": "DEF%",
+  "acc": "ACC",
+  "dodge": "DODGE",
+  "haste": "HASTE",
+  "crit": "CRIT",
+  "ll": "LL"
+}

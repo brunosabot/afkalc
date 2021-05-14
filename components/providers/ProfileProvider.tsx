@@ -4,6 +4,7 @@ import useFirestoreDocumentReference from "../hooks/useFirestoreDocumentReferenc
 import Spinner from "../ui/Spinner";
 import { FirebaseContext } from "./FirebaseProvider";
 import useAbyssalExpeditionSetters from "./hooks/useAbyssalExpeditionSetters";
+import useElderTreeSetters from "./hooks/useElderTreeSetters";
 import useMigration from "./hooks/useMigration";
 import useProfileActions from "./hooks/useProfileActions";
 import useProfileSetters from "./hooks/useProfileSetters";
@@ -21,6 +22,7 @@ const ProfileProvider: React.FC<IProps> = ({ children }) => {
 
   const {
     setFavoritePriorityList,
+    setFavoriteTreeList,
     setCampaignLevel,
     setCampaignSuccessDate,
     setPlayerLevel,
@@ -39,6 +41,14 @@ const ProfileProvider: React.FC<IProps> = ({ children }) => {
     resetAbexTiles,
   } = useAbyssalExpeditionSetters(result);
 
+  const {
+    setWarriorElderTree,
+    setTankElderTree,
+    setRangerElderTree,
+    setMageElderTree,
+    setSupportElderTree,
+  } = useElderTreeSetters(result);
+
   useMigration(result);
 
   const value = useMemo<IProfileContext>(
@@ -50,6 +60,7 @@ const ProfileProvider: React.FC<IProps> = ({ children }) => {
         setPlayerVipLevel,
         setPlayerName,
         setFavoritePriorityList,
+        setFavoriteTreeList,
         deleteUser,
         downloadData,
         setAbexCurrentRelics,
@@ -59,6 +70,11 @@ const ProfileProvider: React.FC<IProps> = ({ children }) => {
         setAbexTiles,
         resetAbexTilesTimers,
         resetAbexTiles,
+        setWarriorElderTree,
+        setTankElderTree,
+        setRangerElderTree,
+        setMageElderTree,
+        setSupportElderTree,
       },
       values: {
         ...defaultValues,
@@ -79,6 +95,7 @@ const ProfileProvider: React.FC<IProps> = ({ children }) => {
       setPlayerVipLevel,
       setPlayerName,
       setFavoritePriorityList,
+      setFavoriteTreeList,
       deleteUser,
       downloadData,
       setAbexCurrentRelics,
@@ -88,6 +105,11 @@ const ProfileProvider: React.FC<IProps> = ({ children }) => {
       setAbexTiles,
       resetAbexTilesTimers,
       resetAbexTiles,
+      setWarriorElderTree,
+      setTankElderTree,
+      setRangerElderTree,
+      setMageElderTree,
+      setSupportElderTree,
       result?.data,
       values.uid,
       values.isAuth,

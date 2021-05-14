@@ -1,0 +1,16 @@
+.Stat {
+  box-sizing: border-box;
+  display: flex;
+  justify-content: space-between;
+  padding: 0 16px 16px 16px;
+  width: 50%;
+}
+.Name {
+  flex-basis: 50%;
+  flex-grow: 1;
+}
+.Value {
+  flex-basis: 50%;
+  flex-grow: 1;
+  font-weight: 600;
+}

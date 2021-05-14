@@ -13,6 +13,7 @@ import {
   mdiMap,
   mdiPlaylistCheck,
   mdiScript,
+  mdiTree,
   mdiUpdate,
   mdiViewList,
 } from "@mdi/js";
@@ -101,6 +102,9 @@ const Home: React.FC<IProps> = () => {
           </MenuItem>
           <MenuItem to="/guild" icon={mdiAccountSupervisor}>
             {t("common:menu.guild")}
+          </MenuItem>
+          <MenuItem to="/elder-tree" icon={mdiTree}>
+            {t("common:menu.elder-tree")}
           </MenuItem>
           <MenuItem to="/credit" icon={mdiAccountHeart}>
             {t("common:menu.credit")}
