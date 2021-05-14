@@ -1,3 +1,4 @@
+import Link from "next/link";
 import React from "react";
 import styles from "./ListItem.module.css";
 
@@ -7,9 +8,11 @@ interface IProps {
 }
 
 const ListItem: React.FC<IProps> = ({ href, children }) => (
-  <a href={href} className={styles.ListItem}>
-    {children}
-  </a>
+  <Link href={href}>
+    <a href={href} className={styles.ListItem}>
+      {children}
+    </a>
+  </Link>
 );
 
 export default ListItem;
