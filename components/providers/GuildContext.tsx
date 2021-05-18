@@ -8,6 +8,7 @@ interface IGuildActions {
   acceptJoinGuild: (id: string) => void;
   rejectJoinGuild: (id: string) => void;
   removeFromGuild: (id: string) => void;
+  giveOwnership: (id: string) => void;
   removeGuild: () => void;
   createGuild: (name: string) => void;
   addDeputy: (id: string) => void;
@@ -64,6 +65,7 @@ export default React.createContext<IGuildContext>({
     removeDeputy: () => {},
     quitGuild: () => {},
     setShowAbexTab: () => {},
+    giveOwnership: () => {},
   },
   values: {
     members: [],

@@ -6,6 +6,7 @@ import ProfileContext from "../../../providers/ProfileContext";
 import CardAction from "../../../ui/card/CardAction";
 import CardActions from "../../../ui/card/CardActions";
 import CardTitle from "../../../ui/card/CardTitle";
+import CardOwner from "./CardOwner";
 
 interface IProps {
   [key: string]: never;
@@ -37,6 +38,8 @@ const CardDanger: React.FC<IProps> = () => {
       <span style={{ color: "var(--error-background-color)" }}>
         <CardTitle>{t("title-dangerous-zone")}</CardTitle>
       </span>
+
+      <CardOwner />
 
       <CardActions>
         {isOwner ? (
