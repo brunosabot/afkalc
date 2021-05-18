@@ -27,5 +27,7 @@
   "title-configuration": "Guild configuration",
   "label-show-abex-tab": "Show Abyssal Expedition tab to all members",
   "label-another-character": "Add another character",
-  "label-per-hour": "/h"
+  "label-per-hour": "/h",
+  "label-ownership-name": "Give guild ownership",
+  "confirm-transfer-ownership": "Are you sure you want to transfer the ownership?"
 }

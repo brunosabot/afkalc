@@ -96,6 +96,14 @@ export default function useGuildSetters(guildId: string | undefined) {
     [guildCollection, guildId]
   );
 
+  const giveOwnership = useCallback(
+    (id: string) =>
+      guildCollection?.doc(guildId)?.update({
+        ownerId: id,
+      }) ?? Promise.resolve(undefined),
+    [guildCollection, guildId]
+  );
+
   return {
     joinGuild,
     cancelJoinGuild,
@@ -108,5 +116,6 @@ export default function useGuildSetters(guildId: string | undefined) {
     removeDeputy,
     quitGuild,
     setShowAbexTab,
+    giveOwnership,
   };
 }
