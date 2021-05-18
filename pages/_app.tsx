@@ -11,6 +11,7 @@ import FirebaseProvider from "../components/providers/FirebaseProvider";
 import GuildProvider from "../components/providers/GuildProvider";
 import PriorityListProvider from "../components/providers/PriorityListProvider";
 import ProfileProvider from "../components/providers/ProfileProvider";
+import TreeListProvider from "../components/providers/TreeListProvider";
 import UserProvider from "../components/providers/UserProvider";
 import "../styles/globals.css";
 
@@ -27,11 +28,13 @@ function MyApp({ Component, pageProps }: any) {
     <FirebaseProvider>
       <ProfileProvider>
         <PriorityListProvider>
-          <GuildProvider>
-            <UserProvider>
-              <Component {...pageProps} />
-            </UserProvider>
-          </GuildProvider>
+          <TreeListProvider>
+            <GuildProvider>
+              <UserProvider>
+                <Component {...pageProps} />
+              </UserProvider>
+            </GuildProvider>
+          </TreeListProvider>
         </PriorityListProvider>
       </ProfileProvider>
     </FirebaseProvider>

@@ -4,7 +4,9 @@
 }
 
 .Value {
+  background: transparent;
   border: 0;
+  color: inherit;
   font: inherit;
   margin: 8px 0 0 0;
   outline: 0;

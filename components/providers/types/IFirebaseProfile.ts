@@ -3,6 +3,7 @@ import {
   IFirebaseAbyssalExpeditionInventory,
   IFirebaseAbyssalExpeditionTilesList,
 } from "./IFirebaseAbyssalExpedition";
+import { IFirebaseElderTree } from "./IFirebaseElderTree";
 import { IFirebaseHeroList } from "./IFirebaseHeroes";
 
 export default interface IFirebaseProfile {
@@ -24,4 +25,6 @@ export default interface IFirebaseProfile {
   abexCurrentRelics?: IFirebaseAbyssalExpeditionClassRelics;
   abexRelicInventory?: IFirebaseAbyssalExpeditionInventory;
   abexTiles?: IFirebaseAbyssalExpeditionTilesList;
+
+  elderTree?: IFirebaseElderTree;
 }

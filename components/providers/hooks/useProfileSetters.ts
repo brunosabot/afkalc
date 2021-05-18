@@ -54,8 +54,17 @@ export default function useProfileSetters() {
     [document, values.uid]
   );
 
+  const setFavoriteTreeList = useCallback(
+    (favoriteTreeList: string[]) => {
+      if (values.uid === "") return;
+      document?.set({ ownerId: values.uid, favoriteTreeList }, { merge: true });
+    },
+    [document, values.uid]
+  );
+
   return {
     setFavoritePriorityList,
+    setFavoriteTreeList,
     setCampaignLevel,
     setCampaignSuccessDate,
     setPlayerLevel,

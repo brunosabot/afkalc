@@ -45,9 +45,17 @@
     "guild": "Guild",
     "donate": "Donate",
     "short-loot": "Loot",
+    "elder-tree": "Elder Tree",
     "short-hero-list": "Heroes",
     "short-top-team": "Teams",
     "short-item-cost": "Item Cost"
+  },
+  "heroClass": {
+    "warrior": "Warrior",
+    "tank": "Tank",
+    "ranger": "Ranger",
+    "mage": "Mage",
+    "support": "Support"
   },
   "contribution": {
     "edit-on-github": "Edit on GitHub"
