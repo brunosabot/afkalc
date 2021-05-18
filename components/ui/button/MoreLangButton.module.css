@@ -1,0 +1,17 @@
+.MoreLangButton {
+  background: transparent;
+  border: 0;
+  border-radius: 50%;
+  cursor: pointer;
+  display: flex;
+  font-size: 24px;
+  line-height: 1em;
+  margin: 0 2px;
+  padding: 8px;
+  text-decoration: none;
+  transition: var(--transition);
+}
+
+.MoreLangButton:hover {
+  background-color: var(--hover-color);
+}
