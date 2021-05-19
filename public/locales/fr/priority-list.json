@@ -7,7 +7,6 @@
   "title-edit": "Éditer votre liste",
   "title-priority-list": "Vos listes de priorité",
   "label-back": "Retour à la liste",
-  "label-add": "Nouvelle liste",
   "label-also-require": "Nécessite aussi :",
   "label-done": "Fait",
   "label-restore": "Restorer",
@@ -26,5 +25,8 @@
   "label-no-list": "Vous n'avez pas de liste pour le moment",
   "label-moved": "Les listes ont été déplacées. Trouvez votre lien ci-dessous",
   "label-moved-no-list": "La liste n'a pas encore été migrée. Contactez son créateur",
-  "last-update": "Dernière mise à jour :"
+  "last-update": "Dernière mise à jour :",
+  "label-add-tiers-list": "Nouvelle liste de héros",
+  "label-add-elder-tree-list": "Nouvelle liste d'arbre des anciens",
+  "level": "Niveau"
 }

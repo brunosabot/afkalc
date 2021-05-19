@@ -1,6 +1,6 @@
 {
   "welcome": "Bem vindo à Afkalc, a ferramenta de cálculo para AFK Arena",
-  "require-login": "Você precisa fazer login para acessar a ferramenta",
+  "require-login": "É preciso fazer login para usar este recurso",
   "credit-desc": "Pela ajuda na coleta de dados, criação de ótimos guias e desenvolvimento do aplicativo, obrigado a:",
   "temporary-account": "Você está logado como convidado. Suas modificações estarão disponíveis temporariamente.",
   "go-registration": "Voltar para o registro",
@@ -45,9 +45,17 @@
     "guild": "Guilda",
     "donate": "Doar",
     "short-loot": "Saque",
+    "elder-tree": "Árvore Antiga",
     "short-hero-list": "Heróis",
     "short-top-team": "Times",
     "short-item-cost": "Custo do Item"
+  },
+  "heroClass": {
+    "warrior": "Guerreiro",
+    "tank": "Tanque",
+    "ranger": "Soldado",
+    "mage": "Mago",
+    "support": "Suporte Técnico"
   },
   "contribution": {
     "edit-on-github": "Editar no GitHub"
