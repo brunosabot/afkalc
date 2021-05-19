@@ -99,11 +99,11 @@ export const defaultValues: IProfileValues = {
   heroes: {},
   heroesLastUpdate: "",
   elderTree: {
-    warrior: 37,
-    tank: 32,
-    ranger: 50,
-    mage: 25,
-    support: 47,
+    warrior: 0,
+    tank: 0,
+    ranger: 0,
+    mage: 0,
+    support: 0,
   },
 };
 
