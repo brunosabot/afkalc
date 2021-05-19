@@ -22,7 +22,7 @@ const ClassForm: React.FC<IProps> = ({ onChange, value, heroClass }) => (
           newValue = 0;
         }
 
-        onChange(newValue);
+        onChange(Math.max(0, Math.min(100, newValue)));
       }}
     />
   </div>
