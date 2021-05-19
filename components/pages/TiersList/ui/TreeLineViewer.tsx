@@ -17,7 +17,7 @@ const TreeLineViewer: React.FC<IProps> = ({ shouldShowChecked, step, elderTree, 
   const { t } = useTranslation("priority-list");
 
   const currentLevel = elderTree[step.heroClass];
-  const isDone = currentLevel > step.level;
+  const isDone = currentLevel >= step.level;
 
   if (isDone && shouldShowChecked === false) return null;
 
