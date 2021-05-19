@@ -1,0 +1,15 @@
+{
+  "simulate": "Simuler",
+  "current-tree": "Arbre actuel",
+  "hp": "PV",
+  "hpPerc": "PV%",
+  "atk": "ATQ",
+  "atkPerc": "ATQ%",
+  "def": "DÉF",
+  "defPerc": "DÉF%",
+  "acc": "PRÉC",
+  "dodge": "ESQUIVE",
+  "haste": "VITESSE",
+  "crit": "Crit",
+  "ll": "VV"
+}

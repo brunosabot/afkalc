@@ -43,11 +43,19 @@
     "logout": "Se déconnecter",
     "settings": "Paramètres",
     "guild": "Guilde",
-    "donate": "Donation",
+    "donate": "Faire un don",
     "short-loot": "Butin",
+    "elder-tree": "Arbre des anciens",
     "short-hero-list": "Héros",
     "short-top-team": "Équipes",
     "short-item-cost": "Coût"
+  },
+  "heroClass": {
+    "warrior": "Guerrier",
+    "tank": "Tank",
+    "ranger": "Rôdeur",
+    "mage": "Mage",
+    "support": "Soutien"
   },
   "contribution": {
     "edit-on-github": "GitHub"
