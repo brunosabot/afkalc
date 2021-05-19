@@ -35,7 +35,15 @@ const StepLine: React.FC<Props> = ({
 
   return (
     <div className={styles.StepLine}>
-      <img src={`/classes/${step.heroClass}.png`} className={styles.Image} alt={step.heroClass} />
+      <button
+        className={styles.Button}
+        onClick={() => {
+          setShowModal(true);
+        }}
+        type="button"
+      >
+        <img src={`/classes/${step.heroClass}.png`} className={styles.Image} alt={step.heroClass} />
+      </button>
 
       <span className={styles.Name}>
         {t("level")} {step.level}
