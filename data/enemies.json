@@ -6,7 +6,8 @@
       { "name": "Dark Nemora", "id": 2, "image": "/enemies/darknemora.jpg" },
       { "name": "Evil Arden", "id": 3, "image": "/enemies/evilarden.jpg" },
       { "name": "Ice Shemira", "id": 4, "image": "/enemies/iceshemira.jpg" },
-      { "name": "Kane", "id": 5, "image": "/enemies/kane.jpg" }
+      { "name": "Kane", "id": 5, "image": "/enemies/kane.jpg" },
+      { "name": "Grotesque Mage", "id": 6, "image": "/enemies/BossMystic.jpg" }
     ]
   },
   {

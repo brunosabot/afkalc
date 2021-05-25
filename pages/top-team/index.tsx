@@ -5,6 +5,7 @@ import withLayoutPrivate from "../../components/layout/withLayoutPrivate";
 import useDescription from "../../components/pages/TopTeam/hooks/useDescription";
 import useTitle from "../../components/pages/TopTeam/hooks/useTitle";
 import Board from "../../components/pages/TopTeam/ui/Board";
+import EnemiPosition from "../../components/pages/TopTeam/ui/EnemiPosition";
 import PlayerPosition from "../../components/pages/TopTeam/ui/PlayerPosition";
 import ShareBanner from "../../components/pages/TopTeam/ui/ShareBanner";
 import { DetailType } from "../../components/ui/afk/Character";
@@ -12,7 +13,7 @@ import Card from "../../components/ui/card/Card";
 
 export const getStaticProps = async ({ locale }: { locale: string }) => ({
   props: {
-    ...(await serverSideTranslations(locale, ["common", "top-team"])),
+    ...(await serverSideTranslations(locale, ["common", "top-team", "hero-list"])),
   },
 });
 interface Props {
@@ -86,6 +87,7 @@ const TopTeam: React.FC<Props> = () => {
           fi={fiList[5]}
           artifact={artifactList[5]}
         />
+        <EnemiPosition onSelect={onSelect} position={6} enemi={team[6]} />
       </Board>
     </Card>
   );
