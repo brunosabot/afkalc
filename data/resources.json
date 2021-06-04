@@ -48,7 +48,7 @@
   { "name": "hypogean-emblem", "image": "/loot/hypogean-emblem.jpg" },
   { "name": "dimensional-emblem", "image": "/loot/dimensional-emblem.jpg" },
   { "name": "faction-emblem", "image": "/loot/faction-emblem.jpg" },
-  { "name": "celhypo-emblem", "image": "/loot/celhypo-emblem.jpg" },
+  { "name": "chad-emblem", "image": "/loot/chad-emblem.jpg" },
   { "name": "fortuitous-emblem-chest", "cost": 153, "image": "/loot/fortuitous-emblem-chest.jpg" },
   { "name": "emblem-choice-chest", "cost": 198, "image": "/loot/emblem-choice-chest.jpg" },
   { "name": "challenger-token", "cost": 0.03, "image": "/loot/challenger-token.jpg" },
