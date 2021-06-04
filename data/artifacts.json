@@ -15,5 +15,6 @@
   { "id": 15, "name": "warden", "image": "/artifacts/warden.jpg" },
   { "id": 10, "name": "tidebearer", "image": "/artifacts/tidebearer.jpg" },
   { "id": 12, "name": "shroud", "image": "/artifacts/shroud.jpg" },
-  { "id": 16, "name": "verdantlongbow", "image": "/artifacts/verdantlongbow.jpg" }
+  { "id": 16, "name": "verdantlongbow", "image": "/artifacts/verdantlongbow.jpg" },
+  { "id": 18, "name": "lifeslimit", "image": "/artifacts/artifact_tank_hammer.jpg" }
 ]
