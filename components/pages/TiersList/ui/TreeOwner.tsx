@@ -124,7 +124,7 @@ const TreeOwner: React.FC<IProps> = ({ listId, result }) => {
               {t("label-duplicate")}
             </CardAction>
             <CardAction icon={mdiPlus} onClick={() => setShowModal(true)}>
-              Ajouter
+              {t("common:add")}
             </CardAction>
           </CardActions>
 

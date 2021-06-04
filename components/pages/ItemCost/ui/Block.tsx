@@ -1,4 +1,5 @@
 import { mdiPlus } from "@mdi/js";
+import { useTranslation } from "next-i18next";
 import React, { useState } from "react";
 import Modal from "../../../functionnal/Modal";
 import ChooseItem from "../../../modal/ChooseItem";
@@ -12,6 +13,7 @@ interface IProps {
 }
 
 const Block: React.FC<IProps> = ({ values, setValues }) => {
+  const { t } = useTranslation("commmon");
   const [showModal, setShowModal] = useState(false);
 
   return (
@@ -49,7 +51,7 @@ const Block: React.FC<IProps> = ({ values, setValues }) => {
 
       <CardActions>
         <CardAction onClick={() => setShowModal(true)} icon={mdiPlus}>
-          Ajouter
+          {t("common:add")}
         </CardAction>
       </CardActions>
     </>

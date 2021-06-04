@@ -27,6 +27,8 @@
   "logged-user-on-app": "You are {{counter}} users using the app! Thank you!",
   "earnings": "Donations",
   "spendings": "Costs",
+  "sponsors": "Sponsors",
+  "add": "Add",
   "menu": {
     "home": "Home",
     "signature-item": "SI Emblem",
