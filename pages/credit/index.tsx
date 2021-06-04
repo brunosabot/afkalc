@@ -52,6 +52,12 @@ const Credit: React.FC<IProps> = () => {
           <Aidan />
         </ListItem>
       </List>
+
+      <CardTitle icon={mdiAccountHeart}>{t("common:sponsors")}</CardTitle>
+      <List>
+        <ListItem>Manouke</ListItem>
+        <ListItem>Jailbeujy</ListItem>
+      </List>
     </Card>
   );
 };
