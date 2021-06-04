@@ -903,5 +903,25 @@
     "image": "/heroes/Siren.jpg",
     "faction": "graveborns",
     "usage": []
+  },
+  {
+    "name": "Leofric",
+    "id": 85,
+    "type": "intelligence",
+    "class": "support",
+    "role": "debuffer",
+    "image": "/heroes/GentryD.jpg",
+    "faction": "hypogeans",
+    "usage": []
+  },
+  {
+    "name": "Walker",
+    "id": 86,
+    "type": "strength",
+    "class": "warrior",
+    "role": "continuous",
+    "image": "/heroes/Gunner.jpg",
+    "faction": "lightbearers",
+    "usage": []
   }
 ]
