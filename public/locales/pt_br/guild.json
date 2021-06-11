@@ -26,5 +26,8 @@
   "abyssal-expedition": "Expedição Abissal",
   "title-configuration": "Configuração da guilda",
   "label-show-abex-tab": "Mostrar aba Expedição Abissal para todos os membros",
-  "label-another-character": "Adicionar outro Herói"
+  "label-another-character": "Adicionar outro Herói",
+  "label-per-hour": "/h",
+  "label-ownership-name": "Transferir liderança",
+  "confirm-transfer-ownership": "Você tem certeza que deseja transferir a liderança?"
 }

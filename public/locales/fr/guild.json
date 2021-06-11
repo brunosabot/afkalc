@@ -26,5 +26,8 @@
   "abyssal-expedition": "Expédition Abyssale",
   "title-configuration": "Configuration de la guilde",
   "label-show-abex-tab": "Montrer l'onglet Expédition Abyssale à tous les membres",
-  "label-another-character": "Ajouter un autre héros"
+  "label-another-character": "Ajouter un autre héros",
+  "label-per-hour": "/h",
+  "label-ownership-name": "Donner le rôle de chef",
+  "confirm-transfer-ownership": "Êtes-vous sûr de vouloir transférer le rôle de chef ?"
 }

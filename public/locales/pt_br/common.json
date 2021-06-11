@@ -27,6 +27,8 @@
   "logged-user-on-app": "Você é o {{counter}} usuário do aplicativo! Muito obrigado!",
   "earnings": "Doações",
   "spendings": "Custos",
+  "sponsors": "Patrocinadores",
+  "add": "Adicionar",
   "menu": {
     "home": "Início",
     "signature-item": "Item de Assinatura",
