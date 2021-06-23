@@ -923,5 +923,15 @@
     "image": "/heroes/Gunner.jpg",
     "faction": "lightbearers",
     "usage": []
+  },
+  {
+    "name": "Merlin",
+    "id": 87,
+    "type": "intelligence",
+    "class": "support",
+    "role": "regen",
+    "image": "/heroes/Merlin.jpg",
+    "faction": "dimensionals",
+    "usage": []
   }
 ]
