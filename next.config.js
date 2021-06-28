@@ -5,12 +5,6 @@ const generateSitemap = require("./scripts/generateSitemap");
 
 const data = JSON.parse(fs.readFileSync("./package.json")).version;
 
-const localeSubpaths = {
-  dev: "dev",
-  fr: "fr",
-  pt_br: "pt_br",
-};
-
 const moduleExports = {
   future: {
     webpack5: true,
@@ -23,10 +17,12 @@ const moduleExports = {
         destination: "/tiers-list",
         permanent: true,
       },
+      {
+        source: "/fr/:slug(.*)",
+        destination: "/fr_FR/:slug",
+        permanent: true,
+      },
     ];
-  },
-  publicRuntimeConfig: {
-    localeSubpaths,
   },
   webpack(config, { isServer }) {
     config.module.rules.push({

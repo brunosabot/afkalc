@@ -62,9 +62,9 @@ const Home: React.FC<IProps> = () => {
         </CardHelp>
         <div style={{ display: "flex", justifyContent: "center", alignItems: "center" }}>
           {process.env.NODE_ENV === "development" ? <LangButton lang="dev" emoji="👨‍💻" /> : null}
-          <LangButton lang="fr" emoji="🇫🇷" />
-          <LangButton lang="en" emoji="🇺🇸‍" />
-          <LangButton lang="pt_br" emoji="🇧🇷" />
+          <LangButton lang="fr_FR" emoji="🇫🇷" />
+          <LangButton lang="en_US" emoji="🇺🇸‍" />
+          <LangButton lang="pt_BR" emoji="🇧🇷" />
           <MoreLangButton />
         </div>
 
