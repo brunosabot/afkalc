@@ -933,5 +933,25 @@
     "image": "/heroes/Merlin.jpg",
     "faction": "dimensionals",
     "usage": []
+  },
+  {
+    "name": "Thali",
+    "id": 88,
+    "type": "intelligence",
+    "class": "mage",
+    "role": "continuous",
+    "image": "/heroes/CrazyFox.jpg",
+    "faction": "maulers",
+    "usage": []
+  },
+  {
+    "name": "Titus",
+    "id": 89,
+    "type": "strength",
+    "class": "tank",
+    "role": "tank",
+    "image": "/heroes/Golem.jpg",
+    "faction": "celestials",
+    "usage": []
   }
 ]
