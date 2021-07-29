@@ -73,8 +73,8 @@ const HeroList: React.FC<IProps> = () => {
     }
   }, [id, userId]);
 
-  const lastUpdate = useMemo(() => dayjs(new Date(values.heroesLastUpdate)).fromNow(), [
-    values.heroesLastUpdate,
+  const lastUpdate = useMemo(() => dayjs(new Date(result.data?.heroesLastUpdate ?? 0)).fromNow(), [
+    result.data?.heroesLastUpdate,
   ]);
 
   return (
@@ -86,7 +86,7 @@ const HeroList: React.FC<IProps> = () => {
             {result.data?.campaignLevel ? ` (${result.data?.campaignLevel})` : null}
           </CardTitle>
 
-          {values.heroesLastUpdate !== "" ? (
+          {result.data?.heroesLastUpdate !== undefined ? (
             <div style={{ marginBottom: "-16px" }}>
               <CardHelp>{`${t("last-update")} ${lastUpdate}`}</CardHelp>
             </div>

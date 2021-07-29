@@ -19,6 +19,7 @@ export default interface IFirebaseProfile {
 
   // Hero List
   heroes?: IFirebaseHeroList;
+  heroesLastUpdate?: string;
 
   // Abyssal expedition
   abexGoalRelics?: IFirebaseAbyssalExpeditionClassRelics;
