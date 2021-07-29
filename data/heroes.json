@@ -953,5 +953,15 @@
     "image": "/heroes/Golem.jpg",
     "faction": "celestials",
     "usage": []
+  },
+  {
+    "name": "Hodgkin",
+    "id": 90,
+    "type": "strength",
+    "class": "tank",
+    "role": "tank",
+    "image": "/heroes/Captain.jpg",
+    "faction": "graveborns",
+    "usage": []
   }
 ]
