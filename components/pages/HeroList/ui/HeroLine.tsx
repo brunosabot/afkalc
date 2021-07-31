@@ -39,21 +39,19 @@ const HeroLine: React.FC<IProps> = ({
   let linkElement = null;
   if (faction === "dimensionals") {
     if (getValue(id, "ascend") === 0) {
-      linkElement = (
-        <div className={styles.Link}>
-          <Svg d="" />
-        </div>
-      );
+      linkElement = null;
     } else if (link) {
       linkElement = (
-        <>
+        <div className={styles.Dimensional}>
           <Character id={link} size="small" onClick={() => setShowModal(true)} />
-          {linkKey ? <img src="/loot/cosmic-key.jpg" className={styles.CosmicKey} alt="" /> : null}
-        </>
+          {linkKey ? (
+            <img src="/loot/cosmic-key.jpg" className={styles.DimensionalKey} alt="" />
+          ) : null}
+        </div>
       );
     } else {
       linkElement = (
-        <div className={styles.Link}>
+        <div className={styles.Dimensional}>
           <Svg d={mdiLink} onClick={() => setShowModal(true)} />
         </div>
       );

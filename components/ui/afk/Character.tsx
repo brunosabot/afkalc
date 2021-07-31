@@ -28,6 +28,34 @@ interface IProps {
   artifact?: number;
 }
 
+function getImageName(si: number | undefined, fi: number | undefined) {
+  if (si === undefined) return undefined;
+  if (fi === undefined) return undefined;
+
+  let siNumber = 0;
+  if (si >= 30) {
+    siNumber = 30;
+  } else if (si >= 20) {
+    siNumber = 20;
+  } else if (si >= 10) {
+    siNumber = 10;
+  }
+
+  let fiNumber = 0;
+  if (fi >= 9) {
+    fiNumber = 9;
+  } else if (fi >= 3) {
+    fiNumber = 3;
+  }
+
+  const concat = `${siNumber}${fiNumber}`;
+
+  if (siNumber === 0 && fiNumber === 0) return undefined;
+  if (["09", "036"].indexOf(concat) >= 0) return undefined;
+
+  return `/heroes-rank/${concat}.png`;
+}
+
 /**
  * TODO: Use i18n for name
  */
@@ -73,70 +101,22 @@ const Character: React.FC<IProps> = ({
     >
       <img src={resource.image} className={styles.Character} alt={resource?.name} />
 
-      <img
-        className={`${styles.Faction} ${siLevel === undefined || siLevel === 0 ? styles.NoSi : ""}`}
-        src={`/factions/${resource.faction}.png`}
-        alt={name}
-      />
+      {size === "small" ? null : (
+        <>
+          <img
+            className={`${styles.Faction} ${
+              siLevel === undefined || siLevel === 0 ? styles.NoSi : ""
+            }`}
+            src={`/factions/${resource.faction}.png`}
+            alt={name}
+          />
+          <img src={getImageName(siLevel, fiLevel)} alt="" className={styles.SiFi} />
+        </>
+      )}
 
       {activeArtifact ? (
         <img className={`${styles.Artifact}`} src={activeArtifact?.image} alt={name} />
       ) : null}
-
-      {siLevel === undefined ? null : (
-        <svg viewBox="0 0 220 220" className={styles.Si}>
-          {siLevel >= 30 ? (
-            <path
-              d="M50 110C50 110, 0 110, 0 0C0 0, 0 50, 50 50L50 110"
-              stroke="black"
-              fill="#fff"
-            />
-          ) : null}
-          {siLevel >= 30 ? (
-            <path
-              d="M170 110C170 110, 220 110, 220 0C220 0, 220 40, 170 40L170 110"
-              stroke="black"
-              fill="#fff"
-            />
-          ) : null}
-          {siLevel >= 20 ? <path d="M50 0L90 0L50 50L50 0" className={styles.SiAccent2} /> : null}
-          {siLevel >= 20 ? (
-            <path d="M170 0L90 0L170 170L170 0" className={styles.SiAccent2} />
-          ) : null}
-          {siLevel >= 20 ? (
-            <path d="M170 140L90 140L170 80L170 140" className={styles.SiAccent2} />
-          ) : null}
-          {siLevel >= 20 ? (
-            <path d="M50 140L90 140L50 80L50 140" className={styles.SiAccent2} />
-          ) : null}
-          {siLevel > 0 ? <circle cx="110" cy="70" r="70" /> : null}
-          {siLevel >= 10 ? (
-            <path d="M110 0L130 20L110 40L90 20L110 0" className={styles.SiAccent} />
-          ) : null}
-          {siLevel >= 10 ? (
-            <path d="M180 70L160 90L140 70L160 50L180 70" className={styles.SiAccent} />
-          ) : null}
-          {siLevel >= 10 ? (
-            <path d="M110 140L130 120L110 100L90 120L110 140" className={styles.SiAccent} />
-          ) : null}
-          {siLevel >= 10 ? (
-            <path d="M40 70L60 50L80 70L60 90L40 70" className={styles.SiAccent} />
-          ) : null}
-        </svg>
-      )}
-
-      {fiLevel === undefined ? null : (
-        <svg viewBox={fiLevel >= 9 ? "0 0 160 150" : "0 0 100 150"} className={styles.Fi}>
-          {fiLevel >= 3 ? <path d="M0 75L50 0L100 75L50 150L0 75" /> : null}
-          {fiLevel >= 9 ? <path d="M60 75L110 0L160 75L110 150L60 75" /> : null}
-          {fiLevel >= 3 ? (
-            <path d="M20 75L50 20L80 75L50 130L20 75" className={styles.FiInner} />
-          ) : null}
-          {fiLevel >= 9 ? (
-            <path d="M80 75L110 20L140 75L110 130L80 75" className={styles.FiInner} />
-          ) : null}
-        </svg>
-      )}
     </div>
   );
 };

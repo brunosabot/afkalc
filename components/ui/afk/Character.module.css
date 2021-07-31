@@ -1,10 +1,10 @@
 .Character {
   border-radius: 6px 0 6px 0;
   box-shadow: var(--afk-hero-shadow);
+  box-sizing: border-box;
   display: block;
   width: 100%;
   z-index: 1;
-  box-sizing: border-box;
 }
 .Wrapper {
   align-items: center;
@@ -14,30 +14,31 @@
   display: flex;
   flex-shrink: 0;
   font-weight: 500;
-  height: 40px;
+  height: 48px;
   justify-content: center;
-  position: relative;
-  width: 40px;
   outline: 0;
+  position: relative;
+  width: 48px;
 }
 
 .Large .Character {
   border-radius: 8px;
-  width: 56px;
   height: 56px;
+  width: 56px;
 }
 .Large .Count {
   font-size: 14px;
 }
 
 .Small.Wrapper {
-  width: 24px;
+  box-shadow: none;
   height: 24px;
+  width: 24px;
 }
 .Small .Character {
-  border-radius: 3px;
-  width: 24px;
+  border-radius: 50%;
   height: 24px;
+  width: 24px;
 }
 .Small .Count {
   display: none;
@@ -93,54 +94,12 @@
 
 .Faction {
   border-radius: 6px;
-  height: 10px;
-  left: -1px;
+  height: 13px;
+  left: 1.5px;
   position: absolute;
-  top: 0;
-  width: 10px;
+  top: 1px;
+  width: 13px;
   z-index: 2;
-}
-.NoSi {
-  height: 14px;
-  left: -3px;
-  top: -2px;
-  width: 14px;
-}
-.Si {
-  fill: #f5a400;
-  height: 22px;
-  left: -7px;
-  position: absolute;
-  stroke: #280e16;
-  stroke-linecap: round;
-  stroke-width: 4px;
-  top: -2px;
-  width: 22px;
-  z-index: 1;
-}
-.SiAccent {
-  fill: rgba(0, 0, 0, 0.3);
-}
-.SiAccent2 {
-  fill: rgba(255, 255, 255, 1);
-}
-
-.Fi {
-  display: flex;
-  fill: #fff;
-  height: 10px;
-  justify-content: center;
-  left: -1px;
-  position: absolute;
-  top: 12px;
-  width: 10px;
-  z-index: 1;
-}
-.FiInner {
-  fill: var(--afk-mythic-color);
-  stroke: #000;
-  stroke-linecap: round;
-  stroke-width: 10px;
 }
 
 .Artifact {
@@ -155,4 +114,12 @@
   transform: translateX(-50%);
   width: 22px;
   z-index: 1;
+}
+
+.SiFi {
+  left: -10px;
+  position: absolute;
+  top: -7px;
+  width: 36px;
+  z-index: 3;
 }
