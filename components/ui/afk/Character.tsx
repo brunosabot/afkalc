@@ -89,6 +89,8 @@ const Character: React.FC<IProps> = ({
   const ascendClassName = [7, 8, 9, 10, 11, 12].includes(ascendLevel) ? styles.Ascend : "";
   const plusClassName = [2, 4, 6].includes(ascendLevel) ? styles.Plus : "";
 
+  const stars = ascendLevel > 7 ? Array.from(new Array(ascendLevel - 7)) : [];
+
   return (
     <div
       className={`${styles.Wrapper} ${largeClassName} ${smallClassName} ${highlightClassName} ${eliteClassName} ${legendaryClassName} ${mythicClassName} ${ascendClassName} ${plusClassName} ${disabledClassName}`}
@@ -117,6 +119,14 @@ const Character: React.FC<IProps> = ({
       {activeArtifact ? (
         <img className={`${styles.Artifact}`} src={activeArtifact?.image} alt={name} />
       ) : null}
+
+      {stars.length === 0 ? null : (
+        <div className={styles.Stars}>
+          {stars.map((star) => (
+            <img src="/heroes-star/0.png" alt="" className={styles.Star} />
+          ))}
+        </div>
+      )}
     </div>
   );
 };

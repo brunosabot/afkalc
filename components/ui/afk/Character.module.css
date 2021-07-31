@@ -123,3 +123,20 @@
   width: 36px;
   z-index: 3;
 }
+
+.Stars {
+  background-color: rgba(0, 0, 0, 0.6);
+  border-radius: 0 0 50% 0;
+  bottom: 3px;
+  display: flex;
+  justify-content: center;
+  left: 3px;
+  padding: 0 0 0 3px;
+  position: absolute;
+  right: 3px;
+  z-index: 1;
+}
+.Star {
+  height: 10px;
+  margin-left: -3px;
+}
