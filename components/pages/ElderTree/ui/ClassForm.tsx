@@ -15,14 +15,14 @@ const ClassForm: React.FC<IProps> = ({ onChange, value, heroClass }) => (
       className={styles.Input}
       type="number"
       min="0"
-      max="100"
+      max="130"
       onChange={(e) => {
         let newValue = parseInt(e.target.value, 10);
         if (isNaN(newValue)) {
           newValue = 0;
         }
 
-        onChange(Math.max(0, Math.min(100, newValue)));
+        onChange(Math.max(0, Math.min(130, newValue)));
       }}
     />
   </div>

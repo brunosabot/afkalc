@@ -77,19 +77,18 @@ const ElderTree: React.FC<IProps> = () => {
       {heroClassData.map((heroClass) => (
         <Card key={heroClass}>
           <CardTitle>{t(`common:heroClass.${heroClass}`)}</CardTitle>
-
           <div style={{ display: "flex", flexWrap: "wrap" }}>
             <Stat stat="hp" heroClass={heroClass} />
-            <Stat stat="hpPerc" heroClass={heroClass} />
+            <Stat stat="hp.pr" heroClass={heroClass} />
             <Stat stat="atk" heroClass={heroClass} />
-            <Stat stat="atkPerc" heroClass={heroClass} />
-            <Stat stat="def" heroClass={heroClass} />
-            <Stat stat="defPerc" heroClass={heroClass} />
-            <Stat stat="acc" heroClass={heroClass} />
-            <Stat stat="dodge" heroClass={heroClass} />
-            <Stat stat="haste" heroClass={heroClass} />
+            <Stat stat="atk.pr" heroClass={heroClass} />
+            <Stat stat="arm" heroClass={heroClass} />
+            <Stat stat="arm.pr" heroClass={heroClass} />
+            <Stat stat="hit" heroClass={heroClass} />
+            <Stat stat="dodg" heroClass={heroClass} />
+            <Stat stat="mspd" heroClass={heroClass} />
             <Stat stat="crit" heroClass={heroClass} />
-            <Stat stat="ll" heroClass={heroClass} />
+            <Stat stat="lfs" heroClass={heroClass} />
           </div>
         </Card>
       ))}

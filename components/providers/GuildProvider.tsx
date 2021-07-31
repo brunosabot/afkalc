@@ -42,6 +42,7 @@ const GuildProvider: React.FC<IProps> = ({ children }) => {
     removeDeputy,
     quitGuild,
     setShowAbexTab,
+    setName,
     giveOwnership,
   } = useGuildSetters(guildResult?.data?.[0]?.id);
 
@@ -91,6 +92,7 @@ const GuildProvider: React.FC<IProps> = ({ children }) => {
         addDeputy,
         removeDeputy,
         setShowAbexTab,
+        setName,
         giveOwnership,
       },
       values: {
@@ -117,6 +119,7 @@ const GuildProvider: React.FC<IProps> = ({ children }) => {
     addDeputy,
     removeDeputy,
     setShowAbexTab,
+    setName,
     giveOwnership,
     guildApplicationResult.data,
     isOwner,

@@ -3,6 +3,7 @@ import React, { useContext } from "react";
 import GuildContext from "../../../providers/GuildContext";
 import CardTitle from "../../../ui/card/CardTitle";
 import CheckboxField from "../../../ui/CheckboxField";
+import InputField from "../../../ui/InputField";
 
 interface IProps {
   [key: string]: never;
@@ -10,10 +11,10 @@ interface IProps {
 
 const CardConfiguration: React.FC<IProps> = () => {
   const {
-    actions: { setShowAbexTab },
+    actions: { setShowAbexTab, setName },
     values: {
       isOwner,
-      guild: { showAbexTab },
+      guild: { showAbexTab, name },
     },
   } = useContext(GuildContext);
 
@@ -24,6 +25,13 @@ const CardConfiguration: React.FC<IProps> = () => {
   return (
     <>
       <CardTitle>{t("title-configuration")}</CardTitle>
+
+      <InputField
+        label={t("label-guild-name")}
+        name="name"
+        onChange={(e) => setName(e)}
+        value={name}
+      />
 
       <CheckboxField
         name="showAbexTab"

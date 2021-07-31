@@ -11,17 +11,34 @@
   font-size: 14px;
   margin-left: 8px;
 }
-.Link svg {
+.Dimensional svg {
+  border: 1px solid var(--card-border-color);
+  left: -1px;
   padding: 0;
+  position: relative;
+  top: -1px;
 }
 
-.CosmicKey {
-  position: absolute;
-  height: 16px;
-  width: 16px;
-  left: 48px;
-  bottom: 0px;
-  border-radius: 3px;
+.Dimensional {
+  background-color: var(--card-color);
+  border: 1px solid #fff;
+  border-radius: 50%;
+  height: 24px;
+  left: -14px;
+  margin-right: -16px;
+  position: relative;
+  top: -12px;
+  width: 24px;
   z-index: 1;
+}
+
+.DimensionalKey {
   border: 1px solid var(--card-color);
+  border-radius: 50%;
+  bottom: -24px;
+  height: 16px;
+  left: 0;
+  position: absolute;
+  width: 16px;
+  z-index: 1;
 }

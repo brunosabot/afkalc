@@ -2,14 +2,14 @@
   "simulate": "Simulate",
   "current-tree": "Current tree",
   "hp": "HP",
-  "hpPerc": "HP%",
+  "hp.pr": "HP%",
   "atk": "ATK",
-  "atkPerc": "ATK%",
-  "def": "DEF",
-  "defPerc": "DEF%",
-  "acc": "ACC",
-  "dodge": "DODGE",
-  "haste": "HASTE",
+  "atk.pr": "ATK%",
+  "arm": "DEF",
+  "arm.pr": "DEF%",
+  "hit": "ACC",
+  "dodg": "DODGE",
+  "mspd": "HASTE",
   "crit": "CRIT",
-  "ll": "LL"
+  "lfs": "LL"
 }

@@ -19,21 +19,21 @@ const TotalEssenceSimulation: React.FC<IProps> = ({ warrior, tank, ranger, mage,
 
   const currentEssence = useMemo(
     () =>
-      elderTreeData.warrior[warrior ?? 0].totalCost +
-      elderTreeData.tank[tank ?? 0].totalCost +
-      elderTreeData.ranger[ranger ?? 0].totalCost +
-      elderTreeData.mage[mage ?? 0].totalCost +
-      elderTreeData.support[support ?? 0].totalCost,
+      elderTreeData.warrior[warrior ?? 0].totalcost +
+      elderTreeData.tank[tank ?? 0].totalcost +
+      elderTreeData.ranger[ranger ?? 0].totalcost +
+      elderTreeData.mage[mage ?? 0].totalcost +
+      elderTreeData.support[support ?? 0].totalcost,
     [mage, ranger, support, tank, warrior]
   );
 
   const totalEssence = useMemo(
     () =>
-      elderTreeData.warrior[values.elderTree.warrior].totalCost +
-      elderTreeData.tank[values.elderTree.tank].totalCost +
-      elderTreeData.ranger[values.elderTree.ranger].totalCost +
-      elderTreeData.mage[values.elderTree.mage].totalCost +
-      elderTreeData.support[values.elderTree.support].totalCost,
+      elderTreeData.warrior[values.elderTree.warrior].totalcost +
+      elderTreeData.tank[values.elderTree.tank].totalcost +
+      elderTreeData.ranger[values.elderTree.ranger].totalcost +
+      elderTreeData.mage[values.elderTree.mage].totalcost +
+      elderTreeData.support[values.elderTree.support].totalcost,
     [values]
   );
 

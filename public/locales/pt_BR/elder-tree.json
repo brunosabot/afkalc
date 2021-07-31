@@ -2,14 +2,14 @@
   "simulate": "Simular",
   "current-tree": "Árvore atual",
   "hp": "HP",
-  "hpPerc": "HP%",
+  "hp.pr": "HP%",
   "atk": "ATK",
-  "atkPerc": "ATK%",
+  "atk.pr": "ATK%",
   "def": "DEF",
-  "defPerc": "DEF%",
-  "acc": "PRECIS",
-  "dodge": "ESQUIVA",
-  "haste": "PRESSA",
+  "def.pr": "DEF%",
+  "hit": "PRECIS",
+  "dodg": "ESQUIVA",
+  "mspd": "PRESSA",
   "crit": "CRIT",
-  "ll": "SS"
+  "lfs": "SS"
 }

@@ -15,11 +15,11 @@ const ElderTree: React.FC<IProps> = () => {
 
   const totalEssence = useMemo(
     () =>
-      elderTreeData.warrior[values.elderTree.warrior].totalCost +
-      elderTreeData.tank[values.elderTree.tank].totalCost +
-      elderTreeData.ranger[values.elderTree.ranger].totalCost +
-      elderTreeData.mage[values.elderTree.mage].totalCost +
-      elderTreeData.support[values.elderTree.support].totalCost,
+      elderTreeData.warrior[values.elderTree.warrior].totalcost +
+      elderTreeData.tank[values.elderTree.tank].totalcost +
+      elderTreeData.ranger[values.elderTree.ranger].totalcost +
+      elderTreeData.mage[values.elderTree.mage].totalcost +
+      elderTreeData.support[values.elderTree.support].totalcost,
     [values]
   );
 

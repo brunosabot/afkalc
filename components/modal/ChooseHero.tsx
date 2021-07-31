@@ -81,8 +81,8 @@ const ChooseHero: React.FC<Props> = ({
       {onlyHero ? (
         <>
           <CheckboxField
-            label={t("has-cosmic-key")}
-            name="cosmic-key"
+            label={t("has-dimensional-key")}
+            name="dimensional-key"
             onChange={(value) => onSelect(DetailType.LINKKEY, value ? 1 : 0)}
             value={linkKey === 1}
           />
