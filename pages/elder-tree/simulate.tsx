@@ -75,16 +75,16 @@ const Simulation: React.FC<IProps> = () => {
 
             <div style={{ display: "flex", flexWrap: "wrap" }}>
               <Stat level={level} stat="hp" heroClass={heroClass} />
-              <Stat level={level} stat="hpPerc" heroClass={heroClass} />
+              <Stat level={level} stat="hp.pr" heroClass={heroClass} />
               <Stat level={level} stat="atk" heroClass={heroClass} />
-              <Stat level={level} stat="atkPerc" heroClass={heroClass} />
-              <Stat level={level} stat="def" heroClass={heroClass} />
-              <Stat level={level} stat="defPerc" heroClass={heroClass} />
-              <Stat level={level} stat="acc" heroClass={heroClass} />
-              <Stat level={level} stat="dodge" heroClass={heroClass} />
-              <Stat level={level} stat="haste" heroClass={heroClass} />
+              <Stat level={level} stat="atk.pr" heroClass={heroClass} />
+              <Stat level={level} stat="arm" heroClass={heroClass} />
+              <Stat level={level} stat="arm.pr" heroClass={heroClass} />
+              <Stat level={level} stat="hit" heroClass={heroClass} />
+              <Stat level={level} stat="dodg" heroClass={heroClass} />
+              <Stat level={level} stat="mspd" heroClass={heroClass} />
               <Stat level={level} stat="crit" heroClass={heroClass} />
-              <Stat level={level} stat="ll" heroClass={heroClass} />
+              <Stat level={level} stat="lfs" heroClass={heroClass} />
             </div>
           </Card>
         );

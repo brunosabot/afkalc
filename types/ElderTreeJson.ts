@@ -1,24 +1,27 @@
 import HeroClass from "./HeroClass";
 
 export interface ElderTreeFactionLevel {
-  level: number;
   cost: number;
-  totalCost: number;
+  totalcost: number;
+  basegs: number;
   hp: number;
-  hpPerc: number;
   atk: number;
-  atkPerc: number;
-  def: number;
-  defPerc: number;
-  acc: number;
-  dodge: number;
-  haste: number;
-  crit: number;
-  ll: number;
+  arm: number;
+  prgs: number;
+  "hp.pr": number;
+  "atk.pr": number;
+  "arm.pr": number;
+  dodg?: number;
+  mspd?: number;
+  hast?: number;
+  hit?: number;
+  lfs?: number;
+  crit?: number;
+  mcrit?: number;
 }
 
 export interface ElderTreeFaction {
-  [key: number]: ElderTreeFactionLevel;
+  [key: string]: ElderTreeFactionLevel;
 }
 
 type ElderTreeJson = {
