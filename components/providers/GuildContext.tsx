@@ -15,6 +15,7 @@ interface IGuildActions {
   removeDeputy: (id: string) => void;
   quitGuild: () => void;
   setShowAbexTab: (value: boolean) => void;
+  setName: (value: string) => void;
 }
 
 interface IGuildGuild {
@@ -65,6 +66,7 @@ export default React.createContext<IGuildContext>({
     removeDeputy: () => {},
     quitGuild: () => {},
     setShowAbexTab: () => {},
+    setName: () => {},
     giveOwnership: () => {},
   },
   values: {
