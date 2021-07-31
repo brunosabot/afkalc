@@ -89,7 +89,7 @@ const Character: React.FC<IProps> = ({
   const ascendClassName = [7, 8, 9, 10, 11, 12].includes(ascendLevel) ? styles.Ascend : "";
   const plusClassName = [2, 4, 6].includes(ascendLevel) ? styles.Plus : "";
 
-  const stars = ascendLevel > 7 ? Array.from(new Array(ascendLevel - 7)) : [];
+  const stars = ascendLevel > 7 ? Array.from(new Array(ascendLevel - 7)).map((_, i) => i) : [];
 
   return (
     <div
@@ -122,8 +122,8 @@ const Character: React.FC<IProps> = ({
 
       {stars.length === 0 ? null : (
         <div className={styles.Stars}>
-          {stars.map((star) => (
-            <img src="/heroes-star/0.png" alt="" className={styles.Star} />
+          {stars.map((i) => (
+            <img key={i} src="/heroes-star/0.png" alt="" className={styles.Star} />
           ))}
         </div>
       )}

@@ -111,7 +111,8 @@ const HeroList: React.FC<IProps> = () => {
 
       <Card>
         <CardTitle icon={mdiViewList}>
-          {t(userName ? "hero-list-of" : "hero-list-of-unknown", { userName })}
+          {t(userName ? "hero-list-of" : "hero-list-of-unknown", { userName })}&nbsp;(
+          {characters.length})
         </CardTitle>
         {characters.length === 0 ? (
           <CardHelp>{t("label-empty")}</CardHelp>
