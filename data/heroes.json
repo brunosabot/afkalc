@@ -963,5 +963,25 @@
     "image": "/heroes/Captain.jpg",
     "faction": "graveborns",
     "usage": []
+  },
+  {
+    "name": "Morrow",
+    "id": 91,
+    "type": "intelligence",
+    "class": "mage",
+    "role": "control",
+    "image": "/heroes/DevilMage.jpg",
+    "faction": "lightbearers",
+    "usage": []
+  },
+  {
+    "name": "Zikis",
+    "id": 92,
+    "type": "agility",
+    "class": "ranger",
+    "role": "continuous",
+    "image": "/heroes/LazyD.jpg",
+    "faction": "hypogeans",
+    "usage": []
   }
 ]

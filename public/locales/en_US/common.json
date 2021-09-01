@@ -143,17 +143,18 @@
     "conviction": "Dura's Conviction",
     "barricade": "The Barricade",
     "waistband": "Waistband of Resilience",
-    "chaos-bringer": "Chaos Bringer",
+    "chaosbringer": "Chaos Bringer",
     "carnage": "Carnage",
     "windbinder": "Windbinder",
     "warden": "Warden of the Arcane",
     "tidebearer": "Tidebearer",
-    "seraphic-tide": "Seraphic Tide",
+    "seraphictide": "Seraphic Tide",
     "shroud": "Shroud of Verdure",
     "verdantlongbow": "Verdant Longbow",
     "pauldronofburningfury": "Pauldron of Burning Fury",
     "lifeslimit": "Life's limit",
-    "wingedwarden": "Winged Warden"
+    "wingedwarden": "Winged Warden",
+    "theoceanicstrings": "The Oceanic Strings"
   },
   "concept": {
     "si": "SI",
