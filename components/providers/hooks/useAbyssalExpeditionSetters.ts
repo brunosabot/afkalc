@@ -9,19 +9,28 @@ export default function useAbyssalExpeditionSetters(result: IFirebaseDataState<I
 
   const setAbexCurrentRelics = useCallback(
     async (newAbexCurrentRelics) => {
-      await document?.set({ abexCurrentRelics: newAbexCurrentRelics }, { merge: true });
+      await document?.set(
+        { abexCurrentRelics: newAbexCurrentRelics, abexLastUpdate: new Date().toISOString() },
+        { merge: true }
+      );
     },
     [document]
   );
   const setAbexGoalRelics = useCallback(
     async (newAbexGoalRelics) => {
-      await document?.set({ abexGoalRelics: newAbexGoalRelics }, { merge: true });
+      await document?.set(
+        { abexGoalRelics: newAbexGoalRelics, abexLastUpdate: new Date().toISOString() },
+        { merge: true }
+      );
     },
     [document]
   );
   const setAbexRelicInventory = useCallback(
     async (newAbexRelicInventory) => {
-      await document?.set({ abexRelicInventory: newAbexRelicInventory }, { merge: true });
+      await document?.set(
+        { abexRelicInventory: newAbexRelicInventory, abexLastUpdate: new Date().toISOString() },
+        { merge: true }
+      );
     },
     [document]
   );
@@ -31,13 +40,17 @@ export default function useAbyssalExpeditionSetters(result: IFirebaseDataState<I
         abexRelicInventory: defaultValues.abexRelicInventory,
         abexGoalRelics: defaultValues.abexGoalRelics,
         abexCurrentRelics: defaultValues.abexCurrentRelics,
+        abexLastUpdate: new Date().toISOString(),
       },
       { merge: true }
     );
   }, [document]);
   const setAbexTiles = useCallback(
     async (newAbexTiles) => {
-      await document?.set({ abexTiles: newAbexTiles }, { merge: true });
+      await document?.set(
+        { abexTiles: newAbexTiles, abexLastUpdate: new Date().toISOString() },
+        { merge: true }
+      );
     },
     [document]
   );

@@ -26,6 +26,7 @@ export default interface IFirebaseProfile {
   abexCurrentRelics?: IFirebaseAbyssalExpeditionClassRelics;
   abexRelicInventory?: IFirebaseAbyssalExpeditionInventory;
   abexTiles?: IFirebaseAbyssalExpeditionTilesList;
+  abexLastUpdate?: string;
 
   elderTree?: IFirebaseElderTree;
 }
