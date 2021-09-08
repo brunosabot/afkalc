@@ -59,6 +59,7 @@ const TabSearchHero: React.FC<IProps> = ({ onSearch }) => {
 
       {heroes.map((hero, i) => (
         <SearchHero
+          key={hero.hero}
           index={i}
           hero={hero}
           onChange={(h) => {

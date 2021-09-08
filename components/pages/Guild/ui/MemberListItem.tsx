@@ -42,7 +42,8 @@ const MemberListItem: React.FC<IProps> = ({ member, isOwner, isDeputy }) => {
       </span>
 
       <div className={styles.Actions}>
-        {member.id !== profileValues.userId && values.guild.ownerId === profileValues.userId ? (
+        {(values.isOwner || (values.isDeputy && isOwner === false && isDeputy === false)) &&
+        member.id !== profileValues.userId ? (
           <Svg d={mdiAccountRemove} onClick={onRemove} />
         ) : null}
 
