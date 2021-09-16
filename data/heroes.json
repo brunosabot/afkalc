@@ -983,5 +983,15 @@
     "image": "/heroes/LazyD.jpg",
     "faction": "hypogeans",
     "usage": []
+  },
+  {
+    "name": "Granit",
+    "id": 93,
+    "type": "strength",
+    "class": "tank",
+    "role": "tank",
+    "image": "/heroes/Stone.jpg",
+    "faction": "maulers",
+    "usage": []
   }
 ]
