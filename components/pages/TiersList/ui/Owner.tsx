@@ -84,6 +84,7 @@ const Owner: React.FC<IProps> = ({ listId, result }) => {
     si: 0,
     fi: 0,
     ascend: 0,
+    engrave: 0,
   });
 
   return (
@@ -113,9 +114,10 @@ const Owner: React.FC<IProps> = ({ listId, result }) => {
           name="type"
           values={[
             { key: "", label: t("label-none") },
-            { key: "SI", label: t("label-si") },
-            { key: "FI", label: t("label-fi") },
-            { key: "ASCEND", label: t("label-ascend") },
+            { key: "SI", label: t("common:concept.si") },
+            { key: "FI", label: t("common:concept.fi") },
+            { key: "ASCEND", label: t("common:concept.ascend") },
+            { key: "ENGRAVE", label: t("common:concept.engrave") },
           ]}
         />
 
@@ -182,7 +184,7 @@ const Owner: React.FC<IProps> = ({ listId, result }) => {
             onClose={() => {
               if (theNewHero.hero !== undefined && theNewHero.hero > 0) {
                 addHero(theNewHero);
-                setTheNewHero({ hero: 0, si: 0, fi: 0, ascend: 0 });
+                setTheNewHero({ hero: 0, si: 0, fi: 0, ascend: 0, engrave: 0 });
               }
               setShowModal(false);
             }}
@@ -192,6 +194,7 @@ const Owner: React.FC<IProps> = ({ listId, result }) => {
               si={theNewHero.si}
               fi={theNewHero.fi}
               ascend={theNewHero.ascend}
+              engrave={theNewHero.engrave}
               onSelect={setTheNewHero}
             />
           </Modal>

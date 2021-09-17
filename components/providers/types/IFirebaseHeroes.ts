@@ -4,6 +4,7 @@ export interface IFirebaseHeroesHero {
   ascend?: number;
   link?: number;
   linkkey?: number;
+  engrave?: number;
 }
 
 export interface IFirebaseHeroList {

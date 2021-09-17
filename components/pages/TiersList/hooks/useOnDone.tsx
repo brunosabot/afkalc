@@ -23,6 +23,9 @@ export default function useOnDone(
     if (requirement === "ASCEND") {
       levelSet = levelSet.again(hero.hero, "ASCEND", requirementValue);
     }
+    if (requirement === "ENGRAVE") {
+      levelSet = levelSet.again(hero.hero, "ENGRAVE", requirementValue);
+    }
 
     if (hasSelfRequirements) {
       if (hero.si) {
@@ -35,6 +38,10 @@ export default function useOnDone(
 
       if (hero.ascend) {
         levelSet = levelSet.again(hero.hero, "ASCEND", hero.ascend);
+      }
+
+      if (hero.engrave) {
+        levelSet = levelSet.again(hero.hero, "ENGRAVE", hero.engrave);
       }
     }
 

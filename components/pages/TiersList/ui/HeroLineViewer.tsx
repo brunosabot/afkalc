@@ -48,7 +48,8 @@ const HeroLineViewer: React.FC<IProps> = ({
   const hasSelfRequirements =
     [0, undefined].includes(hero.ascend) === false ||
     [0, undefined].includes(hero.si) === false ||
-    [0, undefined].includes(hero.fi) === false;
+    [0, undefined].includes(hero.fi) === false ||
+    [0, undefined].includes(hero.engrave) === false;
 
   const onDone = useOnDone(requirement, requirementValue, hero, setLevel, hasSelfRequirements);
 
@@ -60,10 +61,12 @@ const HeroLineViewer: React.FC<IProps> = ({
     setLevel(hero.hero, "SI", initialHeroLevels?.si ?? 0)
       .again(hero.hero, "FI", initialHeroLevels?.fi ?? 0)
       .again(hero.hero, "ASCEND", initialHeroLevels?.ascend ?? 0)
+      .again(hero.hero, "ENGRAVE", initialHeroLevels?.engrave ?? 0)
       .commit();
   }, [
     hero.hero,
     initialHeroLevels?.ascend,
+    initialHeroLevels?.engrave,
     initialHeroLevels?.fi,
     initialHeroLevels?.si,
     setLevel,
@@ -73,7 +76,13 @@ const HeroLineViewer: React.FC<IProps> = ({
 
   return (
     <div key={id} className={`${styles.Item} ${isDone ? styles.IsOk : ""}`}>
-      <Character id={id} ascendLevel={hero.ascend} fiLevel={hero.fi} siLevel={hero.si} />
+      <Character
+        id={id}
+        ascendLevel={hero.ascend}
+        fiLevel={hero.fi}
+        siLevel={hero.si}
+        engraveLevel={hero.engrave}
+      />
       <div className={styles.Infos}>
         <span className={styles.Name}>{name}</span>
         <span>
@@ -84,8 +93,11 @@ const HeroLineViewer: React.FC<IProps> = ({
             {hasSelfRequirements && !(requirementValue && requirement) ? t("label-require") : null}
           </span>
           <InfoDetails value={hero.ascend}>{t(`common:ascension-${ascendLevelName}`)}</InfoDetails>
-          <InfoDetails value={hero.si}>{`SI +${hero.si}`}</InfoDetails>
-          <InfoDetails value={hero.fi}>{`FI ${hero.fi}/9`}</InfoDetails>
+          <InfoDetails value={hero.si}>{`${t("common:concept.si")} +${hero.si}`}</InfoDetails>
+          <InfoDetails value={hero.fi}>{`${t("common:concept.fi")} ${hero.fi}/9`}</InfoDetails>
+          <InfoDetails value={hero.engrave}>{`${t("common:concept.engrave")} ${
+            hero.engrave
+          }`}</InfoDetails>
         </span>
       </div>
       <div className={styles.Placeholder} />

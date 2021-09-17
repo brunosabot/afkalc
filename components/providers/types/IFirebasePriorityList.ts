@@ -1,9 +1,17 @@
-export type IFirebasePriorityListRequirement = "" | "SI" | "FI" | "ASCEND" | "LINK" | "LINKKEY";
+export type IFirebasePriorityListRequirement =
+  | ""
+  | "SI"
+  | "FI"
+  | "ASCEND"
+  | "ENGRAVE"
+  | "LINK"
+  | "LINKKEY";
 
 export interface IFirebasePriorityListHero {
   fi: number;
   si: number;
   ascend: number;
+  engrave: number;
   hero: number;
 }
 

@@ -4,4 +4,5 @@ export default interface IHeroDetails {
   inn?: number;
   ascend?: number;
   si?: number;
+  engrave?: number;
 }
