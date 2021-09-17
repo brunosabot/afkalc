@@ -9,6 +9,7 @@
   border: 0;
   border: 1px solid var(--card-border-color);
   border-radius: 3px;
+  color: inherit;
   cursor: pointer;
   flex-grow: 1;
   height: 32px;

@@ -63,6 +63,13 @@ interface Props {
   onNext: () => void;
 }
 
+function getAscend(ascend: number, si: number, fi: number, engrave: number) {
+  if (engrave > 0) return Math.max(8, ascend);
+  if (fi > 0) return Math.max(7, ascend);
+  if (si > 0) return Math.max(6, ascend);
+  return ascend ?? 0;
+}
+
 const EditHero: React.FC<Props> = ({ hero, si, fi, ascend, engrave, setLevel, onNext, onPrev }) => {
   const { t } = useTranslation("common");
 
@@ -100,7 +107,9 @@ const EditHero: React.FC<Props> = ({ hero, si, fi, ascend, engrave, setLevel, on
           name="ascend"
           label={t(`concept.ascend`)}
           value={ascend}
-          onChange={(v) => setLevel(hero, "ASCEND", parseInt(v, 10)).commit()}
+          onChange={(v) =>
+            setLevel(hero, "ASCEND", getAscend(parseInt(v, 10), si, fi, engrave)).commit()
+          }
         />
         <div className={styles.Field}>
           <InputField
@@ -108,11 +117,19 @@ const EditHero: React.FC<Props> = ({ hero, si, fi, ascend, engrave, setLevel, on
             name="si"
             label={t(`concept.si`)}
             value={si}
-            onChange={(v) => setLevel(hero, "SI", parseInt(v, 10)).commit()}
+            onChange={(siValue) =>
+              setLevel(hero, "SI", parseInt(siValue, 10))
+                .again(hero, "ASCEND", getAscend(ascend, parseInt(siValue, 10), fi, engrave))
+                .commit()
+            }
           />
           <FastButtons
             values={isChad ? siChad : si4f}
-            onClick={(v) => setLevel(hero, "SI", v).commit()}
+            onClick={(siValue) =>
+              setLevel(hero, "SI", siValue)
+                .again(hero, "ASCEND", getAscend(ascend, siValue, fi, engrave))
+                .commit()
+            }
           />
         </div>
         <div className={styles.Field}>
@@ -121,9 +138,20 @@ const EditHero: React.FC<Props> = ({ hero, si, fi, ascend, engrave, setLevel, on
             name="fi"
             label={t(`concept.fi`)}
             value={fi}
-            onChange={(v) => setLevel(hero, "FI", parseInt(v, 10)).commit()}
+            onChange={(fiValue) =>
+              setLevel(hero, "FI", parseInt(fiValue, 10))
+                .again(hero, "ASCEND", getAscend(ascend, si, parseInt(fiValue, 10), engrave))
+                .commit()
+            }
           />
-          <FastButtons values={fi4f} onClick={(v) => setLevel(hero, "FI", v).commit()} />
+          <FastButtons
+            values={fi4f}
+            onClick={(fiValue) =>
+              setLevel(hero, "FI", fiValue)
+                .again(hero, "ASCEND", getAscend(ascend, si, fiValue, engrave))
+                .commit()
+            }
+          />
         </div>
         <div className={styles.Field}>
           <InputField
@@ -131,11 +159,19 @@ const EditHero: React.FC<Props> = ({ hero, si, fi, ascend, engrave, setLevel, on
             name="engrave"
             label={t(`concept.engrave`)}
             value={engrave}
-            onChange={(v) => setLevel(hero, "ENGRAVE", parseInt(v, 10)).commit()}
+            onChange={(engraveValue) =>
+              setLevel(hero, "ENGRAVE", parseInt(engraveValue, 10))
+                .again(hero, "ASCEND", getAscend(ascend, si, fi, parseInt(engraveValue, 10)))
+                .commit()
+            }
           />
           <FastButtons
             values={isChad ? engraveChad : engrave4f}
-            onClick={(v) => setLevel(hero, "ENGRAVE", v).commit()}
+            onClick={(engraveValue) =>
+              setLevel(hero, "ENGRAVE", engraveValue)
+                .again(hero, "ASCEND", getAscend(ascend, si, fi, engraveValue))
+                .commit()
+            }
           />
         </div>
       </div>
