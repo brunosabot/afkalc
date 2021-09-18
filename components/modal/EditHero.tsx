@@ -6,6 +6,7 @@ import heroes from "../../data/heroes.json";
 import ICharacter from "../../types/ICharacter";
 import { UseSetLevelReturn } from "../pages/TiersList/hooks/useSetLevel";
 import Character from "../ui/afk/Character";
+import CheckboxField from "../ui/CheckboxField";
 import InputField from "../ui/InputField";
 import SelectField from "../ui/SelectField";
 import Svg from "../ui/Svg";
@@ -111,12 +112,25 @@ const EditHero: React.FC<Props> = ({ hero, si, fi, ascend, engrave, setLevel, on
             setLevel(hero, "ASCEND", getAscend(parseInt(v, 10), si, fi, engrave)).commit()
           }
         />
+        <div className={styles.FieldCheckbox}>
+          <CheckboxField
+            label={t(`concept.siUnlocked`)}
+            name="siUnlocked"
+            value={si > -1}
+            onChange={(e) =>
+              setLevel(hero, "SI", e === false ? -1 : 0)
+                .again(hero, "ASCEND", getAscend(ascend, 0, fi, engrave))
+                .commit()
+            }
+          />
+        </div>
         <div className={styles.Field}>
           <InputField
             small
             name="si"
             label={t(`concept.si`)}
-            value={si}
+            value={si === -1 ? "" : si}
+            disabled={si === -1}
             onChange={(siValue) =>
               setLevel(hero, "SI", parseInt(siValue, 10))
                 .again(hero, "ASCEND", getAscend(ascend, parseInt(siValue, 10), fi, engrave))
@@ -125,6 +139,7 @@ const EditHero: React.FC<Props> = ({ hero, si, fi, ascend, engrave, setLevel, on
           />
           <FastButtons
             values={isChad ? siChad : si4f}
+            disabled={si === -1}
             onClick={(siValue) =>
               setLevel(hero, "SI", siValue)
                 .again(hero, "ASCEND", getAscend(ascend, siValue, fi, engrave))

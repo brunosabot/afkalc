@@ -158,6 +158,7 @@
   },
   "concept": {
     "si": "SI",
+    "siUnlocked": "SI Unlocked",
     "fi": "FI",
     "ascend": "Ascending",
     "engrave": "Engrave"

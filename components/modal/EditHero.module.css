@@ -1,3 +1,6 @@
+.FieldCheckbox > * {
+  padding: 0;
+}
 .EditHeroSwitch {
   display: flex;
   justify-content: space-between;

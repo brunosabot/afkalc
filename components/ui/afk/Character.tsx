@@ -34,13 +34,15 @@ function getImageName(si: number | undefined, fi: number | undefined) {
   if (si === undefined) return undefined;
   if (fi === undefined) return undefined;
 
-  let siNumber = 0;
+  let siNumber = -1;
   if (si >= 30) {
     siNumber = 30;
   } else if (si >= 20) {
     siNumber = 20;
   } else if (si >= 10) {
     siNumber = 10;
+  } else if (si >= 0) {
+    siNumber = 0;
   }
 
   let fiNumber = 0;
@@ -52,9 +54,9 @@ function getImageName(si: number | undefined, fi: number | undefined) {
     fiNumber = 3;
   }
 
-  const concat = `${siNumber}${fiNumber}`;
+  const concat = `${siNumber}${fiNumber}`.replace("-1", "X");
 
-  if (siNumber === 0 && fiNumber === 0) return undefined;
+  // if (siNumber === 0 && fiNumber === 0) return undefined;
 
   return `/heroes-rank/${concat}.png`;
 }
@@ -85,7 +87,7 @@ const Character: React.FC<IProps> = ({
   disabled = false,
   onClick = () => {},
   ascendLevel = 0,
-  siLevel = undefined,
+  siLevel = -1,
   fiLevel = undefined,
   engraveLevel = undefined,
   artifact = undefined,
