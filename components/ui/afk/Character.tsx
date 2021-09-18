@@ -55,7 +55,6 @@ function getImageName(si: number | undefined, fi: number | undefined) {
   const concat = `${siNumber}${fiNumber}`;
 
   if (siNumber === 0 && fiNumber === 0) return undefined;
-  if (["09", "036"].indexOf(concat) >= 0) return undefined;
 
   return `/heroes-rank/${concat}.png`;
 }
