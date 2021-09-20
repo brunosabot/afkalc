@@ -34,6 +34,13 @@ const AbexRelicSell: React.FC<IProps> = () => {
 
   useCurrentToGoal(values.abexCurrentRelics, values.abexGoalRelics);
 
+  const resetRelics = () => {
+    // eslint-disable-next-line no-alert
+    if (window.confirm(t("confirm-reset-box"))) {
+      actions.resetAbexRelicsAndInventory();
+    }
+  };
+
   return (
     <Card>
       <CardTitle
@@ -80,7 +87,7 @@ const AbexRelicSell: React.FC<IProps> = () => {
       ) : null}
 
       <CardActions>
-        <CardAction onClick={actions.resetAbexRelicsAndInventory} icon={mdiBackupRestore}>
+        <CardAction onClick={resetRelics} icon={mdiBackupRestore}>
           {t("reset-box")}
         </CardAction>
       </CardActions>
