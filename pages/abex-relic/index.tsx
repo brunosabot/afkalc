@@ -44,7 +44,7 @@ const AbexRelic: React.FC<IProps> = () => {
 
   const resetFields = () => {
     // eslint-disable-next-line no-alert
-    if (window.confirm("confirm-reset-box")) {
+    if (window.confirm(t("confirm-reset-box"))) {
       actions.resetAbexTiles();
     }
   };
