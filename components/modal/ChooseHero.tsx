@@ -5,6 +5,7 @@ import heroes from "../../data/heroes.json";
 import ICharacter from "../../types/ICharacter";
 import Artifact from "../ui/afk/Artifact";
 import Character, { DetailType } from "../ui/afk/Character";
+import CharacterGrid from "../ui/CharacterGrid";
 import CheckboxField from "../ui/CheckboxField";
 import InputField from "../ui/InputField";
 import styles from "./ChooseHero.module.css";
@@ -66,7 +67,7 @@ const ChooseHero: React.FC<Props> = ({
       ) : null}
 
       {onlyHero === false ? (
-        <div className={styles.Heroes}>
+        <CharacterGrid>
           {artifacts.map((artifact) => (
             <Artifact
               key={artifact.id}
@@ -75,7 +76,7 @@ const ChooseHero: React.FC<Props> = ({
               onClick={() => onSelect(DetailType.ARTIFACT, artifact.id)}
             />
           ))}
-        </div>
+        </CharacterGrid>
       ) : null}
 
       {onlyHero ? (
@@ -90,18 +91,16 @@ const ChooseHero: React.FC<Props> = ({
       ) : null}
 
       {Object.keys(factions).map((faction) => (
-        <React.Fragment key={faction}>
-          <div className={styles.Heroes}>
-            {factions[faction].map(({ id, name }) => (
-              <Character
-                key={id}
-                name={name}
-                onClick={() => onSelect(DetailType.HERO, id)}
-                highlight={currentId === id}
-              />
-            ))}
-          </div>
-        </React.Fragment>
+        <CharacterGrid key={faction}>
+          {factions[faction].map(({ id, name }) => (
+            <Character
+              key={id}
+              name={name}
+              onClick={() => onSelect(DetailType.HERO, id)}
+              highlight={currentId === id}
+            />
+          ))}
+        </CharacterGrid>
       ))}
     </>
   );

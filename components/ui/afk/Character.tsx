@@ -12,6 +12,7 @@ export enum DetailType {
   ARTIFACT,
   HERO,
   ASCEND,
+  ENGRAVE,
   LINKKEY,
 }
 
@@ -25,6 +26,7 @@ interface IProps {
   onClick?: () => void;
   siLevel?: number;
   fiLevel?: number;
+  engraveLevel?: number;
   artifact?: number;
 }
 
@@ -32,28 +34,46 @@ function getImageName(si: number | undefined, fi: number | undefined) {
   if (si === undefined) return undefined;
   if (fi === undefined) return undefined;
 
-  let siNumber = 0;
+  let siNumber = -1;
   if (si >= 30) {
     siNumber = 30;
   } else if (si >= 20) {
     siNumber = 20;
   } else if (si >= 10) {
     siNumber = 10;
+  } else if (si >= 0) {
+    siNumber = 0;
   }
 
   let fiNumber = 0;
-  if (fi >= 9) {
+  if (fi >= 36) {
+    fiNumber = 36;
+  } else if (fi >= 9) {
     fiNumber = 9;
   } else if (fi >= 3) {
     fiNumber = 3;
   }
 
-  const concat = `${siNumber}${fiNumber}`;
+  const concat = `${siNumber}${fiNumber}`.replace("-1", "X");
 
-  if (siNumber === 0 && fiNumber === 0) return undefined;
-  if (["09", "036"].indexOf(concat) >= 0) return undefined;
+  // if (siNumber === 0 && fiNumber === 0) return undefined;
 
   return `/heroes-rank/${concat}.png`;
+}
+
+function getEngraveImageName(engrave: number | undefined) {
+  if (engrave === undefined) return `/heroes-star/0.png`;
+
+  let engraveNumber = 0;
+  if (engrave >= 80) {
+    engraveNumber = 80;
+  } else if (engrave >= 60) {
+    engraveNumber = 60;
+  } else if (engrave >= 30) {
+    engraveNumber = 30;
+  }
+
+  return `/heroes-star/${engraveNumber}.png`;
 }
 
 /**
@@ -67,8 +87,9 @@ const Character: React.FC<IProps> = ({
   disabled = false,
   onClick = () => {},
   ascendLevel = 0,
-  siLevel = undefined,
+  siLevel = -1,
   fiLevel = undefined,
+  engraveLevel = undefined,
   artifact = undefined,
 }) => {
   const resource = typedHeroes.find((r) => (id ? r.id === id : r.name === name));
@@ -123,7 +144,7 @@ const Character: React.FC<IProps> = ({
       {stars.length === 0 ? null : (
         <div className={styles.Stars}>
           {stars.map((i) => (
-            <img key={i} src="/heroes-star/0.png" alt="" className={styles.Star} />
+            <img key={i} src={getEngraveImageName(engraveLevel)} alt="" className={styles.Star} />
           ))}
         </div>
       )}

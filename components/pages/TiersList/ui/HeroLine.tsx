@@ -44,6 +44,7 @@ const HeroLine: React.FC<Props> = ({
         ascendLevel={theHero.ascend}
         siLevel={theHero.si}
         fiLevel={theHero.fi}
+        engraveLevel={theHero.engrave}
       />
       <span className={styles.Name}>{name}</span>
 
@@ -66,6 +67,7 @@ const HeroLine: React.FC<Props> = ({
           hero={theHero.hero}
           si={theHero.si}
           fi={theHero.fi}
+          engrave={theHero.engrave}
           ascend={theHero.ascend}
           onSelect={setTheHero}
         />

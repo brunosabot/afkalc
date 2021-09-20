@@ -1,8 +1,8 @@
 .Artifact {
   border-radius: 4px;
-  width: 40px;
-  height: 40px;
   box-sizing: border-box;
+  height: 48px;
+  width: 48px;
 }
 .Wrapper {
   align-items: center;
@@ -11,8 +11,8 @@
   display: flex;
   font-weight: 500;
   justify-content: space-between;
-  position: relative;
   outline: 0;
+  position: relative;
 }
 
 .Highlight .Artifact {

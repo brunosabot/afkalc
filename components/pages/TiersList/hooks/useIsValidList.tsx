@@ -19,9 +19,13 @@ export default function useIsValidList(
   const heroRequirementAscend = theHeroRequirement.ascend || 0;
   const heroRequirementSi = theHeroRequirement.si || 0;
   const heroRequirementFi = theHeroRequirement.fi || 0;
+  const heroRequirementEngrave = theHeroRequirement.engrave || 0;
 
   const hasSelfRequirement =
-    heroRequirementAscend > 0 || heroRequirementSi > 0 || heroRequirementFi > 0;
+    heroRequirementAscend > 0 ||
+    heroRequirementSi > 0 ||
+    heroRequirementFi > 0 ||
+    heroRequirementEngrave > 0;
 
   // If the list has no type or no value but the character has requirement. The list should not be invalid
   if ((priorityType === "" || priorityValue === 0) && hasSelfRequirement) {
@@ -59,7 +63,16 @@ export default function useIsValidList(
     }
   }
 
-  const isListValid = isValidListSi || isValidListFi || isValidListAscend;
+  let isValidListEngrave = false;
+  if (priorityType === "ENGRAVE") {
+    if (theHeroLevels.engrave === undefined) {
+      isValidListEngrave = false;
+    } else {
+      isValidListEngrave = priorityValue <= theHeroLevels.engrave;
+    }
+  }
+
+  const isListValid = isValidListSi || isValidListFi || isValidListAscend || isValidListEngrave;
 
   return isListValid;
 }

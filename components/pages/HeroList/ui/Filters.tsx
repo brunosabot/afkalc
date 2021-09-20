@@ -27,9 +27,11 @@ interface State {
   ascend: string;
   si: string;
   fi: string;
+  engrave: string;
   directionAscend: string;
   directionSi: string;
   directionFi: string;
+  directionEngrave: string;
 }
 
 const Filters: React.FC<IProps> = ({ state, dispatch }) => {
@@ -70,27 +72,34 @@ const Filters: React.FC<IProps> = ({ state, dispatch }) => {
           <InputFilter
             value={state.si}
             directionValue={state.directionSi}
-            label="SI"
+            label={t("common:concept.si")}
             dispatch={dispatch}
             name="si"
           />
           <InputFilter
             value={state.fi}
             directionValue={state.directionFi}
-            label="FI"
+            label={t("common:concept.fi")}
             dispatch={dispatch}
             name="fi"
           />
           <SelectFilter
             value={state.ascend}
             directionValue={state.directionAscend}
-            label="Ascension"
+            label={t("common:concept.ascend")}
             dispatch={dispatch}
             name="ascend"
             values={ascendLevels.map((level) => ({
               key: `${level.key}`,
               label: t(`common:ascension-${level.name}`),
             }))}
+          />
+          <InputFilter
+            value={state.engrave}
+            directionValue={state.directionEngrave}
+            label={t("common:concept.engrave")}
+            dispatch={dispatch}
+            name="engrave"
           />
           <div style={{ paddingTop: "16px" }} />
         </>

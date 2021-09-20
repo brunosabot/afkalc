@@ -8,17 +8,32 @@ interface IHeroLevels {
   fi?: number;
   si?: number;
   ascend?: number;
+  engrave?: number;
   link?: number;
   linkkey?: number;
 }
 
-const sortChars = (a: ICharacter, b: ICharacter) => {
-  if (factions[a.faction] < factions[b.faction]) {
-    return -1;
-  }
-  if (factions[a.faction] > factions[b.faction]) {
-    return 1;
-  }
+interface IEnrichedCharacter extends ICharacter {
+  ascend: number;
+  si: number;
+  fi: number;
+  engrave: number;
+  link: number;
+  linkkey: number;
+}
+
+const sortChars = (a: IEnrichedCharacter, b: IEnrichedCharacter) => {
+  if (a.ascend < b.ascend) return 1;
+  if (a.ascend > b.ascend) return -1;
+  if (a.si < b.si) return 1;
+  if (a.si > b.si) return -1;
+  if (a.fi < b.fi) return 1;
+  if (a.fi > b.fi) return -1;
+  if (a.engrave < b.engrave) return 1;
+  if (a.engrave > b.engrave) return -1;
+  if (factions[a.faction] < factions[b.faction]) return -1;
+  if (factions[a.faction] > factions[b.faction]) return 1;
+
   return a.name.localeCompare(b.name);
 };
 
@@ -47,6 +62,7 @@ export default function useFilteredHeroes(
           ascend: getValue(c.id, "ascend"),
           si: getValue(c.id, "si"),
           fi: getValue(c.id, "fi"),
+          engrave: getValue(c.id, "engrave"),
           link: getValue(c.id, "link"),
           linkkey: getValue(c.id, "linkkey"),
         }))
@@ -65,6 +81,11 @@ export default function useFilteredHeroes(
             filters.ascend === "" ||
             compare(filters.directionAscend, c.ascend, parseInt(filters.ascend, 10))
         )
+        .filter(
+          (c) =>
+            filters.engrave === "" ||
+            compare(filters.directionEngrave, c.engrave, parseInt(filters.engrave, 10))
+        )
         .sort(sortChars),
     [
       heroes,
@@ -79,6 +100,8 @@ export default function useFilteredHeroes(
       filters.directionFi,
       filters.ascend,
       filters.directionAscend,
+      filters.engrave,
+      filters.directionEngrave,
     ]
   );
 

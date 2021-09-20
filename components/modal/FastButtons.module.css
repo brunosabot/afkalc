@@ -1,0 +1,19 @@
+.FastButtons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px;
+  margin-top: 8px;
+}
+.FastButton {
+  background-color: var(--background-color);
+  border: 0;
+  border: 1px solid var(--card-border-color);
+  border-radius: 3px;
+  color: inherit;
+  cursor: pointer;
+  flex-grow: 1;
+  height: 32px;
+  outline: 0;
+  padding: 0;
+  width: 32px;
+}
