@@ -5,6 +5,7 @@ import heroes from "../../data/heroes.json";
 import ICharacter from "../../types/ICharacter";
 import { IFirebasePriorityListHero } from "../providers/types/IFirebasePriorityList";
 import Character from "../ui/afk/Character";
+import CharacterGrid from "../ui/CharacterGrid";
 import InputField from "../ui/InputField";
 import SelectField from "../ui/SelectField";
 import styles from "./ChoosePriorityHero.module.css";
@@ -56,7 +57,7 @@ const ChoosePriorityHero: React.FC<Props> = ({
   const { t } = useTranslation("common");
 
   return (
-    <div className={styles.ChoosePriorityHero}>
+    <>
       <div className={styles.InputWrapper}>
         <InputField
           style={{ width: "60px" }}
@@ -129,28 +130,26 @@ const ChoosePriorityHero: React.FC<Props> = ({
       </div>
 
       {Object.keys(factions).map((faction) => (
-        <React.Fragment key={faction}>
-          <div className={styles.Heroes}>
-            {factions[faction].map(({ id, name }) => (
-              <Character
-                key={id}
-                name={name}
-                onClick={() =>
-                  onSelect({
-                    hero: id,
-                    fi,
-                    ascend,
-                    engrave,
-                    si,
-                  })
-                }
-                highlight={id === hero}
-              />
-            ))}
-          </div>
-        </React.Fragment>
+        <CharacterGrid key={faction}>
+          {factions[faction].map(({ id, name }) => (
+            <Character
+              key={id}
+              name={name}
+              onClick={() =>
+                onSelect({
+                  hero: id,
+                  fi,
+                  ascend,
+                  engrave,
+                  si,
+                })
+              }
+              highlight={id === hero}
+            />
+          ))}
+        </CharacterGrid>
       ))}
-    </div>
+    </>
   );
 };
 

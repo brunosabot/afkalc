@@ -1,12 +1,3 @@
-.ChoosePriorityHero {
-  max-width: 348px;
-}
-.Heroes {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 4px;
-  margin-bottom: 16px;
-}
 .InputWrapper {
   display: flex;
   flex-wrap: wrap;

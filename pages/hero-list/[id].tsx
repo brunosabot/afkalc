@@ -24,6 +24,7 @@ import IFirebaseProfile from "../../components/providers/types/IFirebaseProfile"
 import Card from "../../components/ui/card/Card";
 import CardHelp from "../../components/ui/card/CardHelp";
 import CardTitle from "../../components/ui/card/CardTitle";
+import CharacterGrid from "../../components/ui/CharacterGrid";
 import CheckboxField from "../../components/ui/CheckboxField";
 import TwoColsSticky from "../../components/ui/layout/TwoColsSticky";
 import heroesJson from "../../data/heroes.json";
@@ -132,15 +133,7 @@ const HeroList: React.FC<IProps> = () => {
         {characters.length === 0 ? (
           <CardHelp>{t("label-empty")}</CardHelp>
         ) : (
-          <div
-            style={{
-              paddingBottom: "16px",
-              display: "grid",
-              gridTemplateColumns: "repeat(auto-fill, 56px)",
-              gap: "16px",
-              justifyContent: "center",
-            }}
-          >
+          <CharacterGrid size="large">
             {characters.map((character, i) => (
               <HeroLine
                 id={character.id}
@@ -159,7 +152,7 @@ const HeroList: React.FC<IProps> = () => {
                 }}
               />
             ))}
-          </div>
+          </CharacterGrid>
         )}
       </Card>
 

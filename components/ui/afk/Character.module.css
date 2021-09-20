@@ -1,21 +1,13 @@
 .Character {
   border-radius: 6px 0 6px 0;
-  box-shadow: var(--afk-hero-shadow);
   box-sizing: border-box;
   display: block;
   width: 100%;
-  z-index: 1;
 }
 .Wrapper {
-  align-items: center;
   border-radius: 7px 0 7px 0;
-  box-shadow: var(--afk-hero-shadow);
   box-sizing: border-box;
-  display: flex;
-  flex-shrink: 0;
-  font-weight: 500;
   height: 48px;
-  justify-content: center;
   outline: 0;
   position: relative;
   width: 48px;
@@ -23,15 +15,14 @@
 
 .Stars {
   background-color: rgba(0, 0, 0, 0.6);
-  border-radius: 0 0 50% 0;
-  bottom: 3px;
+  border-radius: 0 0 6px 0;
+  bottom: 0;
   display: flex;
   justify-content: center;
-  left: 3px;
-  padding: 0 0 0 3px;
+  left: 0;
+  padding: 1px 0 1px 3px;
   position: absolute;
-  right: 3px;
-  z-index: 1;
+  right: 0;
 }
 .Star {
   height: 10px;
@@ -47,18 +38,16 @@
 }
 .Large .Star {
   height: 11px;
-  margin-left: -2px;
 }
 
 .Small.Wrapper {
-  box-shadow: none;
-  height: 24px;
-  width: 24px;
+  border: 1px solid #fff;
+  border-radius: 50%;
+  height: 26px;
+  width: 26px;
 }
 .Small .Character {
   border-radius: 50%;
-  height: 24px;
-  width: 24px;
 }
 .Small .Count {
   display: none;
@@ -77,25 +66,21 @@
 }
 
 .Elite.Wrapper {
-  background: var(--afk-elite-color);
-  padding: 3px;
+  border: 3px solid var(--afk-elite-color);
 }
 .Legendary.Wrapper {
-  background: var(--afk-legendary-color);
-  padding: 3px;
+  border: 3px solid var(--afk-legendary-color);
 }
 .Mythic.Wrapper {
-  background: var(--afk-mythic-color);
-  padding: 3px;
+  border: 3px solid var(--afk-mythic-color);
 }
 .Ascend.Wrapper {
-  background: var(--afk-ascend-color);
-  padding: 3px;
+  border: 3px solid var(--afk-ascend-color);
 }
 
 .Plus::after,
 .Plus::before {
-  border: 5px solid;
+  border: 6px solid;
   border-color: var(--afk-plus-color) var(--afk-plus-color) transparent transparent;
   content: "";
   display: block;
@@ -103,23 +88,21 @@
 }
 .Plus::before {
   border-color: var(--afk-plus-color) var(--afk-plus-color) transparent transparent;
-  right: 0;
-  top: 0;
+  right: -3px;
+  top: -3px;
 }
 .Plus::after {
   border-color: transparent transparent var(--afk-plus-color) var(--afk-plus-color);
-  bottom: 0;
-  left: 0;
+  bottom: -3px;
+  left: -3px;
 }
 
 .Faction {
-  border-radius: 6px;
   height: 13px;
   left: 1.5px;
   position: absolute;
   top: 1px;
   width: 13px;
-  z-index: 2;
 }
 
 .Artifact {
@@ -133,7 +116,6 @@
   top: -22px;
   transform: translateX(-50%);
   width: 22px;
-  z-index: 1;
 }
 
 .SiFi {
@@ -141,5 +123,4 @@
   position: absolute;
   top: -7px;
   width: 36px;
-  z-index: 3;
 }

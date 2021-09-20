@@ -1,8 +1,4 @@
 .HeroLine {
-  align-items: center;
-  display: flex;
-  gap: 2px;
-  justify-content: space-between;
   position: relative;
 }
 .Name {
@@ -11,33 +7,32 @@
   margin-left: 8px;
 }
 .Dimensional svg {
+  background-color: var(--card-color);
   border: 1px solid var(--card-border-color);
   left: -1px;
   padding: 0;
-  position: relative;
+  position: absolute;
   top: -1px;
+}
+.Dimensional svg:hover {
+  background-color: var(--card-color);
 }
 
 .Dimensional {
-  background-color: var(--card-color);
-  border: 1px solid #fff;
-  border-radius: 50%;
-  height: 24px;
-  left: -16px;
-  margin-right: -16px;
-  position: relative;
-  top: -15px;
-  width: 24px;
+  height: 100%;
+  position: absolute;
+  right: -13px;
+  top: -4px;
+  width: 26px;
   z-index: 1;
 }
 
 .DimensionalKey {
   border: 1px solid #fff;
   border-radius: 50%;
-  bottom: -23px;
   height: 20px;
-  left: 1px;
+  left: 2px;
   position: absolute;
+  top: 25px;
   width: 20px;
-  z-index: 1;
 }

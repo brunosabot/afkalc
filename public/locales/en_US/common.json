@@ -29,6 +29,7 @@
   "spendings": "Costs",
   "sponsors": "Sponsors",
   "add": "Add",
+  "has-dimensional-key": "Has a dimensional key",
   "menu": {
     "home": "Home",
     "signature-item": "SI Emblem",

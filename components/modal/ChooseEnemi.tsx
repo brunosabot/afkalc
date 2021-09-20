@@ -1,7 +1,7 @@
 import React from "react";
 import factions from "../../data/enemies.json";
 import Enemi from "../ui/afk/Enemi";
-import styles from "./ChooseEnemi.module.css";
+import CharacterGrid from "../ui/CharacterGrid";
 import FactionLine from "./components/ui/FactionLine";
 
 interface Props {
@@ -10,18 +10,18 @@ interface Props {
 }
 
 const ChooseEnemi: React.FC<Props> = ({ current, onSelect }) => (
-  <div className={styles.ChooseEnemi}>
+  <>
     {factions.map((faction) => (
       <React.Fragment key={faction.faction}>
         <FactionLine name={faction.faction} />
-        <div className={styles.Enemies}>
+        <CharacterGrid>
           {faction.characters.map(({ id, name, image }) => (
             <Enemi key={name} name={name} onClick={() => onSelect(id)} highlight={current === id} />
           ))}
-        </div>
+        </CharacterGrid>
       </React.Fragment>
     ))}
-  </div>
+  </>
 );
 
 export default ChooseEnemi;
