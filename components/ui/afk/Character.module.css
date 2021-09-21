@@ -7,6 +7,7 @@
 .Wrapper {
   border-radius: 7px 0 7px 0;
   box-sizing: border-box;
+  flex-shrink: 0;
   height: 48px;
   outline: 0;
   position: relative;
