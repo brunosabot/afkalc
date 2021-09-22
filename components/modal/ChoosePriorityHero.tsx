@@ -2,6 +2,7 @@ import { useTranslation } from "next-i18next";
 import React from "react";
 import ascendLevels from "../../data/heroAscensionLevel.json";
 import heroes from "../../data/heroes.json";
+import { getAscend } from "../../lib/hero";
 import ICharacter from "../../types/ICharacter";
 import { IFirebasePriorityListHero } from "../providers/types/IFirebasePriorityList";
 import Character from "../ui/afk/Character";
@@ -30,13 +31,6 @@ const factions: IFactions = (heroes as ICharacter[]).reduce(
   }
 );
 
-function getAscend(ascend: number, si: number, fi: number, engrave: number) {
-  if (engrave > 0) return Math.max(8, ascend);
-  if (fi > 0) return Math.max(7, ascend);
-  if (si > 0) return Math.max(6, ascend);
-  return ascend ?? 0;
-}
-
 interface Props {
   onSelect: (value: IFirebasePriorityListHero) => void;
   hero?: number;
@@ -47,7 +41,7 @@ interface Props {
 }
 
 const ChoosePriorityHero: React.FC<Props> = ({
-  si = 0,
+  si = -1,
   fi = 0,
   ascend = 0,
   hero = 0,
@@ -64,7 +58,7 @@ const ChoosePriorityHero: React.FC<Props> = ({
           small
           name="si"
           label={t(`concept.si`)}
-          value={si}
+          value={si > 0 ? si : 0}
           onChange={(value) =>
             onSelect({
               hero,

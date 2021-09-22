@@ -75,7 +75,7 @@ const HeroList: React.FC<IProps> = () => {
     () =>
       characters.find((c) => c.id === editPopupState) ?? {
         id: 0,
-        si: 0,
+        si: -1,
         fi: 0,
         ascend: 0,
         engrave: 0,

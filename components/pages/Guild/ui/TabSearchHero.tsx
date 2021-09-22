@@ -27,7 +27,9 @@ function filterHeroes(hero: number, si: number, fi: number, ascend: number, reve
 const TabSearchHero: React.FC<IProps> = ({ onSearch }) => {
   const { t } = useTranslation("guild");
   const { values } = useContext(GuildContext);
-  const [heroes, setHeroes] = useState([{ hero: 1, si: 0, fi: 0, ascend: 0, reverse: false }]);
+  const [heroes, setHeroes] = useState([
+    { hero: 1, si: -1, fi: 0, ascend: 0, engrave: 0, reverse: false },
+  ]);
 
   const foundBoxes = useMemo(() => {
     let { members } = values;
@@ -50,7 +52,10 @@ const TabSearchHero: React.FC<IProps> = ({ onSearch }) => {
       <CardActions>
         <CardAction
           onClick={() =>
-            setHeroes([...heroes, { hero: 1, si: 0, fi: 0, ascend: 0, reverse: false }])
+            setHeroes([
+              ...heroes,
+              { hero: 1, si: -1, fi: 0, ascend: 0, engrave: 0, reverse: false },
+            ])
           }
         >
           {t("label-another-character")}
@@ -88,6 +93,7 @@ const TabSearchHero: React.FC<IProps> = ({ onSearch }) => {
               siLevel={member.heroes?.[heroes[0].hero]?.si}
               ascendLevel={member.heroes?.[heroes[0].hero]?.ascend}
               fiLevel={member.heroes?.[heroes[0].hero]?.fi}
+              engraveLevel={member.heroes?.[heroes[0].hero]?.engrave}
               disabled={member.heroes?.[heroes[0].hero]?.ascend === undefined}
             />
           </SearchListItem>

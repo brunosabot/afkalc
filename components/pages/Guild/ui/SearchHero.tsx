@@ -18,10 +18,11 @@ interface IProps {
       ascend: number;
       si: number;
       fi: number;
+      engrave: number;
       reverse: boolean;
     } | null
   ) => void;
-  hero: { hero: number; ascend: number; si: number; fi: number; reverse: boolean };
+  hero: { hero: number; ascend: number; si: number; fi: number; engrave: number; reverse: boolean };
 }
 
 function getAscendName(ascend: number) {
@@ -37,6 +38,7 @@ const SearchHero: React.FC<IProps> = ({ index, hero, onChange }) => {
   if (hero.ascend > 0) searchString.push(t(`common:ascension-${getAscendName(hero.ascend)}`));
   if (hero.si > 0) searchString.push(`${t("common:concept.si")} +${hero.si}`);
   if (hero.fi > 0) searchString.push(`${t("common:concept.fi")} ${hero.fi}/9`);
+  if (hero.engrave > 0) searchString.push(`${t("common:concept.engrave")} ${hero.engrave}`);
 
   return (
     <>
@@ -47,6 +49,7 @@ const SearchHero: React.FC<IProps> = ({ index, hero, onChange }) => {
             ascendLevel={hero.ascend}
             siLevel={hero.si}
             fiLevel={hero.fi}
+            engraveLevel={hero.engrave}
             onClick={() => setShowModal(true)}
           />
           <span className={styles.SearchString}>{searchString.join(", ")}</span>
@@ -73,6 +76,7 @@ const SearchHero: React.FC<IProps> = ({ index, hero, onChange }) => {
           fi={hero.fi}
           hero={hero.hero}
           ascend={hero.ascend}
+          engrave={hero.engrave}
           onSelect={(newHero) => onChange({ ...newHero, reverse: hero.reverse })}
         />
       </Modal>

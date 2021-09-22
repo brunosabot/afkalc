@@ -31,7 +31,7 @@ export default function migratePriorityList(id: string): Promise<void> {
                   if (typeof priorityHero === "number") {
                     return {
                       fi: 0,
-                      si: 0,
+                      si: -1,
                       ascend: 0,
                       hero: priorityHero ?? 0,
                     };
