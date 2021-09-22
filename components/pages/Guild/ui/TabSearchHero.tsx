@@ -12,13 +12,21 @@ interface IProps {
   onSearch: (value: number) => void;
 }
 
-function filterHeroes(hero: number, si: number, fi: number, ascend: number, reverse: boolean) {
+function filterHeroes(
+  hero: number,
+  si: number,
+  fi: number,
+  ascend: number,
+  engrave: number,
+  reverse: boolean
+) {
   return (box: IFirebaseProfile) => {
     const vAscend = box?.heroes?.[hero]?.ascend ?? -1;
     const vSi = box?.heroes?.[hero]?.si ?? 0;
     const vFi = box?.heroes?.[hero]?.fi ?? 0;
+    const vEngrave = box?.heroes?.[hero]?.engrave ?? 0;
 
-    const result = vAscend >= ascend && vSi >= si && vFi >= fi;
+    const result = vAscend >= ascend && vSi >= si && vFi >= fi && vEngrave >= engrave;
 
     return reverse ? !result : result;
   };
@@ -35,7 +43,7 @@ const TabSearchHero: React.FC<IProps> = ({ onSearch }) => {
     let { members } = values;
 
     heroes.forEach((h) => {
-      members = members.filter(filterHeroes(h.hero, h.si, h.fi, h.ascend, h.reverse));
+      members = members.filter(filterHeroes(h.hero, h.si, h.fi, h.ascend, h.engrave, h.reverse));
     });
 
     return members
