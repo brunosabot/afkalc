@@ -81,7 +81,7 @@ const Owner: React.FC<IProps> = ({ listId, result }) => {
 
   const [theNewHero, setTheNewHero] = useState<IFirebasePriorityListHero>({
     hero: 0,
-    si: 0,
+    si: -1,
     fi: 0,
     ascend: 0,
     engrave: 0,
@@ -184,7 +184,7 @@ const Owner: React.FC<IProps> = ({ listId, result }) => {
             onClose={() => {
               if (theNewHero.hero !== undefined && theNewHero.hero > 0) {
                 addHero(theNewHero);
-                setTheNewHero({ hero: 0, si: 0, fi: 0, ascend: 0, engrave: 0 });
+                setTheNewHero({ hero: 0, si: -1, fi: 0, ascend: 0, engrave: 0 });
               }
               setShowModal(false);
             }}

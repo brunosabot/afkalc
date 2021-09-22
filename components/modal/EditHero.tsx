@@ -3,6 +3,7 @@ import { useTranslation } from "next-i18next";
 import React from "react";
 import ascendLevels from "../../data/heroAscensionLevel.json";
 import heroes from "../../data/heroes.json";
+import { getAscend } from "../../lib/hero";
 import ICharacter from "../../types/ICharacter";
 import { UseSetLevelReturn } from "../pages/TiersList/hooks/useSetLevel";
 import Character from "../ui/afk/Character";
@@ -62,13 +63,6 @@ interface Props {
   setLevel: UseSetLevelReturn;
   onPrev: () => void;
   onNext: () => void;
-}
-
-function getAscend(ascend: number, si: number, fi: number, engrave: number) {
-  if (engrave > 0) return Math.max(8, ascend);
-  if (fi > 0) return Math.max(7, ascend);
-  if (si > 0) return Math.max(5, ascend);
-  return ascend ?? 0;
 }
 
 const EditHero: React.FC<Props> = ({ hero, si, fi, ascend, engrave, setLevel, onNext, onPrev }) => {
