@@ -50,7 +50,7 @@ function reducer(state: State, action: Action): State {
     case "si":
       return { ...state, si: action.value };
     case "fi":
-      return { ...state, si: action.value };
+      return { ...state, fi: action.value };
     case "engrave":
       return { ...state, engrave: action.value };
     case "direction-ascend":
