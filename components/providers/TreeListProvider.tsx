@@ -1,4 +1,6 @@
 import React, { useCallback, useContext, useMemo, useState } from "react";
+import useFirestoreInQuery from "../hooks/useFirestoreInQuery";
+import useFirestoreInQueryReference from "../hooks/useFirestoreInQueryReference";
 import useFirestoreQuery from "../hooks/useFirestoreQuery";
 import useFirestoreQueryReference from "../hooks/useFirestoreQueryReference";
 import firebase from "./firebase";
@@ -16,14 +18,13 @@ const TreeListProvider: React.FC<IProps> = ({ children }) => {
   const { values } = useContext(ProfileContext);
 
   const treeListDocument = useFirestoreQueryReference(`tree-list`, "ownerId", "==", "%ID%");
-  const favoriteQuery = useFirestoreQueryReference(
+  const favoriteQuery = useFirestoreInQueryReference(
     "tree-list",
     firebase.firestore.FieldPath.documentId(),
-    "in",
     values.favoriteTreeList
   );
   const treeListResult = useFirestoreQuery<IFirebaseTreeList[]>(treeListDocument, lazy);
-  const favoriteResult = useFirestoreQuery<IFirebaseTreeList[]>(favoriteQuery, lazy);
+  const favoriteResult = useFirestoreInQuery<IFirebaseTreeList[]>(favoriteQuery, lazy);
 
   const load = useCallback(() => setLazy(false), []);
 
