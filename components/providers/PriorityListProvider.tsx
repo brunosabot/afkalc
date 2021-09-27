@@ -1,4 +1,6 @@
 import React, { useCallback, useContext, useMemo, useState } from "react";
+import useFirestoreInQuery from "../hooks/useFirestoreInQuery";
+import useFirestoreInQueryReference from "../hooks/useFirestoreInQueryReference";
 import useFirestoreQuery from "../hooks/useFirestoreQuery";
 import useFirestoreQueryReference from "../hooks/useFirestoreQueryReference";
 import firebase from "./firebase";
@@ -16,14 +18,13 @@ const PriorityListProvider: React.FC<IProps> = ({ children }) => {
   const { values } = useContext(ProfileContext);
 
   const priorityListDocument = useFirestoreQueryReference(`priority-list`, "ownerId", "==", "%ID%");
-  const favoriteQuery = useFirestoreQueryReference(
+  const favoriteQuery = useFirestoreInQueryReference(
     "priority-list",
     firebase.firestore.FieldPath.documentId(),
-    "in",
     values.favoritePriorityList
   );
   const priorityListResult = useFirestoreQuery<IFirebasePriorityList[]>(priorityListDocument, lazy);
-  const favoriteResult = useFirestoreQuery<IFirebasePriorityList[]>(favoriteQuery, lazy);
+  const favoriteResult = useFirestoreInQuery<IFirebasePriorityList[]>(favoriteQuery, lazy);
 
   const load = useCallback(() => setLazy(false), []);
 
