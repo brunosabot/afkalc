@@ -1,4 +1,5 @@
 import { useTranslation } from "next-i18next";
+import Link from "next/link";
 import React, { useContext } from "react";
 import { FirebaseContext } from "../providers/FirebaseProvider";
 import AnonymousLoginButton from "./button/AnonymousLoginButton";
@@ -10,6 +11,7 @@ import TwitterLoginButton from "./button/TwitterLoginButton";
 import Card from "./card/Card";
 import CardHelp from "./card/CardHelp";
 import CardTitle from "./card/CardTitle";
+import styles from "./LoginBox.module.css";
 
 interface Props {
   [key: string]: never;
@@ -28,6 +30,11 @@ const LoginBox: React.FC<Props> = () => {
       <PasswordLoginButton />
       <AnonymousLoginButton />
       <ForgottenPassword />
+      <Link href="/settings">
+        <a href="/settings" className={styles.Settings}>
+          {t("menu.settings")}
+        </a>
+      </Link>
     </Card>
   );
 };
