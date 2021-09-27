@@ -3,7 +3,7 @@ import { useTranslation } from "next-i18next";
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 import Head from "next/head";
 import React, { useCallback, useContext } from "react";
-import withLayoutPrivateColumn from "../../components/layout/withLayoutPrivateColumn";
+import withLayoutPublicColumn from "../../components/layout/withLayoutPublicColumn";
 import ListItem from "../../components/pages/Credit/ui/ListItem";
 import ProfileContext from "../../components/providers/ProfileContext";
 import ChangePasswordButton from "../../components/ui/button/ChangePasswordButton";
@@ -42,21 +42,26 @@ const Home: React.FC<IProps> = () => {
   return (
     <>
       <Card>
-        <CardTitle icon={mdiCog}>{t("common:menu.settings")}</CardTitle>
         <Head>
           <title>{`${t("common:menu.settings")} - Afkalc`}</title>
           <meta name="description" content={t("common:settings-desc")} />
         </Head>
 
-        <InputField
-          name="player-name"
-          value={values.playerName}
-          label={t("player-name")}
-          onChange={actions.setPlayerName}
-        />
+        {values.userId ? (
+          <>
+            <CardTitle icon={mdiCog}>{t("common:menu.settings")}</CardTitle>
+            <InputField
+              name="player-name"
+              value={values.playerName}
+              label={t("player-name")}
+              onChange={actions.setPlayerName}
+            />
+          </>
+        ) : null}
       </Card>
 
-      {[values.isGoogle, values.isTwitter, values.isFacebook, values.isPassword].includes(false) ? (
+      {values.userId &&
+      [values.isGoogle, values.isTwitter, values.isFacebook, values.isPassword].includes(false) ? (
         <Card>
           <CardTitle icon={mdiLinkPlus}>{t("title-link-account")}</CardTitle>
           {values.isGoogle ? null : <GoogleLoginButton isLink />}
@@ -77,16 +82,14 @@ const Home: React.FC<IProps> = () => {
         <CardTitle icon={mdiCog}>{t("user-data")}</CardTitle>
         <List>
           {values.userId ? (
-            <>
-              <ListItem>
-                ID:&nbsp;
-                {values.userId}
-              </ListItem>
-              <ListItem>{t("label-rgpd")}</ListItem>
-            </>
+            <ListItem>
+              ID:&nbsp;
+              {values.userId}
+            </ListItem>
           ) : (
             <ListItem>{t("label-no-need-rgpd")}</ListItem>
           )}
+          <ListItem>{t("label-rgpd")}</ListItem>
         </List>
 
         <CardActions>
@@ -106,4 +109,4 @@ const Home: React.FC<IProps> = () => {
   );
 };
 
-export default withLayoutPrivateColumn(Home);
+export default withLayoutPublicColumn(Home);
