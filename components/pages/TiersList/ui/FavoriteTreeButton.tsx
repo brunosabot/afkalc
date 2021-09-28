@@ -17,7 +17,7 @@ const FavoriteTreeButton: React.FC<IProps> = ({ title, listId }) => {
 
   const onFavorite = useCallback(() => {
     if (isFavorite) {
-      setFavoriteTreeList(favoriteTreeList.filter((listItem) => listItem === listId));
+      setFavoriteTreeList(favoriteTreeList.filter((listItem) => listItem !== listId));
     } else {
       setFavoriteTreeList([...favoriteTreeList, listId]);
     }
