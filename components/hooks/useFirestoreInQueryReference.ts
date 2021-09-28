@@ -12,6 +12,7 @@ export default function useFirestoreInQueryReference(
   const { values } = useContext(FirebaseContext);
 
   return useMemo(() => {
+    const localValueList = [...valueList];
     let formattedPath = path;
 
     if (path.indexOf("%ID%") > -1) {
@@ -23,8 +24,8 @@ export default function useFirestoreInQueryReference(
     }
 
     const collections = [];
-    while (valueList.length) {
-      const splice = valueList.splice(0, 10);
+    while (localValueList.length) {
+      const splice = localValueList.splice(0, 10);
       collections.push(firestore.collection(formattedPath).where(field, "in", splice));
     }
 

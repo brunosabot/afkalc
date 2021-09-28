@@ -16,6 +16,7 @@ export default interface IFirebaseProfile {
   playerName?: string;
   shareId?: string;
   favoritePriorityList?: string[];
+  favoriteTreeList?: string[];
 
   // Hero List
   heroes?: IFirebaseHeroList;
