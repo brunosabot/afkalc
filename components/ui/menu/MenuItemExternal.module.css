@@ -1,32 +1,19 @@
 .Link {
   align-items: center;
+  box-sizing: border-box;
   color: inherit;
   display: flex;
+  flex-basis: 50%;
   font-size: 16px;
   font-weight: 400;
-  padding: 8px 0;
+  gap: 8px;
+  height: 48px;
+  padding: 8px 16px;
   position: relative;
   text-decoration: none;
   z-index: 1;
-  border-bottom: 1px solid var(--list-border);
-  gap: 8px;
-  height: 48px;
-  box-sizing: border-box;
 }
-.Link:last-child {
-  border-bottom: 0;
-}
-.Link::before {
-  bottom: -1px;
-  content: "";
-  left: -16px;
-  position: absolute;
-  right: -16px;
-  top: -1px;
-  transition: var(--transition);
-  z-index: -1;
-}
-.Link:hover::before {
+.Link:hover {
   background-color: var(--hover-color);
 }
 .Icon {
