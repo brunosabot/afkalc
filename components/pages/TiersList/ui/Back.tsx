@@ -1,5 +1,6 @@
 import { mdiArrowLeft } from "@mdi/js";
 import { useTranslation } from "next-i18next";
+import Link from "next/link";
 import React from "react";
 import Svg from "../../../ui/Svg";
 import styles from "./Back.module.css";
@@ -13,11 +14,13 @@ const Back: React.FC<Props> = () => {
 
   return (
     <div className={styles.Back}>
-      <a href="/tiers-list" className={styles.Link}>
-        <Svg d={mdiArrowLeft} />
+      <Link href="/tiers-list">
+        <a className={styles.Link}>
+          <Svg d={mdiArrowLeft} />
 
-        {t("label-back")}
-      </a>
+          {t("label-back")}
+        </a>
+      </Link>
     </div>
   );
 };

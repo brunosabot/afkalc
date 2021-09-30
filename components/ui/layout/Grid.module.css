@@ -1,8 +1,8 @@
 .Grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(240px, 480px));
-  margin: auto;
   gap: 16px;
-  width: 100%;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 480px));
   justify-content: center;
+  margin: auto;
+  width: 100%;
 }

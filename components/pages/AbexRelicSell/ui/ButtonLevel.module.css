@@ -1,12 +1,12 @@
 .Button {
-  color: transparent;
-  border: 0;
-  outline: 0;
-  height: 32px;
-  width: 32px;
-  border-radius: 50%;
   background-image: linear-gradient(135deg, rgba(255, 255, 255, 0.2), rgba(0, 0, 0, 0.2));
+  border: 0;
+  border-radius: 50%;
+  color: transparent;
   cursor: pointer;
+  height: 32px;
+  outline: 0;
+  width: 32px;
 }
 .Button--1 {
   background-color: var(--afk-common-color);

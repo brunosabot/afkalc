@@ -1,8 +1,8 @@
 .CardTab {
   align-items: center;
   background: transparent;
-  border-width: 3px;
   border: solid transparent;
+  border-width: 3px;
   box-sizing: border-box;
   color: inherit;
   display: flex;

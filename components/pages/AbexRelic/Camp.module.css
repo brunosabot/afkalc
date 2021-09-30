@@ -13,26 +13,26 @@
 
 .Form {
   display: flex;
-  padding: 0 16px 0 16px;
   gap: 8px;
+  padding: 0 16px 0 16px;
 }
 .FormItem {
+  color: var(--secondary-text-color);
   display: flex;
   flex-direction: column;
   font-size: 14px;
-  color: var(--secondary-text-color);
   gap: 4px;
 }
 .FormItemInput {
+  background-color: transparent;
+  border: 1px solid var(--card-border-color);
+  border-radius: 4px;
+  box-sizing: border-box;
+  color: inherit;
+  font-size: 16px;
   height: 32px;
   padding: 0 8px;
   width: 120px;
-  border: 1px solid var(--card-border-color);
-  border-radius: 4px;
-  font-size: 16px;
-  box-sizing: border-box;
-  background-color: transparent;
-  color: inherit;
 }
 
 .Details {
@@ -42,8 +42,8 @@
 }
 
 .RemainingTime {
-  display: flex;
   align-items: center;
+  display: flex;
   gap: 6px;
 }
 .RemainingTime svg {
@@ -52,18 +52,18 @@
 
 .Progress {
   appearance: none;
-  position: absolute;
+  border-radius: 0 0 8px 8px;
   bottom: 0;
+  height: 6px;
   left: 0;
+  position: absolute;
   right: 0;
   width: 100%;
-  border-radius: 0 0 8px 8px;
-  height: 6px;
 }
 .Progress[value]::-webkit-progress-inner-element {
   border-radius: 0 0 8px 8px;
-  overflow: hidden;
   height: 6px;
+  overflow: hidden;
 }
 .Progress[value]::-webkit-progress-bar {
   background-color: transparent;
@@ -72,28 +72,27 @@
   background-color: var(--accent-color);
   background-image: -webkit-linear-gradient(top, rgba(255, 255, 255, 0.25), rgba(0, 0, 0, 0.25)),
     -webkit-linear-gradient(left, var(--afk-legendary-color), var(--afk-mythic-color));
-
-  border-radius: 2px;
   background-size: 35px 20px, 100% 100%, 100% 100%;
+  border-radius: 2px;
   border-radius: 0 6px 0 0;
 }
 
 .Button {
-  background: transparent;
-  display: inline-flex;
   align-items: center;
-  padding: 0 16px;
-  height: 36px;
-  font-family: inherit;
+  background: transparent;
   border: 0;
-  color: inherit;
   border-radius: 4px;
-  font-size: 14px;
-  min-width: 64px;
-  font-weight: 500;
+  color: inherit;
   cursor: pointer;
-  transition: var(--transition);
+  display: inline-flex;
+  font-family: inherit;
+  font-size: 14px;
+  font-weight: 500;
+  height: 36px;
+  min-width: 64px;
   outline: 0;
+  padding: 0 16px;
+  transition: var(--transition);
 }
 .Button:hover {
   background-color: var(--hover-color);

@@ -6,8 +6,8 @@
 }
 .Image {
   height: 16px;
-  width: 16px;
   margin-right: 8px;
+  width: 16px;
 }
 .Name {
   flex-grow: 1;

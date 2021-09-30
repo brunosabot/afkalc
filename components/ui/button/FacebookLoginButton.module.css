@@ -1,25 +1,25 @@
 .Wrapper {
-  padding: 0 16px 16px 16px;
-  text-align: center;
   display: flex;
   justify-content: center;
+  padding: 0 16px 16px 16px;
+  text-align: center;
 }
 .FacebookLoginButton {
+  align-items: center;
   background: #4267b2;
   border: 0;
-  color: #ffffff;
+  border-radius: 3px;
+  color: #fff;
   cursor: pointer;
+  display: flex;
   font-family: inherit;
   font-size: 14px;
   font-weight: 500;
-  padding: 0 10px;
   height: 40px;
-  width: 185px;
-  margin: 3px;
-  border-radius: 3px;
-  display: flex;
-  align-items: center;
   justify-content: space-between;
+  margin: 3px;
+  padding: 0 10px;
+  width: 185px;
 }
 .FacebookLoginButton svg {
   height: 20px;

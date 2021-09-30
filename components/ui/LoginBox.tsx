@@ -31,9 +31,7 @@ const LoginBox: React.FC<Props> = () => {
       <AnonymousLoginButton />
       <ForgottenPassword />
       <Link href="/settings">
-        <a href="/settings" className={styles.Settings}>
-          {t("menu.settings")}
-        </a>
+        <a className={styles.Settings}>{t("menu.settings")}</a>
       </Link>
     </Card>
   );

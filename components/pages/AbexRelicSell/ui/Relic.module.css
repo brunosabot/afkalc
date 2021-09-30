@@ -3,8 +3,8 @@
   flex-direction: column;
 }
 .Relic {
-  display: flex;
   border-radius: 50%;
+  display: flex;
   position: relative;
 }
 
@@ -29,27 +29,27 @@
 }
 .Counter {
   align-items: center;
-  justify-content: center;
-  display: flex;
-  height: 18px;
-  width: 18px;
-  border-radius: 50%;
   background: var(--reverse-background);
-  font-size: 12px;
-  position: absolute;
+  border-radius: 50%;
   bottom: 0;
-  right: 0;
   color: var(--reverse-text-color);
+  display: flex;
+  font-size: 12px;
+  height: 18px;
+  justify-content: center;
+  position: absolute;
+  right: 0;
+  width: 18px;
 }
 .Input {
-  height: 28px;
-  text-align: center;
-  outline: 0;
-  color: inherit;
-  border-radius: 2px;
-  width: 40px;
-  box-sizing: border-box;
-  margin: 2px 0 0 0;
   background: transparent;
   border: 1px solid var(--card-border-color);
+  border-radius: 2px;
+  box-sizing: border-box;
+  color: inherit;
+  height: 28px;
+  margin: 2px 0 0 0;
+  outline: 0;
+  text-align: center;
+  width: 40px;
 }

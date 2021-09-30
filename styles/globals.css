@@ -4,8 +4,8 @@ body {
   font-family: "Roboto", sans-serif;
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
-  margin: 0;
   height: 100%;
+  margin: 0;
 
   --background-color: #f0f0f0;
   --overlay-color: rgba(0, 0, 0, 0.3);
@@ -79,18 +79,18 @@ a {
 }
 
 #page {
+  align-content: flex-start;
+  align-items: flex-start;
+  box-sizing: border-box;
   display: flex;
   flex-wrap: wrap;
+  gap: 16px;
+  height: 100%;
   justify-content: center;
   margin: auto;
   margin-bottom: 76px;
-  gap: 16px;
-  padding: 16px 16px 92px 16px;
-  align-items: flex-start;
-  box-sizing: border-box;
   overflow: auto;
-  height: 100%;
-  align-content: flex-start;
+  padding: 16px 16px 92px 16px;
 }
 @media (max-width: 1007px) {
   #page > * {

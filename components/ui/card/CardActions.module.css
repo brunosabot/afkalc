@@ -1,6 +1,6 @@
 .CardActions {
   display: flex;
-  justify-content: flex-end;
   flex-wrap: wrap;
+  justify-content: flex-end;
   padding-bottom: 8px;
 }

@@ -1,11 +1,11 @@
 .InfosDetail {
-  font-size: 0.85em;
   color: var(--secondary-text-color);
+  font-size: 0.85em;
 }
 .InfosDetail + .InfosDetail {
   margin-left: 12px;
 }
-.InfosDetail + .InfosDetail:before {
+.InfosDetail + .InfosDetail::before {
   content: "—";
   margin-right: 12px;
 }

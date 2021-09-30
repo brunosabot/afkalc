@@ -48,7 +48,7 @@ const MemberListItem: React.FC<IProps> = ({ member, isOwner, isDeputy }) => {
         ) : null}
 
         <Link href={`/hero-list/${member.id}`}>
-          <a className={styles.Link} href={`/hero-list/${member.id}`}>
+          <a className={styles.Link}>
             <Svg d={mdiViewList} />
           </a>
         </Link>

@@ -11,19 +11,25 @@ interface IProps {
 }
 
 const ListItem: React.FC<IProps> = ({ icon, children, actions, href }) => {
-  const content = (
-    <a href={href} className={styles.ListItem}>
+  if (href !== undefined) {
+    return (
+      <Link href={href} passHref>
+        <a className={styles.ListItem}>
+          {icon ? <Svg d={icon} /> : null}
+          <div className={styles.ListItemTitle}>{children}</div>
+          {actions ? <div className={styles.ListItemAction}>{actions}</div> : null}
+        </a>
+      </Link>
+    );
+  }
+
+  return (
+    <span className={styles.ListItem}>
       {icon ? <Svg d={icon} /> : null}
       <div className={styles.ListItemTitle}>{children}</div>
       {actions ? <div className={styles.ListItemAction}>{actions}</div> : null}
-    </a>
+    </span>
   );
-
-  if (href) {
-    <Link href={href}>{content}</Link>;
-  }
-
-  return content;
 };
 
 export default ListItem;

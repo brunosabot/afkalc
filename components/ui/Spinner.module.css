@@ -1,22 +1,22 @@
 .Wrapper {
-  height: 100vh;
-  width: 100vw;
-  position: fixed;
-  top: 0;
-  left: 0;
-  display: flex;
-  justify-content: center;
   align-items: center;
+  display: flex;
   flex-direction: column;
   font-size: 2.5em;
   font-weight: 100;
+  height: 100vh;
+  justify-content: center;
+  left: 0;
+  position: fixed;
+  top: 0;
+  width: 100vw;
 }
 .Spinner {
-  width: 40px;
+  animation: sk-rotateplane 1.2s infinite linear, colors 2.4s infinite cubic-bezier(0, 1, 0, 1) 0.3s;
+  background-color: var(--text-color);
   height: 40px;
   margin-top: 24px;
-  background-color: var(--text-color);
-  animation: sk-rotateplane 1.2s infinite linear, colors 2.4s infinite cubic-bezier(0, 1, 0, 1) 0.3s;
+  width: 40px;
 }
 
 @keyframes colors {
