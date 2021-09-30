@@ -993,5 +993,15 @@
     "image": "/heroes/Stone.jpg",
     "faction": "maulers",
     "usage": []
+  },
+  {
+    "name": "Leonard",
+    "id": 94,
+    "type": "intelligence",
+    "class": "mage",
+    "role": "control",
+    "image": "/heroes/LDV.jpg",
+    "faction": "dimensionals",
+    "usage": []
   }
 ]
