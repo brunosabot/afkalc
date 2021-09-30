@@ -31,6 +31,10 @@
   "add": "Add",
   "has-dimensional-key": "Has a dimensional key",
   "menu": {
+    "category-box": "Box",
+    "category-abex": "Abyssal Expedition",
+    "category-calc": "Calculation tools",
+    "category-misc": "Miscellanous",
     "home": "Home",
     "signature-item": "SI Emblem",
     "elite-summon": "Elite Summon",

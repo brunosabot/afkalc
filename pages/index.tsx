@@ -64,7 +64,7 @@ const Home: React.FC<IProps> = () => {
       </Card>
 
       <Card>
-        <CardTitle>Box</CardTitle>
+        <CardTitle>{t("common:menu.category-box")}</CardTitle>
         <MenuBox>
           <MenuItem to={`/hero-list/${values.userId}`} icon={mdiViewList}>
             {t("common:menu.hero-list")}
@@ -85,7 +85,7 @@ const Home: React.FC<IProps> = () => {
       </Card>
 
       <Card>
-        <CardTitle>Abyssal Expedition</CardTitle>
+        <CardTitle>{t("common:menu.category-abex")}</CardTitle>
         <MenuBox>
           <MenuItem to="/abex-relic" icon={mdiMap}>
             {t("common:menu.abex-relic")}
@@ -97,7 +97,7 @@ const Home: React.FC<IProps> = () => {
       </Card>
 
       <Card>
-        <CardTitle>Calculation tools</CardTitle>
+        <CardTitle>{t("common:menu.category-calc")}</CardTitle>
         <MenuBox>
           <MenuItem to="/item-cost" icon={mdiDiamondStone}>
             {t("common:menu.item-cost")}
@@ -118,7 +118,7 @@ const Home: React.FC<IProps> = () => {
       </Card>
 
       <Card>
-        <CardTitle>Miscellanous</CardTitle>
+        <CardTitle>{t("common:menu.category-misc")}</CardTitle>
         <MenuBox>
           <MenuItem to="/credit" icon={mdiAccountHeart}>
             {t("common:menu.credit")}
