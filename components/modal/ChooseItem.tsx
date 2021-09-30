@@ -20,6 +20,7 @@ const ChooseItem: React.FC<Props> = ({ current, onSelect }) => (
           secondaryInfos={secondaryInfo}
           onClick={() => onSelect(name)}
           highlight={current === name}
+          size="large"
         />
       ))}
   </div>

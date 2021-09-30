@@ -68,7 +68,8 @@
   },
   "improvment": {
     "t1": "T1",
-    "t2": "T2"
+    "t2": "T2",
+    "t3": "T3"
   },
   "duration": {
     "2-hours": "2 Hours",
@@ -132,7 +133,9 @@
     "t1-stone": "T1 stone",
     "t2-stone": "T2 stone",
     "twisted-essence": "Twisted essence",
-    "wilder-emblem": "Wilder emblem"
+    "wilder-emblem": "Wilder emblem",
+    "elemental-shard": "Elemental Shard",
+    "elemental-core": "Elemental Core"
   },
   "artifact": {
     "grace": "Dura's Grace",

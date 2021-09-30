@@ -1,27 +1,27 @@
 [
   { "name": "diamond", "cost": 1, "image": "/loot/diamond.jpg" },
-  { "name": "hero-essence", "cost": 0.6, "image": "/loot/hero-essence.jpg" },
+  { "name": "hero-essence", "cost": 1, "image": "/loot/hero-essence.jpg" },
   {
     "name": "2h-hero-essence",
-    "cost": 75,
+    "cost": 31.25,
     "image": "/loot/small-h-hero-essence.jpg",
     "info": "2-hours"
   },
   {
     "name": "6h-hero-essence",
-    "cost": 225,
+    "cost": 93.75,
     "image": "/loot/small-h-hero-essence.jpg",
     "info": "6-hours"
   },
   {
     "name": "8h-hero-essence",
-    "cost": 300,
+    "cost": 125,
     "image": "/loot/high-h-hero-essence.jpg",
     "info": "8-hours"
   },
   {
     "name": "24h-hero-essence",
-    "cost": 900,
+    "cost": 375,
     "image": "/loot/high-h-hero-essence.jpg",
     "info": "24-hours"
   },
@@ -53,10 +53,10 @@
   { "name": "emblem-choice-chest", "cost": 198, "image": "/loot/emblem-choice-chest.jpg" },
   { "name": "challenger-token", "cost": 0.03, "image": "/loot/challenger-token.jpg" },
   { "name": "guild-token", "cost": 0.08, "image": "/loot/guild-token.jpg" },
-  { "name": "labyrinth-token", "cost": 0.06, "image": "/loot/labyrinth-token.jpg" },
+  { "name": "labyrinth-token", "cost": 0.1, "image": "/loot/labyrinth-token.jpg" },
   { "name": "hero-coin", "cost": 0.1, "image": "/loot/hero-coin.jpg" },
   { "name": "poe-coin", "cost": 1, "image": "/loot/poe-coin.jpg" },
-  { "name": "rare-soulstone", "cost": 2.4, "image": "/loot/rare-soulstone.jpg" },
+  { "name": "rare-soulstone", "cost": 4, "image": "/loot/rare-soulstone.jpg" },
   { "name": "elite-soulstone", "cost": 30, "image": "/loot/elite-soulstone.jpg" },
   { "name": "rare-faction-card", "cost": 360, "image": "/loot/rare-faction-card.jpg" },
   { "name": "scroll", "cost": 270, "image": "/loot/scroll.jpg" },
@@ -79,9 +79,12 @@
   { "name": "mythic-stone", "image": "/loot/mythic-stone.jpg" },
   { "name": "t1-stone", "cost": 2946, "image": "/loot/mythic-stone.jpg", "secondaryInfo": "t1" },
   { "name": "t2-stone", "cost": 3270, "image": "/loot/mythic-stone.jpg", "secondaryInfo": "t2" },
+  { "name": "t3-stone", "cost": 3752, "image": "/loot/mythic-stone.jpg", "secondaryInfo": "t3" },
   { "name": "rare-enhancement-token", "cost": 1.2, "image": "/loot/rare-enhancement-token.jpg" },
   { "name": "elite-enhancement-token", "cost": 120, "image": "/loot/elite-enhancement-token.jpg" },
   { "name": "dura-shard", "image": "/loot/dura-shard.jpg" },
   { "name": "invigorating-essence", "image": "/loot/invigorating-essence.jpg" },
-  { "name": "twisted-essence", "cost": 10, "image": "/loot/twisted-essence.jpg" }
+  { "name": "twisted-essence", "cost": 10, "image": "/loot/twisted-essence.jpg" },
+  { "name": "elemental-shard", "cost": 10, "image": "/loot/totem_icon_1.jpg" },
+  { "name": "elemental-core", "cost": 20, "image": "/loot/totem_icon_2.jpg" }
 ]
