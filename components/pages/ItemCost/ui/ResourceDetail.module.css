@@ -1,10 +1,10 @@
 .ResourceDetail {
   align-items: center;
+  border-bottom: 1px solid var(--list-border);
+  border-top: 1px solid var(--list-border);
   display: flex;
   gap: 16px;
   padding: 8px 8px 8px 0;
-  border-bottom: 1px solid var(--list-border);
-  border-top: 1px solid var(--list-border);
 }
 .ResourceDetail + .ResourceDetail {
   border-top: 0;
@@ -12,16 +12,16 @@
 .Cost {
   align-items: center;
   display: flex;
+  flex-grow: 1;
+  gap: 8px;
   line-height: 40px;
   margin: 0 16px 0 0;
-  gap: 8px;
-  flex-grow: 1;
 }
 .Diamond {
   height: 20px;
   margin-right: 8px;
 }
 .ResourceDetail [class^="InputField"] {
-  width: 90px;
   padding-bottom: 0;
+  width: 90px;
 }

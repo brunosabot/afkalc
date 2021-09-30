@@ -1,18 +1,18 @@
 .ListItem {
   border-bottom: 1px solid var(--list-border);
-  padding: 12px 0;
   display: block;
   margin: 0 16px;
-  text-decoration: none;
+  padding: 12px 0;
   position: relative;
+  text-decoration: none;
 }
 .ListItem::before {
-  content: "";
-  top: -1px;
-  left: -16px;
-  right: -16px;
   bottom: -1px;
+  content: "";
+  left: -16px;
   position: absolute;
+  right: -16px;
+  top: -1px;
   transition: var(--transition);
 }
 .ListItem:hover::before {

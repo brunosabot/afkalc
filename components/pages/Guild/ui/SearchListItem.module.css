@@ -1,22 +1,22 @@
 .SearchListItem {
+  align-items: center;
   border-bottom: 1px solid var(--list-border);
+  box-sizing: border-box;
   display: flex;
   margin: 0 16px;
-  padding: 8px 0;
-  text-decoration: none;
-  position: relative;
   min-height: 48px;
+  padding: 8px 0;
+  position: relative;
+  text-decoration: none;
   z-index: 1;
-  align-items: center;
-  box-sizing: border-box;
 }
 .SearchListItem::before {
-  content: "";
-  top: -1px;
-  left: -16px;
-  right: -16px;
   bottom: -1px;
+  content: "";
+  left: -16px;
   position: absolute;
+  right: -16px;
+  top: -1px;
   transition: var(--transition);
   z-index: -1;
 }
@@ -26,23 +26,23 @@
 }
 
 .Link {
-  height: 32px;
-  width: 32px;
-  padding: 4px;
-  display: flex;
-  justify-content: center;
   align-items: center;
   border-radius: 50%;
+  display: flex;
+  height: 32px;
+  justify-content: center;
+  padding: 4px;
   transition: var(--transition);
+  width: 32px;
 }
 .Link:hover {
   background: var(--hover-color);
 }
 
 .Content {
+  align-items: flex-start;
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
   flex-grow: 1;
   margin-left: 16px;
 }
@@ -50,8 +50,8 @@
   margin-left: 0;
 }
 .Title {
-  display: flex;
   align-items: center;
+  display: flex;
 }
 .Title svg {
   margin-left: 8px;

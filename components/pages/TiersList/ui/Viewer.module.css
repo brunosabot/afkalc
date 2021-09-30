@@ -1,22 +1,22 @@
 .Item {
-  display: flex;
   align-items: center;
-  padding: 8px 24px;
+  display: flex;
   gap: 16px;
+  padding: 8px 24px;
   position: relative;
 }
 .IsOk .Infos::after {
-  content: "";
-  left: -72px;
-  right: -32px;
-  height: 16px;
   background-color: var(--error-background-color);
+  content: "";
+  filter: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg"><filter id="marker"><feTurbulence seed="1" type="fractalNoise" baseFrequency="0.001 0.15" numOctaves="1" result="warp" /><feDisplacementMap xChannelSelector="R" yChannelSelector="G" scale="18" in="SourceGraphic" in2="warp" /></filter></svg>#marker');
+  height: 16px;
+  left: -72px;
   opacity: 0.5;
   position: absolute;
+  right: -32px;
+  top: 50%;
   transform: rotate(-1deg) translateY(-50%);
   z-index: 1;
-  top: 50%;
-  filter: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg"><filter id="marker"><feTurbulence seed="1" type="fractalNoise" baseFrequency="0.001 0.15" numOctaves="1" result="warp" /><feDisplacementMap xChannelSelector="R" yChannelSelector="G" scale="18" in="SourceGraphic" in2="warp" /></filter></svg>#marker');
 }
 .IsOk:nth-child(10n + 1) .Infos::after {
   filter: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg"><filter id="marker"><feTurbulence seed="2" type="fractalNoise" baseFrequency="0.001 0.15" numOctaves="1" result="warp" /><feDisplacementMap xChannelSelector="R" yChannelSelector="G" scale="18" in="SourceGraphic" in2="warp" /></filter></svg>#marker');
@@ -53,21 +53,21 @@
   flex-grow: 1;
 }
 .Button {
+  align-items: center;
   background-color: transparent;
   border: 0;
-  align-items: center;
-  display: flex;
-  gap: 8px;
+  border-radius: 4px;
   color: inherit;
+  cursor: pointer;
+  display: flex;
+  font-size: 14px;
   font-weight: 500;
-  transition: var(--transition);
+  gap: 8px;
+  height: 36px;
+  margin-right: -16px;
   outline: 0;
   padding: 0 16px 0 12px;
-  height: 36px;
-  border-radius: 4px;
-  font-size: 14px;
-  cursor: pointer;
-  margin-right: -16px;
+  transition: var(--transition);
 }
 .Button:hover {
   background-color: var(--hover-color);
@@ -79,11 +79,11 @@
 .Infos {
   display: flex;
   flex-direction: column;
-  gap: 0px;
+  gap: 0;
   position: relative;
 }
 .DetailsTitle {
-  font-size: 0.85em;
   color: var(--secondary-text-color);
+  font-size: 0.85em;
   margin-right: 4px;
 }

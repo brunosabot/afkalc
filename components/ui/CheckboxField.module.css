@@ -1,14 +1,14 @@
 .Wrapper {
-  display: flex;
-  padding: 0 16px 16px 16px;
   align-items: center;
   cursor: pointer;
+  display: flex;
+  padding: 0 16px 16px 16px;
 }
 .Label {
   color: var(--text-color);
+  cursor: pointer;
   flex-grow: 1;
   padding-left: 16px;
-  cursor: pointer;
 }
 
 .CheckboxField {

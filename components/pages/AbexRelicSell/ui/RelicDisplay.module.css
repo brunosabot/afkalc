@@ -1,13 +1,13 @@
 .Relic {
-  position: absolute;
-  padding: 4px;
-  box-sizing: border-box;
-  border-radius: 50%;
-  height: 50px;
-  width: 50px;
   border: 0;
-  outline: 0;
+  border-radius: 50%;
+  box-sizing: border-box;
   cursor: pointer;
+  height: 50px;
+  outline: 0;
+  padding: 4px;
+  position: absolute;
+  width: 50px;
 }
 
 .Relic--1 {
@@ -37,23 +37,23 @@
   transform: translate(-50%, 0);
 }
 .Position--2 {
+  left: 0;
   top: 50%;
-  left: 0px;
   transform: translate(0, -50%);
 }
 .Position--3 {
-  top: 0;
   left: 25%;
+  top: 0;
   transform: translate(-50%, 0);
 }
 .Position--4 {
-  top: 0;
   right: 25%;
+  top: 0;
   transform: translate(50%, 0);
 }
 .Position--5 {
-  top: 50%;
   right: 0;
+  top: 50%;
   transform: translate(0, -50%);
 }
 .Position--6 {
@@ -63,16 +63,16 @@
 }
 
 .Check {
-  padding: 4px;
-  border-radius: 50%;
   background: var(--card-color);
-  position: absolute;
+  border-radius: 50%;
   bottom: -8px;
-  right: -8px;
   display: flex;
+  padding: 4px;
+  position: absolute;
+  right: -8px;
 }
 
 .Inactive {
-  opacity: 0.5;
   filter: grayscale(0.8);
+  opacity: 0.5;
 }

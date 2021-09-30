@@ -9,6 +9,7 @@
   border-radius: 4px;
   box-sizing: border-box;
   color: var(--text-color);
+  cursor: pointer;
   display: flex;
   font-size: 0.9em;
   font-weight: 500;
@@ -17,28 +18,27 @@
   outline: 0;
   padding: 0 8px 0 32px;
   width: 100%;
-  cursor: pointer;
 }
 .Copy {
   background: var(--reverse-background);
-  color: var(--reverse-text-color);
   border-radius: 4px;
-  top: -16px;
   box-shadow: var(--card-shadow);
+  color: var(--reverse-text-color);
   font-size: 14px;
   height: 20px;
   line-height: 20px;
   padding: 4px 8px;
   position: absolute;
   right: 16px;
+  top: -16px;
 }
 .Icon {
-  pointer-events: none;
   display: flex;
+  left: 24px;
+  pointer-events: none;
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
-  left: 24px;
 }
 .Icon svg {
   height: 18px;

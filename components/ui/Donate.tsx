@@ -18,9 +18,7 @@ const Donate: React.FC<IProps> = () => {
         <span className={styles.Label}>{t("earnings")}</span>+{values.earning}&euro;
       </span>
       <Link href="/donate">
-        <a className={styles.Donate} href="/donate">
-          Donate
-        </a>
+        <a className={styles.Donate}>Donate</a>
       </Link>
       <span className={styles.Spending}>
         <span className={styles.Label}>{t("spendings")}</span>-{values.spending}&euro;

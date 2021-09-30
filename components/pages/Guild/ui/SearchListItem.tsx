@@ -34,7 +34,7 @@ const SearchListItem: React.FC<IProps> = ({ children, member, isOwner, isDeputy 
 
       <div className={styles.Actions}>
         <Link href={`/hero-list/${member.id}`}>
-          <a className={styles.Link} href={`/hero-list/${member.id}`}>
+          <a className={styles.Link}>
             <Svg d={mdiViewList} />
           </a>
         </Link>

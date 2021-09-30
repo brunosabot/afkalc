@@ -1,15 +1,15 @@
 @media (min-width: 1008px) {
   .TwoColsSticky {
-    top: 0;
-    position: sticky;
-    width: 100%;
     max-width: 480px;
+    position: sticky;
+    top: 0;
+    width: 100%;
   }
 }
 
 .TwoColsSticky {
-  width: 480px;
-  max-width: 100%;
   display: flex;
   justify-content: center;
+  max-width: 100%;
+  width: 480px;
 }
