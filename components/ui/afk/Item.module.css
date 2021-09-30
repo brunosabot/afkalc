@@ -1,7 +1,7 @@
 .Item {
   border-radius: 4px;
-  width: 40px;
   height: 40px;
+  width: 40px;
 }
 .Wrapper {
   align-items: center;
@@ -57,18 +57,24 @@
 }
 
 .Large .Item {
-  border-radius: 8px;
-  width: 56px;
+  border-radius: 4px;
   height: 56px;
+  width: 56px;
 }
 .Large .Count {
   font-size: 14px;
 }
+.Large .Infos {
+  font-size: 10px;
+}
+.Large .SecondaryInfos {
+  font-size: 12px;
+}
 
 .Small .Item {
   border-radius: 3px;
-  width: 24px;
   height: 24px;
+  width: 24px;
 }
 .Small .Count {
   display: none;
