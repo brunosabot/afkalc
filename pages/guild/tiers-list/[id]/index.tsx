@@ -8,10 +8,10 @@ import useFirestoreDocument from "../../../../components/hooks/useFirestoreDocum
 import useFirestoreDocumentReference from "../../../../components/hooks/useFirestoreDocumentReference";
 import withLayoutPrivate from "../../../../components/layout/withLayoutPrivate";
 import BackTiersList from "../../../../components/pages/Guild/ui/BackTiersList";
+import CharacterTiersList from "../../../../components/pages/Guild/ui/CharacterTiersList";
 import TiersListItem from "../../../../components/pages/Guild/ui/TiersListItem";
 import GuildContext from "../../../../components/providers/GuildContext";
 import IFirebasePriorityList from "../../../../components/providers/types/IFirebasePriorityList";
-import Character from "../../../../components/ui/afk/Character";
 import Card from "../../../../components/ui/card/Card";
 import CardTitle from "../../../../components/ui/card/CardTitle";
 import heroes from "../../../../data/heroes.json";
@@ -67,16 +67,37 @@ const TiersList: React.FC<IProps> = () => {
       <Card>
         <CardTitle>{result.data.title}</CardTitle>
         <div style={{ display: "flex", gap: "16px", padding: "16px", flexWrap: "wrap" }}>
-          {result.data.heroes.map((hero) => (
-            <Character
-              ascendLevel={hero.ascend}
-              siLevel={hero.si}
-              fiLevel={hero.fi}
-              engraveLevel={hero.engrave}
-              id={hero.hero}
-              size="large"
-            />
-          ))}
+          {result.data.heroes.map((hero) => {
+            let totalOkCount = 0;
+
+            const list = result.data;
+
+            if (list === undefined) return <></>;
+
+            guildValues.members.forEach((member) => {
+              const isHeroValidList = isValidList(list, hero, member.heroes?.[hero.hero]);
+              const isHeroValidSelf = isValidSelf(hero, member.heroes?.[hero.hero]);
+
+              const hasSelfRequirements =
+                [0, undefined].includes(hero.ascend) === false ||
+                [-1, 0, undefined].includes(hero.si) === false ||
+                [0, undefined].includes(hero.fi) === false ||
+                [0, undefined].includes(hero.engrave) === false;
+
+              const isDone = isHeroValidList && (isHeroValidSelf || hasSelfRequirements === false);
+
+              if (isDone) {
+                totalOkCount += 1;
+              }
+            });
+
+            return (
+              <CharacterTiersList
+                hero={hero}
+                percentage={(100 * totalOkCount) / guildValues.members.length}
+              />
+            );
+          })}
         </div>
       </Card>
 
