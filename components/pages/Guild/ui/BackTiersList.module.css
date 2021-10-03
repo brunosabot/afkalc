@@ -1,0 +1,23 @@
+.BackTiersList {
+  align-items: center;
+  display: flex;
+  width: 100%;
+}
+
+.Link {
+  align-items: center;
+  display: flex;
+  flex-grow: 1;
+  gap: 8px;
+  text-decoration: none;
+}
+
+.Icon {
+  margin-right: 16px;
+  width: 24px;
+}
+
+.Delete {
+  margin-left: 16px;
+  width: 24px;
+}

@@ -1,22 +1,19 @@
-import { mdiAccountSupervisor, mdiContentCopy, mdiPlaylistCheck } from "@mdi/js";
+import { mdiPlaylistCheck } from "@mdi/js";
 import dayjs from "dayjs";
 import { useTranslation } from "next-i18next";
 import { useRouter } from "next/router";
-import React, { useContext, useEffect, useMemo, useState } from "react";
+import React, { useEffect, useMemo, useState } from "react";
+import useFirestoreDocument from "../../../hooks/useFirestoreDocument";
 import useFirestoreDocumentReference from "../../../hooks/useFirestoreDocumentReference";
-import ProfileContext from "../../../providers/ProfileContext";
 import { IFirebaseHeroList } from "../../../providers/types/IFirebaseHeroes";
 import IFirebasePriorityList from "../../../providers/types/IFirebasePriorityList";
+import IFirebaseProfile from "../../../providers/types/IFirebaseProfile";
 import Card from "../../../ui/card/Card";
-import CardAction from "../../../ui/card/CardAction";
-import CardActions from "../../../ui/card/CardActions";
 import CardHelp from "../../../ui/card/CardHelp";
 import CardTitle from "../../../ui/card/CardTitle";
-import useDuplicateList from "../hooks/useDuplicateList";
-import useSetLevel from "../hooks/useSetLevel";
-import CheckedButton from "./CheckedButton";
-import FavoriteButton from "./FavoriteButton";
-import HeroLineViewer from "./HeroLineViewer";
+import useSetLevel from "../../TiersList/hooks/useSetLevel";
+import CheckedButton from "../../TiersList/ui/CheckedButton";
+import HeroLineViewer from "../../TiersList/ui/HeroLineViewer";
 
 interface IProps {
   result: IFirebasePriorityList;
@@ -24,24 +21,25 @@ interface IProps {
 }
 
 const Viewer: React.FC<IProps> = ({ listId, result }) => {
-  const router = useRouter();
   const [showChecked, setShowChecked] = useState<boolean>(true);
-  const heroDocument = useFirestoreDocumentReference(`profile/%ID%`);
-  const { values } = useContext(ProfileContext);
+  const router = useRouter();
+  const heroDocument = useFirestoreDocumentReference(`profile/${router.query.member}`);
+  const heroValues = useFirestoreDocument<IFirebaseProfile>(heroDocument);
 
   const { t } = useTranslation("priority-list");
   const listHeroes = result.heroes.filter((hero) => hero.hero);
   const title = result?.title ?? t("no-name");
 
+  const heroes = useMemo(() => heroValues.data?.heroes ?? [], [heroValues.data?.heroes]);
+
   const [initialHeroes, setInitialHeroes] = useState<IFirebaseHeroList>({});
   useEffect(() => {
-    if (Object.keys(values.heroes).length > 0 && Object.keys(initialHeroes).length === 0) {
-      setInitialHeroes(JSON.parse(JSON.stringify(values.heroes)));
+    if (Object.keys(heroes).length > 0 && Object.keys(initialHeroes).length === 0) {
+      setInitialHeroes(JSON.parse(JSON.stringify(heroes)));
     }
-  }, [values.heroes, initialHeroes]);
+  }, [heroes, initialHeroes]);
 
-  const onDuplicateList = useDuplicateList(result);
-  const setLevel = useSetLevel(heroDocument, values.heroes);
+  const setLevel = useSetLevel(heroDocument, heroes);
 
   const lastUpdate = useMemo(
     () => dayjs(new Date(result?.priorityListLastUpdate)).fromNow(),
@@ -53,14 +51,9 @@ const Viewer: React.FC<IProps> = ({ listId, result }) => {
       <Card>
         <CardTitle
           icon={mdiPlaylistCheck}
-          action={
-            <>
-              <CheckedButton showChecked={showChecked} setShowChecked={setShowChecked} />
-              <FavoriteButton title={title} listId={listId} />
-            </>
-          }
+          action={<CheckedButton showChecked={showChecked} setShowChecked={setShowChecked} />}
         >
-          {title}
+          {title} x {heroValues.data?.playerName}
         </CardTitle>
 
         {result?.priorityListLastUpdate !== "" ? (
@@ -73,25 +66,14 @@ const Viewer: React.FC<IProps> = ({ listId, result }) => {
           <HeroLineViewer
             key={`${hero.hero}-${hero.ascend}-${hero.fi}-${hero.si}`}
             hero={hero}
+            heroLevels={heroes[hero.hero]}
             setLevel={setLevel}
-            heroLevels={values.heroes[hero.hero]}
             priorityList={result}
             initialHeroLevels={initialHeroes[hero.hero]}
             shouldShowChecked={showChecked}
+            shouldShowSetLevel={false}
           />
         ))}
-
-        <CardActions>
-          <CardAction icon={mdiContentCopy} onClick={onDuplicateList}>
-            {t("label-duplicate")}
-          </CardAction>
-          <CardAction
-            icon={mdiAccountSupervisor}
-            onClick={() => router.push(`/guild/tiers-list/${router.query.id}`)}
-          >
-            {t("label-see-guild")}
-          </CardAction>
-        </CardActions>
       </Card>
     </>
   );

@@ -1,4 +1,5 @@
 import {
+  mdiAccountSupervisor,
   mdiContentCopy,
   mdiDelete,
   mdiEye,
@@ -173,6 +174,12 @@ const Owner: React.FC<IProps> = ({ listId, result }) => {
           <CardActions>
             <CardAction icon={mdiContentCopy} onClick={onDuplicateList}>
               {t("label-duplicate")}
+            </CardAction>
+            <CardAction
+              icon={mdiAccountSupervisor}
+              onClick={() => router.push(`/guild/tiers-list/${router.query.id}`)}
+            >
+              {t("label-see-guild")}
             </CardAction>
             <CardAction icon={mdiPlus} onClick={() => setShowModal(true)}>
               {t("common:add")}
