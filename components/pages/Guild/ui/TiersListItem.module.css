@@ -1,0 +1,8 @@
+.Title {
+  display: flex;
+  flex-direction: column;
+}
+.Subtitle {
+  color: var(--secondary-text-color);
+  font-size: 0.85em;
+}

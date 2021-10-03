@@ -2,6 +2,7 @@
   "label-preview": "Preview",
   "label-delete": "Delete",
   "label-duplicate": "Clone the list",
+  "label-see-guild": "Apply in guild",
   "label-confirm-delete": "Do you really want to delete the list? This can't be undone!",
   "label-edit": "Edit",
   "title-edit": "Edit your list",

@@ -18,6 +18,7 @@ import styles from "./Viewer.module.css";
 
 interface IProps {
   shouldShowChecked: boolean;
+  shouldShowSetLevel?: boolean;
   hero: IFirebasePriorityListHero;
   setLevel: UseSetLevelReturn;
   heroLevels?: IFirebaseHeroesHero;
@@ -32,6 +33,7 @@ function compare(a: IFirebaseHeroesHero | undefined, b: IFirebaseHeroesHero | un
 
 const HeroLineViewer: React.FC<IProps> = ({
   shouldShowChecked,
+  shouldShowSetLevel = true,
   hero,
   priorityList,
   setLevel,
@@ -47,7 +49,7 @@ const HeroLineViewer: React.FC<IProps> = ({
 
   const hasSelfRequirements =
     [0, undefined].includes(hero.ascend) === false ||
-    [0, undefined].includes(hero.si) === false ||
+    [-1, 0, undefined].includes(hero.si) === false ||
     [0, undefined].includes(hero.fi) === false ||
     [0, undefined].includes(hero.engrave) === false;
 
@@ -101,13 +103,13 @@ const HeroLineViewer: React.FC<IProps> = ({
         </span>
       </div>
       <div className={styles.Placeholder} />
-      {isDone ? null : (
+      {shouldShowSetLevel === false || isDone ? null : (
         <button className={styles.Button} type="button" onClick={onDone}>
           <Svg d={mdiCheck} />
           {t("label-done")}
         </button>
       )}
-      {isDone && compare(initialHeroLevels, heroLevels) === false ? (
+      {shouldShowSetLevel && isDone && compare(initialHeroLevels, heroLevels) === false ? (
         <button className={styles.Button} type="button" onClick={onRestore}>
           <Svg d={mdiRestore} />
           {t("label-restore")}
