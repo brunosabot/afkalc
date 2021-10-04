@@ -16,7 +16,7 @@ const TiersListItem: React.FC<IProps> = ({ href, name, percentage, heroName }) =
       {name}
       {heroName !== "" ? <div className={styles.Subtitle}>{heroName}</div> : null}
     </div>
-    <b>{percentage}%</b>
+    <b>{percentage.toFixed()}%</b>
   </ListItem>
 );
 
