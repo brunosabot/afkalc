@@ -111,13 +111,13 @@ export function isValidSelf(theHeroRequirement: IHeroDetails, theHeroLevels?: IH
 
   let isValidAscend = heroRequirementAscend === 0;
   let isValidFi = heroRequirementFi === 0;
-  let isValidSi = heroRequirementSi === 0;
+  let isValidSi = heroRequirementSi === -1;
   let isValidEngrave = heroRequirementEngrave === 0;
 
   if (heroRequirementAscend > 0) {
     isValidAscend = heroRequirementAscend <= heroLevelAscend;
   }
-  if (heroRequirementSi > 0) {
+  if (heroRequirementSi > -1) {
     isValidSi = heroRequirementSi <= heroLevelSi;
   }
   if (heroRequirementFi > 0) {

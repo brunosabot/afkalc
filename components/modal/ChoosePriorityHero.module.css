@@ -1,6 +1,6 @@
 .InputWrapper {
   display: flex;
-  flex-wrap: wrap;
+  flex-direction: column;
   gap: 16px;
   margin-bottom: 16px;
 }
