@@ -29,7 +29,12 @@
   "spendings": "Coûts",
   "sponsors": "Sponsors",
   "add": "Ajouter",
+  "has-dimensional-key": "Utilise une clé cosmique",
   "menu": {
+    "category-box": "Héros",
+    "category-abex": "Expédition Abyssale",
+    "category-calc": "Outils de calcul",
+    "category-misc": "Divers",
     "home": "Accueil",
     "signature-item": "Emblèmes",
     "elite-summon": "Invocation de héros souhaité",
@@ -40,10 +45,10 @@
     "item-cost": "Coût des objets",
     "priority-list": "Listes de priorité",
     "credit": "Crédits",
-    "abex-relic": "Reliques expédition abyssale",
+    "abex-relic": "Butin de relique",
     "abex-relic-sell": "Reliques à vendre",
     "logout": "Se déconnecter",
-    "settings": "Paramètres",
+    "settings": "Paramètres & Confidentialité",
     "guild": "Guilde",
     "donate": "Faire un don",
     "short-loot": "Butin",
@@ -67,7 +72,8 @@
   },
   "improvment": {
     "t1": "T1",
-    "t2": "T2"
+    "t2": "T2",
+    "t3": "T3"
   },
   "duration": {
     "2-hours": "2 Heures",
@@ -131,7 +137,9 @@
     "t1-stone": "Pierre T1",
     "t2-stone": "Pierre T2",
     "twisted-essence": "Essence distordue",
-    "wilder-emblem": "Emblème de nature"
+    "wilder-emblem": "Emblème de nature",
+    "elemental-shard": "Éclat élémentaire",
+    "elemental-core": "Cœur élémentaire"
   },
   "artifact": {
     "grace": "Grâce de Dura",
@@ -151,11 +159,16 @@
     "seraphictide": "Onde séraphique",
     "shroud": "Voile de verdure",
     "verdantlongbow": "Arc long verdoyant",
-    "pauldronofburningfury": "Épaulière de la fureur ardente"
+    "pauldronofburningfury": "Épaulière de la fureur ardente",
+    "lifeslimit": "Briseur de vie",
+    "wingedwarden": "Protecteur ailé",
+    "theoceanicstrings": "Harpe céruléenne"
   },
   "concept": {
     "si": "SI",
+    "siUnlocked": "SI déverrouillé",
     "fi": "Meuble",
-    "ascend": "Ascension"
+    "ascend": "Ascension",
+    "engrave": "Gravure"
   }
 }

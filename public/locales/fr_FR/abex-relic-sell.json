@@ -1,5 +1,6 @@
 {
   "abex-relic-sell-desc": "Calcul des reliques à vendre",
+  "confirm-reset-box": "Ceci va remettre à zero toutes les données existantes... Voulez-vous vraiment continuer ?",
   "reset-box": "Tout remettre à zéro",
   "help": "Saisissez les reliques débloquées, saisissez votre objectif, saisissez les reliques de votre inventaire. Une pastille apparaitra pour vous indiquer celles dont vous n'avez plus besoin",
   "label-goal": "Objectif",
