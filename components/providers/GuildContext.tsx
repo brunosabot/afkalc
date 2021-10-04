@@ -16,6 +16,16 @@ interface IGuildActions {
   quitGuild: () => void;
   setShowAbexTab: (value: boolean) => void;
   setName: (value: string) => void;
+  setAbexAwayTimeLimit: (value: string) => void;
+  setAbexFarmLimit: (value: number) => void;
+  setAbexTilesT1Limit: (value: number) => void;
+  setAbexTilesT2Limit: (value: number) => void;
+  setAbexTilesT3Limit: (value: number) => void;
+  setAbexTilesT4Limit: (value: number) => void;
+  setAbexTilesT5Limit: (value: number) => void;
+  setAbexTilesT6Limit: (value: number) => void;
+  setAbexTilesT7Limit: (value: number) => void;
+  setAbexTilesT8Limit: (value: number) => void;
 }
 
 interface IGuildGuild {
@@ -26,6 +36,16 @@ interface IGuildGuild {
   applications: string[];
   deputies: string[];
   showAbexTab: boolean;
+  abexAwayTimeLimit: string;
+  abexFarmLimit: number;
+  abexTilesT1Limit: number;
+  abexTilesT2Limit: number;
+  abexTilesT3Limit: number;
+  abexTilesT4Limit: number;
+  abexTilesT5Limit: number;
+  abexTilesT6Limit: number;
+  abexTilesT7Limit: number;
+  abexTilesT8Limit: number;
 }
 
 interface IGuildValues {
@@ -50,6 +70,16 @@ export const defaultGuildValues: IGuildGuild = {
   deputies: [],
   applications: [],
   showAbexTab: false,
+  abexAwayTimeLimit: "24:00",
+  abexFarmLimit: 10000,
+  abexTilesT1Limit: 0,
+  abexTilesT2Limit: 0,
+  abexTilesT3Limit: 0,
+  abexTilesT4Limit: 0,
+  abexTilesT5Limit: 0,
+  abexTilesT6Limit: 0,
+  abexTilesT7Limit: 0,
+  abexTilesT8Limit: 0,
 };
 
 export default React.createContext<IGuildContext>({
@@ -68,6 +98,16 @@ export default React.createContext<IGuildContext>({
     setShowAbexTab: () => {},
     setName: () => {},
     giveOwnership: () => {},
+    setAbexAwayTimeLimit: () => {},
+    setAbexFarmLimit: () => {},
+    setAbexTilesT1Limit: () => {},
+    setAbexTilesT2Limit: () => {},
+    setAbexTilesT3Limit: () => {},
+    setAbexTilesT4Limit: () => {},
+    setAbexTilesT5Limit: () => {},
+    setAbexTilesT6Limit: () => {},
+    setAbexTilesT7Limit: () => {},
+    setAbexTilesT8Limit: () => {},
   },
   values: {
     members: [],

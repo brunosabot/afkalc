@@ -111,6 +111,87 @@ export default function useGuildSetters(guildId: string | undefined) {
     [guildCollection, guildId]
   );
 
+  const setAbexAwayTimeLimit = useCallback(
+    (value: string) =>
+      guildCollection?.doc(guildId)?.set({ abexAwayTimeLimit: value }, { merge: true }) ??
+      Promise.resolve(undefined),
+    [guildCollection, guildId]
+  );
+
+  const setAbexFarmLimit = useCallback(
+    (value: number) =>
+      guildCollection?.doc(guildId)?.set({ abexFarmLimit: value }, { merge: true }) ??
+      Promise.resolve(undefined),
+    [guildCollection, guildId]
+  );
+
+  const setAbexTilesT1Limit = useCallback(
+    (value: number) =>
+      guildCollection?.doc(guildId)?.set({ abexTilesT1Limit: value }, { merge: true }) ??
+      Promise.resolve(undefined),
+    [guildCollection, guildId]
+  );
+
+  const setAbexTilesT2Limit = useCallback(
+    (value: number) =>
+      guildCollection?.doc(guildId)?.set({ abexTilesT2Limit: value }, { merge: true }) ??
+      Promise.resolve(undefined),
+    [guildCollection, guildId]
+  );
+
+  const setAbexTilesT3Limit = useCallback(
+    (value: number) =>
+      guildCollection?.doc(guildId)?.set({ abexTilesT3Limit: value }, { merge: true }) ??
+      Promise.resolve(undefined),
+    [guildCollection, guildId]
+  );
+
+  const setAbexTilesT4Limit = useCallback(
+    (value: number) =>
+      guildCollection?.doc(guildId)?.set({ abexTilesT4Limit: value }, { merge: true }) ??
+      Promise.resolve(undefined),
+    [guildCollection, guildId]
+  );
+
+  const setAbexTilesT5Limit = useCallback(
+    (value: number) =>
+      guildCollection?.doc(guildId)?.set({ abexTilesT5Limit: value }, { merge: true }) ??
+      Promise.resolve(undefined),
+    [guildCollection, guildId]
+  );
+
+  const setAbexTilesT6Limit = useCallback(
+    (value: number) =>
+      guildCollection?.doc(guildId)?.set({ abexTilesT6Limit: value }, { merge: true }) ??
+      Promise.resolve(undefined),
+    [guildCollection, guildId]
+  );
+
+  const setAbexTilesT7Limit = useCallback(
+    (value: number) =>
+      guildCollection?.doc(guildId)?.set({ abexTilesT7Limit: value }, { merge: true }) ??
+      Promise.resolve(undefined),
+    [guildCollection, guildId]
+  );
+
+  const setAbexTilesT8Limit = useCallback(
+    (value: number) =>
+      guildCollection?.doc(guildId)?.set({ abexTilesT8Limit: value }, { merge: true }) ??
+      Promise.resolve(undefined),
+    [guildCollection, guildId]
+  );
+
+  // : () => {},
+  // : () => {},
+  // : () => {},
+  // : () => {},
+  // : () => {},
+  // : () => {},
+  // : () => {},
+  // : () => {},
+  // : () => {},
+  // : () => {},
+
   return {
     joinGuild,
     cancelJoinGuild,
@@ -125,5 +206,15 @@ export default function useGuildSetters(guildId: string | undefined) {
     setShowAbexTab,
     setName,
     giveOwnership,
+    setAbexAwayTimeLimit,
+    setAbexFarmLimit,
+    setAbexTilesT1Limit,
+    setAbexTilesT2Limit,
+    setAbexTilesT3Limit,
+    setAbexTilesT4Limit,
+    setAbexTilesT5Limit,
+    setAbexTilesT6Limit,
+    setAbexTilesT7Limit,
+    setAbexTilesT8Limit,
   };
 }

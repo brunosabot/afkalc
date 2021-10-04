@@ -12,3 +12,6 @@
   font-size: 0.85em;
   margin-top: 4px;
 }
+.Overload {
+  color: var(--error-text-color);
+}
