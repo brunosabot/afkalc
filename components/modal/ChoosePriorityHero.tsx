@@ -1,15 +1,15 @@
-import { useTranslation } from "next-i18next";
 import React from "react";
-import ascendLevels from "../../data/heroAscensionLevel.json";
 import heroes from "../../data/heroes.json";
 import { getAscend } from "../../lib/hero";
 import ICharacter from "../../types/ICharacter";
 import { IFirebasePriorityListHero } from "../providers/types/IFirebasePriorityList";
 import Character from "../ui/afk/Character";
 import CharacterGrid from "../ui/CharacterGrid";
-import InputField from "../ui/InputField";
-import SelectField from "../ui/SelectField";
 import styles from "./ChoosePriorityHero.module.css";
+import AscendForm from "./components/ui/AscendForm";
+import EngraveForm from "./components/ui/EngraveForm";
+import FiForm from "./components/ui/FiForm";
+import SiForm from "./components/ui/SiForm";
 
 interface IFactions {
   [key: string]: ICharacter[];
@@ -47,104 +47,96 @@ const ChoosePriorityHero: React.FC<Props> = ({
   hero = 0,
   engrave = 0,
   onSelect,
-}) => {
-  const { t } = useTranslation("common");
+}) => (
+  <>
+    <div className={styles.InputWrapper}>
+      <AscendForm
+        ascend={ascend}
+        engrave={engrave}
+        fi={fi}
+        hero={hero}
+        si={si}
+        onChange={(value) =>
+          onSelect({
+            hero,
+            fi,
+            ascend: getAscend(value, si, fi, engrave),
+            engrave,
+            si,
+          })
+        }
+      />
+      <SiForm
+        ascend={ascend}
+        engrave={engrave}
+        fi={fi}
+        hero={hero}
+        si={si}
+        onChange={(siValue) =>
+          onSelect({
+            hero,
+            fi,
+            ascend: getAscend(ascend, siValue, fi, engrave),
+            engrave,
+            si: siValue,
+          })
+        }
+      />
+      <FiForm
+        ascend={ascend}
+        engrave={engrave}
+        fi={fi}
+        hero={hero}
+        si={si}
+        onChange={(fiValue) =>
+          onSelect({
+            hero,
+            fi: fiValue,
+            ascend: getAscend(ascend, si, fiValue, engrave),
+            engrave,
+            si,
+          })
+        }
+      />
+      <EngraveForm
+        ascend={ascend}
+        engrave={engrave}
+        fi={fi}
+        hero={hero}
+        si={si}
+        onChange={(value) =>
+          onSelect({
+            hero,
+            fi,
+            ascend: getAscend(ascend, si, fi, value),
+            engrave: value || 0,
+            si,
+          })
+        }
+      />
+    </div>
 
-  return (
-    <>
-      <div className={styles.InputWrapper}>
-        <InputField
-          style={{ width: "60px" }}
-          small
-          name="si"
-          label={t(`concept.si`)}
-          value={si > 0 ? si : 0}
-          onChange={(value) =>
-            onSelect({
-              hero,
-              fi,
-              ascend: getAscend(ascend, parseInt(value, 10), fi, engrave),
-              engrave,
-              si: parseInt(value, 10) || 0,
-            })
-          }
-        />
-        <InputField
-          style={{ width: "60px" }}
-          small
-          name="fi"
-          label={t(`concept.fi`)}
-          value={fi}
-          onChange={(value) =>
-            onSelect({
-              hero,
-              fi: parseInt(value, 10) || 0,
-              ascend: getAscend(ascend, si, parseInt(value, 10), engrave),
-              engrave,
-              si,
-            })
-          }
-        />
-        <SelectField
-          values={ascendLevels.map((level) => ({
-            key: `${level.key}`,
-            label: t(`ascension-${level.name}`),
-          }))}
-          style={{ width: "110px" }}
-          small
-          name="ascend"
-          label={t(`concept.ascend`)}
-          value={ascend}
-          onChange={(value) =>
-            onSelect({
-              hero,
-              fi,
-              ascend: getAscend(parseInt(value, 10), si, fi, engrave),
-              engrave,
-              si,
-            })
-          }
-        />
-        <InputField
-          style={{ width: "60px" }}
-          small
-          name="engrave"
-          label={t(`concept.engrave`)}
-          value={engrave}
-          onChange={(value) =>
-            onSelect({
-              hero,
-              fi,
-              ascend: getAscend(ascend, si, fi, parseInt(value, 10)),
-              engrave: parseInt(value, 10) || 0,
-              si,
-            })
-          }
-        />
-      </div>
-
-      {Object.keys(factions).map((faction) => (
-        <CharacterGrid key={faction}>
-          {factions[faction].map(({ id, name }) => (
-            <Character
-              key={id}
-              name={name}
-              onClick={() =>
-                onSelect({
-                  hero: id,
-                  fi,
-                  ascend,
-                  engrave,
-                  si,
-                })
-              }
-              highlight={id === hero}
-            />
-          ))}
-        </CharacterGrid>
-      ))}
-    </>
-  );
-};
+    {Object.keys(factions).map((faction) => (
+      <CharacterGrid key={faction}>
+        {factions[faction].map(({ id, name }) => (
+          <Character
+            key={id}
+            name={name}
+            onClick={() =>
+              onSelect({
+                hero: id,
+                fi,
+                ascend,
+                engrave,
+                si,
+              })
+            }
+            highlight={id === hero}
+          />
+        ))}
+      </CharacterGrid>
+    ))}
+  </>
+);
 
 export default ChoosePriorityHero;
