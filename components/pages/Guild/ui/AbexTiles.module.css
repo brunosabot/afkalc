@@ -26,3 +26,11 @@
 .EssenceCount svg {
   height: 18px;
 }
+
+.Overload {
+  color: var(--error-text-color);
+}
+.OverloadLevel {
+  background-color: var(--error-background-color);
+  color: #000;
+}

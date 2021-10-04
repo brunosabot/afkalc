@@ -1,0 +1,12 @@
+.Tiles {
+  box-sizing: border-box;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  padding: 16px;
+}
+.Tiles > * {
+  padding: 0;
+  width: calc(25% - 12px);
+}

@@ -1,4 +1,5 @@
 import React from "react";
+import CardAbex from "./CardAbex";
 import CardConfiguration from "./CardConfiguration";
 import CardDanger from "./CardDanger";
 import CardDeputies from "./CardDeputies";
@@ -11,8 +12,9 @@ interface IProps {
 const GuildParams: React.FC<IProps> = () => (
   <>
     <CardCampaign />
-    <CardDeputies />
     <CardConfiguration />
+    <CardAbex />
+    <CardDeputies />
     <CardDanger />
   </>
 );
