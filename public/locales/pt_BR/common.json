@@ -29,7 +29,12 @@
   "spendings": "Custos",
   "sponsors": "Patrocinadores",
   "add": "Adicionar",
+  "has-dimensional-key": "Tem uma chave dimensional",
   "menu": {
+    "category-box": "Caixa",
+    "category-abex": "Expedição Abissal",
+    "category-calc": "Ferramentas de cálculo",
+    "category-misc": "Diversos",
     "home": "Início",
     "signature-item": "Item de Assinatura",
     "elite-summon": "Invocação Elite",
@@ -40,10 +45,10 @@
     "item-cost": "Custo do Item",
     "priority-list": "Lista de Prioridades",
     "credit": "Créditos",
-    "abex-relic": "Relíquias da Expedição Abissal",
+    "abex-relic": "Cidades e Blocos",
     "abex-relic-sell": "Relíquias para vender",
     "logout": "Sair",
-    "settings": "Configurações",
+    "settings": "Configurações & Privacidade",
     "guild": "Guilda",
     "donate": "Doar",
     "short-loot": "Saque",
@@ -67,7 +72,8 @@
   },
   "improvment": {
     "t1": "T1",
-    "t2": "T2"
+    "t2": "T2",
+    "t3": "T3"
   },
   "duration": {
     "2-hours": "2 Horas",
@@ -131,7 +137,9 @@
     "t1-stone": "Pedra T1",
     "t2-stone": "Pedra T2",
     "twisted-essence": "Essência Retorcida",
-    "wilder-emblem": "Emblema de Selvagens"
+    "wilder-emblem": "Emblema de Selvagens",
+    "elemental-shard": "Fragmento Elemental",
+    "elemental-core": "Núcleo Elemental"
   },
   "artifact": {
     "grace": "Graça de Dura",
@@ -143,7 +151,7 @@
     "conviction": "Convicção de Dura",
     "barricade": "A Barricada",
     "waistband": "Cinto da Resiliência",
-    "chaosbringer": "Criador do Caos",
+    "chaosbringer": "Criador de Caos",
     "carnage": "Carnificina",
     "windbinder": "Magia dos Ventos",
     "warden": "Guardião do Arcano",
@@ -151,11 +159,16 @@
     "seraphictide": "Maré Etérea",
     "shroud": "Sudário Verdejante",
     "verdantlongbow": "Arco Verdejante",
-    "pauldronofburningfury": "Brafoneira da Fúria Ardente"
+    "pauldronofburningfury": "Brafoneira da Fúria Ardente",
+    "lifeslimit": "Limite de vida",
+    "wingedwarden": "Guardião Alado",
+    "theoceanicstrings": "Cordas Oceânicas"
   },
   "concept": {
     "si": "SI",
+    "siUnlocked": "SI desbloqueado",
     "fi": "MOB",
-    "ascend": "Ascensão"
+    "ascend": "Ascensão",
+    "engrave": "Engrave"
   }
 }
