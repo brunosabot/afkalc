@@ -12,6 +12,7 @@ import CharacterTiersList from "../../../../components/pages/Guild/ui/CharacterT
 import TiersListItem from "../../../../components/pages/Guild/ui/TiersListItem";
 import GuildContext from "../../../../components/providers/GuildContext";
 import IFirebasePriorityList from "../../../../components/providers/types/IFirebasePriorityList";
+import IFirebaseProfile from "../../../../components/providers/types/IFirebaseProfile";
 import Card from "../../../../components/ui/card/Card";
 import CardTitle from "../../../../components/ui/card/CardTitle";
 import heroes from "../../../../data/heroes.json";
@@ -69,6 +70,8 @@ const TiersList: React.FC<IProps> = () => {
         <div style={{ display: "flex", gap: "16px", padding: "16px", flexWrap: "wrap" }}>
           {result.data.heroes.map((hero) => {
             let totalOkCount = 0;
+            const koPlayers: IFirebaseProfile[] = [];
+            const okPlayers: IFirebaseProfile[] = [];
 
             const list = result.data;
 
@@ -88,6 +91,9 @@ const TiersList: React.FC<IProps> = () => {
 
               if (isDone) {
                 totalOkCount += 1;
+                okPlayers.push(member);
+              } else if (member.playerName) {
+                koPlayers.push(member);
               }
             });
 
@@ -95,6 +101,8 @@ const TiersList: React.FC<IProps> = () => {
               <CharacterTiersList
                 hero={hero}
                 percentage={(100 * totalOkCount) / guildValues.members.length}
+                koPlayers={koPlayers}
+                okPlayers={okPlayers}
               />
             );
           })}

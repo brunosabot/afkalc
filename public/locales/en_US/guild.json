@@ -32,6 +32,8 @@
   "confirm-transfer-ownership": "Are you sure you want to transfer the ownership?",
   "title-abex": "Abyssal Expedition",
   "label-never": "never",
+  "tiers-list-ko-players": "Players that does not validate the hero",
+  "tiers-list-ok-players": "Players that validates the hero",
   "label-away-time-limit": "Away time limit (hh:mm)",
   "label-farm-limit": "Farm limit",
   "label-tiles-t1-limit": "T1 limit",
