@@ -9,6 +9,7 @@ import CardAction from "../../../ui/card/CardAction";
 import CardActions from "../../../ui/card/CardActions";
 import CardHelp from "../../../ui/card/CardHelp";
 import CardTitle from "../../../ui/card/CardTitle";
+import CardWarn from "../../../ui/card/CardWarn";
 import useDuplicateTreeList from "../hooks/useDuplicateTreeList";
 import CheckedButton from "./CheckedButton";
 import FavoriteTreeButton from "./FavoriteTreeButton";
@@ -21,16 +22,17 @@ interface IProps {
 
 const TreeViewer: React.FC<IProps> = ({ listId, result }) => {
   const { values } = useContext(ProfileContext);
-  const [showChecked, setShowChecked] = useState<boolean>(true);
+  const [showChecked, setShowChecked] = useState<boolean>(false);
   const { t } = useTranslation("priority-list");
   const onDuplicateList = useDuplicateTreeList(result);
 
   const listSteps = result.steps.filter((step) => step.heroClass);
   const title = result?.title ?? t("no-name");
 
-  const lastUpdate = useMemo(() => dayjs(new Date(result?.treeListLastUpdate)).fromNow(), [
-    result?.treeListLastUpdate,
-  ]);
+  const lastUpdate = useMemo(
+    () => dayjs(new Date(result?.treeListLastUpdate)).fromNow(),
+    [result?.treeListLastUpdate]
+  );
 
   return (
     <>
@@ -51,6 +53,9 @@ const TreeViewer: React.FC<IProps> = ({ listId, result }) => {
             <CardHelp>{`${t("last-update")} ${lastUpdate}`}</CardHelp>
           </div>
         ) : null}
+
+        {showChecked ? null : <CardWarn>{t("checked-items-hidden")}</CardWarn>}
+
         {listSteps.map((step, index) => (
           <>
             <TreeLineViewer

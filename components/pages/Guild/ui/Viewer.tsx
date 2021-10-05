@@ -11,6 +11,7 @@ import IFirebaseProfile from "../../../providers/types/IFirebaseProfile";
 import Card from "../../../ui/card/Card";
 import CardHelp from "../../../ui/card/CardHelp";
 import CardTitle from "../../../ui/card/CardTitle";
+import CardWarn from "../../../ui/card/CardWarn";
 import useSetLevel from "../../TiersList/hooks/useSetLevel";
 import CheckedButton from "../../TiersList/ui/CheckedButton";
 import HeroLineViewer from "../../TiersList/ui/HeroLineViewer";
@@ -21,7 +22,7 @@ interface IProps {
 }
 
 const Viewer: React.FC<IProps> = ({ listId, result }) => {
-  const [showChecked, setShowChecked] = useState<boolean>(true);
+  const [showChecked, setShowChecked] = useState<boolean>(false);
   const router = useRouter();
   const heroDocument = useFirestoreDocumentReference(`profile/${router.query.member}`);
   const heroValues = useFirestoreDocument<IFirebaseProfile>(heroDocument);
@@ -61,6 +62,8 @@ const Viewer: React.FC<IProps> = ({ listId, result }) => {
             <CardHelp>{`${t("last-update")} ${lastUpdate}`}</CardHelp>
           </div>
         ) : null}
+
+        {showChecked ? null : <CardWarn>{t("checked-items-hidden")}</CardWarn>}
 
         {listHeroes.map((hero, index) => (
           <HeroLineViewer
