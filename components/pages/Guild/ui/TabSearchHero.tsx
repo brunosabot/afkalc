@@ -96,14 +96,16 @@ const TabSearchHero: React.FC<IProps> = ({ onSearch }) => {
             isOwner={values.guild.ownerId === member.id}
             isDeputy={(values.guild.deputies || []).includes(member.id ?? "")}
           >
-            <Character
-              id={heroes[0].hero}
-              siLevel={member.heroes?.[heroes[0].hero]?.si}
-              ascendLevel={member.heroes?.[heroes[0].hero]?.ascend}
-              fiLevel={member.heroes?.[heroes[0].hero]?.fi}
-              engraveLevel={member.heroes?.[heroes[0].hero]?.engrave}
-              disabled={member.heroes?.[heroes[0].hero]?.ascend === undefined}
-            />
+            {heroes.map((hero) => (
+              <Character
+                id={hero.hero}
+                siLevel={member.heroes?.[hero.hero]?.si}
+                ascendLevel={member.heroes?.[hero.hero]?.ascend}
+                fiLevel={member.heroes?.[hero.hero]?.fi}
+                engraveLevel={member.heroes?.[hero.hero]?.engrave}
+                disabled={member.heroes?.[hero.hero]?.ascend === undefined}
+              />
+            ))}
           </SearchListItem>
         );
       })}
