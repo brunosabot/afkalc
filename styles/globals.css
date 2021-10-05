@@ -38,6 +38,7 @@ body {
   --success-background-color: #7c7;
   --error-background-color: #f77;
   --help-background-color: rgba(0, 127, 255, 0.2);
+  --warn-background-color: rgba(247, 192, 43, 0.2);
   --like-color: rgb(224, 36, 94);
   --active-color: #00a050;
   --list-border: rgba(0, 0, 0, 0.1);

@@ -12,6 +12,7 @@ import CardAction from "../../../ui/card/CardAction";
 import CardActions from "../../../ui/card/CardActions";
 import CardHelp from "../../../ui/card/CardHelp";
 import CardTitle from "../../../ui/card/CardTitle";
+import CardWarn from "../../../ui/card/CardWarn";
 import useDuplicateList from "../hooks/useDuplicateList";
 import useSetLevel from "../hooks/useSetLevel";
 import CheckedButton from "./CheckedButton";
@@ -25,7 +26,7 @@ interface IProps {
 
 const Viewer: React.FC<IProps> = ({ listId, result }) => {
   const router = useRouter();
-  const [showChecked, setShowChecked] = useState<boolean>(true);
+  const [showChecked, setShowChecked] = useState<boolean>(false);
   const heroDocument = useFirestoreDocumentReference(`profile/%ID%`);
   const { values } = useContext(ProfileContext);
 
@@ -68,6 +69,8 @@ const Viewer: React.FC<IProps> = ({ listId, result }) => {
             <CardHelp>{`${t("last-update")} ${lastUpdate}`}</CardHelp>
           </div>
         ) : null}
+
+        {showChecked ? null : <CardWarn>{t("checked-items-hidden")}</CardWarn>}
 
         {listHeroes.map((hero, index) => (
           <HeroLineViewer
