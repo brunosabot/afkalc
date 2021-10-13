@@ -144,6 +144,7 @@ const TiersList: React.FC<IProps> = () => {
             <TiersListItem
               href={`/guild/tiers-list/${id}/${member.id}`}
               name={member.playerName}
+              lastUpdate={member.heroesLastUpdate}
               percentage={(100 * (list.heroes.length - totalKoCount)) / list.heroes.length}
               heroName={typedHeroes.find((hero) => hero.id === firstKo)?.name ?? ""}
             />

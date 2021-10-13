@@ -27,6 +27,8 @@
   "label-moved": "Lists have moved. Find your link below",
   "label-moved-no-list": "The list has not been moved yet. Please contact the creator",
   "last-update": "Last update:",
+  "last-list-update": "Last list update:",
+  "last-heroes-update": "Last heroes update:",
   "label-add-tiers-list": "New hero list",
   "label-add-elder-tree-list": "New elder tree list",
   "level": "Level",

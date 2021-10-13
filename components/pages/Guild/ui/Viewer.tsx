@@ -46,6 +46,10 @@ const Viewer: React.FC<IProps> = ({ listId, result }) => {
     () => dayjs(new Date(result?.priorityListLastUpdate)).fromNow(),
     [result?.priorityListLastUpdate]
   );
+  const lastUpdateHeroes = useMemo(
+    () => dayjs(new Date(heroValues?.data?.heroesLastUpdate ?? 0)).fromNow(),
+    [heroValues?.data?.heroesLastUpdate]
+  );
 
   return (
     <>
@@ -59,7 +63,10 @@ const Viewer: React.FC<IProps> = ({ listId, result }) => {
 
         {result?.priorityListLastUpdate !== "" ? (
           <div>
-            <CardHelp>{`${t("last-update")} ${lastUpdate}`}</CardHelp>
+            <CardHelp>
+              <div>{`${t("last-list-update")} ${lastUpdate}`}</div>
+              <div>{`${t("last-heroes-update")} ${lastUpdateHeroes}`}</div>
+            </CardHelp>
           </div>
         ) : null}
 
