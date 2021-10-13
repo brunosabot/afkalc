@@ -1,13 +1,18 @@
 import { useTranslation } from "next-i18next";
 import React, { useState } from "react";
 import ascendLevels from "../../../../data/heroAscensionLevel.json";
+import heroesJson from "../../../../data/heroes.json";
+import ICharacter from "../../../../types/ICharacter";
 import CheckboxField from "../../../ui/CheckboxField";
+import InputField from "../../../ui/InputField";
 import ClassFilter from "./ClassFilter";
 import FactionFilter from "./FactionFilter";
 import InputFilter from "./InputFilter";
 import RoleFilter from "./RoleFilter";
 import SelectFilter from "./SelectFilter";
 import TypeFilter from "./TypeFilter";
+
+const typedHeroes: ICharacter[] = heroesJson as ICharacter[];
 
 interface IProps {
   state: State;
@@ -20,6 +25,7 @@ interface Action {
 }
 
 interface State {
+  name: string;
   type: string;
   class: string;
   role: string;
@@ -48,6 +54,20 @@ const Filters: React.FC<IProps> = ({ state, dispatch }) => {
       />
       {showFilter ? (
         <>
+          <InputField
+            name="name"
+            label={t("label-name-filter")}
+            value={state.name}
+            onChange={(value) => dispatch({ type: "name", value })}
+            list="heroes"
+          />
+          <datalist id="heroes">
+            {typedHeroes.map((hero) => (
+              <option key={hero.id} value={hero.name}>
+                {hero.name}
+              </option>
+            ))}
+          </datalist>
           <FactionFilter
             filter={state.faction}
             setFilter={(value) => dispatch({ type: "faction", value })}
