@@ -1,0 +1,15 @@
+{
+  "abex-relic-sell-desc": "Calculadora para vender reliquias",
+  "confirm-reset-box": "Esto borrará todos tus datos existentes, ¿deseas continuar?",
+  "reset-box": "Reiniciar todo",
+  "help": "Introduce las reliquias que tienes desbloqueadas, las que quieres desbloquear y las que tengas en tu inventario. Una indicación aparecerá informándote de las reliquias que no necesitas y que puedes vender",
+  "label-goal": "Objetivo",
+  "label-current": "Actualmente",
+  "label-inventory": "Inventario",
+  "elevation-level-0": "Ninguno",
+  "elevation-level-1": "Común",
+  "elevation-level-2": "Raro",
+  "elevation-level-3": "Élite",
+  "elevation-level-4": "Legendario",
+  "elevation-level-5": "Mítico"
+}

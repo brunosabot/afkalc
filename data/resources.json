@@ -60,6 +60,7 @@
   { "name": "elite-soulstone", "cost": 30, "image": "/loot/elite-soulstone.jpg" },
   { "name": "rare-faction-card", "cost": 360, "image": "/loot/rare-faction-card.jpg" },
   { "name": "scroll", "cost": 270, "image": "/loot/scroll.jpg" },
+  { "name": "faction-scroll", "cost": 450, "image": "/loot/draw_ticket_special.jpg" },
   { "name": "stargazer", "cost": 500, "image": "/loot/stargazer.jpg" },
   { "name": "crude", "image": "/loot/crude.jpg" },
   { "name": "common-gear", "image": "/loot/common-gear.jpg" },

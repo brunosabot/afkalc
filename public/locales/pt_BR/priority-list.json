@@ -29,5 +29,6 @@
   "last-update": "Última atualização:",
   "label-add-tiers-list": "Nova lista de heróis",
   "label-add-elder-tree-list": "Nova lista de Árvore Anciã",
-  "level": "Nível"
+  "level": "Nível",
+  "checked-items-hidden": "Os itens completados estão ocultos. Clique na caixa de seleção para mostrar todos"
 }

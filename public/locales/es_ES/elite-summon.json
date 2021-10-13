@@ -1,0 +1,13 @@
+{
+  "help": "Esta herramienta sirve para darte una estimación de cuántos diamantes necesitarás para obtener suficientes copias de héroe para obtener un héroe ascendido",
+  "current-count-label": "Introduce el número actual de héroes:",
+  "current-elite": "Héroes élite que tienes",
+  "current-elite-p": "Héroes élite+ que tienes",
+  "current-legendary": "Héroes legendarios que tienes",
+  "current-legendary-p": "Héroes legendarios+ que tienes",
+  "current-mythic": "Héroes míticos que tienes",
+  "current-mythic-p": "Héroes míticos+ que tienes",
+  "required-count-label": "Para tener suficientes copias para ascender un héroe necesitas:",
+  "required-nothing": "¡Nada, estás listo!",
+  "required-count": "≈ {{diams}}"
+}
