@@ -29,5 +29,9 @@
   "label-another-character": "Ajouter un autre héros",
   "label-per-hour": "/h",
   "label-ownership-name": "Donner le rôle de chef",
-  "confirm-transfer-ownership": "Êtes-vous sûr de vouloir transférer le rôle de chef ?"
+  "confirm-transfer-ownership": "Êtes-vous sûr de vouloir transférer le rôle de chef ?",
+  "title-join-specific-guild": "Rejoindre {{name}}",
+  "label-guild-leader": "Chef de guilde",
+  "label-member-count": "Nombre de membres",
+  "label-join-guild": "Rejoindre la guilde"
 }

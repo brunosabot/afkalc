@@ -1,5 +1,6 @@
 {
   "welcome": "Welcome on Afkalc, the calculation tool for AFK Arena",
+  "label-copied": "Link copied",
   "require-login": "You must log in to access this feature",
   "credit-desc": "For their help in data collection, providing great content or for the app development, thanks to:",
   "temporary-account": "You are logged as a guest. Your changes will only be available temporary.",
