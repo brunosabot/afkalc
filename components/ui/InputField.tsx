@@ -12,6 +12,7 @@ interface IProps {
   style?: React.CSSProperties;
   small?: boolean;
   name: string;
+  list?: string;
   autoFocus?: boolean;
   inputMode?: "numeric" | undefined;
 }
@@ -28,6 +29,7 @@ const InputField: React.FC<IProps> = ({
   maxLength = undefined,
   autoFocus = undefined,
   inputMode = undefined,
+  list = undefined,
   name,
 }) => {
   const refId = useRef(`input-field_${name}`);
@@ -71,6 +73,7 @@ const InputField: React.FC<IProps> = ({
         style={style}
         onChange={onChangeLocal}
         inputMode={inputMode}
+        list={list}
         // eslint-disable-next-line jsx-a11y/no-autofocus
         autoFocus={autoFocus}
       />

@@ -6,6 +6,7 @@ interface Action {
 }
 
 export interface State {
+  name: string;
   type: string;
   class: string;
   role: string;
@@ -21,6 +22,7 @@ export interface State {
 }
 
 const initialState = {
+  name: "",
   type: "",
   class: "",
   role: "",
@@ -37,6 +39,8 @@ const initialState = {
 
 function reducer(state: State, action: Action): State {
   switch (action.type) {
+    case "name":
+      return { ...state, name: action.value };
     case "type":
       return { ...state, type: action.value };
     case "class":

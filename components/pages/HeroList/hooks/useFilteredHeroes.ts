@@ -66,6 +66,9 @@ export default function useFilteredHeroes(
           link: getValue(c.id, "link"),
           linkkey: getValue(c.id, "linkkey"),
         }))
+        .filter(
+          (c) => filters.name === "" || c.name.toLowerCase().includes(filters.name.toLowerCase())
+        )
         .filter((c) => filters.type === "" || c.type === filters.type)
         .filter((c) => filters.class === "" || c.class === filters.class)
         .filter((c) => filters.role === "" || c.role === filters.role)
@@ -90,6 +93,7 @@ export default function useFilteredHeroes(
     [
       heroes,
       getValue,
+      filters.name,
       filters.type,
       filters.class,
       filters.role,
