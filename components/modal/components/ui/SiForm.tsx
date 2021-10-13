@@ -64,7 +64,7 @@ const SiForm: React.FC<Props> = ({ hero, si, fi, ascend, engrave, onChange }) =>
           disabled={si === -1}
           onChange={(value) => onChange(parseInt(value, 10))}
         />
-        <FastButtons values={isChad ? siChad : si4f} disabled={si === -1} onClick={onChange} />
+        <FastButtons values={isChad ? siChad : si4f} onClick={onChange} />
       </div>
     </>
   );
