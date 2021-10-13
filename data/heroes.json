@@ -1003,5 +1003,15 @@
     "image": "/heroes/LDV.jpg",
     "faction": "dimensionals",
     "usage": []
+  },
+  {
+    "name": "Mishka",
+    "id": 95,
+    "type": "strength",
+    "class": "tank",
+    "role": "control",
+    "image": "/heroes/BDruid.jpg",
+    "faction": "wilders",
+    "usage": []
   }
 ]
