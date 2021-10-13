@@ -23,5 +23,6 @@
   { "id": 20, "name": "seraphictide", "image": "/artifacts/artifact_sup_orb.jpg" },
   { "id": 21, "name": "theoceanicstrings", "image": "/artifacts/artifact_sup_pipa.jpg" },
   { "id": 12, "name": "shroud", "image": "/artifacts/artifact_ranger_cloak.jpg" },
-  { "id": 16, "name": "verdantlongbow", "image": "/artifacts/artifact_ranger_arch.jpg" }
+  { "id": 16, "name": "verdantlongbow", "image": "/artifacts/artifact_ranger_arch.jpg" },
+  { "id": 22, "name": "dualdivinity", "image": "/artifacts/artifact_ranger_sword.jpg" }
 ]
