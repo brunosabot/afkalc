@@ -7,3 +7,24 @@
   height: 40px;
   width: 145px;
 }
+.PatreonWrapper {
+  margin: 0 16px 16px 16px;
+  text-align: center;
+}
+.Patreon {
+  align-items: center;
+  background-color: rgb(255, 66, 77);
+  border-radius: 17px;
+  box-sizing: border-box;
+  color: #fff;
+  display: inline-flex;
+  fill: #fff;
+  font-size: 14px;
+  font-weight: 500;
+  gap: 8px;
+  height: 34px;
+  justify-content: center;
+  margin: auto;
+  padding: 0 16px;
+  text-decoration: none;
+}
