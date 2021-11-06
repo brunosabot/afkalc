@@ -1013,5 +1013,15 @@
     "image": "/heroes/BDruid.jpg",
     "faction": "wilders",
     "usage": []
+  },
+  {
+    "name": "Haelus",
+    "id": 96,
+    "type": "intelligence",
+    "class": "support",
+    "role": "buffer",
+    "image": "/heroes/Artisan.jpg",
+    "faction": "celestials",
+    "usage": []
   }
 ]
