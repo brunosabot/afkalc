@@ -1023,5 +1023,15 @@
     "image": "/heroes/Artisan.jpg",
     "faction": "celestials",
     "usage": []
+  },
+  {
+    "name": "Treznor",
+    "id": 97,
+    "type": "strength",
+    "class": "ranger",
+    "role": "control",
+    "image": "/heroes/CKnight.jpg",
+    "faction": "graveborns",
+    "usage": []
   }
 ]
