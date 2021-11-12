@@ -9,7 +9,7 @@ interface Props {
   [key: string]: never;
 }
 
-const Back: React.FC<Props> = () => {
+const Back: React.FC<Props> = function Back() {
   const { t } = useTranslation("priority-list");
 
   return (

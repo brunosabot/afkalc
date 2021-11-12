@@ -8,7 +8,7 @@ interface IProps {
   [key: string]: never;
 }
 
-const ShareBanner: React.FC<IProps> = () => {
+const ShareBanner: React.FC<IProps> = function ShareBanner() {
   const { t } = useTranslation("hero-list");
   const {
     values: { userId },

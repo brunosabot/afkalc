@@ -9,7 +9,7 @@ interface IProps {
   [key: string]: never;
 }
 
-const ChangePasswordButton: React.FC<IProps> = () => {
+const ChangePasswordButton: React.FC<IProps> = function ChangePasswordButton() {
   const { t } = useTranslation("settings");
   const [oldPassword, setOldPassword] = useState<string>("");
   const [newPassword, setNewPassword] = useState<string>("");

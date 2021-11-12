@@ -9,7 +9,7 @@ interface IProps {
   [key: string]: never;
 }
 
-const ForgottenPassword: React.FC<IProps> = () => {
+const ForgottenPassword: React.FC<IProps> = function ForgottenPassword() {
   const { t } = useTranslation();
   const { actions } = useContext(FirebaseContext);
   const [step, setStep] = useState<number>(0);

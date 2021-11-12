@@ -10,14 +10,16 @@ interface IProps {
   icon?: string;
 }
 
-const MenuItem: React.FC<IProps> = ({ children, to, icon = undefined }) => (
-  <Link href={to}>
-    <a className={styles.Link}>
-      <Svg d={icon === undefined ? mdiCircleSmall : icon} />
+const MenuItem: React.FC<IProps> = function MenuItem({ children, to, icon = undefined }) {
+  return (
+    <Link href={to}>
+      <a className={styles.Link}>
+        <Svg d={icon === undefined ? mdiCircleSmall : icon} />
 
-      {children}
-    </a>
-  </Link>
-);
+        {children}
+      </a>
+    </Link>
+  );
+};
 
 export default MenuItem;

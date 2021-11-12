@@ -21,5 +21,6 @@
   "moved": "El formato de URL ha cambiado. Por favor, actualice sus enlaces antes de desactivar",
   "hero-list-of": "Lista de héroes de {{userName}}",
   "hero-list-of-unknown": "Lista de héroes",
-  "last-update": "Última actualizacion:"
+  "last-update": "Última actualizacion:",
+  "label-name-filter": "Buscar héroe por nombre"
 }

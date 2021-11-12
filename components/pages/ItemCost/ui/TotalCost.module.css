@@ -8,13 +8,15 @@
   font-weight: 500;
   gap: 16px;
   justify-content: center;
-  margin: 0 16px 16px 16px;
+  margin: 0 16px 16px;
   padding: 12px 0;
 }
+
 .Diamond {
   height: 30px;
   margin-right: 8px;
 }
+
 .Best {
   color: var(--success-text-color);
 }

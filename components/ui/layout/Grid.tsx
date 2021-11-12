@@ -5,6 +5,8 @@ interface IProps {
   children: React.ReactNode;
 }
 
-const Grid: React.FC<IProps> = ({ children }) => <div className={styles.Grid}>{children}</div>;
+const Grid: React.FC<IProps> = function Grid({ children }) {
+  return <div className={styles.Grid}>{children}</div>;
+};
 
 export default Grid;

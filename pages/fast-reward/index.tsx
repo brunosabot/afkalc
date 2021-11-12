@@ -25,7 +25,7 @@ interface IProps {
   [key: string]: never;
 }
 
-const FastReward: React.FC<IProps> = () => {
+const FastReward: React.FC<IProps> = function FastReward() {
   const {
     actions: { setPlayerLevel, setPlayerVipLevel, setCampaignLevel },
     values: { playerLevel, playerVipLevel, campaignLevel },

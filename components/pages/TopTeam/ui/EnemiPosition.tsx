@@ -12,7 +12,7 @@ interface Props {
   onSelect: (type: DetailType, position: number) => (value: number) => void;
 }
 
-const EnemiPosition: React.FC<Props> = ({ enemi, position, onSelect }) => {
+const EnemiPosition: React.FC<Props> = function EnemiPosition({ enemi, position, onSelect }) {
   const [showModal, setShowModal] = useState<boolean>(false);
   const { getEnemi } = useEnemi();
   const { id, name } = getEnemi(enemi) ?? { id: 0, name: "" };

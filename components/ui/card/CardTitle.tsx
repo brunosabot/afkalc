@@ -8,12 +8,14 @@ interface IProps {
   action?: React.ReactNode;
 }
 
-const CardTitle: React.FC<IProps> = ({ action = undefined, icon, children }) => (
-  <div className={`${styles.CardTitle} ${action ? styles.HasAction : ""}`}>
-    {icon ? <Svg d={icon} /> : null}
-    {children}
-    <div className={styles.Action}>{action}</div>
-  </div>
-);
+const CardTitle: React.FC<IProps> = function CardTitle({ action = undefined, icon, children }) {
+  return (
+    <div className={`${styles.CardTitle} ${action ? styles.HasAction : ""}`}>
+      {icon ? <Svg d={icon} /> : null}
+      {children}
+      <div className={styles.Action}>{action}</div>
+    </div>
+  );
+};
 
 export default CardTitle;

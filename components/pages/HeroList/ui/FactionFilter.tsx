@@ -8,13 +8,15 @@ interface IProps {
   imagePath: string;
 }
 
-const FactionFilter: React.FC<IProps> = ({ filter, setFilter, imagePath }) => (
-  <FilterButtons
-    filter={filter}
-    setFilter={setFilter}
-    imagePath={imagePath}
-    data={Object.keys(factions)}
-  />
-);
+const FactionFilter: React.FC<IProps> = function FactionFilter({ filter, setFilter, imagePath }) {
+  return (
+    <FilterButtons
+      filter={filter}
+      setFilter={setFilter}
+      imagePath={imagePath}
+      data={Object.keys(factions)}
+    />
+  );
+};
 
 export default React.memo(FactionFilter);

@@ -40,7 +40,7 @@ interface IProps {
   listId: string;
 }
 
-const Owner: React.FC<IProps> = ({ listId, result }) => {
+const Owner: React.FC<IProps> = function Owner({ listId, result }) {
   const router = useRouter();
   const {
     actions: { deleteList, setHeroes, setTitle, setRequirementValue, setRequirement },

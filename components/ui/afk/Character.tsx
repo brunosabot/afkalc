@@ -79,7 +79,7 @@ function getEngraveImageName(engrave: number | undefined) {
 /**
  * TODO: Use i18n for name
  */
-const Character: React.FC<IProps> = ({
+const Character: React.FC<IProps> = function Character({
   name,
   id,
   size = "default",
@@ -91,7 +91,7 @@ const Character: React.FC<IProps> = ({
   fiLevel = undefined,
   engraveLevel = undefined,
   artifact = undefined,
-}) => {
+}) {
   const resource = typedHeroes.find((r) => (id ? r.id === id : r.name === name));
   const activeArtifact = artifacts.find((a) => a.id === artifact);
 

@@ -11,7 +11,7 @@ interface IProps {
   [key: string]: never;
 }
 
-const TabAbex: React.FC<IProps> = () => {
+const TabAbex: React.FC<IProps> = function TabAbex() {
   const { values } = useContext(GuildContext);
   const { t } = useTranslation("guild");
 

@@ -11,7 +11,13 @@ interface IProps {
   shouldUnlock: boolean;
 }
 
-const FiField: React.FC<IProps> = ({ id, setLevel, getValue, isView, shouldUnlock = false }) => {
+const FiField: React.FC<IProps> = function FiField({
+  id,
+  setLevel,
+  getValue,
+  isView,
+  shouldUnlock = false,
+}) {
   const value = getValue(id, "fi");
 
   return (

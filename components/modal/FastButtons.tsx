@@ -7,19 +7,21 @@ interface Props {
   onClick: (value: number) => void;
 }
 
-const FastButtons: React.FC<Props> = ({ values, disabled = false, onClick }) => (
-  <div className={styles.FastButtons}>
-    {values.map(([value, label]) => (
-      <button
-        disabled={disabled}
-        type="button"
-        className={styles.FastButton}
-        onClick={() => onClick(value)}
-      >
-        {label}
-      </button>
-    ))}
-  </div>
-);
+const FastButtons: React.FC<Props> = function FastButtons({ values, disabled = false, onClick }) {
+  return (
+    <div className={styles.FastButtons}>
+      {values.map(([value, label]) => (
+        <button
+          disabled={disabled}
+          type="button"
+          className={styles.FastButton}
+          onClick={() => onClick(value)}
+        >
+          {label}
+        </button>
+      ))}
+    </div>
+  );
+};
 
 export default FastButtons;

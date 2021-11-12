@@ -11,6 +11,7 @@
   width: 24px;
   z-index: 1;
 }
+
 .HelpButton:hover {
   background-color: var(--hover-color);
 }

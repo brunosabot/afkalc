@@ -30,12 +30,12 @@ const enemies = enemiJson.reduce(
 /**
  * TODO: Use i18n for name
  */
-const Enemi: React.FC<IProps> = ({
+const Enemi: React.FC<IProps> = function Enemi({
   name,
   size = "default",
   highlight = false,
   onClick = () => {},
-}) => {
+}) {
   const resource = enemies.find((r) => r.name === name);
 
   if (resource === undefined) return null;

@@ -16,7 +16,7 @@ interface IProps {
   [key: string]: never;
 }
 
-const Guild: React.FC<IProps> = () => {
+const Guild: React.FC<IProps> = function Guild() {
   const { t } = useTranslation("guild");
   const { actions, values } = useContext(GuildContext);
 

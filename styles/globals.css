@@ -1,30 +1,30 @@
 body {
   background-color: var(--background-color);
   color: var(--text-color);
-  font-family: "Roboto", sans-serif;
+  font-family: Roboto, sans-serif;
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
   height: 100%;
   margin: 0;
 
   --background-color: #f0f0f0;
-  --overlay-color: rgba(0, 0, 0, 0.3);
-  --disabled-color: rgba(0, 0, 0, 0.1);
-  --text-color: rgba(0, 0, 0, 0.85);
-  --secondary-text-color: rgba(0, 0, 0, 0.65);
+  --overlay-color: rgb(0 0 0 / 30%);
+  --disabled-color: rgb(0 0 0 / 10%);
+  --text-color: rgb(0 0 0 / 85%);
+  --secondary-text-color: rgb(0 0 0 / 65%);
   --reverse-text-color: #fafafa;
   --reverse-accent-text-color: #f9eb88;
-  --reverse-background: rgba(0, 0, 0, 0.9);
+  --reverse-background: rgb(0 0 0 / 90%);
   --text-shadow: 1px 1px 1px #fff, -1px -1px 1px #fff, -1px 1px 1px #fff, 1px -1px 1px #fff;
-  --reverse-text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.65), -1px -1px 2px rgba(0, 0, 0, 0.65),
-    -1px 1px 2px rgba(0, 0, 0, 0.65), 1px -1px 2px rgba(0, 0, 0, 0.65);
+  --reverse-text-shadow: 1px 1px 2px rgb(0 0 0 / 65%), -1px -1px 2px rgb(0 0 0 / 65%),
+    -1px 1px 2px rgb(0 0 0 / 65%), 1px -1px 2px rgb(0 0 0 / 65%);
   --accent-color: var(--afk-legendary-color);
-  --hover-color: rgba(149, 74, 46, 0.1);
-  --focus-color: rgba(149, 74, 46, 0.3);
+  --hover-color: rgb(149 74 46 / 10%);
+  --focus-color: rgb(149 74 46 / 30%);
   --card-color: #fff;
-  --card-border-color: rgba(0, 0, 0, 0.38);
-  --card-shadow: 0 2px 3px rgba(0, 0, 0, 0.15);
-  --card-reverse-shadow: 0 -2px 3px rgba(0, 0, 0, 0.15);
+  --card-border-color: rgb(0 0 0 / 38%);
+  --card-shadow: 0 2px 3px rgb(0 0 0 / 15%);
+  --card-reverse-shadow: 0 -2px 3px rgb(0 0 0 / 15%);
   --afk-hero-shadow: 0 0 1px #000;
   --afk-ascend-color: #cbd9fe;
   --afk-elite-color: #8330e2;
@@ -37,13 +37,14 @@ body {
   --error-text-color: #a00;
   --success-background-color: #7c7;
   --error-background-color: #f77;
-  --help-background-color: rgba(0, 127, 255, 0.2);
-  --warn-background-color: rgba(247, 192, 43, 0.2);
-  --like-color: rgb(224, 36, 94);
+  --help-background-color: rgb(0 127 255 / 20%);
+  --warn-background-color: rgb(247 192 43 / 20%);
+  --like-color: rgb(224 36 94);
   --active-color: #00a050;
-  --list-border: rgba(0, 0, 0, 0.1);
+  --list-border: rgb(0 0 0 / 10%);
   --transition: all 0.15s cubic-bezier(0.4, 0, 0.6, 1);
 }
+
 body > div {
   height: 100%;
 }
@@ -51,19 +52,19 @@ body > div {
 @media (prefers-color-scheme: dark) {
   body {
     --background-color: #121212;
-    --overlay-color: rgba(0, 0, 0, 0.3);
-    --disabled-color: rgba(0, 0, 0, 0.3);
-    --text-color: rgba(255, 255, 255, 0.87);
-    --reverse-text-color: rgba(0, 0, 0, 0.85);
-    --reverse-background: rgba(200, 200, 200, 0.9);
-    --secondary-text-color: rgba(255, 255, 255, 0.6);
+    --overlay-color: rgb(0 0 0 / 30%);
+    --disabled-color: rgb(0 0 0 / 30%);
+    --text-color: rgb(255 255 255 / 87%);
+    --reverse-text-color: rgb(0 0 0 / 85%);
+    --reverse-background: rgb(200 200 200 / 90%);
+    --secondary-text-color: rgb(255 255 255 / 60%);
     --text-shadow: 1px 1px 1px #000, -1px -1px 1px #000, -1px 1px 1px #000, 1px -1px 1px #000;
-    --reverse-text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.65), -1px -1px 2px rgba(0, 0, 0, 0.65),
-      -1px 1px 2px rgba(0, 0, 0, 0.65), 1px -1px 2px rgba(0, 0, 0, 0.65);
+    --reverse-text-shadow: 1px 1px 2px rgb(0 0 0 / 65%), -1px -1px 2px rgb(0 0 0 / 65%),
+      -1px 1px 2px rgb(0 0 0 / 65%), 1px -1px 2px rgb(0 0 0 / 65%);
     --card-color: #1f1f1f;
     --card-border-color: #555;
-    --card-shadow: 0 2px 3px rgba(0, 0, 0, 0.15);
-    --list-border: rgba(255, 255, 255, 0.05);
+    --card-shadow: 0 2px 3px rgb(0 0 0 / 15%);
+    --list-border: rgb(255 255 255 / 5%);
     --error-text-color: #c00;
   }
 }
@@ -76,6 +77,7 @@ html {
   font-size: 16px;
   height: 100%;
 }
+
 a {
   color: inherit;
 }
@@ -92,7 +94,7 @@ a {
   margin: auto;
   margin-bottom: 76px;
   overflow: auto;
-  padding: 16px 16px 92px 16px;
+  padding: 16px 16px 92px;
 }
 @media (max-width: 1007px) {
   #page > * {

@@ -5,7 +5,7 @@ interface IProps {
   [key: string]: never;
 }
 
-const RedditFastReward: React.FC<IProps> = () => {
+const RedditFastReward: React.FC<IProps> = function RedditFastReward() {
   const { t } = useTranslation("common");
   return (
     <a

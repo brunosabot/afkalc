@@ -6,10 +6,12 @@ interface IProps {
   children: React.ReactNode;
 }
 
-const Preview: React.FC<IProps> = ({ onClick, children }) => (
-  <button type="button" className={styles.Preview} onClick={onClick}>
-    {children}
-  </button>
-);
+const Preview: React.FC<IProps> = function Preview({ onClick, children }) {
+  return (
+    <button type="button" className={styles.Preview} onClick={onClick}>
+      {children}
+    </button>
+  );
+};
 
 export default Preview;

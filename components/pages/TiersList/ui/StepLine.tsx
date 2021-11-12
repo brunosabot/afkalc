@@ -17,7 +17,7 @@ interface Props {
   length: number;
 }
 
-const StepLine: React.FC<Props> = ({
+const StepLine: React.FC<Props> = function StepLine({
   step,
   onSelect,
   onDelete = () => {},
@@ -25,7 +25,7 @@ const StepLine: React.FC<Props> = ({
   onDown = () => {},
   index,
   length,
-}) => {
+}) {
   const [theStep, setTheStep] = useState<IFirebaseTreeListStep>(step);
   const [showModal, setShowModal] = useState<boolean>(false);
   const { t } = useTranslation("priority-list");

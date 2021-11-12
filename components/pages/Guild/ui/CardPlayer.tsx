@@ -8,7 +8,7 @@ interface IProps {
   [key: string]: never;
 }
 
-const CardPlayer: React.FC<IProps> = () => {
+const CardPlayer: React.FC<IProps> = function CardPlayer() {
   const {
     actions: { setCampaignLevel, setPlayerName },
     values: { campaignLevel, playerName },

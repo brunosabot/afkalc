@@ -43,7 +43,12 @@ interface IProps {
   artifact: IArtifact;
 }
 
-const ShareBanner: React.FC<IProps> = ({ team = {}, si = {}, fi = {}, artifact = {} }) => {
+const ShareBanner: React.FC<IProps> = function ShareBanner({
+  team = {},
+  si = {},
+  fi = {},
+  artifact = {},
+}) {
   const { t } = useTranslation("top-team");
   const router = useRouter();
   const localePath = router.locale === router.defaultLocale ? "" : `/${router.locale}`;

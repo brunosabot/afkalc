@@ -10,6 +10,7 @@
   text-decoration: none;
   z-index: 1;
 }
+
 .ListItem::before {
   bottom: -1px;
   content: "";
@@ -20,6 +21,7 @@
   transition: var(--transition);
   z-index: -1;
 }
+
 .ListItem:hover::before {
   background-color: var(--hover-color);
 }
@@ -27,6 +29,7 @@
 .ListItem:first-child {
   border-top: 1px solid var(--list-border);
 }
+
 .ListItem > * {
   align-items: center;
   display: flex;

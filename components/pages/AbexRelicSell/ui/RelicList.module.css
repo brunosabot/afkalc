@@ -4,6 +4,7 @@
   justify-content: center;
   padding: 16px;
 }
+
 .Relics {
   display: grid;
   flex-wrap: wrap;

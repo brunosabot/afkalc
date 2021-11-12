@@ -4,9 +4,11 @@
   justify-content: space-between;
   padding: 8px 16px;
 }
+
 .Image {
   margin-right: 8px;
 }
+
 .Actions {
   flex-grow: 1;
   text-align: right;

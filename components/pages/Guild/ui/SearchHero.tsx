@@ -29,7 +29,7 @@ function getAscendName(ascend: number) {
   return ascendLevels.find((level) => level.key === ascend)?.name;
 }
 
-const SearchHero: React.FC<IProps> = ({ index, hero, onChange }) => {
+const SearchHero: React.FC<IProps> = function SearchHero({ index, hero, onChange }) {
   const { t } = useTranslation("guild");
   const [showModal, setShowModal] = useState(false);
   const { getHero } = useHero();

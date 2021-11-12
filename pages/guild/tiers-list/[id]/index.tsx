@@ -36,7 +36,7 @@ interface IProps {
   [key: string]: never;
 }
 
-const TiersList: React.FC<IProps> = () => {
+const TiersList: React.FC<IProps> = function TiersList() {
   const router = useRouter();
   const { t } = useTranslation("priority-list");
   const { values: guildValues, actions: guildActions } = useContext(GuildContext);
@@ -75,7 +75,7 @@ const TiersList: React.FC<IProps> = () => {
 
             const list = result.data;
 
-            if (list === undefined) return <></>;
+            if (list === undefined) return null;
 
             guildValues.members.forEach((member) => {
               const isHeroValidList = isValidList(list, hero, member.heroes?.[hero.hero]);
@@ -117,7 +117,7 @@ const TiersList: React.FC<IProps> = () => {
 
           const list = result.data;
 
-          if (list === undefined) return <></>;
+          if (list === undefined) return null;
 
           list.heroes.forEach((hero, i) => {
             const isHeroValidList = isValidList(list, hero, member.heroes?.[hero.hero]);

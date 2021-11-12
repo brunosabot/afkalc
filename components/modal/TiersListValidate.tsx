@@ -11,7 +11,11 @@ interface IProps {
   okPlayers: IFirebaseProfile[];
 }
 
-const TiersListValidate: React.FC<IProps> = ({ koPlayers, okPlayers, hero }) => {
+const TiersListValidate: React.FC<IProps> = function TiersListValidate({
+  koPlayers,
+  okPlayers,
+  hero,
+}) {
   const { t } = useTranslation("guild");
 
   return (

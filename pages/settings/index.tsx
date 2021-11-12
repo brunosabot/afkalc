@@ -28,7 +28,7 @@ interface IProps {
   [key: string]: never;
 }
 
-const Home: React.FC<IProps> = () => {
+const Settings: React.FC<IProps> = function Settings() {
   const { t } = useTranslation("settings");
   const { values, actions } = useContext(ProfileContext);
 
@@ -109,4 +109,4 @@ const Home: React.FC<IProps> = () => {
   );
 };
 
-export default withLayoutPublicColumn(Home);
+export default withLayoutPublicColumn(Settings);

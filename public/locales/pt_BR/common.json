@@ -39,7 +39,7 @@
     "home": "Início",
     "signature-item": "Item de Assinatura",
     "elite-summon": "Invocação Elite",
-    "loot": "Saque",
+    "loot": "Recompensas AFK",
     "hero-list": "Lista de Heróis",
     "fast-reward": "Recompensas Rápidas",
     "top-team": "Monte o Time",
@@ -47,12 +47,12 @@
     "priority-list": "Lista de Prioridades",
     "credit": "Créditos",
     "abex-relic": "Cidades e Blocos",
-    "abex-relic-sell": "Relíquias para vender",
+    "abex-relic-sell": "Relíquias",
     "logout": "Sair",
     "settings": "Configurações & Privacidade",
     "guild": "Guilda",
     "donate": "Doar",
-    "short-loot": "Saque",
+    "short-loot": "Recompensas AFK",
     "elder-tree": "Árvore Antiga",
     "short-hero-list": "Heróis",
     "short-top-team": "Times",
@@ -170,6 +170,6 @@
     "siUnlocked": "SI desbloqueado",
     "fi": "MOB",
     "ascend": "Ascensão",
-    "engrave": "Engrave"
+    "engrave": "Engraving"
   }
 }

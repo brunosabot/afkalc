@@ -24,7 +24,7 @@ interface IProps {
   listId: string;
 }
 
-const Viewer: React.FC<IProps> = ({ listId, result }) => {
+const Viewer: React.FC<IProps> = function Viewer({ listId, result }) {
   const router = useRouter();
   const [showChecked, setShowChecked] = useState<boolean>(false);
   const heroDocument = useFirestoreDocumentReference(`profile/%ID%`);
@@ -50,53 +50,51 @@ const Viewer: React.FC<IProps> = ({ listId, result }) => {
   );
 
   return (
-    <>
-      <Card>
-        <CardTitle
-          icon={mdiPlaylistCheck}
-          action={
-            <>
-              <CheckedButton showChecked={showChecked} setShowChecked={setShowChecked} />
-              <FavoriteButton title={title} listId={listId} />
-            </>
-          }
+    <Card>
+      <CardTitle
+        icon={mdiPlaylistCheck}
+        action={
+          <>
+            <CheckedButton showChecked={showChecked} setShowChecked={setShowChecked} />
+            <FavoriteButton title={title} listId={listId} />
+          </>
+        }
+      >
+        {title}
+      </CardTitle>
+
+      {result?.priorityListLastUpdate !== "" ? (
+        <div>
+          <CardHelp>{`${t("last-update")} ${lastUpdate}`}</CardHelp>
+        </div>
+      ) : null}
+
+      {showChecked ? null : <CardWarn>{t("checked-items-hidden")}</CardWarn>}
+
+      {listHeroes.map((hero, index) => (
+        <HeroLineViewer
+          key={`${hero.hero}-${hero.ascend}-${hero.fi}-${hero.si}`}
+          hero={hero}
+          setLevel={setLevel}
+          heroLevels={values.heroes[hero.hero]}
+          priorityList={result}
+          initialHeroLevels={initialHeroes[hero.hero]}
+          shouldShowChecked={showChecked}
+        />
+      ))}
+
+      <CardActions>
+        <CardAction icon={mdiContentCopy} onClick={onDuplicateList}>
+          {t("label-duplicate")}
+        </CardAction>
+        <CardAction
+          icon={mdiAccountSupervisor}
+          onClick={() => router.push(`/guild/tiers-list/${router.query.id}`)}
         >
-          {title}
-        </CardTitle>
-
-        {result?.priorityListLastUpdate !== "" ? (
-          <div>
-            <CardHelp>{`${t("last-update")} ${lastUpdate}`}</CardHelp>
-          </div>
-        ) : null}
-
-        {showChecked ? null : <CardWarn>{t("checked-items-hidden")}</CardWarn>}
-
-        {listHeroes.map((hero, index) => (
-          <HeroLineViewer
-            key={`${hero.hero}-${hero.ascend}-${hero.fi}-${hero.si}`}
-            hero={hero}
-            setLevel={setLevel}
-            heroLevels={values.heroes[hero.hero]}
-            priorityList={result}
-            initialHeroLevels={initialHeroes[hero.hero]}
-            shouldShowChecked={showChecked}
-          />
-        ))}
-
-        <CardActions>
-          <CardAction icon={mdiContentCopy} onClick={onDuplicateList}>
-            {t("label-duplicate")}
-          </CardAction>
-          <CardAction
-            icon={mdiAccountSupervisor}
-            onClick={() => router.push(`/guild/tiers-list/${router.query.id}`)}
-          >
-            {t("label-see-guild")}
-          </CardAction>
-        </CardActions>
-      </Card>
-    </>
+          {t("label-see-guild")}
+        </CardAction>
+      </CardActions>
+    </Card>
   );
 };
 

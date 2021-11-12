@@ -6,7 +6,7 @@ interface Props {
   children: React.ReactNode;
 }
 
-const ModalPortal: React.FC<Props> = ({ active, children }) => {
+const ModalPortal: React.FC<Props> = function ModalPortal({ active, children }) {
   const rootRef = useRef<HTMLElement | null>(null);
   const elRef = useRef<HTMLDivElement | null>(null);
   const [mounted, setMounted] = useState(false);

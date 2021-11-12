@@ -13,7 +13,7 @@ interface IProps {
   children: React.ReactNode;
 }
 
-const TreeListProvider: React.FC<IProps> = ({ children }) => {
+const TreeListProvider: React.FC<IProps> = function TreeListProvider({ children }) {
   const [lazy, setLazy] = useState<boolean>(true);
   const { values } = useContext(ProfileContext);
 

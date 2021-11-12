@@ -9,12 +9,18 @@ interface IProps {
   icon?: string;
 }
 
-const MenuItemExternal: React.FC<IProps> = ({ children, to, icon = undefined }) => (
-  <a className={styles.Link} href={to} target="__blank">
-    <Svg d={icon === undefined ? mdiCircleSmall : icon} />
+const MenuItemExternal: React.FC<IProps> = function MenuItemExternal({
+  children,
+  to,
+  icon = undefined,
+}) {
+  return (
+    <a className={styles.Link} href={to} target="__blank">
+      <Svg d={icon === undefined ? mdiCircleSmall : icon} />
 
-    {children}
-  </a>
-);
+      {children}
+    </a>
+  );
+};
 
 export default MenuItemExternal;

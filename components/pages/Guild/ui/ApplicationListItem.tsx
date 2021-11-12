@@ -10,12 +10,19 @@ interface IProps {
   onAccept: (id: string) => void;
 }
 
-const ApplicationListItem: React.FC<IProps> = ({ children, id, onReject, onAccept }) => (
-  <div className={styles.ApplicationListItem}>
-    <span className={styles.Name}>{children}</span>
-    <Svg d={mdiCloseThick} onClick={() => onReject(id)} />
-    <Svg d={mdiCheckBold} onClick={() => onAccept(id)} />
-  </div>
-);
+const ApplicationListItem: React.FC<IProps> = function ApplicationListItem({
+  children,
+  id,
+  onReject,
+  onAccept,
+}) {
+  return (
+    <div className={styles.ApplicationListItem}>
+      <span className={styles.Name}>{children}</span>
+      <Svg d={mdiCloseThick} onClick={() => onReject(id)} />
+      <Svg d={mdiCheckBold} onClick={() => onAccept(id)} />
+    </div>
+  );
+};
 
 export default ApplicationListItem;

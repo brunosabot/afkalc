@@ -7,11 +7,13 @@ interface Props {
   children: number;
 }
 
-const TotalCost: React.FC<Props> = ({ isBest, children }) => (
-  <div className={`${styles.TotalCost} ${isBest ? styles.Best : ""}`}>
-    <Item name="diamond" size="small" />
-    {children}
-  </div>
-);
+const TotalCost: React.FC<Props> = function TotalCost({ isBest, children }) {
+  return (
+    <div className={`${styles.TotalCost} ${isBest ? styles.Best : ""}`}>
+      <Item name="diamond" size="small" />
+      {children}
+    </div>
+  );
+};
 
 export default TotalCost;

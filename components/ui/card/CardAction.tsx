@@ -7,12 +7,14 @@ interface Props {
   icon?: string;
 }
 
-const CardAction: React.FC<Props> = ({ onClick, children, icon }) => (
-  <button type="button" className={styles.CardAction} onClick={onClick}>
-    {icon ? <Svg d={icon} /> : null}
+const CardAction: React.FC<Props> = function CardAction({ onClick, children, icon }) {
+  return (
+    <button type="button" className={styles.CardAction} onClick={onClick}>
+      {icon ? <Svg d={icon} /> : null}
 
-    {children}
-  </button>
-);
+      {children}
+    </button>
+  );
+};
 
 export default CardAction;

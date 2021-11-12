@@ -16,7 +16,7 @@ interface IProps {
   name: string;
 }
 
-const SelectField: React.FC<IProps> = ({
+const SelectField: React.FC<IProps> = function SelectField({
   name,
   label,
   value,
@@ -24,7 +24,7 @@ const SelectField: React.FC<IProps> = ({
   onChange,
   small = false,
   style = {},
-}) => {
+}) {
   const refId = useRef(`input-field_${name}`);
 
   const localValue = useMemo(() => {

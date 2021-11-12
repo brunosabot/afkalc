@@ -5,7 +5,7 @@ interface IProps {
   [key: string]: never;
 }
 
-const RedditResourceCost: React.FC<IProps> = () => {
+const RedditResourceCost: React.FC<IProps> = function RedditResourceCost() {
   const { t } = useTranslation("common");
   return (
     <a

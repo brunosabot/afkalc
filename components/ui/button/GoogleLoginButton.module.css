@@ -4,6 +4,7 @@
   padding: 16px;
   text-align: center;
 }
+
 .GoogleLoginButton {
   background: transparent;
   border: 0;
@@ -12,6 +13,7 @@
   font-size: 1em;
   padding: 0;
 }
+
 .Image {
   background: transparent;
   border: 0;

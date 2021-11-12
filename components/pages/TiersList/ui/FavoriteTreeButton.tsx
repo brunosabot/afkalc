@@ -8,7 +8,7 @@ interface IProps {
   title: string;
 }
 
-const FavoriteTreeButton: React.FC<IProps> = ({ title, listId }) => {
+const FavoriteTreeButton: React.FC<IProps> = function FavoriteTreeButton({ title, listId }) {
   const {
     actions: { setFavoriteTreeList },
     values: { favoriteTreeList },

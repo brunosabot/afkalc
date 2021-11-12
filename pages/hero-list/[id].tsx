@@ -47,7 +47,7 @@ interface IProps {
   [key: string]: never;
 }
 
-const HeroList: React.FC<IProps> = () => {
+const HeroList: React.FC<IProps> = function HeroList() {
   const { t } = useTranslation("hero-list");
   const router = useRouter();
   const { values } = useContext(ProfileContext);
@@ -89,9 +89,10 @@ const HeroList: React.FC<IProps> = () => {
     }
   }, [id, userId]);
 
-  const lastUpdate = useMemo(() => dayjs(new Date(result.data?.heroesLastUpdate ?? 0)).fromNow(), [
-    result.data?.heroesLastUpdate,
-  ]);
+  const lastUpdate = useMemo(
+    () => dayjs(new Date(result.data?.heroesLastUpdate ?? 0)).fromNow(),
+    [result.data?.heroesLastUpdate]
+  );
 
   return (
     <>

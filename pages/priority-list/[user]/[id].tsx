@@ -29,7 +29,7 @@ interface IProps {
   [key: string]: never;
 }
 
-const PriorityList: React.FC<IProps> = () => {
+const PriorityList: React.FC<IProps> = function PriorityList() {
   const router = useRouter();
   const { t } = useTranslation("priority-list");
   const { user, id } = router.query;
@@ -38,7 +38,7 @@ const PriorityList: React.FC<IProps> = () => {
     "priority-list",
     "legacyId",
     "==",
-    `${user}$${id}`
+    `${user}${id}`
   );
 
   const favoriteResult = useFirestoreQuery<IFirebasePriorityList[]>(favoriteQuery);

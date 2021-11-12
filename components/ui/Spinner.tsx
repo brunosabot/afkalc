@@ -6,7 +6,7 @@ interface Props {
   [key: string]: never;
 }
 
-const Spinner: React.FC<Props> = () => {
+const Spinner: React.FC<Props> = function Spinner() {
   const { t } = useTranslation("common");
   return (
     <div className={styles.Wrapper}>

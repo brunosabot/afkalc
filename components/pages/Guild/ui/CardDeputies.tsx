@@ -12,7 +12,7 @@ interface IProps {
   [key: string]: never;
 }
 
-const CardDeputies: React.FC<IProps> = () => {
+const CardDeputies: React.FC<IProps> = function CardDeputies() {
   const { actions, values } = useContext(GuildContext);
   const { values: profileValues } = useContext(ProfileContext);
   const { t } = useTranslation("guild");

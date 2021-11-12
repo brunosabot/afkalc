@@ -31,7 +31,7 @@ function compare(a: IFirebaseHeroesHero | undefined, b: IFirebaseHeroesHero | un
   return a?.ascend === b?.ascend && a?.si === b?.si && a?.fi === b?.fi && a?.link === b?.link;
 }
 
-const HeroLineViewer: React.FC<IProps> = ({
+const HeroLineViewer: React.FC<IProps> = function HeroLineViewer({
   shouldShowChecked,
   shouldShowSetLevel = true,
   hero,
@@ -39,7 +39,7 @@ const HeroLineViewer: React.FC<IProps> = ({
   setLevel,
   heroLevels,
   initialHeroLevels,
-}) => {
+}) {
   const { getHero } = useHero();
   const { requirement, requirementValue } = priorityList;
 

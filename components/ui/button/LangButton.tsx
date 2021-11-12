@@ -1,4 +1,4 @@
-import Link from "next/link";
+import { useRouter } from "next/router";
 import React from "react";
 import styles from "./LangButton.module.css";
 
@@ -7,17 +7,32 @@ interface IProps {
   emoji: string;
 }
 
-// <Link followed by a is nextjs specific
-/* eslint-disable jsx-a11y/anchor-is-valid */
-const LangButton: React.FC<IProps> = ({ lang, emoji }) => (
-  <Link href="/" locale={lang}>
-    <a className={styles.LangButton}>
+function setCookie(name: string, value: string, days: number) {
+  const date = new Date();
+  date.setTime(date.getTime() + days * 24 * 60 * 60 * 1000);
+
+  document.cookie = `${name}=${value}; expires=${date.toUTCString()}; path=/`;
+}
+
+const LangButton: React.FC<IProps> = function LangButton({ lang, emoji }) {
+  const router = useRouter();
+
+  return (
+    <button
+      className={styles.LangButton}
+      type="button"
+      onClick={() => {
+        setCookie("NEXT_LOCALE", lang, 365);
+        router.push("/", "/", {
+          locale: lang,
+        });
+      }}
+    >
       <span role="img" aria-label={lang}>
         {emoji}
       </span>
-    </a>
-  </Link>
-);
-/* eslint-enable jsx-a11y/anchor-is-valid */
+    </button>
+  );
+};
 
 export default LangButton;

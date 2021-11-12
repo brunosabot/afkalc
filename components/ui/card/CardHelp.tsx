@@ -5,8 +5,8 @@ interface IProps {
   children: React.ReactNode;
 }
 
-const CardHelp: React.FC<IProps> = ({ children }) => (
-  <div className={styles.CardHelp}>{children}</div>
-);
+const CardHelp: React.FC<IProps> = function CardHelp({ children }) {
+  return <div className={styles.CardHelp}>{children}</div>;
+};
 
 export default CardHelp;

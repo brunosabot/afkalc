@@ -16,9 +16,11 @@
   padding: 0 16px;
   transition: var(--transition);
 }
+
 .CardAction:hover {
   background-color: var(--hover-color);
 }
+
 .CardAction svg {
   height: 18px;
   margin-left: -4px;
