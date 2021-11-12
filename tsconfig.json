@@ -21,8 +21,6 @@
     "**/*.tsx",
     "next.config.js",
     "next-i18next.config.js",
-    "sentry.client.config.js",
-    "sentry.server.config.js",
     "server.js"
   ],
   "exclude": ["node_modules"]
