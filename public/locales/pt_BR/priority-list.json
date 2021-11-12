@@ -27,6 +27,8 @@
   "label-moved": "As listas foram movidas. Encontre o seu link abaixo",
   "label-moved-no-list": "A lista ainda não foi movida. Entre em contato com o criador",
   "last-update": "Última atualização:",
+  "last-list-update": "Última atualização da lista:",
+  "last-heroes-update": "Última atualização de heróis:",
   "label-add-tiers-list": "Nova lista de heróis",
   "label-add-elder-tree-list": "Nova lista de Árvore Anciã",
   "level": "Nível",

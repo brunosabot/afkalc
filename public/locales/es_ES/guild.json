@@ -44,8 +44,8 @@
   "label-tiles-t6-limit": "Límite T6",
   "label-tiles-t7-limit": "Límite T7",
   "label-tiles-t8-limit": "Límite T8",
-  "title-join-specific-guild": "Join {{name}}",
-  "label-guild-leader": "Guild leader",
-  "label-member-count": "Member count",
-  "label-join-guild": "Join guild"
+  "title-join-specific-guild": "Únete a {{name}}",
+  "label-guild-leader": "Director del gremio (Lider)",
+  "label-member-count": "Número de miembros",
+  "label-join-guild": "Unirse al gremio"
 }

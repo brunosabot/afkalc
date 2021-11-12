@@ -1,0 +1,11 @@
+{
+  "help": "Questo strumento ti fornisce il numero rimanente di emblemi per le varie fasi di potenziamento",
+  "form-title": "Innanzitutto, inserisci le caratteristiche dei tuoi eroi",
+  "item-primordial-emblem": "Emblemi primordiali",
+  "item-amplifying-emblem": "Emblemi Amplificanti",
+  "item-faction-emblem": "Emblemi fazione",
+  "item-celest-Hypogean-emblem": "Emblemi celestiali/ipogei",
+  "label-si": "SI +{{si}}",
+  "label-current-si": "Livello oggetto distintivo",
+  "label-target-si": "Target livello oggetto distintivo"
+}

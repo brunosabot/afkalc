@@ -1,0 +1,13 @@
+{
+  "help": "Questo strumento mira a darvi una stima di quanti diamanti avrete bisogno per ottenere abbastanza copie dell'eroe per ascenderlo",
+  "current-count-label": "Inserisci il numero attuale dell'eroe desiderato:",
+  "current-elite": "Eroi elite che hai",
+  "current-elite-p": "Eroi elite+ che hai",
+  "current-legendary": "Eroi leggendari che hai",
+  "current-legendary-p": "Eroi leggendari + che hai",
+  "current-mythic": "Eroi mitici che hai",
+  "current-mythic-p": "Eroi mitici+ che hai",
+  "required-count-label": "Per avere abbastanza copie da ascendere l'eroe hai bisogno di:",
+  "required-nothing": "Niente, stai bene!",
+  "required-count": "≈ {{diams}}"
+}
