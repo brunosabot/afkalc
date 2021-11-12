@@ -11,14 +11,14 @@ interface Props {
   onClick: (position: number, theClass: HeroClass, relic: number, level: number) => void;
 }
 
-const RelicDisplay: React.FC<Props> = ({
+const RelicDisplay: React.FC<Props> = function RelicDisplay({
   relic,
   position,
   level,
   theClass,
   active = 0,
   onClick,
-}) => {
+}) {
   const relicClass = styles[`Relic--${level}`];
   const positionClass = styles[`Position--${position}`];
   const isActive = active >= relic;

@@ -19,7 +19,7 @@ interface Props {
   length: number;
 }
 
-const HeroLine: React.FC<Props> = ({
+const HeroLine: React.FC<Props> = function HeroLine({
   hero,
   onSelect,
   onDelete = () => {},
@@ -27,7 +27,7 @@ const HeroLine: React.FC<Props> = ({
   onDown = () => {},
   index,
   length,
-}) => {
+}) {
   const [theHero, setTheHero] = useState<IFirebasePriorityListHero>(hero);
   const [showModal, setShowModal] = useState<boolean>(false);
   const { getHero } = useHero();

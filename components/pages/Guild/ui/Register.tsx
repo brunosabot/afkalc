@@ -17,7 +17,7 @@ interface IProps {
   [key: string]: never;
 }
 
-const Register: React.FC<IProps> = () => {
+const Register: React.FC<IProps> = function Register() {
   const [name, setName] = useState<string>("");
   const { t } = useTranslation("guild");
   const { actions, values } = useContext(GuildContext);

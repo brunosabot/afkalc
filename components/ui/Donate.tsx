@@ -8,7 +8,7 @@ interface IProps {
   [key: string]: never;
 }
 
-const Donate: React.FC<IProps> = () => {
+const Donate: React.FC<IProps> = function Donate() {
   const { t } = useTranslation("common");
   const { values } = useContext(FirebaseContext);
 

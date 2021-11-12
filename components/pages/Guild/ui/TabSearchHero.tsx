@@ -32,7 +32,7 @@ function filterHeroes(
   };
 }
 
-const TabSearchHero: React.FC<IProps> = ({ onSearch }) => {
+const TabSearchHero: React.FC<IProps> = function TabSearchHero({ onSearch }) {
   const { t } = useTranslation("guild");
   const { values } = useContext(GuildContext);
   const [heroes, setHeroes] = useState([

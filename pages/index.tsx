@@ -45,7 +45,7 @@ interface IProps {
   [key: string]: never;
 }
 
-const Home: React.FC<IProps> = () => {
+const Home: React.FC<IProps> = function Home() {
   const { values } = useContext(ProfileContext);
   const { values: firebaseValues } = useContext(FirebaseContext);
   const { t } = useTranslation("common");
@@ -127,7 +127,7 @@ const Home: React.FC<IProps> = () => {
             {t("common:menu.settings")}
           </MenuItem>
           <MenuItemExternal to="https://discord.gg/NSZFSdr9BW" icon={mdiDiscord}>
-            Discord 🇫🇷
+            Discord
           </MenuItemExternal>
           <MenuItemExternal to="https://github.com/brunosabot/afkalc" icon={mdiGithub}>
             {t("common:contribution.edit-on-github")}

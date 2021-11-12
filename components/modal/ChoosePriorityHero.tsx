@@ -40,103 +40,105 @@ interface Props {
   si?: number;
 }
 
-const ChoosePriorityHero: React.FC<Props> = ({
+const ChoosePriorityHero: React.FC<Props> = function ChoosePriorityHero({
   si = -1,
   fi = 0,
   ascend = 0,
   hero = 0,
   engrave = 0,
   onSelect,
-}) => (
-  <>
-    <div className={styles.InputWrapper}>
-      <AscendForm
-        ascend={ascend}
-        engrave={engrave}
-        fi={fi}
-        hero={hero}
-        si={si}
-        onChange={(value) =>
-          onSelect({
-            hero,
-            fi,
-            ascend: getAscend(value, si, fi, engrave),
-            engrave,
-            si,
-          })
-        }
-      />
-      <SiForm
-        ascend={ascend}
-        engrave={engrave}
-        fi={fi}
-        hero={hero}
-        si={si}
-        onChange={(siValue) =>
-          onSelect({
-            hero,
-            fi,
-            ascend: getAscend(ascend, siValue, fi, engrave),
-            engrave,
-            si: siValue,
-          })
-        }
-      />
-      <FiForm
-        ascend={ascend}
-        engrave={engrave}
-        fi={fi}
-        hero={hero}
-        si={si}
-        onChange={(fiValue) =>
-          onSelect({
-            hero,
-            fi: fiValue,
-            ascend: getAscend(ascend, si, fiValue, engrave),
-            engrave,
-            si,
-          })
-        }
-      />
-      <EngraveForm
-        ascend={ascend}
-        engrave={engrave}
-        fi={fi}
-        hero={hero}
-        si={si}
-        onChange={(value) =>
-          onSelect({
-            hero,
-            fi,
-            ascend: getAscend(ascend, si, fi, value),
-            engrave: value || 0,
-            si,
-          })
-        }
-      />
-    </div>
+}) {
+  return (
+    <>
+      <div className={styles.InputWrapper}>
+        <AscendForm
+          ascend={ascend}
+          engrave={engrave}
+          fi={fi}
+          hero={hero}
+          si={si}
+          onChange={(value) =>
+            onSelect({
+              hero,
+              fi,
+              ascend: getAscend(value, si, fi, engrave),
+              engrave,
+              si,
+            })
+          }
+        />
+        <SiForm
+          ascend={ascend}
+          engrave={engrave}
+          fi={fi}
+          hero={hero}
+          si={si}
+          onChange={(siValue) =>
+            onSelect({
+              hero,
+              fi,
+              ascend: getAscend(ascend, siValue, fi, engrave),
+              engrave,
+              si: siValue,
+            })
+          }
+        />
+        <FiForm
+          ascend={ascend}
+          engrave={engrave}
+          fi={fi}
+          hero={hero}
+          si={si}
+          onChange={(fiValue) =>
+            onSelect({
+              hero,
+              fi: fiValue,
+              ascend: getAscend(ascend, si, fiValue, engrave),
+              engrave,
+              si,
+            })
+          }
+        />
+        <EngraveForm
+          ascend={ascend}
+          engrave={engrave}
+          fi={fi}
+          hero={hero}
+          si={si}
+          onChange={(value) =>
+            onSelect({
+              hero,
+              fi,
+              ascend: getAscend(ascend, si, fi, value),
+              engrave: value || 0,
+              si,
+            })
+          }
+        />
+      </div>
 
-    {Object.keys(factions).map((faction) => (
-      <CharacterGrid key={faction}>
-        {factions[faction].map(({ id, name }) => (
-          <Character
-            key={id}
-            name={name}
-            onClick={() =>
-              onSelect({
-                hero: id,
-                fi,
-                ascend,
-                engrave,
-                si,
-              })
-            }
-            highlight={id === hero}
-          />
-        ))}
-      </CharacterGrid>
-    ))}
-  </>
-);
+      {Object.keys(factions).map((faction) => (
+        <CharacterGrid key={faction}>
+          {factions[faction].map(({ id, name }) => (
+            <Character
+              key={id}
+              name={name}
+              onClick={() =>
+                onSelect({
+                  hero: id,
+                  fi,
+                  ascend,
+                  engrave,
+                  si,
+                })
+              }
+              highlight={id === hero}
+            />
+          ))}
+        </CharacterGrid>
+      ))}
+    </>
+  );
+};
 
 export default ChoosePriorityHero;

@@ -8,7 +8,7 @@ interface IProps {
   [key: string]: never;
 }
 
-const Help: React.FC<IProps> = () => {
+const Help: React.FC<IProps> = function Help() {
   const { t } = useTranslation("fast-reward");
 
   return (

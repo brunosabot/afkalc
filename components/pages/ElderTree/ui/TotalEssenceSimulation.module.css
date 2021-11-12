@@ -4,11 +4,13 @@
   gap: 16px;
   padding: 16px;
 }
+
 .Image {
   border-radius: 4px;
   height: 32px;
   width: 32px;
 }
+
 .Error {
   color: var(--error-background-color);
 }

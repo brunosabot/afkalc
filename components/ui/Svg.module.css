@@ -3,6 +3,7 @@
   height: 24px;
   width: 24px;
 }
+
 .OnClick {
   background-color: transparent;
   border-radius: 50%;
@@ -10,6 +11,7 @@
   padding: 8px;
   transition: var(--transition);
 }
+
 .OnClick:hover {
   background-color: var(--hover-color);
 }

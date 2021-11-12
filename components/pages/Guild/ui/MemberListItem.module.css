@@ -10,6 +10,7 @@
   text-decoration: none;
   z-index: 1;
 }
+
 .MemberListItem::before {
   bottom: -1px;
   content: "";
@@ -35,6 +36,7 @@
   transition: var(--transition);
   width: 32px;
 }
+
 .Link:hover {
   background: var(--hover-color);
 }
@@ -45,13 +47,16 @@
   flex-direction: column;
   flex-grow: 1;
 }
+
 .Title {
   align-items: center;
   display: flex;
 }
+
 .Title svg {
   margin-left: 8px;
 }
+
 .Subtitle {
   color: var(--secondary-text-color);
   font-size: 0.85em;

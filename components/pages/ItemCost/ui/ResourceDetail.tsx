@@ -16,14 +16,14 @@ interface Props {
   side: number;
 }
 
-const ResourceDetail: React.FC<Props> = ({
+const ResourceDetail: React.FC<Props> = function ResourceDetail({
   resource,
   value = 0,
   onSelect,
   onValue,
   onDelete,
   side,
-}) => {
+}) {
   const { getItem } = useItem();
 
   const itemCost = getItem(resource).cost ?? 0;

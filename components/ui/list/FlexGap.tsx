@@ -6,10 +6,12 @@ interface IProps {
   gap: number;
 }
 
-const FlexGap: React.FC<IProps> = ({ children, gap = 0 }) => (
-  <div className={styles.FlexGap} style={{ gap: `${gap}px` }}>
-    {children}
-  </div>
-);
+const FlexGap: React.FC<IProps> = function FlexGap({ children, gap = 0 }) {
+  return (
+    <div className={styles.FlexGap} style={{ gap: `${gap}px` }}>
+      {children}
+    </div>
+  );
+};
 
 export default FlexGap;

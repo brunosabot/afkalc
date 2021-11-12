@@ -8,7 +8,7 @@ interface Props {
   onClick: (theClass: HeroClass) => void;
 }
 
-const ButtonClass: React.FC<Props> = ({ theClass, current, onClick }) => {
+const ButtonClass: React.FC<Props> = function ButtonClass({ theClass, current, onClick }) {
   const theClassClass = styles[`Button--${theClass}`];
 
   return (

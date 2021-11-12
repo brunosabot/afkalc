@@ -14,7 +14,7 @@ interface IProps {
   member: IFirebaseProfile;
 }
 
-const MemberListItem: React.FC<IProps> = ({ member, isOwner, isDeputy }) => {
+const MemberListItem: React.FC<IProps> = function MemberListItem({ member, isOwner, isDeputy }) {
   const { actions, values } = useContext(GuildContext);
   const { values: profileValues } = useContext(ProfileContext);
   const { t } = useTranslation("guild");

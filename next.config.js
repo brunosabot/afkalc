@@ -1,7 +1,6 @@
 const { withSentryConfig } = require("@sentry/nextjs");
 const fs = require("fs");
 const { i18n } = require("./next-i18next.config");
-const generateSitemap = require("./scripts/generateSitemap");
 
 const data = JSON.parse(fs.readFileSync("./package.json")).version;
 
@@ -29,10 +28,6 @@ const moduleExports = {
       test: /\.svg$/,
       use: ["@svgr/webpack"],
     });
-
-    if (isServer) {
-      generateSitemap();
-    }
 
     return config;
   },

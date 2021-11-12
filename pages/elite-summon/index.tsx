@@ -23,7 +23,7 @@ interface IProps {
   [key: string]: never;
 }
 
-const EliteSummon: React.FC<IProps> = () => {
+const EliteSummon: React.FC<IProps> = function EliteSummon() {
   const [showHelp, setShowHelp] = useState(false);
   const [elite, setElite] = useState(0);
   const [eliteP, setEliteP] = useState(0);

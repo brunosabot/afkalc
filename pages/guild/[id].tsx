@@ -34,7 +34,7 @@ interface IProps {
   [key: string]: never;
 }
 
-const GuildId: React.FC<IProps> = () => {
+const GuildId: React.FC<IProps> = function GuildId() {
   const [name, setName] = useState<string>("");
   const { t } = useTranslation("guild");
   const router = useRouter();

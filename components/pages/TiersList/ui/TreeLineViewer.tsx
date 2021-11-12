@@ -13,7 +13,12 @@ interface IProps {
   treeList?: IFirebaseTreeList;
 }
 
-const TreeLineViewer: React.FC<IProps> = ({ shouldShowChecked, step, elderTree, treeList }) => {
+const TreeLineViewer: React.FC<IProps> = function TreeLineViewer({
+  shouldShowChecked,
+  step,
+  elderTree,
+  treeList,
+}) {
   const { t } = useTranslation("priority-list");
 
   const currentLevel = elderTree[step.heroClass];

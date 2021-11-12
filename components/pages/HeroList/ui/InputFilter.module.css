@@ -8,6 +8,7 @@
 .Label {
   min-width: 100px;
 }
+
 .Select {
   appearance: none;
   background: transparent;
@@ -25,6 +26,7 @@
   padding: 0 4px;
   width: 48px;
 }
+
 .Value {
   background: transparent;
   border: 1px solid var(--card-border-color);

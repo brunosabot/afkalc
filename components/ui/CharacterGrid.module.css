@@ -5,6 +5,7 @@
   justify-content: center;
   padding-bottom: 16px;
 }
+
 .CharacterGrid--large {
   gap: 16px;
   grid-template-columns: repeat(auto-fill, 56px);

@@ -13,7 +13,7 @@ interface IProps {
   children: React.ReactNode;
 }
 
-const PriorityListProvider: React.FC<IProps> = ({ children }) => {
+const PriorityListProvider: React.FC<IProps> = function PriorityListProvider({ children }) {
   const [lazy, setLazy] = useState<boolean>(true);
   const { values } = useContext(ProfileContext);
 
@@ -28,14 +28,8 @@ const PriorityListProvider: React.FC<IProps> = ({ children }) => {
 
   const load = useCallback(() => setLazy(false), []);
 
-  const {
-    setHeroes,
-    setTitle,
-    setRequirementValue,
-    setRequirement,
-    deleteList,
-    createList,
-  } = usePriorityListSetters();
+  const { setHeroes, setTitle, setRequirementValue, setRequirement, deleteList, createList } =
+    usePriorityListSetters();
 
   const value = useMemo<IPriorityListContext>(
     () => ({

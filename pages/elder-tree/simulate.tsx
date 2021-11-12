@@ -27,7 +27,7 @@ interface IProps {
   [key: string]: never;
 }
 
-const Simulation: React.FC<IProps> = () => {
+const Simulation: React.FC<IProps> = function Simulation() {
   const router = useRouter();
   const { t } = useTranslation("elder-tree");
 

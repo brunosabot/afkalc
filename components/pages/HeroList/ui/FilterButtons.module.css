@@ -1,20 +1,23 @@
 .Wrapper {
   padding: 0 16px;
 }
+
 .FilterButtons {
   background: transparent;
   border: 0;
   cursor: pointer;
   height: 40px;
-  opacity: 0.4;
+  opacity: 40%;
   outline: 0;
   padding: 0;
   padding: 4px;
   width: 40px;
 }
+
 .Active {
-  opacity: 1;
+  opacity: 100%;
 }
+
 .Image {
   height: 100%;
   width: 100%;

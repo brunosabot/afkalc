@@ -7,7 +7,7 @@ interface Props {
   onClick: () => void;
 }
 
-const CreateTree: React.FC<Props> = ({ onClick }) => {
+const CreateTree: React.FC<Props> = function CreateTree({ onClick }) {
   const { t } = useTranslation("priority-list");
 
   return (

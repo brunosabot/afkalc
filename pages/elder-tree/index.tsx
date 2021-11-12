@@ -28,7 +28,7 @@ interface IProps {
   [key: string]: never;
 }
 
-const ElderTree: React.FC<IProps> = () => {
+const ElderTree: React.FC<IProps> = function ElderTree() {
   const { t } = useTranslation("elder-tree");
   const router = useRouter();
 

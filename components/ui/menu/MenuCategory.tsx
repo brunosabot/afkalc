@@ -5,8 +5,8 @@ interface IProps {
   children: React.ReactNode;
 }
 
-const MenuCategory: React.FC<IProps> = ({ children }) => (
-  <div className={styles.MenuCategory}>{children}</div>
-);
+const MenuCategory: React.FC<IProps> = function MenuCategory({ children }) {
+  return <div className={styles.MenuCategory}>{children}</div>;
+};
 
 export default MenuCategory;

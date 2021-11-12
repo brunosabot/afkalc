@@ -9,7 +9,12 @@ interface IProps {
   style?: React.CSSProperties;
 }
 
-const CardShare: React.FC<IProps> = ({ label, children, shouldCopy = true, style = {} }) => {
+const CardShare: React.FC<IProps> = function CardShare({
+  label,
+  children,
+  shouldCopy = true,
+  style = {},
+}) {
   const { t } = useTranslation("common");
   const [copy, setCopy] = useState(false);
 

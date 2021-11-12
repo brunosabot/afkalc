@@ -14,7 +14,13 @@ interface IProps {
   celest: number;
 }
 
-const SignatureItemLeft: React.FC<IProps> = ({ step, primordial, amplifying, faction, celest }) => {
+const SignatureItemLeft: React.FC<IProps> = function SignatureItemLeft({
+  step,
+  primordial,
+  amplifying,
+  faction,
+  celest,
+}) {
   const { t } = useTranslation("signature-item");
 
   if (primordial === 0 && amplifying === 0 && faction === 0 && celest === 0) {

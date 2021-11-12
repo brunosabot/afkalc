@@ -3,9 +3,13 @@
     "stylelint-config-standard",
     "stylelint-prettier/recommended"
   ],
-  "plugins": ["stylelint-prettier", "stylelint-order"],
+  "plugins": [
+    "stylelint-prettier",
+    "stylelint-order"
+  ],
   "rules": {
     "prettier/prettier": true,
-    "order/properties-alphabetical-order": true
+    "order/properties-alphabetical-order": true,
+    "selector-class-pattern": null
   }
 }

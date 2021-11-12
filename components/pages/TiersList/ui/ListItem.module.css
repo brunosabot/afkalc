@@ -6,6 +6,7 @@
   position: relative;
   text-decoration: none;
 }
+
 .ListItem::before {
   bottom: -1px;
   content: "";
@@ -15,6 +16,7 @@
   top: -1px;
   transition: var(--transition);
 }
+
 .ListItem:hover::before {
   background-color: var(--hover-color);
 }

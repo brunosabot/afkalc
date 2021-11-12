@@ -7,7 +7,7 @@ interface IProps {
   [key: string]: never;
 }
 
-const AnonymousLoginButton: React.FC<IProps> = () => {
+const AnonymousLoginButton: React.FC<IProps> = function AnonymousLoginButton() {
   const { t } = useTranslation();
   const { actions } = useContext(FirebaseContext);
 

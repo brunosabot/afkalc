@@ -9,19 +9,26 @@ interface Props {
   current: number;
 }
 
-const ChooseEnemi: React.FC<Props> = ({ current, onSelect }) => (
-  <>
-    {factions.map((faction) => (
-      <React.Fragment key={faction.faction}>
-        <FactionLine name={faction.faction} />
-        <CharacterGrid>
-          {faction.characters.map(({ id, name, image }) => (
-            <Enemi key={name} name={name} onClick={() => onSelect(id)} highlight={current === id} />
-          ))}
-        </CharacterGrid>
-      </React.Fragment>
-    ))}
-  </>
-);
+const ChooseEnemi: React.FC<Props> = function ChooseEnemi({ current, onSelect }) {
+  return (
+    <>
+      {factions.map((faction) => (
+        <React.Fragment key={faction.faction}>
+          <FactionLine name={faction.faction} />
+          <CharacterGrid>
+            {faction.characters.map(({ id, name, image }) => (
+              <Enemi
+                key={name}
+                name={name}
+                onClick={() => onSelect(id)}
+                highlight={current === id}
+              />
+            ))}
+          </CharacterGrid>
+        </React.Fragment>
+      ))}
+    </>
+  );
+};
 
 export default ChooseEnemi;

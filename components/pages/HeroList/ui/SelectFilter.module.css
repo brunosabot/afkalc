@@ -8,6 +8,7 @@
 .Label {
   min-width: 100px;
 }
+
 .Select {
   appearance: none;
   background: transparent;
@@ -25,6 +26,7 @@
   padding: 0 4px;
   width: 48px;
 }
+
 .Value {
   background: transparent;
   border: 1px solid var(--card-border-color);
@@ -36,6 +38,7 @@
   height: 32px;
   padding: 0 4px;
 }
+
 select.Value {
   appearance: none;
   background: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='24px' height='24px'><path fill='currentColor' d='M7,10L12,15L17,10H7Z' /></svg>");

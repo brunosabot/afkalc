@@ -11,7 +11,7 @@ interface IProps {
   [key: string]: never;
 }
 
-const CardOwner: React.FC<IProps> = () => {
+const CardOwner: React.FC<IProps> = function CardOwner() {
   const { actions, values } = useContext(GuildContext);
   const { values: profileValues } = useContext(ProfileContext);
   const { t } = useTranslation("guild");

@@ -1,17 +1,20 @@
 .Wrapper {
   display: flex;
   flex-direction: column;
-  padding: 0 16px 16px 16px;
+  padding: 0 16px 16px;
 }
+
 .Wrapper.Small {
   padding: 0;
 }
+
 .Label {
   color: var(--secondary-text-color);
   font-size: 0.75em;
   font-weight: 300;
   margin-bottom: 4px;
 }
+
 .LabelLink {
   background: transparent;
   border: 0;
@@ -21,6 +24,7 @@
   margin-left: 8px;
   text-decoration: underline;
 }
+
 .InputField {
   background: transparent;
   border: 1px solid var(--card-border-color);
@@ -32,16 +36,19 @@
   height: 40px;
   padding: 4px 20px;
 }
+
 .Small .InputField {
   font-size: 14px;
   height: 32px;
-  padding: 0 4px 0;
+  padding: 0 4px;
 }
+
 .InputField:focus {
   border-color: var(--accent-color);
   box-shadow: 0 2px 3px var(--hover-color);
   outline: 0;
 }
+
 .InputField:disabled {
   background: var(--disabled-color);
   color: var(--secondary-text-color);

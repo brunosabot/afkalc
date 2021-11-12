@@ -8,7 +8,7 @@ interface IProps {
   isLink?: boolean;
 }
 
-const TwitterLoginButton: React.FC<IProps> = ({ isLink = false }) => {
+const TwitterLoginButton: React.FC<IProps> = function TwitterLoginButton({ isLink = false }) {
   const { actions } = useContext(FirebaseContext);
 
   return (

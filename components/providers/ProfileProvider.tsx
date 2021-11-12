@@ -15,7 +15,7 @@ interface IProps {
   children: React.ReactNode;
 }
 
-const ProfileProvider: React.FC<IProps> = ({ children }) => {
+const ProfileProvider: React.FC<IProps> = function ProfileProvider({ children }) {
   const { values } = useContext(FirebaseContext);
   const document = useFirestoreDocumentReference(`profile/%ID%`);
   const result = useFirestoreDocument<IFirebaseProfile>(document);

@@ -11,7 +11,7 @@ interface IProps {
   member: IFirebaseProfile;
 }
 
-const AbexTiles: React.FC<IProps> = ({ member }) => {
+const AbexTiles: React.FC<IProps> = function AbexTiles({ member }) {
   const {
     values: { guild },
   } = useContext(GuildContext);

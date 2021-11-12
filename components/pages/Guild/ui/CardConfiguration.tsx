@@ -9,7 +9,7 @@ interface IProps {
   [key: string]: never;
 }
 
-const CardConfiguration: React.FC<IProps> = () => {
+const CardConfiguration: React.FC<IProps> = function CardConfiguration() {
   const {
     actions: { setShowAbexTab, setName },
     values: {

@@ -9,7 +9,7 @@ interface IProps {
   [key: string]: never;
 }
 
-const CardAbex: React.FC<IProps> = () => {
+const CardAbex: React.FC<IProps> = function CardAbex() {
   const {
     actions: {
       setAbexAwayTimeLimit,

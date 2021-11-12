@@ -36,11 +36,11 @@ interface Props {
   onlyHero?: boolean;
 }
 
-const ChooseHero: React.FC<Props> = ({
+const ChooseHero: React.FC<Props> = function ChooseHero({
   onlyHero = false,
   current: [currentId, si, fi, currentArtifact, linkKey],
   onSelect,
-}) => {
+}) {
   const { t } = useTranslation("common");
 
   return (
@@ -80,14 +80,12 @@ const ChooseHero: React.FC<Props> = ({
       ) : null}
 
       {onlyHero ? (
-        <>
-          <CheckboxField
-            label={t("has-dimensional-key")}
-            name="dimensional-key"
-            onChange={(value) => onSelect(DetailType.LINKKEY, value ? 1 : 0)}
-            value={linkKey === 1}
-          />
-        </>
+        <CheckboxField
+          label={t("has-dimensional-key")}
+          name="dimensional-key"
+          onChange={(value) => onSelect(DetailType.LINKKEY, value ? 1 : 0)}
+          value={linkKey === 1}
+        />
       ) : null}
 
       {Object.keys(factions).map((faction) => (

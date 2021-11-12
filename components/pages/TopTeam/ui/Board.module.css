@@ -6,15 +6,18 @@
   height: 100%;
   width: 100%;
 }
+
 .BoardWrapper {
   margin: auto;
   padding: 0 16px;
   position: relative;
 }
+
 .Placeholder {
   display: block;
   width: 100%;
 }
+
 .Content {
   height: 100%;
   left: 0;

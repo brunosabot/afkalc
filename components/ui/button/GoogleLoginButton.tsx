@@ -6,7 +6,7 @@ interface IProps {
   isLink?: boolean;
 }
 
-const GoogleLoginButton: React.FC<IProps> = ({ isLink = false }) => {
+const GoogleLoginButton: React.FC<IProps> = function GoogleLoginButton({ isLink = false }) {
   const { actions } = useContext(FirebaseContext);
 
   return (

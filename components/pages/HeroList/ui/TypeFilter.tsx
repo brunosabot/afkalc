@@ -9,8 +9,8 @@ interface IProps {
 
 const TYPES = ["strength", "agility", "intelligence"];
 
-const TypeFilter: React.FC<IProps> = ({ filter, setFilter, imagePath }) => (
-  <FilterButtons filter={filter} setFilter={setFilter} imagePath={imagePath} data={TYPES} />
-);
+const TypeFilter: React.FC<IProps> = function TypeFilter({ filter, setFilter, imagePath }) {
+  return <FilterButtons filter={filter} setFilter={setFilter} imagePath={imagePath} data={TYPES} />;
+};
 
 export default React.memo(TypeFilter);

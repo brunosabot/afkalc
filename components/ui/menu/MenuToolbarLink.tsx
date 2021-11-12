@@ -8,17 +8,19 @@ interface IProps {
   to: string;
 }
 
-const MenuToolbarLink: React.FC<IProps> = ({ image, children, to }) => (
-  <Link href={to}>
-    <div className={styles.MenuToolbarLink}>
-      <img
-        src={image}
-        style={{ width: "30px", marginBottom: "4px", borderRadius: "16px" }}
-        alt=""
-      />
-      {children}
-    </div>
-  </Link>
-);
+const MenuToolbarLink: React.FC<IProps> = function MenuToolbarLink({ image, children, to }) {
+  return (
+    <Link href={to}>
+      <div className={styles.MenuToolbarLink}>
+        <img
+          src={image}
+          style={{ width: "30px", marginBottom: "4px", borderRadius: "16px" }}
+          alt=""
+        />
+        {children}
+      </div>
+    </Link>
+  );
+};
 
 export default MenuToolbarLink;

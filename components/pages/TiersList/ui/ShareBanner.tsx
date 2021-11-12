@@ -6,7 +6,7 @@ interface IProps {
   listId: string;
 }
 
-const ShareBanner: React.FC<IProps> = ({ listId }) => {
+const ShareBanner: React.FC<IProps> = function ShareBanner({ listId }) {
   const router = useRouter();
   const localePath = router.locale === router.defaultLocale ? "" : `/${router.locale}`;
 

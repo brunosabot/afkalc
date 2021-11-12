@@ -6,6 +6,7 @@
   padding: 16px;
   position: relative;
 }
+
 .Action {
   display: flex;
   padding: 8px;
@@ -15,6 +16,7 @@
   top: 50%;
   transform: translateY(-50%);
 }
+
 .HasAction {
   padding-right: 56px;
 }

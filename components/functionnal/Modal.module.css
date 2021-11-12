@@ -12,6 +12,7 @@
   width: 100%;
   z-index: 10;
 }
+
 .Modal {
   background: var(--card-color);
   border-radius: 14px;
@@ -24,6 +25,7 @@
   position: relative;
   width: 480px;
 }
+
 .Close {
   border-radius: 50%;
   cursor: pointer;
@@ -35,6 +37,7 @@
   transition: var(--transition);
   width: 32px;
 }
+
 .Close:hover {
   background: var(--hover-color);
 }

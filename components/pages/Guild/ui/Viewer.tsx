@@ -21,7 +21,7 @@ interface IProps {
   listId: string;
 }
 
-const Viewer: React.FC<IProps> = ({ listId, result }) => {
+const Viewer: React.FC<IProps> = function Viewer({ listId, result }) {
   const [showChecked, setShowChecked] = useState<boolean>(false);
   const router = useRouter();
   const heroDocument = useFirestoreDocumentReference(`profile/${router.query.member}`);
@@ -52,40 +52,38 @@ const Viewer: React.FC<IProps> = ({ listId, result }) => {
   );
 
   return (
-    <>
-      <Card>
-        <CardTitle
-          icon={mdiPlaylistCheck}
-          action={<CheckedButton showChecked={showChecked} setShowChecked={setShowChecked} />}
-        >
-          {title} x {heroValues.data?.playerName}
-        </CardTitle>
+    <Card>
+      <CardTitle
+        icon={mdiPlaylistCheck}
+        action={<CheckedButton showChecked={showChecked} setShowChecked={setShowChecked} />}
+      >
+        {title} x {heroValues.data?.playerName}
+      </CardTitle>
 
-        {result?.priorityListLastUpdate !== "" ? (
-          <div>
-            <CardHelp>
-              <div>{`${t("last-list-update")} ${lastUpdate}`}</div>
-              <div>{`${t("last-heroes-update")} ${lastUpdateHeroes}`}</div>
-            </CardHelp>
-          </div>
-        ) : null}
+      {result?.priorityListLastUpdate !== "" ? (
+        <div>
+          <CardHelp>
+            <div>{`${t("last-list-update")} ${lastUpdate}`}</div>
+            <div>{`${t("last-heroes-update")} ${lastUpdateHeroes}`}</div>
+          </CardHelp>
+        </div>
+      ) : null}
 
-        {showChecked ? null : <CardWarn>{t("checked-items-hidden")}</CardWarn>}
+      {showChecked ? null : <CardWarn>{t("checked-items-hidden")}</CardWarn>}
 
-        {listHeroes.map((hero, index) => (
-          <HeroLineViewer
-            key={`${hero.hero}-${hero.ascend}-${hero.fi}-${hero.si}`}
-            hero={hero}
-            heroLevels={heroes[hero.hero]}
-            setLevel={setLevel}
-            priorityList={result}
-            initialHeroLevels={initialHeroes[hero.hero]}
-            shouldShowChecked={showChecked}
-            shouldShowSetLevel={false}
-          />
-        ))}
-      </Card>
-    </>
+      {listHeroes.map((hero, index) => (
+        <HeroLineViewer
+          key={`${hero.hero}-${hero.ascend}-${hero.fi}-${hero.si}`}
+          hero={hero}
+          heroLevels={heroes[hero.hero]}
+          setLevel={setLevel}
+          priorityList={result}
+          initialHeroLevels={initialHeroes[hero.hero]}
+          shouldShowChecked={showChecked}
+          shouldShowSetLevel={false}
+        />
+      ))}
+    </Card>
   );
 };
 

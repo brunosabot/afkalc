@@ -13,7 +13,12 @@ interface IProps {
   member: IFirebaseProfile;
 }
 
-const SearchListItem: React.FC<IProps> = ({ children, member, isOwner, isDeputy }) => {
+const SearchListItem: React.FC<IProps> = function SearchListItem({
+  children,
+  member,
+  isOwner,
+  isDeputy,
+}) {
   const { t } = useTranslation("guild");
 
   return (

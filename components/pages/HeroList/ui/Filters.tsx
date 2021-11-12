@@ -40,7 +40,7 @@ interface State {
   directionEngrave: string;
 }
 
-const Filters: React.FC<IProps> = ({ state, dispatch }) => {
+const Filters: React.FC<IProps> = function Filters({ state, dispatch }) {
   const { t } = useTranslation("hero-list");
   const [showFilter, setShowFilter] = useState(true);
 

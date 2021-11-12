@@ -14,7 +14,13 @@ interface IProps {
   support: number;
 }
 
-const TotalEssenceSimulation: React.FC<IProps> = ({ warrior, tank, ranger, mage, support }) => {
+const TotalEssenceSimulation: React.FC<IProps> = function TotalEssenceSimulation({
+  warrior,
+  tank,
+  ranger,
+  mage,
+  support,
+}) {
   const { values } = useContext(ProfileContext);
 
   const currentEssence = useMemo(

@@ -10,7 +10,11 @@ interface IProps {
   style?: React.CSSProperties;
 }
 
-const CardShareNew: React.FC<IProps> = ({ children, shouldCopy = true, style = {} }) => {
+const CardShareNew: React.FC<IProps> = function CardShareNew({
+  children,
+  shouldCopy = true,
+  style = {},
+}) {
   const { t } = useTranslation("common");
   const [copy, setCopy] = useState(false);
 

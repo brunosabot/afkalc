@@ -30,25 +30,26 @@ export default function useSetLevel(
   document: firebase.firestore.DocumentReference | undefined
 ) {
   return useCallback(
-    (key: number, field: HeroLevel | HeroLevel[]) => (value: number | number[]) => {
-      if (document === undefined) return null;
+    (key: number, field: HeroLevel | HeroLevel[]) =>
+      function useSetLevelCallback(value: number | number[]) {
+        if (document === undefined) return null;
 
-      const newLevels = { ...levels, [key]: levels[key] || {} };
+        const newLevels = { ...levels, [key]: levels[key] || {} };
 
-      if (field instanceof Array && value instanceof Array) {
-        field.forEach((f, i) => {
-          newLevels[key] = { ...newLevels[key], [f]: value[i] };
-        });
-      } else if (!(field instanceof Array) && !(value instanceof Array)) {
-        newLevels[key] = { ...newLevels[key], [field]: value };
-      }
+        if (field instanceof Array && value instanceof Array) {
+          field.forEach((f, i) => {
+            newLevels[key] = { ...newLevels[key], [f]: value[i] };
+          });
+        } else if (!(field instanceof Array) && !(value instanceof Array)) {
+          newLevels[key] = { ...newLevels[key], [field]: value };
+        }
 
-      const cleanedLevels = cleanRequirements(newLevels, key);
+        const cleanedLevels = cleanRequirements(newLevels, key);
 
-      return document
-        .update({ levels: cleanedLevels })
-        .catch(() => document.set({ levels: newLevels }));
-    },
+        return document
+          .update({ levels: cleanedLevels })
+          .catch(() => document.set({ levels: newLevels }));
+      },
     [document, levels]
   );
 }

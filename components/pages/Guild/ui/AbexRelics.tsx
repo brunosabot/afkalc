@@ -20,7 +20,7 @@ function reduceRank(acc: [number, number], value: number): [number, number] {
 
 const defaultRank: [number, number] = [0, 0];
 
-const TabAbex: React.FC<IProps> = ({ member }) => {
+const TabAbex: React.FC<IProps> = function TabAbex({ member }) {
   const ranks = {
     mage: member.abexCurrentRelics?.mage.reduce(reduceRank, defaultRank) ?? [0, 0],
     ranger: member.abexCurrentRelics?.ranger.reduce(reduceRank, defaultRank) ?? [0, 0],

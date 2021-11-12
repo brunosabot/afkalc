@@ -7,10 +7,12 @@ interface IProps {
   children: React.ReactNode;
 }
 
-const ListItem: React.FC<IProps> = ({ href, children }) => (
-  <Link href={href}>
-    <a className={styles.ListItem}>{children}</a>
-  </Link>
-);
+const ListItem: React.FC<IProps> = function ListItem({ href, children }) {
+  return (
+    <Link href={href}>
+      <a className={styles.ListItem}>{children}</a>
+    </Link>
+  );
+};
 
 export default ListItem;

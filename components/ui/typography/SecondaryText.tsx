@@ -5,8 +5,8 @@ interface IProps {
   children: React.ReactNode;
 }
 
-const SecondaryText: React.FC<IProps> = ({ children }) => (
-  <div className={styles.SecondaryText}>{children}</div>
-);
+const SecondaryText: React.FC<IProps> = function SecondaryText({ children }) {
+  return <div className={styles.SecondaryText}>{children}</div>;
+};
 
 export default SecondaryText;

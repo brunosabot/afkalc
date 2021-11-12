@@ -134,7 +134,7 @@ export const FirebaseContext = React.createContext<IFirebaseContext>({
   },
 });
 
-const FirebaseProvider: React.FC<IProps> = ({ children }) => {
+const FirebaseProvider: React.FC<IProps> = function FirebaseProvider({ children }) {
   const [isLoaded, setIsLoaded] = useState<boolean>(false);
   const [isGoogle, setIsGoogle] = useState<boolean>(false);
   const [isFacebook, setIsFacebook] = useState<boolean>(false);
