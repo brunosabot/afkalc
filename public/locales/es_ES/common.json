@@ -56,7 +56,10 @@
     "elder-tree": "Árbol Anciano",
     "short-hero-list": "Héroes",
     "short-top-team": "Equipos",
-    "short-item-cost": "Coste de los artículos"
+    "short-item-cost": "Coste de los artículos",
+    "short-guild": "Gremio",
+    "short-priority-list": "Lista de Prioridades"
+    
   },
   "heroClass": {
     "warrior": "Guerrero",

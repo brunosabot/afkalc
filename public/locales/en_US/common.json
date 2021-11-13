@@ -56,7 +56,9 @@
     "elder-tree": "Elder Tree",
     "short-hero-list": "Heroes",
     "short-top-team": "Teams",
-    "short-item-cost": "Item Cost"
+    "short-item-cost": "Item Cost",
+    "short-guild": "Guild",
+    "short-priority-list": "Priority List"
   },
   "heroClass": {
     "warrior": "Warrior",
