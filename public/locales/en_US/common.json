@@ -44,7 +44,7 @@
     "fast-reward": "Fast Reward",
     "top-team": "Top Team",
     "item-cost": "Item Cost",
-    "priority-list": "Priority List",
+    "priority-list": "Tiers List",
     "credit": "Credits",
     "abex-relic": "Relic Loots",
     "abex-relic-sell": "Relics to sell",
@@ -56,7 +56,9 @@
     "elder-tree": "Elder Tree",
     "short-hero-list": "Heroes",
     "short-top-team": "Teams",
-    "short-item-cost": "Item Cost"
+    "short-item-cost": "Item Cost",
+    "short-guild": "Guild",
+    "short-priority-list": "Tiers List"
   },
   "heroClass": {
     "warrior": "Warrior",
