@@ -10,17 +10,23 @@ interface IProps {
   playerName?: string;
 }
 
-const PlayerValidation: React.FC<IProps> = ({ playerHero, playerName, id }) => (
-  <ListItem>
-    <Character
-      ascendLevel={playerHero?.ascend}
-      siLevel={playerHero?.si}
-      fiLevel={playerHero?.fi}
-      engraveLevel={playerHero?.engrave}
-      id={id}
-    />
-    <div className={styles.PlayerName}>{playerName}</div>
-  </ListItem>
-);
+const PlayerValidation: React.FC<IProps> = function PlayerValidation({
+  playerHero,
+  playerName,
+  id,
+}) {
+  return (
+    <ListItem>
+      <Character
+        ascendLevel={playerHero?.ascend}
+        siLevel={playerHero?.si}
+        fiLevel={playerHero?.fi}
+        engraveLevel={playerHero?.engrave}
+        id={id}
+      />
+      <div className={styles.PlayerName}>{playerName}</div>
+    </ListItem>
+  );
+};
 
 export default PlayerValidation;

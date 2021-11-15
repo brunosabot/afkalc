@@ -21,7 +21,7 @@ interface IProps {
   linkKey?: number;
 }
 
-const HeroLine: React.FC<IProps> = ({
+const HeroLine: React.FC<IProps> = function HeroLine({
   id,
   name,
   setLevel,
@@ -32,7 +32,7 @@ const HeroLine: React.FC<IProps> = ({
   linkKey,
   onClick,
   shouldUnlockFi = false,
-}) => {
+}) {
   const [showModal, setShowModal] = useState(false);
 
   let linkElement = null;

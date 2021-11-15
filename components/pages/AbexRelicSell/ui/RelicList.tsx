@@ -14,7 +14,7 @@ interface Props {
   setInventory: (value: { [key: number]: number }) => void;
 }
 
-const RelicList: React.FC<Props> = ({ current, goal, inventory, setInventory }) => {
+const RelicList: React.FC<Props> = function RelicList({ current, goal, inventory, setInventory }) {
   const [filter, setFilter] = useState(0);
 
   const flatRelics = Object.keys(inventory).reduce<number[]>((acc, key) => {

@@ -6,7 +6,7 @@ interface IProps {
   children: string;
 }
 
-const InfoDetails: React.FC<IProps> = ({ value, children }) => {
+const InfoDetails: React.FC<IProps> = function InfoDetails({ value, children }) {
   if (value === null || value === undefined || value === 0 || value === -1) {
     return null;
   }

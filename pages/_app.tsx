@@ -13,6 +13,7 @@ import PriorityListProvider from "../components/providers/PriorityListProvider";
 import ProfileProvider from "../components/providers/ProfileProvider";
 import TreeListProvider from "../components/providers/TreeListProvider";
 import UserProvider from "../components/providers/UserProvider";
+import nextI18NextConfig from "../next-i18next.config";
 import "../styles/globals.css";
 
 dayjs.extend(customParseFormat);
@@ -20,7 +21,7 @@ dayjs.extend(updateLocale);
 dayjs.extend(localizedFormat);
 dayjs.extend(relativeTime);
 
-function MyApp({ Component, pageProps }: any) {
+const MyApp = function MyApp({ Component, pageProps }: any) {
   // eslint-disable-next-line no-underscore-dangle
   dayjs.locale(pageProps?._nextI18Next?.initialLocale ?? "en_US");
 
@@ -39,6 +40,6 @@ function MyApp({ Component, pageProps }: any) {
       </ProfileProvider>
     </FirebaseProvider>
   );
-}
+};
 
-export default appWithTranslation(MyApp);
+export default appWithTranslation(MyApp, nextI18NextConfig);

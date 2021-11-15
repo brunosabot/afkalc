@@ -21,7 +21,7 @@ interface IProps {
   [key: string]: never;
 }
 
-const ItemCost: React.FC<IProps> = () => {
+const ItemCost: React.FC<IProps> = function ItemCost() {
   const { t } = useTranslation("item-cost");
   const [showHelp, setShowHelp] = useState(false);
   const [firstPart, setFirstPart] = useState<{ [key: string]: number }>({});

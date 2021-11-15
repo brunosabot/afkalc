@@ -14,7 +14,7 @@ interface IProps {
   children: React.ReactNode;
 }
 
-const GuildProvider: React.FC<IProps> = ({ children }) => {
+const GuildProvider: React.FC<IProps> = function GuildProvider({ children }) {
   const { values } = useContext(FirebaseContext);
   const [lazyMember, setLazyMember] = useState<boolean>(true);
   const [lazyGuild, setLazyGuild] = useState<boolean>(true);

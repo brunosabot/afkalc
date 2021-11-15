@@ -12,7 +12,7 @@ interface IProps {
   [key: string]: never;
 }
 
-const GuildParams: React.FC<IProps> = () => {
+const GuildParams: React.FC<IProps> = function GuildParams() {
   const { values } = useContext(GuildContext);
   const router = useRouter();
   const localePath = router.locale === router.defaultLocale ? "" : `/${router.locale}`;

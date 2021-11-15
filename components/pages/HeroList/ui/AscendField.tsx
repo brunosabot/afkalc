@@ -13,7 +13,7 @@ interface IProps {
   isView: boolean;
 }
 
-const AscendField: React.FC<IProps> = ({ id, setLevel, getValue, isView }) => {
+const AscendField: React.FC<IProps> = function AscendField({ id, setLevel, getValue, isView }) {
   const { t } = useTranslation("hero-list");
 
   if (isView) {

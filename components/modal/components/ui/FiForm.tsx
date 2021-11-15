@@ -19,7 +19,7 @@ interface Props {
   onChange: (value: number) => void;
 }
 
-const FiForm: React.FC<Props> = ({ hero, si, fi, ascend, engrave, onChange }) => {
+const FiForm: React.FC<Props> = function FiForm({ hero, si, fi, ascend, engrave, onChange }) {
   const { t } = useTranslation("common");
 
   return (

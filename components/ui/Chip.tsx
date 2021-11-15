@@ -5,6 +5,8 @@ interface IProps {
   children: React.ReactNode;
 }
 
-const Chip: React.FC<IProps> = ({ children }) => <div className={styles.Chip}>{children}</div>;
+const Chip: React.FC<IProps> = function Chip({ children }) {
+  return <div className={styles.Chip}>{children}</div>;
+};
 
 export default Chip;

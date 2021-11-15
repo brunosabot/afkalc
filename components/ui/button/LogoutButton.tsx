@@ -7,7 +7,7 @@ interface IProps {
   [key: string]: never;
 }
 
-const LogoutButton: React.FC<IProps> = () => {
+const LogoutButton: React.FC<IProps> = function LogoutButton() {
   const { actions } = useContext(FirebaseContext);
   const { t } = useTranslation("common");
 

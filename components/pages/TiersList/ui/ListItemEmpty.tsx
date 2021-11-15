@@ -5,8 +5,8 @@ interface IProps {
   children: React.ReactNode;
 }
 
-const ListItemEmpty: React.FC<IProps> = ({ children }) => (
-  <div className={styles.ListItemEmpty}>{children}</div>
-);
+const ListItemEmpty: React.FC<IProps> = function ListItemEmpty({ children }) {
+  return <div className={styles.ListItemEmpty}>{children}</div>;
+};
 
 export default ListItemEmpty;

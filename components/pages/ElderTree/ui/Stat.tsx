@@ -14,7 +14,7 @@ interface IProps {
   level?: number;
 }
 
-const Stat: React.FC<IProps> = ({ heroClass, stat, level }) => {
+const Stat: React.FC<IProps> = function Stat({ heroClass, stat, level }) {
   const { t } = useTranslation("elder-tree");
 
   const { values } = useContext(ProfileContext);

@@ -3,6 +3,7 @@
   display: flex;
   margin-top: 4px;
 }
+
 .TileLevel {
   align-items: center;
   background-color: var(--help-background-color);
@@ -23,6 +24,7 @@
   gap: 6px;
   margin: 0 16px 0 0;
 }
+
 .EssenceCount svg {
   height: 18px;
 }
@@ -30,6 +32,7 @@
 .Overload {
   color: var(--error-text-color);
 }
+
 .OverloadLevel {
   background-color: var(--error-background-color);
   color: #000;

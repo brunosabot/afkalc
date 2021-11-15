@@ -7,7 +7,7 @@ interface IProps {
   setPass: (value: string) => void;
 }
 
-const PassNowLabel: React.FC<IProps> = ({ setPass }) => {
+const PassNowLabel: React.FC<IProps> = function PassNowLabel({ setPass }) {
   const { t } = useTranslation("loot");
 
   return (

@@ -12,7 +12,13 @@ interface IProps {
   lastUpdate?: string;
 }
 
-const TiersListItem: React.FC<IProps> = ({ href, name, percentage, heroName, lastUpdate }) => {
+const TiersListItem: React.FC<IProps> = function TiersListItem({
+  href,
+  name,
+  percentage,
+  heroName,
+  lastUpdate,
+}) {
   const lastUpdateAgo = useMemo(() => dayjs(new Date(lastUpdate ?? 0)).fromNow(), [lastUpdate]);
 
   return (

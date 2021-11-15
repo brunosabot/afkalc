@@ -6,8 +6,10 @@ interface IProps {
   children: React.ReactNode;
 }
 
-const CharacterGrid: React.FC<IProps> = ({ children, size = "normal" }) => (
-  <div className={`${styles.CharacterGrid} ${styles[`CharacterGrid--${size}`]}`}>{children}</div>
-);
+const CharacterGrid: React.FC<IProps> = function CharacterGrid({ children, size = "normal" }) {
+  return (
+    <div className={`${styles.CharacterGrid} ${styles[`CharacterGrid--${size}`]}`}>{children}</div>
+  );
+};
 
 export default CharacterGrid;

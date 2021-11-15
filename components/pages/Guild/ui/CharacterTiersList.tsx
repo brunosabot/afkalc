@@ -13,7 +13,12 @@ interface IProps {
   okPlayers: IFirebaseProfile[];
 }
 
-const CharacterTiersList: React.FC<IProps> = ({ koPlayers, okPlayers, hero, percentage }) => {
+const CharacterTiersList: React.FC<IProps> = function CharacterTiersList({
+  koPlayers,
+  okPlayers,
+  hero,
+  percentage,
+}) {
   const [showModal, setShowModal] = useState(false);
 
   return (

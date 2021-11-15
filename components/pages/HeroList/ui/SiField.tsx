@@ -10,7 +10,7 @@ interface IProps {
   isView: boolean;
 }
 
-const SiField: React.FC<IProps> = ({ id, setLevel, getValue, isView }) => {
+const SiField: React.FC<IProps> = function SiField({ id, setLevel, getValue, isView }) {
   const value = getValue(id, "si");
 
   return (

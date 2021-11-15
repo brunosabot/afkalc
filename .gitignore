@@ -39,3 +39,5 @@ yarn-error.log*
 /public/sitemap.xml
 
 certificates
+
+tsconfig.tsbuildinfo

@@ -2,12 +2,14 @@
   align-items: center;
   display: inline-flex;
   gap: 8px;
-  padding: 0 16px 16px 16px;
+  padding: 0 16px 16px;
 }
+
 .Image {
   height: 32px;
   width: 32px;
 }
+
 .Input {
   background-color: transparent;
   border: 1px solid var(--card-border-color);

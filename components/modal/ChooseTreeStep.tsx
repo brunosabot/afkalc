@@ -12,7 +12,11 @@ interface Props {
   level?: number;
 }
 
-const ChooseTreeStep: React.FC<Props> = ({ heroClass = HeroClass.ranger, level = 0, onSelect }) => {
+const ChooseTreeStep: React.FC<Props> = function ChooseTreeStep({
+  heroClass = HeroClass.ranger,
+  level = 0,
+  onSelect,
+}) {
   const { t } = useTranslation("common");
 
   return (

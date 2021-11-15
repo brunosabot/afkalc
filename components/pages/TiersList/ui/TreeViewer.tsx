@@ -20,7 +20,7 @@ interface IProps {
   listId: string;
 }
 
-const TreeViewer: React.FC<IProps> = ({ listId, result }) => {
+const TreeViewer: React.FC<IProps> = function TreeViewer({ listId, result }) {
   const { values } = useContext(ProfileContext);
   const [showChecked, setShowChecked] = useState<boolean>(false);
   const { t } = useTranslation("priority-list");
@@ -35,45 +35,41 @@ const TreeViewer: React.FC<IProps> = ({ listId, result }) => {
   );
 
   return (
-    <>
-      <Card>
-        <CardTitle
-          icon={mdiTree}
-          action={
-            <>
-              <CheckedButton showChecked={showChecked} setShowChecked={setShowChecked} />
-              <FavoriteTreeButton title={title} listId={listId} />
-            </>
-          }
-        >
-          {title}
-        </CardTitle>
-        {result?.treeListLastUpdate !== "" ? (
-          <div>
-            <CardHelp>{`${t("last-update")} ${lastUpdate}`}</CardHelp>
-          </div>
-        ) : null}
-
-        {showChecked ? null : <CardWarn>{t("checked-items-hidden")}</CardWarn>}
-
-        {listSteps.map((step, index) => (
+    <Card>
+      <CardTitle
+        icon={mdiTree}
+        action={
           <>
-            <TreeLineViewer
-              key={`${step.heroClass}-${step.level}`}
-              step={step}
-              elderTree={values.elderTree}
-              treeList={result}
-              shouldShowChecked={showChecked}
-            />
+            <CheckedButton showChecked={showChecked} setShowChecked={setShowChecked} />
+            <FavoriteTreeButton title={title} listId={listId} />
           </>
-        ))}
-        <CardActions>
-          <CardAction icon={mdiContentCopy} onClick={onDuplicateList}>
-            {t("label-duplicate")}
-          </CardAction>
-        </CardActions>
-      </Card>
-    </>
+        }
+      >
+        {title}
+      </CardTitle>
+      {result?.treeListLastUpdate !== "" ? (
+        <div>
+          <CardHelp>{`${t("last-update")} ${lastUpdate}`}</CardHelp>
+        </div>
+      ) : null}
+
+      {showChecked ? null : <CardWarn>{t("checked-items-hidden")}</CardWarn>}
+
+      {listSteps.map((step, index) => (
+        <TreeLineViewer
+          key={`${step.heroClass}-${step.level}`}
+          step={step}
+          elderTree={values.elderTree}
+          treeList={result}
+          shouldShowChecked={showChecked}
+        />
+      ))}
+      <CardActions>
+        <CardAction icon={mdiContentCopy} onClick={onDuplicateList}>
+          {t("label-duplicate")}
+        </CardAction>
+      </CardActions>
+    </Card>
   );
 };
 

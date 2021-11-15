@@ -21,7 +21,7 @@ interface IProps {
   [key: string]: never;
 }
 
-const SignatureItem: React.FC<IProps> = () => {
+const SignatureItem: React.FC<IProps> = function SignatureItem() {
   const { t } = useTranslation("signature-item");
   const [currentLevel, setCurrentLevel] = useState(0);
   const [targetLevel, setTargetLevel] = useState(40);

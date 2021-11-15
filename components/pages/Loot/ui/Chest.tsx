@@ -18,7 +18,7 @@ interface IProps {
   chest: IChest;
 }
 
-const Chest: React.FC<IProps> = ({ pass, chest }) => {
+const Chest: React.FC<IProps> = function Chest({ pass, chest }) {
   const { getItem } = useItem();
   const { t } = useTranslation("loot");
   const { t: tc } = useTranslation("common");

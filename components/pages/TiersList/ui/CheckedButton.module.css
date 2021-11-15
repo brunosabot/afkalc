@@ -13,9 +13,11 @@
   transition: var(--transition);
   width: 40px;
 }
+
 .CheckedButton:hover {
   background-color: var(--hover-color);
 }
+
 .ShowCheck {
   color: var(--active-color);
 }

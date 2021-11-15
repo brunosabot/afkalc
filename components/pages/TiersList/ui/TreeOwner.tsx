@@ -30,7 +30,7 @@ interface IProps {
   listId: string;
 }
 
-const TreeOwner: React.FC<IProps> = ({ listId, result }) => {
+const TreeOwner: React.FC<IProps> = function TreeOwner({ listId, result }) {
   const router = useRouter();
   const {
     actions: { deleteList, setSteps, setTitle },

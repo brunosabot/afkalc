@@ -6,7 +6,7 @@ interface IProps {
   listId: string;
 }
 
-const TreeShareBanner: React.FC<IProps> = ({ listId }) => {
+const TreeShareBanner: React.FC<IProps> = function TreeShareBanner({ listId }) {
   const router = useRouter();
   const localePath = router.locale === router.defaultLocale ? "" : `/${router.locale}`;
 

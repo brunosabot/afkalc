@@ -10,6 +10,7 @@
   text-decoration: none;
   z-index: 1;
 }
+
 .GuildListItem::before {
   bottom: -1px;
   content: "";
@@ -24,6 +25,7 @@
 .GuildListItem:first-child {
   border-top: 1px solid var(--list-border);
 }
+
 .GuildListItem > *:first-child {
   align-items: center;
   display: flex;
@@ -40,6 +42,7 @@
   transition: var(--transition);
   width: 32px;
 }
+
 .Link:hover {
   background: var(--hover-color);
 }

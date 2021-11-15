@@ -12,7 +12,8 @@
     "resolveJsonModule": true,
     "skipLibCheck": true,
     "strict": true,
-    "target": "es5"
+    "target": "es5",
+    "incremental": true
   },
   "include": [
     "next-env.d.ts",
@@ -20,8 +21,6 @@
     "**/*.tsx",
     "next.config.js",
     "next-i18next.config.js",
-    "sentry.client.config.js",
-    "sentry.server.config.js",
     "server.js"
   ],
   "exclude": ["node_modules"]

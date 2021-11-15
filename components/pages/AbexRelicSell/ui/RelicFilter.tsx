@@ -8,7 +8,7 @@ interface Props {
   isActive?: boolean;
 }
 
-const RelicFilter: React.FC<Props> = ({ isActive = false, level, onClick }) => {
+const RelicFilter: React.FC<Props> = function RelicFilter({ isActive = false, level, onClick }) {
   const { t } = useTranslation("abex-relic-sell");
 
   return (

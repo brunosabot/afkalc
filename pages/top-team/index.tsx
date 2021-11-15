@@ -20,7 +20,7 @@ interface Props {
   [key: string]: never;
 }
 
-const TopTeam: React.FC<Props> = () => {
+const TopTeam: React.FC<Props> = function TopTeam() {
   const [team, setTeam] = useState({ 1: 0, 2: 0, 3: 0, 4: 0, 5: 0, 6: 0 });
   const [siList, setSiList] = useState({ 1: 0, 2: 0, 3: 0, 4: 0, 5: 0 });
   const [fiList, setFiList] = useState({ 1: 0, 2: 0, 3: 0, 4: 0, 5: 0 });

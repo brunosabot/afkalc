@@ -9,31 +9,29 @@ interface IProps {
   [key: string]: never;
 }
 
-const Menu: React.FC<IProps> = () => {
+const Menu: React.FC<IProps> = function Menu() {
   const { t } = useTranslation("common");
   const { values } = useContext(ProfileContext);
 
   return (
-    <>
-      <MenuToolbar>
-        <MenuToolbarLink to="/" image="/loot/frame.png">
-          <MenuBurger />
-          {t("menu.home")}
-        </MenuToolbarLink>
-        <MenuToolbarLink to={`/hero-list/${values.userId}`} image="/heroes/belinda.jpg">
-          {t("menu.short-hero-list")}
-        </MenuToolbarLink>
-        <MenuToolbarLink to="/tiers-list" image="/loot/priority-list.jpg">
-          {t("menu.short-priority-list")}
-        </MenuToolbarLink>
-        <MenuToolbarLink to="/guild" image="/loot/guild_coin.jpg">
-          {t("menu.short-guild")}
-        </MenuToolbarLink>
-        <MenuToolbarLink to="/top-team" image="/enemies/wrizz.jpg">
-          {t("menu.short-top-team")}
-        </MenuToolbarLink>
-      </MenuToolbar>
-    </>
+    <MenuToolbar>
+      <MenuToolbarLink to="/" image="/loot/frame.png">
+        <MenuBurger />
+        {t("menu.home")}
+      </MenuToolbarLink>
+      <MenuToolbarLink to={`/hero-list/${values.userId}`} image="/heroes/belinda.jpg">
+        {t("menu.short-hero-list")}
+      </MenuToolbarLink>
+      <MenuToolbarLink to="/tiers-list" image="/loot/priority-list.jpg">
+        {t("menu.short-priority-list")}
+      </MenuToolbarLink>
+      <MenuToolbarLink to="/guild" image="/loot/guild_coin.jpg">
+        {t("menu.short-guild")}
+      </MenuToolbarLink>
+      <MenuToolbarLink to="/top-team" image="/enemies/wrizz.jpg">
+        {t("menu.short-top-team")}
+      </MenuToolbarLink>
+    </MenuToolbar>
   );
 };
 

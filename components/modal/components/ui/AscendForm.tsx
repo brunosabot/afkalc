@@ -12,7 +12,14 @@ interface Props {
   onChange: (value: number) => void;
 }
 
-const AscendForm: React.FC<Props> = ({ hero, si, fi, ascend, engrave, onChange }) => {
+const AscendForm: React.FC<Props> = function AscendForm({
+  hero,
+  si,
+  fi,
+  ascend,
+  engrave,
+  onChange,
+}) {
   const { t } = useTranslation("common");
 
   return (

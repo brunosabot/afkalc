@@ -10,6 +10,7 @@
   transition: var(--transition);
   width: 52px;
 }
+
 .MenuToolbarLink:hover {
   background-color: var(--hover-color);
 }

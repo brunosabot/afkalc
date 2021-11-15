@@ -10,7 +10,7 @@ interface Props {
   onSelect: (value: string) => void;
 }
 
-const ItemPicker: React.FC<Props> = ({ item, onSelect }) => {
+const ItemPicker: React.FC<Props> = function ItemPicker({ item, onSelect }) {
   const [showModal, setShowModal] = useState<boolean>(false);
   const { getItem } = useItem();
   const { name, info, secondaryInfo } = getItem(item);

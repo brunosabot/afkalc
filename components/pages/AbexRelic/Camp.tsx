@@ -39,7 +39,7 @@ function formatTime(sec: number, t: TFunction) {
 
 const dataQuality = abexData.relicQuality as QualityType;
 
-const Camp: React.FC<IProps> = ({ data, camp, now, set }) => {
+const Camp: React.FC<IProps> = function Camp({ data, camp, now, set }) {
   const { t } = useTranslation("abex-relic");
   const timer = data[camp.id]?.timer ?? 0;
   const timestamp = data[camp.id]?.timestamp ?? now;

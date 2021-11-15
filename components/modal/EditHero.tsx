@@ -21,73 +21,84 @@ interface Props {
   onNext: () => void;
 }
 
-const EditHero: React.FC<Props> = ({ hero, si, fi, ascend, engrave, setLevel, onNext, onPrev }) => (
-  <div className={styles.EditHero}>
-    <div className={styles.EditHeroSwitch}>
-      <button type="button" className={styles.Button} onClick={onPrev}>
-        <Svg d={mdiChevronLeft} />
-      </button>
-      <Character
-        ascendLevel={ascend}
-        siLevel={si}
-        fiLevel={fi}
-        engraveLevel={engrave}
-        id={hero}
-        size="large"
-      />
-      <button type="button" className={styles.Button} onClick={onNext}>
-        <Svg d={mdiChevronRight} />
-      </button>
+const EditHero: React.FC<Props> = function EditHero({
+  hero,
+  si,
+  fi,
+  ascend,
+  engrave,
+  setLevel,
+  onNext,
+  onPrev,
+}) {
+  return (
+    <div className={styles.EditHero}>
+      <div className={styles.EditHeroSwitch}>
+        <button type="button" className={styles.Button} onClick={onPrev}>
+          <Svg d={mdiChevronLeft} />
+        </button>
+        <Character
+          ascendLevel={ascend}
+          siLevel={si}
+          fiLevel={fi}
+          engraveLevel={engrave}
+          id={hero}
+          size="large"
+        />
+        <button type="button" className={styles.Button} onClick={onNext}>
+          <Svg d={mdiChevronRight} />
+        </button>
+      </div>
+      <div className={styles.Form}>
+        <AscendForm
+          ascend={ascend}
+          engrave={engrave}
+          fi={fi}
+          hero={hero}
+          si={si}
+          onChange={(ascendValue) =>
+            setLevel(hero, "ASCEND", getAscend(ascendValue, si, fi, engrave)).commit()
+          }
+        />
+        <SiForm
+          ascend={ascend}
+          engrave={engrave}
+          fi={fi}
+          hero={hero}
+          si={si}
+          onChange={(siValue) =>
+            setLevel(hero, "SI", parseInt(siValue, 10))
+              .again(hero, "ASCEND", getAscend(ascend, parseInt(siValue, 10), fi, engrave))
+              .commit()
+          }
+        />
+        <FiForm
+          ascend={ascend}
+          engrave={engrave}
+          fi={fi}
+          hero={hero}
+          si={si}
+          onChange={(fiValue) =>
+            setLevel(hero, "FI", fiValue)
+              .again(hero, "ASCEND", getAscend(ascend, si, fiValue, engrave))
+              .commit()
+          }
+        />
+        <EngraveForm
+          ascend={ascend}
+          engrave={engrave}
+          fi={fi}
+          hero={hero}
+          si={si}
+          onChange={(engraveValue) =>
+            setLevel(hero, "ENGRAVE", engraveValue)
+              .again(hero, "ASCEND", getAscend(ascend, si, fi, engraveValue))
+              .commit()
+          }
+        />
+      </div>
     </div>
-    <div className={styles.Form}>
-      <AscendForm
-        ascend={ascend}
-        engrave={engrave}
-        fi={fi}
-        hero={hero}
-        si={si}
-        onChange={(ascendValue) =>
-          setLevel(hero, "ASCEND", getAscend(ascendValue, si, fi, engrave)).commit()
-        }
-      />
-      <SiForm
-        ascend={ascend}
-        engrave={engrave}
-        fi={fi}
-        hero={hero}
-        si={si}
-        onChange={(siValue) =>
-          setLevel(hero, "SI", parseInt(siValue, 10))
-            .again(hero, "ASCEND", getAscend(ascend, parseInt(siValue, 10), fi, engrave))
-            .commit()
-        }
-      />
-      <FiForm
-        ascend={ascend}
-        engrave={engrave}
-        fi={fi}
-        hero={hero}
-        si={si}
-        onChange={(fiValue) =>
-          setLevel(hero, "FI", fiValue)
-            .again(hero, "ASCEND", getAscend(ascend, si, fiValue, engrave))
-            .commit()
-        }
-      />
-      <EngraveForm
-        ascend={ascend}
-        engrave={engrave}
-        fi={fi}
-        hero={hero}
-        si={si}
-        onChange={(engraveValue) =>
-          setLevel(hero, "ENGRAVE", engraveValue)
-            .again(hero, "ASCEND", getAscend(ascend, si, fi, engraveValue))
-            .commit()
-        }
-      />
-    </div>
-  </div>
-);
+  );
+};
 
 export default EditHero;

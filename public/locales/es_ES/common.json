@@ -1,6 +1,6 @@
 {
   "welcome": "Bienvenido a Afkalc, la herramienta de cálculo para AFK Arena",
-  "label-copied": "Link copied",
+  "label-copied": "Enlace copiado",
   "require-login": "Debes iniciar sesión para utilizar ésta función",
   "credit-desc": "Por su ayuda en la recopilación de datos, creación de excelentes guías y el desarrollo de la aplicación, gracias a:",
   "temporary-account": "Ha iniciado sesión como invitado. Sus cambios sólo estarán disponibles temporalmente.",
@@ -42,7 +42,7 @@
     "loot": "Recompensas AFK",
     "hero-list": "Lista de héroes",
     "fast-reward": "Recompensas Rápidas",
-    "top-team": "Mejors Equipo",
+    "top-team": "Mejor equipo",
     "item-cost": "Coste de los artículos",
     "priority-list": "Lista de Prioridades",
     "credit": "Agradecimientos",
@@ -52,11 +52,11 @@
     "settings": "Configuración y privacidad",
     "guild": "Gremio",
     "donate": "Efectúe una donación",
-    "short-loot": "Recompensas AFK",
+    "short-loot": "Recompensas",
     "elder-tree": "Árbol Anciano",
     "short-hero-list": "Héroes",
     "short-top-team": "Equipos",
-    "short-item-cost": "Coste de los artículos"
+    "short-item-cost": "Comparación"
   },
   "heroClass": {
     "warrior": "Guerrero",
@@ -107,7 +107,7 @@
     "hero-essence": "Esencia del héroe",
     "elite-enhancement-token": "Ficha de mejora poco común",
     "elite-gear": "Equipo élite",
-    "elite-p-gear": "Equipo Elite+",
+    "elite-p-gear": "Equipo élite+",
     "elite-soulstone": "Piedra de alma de héroe élite",
     "emblem-choice-chest": "Cofre de elección del emblema",
     "faction-emblem": "Emblema de facción",
@@ -116,7 +116,7 @@
     "guild-token": "Monedas del gremio",
     "hero-coin": "Monedas de héroe",
     "hypogean-emblem": "Emblema Hipógeo",
-    "invigorating-essence": "Esencia Vigorizante",
+    "invigorating-essence": "Esencia vigorizante",
     "labyrinth-token": "Fichas del laberinto",
     "legendary-gear": "Equipo legendario",
     "legendary-p-gear": "Equipo legendario+",
@@ -125,7 +125,7 @@
     "mythic-gear-dimensional": "Equipo Mítico - dimensional",
     "mythic-gear-faction": "Equipo Mítico - facción",
     "mythic-gear": "Equipo mítico",
-    "mythic-stone": "Piedra Mítica",
+    "mythic-stone": "Piedra mítica",
     "poe-coin": "Monedas Poe",
     "primordial-emblem": "Emblema primordial",
     "rare-enhancement-token": "Ficha de mejora común",
@@ -170,6 +170,6 @@
     "siUnlocked": "SI desbloqueado",
     "fi": "Muebles",
     "ascend": "Ascensión",
-    "engrave": "Grabado"
+    "engrave": "Grabados"
   }
 }

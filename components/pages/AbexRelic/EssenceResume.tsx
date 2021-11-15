@@ -10,7 +10,7 @@ interface IProps {
   [key: string]: never;
 }
 
-const EssenceResume: React.FC<IProps> = () => {
+const EssenceResume: React.FC<IProps> = function EssenceResume() {
   const { t } = useTranslation("abex-relic");
   const { values } = useContext(ProfileContext);
 
@@ -25,17 +25,13 @@ const EssenceResume: React.FC<IProps> = () => {
     );
   }, 0);
 
-  return (
-    <>
-      {total ? (
-        <span className={styles.EssenceCount}>
-          <Svg d={mdiChartLineVariant} />
-          {total}
-          {t("label-per-hour")}
-        </span>
-      ) : null}
-    </>
-  );
+  return total ? (
+    <span className={styles.EssenceCount}>
+      <Svg d={mdiChartLineVariant} />
+      {total}
+      {t("label-per-hour")}
+    </span>
+  ) : null;
 };
 
 export default EssenceResume;

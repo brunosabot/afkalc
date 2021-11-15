@@ -26,7 +26,7 @@ interface IProps {
   [key: string]: never;
 }
 
-const TiersList: React.FC<IProps> = () => {
+const TiersList: React.FC<IProps> = function TiersList() {
   const router = useRouter();
   const { t } = useTranslation("priority-list");
   const { id } = router.query;

@@ -4,14 +4,17 @@
   flex-direction: column;
   flex-grow: 1;
 }
+
 .Label {
   display: flex;
   flex-direction: column;
 }
+
 .Date {
   font-size: 0.85em;
   margin-top: 4px;
 }
+
 .Overload {
   color: var(--error-text-color);
 }

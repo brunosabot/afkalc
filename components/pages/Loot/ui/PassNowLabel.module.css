@@ -2,6 +2,7 @@
   display: flex;
   justify-content: space-between;
 }
+
 .Now {
   background: none;
   border: 0;
@@ -9,6 +10,7 @@
   cursor: pointer;
   text-decoration: underline;
 }
+
 .Now:hover {
   text-decoration: none;
 }

@@ -13,6 +13,8 @@ export async function getServerSideProps() {
   };
 }
 
-const PriorityList: React.FC<IProps> = () => null;
+const PriorityList: React.FC<IProps> = function PriorityList() {
+  return null;
+};
 
 export default PriorityList;

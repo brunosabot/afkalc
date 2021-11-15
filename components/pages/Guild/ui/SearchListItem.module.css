@@ -12,6 +12,7 @@
   text-decoration: none;
   z-index: 1;
 }
+
 .SearchListItem::before {
   bottom: -1px;
   content: "";
@@ -37,6 +38,7 @@
   transition: var(--transition);
   width: 32px;
 }
+
 .Link:hover {
   background: var(--hover-color);
 }
@@ -49,16 +51,20 @@
   flex-shrink: 1;
   margin-left: 8px;
 }
+
 .Content:first-child {
   margin-left: 0;
 }
+
 .Title {
   align-items: center;
   display: flex;
 }
+
 .Title svg {
   margin-left: 8px;
 }
+
 .Subtitle {
   color: var(--secondary-text-color);
   font-size: 0.85em;

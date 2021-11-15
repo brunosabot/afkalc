@@ -27,7 +27,7 @@ interface IProps {
   [key: string]: never;
 }
 
-const TreeList: React.FC<IProps> = () => {
+const TreeList: React.FC<IProps> = function TreeList() {
   const router = useRouter();
   const { t } = useTranslation("priority-list");
   const { values } = useContext(ProfileContext);

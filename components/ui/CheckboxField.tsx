@@ -8,7 +8,7 @@ interface IProps {
   name: string;
 }
 
-const CheckboxField: React.FC<IProps> = ({ label, value, onChange, name }) => {
+const CheckboxField: React.FC<IProps> = function CheckboxField({ label, value, onChange, name }) {
   const refId = useRef(`checkbox-field_${name}`);
   const inputEl = useRef<HTMLInputElement>(null);
 

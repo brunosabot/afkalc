@@ -25,7 +25,7 @@ interface IProps {
   [key: string]: never;
 }
 
-const PriorityList: React.FC<IProps> = () => {
+const PriorityList: React.FC<IProps> = function PriorityList() {
   const router = useRouter();
   const { t } = useTranslation("priority-list");
 
