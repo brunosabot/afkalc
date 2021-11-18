@@ -15,7 +15,7 @@ import CardTitle from "../../components/ui/card/CardTitle";
 import Grid from "../../components/ui/layout/Grid";
 import abexData from "../../data/abex.json";
 
-export const getStaticProps = async ({ locale }: { locale: string }) => ({
+export const getServerSideProps = async ({ locale }: { locale: string }) => ({
   props: {
     ...(await serverSideTranslations(locale, [
       "abex-relic-sell",

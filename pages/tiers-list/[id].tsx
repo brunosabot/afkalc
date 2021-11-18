@@ -1,4 +1,3 @@
-import { GetStaticPaths } from "next";
 import { useTranslation } from "next-i18next";
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 import Head from "next/head";
@@ -12,7 +11,7 @@ import Viewer from "../../components/pages/TiersList/ui/Viewer";
 import ProfileContext from "../../components/providers/ProfileContext";
 import IFirebasePriorityList from "../../components/providers/types/IFirebasePriorityList";
 
-export const getStaticProps = async ({ locale }: { locale: string }) => ({
+export const getServerSideProps = async ({ locale }: { locale: string }) => ({
   props: {
     ...(await serverSideTranslations(locale, [
       "abex-relic-sell",
@@ -33,11 +32,6 @@ export const getStaticProps = async ({ locale }: { locale: string }) => ({
       "translation",
     ])),
   },
-});
-
-export const getStaticPaths: GetStaticPaths<{ slug: string }> = async () => ({
-  paths: [],
-  fallback: "blocking",
 });
 
 interface IProps {

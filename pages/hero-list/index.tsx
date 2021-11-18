@@ -3,7 +3,7 @@ import { useRouter } from "next/router";
 import React, { useContext } from "react";
 import ProfileContext from "../../components/providers/ProfileContext";
 
-export const getStaticProps = async ({ locale }: { locale: string }) => ({
+export const getServerSideProps = async ({ locale }: { locale: string }) => ({
   props: {
     ...(await serverSideTranslations(locale, [
       "abex-relic-sell",

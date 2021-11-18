@@ -1,6 +1,5 @@
 import { mdiViewList } from "@mdi/js";
 import dayjs from "dayjs";
-import { GetStaticPaths } from "next";
 import { useTranslation } from "next-i18next";
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 import Head from "next/head";
@@ -30,7 +29,7 @@ import TwoColsSticky from "../../components/ui/layout/TwoColsSticky";
 import heroesJson from "../../data/heroes.json";
 import ICharacter from "../../types/ICharacter";
 
-export const getStaticProps = async ({ locale }: { locale: string }) => ({
+export const getServerSideProps = async ({ locale }: { locale: string }) => ({
   props: {
     ...(await serverSideTranslations(locale, [
       "abex-relic-sell",
@@ -51,11 +50,6 @@ export const getStaticProps = async ({ locale }: { locale: string }) => ({
       "translation",
     ])),
   },
-});
-
-export const getStaticPaths: GetStaticPaths<{ slug: string }> = async () => ({
-  paths: [],
-  fallback: "blocking",
 });
 
 const typedHeroes: ICharacter[] = heroesJson as ICharacter[];

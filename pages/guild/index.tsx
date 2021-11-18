@@ -7,7 +7,7 @@ import Register from "../../components/pages/Guild/ui/Register";
 import View from "../../components/pages/Guild/ui/View";
 import GuildContext from "../../components/providers/GuildContext";
 
-export const getStaticProps = async ({ locale }: { locale: string }) => ({
+export const getServerSideProps = async ({ locale }: { locale: string }) => ({
   props: {
     ...(await serverSideTranslations(locale, [
       "abex-relic-sell",
