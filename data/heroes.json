@@ -1038,7 +1038,7 @@
     "name": "Thesku",
     "id": 98,
     "type": "intelligence",
-    "class": "intelligence",
+    "class": "mage",
     "role": "control",
     "image": "/heroes/SnakeMan.jpg",
     "faction": "maulers",
