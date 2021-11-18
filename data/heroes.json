@@ -1033,5 +1033,15 @@
     "image": "/heroes/CKnight.jpg",
     "faction": "graveborns",
     "usage": []
+  },
+  {
+    "name": "Thesku",
+    "id": 98,
+    "type": "intelligence",
+    "class": "intelligence",
+    "role": "control",
+    "image": "/heroes/SnakeMan.jpg",
+    "faction": "maulers",
+    "usage": []
   }
 ]
