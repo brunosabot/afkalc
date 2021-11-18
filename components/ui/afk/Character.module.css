@@ -121,13 +121,12 @@
 .Artifact {
   border-radius: 11px;
   height: 22px;
-  left: 50%;
+  left: 13px;
   position: absolute;
   stroke: #280e16;
   stroke-linecap: round;
   stroke-width: 4px;
   top: -22px;
-  transform: translateX(-50%);
   width: 22px;
 }
 
