@@ -35,7 +35,7 @@ import MenuBox from "../components/ui/menu/MenuBox";
 import MenuItem from "../components/ui/menu/MenuItem";
 import MenuItemExternal from "../components/ui/menu/MenuItemExternal";
 
-export const getStaticProps = async ({ locale }: { locale: string }) => ({
+export const getServerSideProps = async ({ locale }: { locale: string }) => ({
   props: {
     ...(await serverSideTranslations(locale, [
       "abex-relic-sell",

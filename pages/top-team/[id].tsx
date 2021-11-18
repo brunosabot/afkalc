@@ -1,4 +1,3 @@
-import { GetStaticPaths } from "next";
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 import Head from "next/head";
 import { useRouter } from "next/router";
@@ -13,7 +12,7 @@ import ShareBanner from "../../components/pages/TopTeam/ui/ShareBanner";
 import { DetailType } from "../../components/ui/afk/Character";
 import Card from "../../components/ui/card/Card";
 
-export const getStaticProps = async ({ locale }: { locale: string }) => ({
+export const getServerSideProps = async ({ locale }: { locale: string }) => ({
   props: {
     ...(await serverSideTranslations(locale, [
       "abex-relic-sell",
@@ -34,11 +33,6 @@ export const getStaticProps = async ({ locale }: { locale: string }) => ({
       "translation",
     ])),
   },
-});
-
-export const getStaticPaths: GetStaticPaths<{ slug: string }> = async () => ({
-  paths: [],
-  fallback: "blocking",
 });
 
 interface Props {
