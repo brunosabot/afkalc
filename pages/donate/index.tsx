@@ -11,7 +11,24 @@ import styles from "./index.module.css";
 
 export const getStaticProps = async ({ locale }: { locale: string }) => ({
   props: {
-    ...(await serverSideTranslations(locale, ["common", "donate"])),
+    ...(await serverSideTranslations(locale, [
+      "abex-relic-sell",
+      "abex-relic",
+      "common",
+      "donate",
+      "elder-tree",
+      "elite-summon",
+      "fast-reward",
+      "guild",
+      "hero-list",
+      "item-cost",
+      "loot",
+      "priority-list",
+      "settings",
+      "signature-item",
+      "top-team",
+      "translation",
+    ])),
   },
 });
 
