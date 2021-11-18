@@ -16,7 +16,7 @@ import SelectField from "../../components/ui/SelectField";
 import Svg from "../../components/ui/Svg";
 import vip from "../../data/fastRewardVip.json";
 
-export const getServerSideProps = async ({ locale }: { locale: string }) => ({
+export const getStaticProps = async ({ locale }: { locale: string }) => ({
   props: {
     ...(await serverSideTranslations(locale, [
       "abex-relic-sell",

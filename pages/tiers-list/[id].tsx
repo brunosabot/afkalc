@@ -11,7 +11,7 @@ import Viewer from "../../components/pages/TiersList/ui/Viewer";
 import ProfileContext from "../../components/providers/ProfileContext";
 import IFirebasePriorityList from "../../components/providers/types/IFirebasePriorityList";
 
-export const getServerSideProps = async ({ locale }: { locale: string }) => ({
+export const getStaticProps = async ({ locale }: { locale: string }) => ({
   props: {
     ...(await serverSideTranslations(locale, [
       "abex-relic-sell",

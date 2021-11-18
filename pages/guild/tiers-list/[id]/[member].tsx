@@ -10,7 +10,7 @@ import Back from "../../../../components/pages/Guild/ui/Back";
 import Viewer from "../../../../components/pages/Guild/ui/Viewer";
 import IFirebasePriorityList from "../../../../components/providers/types/IFirebasePriorityList";
 
-export const getServerSideProps = async ({ locale }: { locale: string }) => ({
+export const getStaticProps = async ({ locale }: { locale: string }) => ({
   props: {
     ...(await serverSideTranslations(locale, [
       "abex-relic-sell",

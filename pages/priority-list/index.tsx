@@ -4,7 +4,7 @@ interface IProps {
   [key: string]: never;
 }
 
-export async function getServerSideProps() {
+export async function getStaticProps() {
   return {
     redirect: {
       destination: "/tiers-list",

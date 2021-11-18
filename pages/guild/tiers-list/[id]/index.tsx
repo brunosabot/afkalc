@@ -20,7 +20,7 @@ import ICharacter from "../../../../types/ICharacter";
 
 const typedHeroes: ICharacter[] = heroes as ICharacter[];
 
-export const getServerSideProps = async ({ locale }: { locale: string }) => ({
+export const getStaticProps = async ({ locale }: { locale: string }) => ({
   props: {
     ...(await serverSideTranslations(locale, [
       "abex-relic-sell",

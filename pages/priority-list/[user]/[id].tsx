@@ -13,7 +13,7 @@ import Card from "../../../components/ui/card/Card";
 import CardTitle from "../../../components/ui/card/CardTitle";
 import List from "../../../components/ui/list/List";
 
-export const getServerSideProps = async ({ locale }: { locale: string }) => ({
+export const getStaticProps = async ({ locale }: { locale: string }) => ({
   props: {
     ...(await serverSideTranslations(locale, [
       "abex-relic-sell",

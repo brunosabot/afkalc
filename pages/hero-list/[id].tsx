@@ -29,7 +29,7 @@ import TwoColsSticky from "../../components/ui/layout/TwoColsSticky";
 import heroesJson from "../../data/heroes.json";
 import ICharacter from "../../types/ICharacter";
 
-export const getServerSideProps = async ({ locale }: { locale: string }) => ({
+export const getStaticProps = async ({ locale }: { locale: string }) => ({
   props: {
     ...(await serverSideTranslations(locale, [
       "abex-relic-sell",

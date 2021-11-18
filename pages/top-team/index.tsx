@@ -11,7 +11,7 @@ import ShareBanner from "../../components/pages/TopTeam/ui/ShareBanner";
 import { DetailType } from "../../components/ui/afk/Character";
 import Card from "../../components/ui/card/Card";
 
-export const getServerSideProps = async ({ locale }: { locale: string }) => ({
+export const getStaticProps = async ({ locale }: { locale: string }) => ({
   props: {
     ...(await serverSideTranslations(locale, [
       "abex-relic-sell",

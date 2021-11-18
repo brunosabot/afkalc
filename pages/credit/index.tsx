@@ -12,7 +12,7 @@ import InSeason from "../../components/ui/reddit/InSeason";
 import Whitesushii from "../../components/ui/reddit/Whitesushii";
 import WilordFR from "../../components/ui/reddit/WilordFR";
 
-export const getServerSideProps = async ({ locale }: { locale: string }) => ({
+export const getStaticProps = async ({ locale }: { locale: string }) => ({
   props: {
     ...(await serverSideTranslations(locale, [
       "abex-relic-sell",
