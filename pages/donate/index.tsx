@@ -32,7 +32,7 @@ const Donate: React.FC<IProps> = function Donate() {
         <CardTitle icon={mdiGiftOutline}>{t("common:menu.donate")}</CardTitle>
 
         <a
-          href="https://www.buymeacoffee.com/brunosabot"
+          href="https://www.buymeacoffee.com/afkalc"
           target="_blank"
           rel="noreferrer"
           className={styles.BuyMeACoffee}
