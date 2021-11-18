@@ -1,58 +1,7 @@
-.Wrapper {
-  align-items: center;
-  display: flex;
-  justify-content: center;
-}
-
-.Earning {
-  color: var(--success-text-color);
-  font-weight: 700;
-  margin: 0 16px;
-  text-align: center;
-}
-
-.Spending {
-  color: var(--error-text-color);
-  font-weight: 700;
-  margin: 0 16px;
-  text-align: center;
-}
-
 .Donate {
-  background-image: linear-gradient(var(--afk-mythic-color), var(--afk-legendary-color));
-  border-radius: 16px;
-  color: white;
-  display: flex;
-  font-weight: 900;
-  justify-content: center;
-  margin: 16px;
-  padding: 8px 16px;
-  position: relative;
-  text-decoration: none;
-  text-shadow: 0 0 1px rgb(0 0 0 / 50%);
-  transition: var(--transition);
+  color: var(--afk-mythic-color);
 }
 
-.Donate::after {
-  border-radius: 16px;
-  box-shadow: inset 0 0 1px 1px #fff;
-  box-sizing: border-box;
-  content: "";
-  height: 100%;
-  left: 0;
-  opacity: 30%;
-  position: absolute;
-  top: 0;
-  width: 100%;
-}
-
-.Donate:hover {
-  box-shadow: 0 0 20px var(--afk-mythic-color);
-}
-
-.Label {
-  display: block;
-  font-size: 0.8em;
-  font-weight: normal;
-  margin-bottom: 4px;
+.Donate svg {
+  color: var(--afk-mythic-color);
 }

@@ -132,6 +132,7 @@ const Home: React.FC<IProps> = function Home() {
           <MenuItemExternal to="https://github.com/brunosabot/afkalc" icon={mdiGithub}>
             {t("common:contribution.edit-on-github")}
           </MenuItemExternal>
+          <Donate />
         </MenuBox>
       </Card>
 
@@ -154,7 +155,6 @@ const Home: React.FC<IProps> = function Home() {
         </div>
 
         <LogoutButton />
-        <Donate />
       </Card>
     </>
   );

@@ -1,5 +1,5 @@
 .Character {
-  border-radius: 6px 0;
+  border-radius: 4px 0;
   box-sizing: border-box;
   display: block;
   width: 100%;
@@ -70,7 +70,7 @@
 
 .Disabled {
   filter: grayscale(0.8);
-  opacity: 60%;
+  opacity: 0.6;
 }
 
 .Elite.Wrapper {

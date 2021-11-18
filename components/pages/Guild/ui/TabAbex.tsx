@@ -1,6 +1,6 @@
 import dayjs from "dayjs";
+import { useTranslation } from "next-i18next";
 import React, { useContext } from "react";
-import { useTranslation } from "react-i18next";
 import GuildContext from "../../../providers/GuildContext";
 import ListItem from "../../../ui/list/ListItem";
 import AbexRelics from "./AbexRelics";

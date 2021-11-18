@@ -2,7 +2,7 @@ import React, { useCallback, useEffect, useMemo, useState } from "react";
 import firebase from "./firebase";
 
 const userCounterRef = firebase.database().ref("counters/users");
-const costsRef = firebase.database().ref("costs");
+const donationRef = firebase.database().ref("donation");
 
 const googleAuthProvider = new firebase.auth.GoogleAuthProvider();
 const facebookAuthProvider = new firebase.auth.FacebookAuthProvider();
@@ -90,8 +90,7 @@ interface IfirebaseValues {
   isTwitter: boolean;
   isPassword: boolean;
   userCounter: number;
-  earning: number;
-  spending: number;
+  donation: string[];
 }
 
 interface IFirebaseContext {
@@ -129,8 +128,7 @@ export const FirebaseContext = React.createContext<IFirebaseContext>({
     isPassword: false,
     isAuth: false,
     userCounter: 0,
-    earning: 0,
-    spending: 0,
+    donation: [],
   },
 });
 
@@ -144,7 +142,7 @@ const FirebaseProvider: React.FC<IProps> = function FirebaseProvider({ children 
   const [isAuth, setIsAuth] = useState<boolean>(false);
   const [uid, setUid] = useState<string>("");
   const [userCounter, setUserCounter] = useState(0);
-  const [costs, setCosts] = useState({ earning: 0, spending: 0 });
+  const [donation, setDonation] = useState([]);
 
   const handleUser = useCallback((user: firebase.User | null) => {
     setIsAuth(user !== null);
@@ -172,11 +170,11 @@ const FirebaseProvider: React.FC<IProps> = function FirebaseProvider({ children 
     return () => userCounterRef.off("value", cb);
   }, []);
   useEffect(() => {
-    const cb = costsRef.on("value", (snapshot) => {
-      setCosts(snapshot.val());
+    const cb = donationRef.on("value", (snapshot) => {
+      setDonation(snapshot.val());
     });
 
-    return () => userCounterRef.off("value", cb);
+    return () => donationRef.off("value", cb);
   }, []);
 
   useEffect(() => {
@@ -271,8 +269,7 @@ const FirebaseProvider: React.FC<IProps> = function FirebaseProvider({ children 
         isTwitter,
         isPassword,
         userCounter,
-        earning: costs.earning,
-        spending: costs.spending,
+        donation,
       },
     }),
     [
@@ -290,8 +287,7 @@ const FirebaseProvider: React.FC<IProps> = function FirebaseProvider({ children 
       isTwitter,
       isPassword,
       userCounter,
-      costs.earning,
-      costs.spending,
+      donation,
     ]
   );
 
