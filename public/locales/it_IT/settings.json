@@ -1,0 +1,13 @@
+{
+  "confirm-remove": "Tutti i tuoi dati verranno eliminati permanentemente. Vuoi realmente continuare?",
+  "label-remove-account": "Rimuovi l'account",
+  "label-no-need-rgpd": "Dato che non hai effettuato l'accesso, l'applicazione non salverà nessuno dei tuoi dati",
+  "label-rgpd": "Accedendo, fornisci la tua email a AFKalc. Non verrà mai utilizzata tranne che per effettuare l'accesso. I dati memorizzati dall'applicazione sono tutti i dati sulla: la spedizione abissale, l'elenco degli eroi, la tua campagna e il livello vip, le tue liste di priorità e quelle preferite. Puoi eliminare il tuo account in qualsiasi momento.",
+  "label-download-data": "Scarica dati",
+  "user-data": "Privacy",
+  "player-name": "Nome giocatore",
+  "title-change-password": "Cambia password",
+  "label-old-password": "Vecchia password",
+  "label-new-password": "Nuova password",
+  "title-link-account": "Collega account"
+}

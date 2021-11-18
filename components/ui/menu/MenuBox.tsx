@@ -5,8 +5,8 @@ interface IProps {
   children: React.ReactNode;
 }
 
-const MenuBox: React.FC<IProps> = ({ children }) => (
-  <div className={styles.MenuBox}>{children}</div>
-);
+const MenuBox: React.FC<IProps> = function MenuBox({ children }) {
+  return <div className={styles.MenuBox}>{children}</div>;
+};
 
 export default MenuBox;

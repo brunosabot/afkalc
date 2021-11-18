@@ -9,7 +9,7 @@ interface IProps {
   [key: string]: never;
 }
 
-const TabMemberList: React.FC<IProps> = () => {
+const TabMemberList: React.FC<IProps> = function TabMemberList() {
   const { actions, values } = useContext(GuildContext);
   const { t } = useTranslation("guild");
   const [search, setSearch] = useState<string>("");

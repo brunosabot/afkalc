@@ -19,7 +19,7 @@ interface IProps {
 
 type RelicLevel = 1 | 2 | 3 | 4 | 5;
 
-const RelicChoiceList: React.FC<IProps> = ({ current, setCurrent }) => {
+const RelicChoiceList: React.FC<IProps> = function RelicChoiceList({ current, setCurrent }) {
   const [level, setLevel] = useState<RelicLevel>(5);
   const [theClass, setTheClass] = useState<HeroClass>(HeroClass.warrior);
 

@@ -21,7 +21,7 @@ interface IProps {
   [key: string]: never;
 }
 
-const Credit: React.FC<IProps> = () => {
+const Credit: React.FC<IProps> = function Credit() {
   const { t } = useTranslation("common");
 
   return (

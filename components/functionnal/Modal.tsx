@@ -9,7 +9,7 @@ interface Props {
   onClose: () => void;
 }
 
-const Modal: React.FC<Props> = ({ active, children, onClose }) => {
+const Modal: React.FC<Props> = function Modal({ active, children, onClose }) {
   const onCloseWrapper = (e: React.MouseEvent) => {
     if (e.target === e.currentTarget) {
       onClose();

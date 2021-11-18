@@ -25,16 +25,17 @@ export const getStaticProps = async ({ locale }: { locale: string }) => ({
   },
 });
 
-const Loot: React.FC<IProps> = () => {
+const Loot: React.FC<IProps> = function Loot() {
   const [showHelp, setShowHelp] = useState(false);
   const {
     actions: { setCampaignLevel, setCampaignSuccessDate },
     values: { campaignLevel, campaignSuccessDate },
   } = useContext(ProfileContext);
 
-  const pass = useMemo(() => dayjs(new Date(campaignSuccessDate)).format("L LTS"), [
-    campaignSuccessDate,
-  ]);
+  const pass = useMemo(
+    () => dayjs(new Date(campaignSuccessDate)).format("L LTS"),
+    [campaignSuccessDate]
+  );
   const setPass = useCallback(
     (value) => {
       try {

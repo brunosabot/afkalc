@@ -10,11 +10,18 @@ interface IProps {
   isApplied?: boolean;
 }
 
-const GuildListItem: React.FC<IProps> = ({ children, id, onApply, isApplied = false }) => (
-  <div className={styles.GuildListItem}>
-    <span className={styles.Name}>{children}</span>
-    <Svg d={isApplied ? mdiAccountCancel : mdiAccountPlus} onClick={() => onApply(id)} />
-  </div>
-);
+const GuildListItem: React.FC<IProps> = function GuildListItem({
+  children,
+  id,
+  onApply,
+  isApplied = false,
+}) {
+  return (
+    <div className={styles.GuildListItem}>
+      <span className={styles.Name}>{children}</span>
+      <Svg d={isApplied ? mdiAccountCancel : mdiAccountPlus} onClick={() => onApply(id)} />
+    </div>
+  );
+};
 
 export default GuildListItem;

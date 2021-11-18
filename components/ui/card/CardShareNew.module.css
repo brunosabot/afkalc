@@ -2,6 +2,7 @@
   padding: 16px;
   position: relative;
 }
+
 .Content {
   align-items: center;
   background-color: var(--hover-color);
@@ -19,6 +20,7 @@
   padding: 0 8px 0 32px;
   width: 100%;
 }
+
 .Copy {
   background: var(--reverse-background);
   border-radius: 4px;
@@ -32,6 +34,7 @@
   right: 16px;
   top: -16px;
 }
+
 .Icon {
   display: flex;
   left: 24px;
@@ -40,6 +43,7 @@
   top: 50%;
   transform: translateY(-50%);
 }
+
 .Icon svg {
   height: 18px;
   width: 18px;

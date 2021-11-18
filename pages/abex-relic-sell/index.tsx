@@ -26,7 +26,7 @@ interface IProps {
   [key: string]: never;
 }
 
-const AbexRelicSell: React.FC<IProps> = () => {
+const AbexRelicSell: React.FC<IProps> = function AbexRelicSell() {
   const { t } = useTranslation("abex-relic-sell");
   const [tab, setTab] = useState(0);
   const [showHelp, setShowHelp] = useState(false);

@@ -10,7 +10,7 @@ interface IProps {
   [key: string]: never;
 }
 
-const ElderTree: React.FC<IProps> = () => {
+const ElderTree: React.FC<IProps> = function ElderTree() {
   const { values } = useContext(ProfileContext);
 
   const totalEssence = useMemo(

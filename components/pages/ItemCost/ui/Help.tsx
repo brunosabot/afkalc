@@ -6,7 +6,7 @@ interface IProps {
   [key: string]: never;
 }
 
-const Help: React.FC<IProps> = () => {
+const Help: React.FC<IProps> = function Help() {
   const { t } = useTranslation("item-cost");
 
   return <CardHelp>{t("help")}</CardHelp>;

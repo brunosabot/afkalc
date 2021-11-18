@@ -18,7 +18,7 @@ interface IProps {
   [key: string]: never;
 }
 
-const View: React.FC<IProps> = () => {
+const View: React.FC<IProps> = function View() {
   const { t } = useTranslation("guild");
   const { values } = useContext(GuildContext);
   const [tab, setTab] = useState<number>(0);

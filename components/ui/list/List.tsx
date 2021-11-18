@@ -5,6 +5,8 @@ interface IProps {
   children: React.ReactNode;
 }
 
-const List: React.FC<IProps> = ({ children }) => <div className={styles.List}>{children}</div>;
+const List: React.FC<IProps> = function List({ children }) {
+  return <div className={styles.List}>{children}</div>;
+};
 
 export default List;

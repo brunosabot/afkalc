@@ -1,0 +1,15 @@
+{
+  "abex-relic-sell-desc": "Calcolatore vendita reliquie benedette",
+  "confirm-reset-box": "Tutti i tuoi dati verranno ripristinati, continuare?",
+  "reset-box": "Ripristina lista",
+  "help": "Inserisci reliquie sbloccate, i tuoi obbiettivi e le reliquie nel tuo inventario. Una spunta apparirà indicando quelle di cui non hai più bisogno",
+  "label-goal": "Obbiettivo",
+  "label-current": "Sbloccate",
+  "label-inventory": "Inventario",
+  "elevation-level-0": "Nessuno",
+  "elevation-level-1": "Comune",
+  "elevation-level-2": "Raro",
+  "elevation-level-3": "Elite",
+  "elevation-level-4": "Leggendario",
+  "elevation-level-5": "Mitico"
+}

@@ -14,18 +14,22 @@
   background-color: var(--afk-common-color);
   color: var(--afk-common-color);
 }
+
 .Relic--2 {
   background-color: var(--afk-rare-color);
   color: var(--afk-rare-color);
 }
+
 .Relic--3 {
   background-color: var(--afk-elite-color);
   color: var(--afk-elite-color);
 }
+
 .Relic--4 {
   background-color: var(--afk-legendary-color);
   color: var(--afk-legendary-color);
 }
+
 .Relic--5 {
   background-color: var(--afk-mythic-color);
   color: var(--afk-mythic-color);
@@ -36,26 +40,31 @@
   left: 25%;
   transform: translate(-50%, 0);
 }
+
 .Position--2 {
   left: 0;
   top: 50%;
   transform: translate(0, -50%);
 }
+
 .Position--3 {
   left: 25%;
   top: 0;
   transform: translate(-50%, 0);
 }
+
 .Position--4 {
   right: 25%;
   top: 0;
   transform: translate(50%, 0);
 }
+
 .Position--5 {
   right: 0;
   top: 50%;
   transform: translate(0, -50%);
 }
+
 .Position--6 {
   bottom: 0;
   right: 25%;
@@ -74,5 +83,5 @@
 
 .Inactive {
   filter: grayscale(0.8);
-  opacity: 0.5;
+  opacity: 50%;
 }

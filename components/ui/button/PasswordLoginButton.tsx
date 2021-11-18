@@ -9,7 +9,7 @@ interface IProps {
   isLink?: boolean;
 }
 
-const PasswordLoginButton: React.FC<IProps> = ({ isLink = false }) => {
+const PasswordLoginButton: React.FC<IProps> = function PasswordLoginButton({ isLink = false }) {
   const { t } = useTranslation("");
   const [email, setEmail] = useState<string>("");
   const [password, setPassword] = useState<string>("");

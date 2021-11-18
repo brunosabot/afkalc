@@ -4,9 +4,11 @@
   gap: 16px;
   padding: 4px 8px 4px 16px;
 }
+
 .Name {
   flex-grow: 1;
 }
+
 .StepLine > svg {
   padding: 8px;
 }

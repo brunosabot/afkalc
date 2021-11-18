@@ -9,7 +9,7 @@ interface Props {
   id: string;
 }
 
-const BackTiersList: React.FC<Props> = ({ id }) => {
+const BackTiersList: React.FC<Props> = function BackTiersList({ id }) {
   const { t } = useTranslation("priority-list");
 
   return (

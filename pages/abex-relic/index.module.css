@@ -1,11 +1,9 @@
 .Tiles {
   align-items: center;
   display: flex;
-  margin-bottom: 16px;
-  margin-left: 0;
-  margin-right: 16px;
-  margin-top: 4px;
+  margin-top: 4px 16px 16px 0;
 }
+
 .TileLevel {
   align-items: center;
   background-color: var(--help-background-color);
@@ -24,8 +22,9 @@
   align-items: center;
   display: flex;
   gap: 6px;
-  margin: 16px 16px;
+  margin: 16px;
 }
+
 .RemainingTime svg {
   height: 18px;
 }

@@ -12,7 +12,7 @@ interface IProps {
   setValues: (values: { [key: string]: number }) => void;
 }
 
-const Block: React.FC<IProps> = ({ values, setValues }) => {
+const Block: React.FC<IProps> = function Block({ values, setValues }) {
   const { t } = useTranslation("commmon");
   const [showModal, setShowModal] = useState(false);
 

@@ -22,6 +22,7 @@
 .ListItem:first-child {
   border-top: none;
 }
+
 .ListItemAction {
   flex-grow: 0;
 }

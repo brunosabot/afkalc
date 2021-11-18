@@ -24,7 +24,7 @@ interface IProps {
   [key: string]: never;
 }
 
-const AbexRelic: React.FC<IProps> = () => {
+const AbexRelic: React.FC<IProps> = function AbexRelic() {
   const { t } = useTranslation("abex-relic");
   const { actions, values } = useContext(ProfileContext);
 

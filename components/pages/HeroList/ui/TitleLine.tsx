@@ -6,7 +6,7 @@ interface IProps {
   [key: string]: never;
 }
 
-const TitleLine: React.FC<IProps> = () => {
+const TitleLine: React.FC<IProps> = function TitleLine() {
   const { t } = useTranslation("hero-list");
 
   return (

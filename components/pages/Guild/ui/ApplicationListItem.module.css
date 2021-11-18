@@ -10,6 +10,7 @@
   text-decoration: none;
   z-index: 1;
 }
+
 .ApplicationListItem::before {
   background-color: var(--help-background-color);
   bottom: -1px;
@@ -25,6 +26,7 @@
 .ApplicationListItem:first-child {
   border-top: 1px solid var(--list-border);
 }
+
 .ApplicationListItem > *:first-child {
   align-items: center;
   display: flex;
@@ -41,6 +43,7 @@
   transition: var(--transition);
   width: 32px;
 }
+
 .Link:hover {
   background: var(--hover-color);
 }

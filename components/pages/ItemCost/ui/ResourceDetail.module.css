@@ -6,9 +6,11 @@
   gap: 16px;
   padding: 8px 8px 8px 0;
 }
+
 .ResourceDetail + .ResourceDetail {
   border-top: 0;
 }
+
 .Cost {
   align-items: center;
   display: flex;
@@ -17,10 +19,12 @@
   line-height: 40px;
   margin: 0 16px 0 0;
 }
+
 .Diamond {
   height: 20px;
   margin-right: 8px;
 }
+
 .ResourceDetail [class^="InputField"] {
   padding-bottom: 0;
   width: 90px;

@@ -12,7 +12,7 @@ interface IProps {
   [key: string]: never;
 }
 
-const HeroList: React.FC<IProps> = () => {
+const HeroList: React.FC<IProps> = function HeroList() {
   const router = useRouter();
   const { values } = useContext(ProfileContext);
 

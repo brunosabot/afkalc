@@ -17,7 +17,7 @@ interface Props {
   [key: string]: never;
 }
 
-const LoginBox: React.FC<Props> = () => {
+const LoginBox: React.FC<Props> = function LoginBox() {
   const { values } = useContext(FirebaseContext);
   const { t } = useTranslation();
   return (

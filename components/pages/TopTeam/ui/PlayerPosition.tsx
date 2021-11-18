@@ -14,7 +14,14 @@ interface Props {
   onSelect: (type: DetailType, position: number) => (value: number) => void;
 }
 
-const PlayerPosition: React.FC<Props> = ({ hero, position, onSelect, si, fi, artifact }) => {
+const PlayerPosition: React.FC<Props> = function PlayerPosition({
+  hero,
+  position,
+  onSelect,
+  si,
+  fi,
+  artifact,
+}) {
   const [showModal, setShowModal] = useState<boolean>(false);
   const { getHero } = useHero();
   const { id, name } = getHero(hero) ?? { id: 0, name: "" };

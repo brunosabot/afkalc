@@ -27,6 +27,8 @@
   "label-moved": "Les listes ont été déplacées. Trouvez votre lien ci-dessous",
   "label-moved-no-list": "La liste n'a pas encore été migrée. Contactez son créateur",
   "last-update": "Dernière mise à jour :",
+  "last-list-update": "Dernière mise à jour de la liste :",
+  "last-heroes-update": "Dernière mise à jour des héros :",
   "label-add-tiers-list": "Nouvelle liste de héros",
   "label-add-elder-tree-list": "Nouvelle liste d'arbre des anciens",
   "level": "Niveau",

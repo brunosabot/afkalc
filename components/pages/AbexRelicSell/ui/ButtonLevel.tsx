@@ -10,7 +10,7 @@ interface Props {
   onClick: (level: RelicLevel) => void;
 }
 
-const ButtonLevel: React.FC<Props> = ({ level, current, onClick }) => {
+const ButtonLevel: React.FC<Props> = function ButtonLevel({ level, current, onClick }) {
   const { t } = useTranslation("abex-relic-sell");
   const levelClass = styles[`Button--${level}`];
   const activeClass = level === current ? styles.Current : "";

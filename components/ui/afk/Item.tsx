@@ -16,7 +16,7 @@ interface IProps {
 /**
  * TODO: Use i18n for name
  */
-const Item: React.FC<IProps> = ({
+const Item: React.FC<IProps> = function Item({
   count = 1,
   name,
   size = "default",
@@ -24,7 +24,7 @@ const Item: React.FC<IProps> = ({
   secondaryInfos,
   onClick = undefined,
   highlight = false,
-}) => {
+}) {
   const { t } = useTranslation("common");
   const resource = resources.find((r) => r.name === name);
 

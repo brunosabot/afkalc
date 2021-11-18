@@ -8,8 +8,8 @@ interface IProps {
   imagePath: string;
 }
 
-const RoleFilter: React.FC<IProps> = ({ filter, setFilter, imagePath }) => (
-  <FilterButtons filter={filter} setFilter={setFilter} imagePath={imagePath} data={roles} />
-);
+const RoleFilter: React.FC<IProps> = function RoleFilter({ filter, setFilter, imagePath }) {
+  return <FilterButtons filter={filter} setFilter={setFilter} imagePath={imagePath} data={roles} />;
+};
 
 export default React.memo(RoleFilter);

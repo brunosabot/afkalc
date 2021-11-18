@@ -1,11 +1,12 @@
 .Character {
-  border-radius: 6px 0 6px 0;
+  border-radius: 6px 0;
   box-sizing: border-box;
   display: block;
   width: 100%;
 }
+
 .Wrapper {
-  border-radius: 7px 0 7px 0;
+  border-radius: 7px 0;
   box-sizing: border-box;
   flex-shrink: 0;
   height: 48px;
@@ -15,8 +16,8 @@
 }
 
 .Stars {
-  background-color: rgba(0, 0, 0, 0.6);
-  border-radius: 0 0 6px 0;
+  background-color: rgb(0 0 0 / 60%);
+  border-radius: 0 0 6px;
   bottom: 0;
   display: flex;
   justify-content: center;
@@ -25,6 +26,7 @@
   position: absolute;
   right: 0;
 }
+
 .Star {
   height: 10px;
   margin-left: -3px;
@@ -34,9 +36,11 @@
   height: 56px;
   width: 56px;
 }
+
 .Large .Count {
   font-size: 14px;
 }
+
 .Large .Star {
   height: 11px;
 }
@@ -47,12 +51,15 @@
   height: 26px;
   width: 26px;
 }
+
 .Small .Character {
   border-radius: 50%;
 }
+
 .Small .Count {
   display: none;
 }
+
 .Small .NoSi {
   display: none;
 }
@@ -63,18 +70,21 @@
 
 .Disabled {
   filter: grayscale(0.8);
-  opacity: 0.6;
+  opacity: 60%;
 }
 
 .Elite.Wrapper {
   border: 3px solid var(--afk-elite-color);
 }
+
 .Legendary.Wrapper {
   border: 3px solid var(--afk-legendary-color);
 }
+
 .Mythic.Wrapper {
   border: 3px solid var(--afk-mythic-color);
 }
+
 .Ascend.Wrapper {
   border: 3px solid var(--afk-ascend-color);
 }
@@ -87,11 +97,13 @@
   display: block;
   position: absolute;
 }
+
 .Plus::before {
   border-color: var(--afk-plus-color) var(--afk-plus-color) transparent transparent;
   right: -3px;
   top: -3px;
 }
+
 .Plus::after {
   border-color: transparent transparent var(--afk-plus-color) var(--afk-plus-color);
   bottom: -3px;

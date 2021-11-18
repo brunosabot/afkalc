@@ -10,7 +10,7 @@ interface IProps {
   value: string;
 }
 
-const Crypto: React.FC<IProps> = ({ label, value }) => {
+const Crypto: React.FC<IProps> = function Crypto({ label, value }) {
   const [showQrCode, setShowQrCode] = useState<boolean>(false);
   const ref = useRef<HTMLInputElement>(null);
 

@@ -1,6 +1,6 @@
 .ItemPicker {
   align-items: center;
-  border-radius: 6px 0 6px 0;
+  border-radius: 6px 0;
   box-sizing: border-box;
   cursor: pointer;
   display: flex;
@@ -14,7 +14,7 @@
   background: transparent;
   border: 0;
   border: 1px solid var(--card-border-color);
-  border-radius: 6px 0 6px 0;
+  border-radius: 6px 0;
   color: var(--text-color);
   cursor: pointer;
   font-size: 24px;

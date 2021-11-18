@@ -9,7 +9,7 @@ interface Props {
   id: string;
 }
 
-const Back: React.FC<Props> = ({ id }) => {
+const Back: React.FC<Props> = function Back({ id }) {
   const { t } = useTranslation("priority-list");
 
   return (

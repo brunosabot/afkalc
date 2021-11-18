@@ -8,38 +8,36 @@ interface IProps {
   [key: string]: never;
 }
 
-const TileResume: React.FC<IProps> = () => {
+const TileResume: React.FC<IProps> = function TileResume() {
   const { values } = useContext(ProfileContext);
 
   const totalCities = Object.values(values.abexTiles).reduce((acc, tile) => acc + tile.amount, 0);
 
   return (
-    <>
-      <div className={styles.Tiles}>
-        {totalCities ? (
-          <span className={styles.TilesCount}>
-            <Svg d={mdiCity} />
-            {totalCities}
-          </span>
-        ) : null}
+    <div className={styles.Tiles}>
+      {totalCities ? (
+        <span className={styles.TilesCount}>
+          <Svg d={mdiCity} />
+          {totalCities}
+        </span>
+      ) : null}
 
-        {Object.keys(values.abexTiles).map((tile) => {
-          const tileId = +tile;
+      {Object.keys(values.abexTiles).map((tile) => {
+        const tileId = +tile;
 
-          if (values.abexTiles[tileId].amount === 0) return null;
+        if (values.abexTiles[tileId].amount === 0) return null;
 
-          return (
-            <React.Fragment key={tileId}>
-              <span className={styles.TileLevel}>
-                {tileId > 50 ? "P" : "T"}
-                {tileId > 50 ? 100 - tileId : tileId}
-              </span>
-              {values.abexTiles[tileId].amount}
-            </React.Fragment>
-          );
-        })}
-      </div>
-    </>
+        return (
+          <React.Fragment key={tileId}>
+            <span className={styles.TileLevel}>
+              {tileId > 50 ? "P" : "T"}
+              {tileId > 50 ? 100 - tileId : tileId}
+            </span>
+            {values.abexTiles[tileId].amount}
+          </React.Fragment>
+        );
+      })}
+    </div>
   );
 };
 

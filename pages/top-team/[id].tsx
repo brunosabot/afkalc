@@ -28,7 +28,7 @@ interface Props {
   [key: string]: never;
 }
 
-const TopTeam: React.FC<Props> = () => {
+const TopTeam: React.FC<Props> = function TopTeam() {
   const router = useRouter();
   const { id } = router.query;
 

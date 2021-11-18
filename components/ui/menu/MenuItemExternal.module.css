@@ -13,9 +13,11 @@
   text-decoration: none;
   z-index: 1;
 }
+
 .Link:hover {
   background-color: var(--hover-color);
 }
+
 .Icon {
   height: 24px;
   margin-right: 8px;

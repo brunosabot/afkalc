@@ -17,7 +17,7 @@ interface IProps {
   inputMode?: "numeric" | undefined;
 }
 
-const InputField: React.FC<IProps> = ({
+const InputField: React.FC<IProps> = function InputField({
   label,
   value,
   onChange,
@@ -31,7 +31,7 @@ const InputField: React.FC<IProps> = ({
   inputMode = undefined,
   list = undefined,
   name,
-}) => {
+}) {
   const refId = useRef(`input-field_${name}`);
   const inputEl = useRef<HTMLInputElement>(null);
 

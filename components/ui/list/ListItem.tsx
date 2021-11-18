@@ -10,7 +10,7 @@ interface IProps {
   href?: string;
 }
 
-const ListItem: React.FC<IProps> = ({ icon, children, actions, href }) => {
+const ListItem: React.FC<IProps> = function ListItem({ icon, children, actions, href }) {
   if (href !== undefined) {
     return (
       <Link href={href} passHref>

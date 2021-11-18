@@ -8,7 +8,7 @@ interface Props {
   [key: string]: never;
 }
 
-const AnonymousBanner: React.FC<Props> = () => {
+const AnonymousBanner: React.FC<Props> = function AnonymousBanner() {
   const { t } = useTranslation();
   const { values } = useContext(FirebaseContext);
 
