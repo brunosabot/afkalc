@@ -16,9 +16,27 @@ import { getEstimatedDiamsForSummon } from "../../lib/summon";
 
 export const getStaticProps = async ({ locale }: { locale: string }) => ({
   props: {
-    ...(await serverSideTranslations(locale, ["common", "elite-summon"])),
+    ...(await serverSideTranslations(locale, [
+      "abex-relic-sell",
+      "abex-relic",
+      "common",
+      "donate",
+      "elder-tree",
+      "elite-summon",
+      "fast-reward",
+      "guild",
+      "hero-list",
+      "item-cost",
+      "loot",
+      "priority-list",
+      "settings",
+      "signature-item",
+      "top-team",
+      "translation",
+    ])),
   },
 });
+
 interface IProps {
   [key: string]: never;
 }

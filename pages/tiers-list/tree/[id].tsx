@@ -14,7 +14,24 @@ import IFirebaseTreeList from "../../../components/providers/types/IFirebaseTree
 
 export const getStaticProps = async ({ locale }: { locale: string }) => ({
   props: {
-    ...(await serverSideTranslations(locale, ["common", "priority-list"])),
+    ...(await serverSideTranslations(locale, [
+      "abex-relic-sell",
+      "abex-relic",
+      "common",
+      "donate",
+      "elder-tree",
+      "elite-summon",
+      "fast-reward",
+      "guild",
+      "hero-list",
+      "item-cost",
+      "loot",
+      "priority-list",
+      "settings",
+      "signature-item",
+      "top-team",
+      "translation",
+    ])),
   },
 });
 
