@@ -12,6 +12,7 @@ const FastButtons: React.FC<Props> = function FastButtons({ values, disabled = f
     <div className={styles.FastButtons}>
       {values.map(([value, label]) => (
         <button
+          key={value}
           disabled={disabled}
           type="button"
           className={styles.FastButton}

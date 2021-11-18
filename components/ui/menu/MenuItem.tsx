@@ -8,12 +8,18 @@ interface IProps {
   children: React.ReactNode;
   to: string;
   icon?: string;
+  className?: string;
 }
 
-const MenuItem: React.FC<IProps> = function MenuItem({ children, to, icon = undefined }) {
+const MenuItem: React.FC<IProps> = function MenuItem({
+  className = "",
+  children,
+  to,
+  icon = undefined,
+}) {
   return (
     <Link href={to}>
-      <a className={styles.Link}>
+      <a className={`${className} ${styles.Link}`}>
         <Svg d={icon === undefined ? mdiCircleSmall : icon} />
 
         {children}

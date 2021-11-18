@@ -137,6 +137,7 @@ const HeroList: React.FC<IProps> = function HeroList() {
           <CharacterGrid size="large">
             {characters.map((character, i) => (
               <HeroLine
+                key={character.id}
                 id={character.id}
                 name={character.name}
                 setLevel={setLevel}

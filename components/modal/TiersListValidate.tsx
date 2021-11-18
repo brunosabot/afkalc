@@ -1,5 +1,5 @@
+import { useTranslation } from "next-i18next";
 import React from "react";
-import { useTranslation } from "react-i18next";
 import { IFirebasePriorityListHero } from "../providers/types/IFirebasePriorityList";
 import IFirebaseProfile from "../providers/types/IFirebaseProfile";
 import CardTitle from "../ui/card/CardTitle";

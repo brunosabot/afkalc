@@ -2,9 +2,10 @@ import { mdiAccountHeart } from "@mdi/js";
 import { useTranslation } from "next-i18next";
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 import Head from "next/head";
-import React from "react";
+import React, { useContext } from "react";
 import withLayoutPrivate from "../../components/layout/withLayoutPrivate";
 import ListItem from "../../components/pages/Credit/ui/ListItem";
+import { FirebaseContext } from "../../components/providers/FirebaseProvider";
 import Card from "../../components/ui/card/Card";
 import CardTitle from "../../components/ui/card/CardTitle";
 import List from "../../components/ui/list/List";
@@ -23,6 +24,7 @@ interface IProps {
 
 const Credit: React.FC<IProps> = function Credit() {
   const { t } = useTranslation("common");
+  const { values } = useContext(FirebaseContext);
 
   return (
     <Card>
@@ -54,8 +56,11 @@ const Credit: React.FC<IProps> = function Credit() {
 
       <CardTitle icon={mdiAccountHeart}>{t("common:sponsors")}</CardTitle>
       <List>
-        <ListItem>Manouke</ListItem>
-        <ListItem>Jailbeujy</ListItem>
+        {values.donation
+          .filter((e) => e)
+          .map((e) => (
+            <ListItem>{e}</ListItem>
+          ))}
       </List>
     </Card>
   );
