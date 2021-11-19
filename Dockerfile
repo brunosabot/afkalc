@@ -1,8 +1,8 @@
 FROM node:alpine
 COPY package.json .
-COPY yarn.lock .
-RUN yarn
+COPY package-lock.json .
+RUN npm
 COPY . .
-RUN yarn build
+RUN npm build
 EXPOSE 8080
-CMD yarn start -p 8080
+CMD npm start -p 8080

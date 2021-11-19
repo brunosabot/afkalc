@@ -41,12 +41,14 @@ const HeroLine: React.FC<IProps> = function HeroLine({
       linkElement = null;
     } else if (link) {
       linkElement = (
-        <div className={styles.Dimensional}>
-          <Character id={link} size="small" onClick={() => setShowModal(true)} />
+        <>
+          <div className={styles.Dimensional}>
+            <Character id={link} size="small" onClick={() => setShowModal(true)} />
+          </div>
           {linkKey ? (
             <img src="/loot/cosmic-key.jpg" className={styles.DimensionalKey} alt="" />
           ) : null}
-        </div>
+        </>
       );
     } else {
       linkElement = (
@@ -73,18 +75,6 @@ const HeroLine: React.FC<IProps> = function HeroLine({
       />
 
       {linkElement}
-
-      {/* <span className={styles.Name}>{name}</span>
-
-      <SiField id={id} setLevel={setLevel} getValue={getValue} isView={isView} />
-      <FiField
-        id={id}
-        setLevel={setLevel}
-        getValue={getValue}
-        isView={isView}
-        shouldUnlock={shouldUnlockFi}
-      />
-      <AscendField id={id} setLevel={setLevel} getValue={getValue} isView={isView} /> */}
 
       {faction === "dimensionals" && isView === false ? (
         <Modal active={showModal} onClose={() => setShowModal(false)}>

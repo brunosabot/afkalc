@@ -1,71 +1,10 @@
-.Character {
-  border-radius: 4px 0;
-  box-sizing: border-box;
-  display: block;
-  width: 100%;
-}
-
 .Wrapper {
-  border-radius: 7px 0;
+  border-radius: 15px 0 20px;
   box-sizing: border-box;
+  display: flex;
   flex-shrink: 0;
-  height: 48px;
   outline: 0;
   position: relative;
-  width: 48px;
-}
-
-.Stars {
-  background-color: rgb(0 0 0 / 60%);
-  border-radius: 0 0 6px;
-  bottom: 0;
-  display: flex;
-  justify-content: center;
-  left: 0;
-  padding: 1px 0 1px 3px;
-  position: absolute;
-  right: 0;
-}
-
-.Star {
-  height: 10px;
-  margin-left: -3px;
-}
-
-.Large.Wrapper {
-  height: 56px;
-  width: 56px;
-}
-
-.Large .Count {
-  font-size: 14px;
-}
-
-.Large .Star {
-  height: 11px;
-}
-
-.Small.Wrapper {
-  border: 1px solid #fff;
-  border-radius: 50%;
-  height: 26px;
-  width: 26px;
-}
-
-.Small .Character {
-  border-radius: 50%;
-}
-
-.Small .Count {
-  display: none;
-}
-
-.Small .NoSi {
-  display: none;
-}
-
-.Highlight .Character {
-  border: 2px solid var(--accent-color);
 }
 
 .Disabled {
@@ -73,66 +12,15 @@
   opacity: 0.6;
 }
 
-.Elite.Wrapper {
-  border: 3px solid var(--afk-elite-color);
-}
-
-.Legendary.Wrapper {
-  border: 3px solid var(--afk-legendary-color);
-}
-
-.Mythic.Wrapper {
-  border: 3px solid var(--afk-mythic-color);
-}
-
-.Ascend.Wrapper {
-  border: 3px solid var(--afk-ascend-color);
-}
-
-.Plus::after,
-.Plus::before {
-  border: 6px solid;
-  border-color: var(--afk-plus-color) var(--afk-plus-color) transparent transparent;
-  content: "";
-  display: block;
-  position: absolute;
-}
-
-.Plus::before {
-  border-color: var(--afk-plus-color) var(--afk-plus-color) transparent transparent;
-  right: -3px;
-  top: -3px;
-}
-
-.Plus::after {
-  border-color: transparent transparent var(--afk-plus-color) var(--afk-plus-color);
-  bottom: -3px;
-  left: -3px;
-}
-
-.Faction {
-  height: 13px;
-  left: 1.5px;
-  position: absolute;
-  top: 1px;
-  width: 13px;
+.Highlight {
+  background-color: var(--accent-color);
 }
 
 .Artifact {
-  border-radius: 11px;
-  height: 22px;
-  left: 13px;
+  border-radius: 50%;
+  box-shadow: 0 0 1px 1px var(--card-color);
+  height: 30px;
+  left: 17px;
   position: absolute;
-  stroke: #280e16;
-  stroke-linecap: round;
-  stroke-width: 4px;
-  top: -22px;
-  width: 22px;
-}
-
-.SiFi {
-  left: -10px;
-  position: absolute;
-  top: -7px;
-  width: 36px;
+  top: -26px;
 }

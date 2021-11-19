@@ -92,6 +92,7 @@ const ChooseHero: React.FC<Props> = function ChooseHero({
         <CharacterGrid key={faction}>
           {factions[faction].map(({ id, name }) => (
             <Character
+              size="large"
               key={id}
               name={name}
               onClick={() => onSelect(DetailType.HERO, id)}

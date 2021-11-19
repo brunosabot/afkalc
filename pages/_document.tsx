@@ -17,6 +17,7 @@ export default class MyDocument extends Document {
           <link href="/apple-icon-180x180.jpg" />
           <meta name="theme-color" content="#94492e" />
           <meta name="color-scheme" content="dark light" />
+          <meta name="monetization" content="$ilp.uphold.com/zbywBq9qy3pe" />
         </Head>
         <body>
           <Main />

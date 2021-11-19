@@ -36,6 +36,7 @@ const PlayerPosition: React.FC<Props> = function PlayerPosition({
             siLevel={si}
             fiLevel={fi}
             artifact={artifact}
+            size="large"
           />
         ) : (
           <button type="button" className={styles.Add} onClick={() => setShowModal(true)}>
