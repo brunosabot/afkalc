@@ -3,7 +3,10 @@ import React, { useState } from "react";
 import IHeroDetails from "../../../../types/IHeroDetails";
 import Modal from "../../../functionnal/Modal";
 import ChoosePriorityHero from "../../../modal/ChoosePriorityHero";
-import { IFirebasePriorityListHero } from "../../../providers/types/IFirebasePriorityList";
+import {
+  IFirebasePriorityListHero,
+  IFirebasePriorityListRequirement,
+} from "../../../providers/types/IFirebasePriorityList";
 import Character from "../../../ui/afk/Character";
 import Svg from "../../../ui/Svg";
 import useHero from "../hooks/useHero";
@@ -17,6 +20,8 @@ interface Props {
   onDown?: (value: IHeroDetails, index: number) => void;
   index: number;
   length: number;
+  requirement: IFirebasePriorityListRequirement;
+  requirementValue: number;
 }
 
 const HeroLine: React.FC<Props> = function HeroLine({
@@ -27,6 +32,8 @@ const HeroLine: React.FC<Props> = function HeroLine({
   onDown = () => {},
   index,
   length,
+  requirement,
+  requirementValue,
 }) {
   const [theHero, setTheHero] = useState<IFirebasePriorityListHero>(hero);
   const [showModal, setShowModal] = useState<boolean>(false);
@@ -36,15 +43,23 @@ const HeroLine: React.FC<Props> = function HeroLine({
   const canMoveUp = hero.hero && index > 0;
   const canMoveDown = hero.hero && index + 1 < length;
 
+  const requiredAscend = Math.max(theHero.ascend, requirement === "ASCEND" ? requirementValue : 0);
+  const requiredSi = Math.max(theHero.si, requirement === "SI" ? requirementValue : -1);
+  const requiredFi = Math.max(theHero.fi, requirement === "FI" ? requirementValue : 0);
+  const requiredEngrave = Math.max(
+    theHero.engrave,
+    requirement === "ENGRAVE" ? requirementValue : 0
+  );
+
   return (
     <div className={styles.HeroLine}>
       <Character
         name={name}
         onClick={() => setShowModal(true)}
-        ascendLevel={theHero.ascend}
-        siLevel={theHero.si}
-        fiLevel={theHero.fi}
-        engraveLevel={theHero.engrave}
+        ascendLevel={requiredAscend}
+        siLevel={requiredSi}
+        fiLevel={requiredFi}
+        engraveLevel={requiredEngrave}
       />
       <span className={styles.Name}>{name}</span>
 

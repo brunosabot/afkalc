@@ -53,7 +53,14 @@ const HeroLineViewer: React.FC<IProps> = function HeroLineViewer({
     [0, undefined].includes(hero.fi) === false ||
     [0, undefined].includes(hero.engrave) === false;
 
-  const onDone = useOnDone(requirement, requirementValue, hero, setLevel, hasSelfRequirements);
+  const onDone = useOnDone(
+    requirement,
+    requirementValue,
+    hero,
+    setLevel,
+    heroLevels,
+    hasSelfRequirements
+  );
 
   const { id, name } = getHero(hero.hero) ?? { id: 0, name: "" };
   const isDone = isValidList && (isValidSelf || hasSelfRequirements === false);
@@ -76,14 +83,19 @@ const HeroLineViewer: React.FC<IProps> = function HeroLineViewer({
 
   if (isDone && shouldShowChecked === false) return null;
 
+  const requiredAscend = Math.max(hero.ascend, requirement === "ASCEND" ? requirementValue : 0);
+  const requiredSi = Math.max(hero.si, requirement === "SI" ? requirementValue : -1);
+  const requiredFi = Math.max(hero.fi, requirement === "FI" ? requirementValue : 0);
+  const requiredEngrave = Math.max(hero.engrave, requirement === "ENGRAVE" ? requirementValue : 0);
+
   return (
     <div key={id} className={`${styles.Item} ${isDone ? styles.IsOk : ""}`}>
       <Character
         id={id}
-        ascendLevel={hero.ascend}
-        fiLevel={hero.fi}
-        siLevel={hero.si}
-        engraveLevel={hero.engrave}
+        ascendLevel={requiredAscend}
+        fiLevel={requiredFi}
+        siLevel={requiredSi}
+        engraveLevel={requiredEngrave}
       />
       <div className={styles.Infos}>
         <span className={styles.Name}>{name}</span>
