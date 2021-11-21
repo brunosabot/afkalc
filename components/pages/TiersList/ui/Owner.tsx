@@ -168,6 +168,8 @@ const Owner: React.FC<IProps> = function Owner({ listId, result }) {
               key={`${hero.hero}-${hero.ascend}-${hero.si}-${hero.fi}`}
               length={result.heroes.length}
               onSelect={updateHero}
+              requirement={requirement}
+              requirementValue={requirementValue}
             />
           ))}
 

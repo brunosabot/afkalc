@@ -1,3 +1,4 @@
+import { IFirebaseHeroesHero } from "../../../providers/types/IFirebaseHeroes";
 import {
   IFirebasePriorityListHero,
   IFirebasePriorityListRequirement,
@@ -9,42 +10,53 @@ export default function useOnDone(
   requirementValue: number,
   hero: IFirebasePriorityListHero,
   setLevel: UseSetLevelReturn,
+  heroLevels?: IFirebaseHeroesHero,
   hasSelfRequirements: boolean = false
 ): () => Promise<any> {
   return async () => {
-    let levelSet = setLevel(hero.hero, "", 0);
+    const levelSet = setLevel(hero.hero, "", 0);
+
+    let heroSi = heroLevels?.si ?? -1;
+    let heroFi = heroLevels?.fi ?? 0;
+    let heroAscend = heroLevels?.ascend ?? 0;
+    let heroEngrave = heroLevels?.engrave ?? 0;
 
     if (requirement === "SI") {
-      levelSet = levelSet.again(hero.hero, "SI", requirementValue);
+      heroSi = Math.max(heroSi, requirementValue);
     }
     if (requirement === "FI") {
-      levelSet = levelSet.again(hero.hero, "FI", requirementValue);
+      heroFi = Math.max(heroFi, requirementValue);
     }
     if (requirement === "ASCEND") {
-      levelSet = levelSet.again(hero.hero, "ASCEND", requirementValue);
+      heroAscend = Math.max(heroAscend, requirementValue);
     }
     if (requirement === "ENGRAVE") {
-      levelSet = levelSet.again(hero.hero, "ENGRAVE", requirementValue);
+      heroEngrave = Math.max(heroEngrave, requirementValue);
     }
 
     if (hasSelfRequirements) {
       if (hero.si) {
-        levelSet = levelSet.again(hero.hero, "SI", hero.si);
+        heroSi = Math.max(heroSi, hero.si);
       }
 
       if (hero.fi) {
-        levelSet = levelSet.again(hero.hero, "FI", hero.fi);
+        heroFi = Math.max(heroFi, hero.fi);
       }
 
       if (hero.ascend) {
-        levelSet = levelSet.again(hero.hero, "ASCEND", hero.ascend);
+        heroAscend = Math.max(heroAscend, hero.ascend);
       }
 
       if (hero.engrave) {
-        levelSet = levelSet.again(hero.hero, "ENGRAVE", hero.engrave);
+        heroEngrave = Math.max(heroEngrave, hero.engrave);
       }
     }
 
-    await levelSet.commit();
+    levelSet
+      .again(hero.hero, "SI", heroSi)
+      .again(hero.hero, "FI", heroFi)
+      .again(hero.hero, "ASCEND", heroAscend)
+      .again(hero.hero, "ENGRAVE", heroEngrave)
+      .commit();
   };
 }
