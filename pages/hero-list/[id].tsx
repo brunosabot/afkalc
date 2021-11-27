@@ -49,7 +49,7 @@ interface IProps {
 
 const HeroList: React.FC<IProps> = function HeroList() {
   const { t } = useTranslation("hero-list");
-  const router = useRouter();
+  const router = useRouter();  
   const { values } = useContext(ProfileContext);
   const { id } = router.query;
 
@@ -65,6 +65,7 @@ const HeroList: React.FC<IProps> = function HeroList() {
   const heroes = result.data?.heroes || [];
   const userName = result.data?.playerName;
   const isSelf = userId === values.userId;
+  const isMod = result.data?.isMod;
 
   const setLevel = useSetLevel(document, heroes);
   const getValue = useGetValue(heroes);
@@ -84,6 +85,7 @@ const HeroList: React.FC<IProps> = function HeroList() {
   );
 
   useEffect(() => {
+    if (!isMod )
     if (id && id.length < 12 && userId) {
       window.location.replace(`/hero-list/${userId}`);
     }
@@ -92,96 +94,97 @@ const HeroList: React.FC<IProps> = function HeroList() {
   const lastUpdate = useMemo(
     () => dayjs(new Date(result.data?.heroesLastUpdate ?? 0)).fromNow(),
     [result.data?.heroesLastUpdate]
-  );
+  );  
 
-  return (
-    <>
-      <TwoColsSticky>
+    return (
+      <>
+        <TwoColsSticky>          
+          <Card>
+            <CardTitle icon={mdiViewList}>
+              {t(userName ? "hero-list-of" : "hero-list-of-unknown", { userName })}
+              {result.data?.campaignLevel ? ` (${result.data?.campaignLevel})` : null}
+            </CardTitle>
+
+            {result.data?.heroesLastUpdate !== undefined ? (
+              <div style={{ marginBottom: "-16px" }}>
+                <CardHelp>{`${t("last-update")} ${lastUpdate}`}</CardHelp>
+              </div>
+            ) : null}
+
+            <ShareBanner />
+            <Head>
+              <title>{`${t("common:menu.hero-list")} - Afkalc`}</title>
+              <meta name="description" content="" />
+            </Head>
+
+            <Filters state={state} dispatch={dispatch} />
+
+            <CheckboxField
+              name="unlockFi"
+              onChange={setUnlockFi}
+              value={unlockFi}
+              label={t("label-unlock-fi")}
+            />
+          </Card>
+        </TwoColsSticky>
+
         <Card>
           <CardTitle icon={mdiViewList}>
-            {t(userName ? "hero-list-of" : "hero-list-of-unknown", { userName })}
-            {result.data?.campaignLevel ? ` (${result.data?.campaignLevel})` : null}
+            {t(userName ? "hero-list-of" : "hero-list-of-unknown", { userName })}&nbsp;(
+            {characters.length})
           </CardTitle>
-
-          {result.data?.heroesLastUpdate !== undefined ? (
-            <div style={{ marginBottom: "-16px" }}>
-              <CardHelp>{`${t("last-update")} ${lastUpdate}`}</CardHelp>
-            </div>
-          ) : null}
-
-          <ShareBanner />
-          <Head>
-            <title>{`${t("common:menu.hero-list")} - Afkalc`}</title>
-            <meta name="description" content="" />
-          </Head>
-
-          <Filters state={state} dispatch={dispatch} />
-
-          <CheckboxField
-            name="unlockFi"
-            onChange={setUnlockFi}
-            value={unlockFi}
-            label={t("label-unlock-fi")}
-          />
+          {characters.length === 0 ? (
+            <CardHelp>{t("label-empty")}</CardHelp>
+          ) : (
+            <CharacterGrid size="large">
+              {characters.map((character, i) => (
+                <HeroLine
+                  key={character.id}
+                  id={character.id}
+                  name={character.name}
+                  setLevel={setLevel}
+                  getValue={getValue}
+                  isView={isSelf === false}
+                  faction={character.faction}
+                  link={character.link}
+                  linkKey={character.linkkey}
+                  shouldUnlockFi={unlockFi}
+                  onClick={() => {
+                    setEditPopupState(character.id);
+                    setShowModal(true);
+                    return undefined;
+                  }}
+                />
+              ))}
+            </CharacterGrid>
+          )}
         </Card>
-      </TwoColsSticky>
 
-      <Card>
-        <CardTitle icon={mdiViewList}>
-          {t(userName ? "hero-list-of" : "hero-list-of-unknown", { userName })}&nbsp;(
-          {characters.length})
-        </CardTitle>
-        {characters.length === 0 ? (
-          <CardHelp>{t("label-empty")}</CardHelp>
-        ) : (
-          <CharacterGrid size="large">
-            {characters.map((character, i) => (
-              <HeroLine
-                key={character.id}
-                id={character.id}
-                name={character.name}
-                setLevel={setLevel}
-                getValue={getValue}
-                isView={isSelf === false}
-                faction={character.faction}
-                link={character.link}
-                linkKey={character.linkkey}
-                shouldUnlockFi={unlockFi}
-                onClick={() => {
-                  setEditPopupState(character.id);
-                  setShowModal(true);
-                  return undefined;
-                }}
-              />
-            ))}
-          </CharacterGrid>
-        )}
-      </Card>
+        <Modal active={showModal} onClose={() => setShowModal(false)}>
+          <EditHero
+            hero={characterToEdit.id}
+            si={characterToEdit.si}
+            fi={characterToEdit.fi}
+            ascend={characterToEdit.ascend}
+            engrave={characterToEdit.engrave}
+            setLevel={setLevel}
+            onNext={() => {
+              const index = characters.findIndex((c) => c.id === editPopupState);
+              setEditPopupState(
+                index >= characters.length - 1 ? characters[0].id : characters[index + 1].id
+              );
+            }}
+            onPrev={() => {
+              const index = characters.findIndex((c) => c.id === editPopupState);
+              setEditPopupState(
+                index < 1 ? characters[characters.length - 1].id : characters[index - 1].id
+              );
+            }}
+          />
+        </Modal>
+      </>    
+  ); 
 
-      <Modal active={showModal} onClose={() => setShowModal(false)}>
-        <EditHero
-          hero={characterToEdit.id}
-          si={characterToEdit.si}
-          fi={characterToEdit.fi}
-          ascend={characterToEdit.ascend}
-          engrave={characterToEdit.engrave}
-          setLevel={setLevel}
-          onNext={() => {
-            const index = characters.findIndex((c) => c.id === editPopupState);
-            setEditPopupState(
-              index >= characters.length - 1 ? characters[0].id : characters[index + 1].id
-            );
-          }}
-          onPrev={() => {
-            const index = characters.findIndex((c) => c.id === editPopupState);
-            setEditPopupState(
-              index < 1 ? characters[characters.length - 1].id : characters[index - 1].id
-            );
-          }}
-        />
-      </Modal>
-    </>
-  );
 };
 
 export default withLayoutPrivate(HeroList);

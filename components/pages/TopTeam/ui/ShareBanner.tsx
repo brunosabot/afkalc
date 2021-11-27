@@ -79,7 +79,7 @@ const ShareBanner: React.FC<IProps> = function ShareBanner({
   const a5 = String.fromCharCode((artifact[5] || 0) + 48);
   const aCode = encodeURIComponent(`${a1}${a2}${a3}${a4}${a5}`);
 
-  const value = `https://afkalc.com${localePath}/top-team/${tCode}-${sCode}-${iCode}-${aCode}`;
+  const value = `https://afkalc.noname-guild.com${localePath}/top-team/${tCode}-${sCode}-${iCode}-${aCode}`;
 
   return <CardShare label={t("label-share")}>{value}</CardShare>;
 };

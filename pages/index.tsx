@@ -1,21 +1,15 @@
 import {
-  mdiAccountGroup,
-  mdiAccountHeart,
-  mdiAccountSupervisor,
+  mdiAccountGroup, mdiAccountSupervisor,
   mdiChevronTripleUp,
   mdiCircleMultiple,
   mdiCog,
-  mdiDiamondStone,
-  mdiDiscord,
-  mdiFastForward,
-  mdiGithub,
-  mdiHome,
+  mdiDiamondStone, mdiFastForward, mdiHome,
   mdiMap,
   mdiPlaylistCheck,
   mdiScript,
   mdiTree,
   mdiUpdate,
-  mdiViewList,
+  mdiViewList
 } from "@mdi/js";
 import { useTranslation } from "next-i18next";
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
@@ -26,14 +20,10 @@ import { FirebaseContext } from "../components/providers/FirebaseProvider";
 import ProfileContext from "../components/providers/ProfileContext";
 import LangButton from "../components/ui/button/LangButton";
 import LogoutButton from "../components/ui/button/LogoutButton";
-import MoreLangButton from "../components/ui/button/MoreLangButton";
 import Card from "../components/ui/card/Card";
-import CardHelp from "../components/ui/card/CardHelp";
 import CardTitle from "../components/ui/card/CardTitle";
-import Donate from "../components/ui/Donate";
 import MenuBox from "../components/ui/menu/MenuBox";
 import MenuItem from "../components/ui/menu/MenuItem";
-import MenuItemExternal from "../components/ui/menu/MenuItemExternal";
 
 export const getStaticProps = async ({ locale }: { locale: string }) => ({
   props: {
@@ -58,9 +48,6 @@ const Home: React.FC<IProps> = function Home() {
           <title>{`${t("common:menu.home")} - Afkalc`}</title>
           <meta name="description" content={t("common:welcome")} />
         </Head>
-        <CardHelp>
-          {t("common:logged-user-on-app", { counter: firebaseValues.userCounter })}
-        </CardHelp>
       </Card>
 
       <Card>
@@ -119,20 +106,10 @@ const Home: React.FC<IProps> = function Home() {
 
       <Card>
         <CardTitle>{t("common:menu.category-misc")}</CardTitle>
-        <MenuBox>
-          <MenuItem to="/credit" icon={mdiAccountHeart}>
-            {t("common:menu.credit")}
-          </MenuItem>
+        <MenuBox>         
           <MenuItem to="/settings" icon={mdiCog}>
             {t("common:menu.settings")}
-          </MenuItem>
-          <MenuItemExternal to="https://discord.gg/NSZFSdr9BW" icon={mdiDiscord}>
-            Discord
-          </MenuItemExternal>
-          <MenuItemExternal to="https://github.com/brunosabot/afkalc" icon={mdiGithub}>
-            {t("common:contribution.edit-on-github")}
-          </MenuItemExternal>
-          <Donate />
+          </MenuItem>          
         </MenuBox>
       </Card>
 
@@ -146,12 +123,7 @@ const Home: React.FC<IProps> = function Home() {
           }}
         >
           {process.env.NODE_ENV === "development" ? <LangButton lang="dev" emoji="👨‍💻" /> : null}
-          <LangButton lang="fr_FR" emoji="🇫🇷" />
           <LangButton lang="en_US" emoji="🇺🇸‍" />
-          <LangButton lang="pt_BR" emoji="🇧🇷" />
-          <LangButton lang="es_ES" emoji="🇪🇸" />
-          <LangButton lang="it_IT" emoji="🇮🇹" />
-          <MoreLangButton />
         </div>
 
         <LogoutButton />

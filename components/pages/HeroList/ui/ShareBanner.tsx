@@ -19,7 +19,7 @@ const ShareBanner: React.FC<IProps> = function ShareBanner() {
 
   return (
     <CardShareNew>
-      {userId ? `https://afkalc.com${localePath}/hero-list/${userId}` : t("login-needed")}
+      {userId ? `https://afkalc.noname-guild.com${localePath}/hero-list/${userId}` : t("login-needed")}
     </CardShareNew>
   );
 };

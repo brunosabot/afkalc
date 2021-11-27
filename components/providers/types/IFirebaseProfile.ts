@@ -1,13 +1,14 @@
 import {
   IFirebaseAbyssalExpeditionClassRelics,
   IFirebaseAbyssalExpeditionInventory,
-  IFirebaseAbyssalExpeditionTilesList,
+  IFirebaseAbyssalExpeditionTilesList
 } from "./IFirebaseAbyssalExpedition";
 import { IFirebaseElderTree } from "./IFirebaseElderTree";
 import { IFirebaseHeroList } from "./IFirebaseHeroes";
 
 export default interface IFirebaseProfile {
   id?: string;
+  isMod?: boolean;
   version?: number;
   campaignLevel?: string;
   campaignSuccessDate?: string;

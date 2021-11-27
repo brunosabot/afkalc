@@ -2,14 +2,9 @@ import { useTranslation } from "next-i18next";
 import Link from "next/link";
 import React, { useContext } from "react";
 import { FirebaseContext } from "../providers/FirebaseProvider";
-import AnonymousLoginButton from "./button/AnonymousLoginButton";
-import FacebookLoginButton from "./button/FacebookLoginButton";
 import ForgottenPassword from "./button/ForgottenPassword";
-import GoogleLoginButton from "./button/GoogleLoginButton";
 import PasswordLoginButton from "./button/PasswordLoginButton";
-import TwitterLoginButton from "./button/TwitterLoginButton";
 import Card from "./card/Card";
-import CardHelp from "./card/CardHelp";
 import CardTitle from "./card/CardTitle";
 import styles from "./LoginBox.module.css";
 
@@ -23,12 +18,7 @@ const LoginBox: React.FC<Props> = function LoginBox() {
   return (
     <Card>
       <CardTitle>{t("common:welcome")}</CardTitle>
-      <CardHelp>{t("common:user-on-app", { counter: values.userCounter })}</CardHelp>
-      <GoogleLoginButton />
-      <FacebookLoginButton />
-      <TwitterLoginButton />
-      <PasswordLoginButton />
-      <AnonymousLoginButton />
+      <PasswordLoginButton />      
       <ForgottenPassword />
       <Link href="/settings">
         <a className={styles.Settings}>{t("menu.settings")}</a>

@@ -19,7 +19,7 @@ const GuildParams: React.FC<IProps> = function GuildParams() {
 
   return (
     <>
-      <CardShareNew>{`https://afkalc.com${localePath}/guild/${values.guild.id}`}</CardShareNew>
+      <CardShareNew>{`https://afkalc.noname-guild.com${localePath}/guild/${values.guild.id}`}</CardShareNew>
       <CardCampaign />
       <CardConfiguration />
       <CardAbex />

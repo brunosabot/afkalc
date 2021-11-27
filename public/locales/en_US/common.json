@@ -1,7 +1,7 @@
 {
-  "welcome": "Welcome on Afkalc, the calculation tool for AFK Arena",
+  "welcome": "A calculator has no name.",
   "label-copied": "Link copied",
-  "require-login": "You must log in to access this feature",
+  "require-login": "You must log in  access this feature",
   "credit-desc": "For their help in data collection, providing great content or for the app development, thanks to:",
   "temporary-account": "You are logged as a guest. Your changes will only be available temporary.",
   "go-registration": "Go to registration",
@@ -44,7 +44,7 @@
     "fast-reward": "Fast Reward",
     "top-team": "Top Team",
     "item-cost": "Item Cost",
-    "priority-list": "Tiers List",
+    "priority-list": "Checklist",
     "credit": "Credits",
     "abex-relic": "Relic Loots",
     "abex-relic-sell": "Relics to sell",
@@ -58,7 +58,7 @@
     "short-top-team": "Teams",
     "short-item-cost": "Item Cost",
     "short-guild": "Guild",
-    "short-priority-list": "Tiers List"
+    "short-priority-list": "Checklist"
   },
   "heroClass": {
     "warrior": "Warrior",

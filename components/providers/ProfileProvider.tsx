@@ -78,7 +78,7 @@ const ProfileProvider: React.FC<IProps> = function ProfileProvider({ children })
       },
       values: {
         ...defaultValues,
-        ...result?.data,
+        ...result?.data,        
         userId: values.uid,
         isAuth: values.isAuth,
         isAnonymous: values.isAnonymous,

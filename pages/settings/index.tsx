@@ -1,4 +1,4 @@
-import { mdiAccountRemove, mdiCog, mdiDownload, mdiLinkPlus } from "@mdi/js";
+import { mdiAccountRemove, mdiCog, mdiDownload } from "@mdi/js";
 import { useTranslation } from "next-i18next";
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 import Head from "next/head";
@@ -7,10 +7,6 @@ import withLayoutPublicColumn from "../../components/layout/withLayoutPublicColu
 import ListItem from "../../components/pages/Credit/ui/ListItem";
 import ProfileContext from "../../components/providers/ProfileContext";
 import ChangePasswordButton from "../../components/ui/button/ChangePasswordButton";
-import FacebookLoginButton from "../../components/ui/button/FacebookLoginButton";
-import GoogleLoginButton from "../../components/ui/button/GoogleLoginButton";
-import PasswordLoginButton from "../../components/ui/button/PasswordLoginButton";
-import TwitterLoginButton from "../../components/ui/button/TwitterLoginButton";
 import Card from "../../components/ui/card/Card";
 import CardAction from "../../components/ui/card/CardAction";
 import CardActions from "../../components/ui/card/CardActions";
@@ -59,18 +55,7 @@ const Settings: React.FC<IProps> = function Settings() {
           </>
         ) : null}
       </Card>
-
-      {values.userId &&
-      [values.isGoogle, values.isTwitter, values.isFacebook, values.isPassword].includes(false) ? (
-        <Card>
-          <CardTitle icon={mdiLinkPlus}>{t("title-link-account")}</CardTitle>
-          {values.isGoogle ? null : <GoogleLoginButton isLink />}
-          {values.isTwitter ? null : <TwitterLoginButton isLink />}
-          {values.isFacebook ? null : <FacebookLoginButton isLink />}
-          {values.isPassword ? null : <PasswordLoginButton isLink />}
-        </Card>
-      ) : null}
-
+            
       {values.isPassword ? (
         <Card>
           <CardTitle>{t("title-change-password")}</CardTitle>

@@ -3,7 +3,7 @@ import HeroClass from "../../types/HeroClass";
 import {
   IFirebaseAbyssalExpeditionClassRelics,
   IFirebaseAbyssalExpeditionInventory,
-  IFirebaseAbyssalExpeditionTilesList,
+  IFirebaseAbyssalExpeditionTilesList
 } from "./types/IFirebaseAbyssalExpedition";
 import { IFirebaseElderTree } from "./types/IFirebaseElderTree";
 import { IFirebaseHeroList } from "./types/IFirebaseHeroes";
@@ -40,6 +40,7 @@ export interface IProfileValues {
   isTwitter: boolean;
   isPassword: boolean;
   userId: string;
+  isMod: boolean;
   ownerId?: string;
   campaignLevel: string;
   campaignSuccessDate: string;
@@ -71,6 +72,7 @@ export const defaultValues: IProfileValues = {
   isTwitter: false,
   isPassword: false,
   userId: "",
+  isMod: false,
   ownerId: undefined,
   campaignLevel: "1-1",
   campaignSuccessDate: new Date().toISOString(),
