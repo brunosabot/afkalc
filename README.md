@@ -3,8 +3,8 @@
 ## Usage
 
 ```shell
-yarn
-yarn start
+npm
+npm start
 ```
 
 ## Dev guide

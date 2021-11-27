@@ -5,6 +5,7 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
+    "vercel-build": "yum install libuuid-devel libmount-devel zlib && cp -v /lib64/{libuuid,libmount,libblkid,libz}.so.1 node_modules/canvas/build/Release/ && npm run build",
     "start": "next start",
     "extract": "i18next --config i18next-parser.config.js",
     "lint": "npm run lint:css && npm run lint:js && npm run lint:ts",
@@ -20,6 +21,7 @@
     "@mdi/js": "^6.5.95",
     "@svgr/webpack": "^5.5.0",
     "@testing-library/react-hooks": "^7.0.2",
+    "canvas": "^2.6.1",
     "dayjs": "^1.10.7",
     "dotenv": "^10.0.0",
     "firebase": "^8.4.3",
@@ -85,7 +87,7 @@
       "stylelint --fix"
     ],
     "*.{js,jsx,ts,tsx}": [
-      "yarn run test:lint-staged",
+      "npm run test:lint-staged",
       "eslint --ext .js,.jsx,.ts,.tsx",
       "prettier --write"
     ],

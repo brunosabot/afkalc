@@ -1,3 +1,4 @@
+import Image from "next/image";
 import React from "react";
 import artifacts from "../../../data/artifacts.json";
 import heroes from "../../../data/heroes.json";
@@ -17,68 +18,19 @@ export enum DetailType {
 }
 
 interface IProps {
-  size?: "large" | "small" | "default";
-  name?: string;
-  id?: number;
-  highlight?: boolean;
-  disabled?: boolean;
+  artifact?: number;
   ascendLevel?: number;
+  disabled?: boolean;
+  engraveLevel?: number;
+  fiLevel?: number;
+  highlight?: boolean;
+  id?: number;
+  name?: string;
   onClick?: () => void;
   siLevel?: number;
-  fiLevel?: number;
-  engraveLevel?: number;
-  artifact?: number;
+  size?: "large" | "small" | "default";
 }
 
-function getImageName(si: number | undefined, fi: number | undefined) {
-  if (si === undefined) return undefined;
-  if (fi === undefined) return undefined;
-
-  let siNumber = -1;
-  if (si >= 30) {
-    siNumber = 30;
-  } else if (si >= 20) {
-    siNumber = 20;
-  } else if (si >= 10) {
-    siNumber = 10;
-  } else if (si >= 0) {
-    siNumber = 0;
-  }
-
-  let fiNumber = 0;
-  if (fi >= 36) {
-    fiNumber = 36;
-  } else if (fi >= 9) {
-    fiNumber = 9;
-  } else if (fi >= 3) {
-    fiNumber = 3;
-  }
-
-  const concat = `${siNumber}${fiNumber}`.replace("-1", "X");
-
-  // if (siNumber === 0 && fiNumber === 0) return undefined;
-
-  return `/heroes-rank/${concat}.png`;
-}
-
-function getEngraveImageName(engrave: number | undefined) {
-  if (engrave === undefined) return `/heroes-star/0.png`;
-
-  let engraveNumber = 0;
-  if (engrave >= 80) {
-    engraveNumber = 80;
-  } else if (engrave >= 60) {
-    engraveNumber = 60;
-  } else if (engrave >= 30) {
-    engraveNumber = 30;
-  }
-
-  return `/heroes-star/${engraveNumber}.png`;
-}
-
-/**
- * TODO: Use i18n for name
- */
 const Character: React.FC<IProps> = function Character({
   name,
   id,
@@ -99,22 +51,18 @@ const Character: React.FC<IProps> = function Character({
 
   if (resource === undefined) return null;
 
-  const largeClassName = size === "large" ? styles.Large : "";
-  const smallClassName = size === "small" ? styles.Small : "";
-  const highlightClassName = highlight ? styles.Highlight : "";
   const disabledClassName = disabled ? styles.Disabled : "";
+  const highlightClassName = highlight ? styles.Highlight : "";
 
-  const eliteClassName = [1, 2].includes(ascendLevel) ? styles.Elite : "";
-  const legendaryClassName = [3, 4].includes(ascendLevel) ? styles.Legendary : "";
-  const mythicClassName = [5, 6].includes(ascendLevel) ? styles.Mythic : "";
-  const ascendClassName = [7, 8, 9, 10, 11, 12].includes(ascendLevel) ? styles.Ascend : "";
-  const plusClassName = [2, 4, 6].includes(ascendLevel) ? styles.Plus : "";
+  let dimension = 50;
+  if (size === "large") dimension = 64;
+  if (size === "small") dimension = 34;
 
-  const stars = ascendLevel > 7 ? Array.from(new Array(ascendLevel - 7)).map((_, i) => i) : [];
+  const src = `/api/hero?heroImage=${resource.image}&faction=${resource.faction}&ascend=${ascendLevel}&si=${siLevel}&fi=${fiLevel}&engrave=${engraveLevel}`;
 
   return (
     <div
-      className={`${styles.Wrapper} ${largeClassName} ${smallClassName} ${highlightClassName} ${eliteClassName} ${legendaryClassName} ${mythicClassName} ${ascendClassName} ${plusClassName} ${disabledClassName}`}
+      className={`${styles.Wrapper} ${disabledClassName} ${highlightClassName}`}
       onClick={onClick}
       role="button"
       tabIndex={-1}
@@ -122,32 +70,11 @@ const Character: React.FC<IProps> = function Character({
         if (event.key === "Enter") onClick();
       }}
     >
-      <img src={resource.image} className={styles.Character} alt={resource?.name} />
-
-      {size === "small" ? null : (
-        <>
-          <img
-            className={`${styles.Faction} ${
-              siLevel === undefined || siLevel === 0 ? styles.NoSi : ""
-            }`}
-            src={`/factions/${resource.faction}.png`}
-            alt={name}
-          />
-          <img src={getImageName(siLevel, fiLevel)} alt="" className={styles.SiFi} />
-        </>
-      )}
+      <Image src={src} width={dimension} height={dimension} layout="fixed" alt={resource?.name} />
 
       {activeArtifact ? (
         <img className={`${styles.Artifact}`} src={activeArtifact?.image} alt={name} />
       ) : null}
-
-      {stars.length === 0 ? null : (
-        <div className={styles.Stars}>
-          {stars.map((i) => (
-            <img key={i} src={getEngraveImageName(engraveLevel)} alt="" className={styles.Star} />
-          ))}
-        </div>
-      )}
     </div>
   );
 };
