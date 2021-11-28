@@ -109,7 +109,7 @@ const HeroList: React.FC<IProps> = function HeroList() {
             </div>
           ) : null}
 
-          <ShareBanner />
+          <ShareBanner userId={userId} />
           <Head>
             <title>{`${t("common:menu.hero-list")} - Afkalc`}</title>
             <meta name="description" content="" />

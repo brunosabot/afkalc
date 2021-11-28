@@ -10,7 +10,9 @@ const ShareBanner: React.FC<IProps> = function ShareBanner({ listId }) {
   const router = useRouter();
   const localePath = router.locale === router.defaultLocale ? "" : `/${router.locale}`;
 
-  return <CardShareNew>{`https://afkalc.com${localePath}/tiers-list/${listId}`}</CardShareNew>;
+  return (
+    <CardShareNew>{`${process.env.NEXT_PUBLIC_URL}${localePath}/tiers-list/${listId}`}</CardShareNew>
+  );
 };
 
 export default React.memo(ShareBanner);
