@@ -1,25 +1,23 @@
 import { useTranslation } from "next-i18next";
 import { useRouter } from "next/router";
-import React, { useContext } from "react";
-import ProfileContext from "../../../providers/ProfileContext";
+import React from "react";
 import CardShareNew from "../../../ui/card/CardShareNew";
 
 interface IProps {
-  [key: string]: never;
+  userId: string;
 }
 
-const ShareBanner: React.FC<IProps> = function ShareBanner() {
+const ShareBanner: React.FC<IProps> = function ShareBanner({ userId }) {
   const { t } = useTranslation("hero-list");
-  const {
-    values: { userId },
-  } = useContext(ProfileContext);
 
   const router = useRouter();
   const localePath = router.locale === router.defaultLocale ? "" : `/${router.locale}`;
 
   return (
     <CardShareNew>
-      {userId ? `https://afkalc.com${localePath}/hero-list/${userId}` : t("login-needed")}
+      {userId
+        ? `${process.env.NEXT_PUBLIC_URL}${localePath}/hero-list/${userId}`
+        : t("login-needed")}
     </CardShareNew>
   );
 };
