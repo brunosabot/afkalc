@@ -32,5 +32,8 @@
   "label-add-tiers-list": "New hero list",
   "label-add-elder-tree-list": "New elder tree list",
   "level": "Level",
-  "checked-items-hidden": "Completed items are hidden. Click on the checkbox to show them all"
+  "checked-items-hidden": "Completed items are hidden. Click on the checkbox to show them all",
+  "sort-by-name": "Sort by name",
+  "sort-by-last-update": "Sort by last update",
+  "sort-by-percentage": "Sort by percentage"
 }
