@@ -28,7 +28,7 @@ interface IGuildActions {
   setAbexTilesT8Limit: (value: number) => void;
 }
 
-interface IGuildGuild {
+export interface IGuildGuild {
   id: string;
   name: string;
   ownerId: string;
