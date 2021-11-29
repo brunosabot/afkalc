@@ -1,0 +1,14 @@
+.RelicPlus {
+  background-color: transparent;
+  border: 0;
+  border-radius: 50%;
+  cursor: pointer;
+  height: 36px;
+  margin: 0 -8px;
+  transition: var(--transition);
+  width: 36px;
+}
+
+.RelicPlus:hover {
+  background-color: var(--hover-color);
+}
