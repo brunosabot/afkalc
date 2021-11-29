@@ -8,16 +8,19 @@ interface IProps {
   id: number;
   playerHero?: IFirebaseHeroesHero;
   playerName?: string;
+  disabled?: boolean;
 }
 
 const PlayerValidation: React.FC<IProps> = function PlayerValidation({
   playerHero,
   playerName,
   id,
+  disabled = false,
 }) {
   return (
     <ListItem>
       <Character
+        disabled={disabled}
         ascendLevel={playerHero?.ascend}
         siLevel={playerHero?.si}
         fiLevel={playerHero?.fi}
