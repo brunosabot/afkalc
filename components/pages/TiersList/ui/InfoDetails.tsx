@@ -1,17 +1,31 @@
 import React from "react";
+import { DetailType } from "../../../ui/afk/Character";
 import styles from "./InfoDetails.module.css";
 
 interface IProps {
   value?: number;
+  target?: number;
   children: string;
+  isDone: boolean;
+  type: DetailType;
 }
 
-const InfoDetails: React.FC<IProps> = function InfoDetails({ value, children }) {
-  if (value === null || value === undefined || value === 0 || value === -1) {
-    return null;
-  }
+const InfoDetails: React.FC<IProps> = function InfoDetails({
+  isDone,
+  value,
+  target,
+  type,
+  children,
+}) {
+  if (target === null || target === undefined || isNaN(target)) return null;
+  if (type === DetailType.SI && target === -1) return null;
+  if (type !== DetailType.SI && target === 0) return null;
 
-  return <span className={styles.InfosDetail}>{children}</span>;
+  const isLocalDone = isDone === false && (value ?? -1) >= target;
+
+  return (
+    <span className={`${styles.InfosDetail} ${isLocalDone ? styles.IsDone : ""}`}>{children}</span>
+  );
 };
 
 export default InfoDetails;
