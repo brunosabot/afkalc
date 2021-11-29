@@ -2,6 +2,7 @@ import React, { useCallback, useEffect, useMemo, useState } from "react";
 import firebase from "./firebase";
 
 const userCounterRef = firebase.database().ref("counters/users");
+const abexEndtimeRef = firebase.database().ref("abex/endtime");
 const donationRef = firebase.database().ref("donation");
 
 const googleAuthProvider = new firebase.auth.GoogleAuthProvider();
@@ -91,6 +92,7 @@ interface IfirebaseValues {
   isPassword: boolean;
   userCounter: number;
   donation: string[];
+  abexEndtime: string;
 }
 
 interface IFirebaseContext {
@@ -129,6 +131,7 @@ export const FirebaseContext = React.createContext<IFirebaseContext>({
     isAuth: false,
     userCounter: 0,
     donation: [],
+    abexEndtime: "2000-01-01T00:00:00.000Z",
   },
 });
 
@@ -143,6 +146,7 @@ const FirebaseProvider: React.FC<IProps> = function FirebaseProvider({ children 
   const [uid, setUid] = useState<string>("");
   const [userCounter, setUserCounter] = useState(0);
   const [donation, setDonation] = useState([]);
+  const [abexEndtime, setAbexEndtime] = useState("2000-01-01T00:00:00.000Z");
 
   const handleUser = useCallback((user: firebase.User | null) => {
     setIsAuth(user !== null);
@@ -175,6 +179,13 @@ const FirebaseProvider: React.FC<IProps> = function FirebaseProvider({ children 
     });
 
     return () => donationRef.off("value", cb);
+  }, []);
+  useEffect(() => {
+    const cb = abexEndtimeRef.on("value", (snapshot) => {
+      setAbexEndtime(snapshot.val());
+    });
+
+    return () => abexEndtimeRef.off("value", cb);
   }, []);
 
   useEffect(() => {
@@ -270,6 +281,7 @@ const FirebaseProvider: React.FC<IProps> = function FirebaseProvider({ children 
         isPassword,
         userCounter,
         donation,
+        abexEndtime,
       },
     }),
     [
@@ -288,6 +300,7 @@ const FirebaseProvider: React.FC<IProps> = function FirebaseProvider({ children 
       isPassword,
       userCounter,
       donation,
+      abexEndtime,
     ]
   );
 
