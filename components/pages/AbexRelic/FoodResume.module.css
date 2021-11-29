@@ -1,0 +1,6 @@
+.FoodCount {
+  align-items: center;
+  display: flex;
+  gap: 6px;
+  margin: 16px;
+}

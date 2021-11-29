@@ -6,6 +6,7 @@ import React, { useContext, useEffect, useState } from "react";
 import withLayoutPrivate from "../../components/layout/withLayoutPrivate";
 import Camp from "../../components/pages/AbexRelic/Camp";
 import EssenceResume from "../../components/pages/AbexRelic/EssenceResume";
+import FoodResume from "../../components/pages/AbexRelic/FoodResume";
 import TileResume from "../../components/pages/AbexRelic/TileResume";
 import ProfileContext from "../../components/providers/ProfileContext";
 import Card from "../../components/ui/card/Card";
@@ -60,6 +61,7 @@ const AbexRelic: React.FC<IProps> = function AbexRelic() {
 
         <TileResume />
         <EssenceResume />
+        <FoodResume />
 
         <CardActions>
           <CardAction onClick={resetTimers}>{t("reset-timers")}</CardAction>
