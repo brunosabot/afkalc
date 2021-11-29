@@ -18,3 +18,20 @@
 .Overload {
   color: var(--error-text-color);
 }
+
+.LimitBlock {
+  align-items: center;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.LimitBlock + .LimitBlock {
+  margin-top: 8px;
+}
+
+.LimitLabel {
+  flex-grow: 1;
+  font-weight: 500;
+  margin-right: 8px;
+}

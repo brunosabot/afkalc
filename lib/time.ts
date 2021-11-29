@@ -1,7 +1,4 @@
-import dayjs, { Dayjs } from "dayjs";
-import relativeTime from "dayjs/plugin/relativeTime";
-
-dayjs.extend(relativeTime);
+import { Dayjs } from "dayjs";
 
 export function getDuration(time: number) {
   const seconds = time % 60;
