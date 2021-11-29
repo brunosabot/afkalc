@@ -1,4 +1,4 @@
-import { mdiCheck, mdiRestore } from "@mdi/js";
+import { mdiArrowRightThin, mdiCheck, mdiRestore } from "@mdi/js";
 import { useTranslation } from "next-i18next";
 import React, { useCallback } from "react";
 import ascendLevels from "../../../../data/heroAscensionLevel.json";
@@ -6,7 +6,7 @@ import { IFirebaseHeroesHero } from "../../../providers/types/IFirebaseHeroes";
 import IFirebasePriorityList, {
   IFirebasePriorityListHero,
 } from "../../../providers/types/IFirebasePriorityList";
-import Character from "../../../ui/afk/Character";
+import Character, { DetailType } from "../../../ui/afk/Character";
 import Svg from "../../../ui/Svg";
 import useHero from "../hooks/useHero";
 import useIsValidList from "../hooks/useIsValidList";
@@ -64,7 +64,6 @@ const HeroLineViewer: React.FC<IProps> = function HeroLineViewer({
 
   const { id, name } = getHero(hero.hero) ?? { id: 0, name: "" };
   const isDone = isValidList && (isValidSelf || hasSelfRequirements === false);
-  const ascendLevelName = (ascendLevels.find((l) => l.key === hero.ascend) || {}).name;
 
   const onRestore = useCallback(() => {
     setLevel(hero.hero, "SI", initialHeroLevels?.si ?? 0)
@@ -87,31 +86,67 @@ const HeroLineViewer: React.FC<IProps> = function HeroLineViewer({
   const requiredSi = Math.max(hero.si, requirement === "SI" ? requirementValue : -1);
   const requiredFi = Math.max(hero.fi, requirement === "FI" ? requirementValue : 0);
   const requiredEngrave = Math.max(hero.engrave, requirement === "ENGRAVE" ? requirementValue : 0);
+  const ascendLevelName = (ascendLevels.find((l) => l.key === requiredAscend) || {}).name;
 
   return (
     <div key={id} className={`${styles.Item} ${isDone ? styles.IsOk : ""}`}>
       <Character
         id={id}
-        ascendLevel={requiredAscend}
-        fiLevel={requiredFi}
-        siLevel={requiredSi}
-        engraveLevel={requiredEngrave}
+        ascendLevel={heroLevels?.ascend}
+        fiLevel={heroLevels?.fi ?? 0}
+        siLevel={heroLevels?.si ?? -1}
+        engraveLevel={heroLevels?.engrave ?? 0}
+        disabled={
+          heroLevels === undefined || heroLevels.ascend === undefined || heroLevels.ascend === 0
+        }
+      />
+      <div style={{ margin: "0 -12px" }}>
+        <Svg d={mdiArrowRightThin} />
+      </div>
+      <Character
+        id={id}
+        ascendLevel={Math.max(heroLevels?.ascend ?? 0, requiredAscend)}
+        fiLevel={Math.max(heroLevels?.fi ?? 0, requiredFi)}
+        siLevel={Math.max(heroLevels?.si ?? -1, requiredSi)}
+        engraveLevel={Math.max(heroLevels?.engrave ?? 0, requiredEngrave)}
       />
       <div className={styles.Infos}>
         <span className={styles.Name}>{name}</span>
         <span>
-          <span className={styles.DetailsTitle}>
-            {hasSelfRequirements && requirementValue && requirement
-              ? t("label-also-require")
-              : null}
-            {hasSelfRequirements && !(requirementValue && requirement) ? t("label-require") : null}
-          </span>
-          <InfoDetails value={hero.ascend}>{t(`common:ascension-${ascendLevelName}`)}</InfoDetails>
-          <InfoDetails value={hero.si}>{`${t("common:concept.si")} +${hero.si}`}</InfoDetails>
-          <InfoDetails value={hero.fi}>{`${t("common:concept.fi")} ${hero.fi}/9`}</InfoDetails>
-          <InfoDetails value={hero.engrave}>{`${t("common:concept.engrave")} ${
-            hero.engrave
-          }`}</InfoDetails>
+          <InfoDetails
+            isDone={isDone}
+            type={DetailType.ASCEND}
+            value={heroLevels?.ascend}
+            target={requiredAscend}
+          >
+            {t(`common:ascension-${ascendLevelName}`)}
+          </InfoDetails>
+          <InfoDetails
+            isDone={isDone}
+            type={DetailType.SI}
+            value={heroLevels?.si}
+            target={requiredSi}
+          >
+            {`${t("common:concept.si")} ${
+              requiredSi === 0 ? t("common:concept.unlocked") : `+${requiredSi}`
+            }`}
+          </InfoDetails>
+          <InfoDetails
+            isDone={isDone}
+            type={DetailType.INN}
+            value={heroLevels?.fi}
+            target={requiredFi}
+          >
+            {`${t("common:concept.fi")} ${requiredFi}/9`}
+          </InfoDetails>
+          <InfoDetails
+            isDone={isDone}
+            type={DetailType.ENGRAVE}
+            value={heroLevels?.engrave}
+            target={requiredEngrave}
+          >
+            {`${t("common:concept.engrave")} ${requiredEngrave}`}
+          </InfoDetails>
         </span>
       </div>
       <div className={styles.Placeholder} />

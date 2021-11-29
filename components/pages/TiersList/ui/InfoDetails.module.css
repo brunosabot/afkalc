@@ -1,6 +1,7 @@
 .InfosDetail {
   color: var(--secondary-text-color);
   font-size: 0.85em;
+  position: relative;
 }
 
 .InfosDetail + .InfosDetail {
@@ -10,4 +11,18 @@
 .InfosDetail + .InfosDetail::before {
   content: "—";
   margin-right: 12px;
+}
+
+.IsDone::after {
+  background-color: var(--error-background-color);
+  content: "";
+  filter: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg"><filter id="marker"><feTurbulence seed="1" type="fractalNoise" baseFrequency="0.001 0.15" numOctaves="1" result="warp" /><feDisplacementMap xChannelSelector="R" yChannelSelector="G" scale="18" in="SourceGraphic" in2="warp" /></filter></svg>#marker');
+  height: 4px;
+  left: 0;
+  opacity: 0.5;
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: rotate(-1deg) translateY(-50%);
+  z-index: 1;
 }
