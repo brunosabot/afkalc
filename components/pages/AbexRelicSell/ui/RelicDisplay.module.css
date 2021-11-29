@@ -1,12 +1,30 @@
+.RelicWrapper {
+  align-items: center;
+  display: flex;
+  position: absolute;
+}
+
+.RelicPlus {
+  background-color: transparent;
+  border: 0;
+  border-radius: 50%;
+  cursor: pointer;
+  height: 36px;
+  transition: var(--transition);
+  width: 36px;
+}
+
+.RelicPlus:hover {
+  background-color: var(--hover-color);
+}
+
 .Relic {
   border: 0;
   border-radius: 50%;
   box-sizing: border-box;
-  cursor: pointer;
   height: 50px;
   outline: 0;
   padding: 4px;
-  position: absolute;
   width: 50px;
 }
 
@@ -83,5 +101,5 @@
 
 .Inactive {
   filter: grayscale(0.8);
-  opacity: 50%;
+  opacity: 0.5;
 }

@@ -6,6 +6,15 @@
 
 .Box {
   height: 200px;
+  margin-top: 58px;
   position: relative;
-  width: 200px;
+  width: 240px;
+}
+
+.BoxValue {
+  font-size: 1.5em;
+  left: 50%;
+  position: absolute;
+  top: -58px;
+  transform: translate(-50%);
 }

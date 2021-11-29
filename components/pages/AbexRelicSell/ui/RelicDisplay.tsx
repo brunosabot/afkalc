@@ -1,44 +1,69 @@
+import { mdiMinus, mdiPlus } from "@mdi/js";
 import React from "react";
+import abexRelicData from "../../../../data/abex-relics.json";
 import HeroClass from "../../../../types/HeroClass";
 import styles from "./RelicDisplay.module.css";
+import RelicPlus from "./RelicPlus";
+
+type RelicLevel = 0 | 1 | 2 | 3 | 4 | 5;
+
+const abexTree = abexRelicData.tree as Record<HeroClass, Record<RelicLevel, number[]>>;
 
 interface Props {
-  relic: number;
   position: number;
-  level: number;
   theClass: HeroClass;
   active?: number;
-  onClick: (position: number, theClass: HeroClass, relic: number, level: number) => void;
+  onClick: (position: number, theClass: HeroClass, level: number) => void;
 }
 
 const RelicDisplay: React.FC<Props> = function RelicDisplay({
-  relic,
   position,
-  level,
   theClass,
   active = 0,
   onClick,
 }) {
-  const relicClass = styles[`Relic--${level}`];
+  const currentRelicLevel = Math.floor(active / 1000) as RelicLevel;
+  const relicClass = styles[`Relic--${currentRelicLevel}`];
   const positionClass = styles[`Position--${position}`];
-  const isActive = active >= relic;
+  const theClassTree = abexTree[theClass];
+
+  let previous = abexRelicData.tree[theClass][0][position - 1];
+  let next = abexRelicData.tree[theClass][0][position - 1];
+  if (currentRelicLevel > 0 && currentRelicLevel <= 5) {
+    const prevIndex = (currentRelicLevel - 1) as RelicLevel;
+    previous = theClassTree[prevIndex][position - 1];
+  }
+  if (currentRelicLevel < 5 && currentRelicLevel >= 0) {
+    const nextIndex = (currentRelicLevel + 1) as RelicLevel;
+    next = theClassTree[nextIndex][position - 1];
+  }
+
+  const currentRelic = active || abexRelicData.tree[theClass][1][position - 1];
 
   return (
-    <button
-      type="button"
-      className={`${styles.Relic} ${relicClass} ${positionClass} ${
-        isActive ? "" : styles.Inactive
-      }`}
-      onClick={() => onClick(position, theClass, relic, level)}
+    <div
+      className={`${styles.RelicWrapper} ${positionClass} ${active <= 0 ? styles.Inactive : ""}`}
     >
-      <img
-        key={relic}
-        src={`/relics/relic_${relic}.png`}
-        className={styles.Image}
-        style={{ height: "100%" }}
-        alt={`${relic}`}
+      <RelicPlus
+        show={currentRelicLevel > 0}
+        onClick={() => onClick(position, theClass, previous)}
+        icon={mdiMinus}
       />
-    </button>
+      <div className={`${styles.Relic} ${relicClass}`}>
+        <img
+          key={currentRelic}
+          src={`/relics/relic_${currentRelic}.png`}
+          className={styles.Image}
+          style={{ height: "100%" }}
+          alt={`${currentRelic}`}
+        />
+      </div>
+      <RelicPlus
+        show={currentRelicLevel < 5}
+        onClick={() => onClick(position, theClass, next)}
+        icon={mdiPlus}
+      />
+    </div>
   );
 };
 
