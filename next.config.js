@@ -1,10 +1,13 @@
 const { i18n } = require("./next-i18next.config");
 
 const moduleExports = {
-  future: {
-    webpack5: true,
-  },
   i18n,
+  reactStrictMode: true,
+  poweredByHeader: false,
+  generateEtags: false,
+  images: {
+    minimumCacheTTL: 864000,
+  },
   async redirects() {
     return [
       {
@@ -18,14 +21,6 @@ const moduleExports = {
         permanent: true,
       },
     ];
-  },
-  webpack(config) {
-    config.module.rules.push({
-      test: /\.svg$/,
-      use: ["@svgr/webpack"],
-    });
-
-    return config;
   },
 };
 
