@@ -4,12 +4,13 @@ import styles from "./Svg.module.css";
 interface IProps {
   d: string;
   onClick?: () => void;
+  className?: string;
 }
 
-const Svg: React.FC<IProps> = function Svg({ d, onClick = undefined }) {
+const Svg: React.FC<IProps> = function Svg({ className = "", d, onClick = undefined }) {
   return (
     <svg
-      className={`${styles.Svg} ${onClick ? styles.OnClick : ""}`}
+      className={`${styles.Svg} ${onClick ? styles.OnClick : ""} ${className}`}
       viewBox="0 0 24 24"
       onClick={onClick}
     >

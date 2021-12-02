@@ -1,5 +1,6 @@
+import { mdiCloseThick } from "@mdi/js";
 import React, { useCallback } from "react";
-import CloseThick from "../svg/close-thick.svg";
+import Svg from "../ui/Svg";
 import styles from "./Modal.module.css";
 import ModalPortal from "./ModalPortal";
 
@@ -36,7 +37,7 @@ const Modal: React.FC<Props> = function Modal({ active, children, onClose }) {
   return (
     <ModalPortal active={active}>
       <div className={styles.ModalWrapper} onClick={onCloseWrapper} role="presentation">
-        <CloseThick className={styles.Close} onClick={onClose} />
+        <Svg d={mdiCloseThick} className={styles.Close} onClick={onClose} />
         <div className={styles.Modal}>{children}</div>
       </div>
     </ModalPortal>
