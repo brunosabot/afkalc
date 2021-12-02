@@ -1043,5 +1043,15 @@
     "image": "/heroes/SnakeMan.jpg",
     "faction": "maulers",
     "usage": []
+  },
+  {
+    "name": "Fratom",
+    "id": 99,
+    "type": "strength",
+    "class": "warrior",
+    "role": "continuous",
+    "image": "/heroes/FP.jpg",
+    "faction": "hypogeans",
+    "usage": []
   }
 ]
