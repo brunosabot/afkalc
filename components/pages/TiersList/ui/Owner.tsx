@@ -126,7 +126,7 @@ const Owner: React.FC<IProps> = function Owner({ listId, result }) {
           <SelectField
             label={t("label-value")}
             name="requirementValue"
-            onChange={(newValue) => setRequirementValue(listId, parseFloat(newValue))}
+            onChange={(newValue) => setRequirementValue(listId, parseFloat(newValue || "0"))}
             value={requirementValue}
             values={ascendLevels.map((level) => ({
               key: `${level.key}`,
@@ -138,7 +138,7 @@ const Owner: React.FC<IProps> = function Owner({ listId, result }) {
             label={t("label-value")}
             name="requirementValue"
             value={requirementValue}
-            onChange={(newValue) => setRequirementValue(listId, parseFloat(newValue))}
+            onChange={(newValue) => setRequirementValue(listId, parseFloat(newValue || "0"))}
           />
         )}
 

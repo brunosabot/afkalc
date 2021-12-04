@@ -82,10 +82,16 @@ const HeroLineViewer: React.FC<IProps> = function HeroLineViewer({
 
   if (isDone && shouldShowChecked === false) return null;
 
-  const requiredAscend = Math.max(hero.ascend, requirement === "ASCEND" ? requirementValue : 0);
   const requiredSi = Math.max(hero.si, requirement === "SI" ? requirementValue : -1);
   const requiredFi = Math.max(hero.fi, requirement === "FI" ? requirementValue : 0);
   const requiredEngrave = Math.max(hero.engrave, requirement === "ENGRAVE" ? requirementValue : 0);
+  const requiredAscend = Math.max(
+    hero.ascend,
+    requirement === "ASCEND" ? requirementValue : 0,
+    requiredSi > 0 ? 5 : 0,
+    requiredFi > 0 ? 7 : 0,
+    requiredEngrave > 0 ? 8 : 0
+  );
   const ascendLevelName = (ascendLevels.find((l) => l.key === requiredAscend) || {}).name;
 
   return (
