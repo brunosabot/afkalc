@@ -1053,5 +1053,15 @@
     "image": "/heroes/FP.jpg",
     "faction": "hypogeans",
     "usage": []
+  },
+  {
+    "name": "Astart",
+    "id": 100,
+    "type": "intelligence",
+    "class": "support",
+    "role": "regen",
+    "image": "/heroes/FlameE.jpg",
+    "faction": "wilders",
+    "usage": []
   }
 ]
