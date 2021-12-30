@@ -1063,5 +1063,15 @@
     "image": "/heroes/FlameE.jpg",
     "faction": "wilders",
     "usage": []
+  },
+  {
+    "name": "Talene",
+    "id": 101,
+    "type": "intelligence",
+    "class": "tank",
+    "role": "buffer",
+    "image": "/heroes/SPhoenix.jpg",
+    "faction": "celestials",
+    "usage": []
   }
 ]
