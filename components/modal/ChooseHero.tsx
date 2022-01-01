@@ -95,6 +95,7 @@ const ChooseHero: React.FC<Props> = function ChooseHero({
               size="large"
               key={id}
               name={name}
+              id={id}
               onClick={() => onSelect(DetailType.HERO, id)}
               highlight={currentId === id}
             />

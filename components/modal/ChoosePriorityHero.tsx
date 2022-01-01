@@ -123,6 +123,7 @@ const ChoosePriorityHero: React.FC<Props> = function ChoosePriorityHero({
             <Character
               key={id}
               name={name}
+              id={id}
               size="large"
               onClick={() =>
                 onSelect({

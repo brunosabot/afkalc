@@ -64,6 +64,7 @@ const HeroLine: React.FC<IProps> = function HeroLine({
   return (
     <div key={id} className={styles.HeroLine}>
       <Character
+        id={id}
         name={name}
         ascendLevel={getValue(id, "ascend")}
         disabled={getValue(id, "ascend") === 0}
