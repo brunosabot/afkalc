@@ -54,6 +54,7 @@ const HeroLine: React.FC<Props> = function HeroLine({
   return (
     <div className={styles.HeroLine}>
       <Character
+        id={hero.hero}
         name={name}
         onClick={() => setShowModal(true)}
         ascendLevel={requiredAscend}

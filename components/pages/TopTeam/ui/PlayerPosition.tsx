@@ -32,6 +32,7 @@ const PlayerPosition: React.FC<Props> = function PlayerPosition({
         {hero ? (
           <Character
             name={name}
+            id={id}
             onClick={() => setShowModal(true)}
             siLevel={si}
             fiLevel={fi}
