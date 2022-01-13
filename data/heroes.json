@@ -1079,7 +1079,7 @@
     "id": 102,
     "type": "intelligence",
     "class": "mage",
-    "role": "continuous",
+    "role": "burst",
     "image": "/heroes/BM.jpg",
     "faction": "lightbearers",
     "usage": []
