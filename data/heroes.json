@@ -1073,5 +1073,15 @@
     "image": "/heroes/SPhoenix.jpg",
     "faction": "celestials",
     "usage": []
+  },
+  {
+    "name": "Scarlet",
+    "id": 102,
+    "type": "intelligence",
+    "class": "mage",
+    "role": "burst",
+    "image": "/heroes/BM.jpg",
+    "faction": "lightbearers",
+    "usage": []
   }
 ]
