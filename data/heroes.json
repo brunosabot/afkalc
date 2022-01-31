@@ -1084,4 +1084,15 @@
     "faction": "lightbearers",
     "usage": []
   }
+  ,
+  {
+    "name": "Melusina",
+    "id": 103,
+    "type": "intelligence",
+    "class": "mage",
+    "role": "burst",
+    "image": "/heroes/Babayaga.jpg",
+    "faction": "dimensionals",
+    "usage": []
+  }
 ]
