@@ -1095,4 +1095,15 @@
     "faction": "dimensionals",
     "usage": []
   }
+  ,
+  {
+    "name": "Fane",
+    "id": 104,
+    "type": "strength",
+    "class": "support",
+    "role": "debuffer",
+    "image": "/heroes/Gaoler.jpg",
+    "faction": "graveborns",
+    "usage": []
+  }
 ]
