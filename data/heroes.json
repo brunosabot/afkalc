@@ -1083,8 +1083,7 @@
     "image": "/heroes/BM.jpg",
     "faction": "lightbearers",
     "usage": []
-  }
-  ,
+  },
   {
     "name": "Melusina",
     "id": 103,
@@ -1094,12 +1093,11 @@
     "image": "/heroes/Babayaga.jpg",
     "faction": "dimensionals",
     "usage": []
-  }
-  ,
+  },
   {
     "name": "Fane",
     "id": 104,
-    "type": "strength",
+    "type": "agility",
     "class": "support",
     "role": "debuffer",
     "image": "/heroes/Gaoler.jpg",
