@@ -22,6 +22,7 @@ export interface IProfileActions {
   setAbexGoalRelics: (newGoalRelics: IFirebaseAbyssalExpeditionClassRelics) => Promise<void>;
   setAbexRelicInventory: (newRelicInventory: IFirebaseAbyssalExpeditionInventory) => Promise<void>;
   setAbexTiles: (newTiles: IFirebaseAbyssalExpeditionTilesList) => Promise<void>;
+  setAbexBox: (newBox: number[]) => Promise<void>;
   resetAbexTilesTimers: () => Promise<void>;
   resetAbexTiles: () => Promise<void>;
   resetAbexRelicsAndInventory: () => Promise<void>;
@@ -53,6 +54,7 @@ export interface IProfileValues {
   abexCurrentRelics: IFirebaseAbyssalExpeditionClassRelics;
   abexRelicInventory: IFirebaseAbyssalExpeditionInventory;
   abexTiles: IFirebaseAbyssalExpeditionTilesList;
+  abexBox: number[];
   heroes: IFirebaseHeroList;
   heroesLastUpdate: string;
   elderTree: IFirebaseElderTree;
@@ -78,6 +80,7 @@ export const defaultValues: IProfileValues = {
   playerVipLevel: 1,
   playerName: "",
   shareId: undefined,
+  abexBox: [...new Array(25)].map(() => 0),
   abexGoalRelics: {
     [HeroClass.ranger]: [5305, 5204, 5205, 5104, 5304, 5306],
     [HeroClass.mage]: [5405, 5304, 5305, 5202, 5404, 5406],
@@ -123,6 +126,7 @@ export default createContext<IProfileContext>({
     setAbexGoalRelics: () => Promise.resolve(undefined),
     setAbexRelicInventory: () => Promise.resolve(undefined),
     setAbexTiles: () => Promise.resolve(undefined),
+    setAbexBox: () => Promise.resolve(undefined),
     resetAbexTilesTimers: () => Promise.resolve(undefined),
     resetAbexTiles: () => Promise.resolve(undefined),
     resetAbexRelicsAndInventory: () => Promise.resolve(undefined),

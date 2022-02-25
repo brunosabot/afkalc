@@ -28,8 +28,9 @@ function getHeroFrame(ascendLevel: number) {
   if (ascendLevel === 4) return `legendary-p`;
   if (ascendLevel === 5) return `mythic`;
   if (ascendLevel === 6) return `mythic-p`;
+  if (ascendLevel > 6) return `ascend`;
 
-  return `ascend`;
+  return `none`;
 }
 
 function getSiImageName(siLevel: number) {

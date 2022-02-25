@@ -35,6 +35,7 @@
   "tiers-list-ko-players": "Players that does not validate the hero",
   "tiers-list-ok-players": "Players that validates the hero",
   "label-away-time-limit": "Away time limit (hh:mm)",
+  "label-box-hero-list": "Heroes selected:",
   "label-farm-limit": "Farm limit",
   "label-tiles-t1-limit": "T1 limit",
   "label-tiles-t2-limit": "T2 limit",
