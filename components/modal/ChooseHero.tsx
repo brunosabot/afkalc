@@ -34,10 +34,12 @@ interface Props {
   onSelect: (type: DetailType, value: number) => void;
   current: [number, number, number, number, number];
   onlyHero?: boolean;
+  shouldDisplayKey?: boolean;
 }
 
 const ChooseHero: React.FC<Props> = function ChooseHero({
   onlyHero = false,
+  shouldDisplayKey = true,
   current: [currentId, si, fi, currentArtifact, linkKey],
   onSelect,
 }) {
@@ -79,7 +81,7 @@ const ChooseHero: React.FC<Props> = function ChooseHero({
         </CharacterGrid>
       ) : null}
 
-      {onlyHero ? (
+      {shouldDisplayKey && onlyHero ? (
         <CheckboxField
           label={t("has-dimensional-key")}
           name="dimensional-key"

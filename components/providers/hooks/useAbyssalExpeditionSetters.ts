@@ -54,6 +54,15 @@ export default function useAbyssalExpeditionSetters(result: IFirebaseDataState<I
     },
     [document]
   );
+  const setAbexBox = useCallback(
+    async (newAbexBox) => {
+      await document?.set(
+        { abexBox: newAbexBox, abexLastUpdate: new Date().toISOString() },
+        { merge: true }
+      );
+    },
+    [document]
+  );
 
   const resetAbexTilesTimers = useCallback(() => {
     const newAbexTiles = { ...result?.data?.abexTiles };
@@ -70,6 +79,7 @@ export default function useAbyssalExpeditionSetters(result: IFirebaseDataState<I
     setAbexCurrentRelics,
     setAbexGoalRelics,
     setAbexRelicInventory,
+    setAbexBox,
     resetAbexRelicsAndInventory,
     setAbexTiles,
     resetAbexTilesTimers,
