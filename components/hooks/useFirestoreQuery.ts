@@ -23,6 +23,14 @@ function reducer<T>(state: IFirebaseDataState<T>, action: Action) {
   }
 }
 
+function getDocData(doc: firebase.firestore.DocumentSnapshot) {
+  return doc.exists === true ? { id: doc.id, ...doc.data() } : null;
+}
+
+function getQueryData(collection: any) {
+  return collection.docs.map(getDocData);
+}
+
 export default function useFirestoreQuery<T>(
   query: firebase.firestore.Query | undefined,
   lazy: boolean = false
@@ -61,12 +69,4 @@ export default function useFirestoreQuery<T>(
   }, [queryCached, lazy]);
 
   return state;
-}
-
-function getDocData(doc: firebase.firestore.DocumentSnapshot) {
-  return doc.exists === true ? { id: doc.id, ...doc.data() } : null;
-}
-
-function getQueryData(collection: any) {
-  return collection.docs.map(getDocData);
 }

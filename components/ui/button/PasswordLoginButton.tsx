@@ -21,9 +21,11 @@ const PasswordLoginButton: React.FC<IProps> = function PasswordLoginButton({ isL
     (e) => {
       e.preventDefault();
       if (step >= 1) {
-        isLink
-          ? actions.linkWithPassword(email, password)
-          : actions.logInPassword(email, password).catch(() => setError(true));
+        if (isLink) {
+          actions.linkWithPassword(email, password);
+        } else {
+          actions.logInPassword(email, password).catch(() => setError(true));
+        }
       }
       setStep(step + 1);
     },

@@ -74,7 +74,7 @@ const TiersList: React.FC<IProps> = function TiersList() {
       let firstKo: number = 0;
       let totalKoCount = 0;
 
-      list.heroes.forEach((hero, i) => {
+      list.heroes.forEach((hero) => {
         const isHeroValidList = isValidList(list, hero, member.heroes?.[hero.hero]);
         const isHeroValidSelf = isValidSelf(hero, member.heroes?.[hero.hero]);
 

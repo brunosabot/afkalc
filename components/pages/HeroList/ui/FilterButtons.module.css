@@ -7,7 +7,7 @@
   border: 0;
   cursor: pointer;
   height: 40px;
-  opacity: 40%;
+  opacity: 0.4;
   outline: 0;
   padding: 0;
   padding: 4px;
@@ -15,7 +15,7 @@
 }
 
 .Active {
-  opacity: 100%;
+  opacity: 1;
 }
 
 .Image {

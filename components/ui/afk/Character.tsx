@@ -17,7 +17,7 @@ export enum DetailType {
   LINKKEY,
 }
 
-interface IProps {
+export interface ICharacterProps {
   artifact?: number;
   ascendLevel?: number;
   disabled?: boolean;
@@ -31,7 +31,7 @@ interface IProps {
   size?: "large" | "small" | "default";
 }
 
-const Character: React.FC<IProps> = function Character({
+const Character: React.FC<ICharacterProps> = function Character({
   name,
   id,
   size = "default",

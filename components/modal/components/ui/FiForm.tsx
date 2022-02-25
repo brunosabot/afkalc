@@ -11,15 +11,11 @@ const fi4f: [number, string][] = [
 ];
 
 interface Props {
-  hero: number;
-  si: number;
   fi: number;
-  ascend: number;
-  engrave: number;
   onChange: (value: number) => void;
 }
 
-const FiForm: React.FC<Props> = function FiForm({ hero, si, fi, ascend, engrave, onChange }) {
+const FiForm: React.FC<Props> = function FiForm({ fi, onChange }) {
   const { t } = useTranslation("common");
 
   return (

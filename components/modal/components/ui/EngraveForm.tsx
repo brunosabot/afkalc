@@ -21,21 +21,11 @@ const engrave4f: [number, string][] = [
 
 interface Props {
   hero: number;
-  si: number;
-  fi: number;
-  ascend: number;
   engrave: number;
   onChange: (value: number) => void;
 }
 
-const EngraveForm: React.FC<Props> = function EngraveForm({
-  hero,
-  si,
-  fi,
-  ascend,
-  engrave,
-  onChange,
-}) {
+const EngraveForm: React.FC<Props> = function EngraveForm({ hero, engrave, onChange }) {
   const { t } = useTranslation("common");
 
   const resource = typedHeroes.find((r) => r.id === hero);

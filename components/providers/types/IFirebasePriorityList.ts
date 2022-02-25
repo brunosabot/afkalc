@@ -5,7 +5,15 @@ export type IFirebasePriorityListRequirement =
   | "ASCEND"
   | "ENGRAVE"
   | "LINK"
-  | "LINKKEY";
+  | "LINKKEY"
+  | "PARTWEAPON"
+  | "PARTBODY"
+  | "PARTBOOTS"
+  | "PARTHEAD"
+  | "PARTWEAPONFACTION"
+  | "PARTBODYFACTION"
+  | "PARTBOOTSFACTION"
+  | "PARTHEADFACTION";
 
 export interface IFirebasePriorityListHero {
   fi: number;

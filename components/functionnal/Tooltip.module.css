@@ -1,0 +1,105 @@
+.TooltipWrapper {
+  max-width: 350px;
+  padding: 10px;
+  position: absolute;
+}
+
+.TooltipWrapper:global(.modal-enter) {
+  opacity: 0;
+}
+
+.TooltipWrapper:global(.modal-enter-active) {
+  opacity: 1;
+  transition: opacity cubic-bezier(0, 0, 0.2, 1) 300ms;
+}
+
+.TooltipWrapper:global(.modal-exit) {
+  opacity: 1;
+}
+
+.TooltipWrapper:global(.modal-exit-active) {
+  opacity: 0;
+  transition: opacity cubic-bezier(0, 0, 0.2, 1) 300ms;
+}
+@media screen and (prefers-reduced-motion: reduce) {
+  .TooltipWrapper:global(.modal-enter-active) {
+    transition: none;
+  }
+
+  .TooltipWrapper:global(.modal-exit-active) {
+    transition: none;
+  }
+}
+
+.Tooltip {
+  background-color: #2c3e48;
+  border-radius: 3px;
+  color: #fff;
+  display: block;
+  font-family: var(--sans-serif);
+  font-size: 14px;
+  font-weight: 500;
+  letter-spacing: -0.03em;
+  padding: 8px 16px;
+  pointer-events: none;
+  position: relative;
+  text-align: center;
+}
+
+.TooltipArrow {
+  fill: #2c3e48;
+  position: absolute;
+}
+
+.Tooltip-top {
+  transform: translate(-50%, -100%);
+}
+
+.Tooltip-top .TooltipArrow {
+  bottom: 0;
+  left: 50%;
+  right: auto;
+  top: auto;
+  transform: translate(-50%);
+}
+
+.Tooltip-right {
+  transform: translate(0, -50%);
+}
+
+.Tooltip-right .TooltipArrow {
+  bottom: auto;
+  left: 0;
+  right: auto;
+  top: 50%;
+  transform: rotate(90deg) translateX(-50%);
+}
+
+.Tooltip-bottom {
+  transform: translate(-50%, 0);
+}
+
+.Tooltip-bottom .TooltipArrow {
+  bottom: auto;
+  left: 50%;
+  right: auto;
+  top: 0;
+  transform: rotate(180deg) translateX(50%);
+}
+
+.Tooltip-left {
+  transform: translate(-100%, -50%);
+}
+
+.Tooltip-left .TooltipArrow {
+  bottom: auto;
+  left: auto;
+  right: 0;
+  top: 50%;
+  transform: rotate(-90deg) translateX(50%);
+}
+
+.WithTooltip {
+  display: inline-flex;
+  position: relative;
+}

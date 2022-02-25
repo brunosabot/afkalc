@@ -11,6 +11,7 @@
   "label-password": "Password",
   "mail-sent": "An email has been sent",
   "ascension--": "-",
+  "ascension-none": "Not unlocked",
   "ascension-elite": "Elite",
   "ascension-elite-p": "Elite+",
   "ascension-legendary": "Legendary",
@@ -23,6 +24,15 @@
   "ascension-ascend-3": "Ascend 3*",
   "ascension-ascend-4": "Ascend 4*",
   "ascension-ascend-5": "Ascend 5*",
+  "ascension-rare": "Rare",
+  "ascension-rare-p": "Rare+",
+  "ascension-mythic-t1": "T1",
+  "ascension-mythic-t2": "T2",
+  "ascension-mythic-t3": "T3",
+  "equipment-weapon": "Weapon",
+  "equipment-body": "Armor",
+  "equipment-boots": "Boots",
+  "equipment-head": "Hat",
   "loading": "Loading",
   "user-on-app": "Join {{counter}} users already using the app!",
   "logged-user-on-app": "You are {{counter}} users using the app! Thank you!",
@@ -167,12 +177,21 @@
     "wingedwarden": "Winged Warden",
     "theoceanicstrings": "The Oceanic Strings"
   },
+  "faction-none": "-",
+  "faction-lightbearers": "Lightbearers",
+  "faction-maulers": "Maulers",
+  "faction-wilders": "Wilders",
+  "faction-graveborns": "Graveborns",
+  "faction-celestials": "Celestials",
+  "faction-hypogeans": "Hypogeans",
+  "faction-dimensionals": "Dimensionals",
   "concept": {
     "si": "SI",
     "siUnlocked": "SI Unlocked",
     "fi": "FI",
     "ascend": "Ascension",
     "engrave": "Engraving",
-    "unlocked": "unlocked"
+    "unlocked": "unlocked",
+    "faction": "Faction"
   }
 }

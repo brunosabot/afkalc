@@ -30,13 +30,10 @@ const si4f: [number, string][] = [
 interface Props {
   hero: number;
   si: number;
-  fi: number;
-  ascend: number;
-  engrave: number;
   onChange: (value: any) => void;
 }
 
-const SiForm: React.FC<Props> = function SiForm({ hero, si, fi, ascend, engrave, onChange }) {
+const SiForm: React.FC<Props> = function SiForm({ hero, si, onChange }) {
   const { t } = useTranslation("common");
 
   const resource = typedHeroes.find((r) => r.id === hero);

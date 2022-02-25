@@ -56,7 +56,7 @@ const Viewer: React.FC<IProps> = function Viewer({ listId, result }) {
         action={
           <>
             <CheckedButton showChecked={showChecked} setShowChecked={setShowChecked} />
-            <FavoriteButton title={title} listId={listId} />
+            <FavoriteButton listId={listId} />
           </>
         }
       >
@@ -71,7 +71,7 @@ const Viewer: React.FC<IProps> = function Viewer({ listId, result }) {
 
       {showChecked ? null : <CardWarn>{t("checked-items-hidden")}</CardWarn>}
 
-      {listHeroes.map((hero, index) => (
+      {listHeroes.map((hero) => (
         <HeroLineViewer
           key={`${hero.hero}-${hero.ascend}-${hero.fi}-${hero.si}`}
           hero={hero}

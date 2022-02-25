@@ -6,7 +6,8 @@
   height: 100%;
   justify-content: center;
   left: 0;
-  padding: 60px 32px;
+  padding: 60px 32px 92px;
+  pointer-events: initial;
   position: fixed;
   top: 0;
   width: 100%;
@@ -31,6 +32,7 @@
   cursor: pointer;
   fill: var(--text-color);
   height: 32px;
+  pointer-events: initial;
   position: absolute;
   right: 4px;
   top: 4px;

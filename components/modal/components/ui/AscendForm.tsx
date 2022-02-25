@@ -4,22 +4,11 @@ import ascendLevels from "../../../../data/heroAscensionLevel.json";
 import SelectField from "../../../ui/SelectField";
 
 interface Props {
-  hero: number;
-  si: number;
-  fi: number;
   ascend: number;
-  engrave: number;
   onChange: (value: number) => void;
 }
 
-const AscendForm: React.FC<Props> = function AscendForm({
-  hero,
-  si,
-  fi,
-  ascend,
-  engrave,
-  onChange,
-}) {
+const AscendForm: React.FC<Props> = function AscendForm({ ascend, onChange }) {
   const { t } = useTranslation("common");
 
   return (

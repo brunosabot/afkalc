@@ -17,7 +17,7 @@ const InfoDetails: React.FC<IProps> = function InfoDetails({
   type,
   children,
 }) {
-  if (target === null || target === undefined || isNaN(target)) return null;
+  if (target === null || target === undefined || Number.isNaN(target)) return null;
   if (type === DetailType.SI && target === -1) return null;
   if (type !== DetailType.SI && target === 0) return null;
 
