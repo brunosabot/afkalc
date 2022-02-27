@@ -1103,5 +1103,15 @@
     "image": "/heroes/Gaoler.jpg",
     "faction": "graveborns",
     "usage": []
+  },
+  {
+    "name": "Ezizh",
+    "id": 105,
+    "type": "intelligence",
+    "class": "mage",
+    "role": "continuous",
+    "image": "/heroes/SBane.jpg",
+    "faction": "hypogeans",
+    "usage": []
   }
 ]
