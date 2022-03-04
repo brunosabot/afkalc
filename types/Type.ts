@@ -1,6 +1,6 @@
 enum Type {
   strength = "strength",
   agility = "agility",
-  inteligence = "inteligence",
+  intelligence = "intelligence",
 }
 export default Type;

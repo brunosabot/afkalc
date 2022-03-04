@@ -18,10 +18,9 @@ import HeroLineViewer from "../../TiersList/ui/HeroLineViewer";
 
 interface IProps {
   result: IFirebasePriorityList;
-  listId: string;
 }
 
-const Viewer: React.FC<IProps> = function Viewer({ listId, result }) {
+const Viewer: React.FC<IProps> = function Viewer({ result }) {
   const [showChecked, setShowChecked] = useState<boolean>(false);
   const router = useRouter();
   const heroDocument = useFirestoreDocumentReference(`profile/${router.query.member}`);
@@ -71,7 +70,7 @@ const Viewer: React.FC<IProps> = function Viewer({ listId, result }) {
 
       {showChecked ? null : <CardWarn>{t("checked-items-hidden")}</CardWarn>}
 
-      {listHeroes.map((hero, index) => (
+      {listHeroes.map((hero) => (
         <HeroLineViewer
           key={`${hero.hero}-${hero.ascend}-${hero.fi}-${hero.si}`}
           hero={hero}

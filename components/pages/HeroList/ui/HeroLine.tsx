@@ -1,6 +1,7 @@
 import { mdiLink } from "@mdi/js";
 import React, { useState } from "react";
 import Modal from "../../../functionnal/Modal";
+import { withTooltip } from "../../../functionnal/withTooltip";
 import ChooseHero from "../../../modal/ChooseHero";
 import { IFirebaseHeroesHero } from "../../../providers/types/IFirebaseHeroes";
 import Character, { DetailType } from "../../../ui/afk/Character";
@@ -15,10 +16,12 @@ interface IProps {
   getValue: (id: number, field: keyof IFirebaseHeroesHero) => number;
   onClick: () => undefined;
   isView: boolean;
-  shouldUnlockFi?: boolean;
   faction: string;
   link?: number;
   linkKey?: number;
+  // Used by the tooltip
+  // eslint-disable-next-line react/no-unused-prop-types
+  label: any;
 }
 
 const HeroLine: React.FC<IProps> = function HeroLine({
@@ -31,7 +34,6 @@ const HeroLine: React.FC<IProps> = function HeroLine({
   link,
   linkKey,
   onClick,
-  shouldUnlockFi = false,
 }) {
   const [showModal, setShowModal] = useState(false);
 
@@ -96,4 +98,4 @@ const HeroLine: React.FC<IProps> = function HeroLine({
   );
 };
 
-export default React.memo(HeroLine);
+export default React.memo(withTooltip(HeroLine));

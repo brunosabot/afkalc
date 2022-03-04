@@ -4,6 +4,10 @@
   padding: 0 16px 16px;
 }
 
+.Wrapper + .Wrapper {
+  margin-top: 8px;
+}
+
 .Wrapper.Small {
   padding: 0;
 }

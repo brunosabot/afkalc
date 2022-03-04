@@ -101,3 +101,13 @@ a {
     flex-shrink: 0;
   }
 }
+
+#modal-root {
+  height: 100%;
+  left: 0;
+  overflow: hidden;
+  pointer-events: none;
+  position: absolute;
+  top: 0;
+  width: 100%;
+}

@@ -1,0 +1,13 @@
+[
+  { "key": 0, "name": "-" },
+  { "key": 3, "name": "rare" },
+  { "key": 4, "name": "rare-p" },
+  { "key": 5, "name": "elite" },
+  { "key": 6, "name": "elite-p" },
+  { "key": 7, "name": "legendary" },
+  { "key": 8, "name": "legendary-p" },
+  { "key": 9, "name": "mythic" },
+  { "key": 10, "name": "mythic-t1" },
+  { "key": 11, "name": "mythic-t2" },
+  { "key": 12, "name": "mythic-t3" }
+]

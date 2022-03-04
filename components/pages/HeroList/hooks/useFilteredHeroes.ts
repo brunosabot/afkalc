@@ -1,5 +1,6 @@
 import { useMemo } from "react";
 import factions from "../../../../data/heroFaction.json";
+import Faction from "../../../../types/Faction";
 import ICharacter from "../../../../types/ICharacter";
 import { State } from "./useFilters";
 import useGetValue from "./useGetValue";
@@ -31,6 +32,8 @@ const sortChars = (a: IEnrichedCharacter, b: IEnrichedCharacter) => {
   if (a.fi > b.fi) return -1;
   if (a.engrave < b.engrave) return 1;
   if (a.engrave > b.engrave) return -1;
+  if (a.faction === Faction.none) return -1;
+  if (b.faction === Faction.none) return 1;
   if (factions[a.faction] < factions[b.faction]) return -1;
   if (factions[a.faction] > factions[b.faction]) return 1;
 
@@ -65,6 +68,14 @@ export default function useFilteredHeroes(
           engrave: getValue(c.id, "engrave"),
           link: getValue(c.id, "link"),
           linkkey: getValue(c.id, "linkkey"),
+          partbody: getValue(c.id, "partbody"),
+          partboots: getValue(c.id, "partboots"),
+          parthead: getValue(c.id, "parthead"),
+          partweapon: getValue(c.id, "partweapon"),
+          partbodyfaction: getValue(c.id, "partbodyfaction"),
+          partbootsfaction: getValue(c.id, "partbootsfaction"),
+          partheadfaction: getValue(c.id, "partheadfaction"),
+          partweaponfaction: getValue(c.id, "partweaponfaction"),
         }))
         .filter(
           (c) => filters.name === "" || c.name.toLowerCase().includes(filters.name.toLowerCase())

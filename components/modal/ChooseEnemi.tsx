@@ -16,7 +16,7 @@ const ChooseEnemi: React.FC<Props> = function ChooseEnemi({ current, onSelect })
         <React.Fragment key={faction.faction}>
           <FactionLine name={faction.faction} />
           <CharacterGrid>
-            {faction.characters.map(({ id, name, image }) => (
+            {faction.characters.map(({ id, name }) => (
               <Enemi
                 key={name}
                 name={name}

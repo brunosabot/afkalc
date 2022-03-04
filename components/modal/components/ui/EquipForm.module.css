@@ -1,0 +1,44 @@
+.EquipForm {
+  display: grid;
+  flex-wrap: wrap;
+  gap: 8px;
+  grid-template-columns: repeat(auto-fill, 48px);
+  grid-template-rows: repeat(auto-fill, 48px);
+  justify-content: space-between;
+  margin-bottom: 8px;
+}
+
+.EquipButton {
+  background: transparent;
+  border: 0;
+  cursor: pointer;
+  height: 100%;
+  padding: 0;
+  width: 100%;
+}
+
+.EquipFaction {
+  filter: grayscale(1);
+}
+
+.Label {
+  color: var(--secondary-text-color);
+  font-size: 0.75em;
+  font-weight: 300;
+  margin-bottom: 4px;
+}
+
+.Selected {
+  outline: 3px solid var(--afk-legendary-color);
+}
+
+.Equip {
+  align-items: center;
+  display: flex;
+  gap: 16px;
+  margin-bottom: 16px;
+}
+
+.Equip > :nth-child(2) {
+  flex-grow: 1;
+}

@@ -41,7 +41,7 @@ const TreeViewer: React.FC<IProps> = function TreeViewer({ listId, result }) {
         action={
           <>
             <CheckedButton showChecked={showChecked} setShowChecked={setShowChecked} />
-            <FavoriteTreeButton title={title} listId={listId} />
+            <FavoriteTreeButton listId={listId} />
           </>
         }
       >
@@ -55,12 +55,11 @@ const TreeViewer: React.FC<IProps> = function TreeViewer({ listId, result }) {
 
       {showChecked ? null : <CardWarn>{t("checked-items-hidden")}</CardWarn>}
 
-      {listSteps.map((step, index) => (
+      {listSteps.map((step) => (
         <TreeLineViewer
           key={`${step.heroClass}-${step.level}`}
           step={step}
           elderTree={values.elderTree}
-          treeList={result}
           shouldShowChecked={showChecked}
         />
       ))}

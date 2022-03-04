@@ -28,6 +28,7 @@ const factions: IFactions = (heroes as ICharacter[]).reduce(
     celestials: [],
     hypogeans: [],
     dimensionals: [],
+    none: [],
   }
 );
 
@@ -53,10 +54,6 @@ const ChoosePriorityHero: React.FC<Props> = function ChoosePriorityHero({
       <div className={styles.InputWrapper}>
         <AscendForm
           ascend={ascend}
-          engrave={engrave}
-          fi={fi}
-          hero={hero}
-          si={si}
           onChange={(value) =>
             onSelect({
               hero,
@@ -68,9 +65,6 @@ const ChoosePriorityHero: React.FC<Props> = function ChoosePriorityHero({
           }
         />
         <SiForm
-          ascend={ascend}
-          engrave={engrave}
-          fi={fi}
           hero={hero}
           si={si}
           onChange={(siValue) =>
@@ -84,11 +78,7 @@ const ChoosePriorityHero: React.FC<Props> = function ChoosePriorityHero({
           }
         />
         <FiForm
-          ascend={ascend}
-          engrave={engrave}
           fi={fi}
-          hero={hero}
-          si={si}
           onChange={(fiValue) =>
             onSelect({
               hero,
@@ -100,11 +90,8 @@ const ChoosePriorityHero: React.FC<Props> = function ChoosePriorityHero({
           }
         />
         <EngraveForm
-          ascend={ascend}
           engrave={engrave}
-          fi={fi}
           hero={hero}
-          si={si}
           onChange={(value) =>
             onSelect({
               hero,

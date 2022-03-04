@@ -52,7 +52,7 @@ const TiersList: React.FC<IProps> = function TiersList() {
 
       <Back id={id as string} />
 
-      <Viewer result={result.data} listId={id as string} />
+      <Viewer result={result.data} />
     </>
   );
 };

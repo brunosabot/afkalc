@@ -27,6 +27,7 @@ const factions: IFactions = (heroes as ICharacter[]).reduce(
     celestials: [],
     hypogeans: [],
     dimensionals: [],
+    none: [],
   }
 );
 

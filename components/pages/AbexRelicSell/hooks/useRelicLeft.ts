@@ -18,7 +18,7 @@ function reduceDependencies(
   let localCost = cost;
   const localArtefactStock = [...artefactStock];
 
-  const leftDependencies = dependencies.reduce<number[]>((acc, val, i) => {
+  const leftDependencies = dependencies.reduce<number[]>((acc, val) => {
     if (localArtefactStock.includes(val)) {
       localArtefactStock.splice(localArtefactStock.indexOf(val), 1);
       localCost -= relicArtefact[val].cost;

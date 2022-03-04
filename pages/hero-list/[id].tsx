@@ -21,14 +21,15 @@ import ShareBanner from "../../components/pages/HeroList/ui/ShareBanner";
 import useSetLevel from "../../components/pages/TiersList/hooks/useSetLevel";
 import ProfileContext from "../../components/providers/ProfileContext";
 import IFirebaseProfile from "../../components/providers/types/IFirebaseProfile";
+import HeroTooltip from "../../components/tooltip/HeroTooltip";
 import Card from "../../components/ui/card/Card";
 import CardHelp from "../../components/ui/card/CardHelp";
 import CardTitle from "../../components/ui/card/CardTitle";
 import CharacterGrid from "../../components/ui/CharacterGrid";
-import CheckboxField from "../../components/ui/CheckboxField";
 import TwoColsSticky from "../../components/ui/layout/TwoColsSticky";
 import heroesJson from "../../data/heroes.json";
 import ICharacter from "../../types/ICharacter";
+import Type from "../../types/Type";
 
 export const getStaticProps = async ({ locale }: { locale: string }) => ({
   props: {
@@ -53,7 +54,6 @@ const HeroList: React.FC<IProps> = function HeroList() {
   const { values } = useContext(ProfileContext);
   const { id } = router.query;
 
-  const [unlockFi, setUnlockFi] = useState(false);
   const [editPopupState, setEditPopupState] = useState(0);
   const [showModal, setShowModal] = useState(false);
   const [state, dispatch] = useFilters();
@@ -79,6 +79,15 @@ const HeroList: React.FC<IProps> = function HeroList() {
         fi: 0,
         ascend: 0,
         engrave: 0,
+        partbody: 0,
+        partboots: 0,
+        parthead: 0,
+        partweapon: 0,
+        partbodyfaction: 0,
+        partbootsfaction: 0,
+        partheadfaction: 0,
+        partweaponfaction: 0,
+        type: Type.agility,
       },
     [characters, editPopupState]
   );
@@ -116,13 +125,6 @@ const HeroList: React.FC<IProps> = function HeroList() {
           </Head>
 
           <Filters state={state} dispatch={dispatch} />
-
-          <CheckboxField
-            name="unlockFi"
-            onChange={setUnlockFi}
-            value={unlockFi}
-            label={t("label-unlock-fi")}
-          />
         </Card>
       </TwoColsSticky>
 
@@ -135,8 +137,9 @@ const HeroList: React.FC<IProps> = function HeroList() {
           <CardHelp>{t("label-empty")}</CardHelp>
         ) : (
           <CharacterGrid size="large">
-            {characters.map((character, i) => (
+            {characters.map((character) => (
               <HeroLine
+                label={<HeroTooltip character={character} />}
                 key={character.id}
                 id={character.id}
                 name={character.name}
@@ -146,7 +149,6 @@ const HeroList: React.FC<IProps> = function HeroList() {
                 faction={character.faction}
                 link={character.link}
                 linkKey={character.linkkey}
-                shouldUnlockFi={unlockFi}
                 onClick={() => {
                   setEditPopupState(character.id);
                   setShowModal(true);
@@ -160,11 +162,7 @@ const HeroList: React.FC<IProps> = function HeroList() {
 
       <Modal active={showModal} onClose={() => setShowModal(false)}>
         <EditHero
-          hero={characterToEdit.id}
-          si={characterToEdit.si}
-          fi={characterToEdit.fi}
-          ascend={characterToEdit.ascend}
-          engrave={characterToEdit.engrave}
+          character={characterToEdit}
           setLevel={setLevel}
           onNext={() => {
             const index = characters.findIndex((c) => c.id === editPopupState);

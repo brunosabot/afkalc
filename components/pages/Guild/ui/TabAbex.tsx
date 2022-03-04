@@ -3,7 +3,7 @@ import { useTranslation } from "next-i18next";
 import React, { useContext, useState } from "react";
 import GuildContext, { IGuildGuild } from "../../../providers/GuildContext";
 import ProfileContext from "../../../providers/ProfileContext";
-import Character from "../../../ui/afk/Character";
+import StuffTooltip from "../../../tooltip/StuffTooltip";
 import ChooseCharacter from "../../../ui/afk/ChooseCharacter";
 import CardHelp from "../../../ui/card/CardHelp";
 import ListItem from "../../../ui/list/ListItem";
@@ -12,6 +12,7 @@ import AbexRelics from "./AbexRelics";
 import AbexTile from "./AbexTile";
 import AbexTiles from "./AbexTiles";
 import styles from "./TabAbex.module.css";
+import WithTooltipCharacter from "./WithTooltipCharacter";
 
 interface IProps {
   [key: string]: never;
@@ -152,7 +153,8 @@ const TabAbex: React.FC<IProps> = function TabAbex() {
               {activeUser === member.id && haveAbexHeroes ? (
                 <div className={styles.AbexSmallBox}>
                   {member.abexBox?.map((h) => (
-                    <Character
+                    <WithTooltipCharacter
+                      label={<StuffTooltip id={h} character={member.heroes?.[h]} />}
                       id={h}
                       ascendLevel={member.heroes?.[h]?.ascend}
                       engraveLevel={member.heroes?.[h]?.engrave}

@@ -1,0 +1,16 @@
+.StuffWrapper {
+  display: flex;
+  gap: 4px;
+  margin: 16px 2px 2px;
+  position: relative;
+}
+
+.StuffWrapper::after {
+  border-top: 1px solid rgb(255 255 255 / 30%);
+  content: "";
+  left: 50%;
+  position: absolute;
+  top: -8px;
+  transform: translateX(-50%);
+  width: 16px;
+}

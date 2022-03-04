@@ -19,7 +19,7 @@ const ClassForm: React.FC<IProps> = function ClassForm({ onChange, value, heroCl
         max="130"
         onChange={(e) => {
           let newValue = parseInt(e.target.value, 10);
-          if (isNaN(newValue)) {
+          if (Number.isNaN(newValue)) {
             newValue = 0;
           }
 

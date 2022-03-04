@@ -5,10 +5,9 @@ import styles from "./FavoriteTreeButton.module.css";
 
 interface IProps {
   listId: string;
-  title: string;
 }
 
-const FavoriteTreeButton: React.FC<IProps> = function FavoriteTreeButton({ title, listId }) {
+const FavoriteTreeButton: React.FC<IProps> = function FavoriteTreeButton({ listId }) {
   const {
     actions: { setFavoriteTreeList },
     values: { favoriteTreeList },
