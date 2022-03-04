@@ -1,6 +1,7 @@
 import {
   mdiAccountGroup,
   mdiAccountHeart,
+  mdiAccountMultiplePlusOutline,
   mdiAccountSupervisor,
   mdiChevronTripleUp,
   mdiCircleMultiple,
@@ -92,6 +93,9 @@ const Home: React.FC<IProps> = function Home() {
           </MenuItem>
           <MenuItem to="/abex-relic-sell" icon={mdiCircleMultiple}>
             {t("common:menu.abex-relic-sell")}
+          </MenuItem>
+          <MenuItem to="/abex-roaster" icon={mdiAccountMultiplePlusOutline}>
+            {t("common:menu.abex-roaster")}
           </MenuItem>
         </MenuBox>
       </Card>

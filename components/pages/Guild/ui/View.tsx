@@ -39,11 +39,9 @@ const View: React.FC<IProps> = function View() {
           {t("hero-search")}
           {tab === 1 ? <Chip>{search}</Chip> : null}
         </CardTab>
-        {values.guild.showAbexTab || values.isDeputy || values.isOwner ? (
-          <CardTab active={tab === 2} onClick={() => setTab(2)}>
-            {t("abyssal-expedition")}
-          </CardTab>
-        ) : null}
+        <CardTab active={tab === 2} onClick={() => setTab(2)}>
+          {t("abyssal-expedition")}
+        </CardTab>
       </CardTabs>
 
       {tab === 0 ? <TabMemberList /> : null}

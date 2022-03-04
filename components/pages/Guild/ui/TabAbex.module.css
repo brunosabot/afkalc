@@ -48,20 +48,8 @@
   margin-right: 8px;
 }
 
-.AbexBox {
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
-  padding: 16px;
-}
-
 .AbexSmallBox {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
   padding: 16px 0 0;
-}
-
-.AbexBoxLabel {
-  flex-grow: 1;
-  font-weight: 500;
-  padding: 16px 0 0 16px;
 }
