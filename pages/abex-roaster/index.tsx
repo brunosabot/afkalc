@@ -14,24 +14,24 @@ import styles from "./index.module.css";
 
 export const getStaticProps = async ({ locale }: { locale: string }) => ({
   props: {
-    ...(await serverSideTranslations(locale, ["common", "abex-roaster"])),
+    ...(await serverSideTranslations(locale, ["common", "abex-roster"])),
   },
 });
 interface IProps {
   [key: string]: never;
 }
 
-const AbexRoaster: React.FC<IProps> = function AbexRoaster() {
+const AbexRoster: React.FC<IProps> = function AbexRoster() {
   const { values: profileValues, actions: profileActions } = useContext(ProfileContext);
 
-  const { t } = useTranslation("abex-roaster");
+  const { t } = useTranslation("abex-roster");
 
   return (
     <Card>
-      <CardTitle icon={mdiAccountMultiplePlusOutline}>{t("common:menu.abex-roaster")}</CardTitle>
+      <CardTitle icon={mdiAccountMultiplePlusOutline}>{t("common:menu.abex-roster")}</CardTitle>
       <Head>
-        <title>{`${t("common:menu.abex-roaster")} - Afkalc`}</title>
-        <meta name="description" content={t("abex-roaster-desc")} />
+        <title>{`${t("common:menu.abex-roster")} - Afkalc`}</title>
+        <meta name="description" content={t("abex-roster-desc")} />
       </Head>
 
       <div className={styles.AbexBox}>
@@ -62,4 +62,4 @@ const AbexRoaster: React.FC<IProps> = function AbexRoaster() {
   );
 };
 
-export default withLayoutPrivate(AbexRoaster);
+export default withLayoutPrivate(AbexRoster);
