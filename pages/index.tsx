@@ -94,8 +94,8 @@ const Home: React.FC<IProps> = function Home() {
           <MenuItem to="/abex-relic-sell" icon={mdiCircleMultiple}>
             {t("common:menu.abex-relic-sell")}
           </MenuItem>
-          <MenuItem to="/abex-roaster" icon={mdiAccountMultiplePlusOutline}>
-            {t("common:menu.abex-roaster")}
+          <MenuItem to="/abex-roster" icon={mdiAccountMultiplePlusOutline}>
+            {t("common:menu.abex-roster")}
           </MenuItem>
         </MenuBox>
       </Card>
