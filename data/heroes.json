@@ -1113,5 +1113,15 @@
     "image": "/heroes/SBane.jpg",
     "faction": "hypogeans",
     "usage": []
+  },
+  {
+    "name": "Alaro",
+    "id": 106,
+    "type": "agility",
+    "class": "support",
+    "role": "buffer",
+    "image": "/heroes/Scout.jpg",
+    "faction": "maulers",
+    "usage": []
   }
 ]
