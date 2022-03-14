@@ -5,6 +5,7 @@ import Head from "next/head";
 import React, { useContext, useState } from "react";
 import withLayoutPrivate from "../../components/layout/withLayoutPrivate";
 import useCurrentToGoal from "../../components/pages/AbexRelicSell/hooks/useCurrentToGoal";
+import RelicCalculator from "../../components/pages/AbexRelicSell/ui/RelicCalculator";
 import RelicChoiceList from "../../components/pages/AbexRelicSell/ui/RelicChoiceList";
 import RelicList from "../../components/pages/AbexRelicSell/ui/RelicList";
 import ProfileContext from "../../components/providers/ProfileContext";
@@ -66,6 +67,9 @@ const AbexRelicSell: React.FC<IProps> = function AbexRelicSell() {
         <CardTab active={tab === 2} onClick={() => setTab(2)}>
           {t("label-inventory")}
         </CardTab>
+        <CardTab active={tab === 3} onClick={() => setTab(3)}>
+          {t("label-calculator")}
+        </CardTab>
       </CardTabs>
 
       {tab === 0 ? (
@@ -84,6 +88,9 @@ const AbexRelicSell: React.FC<IProps> = function AbexRelicSell() {
           current={values.abexCurrentRelics}
           goal={values.abexGoalRelics}
         />
+      ) : null}
+      {tab === 3 ? (
+        <RelicCalculator inventory={values.abexRelicInventory} current={values.abexCurrentRelics} />
       ) : null}
 
       <CardActions>
