@@ -1,0 +1,57 @@
+.Class {
+  align-items: center;
+  display: flex;
+  gap: 8px;
+  padding: 8px 16px 0;
+}
+
+.Image {
+  height: 32px;
+  margin-right: 8px;
+}
+
+.RelicWrapper {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+}
+
+.RelicButton {
+  background: transparent;
+  border: 0;
+  font-size: 20px;
+  height: 40px;
+  line-height: 40px;
+  text-align: center;
+  width: 40px;
+}
+
+.Relic {
+  border-radius: 50%;
+  height: 48px;
+}
+
+.Relic--1 {
+  background-color: var(--afk-common-color);
+  color: var(--afk-common-color);
+}
+
+.Relic--2 {
+  background-color: var(--afk-rare-color);
+  color: var(--afk-rare-color);
+}
+
+.Relic--3 {
+  background-color: var(--afk-elite-color);
+  color: var(--afk-elite-color);
+}
+
+.Relic--4 {
+  background-color: var(--afk-legendary-color);
+  color: var(--afk-legendary-color);
+}
+
+.Relic--5 {
+  background-color: var(--afk-mythic-color);
+  color: var(--afk-mythic-color);
+}
