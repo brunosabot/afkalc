@@ -106,8 +106,15 @@ const RelicCalculator: React.FC<Props> = function RelicCalculator({ current, inv
     <div className={styles.Relics}>
       <CardWarn>{t("label-warn-testing")}</CardWarn>
       <CardHelp>
-        <div>{t("label-cost-unknown")}</div>
-        {relicsToAcquireCosts} ({relicsToAcquireCosts + relicsUpgradeCost})
+        <div>
+          {t("label-cost-unknown")}&nbsp;
+          {new Intl.NumberFormat().format(relicsToAcquireCosts)}
+        </div>
+
+        <div>
+          {t("label-cost-total")}&nbsp;
+          {new Intl.NumberFormat().format(relicsToAcquireCosts + relicsUpgradeCost)}
+        </div>
       </CardHelp>
 
       <RelicCalculatorClass current={mage} name={HeroClass.mage} setCurrent={setMage} />
