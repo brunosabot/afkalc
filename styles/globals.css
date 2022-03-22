@@ -1,3 +1,7 @@
+:root {
+  color-scheme: light dark;
+}
+
 body {
   accent-color: var(--accent-color);
   background-color: var(--background-color);
