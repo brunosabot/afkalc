@@ -56,6 +56,7 @@ const HeroList: React.FC<IProps> = function HeroList() {
 
   const [editPopupState, setEditPopupState] = useState(0);
   const [showModal, setShowModal] = useState(false);
+  const [editPopupCharacters, setEditPopupCharacters] = useState<any[]>([]);
   const [state, dispatch] = useFilters();
 
   const userId = useLoadId(id as string);
@@ -150,6 +151,7 @@ const HeroList: React.FC<IProps> = function HeroList() {
                 link={character.link}
                 linkKey={character.linkkey}
                 onClick={() => {
+                  setEditPopupCharacters(characters);
                   setEditPopupState(character.id);
                   setShowModal(true);
                   return undefined;
@@ -165,15 +167,19 @@ const HeroList: React.FC<IProps> = function HeroList() {
           character={characterToEdit}
           setLevel={setLevel}
           onNext={() => {
-            const index = characters.findIndex((c) => c.id === editPopupState);
+            const index = editPopupCharacters.findIndex((c) => c.id === editPopupState);
             setEditPopupState(
-              index >= characters.length - 1 ? characters[0].id : characters[index + 1].id
+              index >= editPopupCharacters.length - 1
+                ? editPopupCharacters[0].id
+                : editPopupCharacters[index + 1].id
             );
           }}
           onPrev={() => {
-            const index = characters.findIndex((c) => c.id === editPopupState);
+            const index = editPopupCharacters.findIndex((c) => c.id === editPopupState);
             setEditPopupState(
-              index < 1 ? characters[characters.length - 1].id : characters[index - 1].id
+              index < 1
+                ? editPopupCharacters[editPopupCharacters.length - 1].id
+                : editPopupCharacters[index - 1].id
             );
           }}
         />

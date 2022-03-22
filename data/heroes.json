@@ -1027,7 +1027,7 @@
   {
     "name": "Treznor",
     "id": 97,
-    "type": "strength",
+    "type": "agility",
     "class": "ranger",
     "role": "control",
     "image": "/heroes/CKnight.jpg",
