@@ -47,6 +47,10 @@
   padding: 4px 20px 4px 16px;
 }
 
+.SelectField option {
+  background-color: var(--card-color);
+}
+
 .Small .SelectField {
   font-size: 14px;
   height: 32px;
