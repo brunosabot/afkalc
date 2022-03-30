@@ -1123,5 +1123,15 @@
     "image": "/heroes/Scout.jpg",
     "faction": "maulers",
     "usage": []
+  },
+  {
+    "name": "Audrae",
+    "id": 107,
+    "type": "agility",
+    "class": "ranger",
+    "role": "continuous",
+    "image": "/heroes/AstroR.jpg",
+    "faction": "celestials",
+    "usage": []
   }
 ]
