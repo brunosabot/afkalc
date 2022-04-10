@@ -1133,5 +1133,15 @@
     "image": "/heroes/AstroR.jpg",
     "faction": "celestials",
     "usage": []
+  },
+  {
+    "name": "Oku",
+    "id": 108,
+    "type": "strength",
+    "class": "tank",
+    "role": "tank",
+    "image": "/heroes/DruidMaster.jpg",
+    "faction": "wilders",
+    "usage": []
   }
 ]
