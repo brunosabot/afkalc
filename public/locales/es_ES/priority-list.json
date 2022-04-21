@@ -32,5 +32,8 @@
   "label-add-tiers-list": "Nueva lista de héroes",
   "label-add-elder-tree-list": "Nueva lista de árbol anciano (Elder Tree)",
   "level": "Nivel",
-  "checked-items-hidden": "Los elementos completados están ocultos. Haga clic en la casilla de verificación para mostrarlos todos"
+  "checked-items-hidden": "Los elementos completados están ocultos. Haga clic en la casilla de verificación para mostrarlos todos",
+  "sort-by-name": "Ordenar por nombre",
+  "sort-by-last-update": "Ordenar por última modificación",
+  "sort-by-percentage": "Ordenar por porcentaje"
 }

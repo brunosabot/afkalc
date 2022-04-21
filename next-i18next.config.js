@@ -4,7 +4,7 @@ module.exports = {
   browserLanguageDetection: true,
   i18n: {
     defaultLocale: "en_US",
-    locales: ["en_US", "es_ES", "fr_FR", "it_IT", "pt_BR", "dev"],
+    locales: ["en_US", "es_ES", "fr_FR", "it_IT", "pt_BR", "ru_RU", "dev"],
     localePath: path.resolve("./public/locales"),
   },
 };
