@@ -11,6 +11,7 @@
   "label-password": "Contraseña",
   "mail-sent": "Te hemos enviado un email",
   "ascension--": "-",
+  "ascension-none": "Sin desbloquear",
   "ascension-elite": "Élite",
   "ascension-elite-p": "Élite+",
   "ascension-legendary": "Legendario",
@@ -23,6 +24,15 @@
   "ascension-ascend-3": "Ascendido 3*",
   "ascension-ascend-4": "Ascendido 4*",
   "ascension-ascend-5": "Ascendido 5*",
+  "ascension-rare": "Poco comun",
+  "ascension-rare-p": "Poco común+",
+  "ascension-mythic-t1": "T1",
+  "ascension-mythic-t2": "T2",
+  "ascension-mythic-t3": "T3",
+  "equipment-weapon": "Arma",
+  "equipment-body": "Armadura",
+  "equipment-boots": "Botas",
+  "equipment-head": "Gorro",
   "loading": "Cargando",
   "user-on-app": "¡Únete a {{counter}} usuarios que ya están usando la aplicación!",
   "logged-user-on-app": "¡Sois {{counter}} usuarios usando la aplicación! ¡Gracias!",
@@ -33,7 +43,7 @@
   "has-dimensional-key": "Tiene una llave dimensional",
   "menu": {
     "category-box": "Principal",
-    "category-abex": "Expedición Abisal",
+    "category-abex": "Expedición Abismal",
     "category-calc": "Herramientas de cálculo",
     "category-misc": "Varios",
     "home": "Inicio",
@@ -44,10 +54,11 @@
     "fast-reward": "Recompensas Rápidas",
     "top-team": "Mejor equipo",
     "item-cost": "Coste de los artículos",
-    "priority-list": "Lista de Prioridades",
+    "priority-list": "Listas de prioridades",
     "credit": "Agradecimientos",
     "abex-relic": "Saqueo de reliquias",
     "abex-relic-sell": "Reliquias para vender",
+    "abex-roster": "Lista de héroes",
     "logout": "Cerrar sesión",
     "settings": "Configuración y privacidad",
     "guild": "Gremio",
@@ -56,7 +67,9 @@
     "elder-tree": "Árbol Anciano",
     "short-hero-list": "Héroes",
     "short-top-team": "Equipos",
-    "short-item-cost": "Comparación"
+    "short-item-cost": "Comparación",
+    "short-guild": "Gremio",
+    "short-priority-list": "Listas de prioridades"
   },
   "heroClass": {
     "warrior": "Guerrero",
@@ -165,11 +178,21 @@
     "wingedwarden": "Guardián alado",
     "theoceanicstrings": "Cuerdas oceánicas"
   },
+  "faction-none": "-",
+  "faction-lightbearers": "Portadores de la luz",
+  "faction-maulers": "Orcos",
+  "faction-wilders": "Salvajes",
+  "faction-graveborns": "Zombies",
+  "faction-celestials": "Celestiales",
+  "faction-hypogeans": "Hipógeos",
+  "faction-dimensionals": "Dimensionales",
   "concept": {
     "si": "SI",
     "siUnlocked": "SI desbloqueado",
     "fi": "Muebles",
     "ascend": "Ascensión",
-    "engrave": "Grabados"
+    "engrave": "Grabados",
+    "unlocked": "desbloqueado",
+    "faction": "Facción"
   }
 }

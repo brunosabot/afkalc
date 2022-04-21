@@ -11,6 +11,7 @@
   "label-password": "Senha",
   "mail-sent": "Um e-mail foi enviado",
   "ascension--": "-",
+  "ascension-none": "Não desbloqueado",
   "ascension-elite": "Elite",
   "ascension-elite-p": "Elite+",
   "ascension-legendary": "Lendário",
@@ -23,6 +24,15 @@
   "ascension-ascend-3": "Ascendido 3*",
   "ascension-ascend-4": "Ascendido 4*",
   "ascension-ascend-5": "Ascendido 5*",
+  "ascension-rare": "Raro",
+  "ascension-rare-p": "Raro+",
+  "ascension-mythic-t1": "T1",
+  "ascension-mythic-t2": "T2",
+  "ascension-mythic-t3": "T3",
+  "equipment-weapon": "Arma",
+  "equipment-body": "Armadura",
+  "equipment-boots": "Botas",
+  "equipment-head": "Chapéu",
   "loading": "Carregando",
   "user-on-app": "Temos {{counter}} usuários que estão usando o aplicativo!",
   "logged-user-on-app": "Você é o {{counter}} usuário do aplicativo! Muito obrigado!",
@@ -44,10 +54,11 @@
     "fast-reward": "Recompensas Rápidas",
     "top-team": "Monte o Time",
     "item-cost": "Custo do Item",
-    "priority-list": "Lista de Prioridades",
+    "priority-list": "Listas de prioridades",
     "credit": "Créditos",
     "abex-relic": "Cidades e Blocos",
     "abex-relic-sell": "Relíquias",
+    "abex-roster": "Lista Abex",
     "logout": "Sair",
     "settings": "Configurações & Privacidade",
     "guild": "Guilda",
@@ -56,7 +67,9 @@
     "elder-tree": "Árvore Antiga",
     "short-hero-list": "Heróis",
     "short-top-team": "Times",
-    "short-item-cost": "Custo do Item"
+    "short-item-cost": "Custo do Item",
+    "short-guild": "Guilda",
+    "short-priority-list": "Listas de prioridades"
   },
   "heroClass": {
     "warrior": "Guerreiro",
@@ -165,11 +178,21 @@
     "wingedwarden": "Guardião Alado",
     "theoceanicstrings": "Cordas Oceânicas"
   },
+  "faction-none": "-",
+  "faction-lightbearers": "Portadores da Luz",
+  "faction-maulers": "Perversos",
+  "faction-wilders": "Selvagens",
+  "faction-graveborns": "Tumulares",
+  "faction-celestials": "Celestiais",
+  "faction-hypogeans": "Hipogeus",
+  "faction-dimensionals": "Dimensionais",
   "concept": {
     "si": "SI",
     "siUnlocked": "SI desbloqueado",
     "fi": "MOB",
     "ascend": "Ascensão",
-    "engrave": "Engraving"
+    "engrave": "Engraving",
+    "unlocked": "desbloqueado",
+    "faction": "Facção"
   }
 }

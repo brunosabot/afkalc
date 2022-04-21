@@ -11,6 +11,7 @@
   "label-password": "Mot de passe",
   "mail-sent": "Un email a été envoyé",
   "ascension--": "-",
+  "ascension-none": "Non débloqué",
   "ascension-elite": "Élite",
   "ascension-elite-p": "Élite+",
   "ascension-legendary": "Légendaire",
@@ -23,6 +24,15 @@
   "ascension-ascend-3": "Élevé 3*",
   "ascension-ascend-4": "Élevé 4*",
   "ascension-ascend-5": "Élevé 5*",
+  "ascension-rare": "Rare",
+  "ascension-rare-p": "Rare+",
+  "ascension-mythic-t1": "T1",
+  "ascension-mythic-t2": "T2",
+  "ascension-mythic-t3": "T3",
+  "equipment-weapon": "Arme",
+  "equipment-body": "Armure",
+  "equipment-boots": "Bottes",
+  "equipment-head": "Chapeau",
   "loading": "Chargement",
   "user-on-app": "Rejoingnez les {{counter}} joueurs qui utilisent l'app !",
   "logged-user-on-app": "Vous êtes {{counter}} joueurs à utiliser l'app ! Merci !",
@@ -44,10 +54,11 @@
     "fast-reward": "Récompenses rapides",
     "top-team": "Top compo",
     "item-cost": "Coût des objets",
-    "priority-list": "Listes de priorité",
+    "priority-list": "Listes de priorités",
     "credit": "Crédits",
     "abex-relic": "Butin de relique",
     "abex-relic-sell": "Reliques à vendre",
+    "abex-roster": "Liste",
     "logout": "Se déconnecter",
     "settings": "Paramètres & Confidentialité",
     "guild": "Guilde",
@@ -56,7 +67,9 @@
     "elder-tree": "Arbre des anciens",
     "short-hero-list": "Héros",
     "short-top-team": "Équipes",
-    "short-item-cost": "Coût"
+    "short-item-cost": "Coût",
+    "short-guild": "Guilde",
+    "short-priority-list": "Listes"
   },
   "heroClass": {
     "warrior": "Guerrier",
@@ -165,11 +178,21 @@
     "wingedwarden": "Protecteur ailé",
     "theoceanicstrings": "Harpe céruléenne"
   },
+  "faction-none": "-",
+  "faction-lightbearers": "Porteurs de lumière",
+  "faction-maulers": "Pugilistes",
+  "faction-wilders": "Sauvageons",
+  "faction-graveborns": "Morts-vivants",
+  "faction-celestials": "Célestes",
+  "faction-hypogeans": "Hypogéens",
+  "faction-dimensionals": "Cosmiques",
   "concept": {
     "si": "SI",
     "siUnlocked": "SI déverrouillé",
     "fi": "Meuble",
     "ascend": "Ascension",
-    "engrave": "Gravure"
+    "engrave": "Gravure",
+    "unlocked": "déverrouillé",
+    "faction": "Faction"
   }
 }

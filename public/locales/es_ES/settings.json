@@ -2,7 +2,7 @@
   "confirm-remove": "Todos tus datos serán borrados permanentemente. ¿Quieres continuar?",
   "label-remove-account": "Eliminar mi cuenta",
   "label-no-need-rgpd": "Dado que no está conectado, la aplicación no almacena ninguno de sus datos personales",
-  "label-rgpd": "Al iniciar sesión, proporcionas tu correo electrónico a AFKalc. Solo se utiliza para permitir tu inicio de sesión. Los datos almacenados por la aplicación son todo lo vinculado a: la expedición abisal, la lista de héroes, tu progresión en campaña y vip, tus listas de prioridades y tus favoritos. Puedes eliminar tu cuenta en cualquier momento en la página.",
+  "label-rgpd": "Al iniciar sesión, proporcionas tu correo electrónico a AFKalc. Solo se utiliza para permitir tu inicio de sesión. Los datos almacenados por la aplicación son todo lo vinculado a: la expedición abismal, la lista de héroes, tu progresión en campaña y vip, tus listas de prioridades y tus favoritos. Puedes eliminar tu cuenta en cualquier momento en la página.",
   "label-download-data": "Descargar mis datos",
   "user-data": "Privacidad",
   "player-name": "Nombre de jugador",

@@ -1,5 +1,5 @@
 {
-  "abex-relic-desc": "Calculadora de casillas de la Expedición Abisal",
+  "abex-relic-desc": "Calculadora de casillas de la Expedición Abismal",
   "confirm-reset-timers": "Esto borrará todos tus temporizadores existentes, ¿deseas continuar?",
   "confirm-reset-box": "Esto borrará todos tus datos existentes, ¿deseas continuar?",
   "reset-timers": "Restablecer todos los temporizadores",
@@ -12,7 +12,7 @@
   "label-m": "m",
   "label-s": "s",
   "relic-common": "Común",
-  "relic-rare": "Raro",
+  "relic-rare": "Poco común",
   "relic-epic": "Épico",
   "relic-legendary": "Legendario",
   "relic-mythic": "Mítico",

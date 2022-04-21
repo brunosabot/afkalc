@@ -1,7 +1,7 @@
 {
-  "login-needed": "Vous devez être authentifié pour partager votre liste.",
+  "login-needed": "Vous devez être authentifié pour partager votre liste",
   "somebodys-list": "Voir la liste de quelqu'un d'autre",
-  "label-share": "Partagez votre liste de héro avec cette URL:",
+  "label-share": "Partagez votre liste de héros avec cette URL:",
   "label-si": "SI",
   "label-fi": "Meuble",
   "label-empty": "Aucun héros ne correspond à ces filtres",
@@ -18,7 +18,7 @@
   "faction-guildFight": "Boss de guilde",
   "faction-kingsTower": "Tour du roi",
   "faction-misc": "Campagne et arène",
-  "moved": "Le format d'URL a changé. Merci de mettre à jour vos liens avant la désactiviation",
+  "moved": "Le format d'URL a changé. Merci de mettre à jour vos liens avant la désactivation",
   "hero-list-of": "Liste de héros de {{userName}}",
   "hero-list-of-unknown": "Liste de héros",
   "last-update": "Dernière mise à jour :",

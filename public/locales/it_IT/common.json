@@ -11,6 +11,7 @@
   "label-password": "Password",
   "mail-sent": "Email inviata",
   "ascension--": "-",
+  "ascension-none": "Non sbloccato",
   "ascension-elite": "Elite",
   "ascension-elite-p": "Elite+",
   "ascension-legendary": "Leggendario",
@@ -23,6 +24,15 @@
   "ascension-ascend-3": "Asceso 3*",
   "ascension-ascend-4": "Asceso 4*",
   "ascension-ascend-5": "Asceso 5*",
+  "ascension-rare": "Raro",
+  "ascension-rare-p": "Raro+",
+  "ascension-mythic-t1": "T1",
+  "ascension-mythic-t2": "T2",
+  "ascension-mythic-t3": "T3",
+  "equipment-weapon": "Arma",
+  "equipment-body": "Armatura",
+  "equipment-boots": "Stivali",
+  "equipment-head": "Elmo",
   "loading": "Caricamento",
   "user-on-app": "Unisciti a {{counter}} utenti che usano già l'app!",
   "logged-user-on-app": "Ci sono {{counter}} utenti che usano l'app! Grazie!",
@@ -44,10 +54,11 @@
     "fast-reward": "Premi veloci",
     "top-team": "Squadra migliore",
     "item-cost": "Costo oggetto",
-    "priority-list": "Lista Priorità",
+    "priority-list": "Classifica",
     "credit": "Crediti",
     "abex-relic": "Bottino reliquie",
     "abex-relic-sell": "Reliquie da vendere",
+    "abex-roster": "Catalogo",
     "logout": "Disconnettiti",
     "settings": "Impostazioni & Privacy",
     "guild": "Gilda",
@@ -56,7 +67,9 @@
     "elder-tree": "Albero di sambuco",
     "short-hero-list": "Eroi",
     "short-top-team": "Squadre",
-    "short-item-cost": "Costo oggetto"
+    "short-item-cost": "Costo oggetto",
+    "short-guild": "Gilda",
+    "short-priority-list": "Classifica"
   },
   "heroClass": {
     "warrior": "Guerriero",
@@ -165,11 +178,21 @@
     "wingedwarden": "Scettro dei cieli",
     "theoceanicstrings": "L'arpa degli oceani"
   },
+  "faction-none": "-",
+  "faction-lightbearers": "Portatori di luce",
+  "faction-maulers": "Maulers",
+  "faction-wilders": "Wilders",
+  "faction-graveborns": "Graveborns",
+  "faction-celestials": "Celestiali",
+  "faction-hypogeans": "Ipogei",
+  "faction-dimensionals": "Dimensionali",
   "concept": {
     "si": "SI",
     "siUnlocked": "SI Sbloccato",
     "fi": "LP",
     "ascend": "Ascensione",
-    "engrave": "Incisione"
+    "engrave": "Incisione",
+    "unlocked": "sbloccato",
+    "faction": "Fazione"
   }
 }

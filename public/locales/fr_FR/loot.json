@@ -1,5 +1,5 @@
 {
-  "help": "Lorsque vous attendez suffisamment longtemps avant de passer un niveau, vous pouvez vous assurer d'avoir des récompensenses. En ayant votre niveau de campagne et la date du dernier succès, vous aurez le timing pour le prochain butin dont vous avez besoin.",
+  "help": "Lorsque vous attendez suffisamment longtemps avant de passer un niveau, vous pouvez vous assurer d'avoir des récompenses. En ayant votre niveau de campagne et la date du dernier succès, vous aurez le timing pour le prochain butin dont vous avez besoin.",
   "form-title": "D'abord, insérez votre progression de campagne",
   "label-campaign-level": "Votre progression de campagne (ex. 34-40)",
   "result-title": "Vous avez 100% de chance d'avoir ces récompenses si vous passez ce niveau:",
@@ -20,5 +20,5 @@
   "item-primal-emblem": "Emblème primordial",
   "item-amplifying-emblem": "Emblème amplificateur",
   "item-faction-emblems": "Emblème de faction",
-  "item-crude": "Equipement rudimentaire"
+  "item-crude": "Équipement rudimentaire"
 }

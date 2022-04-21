@@ -1,7 +1,7 @@
 {
   "label-preview": "Prévisualiser",
   "label-delete": "Supprimer",
-  "label-duplicate": "Clôner la liste",
+  "label-duplicate": "Cloner la liste",
   "label-see-guild": "Appliquer à la guilde",
   "label-confirm-delete": "Êtes-vous sûr de vouloir supprimer la liste ? La suppression est définitive !",
   "label-edit": "Éditer",
@@ -32,5 +32,8 @@
   "label-add-tiers-list": "Nouvelle liste de héros",
   "label-add-elder-tree-list": "Nouvelle liste d'arbre des anciens",
   "level": "Niveau",
-  "checked-items-hidden": "Les éléments terminés sont masqués. Cliquez sur la case à cocher pour tous les afficher"
+  "checked-items-hidden": "Les éléments terminés sont masqués. Cliquez sur la case à cocher pour tous les afficher",
+  "sort-by-name": "Trier par nom",
+  "sort-by-last-update": "Trier par date",
+  "sort-by-percentage": "Trier par pourcentage"
 }
