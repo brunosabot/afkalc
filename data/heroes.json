@@ -1143,5 +1143,15 @@
     "image": "/heroes/DruidMaster.jpg",
     "faction": "wilders",
     "usage": []
+  },
+  {
+    "name": "Thane",
+    "id": 109,
+    "type": "agility",
+    "class": "ranger",
+    "role": "burst",
+    "image": "/heroes/WindSM.jpg",
+    "faction": "lightbearers",
+    "usage": []
   }
 ]
