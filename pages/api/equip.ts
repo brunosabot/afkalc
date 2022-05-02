@@ -29,6 +29,7 @@ function getEquipFrame(ascendLevel: number) {
   if (ascendLevel === 10) return `mythic-t1`;
   if (ascendLevel === 11) return `mythic-t2`;
   if (ascendLevel === 12) return `mythic-t3`;
+  if (ascendLevel === 13) return `mythic-t4`;
 
   return `none`;
 }
@@ -78,6 +79,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse<
       if (equipLevel === 10) ctx.fillText("T1", 35, 178);
       if (equipLevel === 11) ctx.fillText("T2", 35, 178);
       if (equipLevel === 12) ctx.fillText("T3", 35, 178);
+      if (equipLevel === 13) ctx.fillText("T4", 35, 178);
     }
 
     if (frame) ctx.drawImage(frame, 0, 0, 192, 192);

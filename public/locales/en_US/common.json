@@ -29,6 +29,7 @@
   "ascension-mythic-t1": "T1",
   "ascension-mythic-t2": "T2",
   "ascension-mythic-t3": "T3",
+  "ascension-mythic-t4": "T4",
   "equipment-weapon": "Weapon",
   "equipment-body": "Armor",
   "equipment-boots": "Boots",
@@ -87,7 +88,8 @@
   "improvment": {
     "t1": "T1",
     "t2": "T2",
-    "t3": "T3"
+    "t3": "T3",
+    "t4": "T4"
   },
   "duration": {
     "2-hours": "2 Hours",
