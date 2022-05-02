@@ -26,7 +26,10 @@ dayjs.extend(relativeTime);
 
 const MyApp = function MyApp({ Component, pageProps }: any) {
   // eslint-disable-next-line no-underscore-dangle
-  dayjs.locale(pageProps?._nextI18Next?.initialLocale ?? "en_US");
+  const locale = pageProps?._nextI18Next?.initialLocale ?? "en_US";
+
+  dayjs.locale(locale.split("_")[0]);
+  dayjs.locale(locale);
 
   return (
     <FirebaseProvider>
