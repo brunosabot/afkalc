@@ -9,5 +9,6 @@
   { "key": 9, "name": "mythic" },
   { "key": 10, "name": "mythic-t1" },
   { "key": 11, "name": "mythic-t2" },
-  { "key": 12, "name": "mythic-t3" }
+  { "key": 12, "name": "mythic-t3" },
+  { "key": 13, "name": "mythic-t4" }
 ]
