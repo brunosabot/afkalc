@@ -40,6 +40,7 @@ const HeroLineViewer: React.FC<IProps> = function HeroLineViewer({
   heroLevels,
   initialHeroLevels,
 }) {
+  const { t: tC } = useTranslation("common");
   const { getHero } = useHero();
   const { requirement, requirementValue } = priorityList;
 
@@ -62,7 +63,7 @@ const HeroLineViewer: React.FC<IProps> = function HeroLineViewer({
     hasSelfRequirements
   );
 
-  const { id, name } = getHero(hero.hero) ?? { id: 0, name: "" };
+  const { id, name } = getHero(tC, hero.hero) ?? { id: 0, name: "" };
   const isDone = isValidList && (isValidSelf || hasSelfRequirements === false);
 
   const onRestore = useCallback(() => {

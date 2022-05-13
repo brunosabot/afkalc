@@ -18,8 +18,9 @@ interface ICharacter {
   partbootsfaction: number;
   partheadfaction: number;
   partweaponfaction: number;
-  name: string;
+  name?: string;
   type: Type;
+  slug: string;
 }
 
 interface IProps {
@@ -50,7 +51,7 @@ const HeroTooltip: React.FC<IProps> = function HeroTooltip({ character }) {
 
   return (
     <>
-      <div className={classes.Name}>{character.name}</div>
+      <div className={classes.Name}>{t(`heroesName.${character.slug}`)}</div>
 
       {character.ascend > 0 ? (
         <div className={classes.Info}>{t(`ascension-${getAscend(character.ascend)}`)}</div>

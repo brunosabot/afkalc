@@ -47,6 +47,7 @@ interface IProps {
 const TiersList: React.FC<IProps> = function TiersList() {
   const router = useRouter();
   const { t } = useTranslation("priority-list");
+  const { t: tC } = useTranslation("common");
   const { values: guildValues, actions: guildActions } = useContext(GuildContext);
   const { id } = router.query;
 
@@ -100,7 +101,9 @@ const TiersList: React.FC<IProps> = function TiersList() {
         playerName: member.playerName,
         heroesLastUpdate: member.heroesLastUpdate,
         percentage: (100 * (list.heroes.length - totalKoCount)) / list.heroes.length,
-        firstKoHero: typedHeroes.find((hero) => hero.id === firstKo)?.name ?? "",
+        firstKoHero: tC(
+          `heroesName.${typedHeroes.find((hero) => hero.id === firstKo)?.slug ?? ""}`
+        ),
       };
     })
     .sort((playerA, playerB) => {

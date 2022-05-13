@@ -31,10 +31,11 @@ function getAscendName(ascend: number) {
 
 const SearchHero: React.FC<IProps> = function SearchHero({ index, hero, onChange }) {
   const { t } = useTranslation("guild");
+  const { t: tC } = useTranslation("common");
   const [showModal, setShowModal] = useState(false);
   const { getHero } = useHero();
 
-  const searchString = [getHero(hero.hero)?.name];
+  const searchString = [getHero(tC, hero.hero)?.name];
   if (hero.ascend > 0) searchString.push(t(`common:ascension-${getAscendName(hero.ascend)}`));
   if (hero.si > 0) searchString.push(`${t("common:concept.si")} +${hero.si}`);
   if (hero.fi > 0) searchString.push(`${t("common:concept.fi")} ${hero.fi}/9`);

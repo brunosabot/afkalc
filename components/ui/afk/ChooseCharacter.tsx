@@ -1,3 +1,4 @@
+import { useTranslation } from "next-i18next";
 import React, { useState } from "react";
 import Modal from "../../functionnal/Modal";
 import ChooseHero from "../../modal/ChooseHero";
@@ -22,9 +23,10 @@ const ChooseCharacter: React.FC<Props> = function ChooseCharacter({
   fi,
   engrave,
 }) {
+  const { t } = useTranslation("common");
   const [showModal, setShowModal] = useState<boolean>(false);
   const { getHero } = useHero();
-  const { id, name } = getHero(hero) ?? { id: 0, name: "" };
+  const { id, name } = getHero(t, hero) ?? { id: 0, name: "" };
 
   return (
     <>

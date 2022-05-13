@@ -37,7 +37,7 @@ const sortChars = (a: IEnrichedCharacter, b: IEnrichedCharacter) => {
   if (factions[a.faction] < factions[b.faction]) return -1;
   if (factions[a.faction] > factions[b.faction]) return 1;
 
-  return a.name.localeCompare(b.name);
+  return a.slug.localeCompare(b.slug);
 };
 
 function compare(direction: string, a: number, b: number) {
@@ -78,7 +78,7 @@ export default function useFilteredHeroes(
           partweaponfaction: getValue(c.id, "partweaponfaction"),
         }))
         .filter(
-          (c) => filters.name === "" || c.name.toLowerCase().includes(filters.name.toLowerCase())
+          (c) => filters.name === "" || c.name?.toLowerCase().includes(filters.name.toLowerCase())
         )
         .filter((c) => filters.type === "" || c.type === filters.type)
         .filter((c) => filters.class === "" || c.class === filters.class)
