@@ -1154,4 +1154,15 @@
     "faction": "lightbearers",
     "usage": []
   }
+  ,
+  {
+    "name": "Vyloris",
+    "id": 110,
+    "type": "intelligence",
+    "class": "mage",
+    "role": "burst",
+    "image": "/heroes/Hidan.jpg",
+    "faction": "hypogeans",
+    "usage": []
+  }
 ]
