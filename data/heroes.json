@@ -1164,5 +1164,15 @@
     "image": "/heroes/Hidan.jpg",
     "faction": "hypogeans",
     "usage": []
+  },
+  {
+    "name": "Sonja",
+    "id": 111,
+    "type": "agility",
+    "class": "tank",
+    "role": "buffer",
+    "image": "/heroes/Sonia.jpg",
+    "faction": "lightbearers",
+    "usage": []
   }
 ]
