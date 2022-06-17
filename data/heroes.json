@@ -1047,7 +1047,7 @@
   {
     "name": "Framton",
     "id": 99,
-    "type": "strength",
+    "type": "agility",
     "class": "warrior",
     "role": "continuous",
     "image": "/heroes/FP.jpg",
@@ -1153,8 +1153,7 @@
     "image": "/heroes/WindSM.jpg",
     "faction": "lightbearers",
     "usage": []
-  }
-  ,
+  },
   {
     "name": "Vyloris",
     "id": 110,
@@ -1174,8 +1173,7 @@
     "image": "/heroes/Sonia.jpg",
     "faction": "lightbearers",
     "usage": []
-  }
-  ,
+  },
   {
     "name": "Anasta",
     "id": 112,
@@ -1184,6 +1182,16 @@
     "role": "continuous",
     "image": "/heroes/OrcMaster.jpg",
     "faction": "maulers",
+    "usage": []
+  },
+  {
+    "name": "Kalene",
+    "id": 113,
+    "type": "intelligence",
+    "class": "mage",
+    "role": "continuous",
+    "image": "/heroes/Karen.jpg",
+    "faction": "graveborns",
     "usage": []
   }
 ]
