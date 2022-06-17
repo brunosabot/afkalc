@@ -50,6 +50,7 @@ interface IProps {
 
 const HeroList: React.FC<IProps> = function HeroList() {
   const { t } = useTranslation("hero-list");
+  const { t: tC } = useTranslation("common");
   const router = useRouter();
   const { values } = useContext(ProfileContext);
   const { id } = router.query;
@@ -63,14 +64,19 @@ const HeroList: React.FC<IProps> = function HeroList() {
 
   const document = useFirestoreDocumentReference(userId ? `profile/${userId}` : undefined);
   const result = useFirestoreDocument<IFirebaseProfile>(document);
-  const heroes = result.data?.heroes || [];
+  const heroes = result.data?.heroes || {};
   const userName = result.data?.playerName;
   const isSelf = userId === values.userId;
 
   const setLevel = useSetLevel(document, heroes);
   const getValue = useGetValue(heroes);
 
-  const characters = useFilteredHeroes(typedHeroes, heroes, state);
+  const typedHeroesWithName = typedHeroes.map((hero) => ({
+    ...hero,
+    name: tC(`heroesName.${hero.slug}`),
+  }));
+
+  const characters = useFilteredHeroes(typedHeroesWithName, heroes, state);
 
   const characterToEdit = useMemo(
     () =>
@@ -143,7 +149,7 @@ const HeroList: React.FC<IProps> = function HeroList() {
                 label={<HeroTooltip character={character} />}
                 key={character.id}
                 id={character.id}
-                name={character.name}
+                name={tC(`heroesName.${character.slug}`)}
                 setLevel={setLevel}
                 getValue={getValue}
                 isView={isSelf === false}

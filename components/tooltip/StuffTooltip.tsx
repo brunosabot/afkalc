@@ -1,3 +1,4 @@
+import { useTranslation } from "next-i18next";
 import React from "react";
 import heroes from "../../data/heroes.json";
 import Type from "../../types/Type";
@@ -21,6 +22,7 @@ interface IProps {
 }
 
 const StuffTooltip: React.FC<IProps> = function StuffTooltip({ id, character }) {
+  const { t: tC } = useTranslation("common");
   if (character === undefined) return null;
 
   const shouldShowEquip =
@@ -38,7 +40,7 @@ const StuffTooltip: React.FC<IProps> = function StuffTooltip({ id, character }) 
 
   return (
     <>
-      <div className={classes.Name}>{hero?.name}</div>
+      <div className={classes.Name}>{tC(`heroesName.${hero?.slug}`)}</div>
       {shouldShowEquip ? (
         <div className={classes.StuffWrapper}>
           <Equip

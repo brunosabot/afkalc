@@ -62,11 +62,11 @@ export default function useDescription(heroes: ITeam, si: ISi, fi: IFi, artifact
   const { getArtifact } = useArtifact();
 
   return useMemo(() => {
-    const hero1Data = getHero(heroes[1]);
-    const hero2Data = getHero(heroes[2]);
-    const hero3Data = getHero(heroes[3]);
-    const hero4Data = getHero(heroes[4]);
-    const hero5Data = getHero(heroes[5]);
+    const hero1Data = getHero(t, heroes[1]);
+    const hero2Data = getHero(t, heroes[2]);
+    const hero3Data = getHero(t, heroes[3]);
+    const hero4Data = getHero(t, heroes[4]);
+    const hero5Data = getHero(t, heroes[5]);
 
     const artifact1Data = getArtifact(artifact[1]);
     const artifact2Data = getArtifact(artifact[2]);

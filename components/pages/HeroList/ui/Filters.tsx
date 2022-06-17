@@ -42,6 +42,7 @@ interface State {
 
 const Filters: React.FC<IProps> = function Filters({ state, dispatch }) {
   const { t } = useTranslation("hero-list");
+  const { t: tC } = useTranslation("common");
   const [showFilter, setShowFilter] = useState(true);
 
   return (
@@ -63,8 +64,8 @@ const Filters: React.FC<IProps> = function Filters({ state, dispatch }) {
           />
           <datalist id="heroes">
             {typedHeroes.map((hero) => (
-              <option key={hero.id} value={hero.name}>
-                {hero.name}
+              <option key={hero.id} value={tC(`heroesName.${hero.slug}`) as string}>
+                {tC(`heroesName.${hero.slug}`) as string}
               </option>
             ))}
           </datalist>

@@ -1,4 +1,5 @@
 import { mdiArrowDownBold, mdiArrowUpBold, mdiDelete } from "@mdi/js";
+import { useTranslation } from "next-i18next";
 import React, { useState } from "react";
 import IHeroDetails from "../../../../types/IHeroDetails";
 import Modal from "../../../functionnal/Modal";
@@ -35,10 +36,11 @@ const HeroLine: React.FC<Props> = function HeroLine({
   requirement,
   requirementValue,
 }) {
+  const { t: tC } = useTranslation("common");
   const [theHero, setTheHero] = useState<IFirebasePriorityListHero>(hero);
   const [showModal, setShowModal] = useState<boolean>(false);
   const { getHero } = useHero();
-  const { name } = getHero(theHero.hero) ?? { name: "" };
+  const { name } = getHero(tC, theHero.hero) ?? { name: "" };
 
   const canMoveUp = hero.hero && index > 0;
   const canMoveDown = hero.hero && index + 1 < length;

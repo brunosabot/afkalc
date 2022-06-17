@@ -44,7 +44,7 @@ const Character: React.FC<ICharacterProps> = function Character({
   engraveLevel = undefined,
   artifact = undefined,
 }) {
-  const resource = typedHeroes.find((r) => (id ? r.id === id : r.name === name));
+  const resource = typedHeroes.find((r) => r.id === id);
   const activeArtifact = artifacts.find((a) => a.id === artifact);
 
   if (name === undefined && id === undefined) throw new Error("Define a name or an id");
