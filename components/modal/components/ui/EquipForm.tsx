@@ -5,6 +5,7 @@ import heroFactions from "../../../../data/heroFaction.json";
 import Type from "../../../../types/Type";
 import Equip from "../../../ui/afk/Equip";
 import SelectField from "../../../ui/SelectField";
+import FastButtons from "../../FastButtons";
 import classes from "./EquipForm.module.css";
 
 type PartType = "weapon" | "body" | "boots" | "head";
@@ -43,8 +44,23 @@ const EquipForm: React.FC<Props> = function EquipForm({
 
   const partList: PartType[] = Object.keys(parts) as PartType[];
 
+  const equip: [number, string][] = equipLevels
+    .filter((level) => level.key > 9)
+    .map((level) => [level.key, t(`ascension-${level.name}`)]);
+
   return (
     <>
+      <div>
+        <div className={classes.Label}>{t("equipment")}</div>
+        <FastButtons
+          values={equip}
+          onClick={(value) => {
+            Object.values(parts).forEach((part) => {
+              onChange(part, value);
+            });
+          }}
+        />
+      </div>
       {partList.map((part: PartType) => (
         <div className={classes.Equip}>
           <Equip
