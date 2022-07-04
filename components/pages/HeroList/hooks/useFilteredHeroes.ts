@@ -50,6 +50,13 @@ function compare(direction: string, a: number, b: number) {
   return false;
 }
 
+const parts: ("partbody" | "partboots" | "parthead" | "partweapon")[] = [
+  "partbody",
+  "partboots",
+  "parthead",
+  "partweapon",
+];
+
 export default function useFilteredHeroes(
   heroes: ICharacter[],
   levels: { [key: number]: IHeroLevels },
@@ -80,10 +87,10 @@ export default function useFilteredHeroes(
         .filter(
           (c) => filters.name === "" || c.name?.toLowerCase().includes(filters.name.toLowerCase())
         )
-        .filter((c) => filters.type === "" || c.type === filters.type)
-        .filter((c) => filters.class === "" || c.class === filters.class)
-        .filter((c) => filters.role === "" || c.role === filters.role)
-        .filter((c) => filters.faction === "" || c.faction === filters.faction)
+        .filter((c) => filters.type.length === 0 || filters.type.includes(c.type))
+        .filter((c) => filters.class.length === 0 || filters.class.includes(c.class))
+        .filter((c) => filters.role.length === 0 || filters.role.includes(c.role))
+        .filter((c) => filters.faction.length === 0 || filters.faction.includes(c.faction))
         .filter(
           (c) => filters.si === "" || compare(filters.directionSi, c.si, parseInt(filters.si, 10))
         )
@@ -99,6 +106,11 @@ export default function useFilteredHeroes(
           (c) =>
             filters.engrave === "" ||
             compare(filters.directionEngrave, c.engrave, parseInt(filters.engrave, 10))
+        )
+        .filter(
+          (c) =>
+            filters.equip === "" ||
+            parts.every((p) => compare(filters.directionEquip, c[p], parseInt(filters.equip, 10)))
         )
         .sort(sortChars),
     [
@@ -117,6 +129,8 @@ export default function useFilteredHeroes(
       filters.directionAscend,
       filters.engrave,
       filters.directionEngrave,
+      filters.directionEquip,
+      filters.equip,
     ]
   );
 

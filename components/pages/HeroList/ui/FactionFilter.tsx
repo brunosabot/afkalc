@@ -3,7 +3,7 @@ import factions from "../../../../data/heroFaction.json";
 import FilterButtons from "./FilterButtons";
 
 interface IProps {
-  filter: string;
+  filter: string[];
   setFilter: (value: string) => void;
   imagePath: string;
 }

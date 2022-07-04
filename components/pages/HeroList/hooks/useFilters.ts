@@ -7,34 +7,38 @@ interface Action {
 
 export interface State {
   name: string;
-  type: string;
-  class: string;
-  role: string;
-  faction: string;
+  type: string[];
+  class: string[];
+  role: string[];
+  faction: string[];
   ascend: string;
   engrave: string;
   si: string;
   fi: string;
+  equip: string;
   directionAscend: string;
   directionSi: string;
   directionFi: string;
   directionEngrave: string;
+  directionEquip: string;
 }
 
 const initialState = {
   name: "",
-  type: "",
-  class: "",
-  role: "",
-  faction: "",
+  type: [],
+  class: [],
+  role: [],
+  faction: [],
   ascend: "",
   si: "",
   fi: "",
   engrave: "",
+  equip: "",
   directionAscend: ">=",
   directionSi: ">=",
   directionFi: ">=",
   directionEngrave: ">=",
+  directionEquip: ">=",
 };
 
 function reducer(state: State, action: Action): State {
@@ -42,13 +46,25 @@ function reducer(state: State, action: Action): State {
     case "name":
       return { ...state, name: action.value };
     case "type":
-      return { ...state, type: action.value };
+      if (state.type.includes(action.value)) {
+        return { ...state, type: state.type.filter((t) => t !== action.value) };
+      }
+      return { ...state, type: [...state.type, action.value] };
     case "class":
-      return { ...state, class: action.value };
+      if (state.class.includes(action.value)) {
+        return { ...state, class: state.class.filter((c) => c !== action.value) };
+      }
+      return { ...state, class: [...state.class, action.value] };
     case "role":
-      return { ...state, role: action.value };
+      if (state.role.includes(action.value)) {
+        return { ...state, role: state.role.filter((r) => r !== action.value) };
+      }
+      return { ...state, role: [...state.role, action.value] };
     case "faction":
-      return { ...state, faction: action.value };
+      if (state.faction.includes(action.value)) {
+        return { ...state, faction: state.faction.filter((f) => f !== action.value) };
+      }
+      return { ...state, faction: [...state.faction, action.value] };
     case "ascend":
       return { ...state, ascend: action.value };
     case "si":
@@ -57,6 +73,8 @@ function reducer(state: State, action: Action): State {
       return { ...state, fi: action.value };
     case "engrave":
       return { ...state, engrave: action.value };
+    case "equip":
+      return { ...state, equip: action.value };
     case "direction-ascend":
       return { ...state, directionAscend: action.value };
     case "direction-si":
@@ -65,6 +83,8 @@ function reducer(state: State, action: Action): State {
       return { ...state, directionFi: action.value };
     case "direction-engrave":
       return { ...state, directionEngrave: action.value };
+    case "direction-equip":
+      return { ...state, directionEquip: action.value };
     default:
       return state;
   }
