@@ -1007,4 +1007,14 @@
     "slug": "karen",
     "faction": "graveborns"
   }
+  ,
+  {
+    "id": 114,
+    "type": "strength",
+    "class": "warrior",
+    "role": "continuous",
+    "image": "/heroes/SLK.jpg",
+    "slug": "slk",
+    "faction": "maulers"
+  }
 ]
