@@ -2,7 +2,7 @@ import React from "react";
 import styles from "./FilterButtons.module.css";
 
 interface IProps {
-  filter: string;
+  filter: string[];
   setFilter: (value: string) => void;
   imagePath: string;
   data: string[];
@@ -17,9 +17,9 @@ const FilterButtons: React.FC<IProps> = function FilterButtons({
   return (
     <div className={styles.Wrapper}>
       {data.map((e) => {
-        const className = `${styles.FilterButtons} ${filter === e ? styles.Active : ""}`;
+        const className = `${styles.FilterButtons} ${filter.includes(e) ? styles.Active : ""}`;
         const onCLick = () => {
-          setFilter(filter === e ? "" : e);
+          setFilter(e);
         };
 
         return (

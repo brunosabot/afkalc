@@ -3,7 +3,7 @@ import roles from "../../../../data/heroRole.json";
 import FilterButtons from "./FilterButtons";
 
 interface IProps {
-  filter: string;
+  filter: string[];
   setFilter: (value: string) => void;
   imagePath: string;
 }
