@@ -51,10 +51,7 @@
 .Title {
   align-items: center;
   display: flex;
-}
-
-.Title svg {
-  margin-left: 8px;
+  gap: 8px;
 }
 
 .Subtitle {
@@ -68,4 +65,12 @@
 
 .Actions {
   display: flex;
+}
+
+.Overload {
+  color: var(--error-text-color);
+}
+
+.Campaign {
+  font-size: 0.85em;
 }
