@@ -19,7 +19,7 @@ const Menu: React.FC<IProps> = function Menu() {
         <MenuBurger />
         {t("menu.home")}
       </MenuToolbarLink>
-      <MenuToolbarLink to={`/hero-list/${values.userId}`} image="/heroes/belinda.jpg">
+      <MenuToolbarLink to={`/hero-list/${values.userId}`} image="/heroes/Priest.jpg">
         {t("menu.short-hero-list")}
       </MenuToolbarLink>
       <MenuToolbarLink to="/tiers-list" image="/loot/priority-list.jpg">
