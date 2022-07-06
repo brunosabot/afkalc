@@ -5,6 +5,7 @@ import { useRouter } from "next/router";
 import React, { useState } from "react";
 import withLayoutPublicColumn from "../../components/layout/withLayoutPublicColumn";
 import useDescription from "../../components/pages/TopTeam/hooks/useDescription";
+import useShareUrl from "../../components/pages/TopTeam/hooks/useShareUrl";
 import useTitle from "../../components/pages/TopTeam/hooks/useTitle";
 import Board from "../../components/pages/TopTeam/ui/Board";
 import EnemiPosition from "../../components/pages/TopTeam/ui/EnemiPosition";
@@ -98,6 +99,8 @@ const TopTeam: React.FC<Props> = function TopTeam() {
   const [pos1, pos2, pos3, pos4, pos5] = ours.split(",").map(parseHero);
   const [ene1, ene2, ene3, ene4, ene5] = theirs.split(",").map(parseEnemy);
 
+  const url = useShareUrl([pos1, pos2, pos3, pos4, pos5], [ene1, ene2, ene3, ene4, ene5]);
+
   const onSelect = (position: number) => (hero: Hero) => {
     const heroes = [pos1, pos2, pos3, pos4, pos5];
     heroes[position - 1] = hero;
@@ -129,12 +132,11 @@ const TopTeam: React.FC<Props> = function TopTeam() {
         <meta property="og:title" content={title} />
         <meta property="og:description" content={description} />
         <meta property="og:type" content="website" />
+        <meta property="og:url" content={url} />
+        <meta property="og:image" content={`${process.env.NEXT_PUBLIC_URL}/enemies/Goblin.jpg`} />
       </Head>
       <Board>
-        <ShareBanner
-          heroes={[pos1, pos2, pos3, pos4, pos5]}
-          enemies={[ene1, ene2, ene3, ene4, ene5]}
-        />
+        <ShareBanner url={url} />
         <PlayerPosition onSelect={onSelect} position={1} hero={pos1} />
         <PlayerPosition onSelect={onSelect} position={2} hero={pos2} />
         <PlayerPosition onSelect={onSelect} position={3} hero={pos3} />
