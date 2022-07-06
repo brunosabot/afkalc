@@ -79,7 +79,7 @@ const Home: React.FC<IProps> = function Home() {
           <MenuItem to="/tiers-list" icon={mdiPlaylistCheck}>
             {t("common:menu.priority-list")}
           </MenuItem>
-          <MenuItem to="/top-team" icon={mdiAccountGroup}>
+          <MenuItem to="/top-team/,,,,-,,,," icon={mdiAccountGroup}>
             {t("common:menu.top-team")}
           </MenuItem>
         </MenuBox>

@@ -1,5 +1,6 @@
 import { useTranslation } from "next-i18next";
 import React, { useState } from "react";
+import equipLevels from "../../../../data/equipLevel.json";
 import ascendLevels from "../../../../data/heroAscensionLevel.json";
 import heroesJson from "../../../../data/heroes.json";
 import ICharacter from "../../../../types/ICharacter";
@@ -26,18 +27,20 @@ interface Action {
 
 interface State {
   name: string;
-  type: string;
-  class: string;
-  role: string;
-  faction: string;
+  type: string[];
+  class: string[];
+  role: string[];
+  faction: string[];
   ascend: string;
   si: string;
   fi: string;
   engrave: string;
+  equip: string;
   directionAscend: string;
   directionSi: string;
   directionFi: string;
   directionEngrave: string;
+  directionEquip: string;
 }
 
 const Filters: React.FC<IProps> = function Filters({ state, dispatch }) {
@@ -121,6 +124,17 @@ const Filters: React.FC<IProps> = function Filters({ state, dispatch }) {
             label={t("common:concept.engrave")}
             dispatch={dispatch}
             name="engrave"
+          />
+          <SelectFilter
+            value={state.equip}
+            directionValue={state.directionEquip}
+            label={t("common:equipment")}
+            dispatch={dispatch}
+            name="equip"
+            values={equipLevels.map((level) => ({
+              key: `${level.key}`,
+              label: t(`common:ascension-${level.name}`),
+            }))}
           />
           <div style={{ paddingTop: "16px" }} />
         </>

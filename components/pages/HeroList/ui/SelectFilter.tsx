@@ -48,7 +48,7 @@ const SelectFilter: React.FC<IProps> = function SelectFilter({
       <select
         className={styles.Value}
         value={value}
-        onChange={(e) => dispatch({ type: "ascend", value: e.target.value })}
+        onChange={(e) => dispatch({ type: name, value: e.target.value })}
       >
         {values.map((option) => (
           <option key={option.key} value={option.key}>

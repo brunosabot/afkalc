@@ -1,8 +1,9 @@
 .Artifact {
-  border-radius: 4px;
+  border-radius: 8px;
   box-sizing: border-box;
-  height: 48px;
-  width: 48px;
+  height: 64px;
+  padding: 4px;
+  width: 64px;
 }
 
 .Wrapper {

@@ -2,7 +2,7 @@ import React from "react";
 import FilterButtons from "./FilterButtons";
 
 interface IProps {
-  filter: string;
+  filter: string[];
   setFilter: (value: string) => void;
   imagePath: string;
 }

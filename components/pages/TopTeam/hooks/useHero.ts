@@ -7,7 +7,7 @@ function getHero(t: any, hero?: number) {
   const foundHero = typedHeroes.find((character) => character.id === hero);
 
   if (foundHero) {
-    return { ...foundHero, name: t(`heroesName.${foundHero.slug}`) };
+    return { ...foundHero, name: t(`common:heroesName.${foundHero.slug}`) };
   }
 
   return undefined;

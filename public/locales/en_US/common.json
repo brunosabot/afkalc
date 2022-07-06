@@ -43,6 +43,7 @@
   "add": "Add",
   "equipment": "Equipment",
   "has-dimensional-key": "Has a dimensional key",
+  "use-my-hero-stats": "Use stats from my hero",
   "menu": {
     "category-box": "Main",
     "category-abex": "Abyssal Expedition",
@@ -312,5 +313,29 @@
     "orcmaster": "Anasta",
     "karen": "Kalene",
     "slk" : "Brutus"
+  },
+  "enemyName": {
+    "goblin": "Wrizz",
+    "soulcalibur": "Soren",
+    "bossym": "Burning Brute",
+    "darkyeanling": "Demonic Entity",
+    "wbossoaksage": "The Unhinged",
+    "bossdq": "Ice Shemira",
+    "bossdragonknight": "Kane",
+    "bossmystic": "Grotesque Mage",
+    "bosscthulhu": "The Devourer",
+    "bossbane": "Ezizh",
+    "bossba": "The Balancer",
+    "bossworm": "Marsha",
+    "bosshgmn": "Adrax",
+    "bosshgm": "Adrax",
+    "bosspreys": "Oleus",
+    "bosspreyb": "Oleus",
+    "bossdragons": "Dalax",
+    "bossdragonb": "Dalax",
+    "goblinfeast": "Wrizz",
+    "bossrog": "Continuum Stalker",
+    "bosslionact": "Dune Destroyer",
+    "bossdm": "Azmonath"
   }
 }
