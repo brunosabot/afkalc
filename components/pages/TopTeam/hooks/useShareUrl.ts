@@ -1,4 +1,5 @@
 import { useRouter } from "next/router";
+import { useMemo } from "react";
 
 interface Hero {
   id: number;
@@ -48,7 +49,10 @@ function useShareUrl(heroes: Hero[], enemies: Enemy[]) {
   const encodedHeroes = heroes.map(stringifyHero).map(encodeURIComponent);
   const newString = `${encodedHeroes.join(",")}-${encodedEnemies.join(",")}`;
 
-  return `${process.env.NEXT_PUBLIC_URL}${localePath}/top-team/${newString}`;
+  return useMemo(
+    () => `${process.env.NEXT_PUBLIC_URL}${localePath}/top-team/${newString}`,
+    [localePath, newString]
+  );
 }
 
 export default useShareUrl;
