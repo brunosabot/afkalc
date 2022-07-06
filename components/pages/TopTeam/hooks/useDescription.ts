@@ -3,37 +3,26 @@ import { useMemo } from "react";
 import useArtifact, { Artifact } from "./useArtifact";
 import useHero from "./useHero";
 
-interface ITeam {
-  1?: number;
-  2?: number;
-  3?: number;
-  4?: number;
-  5?: number;
-  6?: number;
+interface Hero {
+  id: number;
+  ascend: number;
+  si: number;
+  fi: number;
+  engrave: number;
+  artifact: number;
 }
 
-interface ISi {
-  1?: number;
-  2?: number;
-  3?: number;
-  4?: number;
-  5?: number;
-}
+function getAscend(ascendLevel: number) {
+  if (ascendLevel === 1) return `elite`;
+  if (ascendLevel === 2) return `elite-p`;
+  if (ascendLevel === 3) return `legendary`;
+  if (ascendLevel === 4) return `legendary-p`;
+  if (ascendLevel === 5) return `mythic`;
+  if (ascendLevel === 6) return `mythic-p`;
+  if (ascendLevel === 7) return `ascend`;
+  if (ascendLevel > 7) return `ascend-${ascendLevel - 7}`;
 
-interface IFi {
-  1?: number;
-  2?: number;
-  3?: number;
-  4?: number;
-  5?: number;
-}
-
-interface IArtifact {
-  1?: number;
-  2?: number;
-  3?: number;
-  4?: number;
-  5?: number;
+  return "-";
 }
 
 function getSi(si: number | undefined) {
@@ -48,6 +37,18 @@ function getFi(fi: number | undefined) {
   return ` ${fi}/9`;
 }
 
+function getEngrave(engrave: number | undefined) {
+  if (engrave === undefined) return "";
+  if (engrave <= 0) return "";
+  return ` e${engrave}`;
+}
+
+function displayAscend(t: TFunction, ascend: number) {
+  if (ascend === 0) return "";
+
+  return ` ${t(`ascension-${getAscend(ascend)}`)}`;
+}
+
 function displayArtifact(t: TFunction, artifact: Artifact) {
   if (artifact.name) {
     const value = t(`artifact.${artifact.name}`);
@@ -56,51 +57,28 @@ function displayArtifact(t: TFunction, artifact: Artifact) {
   return "";
 }
 
-export default function useDescription(heroes: ITeam, si: ISi, fi: IFi, artifact: IArtifact) {
+export default function useDescription(heroes: Hero[]) {
   const { t } = useTranslation("common");
   const { getHero } = useHero();
   const { getArtifact } = useArtifact();
 
-  return useMemo(() => {
-    const hero1Data = getHero(t, heroes[1]);
-    const hero2Data = getHero(t, heroes[2]);
-    const hero3Data = getHero(t, heroes[3]);
-    const hero4Data = getHero(t, heroes[4]);
-    const hero5Data = getHero(t, heroes[5]);
+  return useMemo(
+    () =>
+      heroes
+        .map((hero) => {
+          const heroName = getHero(t, hero.id)?.name;
+          const heroAscend = displayAscend(t, hero.ascend);
+          const heroSi = getSi(hero.si);
+          const heroFi = getFi(hero.fi);
+          const heroEngrave = getEngrave(hero.engrave);
+          const heroArtifact = displayArtifact(t, getArtifact(hero.artifact));
 
-    const artifact1Data = getArtifact(artifact[1]);
-    const artifact2Data = getArtifact(artifact[2]);
-    const artifact3Data = getArtifact(artifact[3]);
-    const artifact4Data = getArtifact(artifact[4]);
-    const artifact5Data = getArtifact(artifact[5]);
+          if (hero.id === 0) return "";
 
-    const description = [];
-    if (hero1Data !== undefined) {
-      description.push(
-        `${hero1Data.name}${getSi(si[1])}${getFi(fi[1])} ${displayArtifact(t, artifact1Data)}`
-      );
-    }
-    if (hero2Data !== undefined) {
-      description.push(
-        `${hero2Data.name}${getSi(si[2])}${getFi(fi[2])} ${displayArtifact(t, artifact2Data)}`
-      );
-    }
-    if (hero3Data !== undefined) {
-      description.push(
-        `${hero3Data.name}${getSi(si[3])}${getFi(fi[3])} ${displayArtifact(t, artifact3Data)}`
-      );
-    }
-    if (hero4Data !== undefined) {
-      description.push(
-        `${hero4Data.name}${getSi(si[4])}${getFi(fi[4])} ${displayArtifact(t, artifact4Data)}`
-      );
-    }
-    if (hero5Data !== undefined) {
-      description.push(
-        `${hero5Data.name}${getSi(si[5])}${getFi(fi[5])} ${displayArtifact(t, artifact5Data)}`
-      );
-    }
-
-    return description.join(" - ").replace(/\s\s+/g, " ");
-  }, [artifact, getArtifact, getHero, heroes, fi, si, t]);
+          return `${heroName}${heroAscend}${heroSi}${heroFi}${heroEngrave} ${heroArtifact}`;
+        })
+        .join(" - ")
+        .replace(/\s\s+/g, " "),
+    [getArtifact, getHero, heroes, t]
+  );
 }

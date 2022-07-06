@@ -73,7 +73,7 @@ const Character: React.FC<ICharacterProps> = function Character({
       <Image src={src} width={dimension} height={dimension} layout="fixed" alt={resource?.name} />
 
       {activeArtifact ? (
-        <img className={`${styles.Artifact}`} src={activeArtifact?.image} alt={name} />
+        <img className={`${styles.Artifact}`} src={activeArtifact?.image} alt="" />
       ) : null}
     </div>
   );

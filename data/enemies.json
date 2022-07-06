@@ -1,37 +1,54 @@
 [
+  { "faction": "maulers", "slug": "goblin", "id": 1, "image": "/enemies/Goblin.jpg" },
+  { "faction": "graveborns", "slug": "soulcalibur", "id": 2, "image": "/enemies/SoulCalibur.jpg" },
+  { "faction": "dimensionals", "slug": "bossym", "id": 3, "image": "/enemies/BossYM.jpg" },
   {
-    "faction": "twistedRealm",
-    "characters": [
-      { "name": "Burning Brute", "id": 1, "image": "/enemies/burningbrute.jpg" },
-      { "name": "Dark Nemora", "id": 2, "image": "/enemies/darknemora.jpg" },
-      { "name": "Evil Arden", "id": 3, "image": "/enemies/evilarden.jpg" },
-      { "name": "Ice Shemira", "id": 4, "image": "/enemies/iceshemira.jpg" },
-      { "name": "Kane", "id": 5, "image": "/enemies/kane.jpg" },
-      { "name": "Grotesque Mage", "id": 15, "image": "/enemies/BossMystic.jpg" }
-    ]
+    "faction": "hypogeans",
+    "slug": "darkyeanling",
+    "id": 4,
+    "image": "/enemies/DarkYeanling.jpg"
   },
   {
-    "faction": "guildFight",
-    "characters": [
-      { "name": "Wrizz", "id": 6, "image": "/enemies/wrizz.jpg" },
-      { "name": "Soren", "id": 7, "image": "/enemies/soren.jpg" }
-    ]
+    "faction": "wilders",
+    "slug": "wbossoaksage",
+    "id": 5,
+    "image": "/enemies/WBossOakSage.jpg"
+  },
+  { "faction": "graveborns", "slug": "bossdq", "id": 6, "image": "/enemies/BossDQ.jpg" },
+  {
+    "faction": "hypogeans",
+    "slug": "bossdragonknight",
+    "id": 7,
+    "image": "/enemies/BossDragonKnight.jpg"
+  },
+  { "faction": "graveborns", "slug": "bossmystic", "id": 8, "image": "/enemies/BossMystic.jpg" },
+  { "faction": "hypogeans", "slug": "bosscthulhu", "id": 9, "image": "/enemies/BossCthulhu.jpg" },
+  { "faction": "hypogeans", "slug": "bossbane", "id": 10, "image": "/enemies/BossBane.jpg" },
+  { "faction": "hypogeans", "slug": "bossba", "id": 11, "image": "/enemies/BossBA.jpg" },
+  { "faction": "dimensionals", "slug": "bossworm", "id": 12, "image": "/enemies/BossWorm.jpg" },
+  { "faction": "dimensionals", "slug": "bosshgmn", "id": 13, "image": "/enemies/BossHGMN.jpg" },
+  { "faction": "dimensionals", "slug": "bosshgm", "id": 14, "image": "/enemies/BossHGM.jpg" },
+  { "faction": "dimensionals", "slug": "bosspreys", "id": 15, "image": "/enemies/BossPreyS.jpg" },
+  { "faction": "dimensionals", "slug": "bosspreyb", "id": 16, "image": "/enemies/BossPreyB.jpg" },
+  {
+    "faction": "dimensionals",
+    "slug": "bossdragons",
+    "id": 17,
+    "image": "/enemies/BossDragonS.jpg"
   },
   {
-    "faction": "kingsTower",
-    "characters": [
-      { "name": "King's Tower", "id": 8, "image": "/enemies/kingstower.jpg" },
-      { "name": "Lightbringers", "id": 9, "image": "/enemies/lightbringers.jpg" },
-      { "name": "Maulers", "id": 10, "image": "/enemies/maulers.jpg" },
-      { "name": "Wilders", "id": 11, "image": "/enemies/wilders.jpg" },
-      { "name": "Graveborns", "id": 12, "image": "/enemies/graveborns.jpg" }
-    ]
+    "faction": "dimensionals",
+    "slug": "bossdragonb",
+    "id": 18,
+    "image": "/enemies/BossDragonB.jpg"
   },
+  { "faction": "maulers", "slug": "goblinfeast", "id": 19, "image": "/enemies/GoblinFeast.jpg" },
+  { "faction": "hypogeans", "slug": "bossrog", "id": 20, "image": "/enemies/BossROG.jpg" },
   {
-    "faction": "misc",
-    "characters": [
-      { "name": "Arena", "id": 13, "image": "/enemies/arena.jpg" },
-      { "name": "Campaign", "id": 14, "image": "/enemies/xp.png" }
-    ]
-  }
+    "faction": "dimensionals",
+    "slug": "bosslionact",
+    "id": 21,
+    "image": "/enemies/BossLionAct.jpg"
+  },
+  { "faction": "hypogeans", "slug": "bossdm", "id": 22, "image": "/enemies/BossDM.jpg" }
 ]

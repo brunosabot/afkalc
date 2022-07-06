@@ -1,48 +1,48 @@
+import { useTranslation } from "next-i18next";
+import Image from "next/image";
 import React from "react";
 import enemiesFactions from "../../../data/enemies.json";
 import styles from "./Enemi.module.css";
 
 interface IProps {
   size?: "large" | "small" | "default";
-  name: string;
+  id: number;
   highlight?: boolean;
   onClick?: () => void;
 }
 
 interface IEnemi {
-  name: string;
+  faction: string;
+  slug: string;
   id: number;
   image: string;
 }
 
-interface IEnemiFaction {
-  faction: string;
-  characters: IEnemi[];
-}
-
-const enemiJson = enemiesFactions as IEnemiFaction[];
-const defaultEnemies: IEnemi[] = [];
-const enemies = enemiJson.reduce(
-  (acc, v: IEnemiFaction) => [...acc, ...v.characters],
-  defaultEnemies
-);
+const enemies = enemiesFactions as IEnemi[];
 
 /**
  * TODO: Use i18n for name
  */
 const Enemi: React.FC<IProps> = function Enemi({
-  name,
+  id,
   size = "default",
   highlight = false,
   onClick = () => {},
 }) {
-  const resource = enemies.find((r) => r.name === name);
+  const { t } = useTranslation("common");
+  const resource = enemies.find((r) => r.id === id);
 
   if (resource === undefined) return null;
 
   const largeClassName = size === "large" ? styles.Large : "";
   const smallClassName = size === "small" ? styles.Small : "";
   const highlightClassName = highlight ? styles.Highlight : "";
+
+  let dimension = 50;
+  if (size === "large") dimension = 64;
+  if (size === "small") dimension = 34;
+
+  const src = `/api/enemy?heroImage=${resource.image}&faction=${resource.faction}`;
 
   return (
     <div
@@ -54,7 +54,13 @@ const Enemi: React.FC<IProps> = function Enemi({
         if (event.key === "Enter") onClick();
       }}
     >
-      <img src={resource.image} className={styles.Enemi} alt={resource?.name} />
+      <Image
+        src={src}
+        width={dimension}
+        height={dimension}
+        layout="fixed"
+        alt={t(`common:enemyName.${resource?.slug}`)}
+      />
     </div>
   );
 };

@@ -1,29 +1,46 @@
 .EnemiPosition {
   align-items: center;
-  border-radius: 6px 0;
   box-sizing: border-box;
   cursor: pointer;
   display: flex;
-  height: 40px;
+  height: 56px;
   justify-content: center;
   position: absolute;
-  width: 40px;
+  width: 56px;
 }
 
 .EnemiPosition--6 {
-  background-color: var(--card-color);
-  right: 14.286%;
+  right: 28.571%;
+  top: 43.714%;
+}
+
+.EnemiPosition--7 {
+  right: 28.571%;
+  top: 62.952%;
+}
+
+.EnemiPosition--8 {
+  right: 10.286%;
+  top: 34.095%;
+}
+
+.EnemiPosition--9 {
+  right: 10.286%;
   top: 53.333%;
 }
 
+.EnemiPosition--10 {
+  right: 10.286%;
+  top: 72.571%;
+}
+
 .Add {
-  background: transparent;
+  background-color: var(--card-color);
   border: 0;
-  border: 1px solid var(--card-border-color);
-  border-radius: 6px 0;
+  border-radius: 8px 0 16px;
   color: var(--text-color);
   cursor: pointer;
-  font-size: 24px;
+  font-size: 36px;
   height: 100%;
   outline: 0;
   width: 100%;
