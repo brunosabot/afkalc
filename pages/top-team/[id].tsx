@@ -126,6 +126,9 @@ const TopTeam: React.FC<Props> = function TopTeam() {
       <Head>
         <title>{`${title} - Afkalc`}</title>
         <meta name="description" content={description} />
+        <meta property="og:title" content={title} />
+        <meta property="og:description" content={description} />
+        <meta property="og:type" content="website" />
       </Head>
       <Board>
         <ShareBanner
