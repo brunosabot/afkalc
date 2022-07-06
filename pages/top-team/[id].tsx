@@ -2,15 +2,14 @@ import { GetStaticPaths } from "next";
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 import Head from "next/head";
 import { useRouter } from "next/router";
-import React, { useCallback, useState } from "react";
-import withLayoutPrivate from "../../components/layout/withLayoutPrivate";
+import React, { useState } from "react";
+import withLayoutPublicColumn from "../../components/layout/withLayoutPublicColumn";
 import useDescription from "../../components/pages/TopTeam/hooks/useDescription";
 import useTitle from "../../components/pages/TopTeam/hooks/useTitle";
 import Board from "../../components/pages/TopTeam/ui/Board";
 import EnemiPosition from "../../components/pages/TopTeam/ui/EnemiPosition";
 import PlayerPosition from "../../components/pages/TopTeam/ui/PlayerPosition";
 import ShareBanner from "../../components/pages/TopTeam/ui/ShareBanner";
-import { DetailType } from "../../components/ui/afk/Character";
 import Card from "../../components/ui/card/Card";
 
 export const getStaticProps = async ({ locale }: { locale: string }) => ({
@@ -24,54 +23,103 @@ export const getStaticPaths: GetStaticPaths<{ slug: string }> = async () => ({
   fallback: "blocking",
 });
 
+interface Hero {
+  id: number;
+  ascend: number;
+  si: number;
+  fi: number;
+  engrave: number;
+  artifact: number;
+}
+
+interface Enemy extends Hero {
+  type: "h" | "e";
+}
+
 interface Props {
   [key: string]: never;
+}
+
+function parseHero(encodedHero: string) {
+  const [id = 0, ascend = 0, si = -1, fi = 0, engrave = 0, artifact = 0] = encodedHero
+    .split("")
+    .map((e) => e.charCodeAt(0))
+    .map((e) => +e - 48);
+
+  return { id, ascend, si, fi, engrave, artifact };
+}
+
+function parseEnemy(encodedHero: string) {
+  const [typeCode = "e", id = 0, ascend = 0, si = -1, fi = 0, engrave = 0, artifact = 0] =
+    encodedHero
+      .split("")
+      .map((e) => e.charCodeAt(0))
+      .map((e) => +e - 48);
+
+  const type: "e" | "h" = typeCode === 56 ? "h" : "e";
+
+  return { type, id, ascend, si, fi, engrave, artifact };
+}
+
+function stringifyHero(hero: Hero) {
+  const idCode = String.fromCharCode((hero.id || 0) + 48);
+  const ascendCode = String.fromCharCode((hero.ascend || 0) + 48);
+  const siCode = String.fromCharCode((hero.si || 0) + 48);
+  const fiCode = String.fromCharCode((hero.fi || 0) + 48);
+  const engraveCode = String.fromCharCode((hero.engrave || 0) + 48);
+  const artifactCode = String.fromCharCode((hero.artifact || 0) + 48);
+
+  const code = `${idCode}${ascendCode}${siCode}${fiCode}${engraveCode}${artifactCode}`;
+
+  return code;
+}
+
+function stringifyEnemi(enemy: Enemy) {
+  const { type } = enemy;
+  const idCode = String.fromCharCode((enemy.id || 0) + 48);
+  const ascendCode = String.fromCharCode((enemy.ascend || 0) + 48);
+  const siCode = String.fromCharCode((enemy.si || 0) + 48);
+  const fiCode = String.fromCharCode((enemy.fi || 0) + 48);
+  const engraveCode = String.fromCharCode((enemy.engrave || 0) + 48);
+  const artifactCode = String.fromCharCode((enemy.artifact || 0) + 48);
+
+  const code = `${type}${idCode}${ascendCode}${siCode}${fiCode}${engraveCode}${artifactCode}`;
+
+  return code;
 }
 
 const TopTeam: React.FC<Props> = function TopTeam() {
   const router = useRouter();
   const { id } = router.query;
 
-  const [heroes = "", si = "", fi = "", artifact = ""] = decodeURIComponent(id as string).split(
-    "-"
-  );
-  const [t1, t2, t3, t4, t5, t6] = heroes
-    .split("")
-    .map((e) => e.charCodeAt(0))
-    .map((e) => +e - 48);
+  const [heroId, setHeroId] = useState(id);
 
-  const [s1, s2, s3, s4, s5] = si
-    .split("")
-    .map((e) => e.charCodeAt(0))
-    .map((e) => +e - 48);
+  const [ours, theirs] = decodeURIComponent(heroId as string).split("-");
+  const [pos1, pos2, pos3, pos4, pos5] = ours.split(",").map(parseHero);
+  const [ene1, ene2, ene3, ene4, ene5] = theirs.split(",").map(parseEnemy);
 
-  const [i1, i2, i3, i4, i5] = fi
-    .split("")
-    .map((e) => e.charCodeAt(0))
-    .map((e) => +e - 48);
+  const onSelect = (position: number) => (hero: Hero) => {
+    const heroes = [pos1, pos2, pos3, pos4, pos5];
+    heroes[position - 1] = hero;
 
-  const [a1, a2, a3, a4, a5] = artifact
-    .split("")
-    .map((e) => e.charCodeAt(0))
-    .map((e) => +e - 48);
+    const encodedHeroes = heroes.map(stringifyHero).map(encodeURIComponent);
+    const newString = `${encodedHeroes.join(",")}-${theirs}`;
 
-  const [team, setTeam] = useState({ 1: t1, 2: t2, 3: t3, 4: t4, 5: t5, 6: t6 });
-  const [siList, setSiList] = useState({ 1: s1, 2: s2, 3: s3, 4: s4, 5: s5 });
-  const [fiList, setFiList] = useState({ 1: i1, 2: i2, 3: i3, 4: i4, 5: i5 });
-  const [artifactList, setArtifactList] = useState({ 1: a1, 2: a2, 3: a3, 4: a4, 5: a5 });
+    setHeroId(newString);
+  };
 
-  const onSelect = useCallback(
-    (type: DetailType, position: number) => (value: number) => {
-      if (type === DetailType.HERO) setTeam({ ...team, [position]: value });
-      if (type === DetailType.SI) setSiList({ ...siList, [position]: value });
-      if (type === DetailType.INN) setFiList({ ...fiList, [position]: value });
-      if (type === DetailType.ARTIFACT) setArtifactList({ ...artifactList, [position]: value });
-    },
-    [artifactList, fiList, siList, team]
-  );
+  const onSelectEnemy = (position: number) => (enemy: Enemy) => {
+    const enemies = [ene1, ene2, ene3, ene4, ene5];
+    enemies[position - 6] = enemy;
 
-  const title = useTitle(team[6]);
-  const description = useDescription(team, siList, fiList, artifactList);
+    const encodedEnemies = enemies.map(stringifyEnemi).map(encodeURIComponent);
+    const newString = `${ours}-${encodedEnemies.join(",")}`;
+
+    setHeroId(newString);
+  };
+
+  const description = useDescription([pos1, pos2, pos3, pos4, pos5]);
+  const title = useTitle([ene1, ene2, ene3, ene4, ene5]);
 
   return (
     <Card>
@@ -80,51 +128,24 @@ const TopTeam: React.FC<Props> = function TopTeam() {
         <meta name="description" content={description} />
       </Head>
       <Board>
-        <ShareBanner team={team} si={siList} fi={fiList} artifact={artifactList} />
-        <PlayerPosition
-          onSelect={onSelect}
-          position={1}
-          hero={team[1]}
-          si={siList[1]}
-          fi={fiList[1]}
-          artifact={artifactList[1]}
+        <ShareBanner
+          heroes={[pos1, pos2, pos3, pos4, pos5]}
+          enemies={[ene1, ene2, ene3, ene4, ene5]}
         />
-        <PlayerPosition
-          onSelect={onSelect}
-          position={2}
-          hero={team[2]}
-          si={siList[2]}
-          fi={fiList[2]}
-          artifact={artifactList[2]}
-        />
-        <PlayerPosition
-          onSelect={onSelect}
-          position={3}
-          hero={team[3]}
-          si={siList[3]}
-          fi={fiList[3]}
-          artifact={artifactList[3]}
-        />
-        <PlayerPosition
-          onSelect={onSelect}
-          position={4}
-          hero={team[4]}
-          si={siList[4]}
-          fi={fiList[4]}
-          artifact={artifactList[4]}
-        />
-        <PlayerPosition
-          onSelect={onSelect}
-          position={5}
-          hero={team[5]}
-          si={siList[5]}
-          fi={fiList[5]}
-          artifact={artifactList[5]}
-        />
-        <EnemiPosition onSelect={onSelect} position={6} enemi={team[6]} />
+        <PlayerPosition onSelect={onSelect} position={1} hero={pos1} />
+        <PlayerPosition onSelect={onSelect} position={2} hero={pos2} />
+        <PlayerPosition onSelect={onSelect} position={3} hero={pos3} />
+        <PlayerPosition onSelect={onSelect} position={4} hero={pos4} />
+        <PlayerPosition onSelect={onSelect} position={5} hero={pos5} />
+
+        <EnemiPosition onSelect={onSelectEnemy} position={6} enemi={ene1} />
+        <EnemiPosition onSelect={onSelectEnemy} position={7} enemi={ene2} />
+        <EnemiPosition onSelect={onSelectEnemy} position={8} enemi={ene3} />
+        <EnemiPosition onSelect={onSelectEnemy} position={9} enemi={ene4} />
+        <EnemiPosition onSelect={onSelectEnemy} position={10} enemi={ene5} />
       </Board>
     </Card>
   );
 };
 
-export default withLayoutPrivate(TopTeam);
+export default withLayoutPublicColumn(TopTeam);

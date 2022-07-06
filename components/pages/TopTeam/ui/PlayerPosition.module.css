@@ -1,48 +1,46 @@
 .PlayerPosition {
   align-items: center;
-  border-radius: 6px 0;
   box-sizing: border-box;
   cursor: pointer;
   display: flex;
-  height: 40px;
+  height: 56px;
   justify-content: center;
   position: absolute;
-  width: 40px;
+  width: 56px;
 }
 
 .PlayerPosition--1 {
   left: 28.571%;
-  top: 45.714%;
+  top: 43.714%;
 }
 
 .PlayerPosition--2 {
   left: 28.571%;
-  top: 60.952%;
+  top: 62.952%;
 }
 
 .PlayerPosition--3 {
-  left: 14.286%;
-  top: 38.095%;
+  left: 10.286%;
+  top: 34.095%;
 }
 
 .PlayerPosition--4 {
-  left: 14.286%;
+  left: 10.286%;
   top: 53.333%;
 }
 
 .PlayerPosition--5 {
-  left: 14.286%;
-  top: 68.571%;
+  left: 10.286%;
+  top: 72.571%;
 }
 
 .Add {
   background-color: var(--card-color);
   border: 0;
-  border: 1px solid var(--card-border-color);
-  border-radius: 6px 0;
+  border-radius: 8px 0 16px;
   color: var(--text-color);
   cursor: pointer;
-  font-size: 24px;
+  font-size: 36px;
   height: 100%;
   outline: 0;
   width: 100%;

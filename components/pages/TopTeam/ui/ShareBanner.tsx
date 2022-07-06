@@ -3,83 +3,60 @@ import { useRouter } from "next/router";
 import React from "react";
 import CardShare from "../../../ui/card/CardShare";
 
-interface ITeam {
-  1?: number;
-  2?: number;
-  3?: number;
-  4?: number;
-  5?: number;
-  6?: number;
+interface Hero {
+  id: number;
+  ascend: number;
+  si: number;
+  fi: number;
+  engrave: number;
+  artifact: number;
 }
 
-interface ISi {
-  1?: number;
-  2?: number;
-  3?: number;
-  4?: number;
-  5?: number;
-}
-
-interface IFi {
-  1?: number;
-  2?: number;
-  3?: number;
-  4?: number;
-  5?: number;
-}
-
-interface IArtifact {
-  1?: number;
-  2?: number;
-  3?: number;
-  4?: number;
-  5?: number;
+interface Enemy extends Hero {
+  type: "h" | "e";
 }
 
 interface IProps {
-  team: ITeam;
-  si: ISi;
-  fi: IFi;
-  artifact: IArtifact;
+  heroes: Hero[];
+  enemies: Enemy[];
 }
 
-const ShareBanner: React.FC<IProps> = function ShareBanner({
-  team = {},
-  si = {},
-  fi = {},
-  artifact = {},
-}) {
+function stringifyHero(hero: Hero) {
+  const idCode = String.fromCharCode((hero.id || 0) + 48);
+  const ascendCode = String.fromCharCode((hero.ascend || 0) + 48);
+  const siCode = String.fromCharCode((hero.si || 0) + 48);
+  const fiCode = String.fromCharCode((hero.fi || 0) + 48);
+  const engraveCode = String.fromCharCode((hero.engrave || 0) + 48);
+  const artifactCode = String.fromCharCode((hero.artifact || 0) + 48);
+
+  const code = `${idCode}${ascendCode}${siCode}${fiCode}${engraveCode}${artifactCode}`;
+
+  return code;
+}
+
+function stringifyEnemy(enemy: Enemy) {
+  const { type } = enemy;
+  const idCode = String.fromCharCode((enemy.id || 0) + 48);
+  const ascendCode = String.fromCharCode((enemy.ascend || 0) + 48);
+  const siCode = String.fromCharCode((enemy.si || 0) + 48);
+  const fiCode = String.fromCharCode((enemy.fi || 0) + 48);
+  const engraveCode = String.fromCharCode((enemy.engrave || 0) + 48);
+  const artifactCode = String.fromCharCode((enemy.artifact || 0) + 48);
+
+  const code = `${type}${idCode}${ascendCode}${siCode}${fiCode}${engraveCode}${artifactCode}`;
+
+  return code;
+}
+
+const ShareBanner: React.FC<IProps> = function ShareBanner({ enemies, heroes }) {
   const { t } = useTranslation("top-team");
   const router = useRouter();
   const localePath = router.locale === router.defaultLocale ? "" : `/${router.locale}`;
 
-  const t1 = String.fromCharCode((team[1] || 0) + 48);
-  const t2 = String.fromCharCode((team[2] || 0) + 48);
-  const t3 = String.fromCharCode((team[3] || 0) + 48);
-  const t4 = String.fromCharCode((team[4] || 0) + 48);
-  const t5 = String.fromCharCode((team[5] || 0) + 48);
-  const t6 = String.fromCharCode((team[6] || 0) + 48);
-  const tCode = encodeURIComponent(`${t1}${t2}${t3}${t4}${t5}${t6}`);
-  const s1 = String.fromCharCode((si[1] || 0) + 48);
-  const s2 = String.fromCharCode((si[2] || 0) + 48);
-  const s3 = String.fromCharCode((si[3] || 0) + 48);
-  const s4 = String.fromCharCode((si[4] || 0) + 48);
-  const s5 = String.fromCharCode((si[5] || 0) + 48);
-  const sCode = encodeURIComponent(`${s1}${s2}${s3}${s4}${s5}`);
-  const i1 = String.fromCharCode((fi[1] || 0) + 48);
-  const i2 = String.fromCharCode((fi[2] || 0) + 48);
-  const i3 = String.fromCharCode((fi[3] || 0) + 48);
-  const i4 = String.fromCharCode((fi[4] || 0) + 48);
-  const i5 = String.fromCharCode((fi[5] || 0) + 48);
-  const iCode = encodeURIComponent(`${i1}${i2}${i3}${i4}${i5}`);
-  const a1 = String.fromCharCode((artifact[1] || 0) + 48);
-  const a2 = String.fromCharCode((artifact[2] || 0) + 48);
-  const a3 = String.fromCharCode((artifact[3] || 0) + 48);
-  const a4 = String.fromCharCode((artifact[4] || 0) + 48);
-  const a5 = String.fromCharCode((artifact[5] || 0) + 48);
-  const aCode = encodeURIComponent(`${a1}${a2}${a3}${a4}${a5}`);
-
-  const value = `${process.env.NEXT_PUBLIC_URL}${localePath}/top-team/${tCode}-${sCode}-${iCode}-${aCode}`;
+  const encodedEnemies = enemies.map(stringifyEnemy).map(encodeURIComponent);
+  const encodedHeroes = heroes.map(stringifyHero).map(encodeURIComponent);
+  const newString = `${encodedHeroes.join(",")}-${encodedEnemies.join(",")}`;
+  const value = `${process.env.NEXT_PUBLIC_URL}${localePath}/top-team/${newString}`;
 
   return <CardShare label={t("label-share")}>{value}</CardShare>;
 };

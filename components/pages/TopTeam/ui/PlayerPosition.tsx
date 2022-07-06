@@ -1,44 +1,39 @@
-import { useTranslation } from "next-i18next";
 import React, { useState } from "react";
 import Modal from "../../../functionnal/Modal";
-import ChooseHero from "../../../modal/ChooseHero";
-import Character, { DetailType } from "../../../ui/afk/Character";
-import useHero from "../hooks/useHero";
+import SelectHero from "../../../modal/SelectHero";
+import Character from "../../../ui/afk/Character";
 import styles from "./PlayerPosition.module.css";
+
+interface Hero {
+  id: number;
+  ascend: number;
+  si: number;
+  fi: number;
+  engrave: number;
+  artifact: number;
+}
 
 interface Props {
   position: number;
-  hero?: number;
-  si?: number;
-  fi?: number;
-  artifact?: number;
-  onSelect: (type: DetailType, position: number) => (value: number) => void;
+  hero: Hero;
+  onSelect: (position: number) => (value: Hero) => void;
 }
 
-const PlayerPosition: React.FC<Props> = function PlayerPosition({
-  hero,
-  position,
-  onSelect,
-  si,
-  fi,
-  artifact,
-}) {
-  const { t } = useTranslation("common");
+const PlayerPosition: React.FC<Props> = function PlayerPosition({ hero, position, onSelect }) {
   const [showModal, setShowModal] = useState<boolean>(false);
-  const { getHero } = useHero();
-  const { id, name } = getHero(t, hero) ?? { id: 0, name: "" };
 
   return (
     <>
       <div className={`${styles.PlayerPosition} ${styles[`PlayerPosition--${position}`]}`}>
-        {hero ? (
+        {hero.id ? (
           <Character
-            name={name}
-            id={id}
+            id={hero.id ?? 0}
             onClick={() => setShowModal(true)}
-            siLevel={si}
-            fiLevel={fi}
-            artifact={artifact}
+            ascendLevel={hero.ascend}
+            siLevel={hero.si}
+            fiLevel={hero.fi}
+            engraveLevel={hero.engrave}
+            artifact={hero.artifact}
             size="large"
           />
         ) : (
@@ -48,12 +43,7 @@ const PlayerPosition: React.FC<Props> = function PlayerPosition({
         )}
       </div>
       <Modal active={showModal} onClose={() => setShowModal(false)}>
-        <ChooseHero
-          current={[id, si || 0, fi || 0, artifact || 0, 0]}
-          onSelect={(type, heroId) => {
-            onSelect(type, position)(heroId);
-          }}
-        />
+        <SelectHero hero={hero} onSelect={onSelect(position)} />
       </Modal>
     </>
   );
