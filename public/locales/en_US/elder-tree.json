@@ -1,6 +1,7 @@
 {
   "simulate": "Simulate",
   "current-tree": "Current tree",
+  "max-data-reach": "Maximum stat data reach. The values are therefore not exact.",
   "hp": "HP",
   "hp.pr": "HP%",
   "atk": "ATK",
