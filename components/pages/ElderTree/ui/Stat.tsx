@@ -6,6 +6,8 @@ import HeroClass from "../../../../types/HeroClass";
 import ProfileContext from "../../../providers/ProfileContext";
 import styles from "./Stat.module.css";
 
+const MAX_LEVEL = Object.keys(elderTreeJson.ranger).length - 1;
+
 const elderTreeData = elderTreeJson as ElderTreeJson;
 
 interface IProps {
@@ -21,7 +23,7 @@ const Stat: React.FC<IProps> = function Stat({ heroClass, stat, level }) {
 
   const classTreeData = elderTreeData[heroClass];
   const playerTreeLevel = values.elderTree[heroClass] as number;
-  const classTreeLevel = classTreeData[level ?? playerTreeLevel];
+  const classTreeLevel = classTreeData[Math.min(level ?? playerTreeLevel, MAX_LEVEL)];
   const value = classTreeLevel?.[stat] ?? 0;
 
   if (value === 0) {

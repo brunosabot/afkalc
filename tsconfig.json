@@ -23,5 +23,5 @@
     "next-i18next.config.js",
     "server.js"
   ],
-  "exclude": ["node_modules"]
+  "exclude": ["node_modules", "misc/**/*"]
 }

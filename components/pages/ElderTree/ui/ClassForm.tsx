@@ -1,5 +1,8 @@
 import React from "react";
+import elderTreeJson from "../../../../data/elder-tree.json";
 import styles from "./ClassForm.module.css";
+
+const MAX_LEVEL = Object.keys(elderTreeJson.ranger).length - 1;
 
 interface IProps {
   onChange: (value: number) => void;
@@ -16,14 +19,14 @@ const ClassForm: React.FC<IProps> = function ClassForm({ onChange, value, heroCl
         className={styles.Input}
         type="number"
         min="0"
-        max="130"
+        max={MAX_LEVEL}
         onChange={(e) => {
           let newValue = parseInt(e.target.value, 10);
           if (Number.isNaN(newValue)) {
             newValue = 0;
           }
 
-          onChange(Math.max(0, Math.min(130, newValue)));
+          onChange(Math.max(0, Math.min(MAX_LEVEL, newValue)));
         }}
       />
     </div>

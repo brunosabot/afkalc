@@ -13,8 +13,12 @@ import Card from "../../components/ui/card/Card";
 import CardAction from "../../components/ui/card/CardAction";
 import CardActions from "../../components/ui/card/CardActions";
 import CardTitle from "../../components/ui/card/CardTitle";
+import CardWarn from "../../components/ui/card/CardWarn";
+import elderTreeJson from "../../data/elder-tree.json";
 import heroClassJson from "../../data/heroClass.json";
 import HeroClass from "../../types/HeroClass";
+
+const MAX_LEVEL = Object.keys(elderTreeJson.ranger).length - 1;
 
 const heroClassData = heroClassJson as HeroClass[];
 
@@ -77,6 +81,7 @@ const ElderTree: React.FC<IProps> = function ElderTree() {
       {heroClassData.map((heroClass) => (
         <Card key={heroClass}>
           <CardTitle>{t(`common:heroClass.${heroClass}`)}</CardTitle>
+          {values.elderTree[heroClass] > MAX_LEVEL && <CardWarn>{t("max-data-reach")}</CardWarn>}
           <div style={{ display: "flex", flexWrap: "wrap" }}>
             <Stat stat="hp" heroClass={heroClass} />
             <Stat stat="hp.pr" heroClass={heroClass} />
