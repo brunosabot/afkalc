@@ -2,7 +2,7 @@ import { GetStaticPaths } from "next";
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 import Head from "next/head";
 import { useRouter } from "next/router";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import withLayoutPublicColumn from "../../components/layout/withLayoutPublicColumn";
 import useDescription from "../../components/pages/TopTeam/hooks/useDescription";
 import useShareUrl from "../../components/pages/TopTeam/hooks/useShareUrl";
@@ -100,6 +100,11 @@ const TopTeam: React.FC<Props> = function TopTeam() {
   const [ene1, ene2, ene3, ene4, ene5] = theirs.split(",").map(parseEnemy);
 
   const url = useShareUrl([pos1, pos2, pos3, pos4, pos5], [ene1, ene2, ene3, ene4, ene5]);
+
+  useEffect(() => {
+    router.replace(url, undefined, { shallow: true });
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [url]);
 
   const onSelect = (position: number) => (hero: Hero) => {
     const heroes = [pos1, pos2, pos3, pos4, pos5];
