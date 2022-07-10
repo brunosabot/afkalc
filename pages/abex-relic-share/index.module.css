@@ -1,0 +1,55 @@
+.Category {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  justify-content: center;
+  margin-bottom: 16px;
+}
+
+.CategoryCamp {
+  display: grid;
+  flex-wrap: wrap;
+  gap: 16px;
+  grid-template-columns: repeat(3, 62px);
+  justify-content: center;
+  margin-bottom: 16px;
+}
+
+.Bloc {
+  align-items: center;
+  background-color: var(--background-color);
+  border-radius: 8px;
+  display: inline-flex;
+  flex-direction: column;
+  gap: 8px;
+  padding: 8px;
+}
+
+.Image {
+  border-radius: 8px;
+  height: 32px;
+  width: 32px;
+}
+
+.Tile {
+  align-items: center;
+  background-color: var(--help-background-color);
+  border-radius: 20px;
+  display: inline-block;
+  display: flex;
+  font-size: 0.85em;
+  height: 32px;
+  justify-content: center;
+  padding: 0;
+  text-transform: uppercase;
+  width: 32px;
+}
+
+.Field {
+  border: 1px solid var(--card-border-color);
+  border-radius: 4px;
+  box-sizing: border-box;
+  height: 40px;
+  text-align: center;
+  width: 46px;
+}
