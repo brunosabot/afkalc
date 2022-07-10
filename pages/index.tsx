@@ -14,6 +14,7 @@ import {
   mdiMap,
   mdiPlaylistCheck,
   mdiScript,
+  mdiShare,
   mdiTree,
   mdiUpdate,
   mdiViewList,
@@ -96,6 +97,9 @@ const Home: React.FC<IProps> = function Home() {
           </MenuItem>
           <MenuItem to="/abex-roster" icon={mdiAccountMultiplePlusOutline}>
             {t("common:menu.abex-roster")}
+          </MenuItem>
+          <MenuItem to="/abex-relic-share" icon={mdiShare}>
+            {t("common:menu.abex-relic-share")}
           </MenuItem>
         </MenuBox>
       </Card>

@@ -68,6 +68,7 @@
     "donate": "Donate",
     "short-loot": "Loot",
     "elder-tree": "Elder Tree",
+    "abex-relic-share": "Share Relics",
     "short-hero-list": "Heroes",
     "short-top-team": "Teams",
     "short-item-cost": "Item Cost",
@@ -312,7 +313,7 @@
     "sonia": "Sonja",
     "orcmaster": "Anasta",
     "karen": "Kalene",
-    "slk" : "Brutus"
+    "slk": "Brutus"
   },
   "enemyName": {
     "goblin": "Wrizz",
