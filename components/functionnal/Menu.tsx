@@ -28,7 +28,7 @@ const Menu: React.FC<IProps> = function Menu() {
       <MenuToolbarLink to="/guild" image="/loot/guild_coin.jpg">
         {t("menu.short-guild")}
       </MenuToolbarLink>
-      <MenuToolbarLink to="/top-team/,,,,-,,,," image="/enemies/Goblin.jpg">
+      <MenuToolbarLink to="/top-team/0,0,0,0,0,0-0,0,0,0,0,0" image="/enemies/Goblin.jpg">
         {t("menu.short-top-team")}
       </MenuToolbarLink>
     </MenuToolbar>
