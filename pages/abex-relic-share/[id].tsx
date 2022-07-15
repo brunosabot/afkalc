@@ -1,5 +1,4 @@
 import { mdiShare } from "@mdi/js";
-import { GetStaticPaths } from "next";
 import { useTranslation } from "next-i18next";
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 import { useRouter } from "next/router";
@@ -16,16 +15,16 @@ import classes from "./index.module.css";
 
 const MAX_LEVEL = Object.keys(elderTreeJson.ranger).length - 1;
 
-export const getStaticProps = async ({ locale }: { locale: string }) => ({
+export const getServerSideProps = async ({ locale }: { locale: string }) => ({
   props: {
     ...(await serverSideTranslations(locale, ["common", "abex-relic-share"])),
   },
 });
 
-export const getStaticPaths: GetStaticPaths<{ slug: string }> = async () => ({
-  paths: [],
-  fallback: "blocking",
-});
+// export const getStaticPaths: GetStaticPaths<{ slug: string }> = async () => ({
+//   paths: [],
+//   fallback: "blocking",
+// });
 
 interface IProps {
   [key: string]: never;
@@ -67,7 +66,9 @@ const AbexRelicShare: React.FC<IProps> = function AbexRelicShare() {
 
     setValid(areElderTreeValid && areRelicsValid && areTilesValid);
 
-    router.replace(getUrl(elderTree, relics, tiles));
+    if (router.asPath !== getUrl(elderTree, relics, tiles)) {
+      router.replace(getUrl(elderTree, relics, tiles));
+    }
   }, [elderTree, relics, router, tiles]);
 
   return (

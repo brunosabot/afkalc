@@ -25,7 +25,7 @@ const AbexRelicShare: React.FC<IProps> = function AbexRelicShare() {
     .join(",")}`;
 
   if (process.browser) {
-    router.push(`/abex-relic-share/${url}`);
+    router.replace(`/abex-relic-share/${url}`);
   }
 
   return <div />;
