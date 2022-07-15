@@ -1,8 +1,8 @@
 enum HeroClass {
-  mage = "mage",
-  tank = "tank",
   warrior = "warrior",
+  tank = "tank",
   ranger = "ranger",
+  mage = "mage",
   support = "support",
 }
 
