@@ -1,0 +1,19 @@
+{
+  "abex-relic-sell-desc": "Calculator for relic to sell",
+  "confirm-reset-box": "This will reset all your existing data, do you really want to continue?",
+  "reset-box": "Reset The Box",
+  "help": "Enter the relics you have unlocked, enter your goals, enter the relics from your inventory. A chip will appear to indicate the ones you don't need anymore",
+  "label-goal": "Goal",
+  "label-current": "Current",
+  "label-inventory": "Inventory",
+  "label-calculator": "Missing costs",
+  "label-warn-testing": "This figures should be used with care. It hasn't been tested enough",
+  "label-cost-unknown": "Cost for the unowned relics:",
+  "label-cost-total": "Total upgrade cost:",
+  "elevation-level-0": "None",
+  "elevation-level-1": "Common",
+  "elevation-level-2": "Rare",
+  "elevation-level-3": "Elite",
+  "elevation-level-4": "Legendary",
+  "elevation-level-5": "Mythic"
+}

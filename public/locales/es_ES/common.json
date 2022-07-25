@@ -41,7 +41,9 @@
   "spendings": "Costos",
   "sponsors": "Patrocinadores",
   "add": "Añadir",
+  "equipment": "Equipamiento",
   "has-dimensional-key": "Tiene una llave dimensional",
+  "use-my-hero-stats": "Usar stats de mi héroe",
   "menu": {
     "category-box": "Principal",
     "category-abex": "Expedición Abismal",
@@ -66,6 +68,7 @@
     "donate": "Efectúe una donación",
     "short-loot": "Recompensas",
     "elder-tree": "Árbol Anciano",
+    "abex-relic-share": "Compartir Reliquias",
     "short-hero-list": "Héroes",
     "short-top-team": "Equipos",
     "short-item-cost": "Comparación",
@@ -309,6 +312,31 @@
     "hidan": "Vyloris",
     "sonia": "Sonja",
     "orcmaster": "Anasta",
-    "karen": "Kalene"
+    "karen": "Kalene",
+    "slk": "Brutus"
+  },
+  "enemyName": {
+    "goblin": "Wrizz",
+    "soulcalibur": "Soren",
+    "bossym": "Bestia Ardiente",
+    "darkyeanling": "Entidad demoníaca",
+    "wbossoaksage": "El Transtornado",
+    "bossdq": "Shemira de hielo",
+    "bossdragonknight": "Kane",
+    "bossmystic": "Mago grotesco",
+    "bosscthulhu": "El Devorador",
+    "bossbane": "Ezizh",
+    "bossba": "The Balancer",
+    "bossworm": "Marsha",
+    "bosshgmn": "Adrax",
+    "bosshgm": "Adrax",
+    "bosspreys": "Oleus",
+    "bosspreyb": "Oleus",
+    "bossdragons": "Dalax",
+    "bossdragonb": "Dalax",
+    "goblinfeast": "Wrizz",
+    "bossrog": "Acosador continuo",
+    "bosslionact": "Destructora de dunas",
+    "bossdm": "Azmonath"
   }
 }

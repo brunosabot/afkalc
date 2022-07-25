@@ -1,6 +1,7 @@
 {
   "simulate": "Simular",
   "current-tree": "Árbol actual",
+  "max-data-reach": "Alcanzado el máximo en data de stats. Por lo tanto, los valores no son exactos.",
   "hp": "HP",
   "hp.pr": "HP%",
   "atk": "ATK",

@@ -1,0 +1,19 @@
+{
+  "abex-relic-sell-desc": "Rechner für Relikte zum Verkauf",
+  "confirm-reset-box": "Dies wird alle deine vorhandenen Daten zurücksetzen. Möchtest du wirklich fortfahren?",
+  "reset-box": "Box zurücksetzen",
+  "help": "Gib die Relikte ein, die du freigeschalten hast, gib deine Ziele ein und gib die Relikte aus deinem Inventar ein. Die Relikte, die nicht mehr benötigt werden, werden hervorgehoben.",
+  "label-goal": "Ziel",
+  "label-current": "Aktuell",
+  "label-inventory": "Inventar",
+  "label-calculator": "Fehlende Kosten",
+  "label-warn-testing": "Diese Werte sollten auf eigene Gefahr genutzt werden. Sie wurden noch nicht genug getestet",
+  "label-cost-unknown": "Kosten für nicht besessene Relikte:",
+  "label-cost-total": "Gesamte Upgrade Kosten:",
+  "elevation-level-0": "Nichts",
+  "elevation-level-1": "Gewöhnlich",
+  "elevation-level-2": "Selten",
+  "elevation-level-3": "Elite",
+  "elevation-level-4": "Legendär",
+  "elevation-level-5": "Mystisch"
+}

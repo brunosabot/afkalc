@@ -41,7 +41,9 @@
   "spendings": "Расходы",
   "sponsors": "Спонсоры",
   "add": "Добавить",
+  "equipment": "Снаряжение",
   "has-dimensional-key": "Имеет ключ от других измерений",
+  "use-my-hero-stats": "Использовать данные моего героя",
   "menu": {
     "category-box": "Главное",
     "category-abex": "Экспедиция в Бездну",
@@ -66,6 +68,7 @@
     "donate": "Пожертвование",
     "short-loot": "Лут",
     "elder-tree": "Древнее дерево",
+    "abex-relic-share": "Поделиться реликвиями",
     "short-hero-list": "Герои",
     "short-top-team": "Команды",
     "short-item-cost": "Стоимость предмета",
@@ -309,6 +312,31 @@
     "hidan": "Вилорис",
     "sonia": "Соня",
     "orcmaster": "Анаста",
-    "karen": "Калена"
+    "karen": "Калена",
+    "slk": "Брутус"
+  },
+  "enemyName": {
+    "goblin": "Врицц",
+    "soulcalibur": "Сорен",
+    "bossym": "Горящий Брут",
+    "darkyeanling": "Демоническая Немора",
+    "wbossoaksage": "Безумный Арден",
+    "bossdq": "Ледяная Шемира",
+    "bossdragonknight": "Кейн",
+    "bossmystic": "Гротескный маг",
+    "bosscthulhu": "Пожиратель",
+    "bossbane": "Эзиж",
+    "bossba": "Уравнитель",
+    "bossworm": "Марша",
+    "bosshgmn": "Адракс",
+    "bosshgm": "Адракс",
+    "bosspreys": "Олеус",
+    "bosspreyb": "Олеус",
+    "bossdragons": "Далакс",
+    "bossdragonb": "Далакс",
+    "goblinfeast": "Врицц",
+    "bossrog": "Преследователь Континуума",
+    "bosslionact": "Крушитель барханов",
+    "bossdm": "Азмонат"
   }
 }

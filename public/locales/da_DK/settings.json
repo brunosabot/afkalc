@@ -1,0 +1,13 @@
+{
+  "confirm-remove": "All your data will be permanently erased. Do you really want to continue?",
+  "label-remove-account": "Remove my account",
+  "label-no-need-rgpd": "Since you are not logged in, the application does not store any of your personnal data",
+  "label-rgpd": "By logging in, you provide your email to AFKalc. It is never used but to allow your logging in. The data stored by the application are everything linked to : the abyssal expedition, the hero list, your campaign and vip progression, your priority lists and your favorites. You can delete your account anytime on the page.",
+  "label-download-data": "Download my data",
+  "user-data": "Privacy",
+  "player-name": "Player name",
+  "title-change-password": "Change my password",
+  "label-old-password": "Old password",
+  "label-new-password": "New password",
+  "title-link-account": "Link my account"
+}

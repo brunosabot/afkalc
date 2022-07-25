@@ -1,0 +1,13 @@
+{
+  "help": "This tool is aimed to give you an estimation of how many diamants you will need to get enough hero copies to get an ascend hero",
+  "current-count-label": "Enter your desired hero current count:",
+  "current-elite": "Elite heroes you have",
+  "current-elite-p": "Elite+ heroes you have",
+  "current-legendary": "Legendary heroes you have",
+  "current-legendary-p": "Legendary+ heroes you have",
+  "current-mythic": "Mythic heroes you have",
+  "current-mythic-p": "Mythic+ heroes you have",
+  "required-count-label": "To have enough copy for an ascend hero, you need:",
+  "required-nothing": "Nothing, you're good to go!",
+  "required-count": "≈ {{diams}}"
+}
