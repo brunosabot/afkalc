@@ -1,0 +1,13 @@
+{
+  "confirm-remove": "Alle deine Daten werden unwiderruflich gelöscht. Möchtest du wirklich fortfahren?",
+  "label-remove-account": "Mein Konto löschen",
+  "label-no-need-rgpd": "Da du nicht eingeloggt bist, speichert die Anwendung keine deiner persöhnlichen Daten",
+  "label-rgpd": "Wenn sie sich anmelden, geben sie ihre E-Mail an AFKalc weiter. Sie wird nur zur Anmeldung verwendet. Die Daten, welche von der Anwendung gespeichert werden, beziehen sich auf folgende Bereiche: die Abgrund-Expedition, Heldenliste, dein Kampagnen- und VIP Fortschritt, deine Prioritätenliste und deine Favoriten. Du kannst dein Konto jederzeit löschen.",
+  "label-download-data": "Meine Daten herunterladen",
+  "user-data": "Datenschutz",
+  "player-name": "Spielername",
+  "title-change-password": "Mein Passwort ändern",
+  "label-old-password": "Altes Passwort",
+  "label-new-password": "Neues Passwort",
+  "title-link-account": "Mein Konto verknüpfen"
+}

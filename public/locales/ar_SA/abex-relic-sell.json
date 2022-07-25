@@ -1,0 +1,19 @@
+{
+  "abex-relic-sell-desc": "Calculator for relic to sell",
+  "confirm-reset-box": "سيؤدي هذا إلى إعادة تعيين جميع بياناتك الموجودة، هل تريد الاستمرار؟",
+  "reset-box": "إعادة تعيين الصندوق",
+  "help": "Enter the relics you have unlocked, enter your goals, enter the relics from your inventory. A chip will appear to indicate the ones you don't need anymore",
+  "label-goal": "الهدف",
+  "label-current": "الحالي",
+  "label-inventory": "المخزون",
+  "label-calculator": "Missing costs",
+  "label-warn-testing": "This figures should be used with care. It hasn't been tested enough",
+  "label-cost-unknown": "Cost for the unowned relics:",
+  "label-cost-total": "Total upgrade cost:",
+  "elevation-level-0": "لا شَيْء",
+  "elevation-level-1": "شائع",
+  "elevation-level-2": "نادر",
+  "elevation-level-3": "نخبة",
+  "elevation-level-4": "اسطوري",
+  "elevation-level-5": "خرافي"
+}

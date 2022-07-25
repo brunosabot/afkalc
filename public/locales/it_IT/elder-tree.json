@@ -1,6 +1,7 @@
 {
   "simulate": "Simula",
   "current-tree": "Albero corrente",
+  "max-data-reach": "Dati statistiche massimo raggiunto, I valori non sono esatti.",
   "hp": "HP",
   "hp.pr": "HP%",
   "atk": "ATK",

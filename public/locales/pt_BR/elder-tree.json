@@ -1,6 +1,7 @@
 {
   "simulate": "Simular",
   "current-tree": "Árvore atual",
+  "max-data-reach": "Número máximo de atributos alcançados. Portanto, os valores não são exatos.",
   "hp": "HP",
   "hp.pr": "HP%",
   "atk": "ATK",

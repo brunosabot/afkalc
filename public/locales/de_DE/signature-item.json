@@ -1,0 +1,11 @@
+{
+  "help": "Diese Funktion soll dabei helfen, die Anzahl der Embleme zu berechnen, die benötigt werden, um die Zielstufe zu erreichen",
+  "form-title": "Zuerst, gib deine Charakterinformationen ein",
+  "item-primordial-emblem": "Ur-Emblem",
+  "item-amplifying-emblem": "Verstärkendes Emblem",
+  "item-faction-emblem": "Fraktionsemblem",
+  "item-celest-Hypogean-emblem": "Himmelswesen/Unterweltler Emblem",
+  "label-si": "Charakter-Item +{{si}}",
+  "label-current-si": "Aktuelle Charakter-Item Stufe",
+  "label-target-si": "Gewünschte Charakter-Item Stufe"
+}
