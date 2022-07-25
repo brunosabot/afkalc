@@ -1017,4 +1017,14 @@
     "slug": "slk",
     "faction": "maulers"
   }
+  ,
+  {
+    "id": 115,
+    "type": "strength",
+    "class": "support",
+    "role": "buffer",
+    "image": "/heroes/JOA.jpg",
+    "slug": "joa",
+    "faction": "dimensionals"
+  }
 ]
