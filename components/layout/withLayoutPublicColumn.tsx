@@ -3,7 +3,7 @@ import Menu from "../functionnal/Menu";
 import AnonymousBanner from "../ui/AnonymousBanner";
 
 const withLayoutPublicColumn = <P extends object>(Component: React.ComponentType<P>) =>
-  function T(...pageProps: any) {
+  function T(pageProps: any) {
     return (
       <>
         <Menu />
