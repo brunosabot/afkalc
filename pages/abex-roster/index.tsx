@@ -57,6 +57,9 @@ const AbexRoster: React.FC<IProps> = function AbexRoster() {
         <CardAction onClick={() => profileActions.setAbexBox([...new Array(25)].map(() => 0))}>
           {t("label-clear-characters")}
         </CardAction>
+        <CardAction onClick={() => profileActions.setAbexBox([...new Array(30)].map(() => 0))}>
+          {t("label-clear-characters-star")}
+        </CardAction>
       </CardActions>
     </Card>
   );
