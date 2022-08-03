@@ -5,7 +5,7 @@ import AnonymousBanner from "../ui/AnonymousBanner";
 import LoginBox from "../ui/LoginBox";
 
 const withLayoutPrivate = <P extends object>(Component: React.ComponentType<P>) =>
-  function T(...pageProps: any) {
+  function T(pageProps: any) {
     const { values } = useContext(FirebaseContext);
 
     return (

@@ -93,7 +93,7 @@ const GuildId: React.FC<IProps> = function GuildId() {
               icon={mdiAccountPlus}
               onClick={() => {
                 actions.joinGuild(id as string);
-                router.push("/Guild");
+                router.push("/guild");
               }}
             >
               {t("label-join-guild")}
