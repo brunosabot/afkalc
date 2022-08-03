@@ -5,6 +5,7 @@ import artifacts from "../../data/artifacts.json";
 import heroes from "../../data/heroes.json";
 import { getAscend } from "../../lib/hero";
 import ICharacter from "../../types/ICharacter";
+import { useHeroById } from "../pages/TiersList/hooks/useHero";
 import ProfileContext from "../providers/ProfileContext";
 import Artifact from "../ui/afk/Artifact";
 import Character from "../ui/afk/Character";
@@ -53,6 +54,7 @@ interface Props {
 const SelectHero: React.FC<Props> = function SelectHero({ hero, onSelect }) {
   const { t } = useTranslation("common");
   const { values } = useContext(ProfileContext);
+  const heroData = useHeroById(hero.id);
 
   const onApplyMine = useCallback(() => {
     onSelect({
@@ -101,6 +103,7 @@ const SelectHero: React.FC<Props> = function SelectHero({ hero, onSelect }) {
 
       <div className={classes.Form}>
         <AscendForm
+          isAwakened={heroData?.isAwakened ?? false}
           ascend={hero.ascend}
           onChange={(ascendValue) => {
             onSelect({ ...hero, ascend: getAscend(ascendValue, hero.si, hero.fi, hero.engrave) });

@@ -6,14 +6,19 @@ import SelectField from "../../../ui/SelectField";
 interface Props {
   ascend: number;
   onChange: (value: number) => void;
+  isAwakened: boolean;
 }
 
-const AscendForm: React.FC<Props> = function AscendForm({ ascend, onChange }) {
+const AscendForm: React.FC<Props> = function AscendForm({ isAwakened, ascend, onChange }) {
   const { t } = useTranslation("common");
+
+  const ascendLevelsFiltered = ascendLevels.filter(
+    (level) => isAwakened === false || level.key >= 3 || level.key === 0
+  );
 
   return (
     <SelectField
-      values={ascendLevels.map((level) => ({
+      values={ascendLevelsFiltered.map((level) => ({
         key: `${level.key}`,
         label: t(`ascension-${level.name}`),
       }))}

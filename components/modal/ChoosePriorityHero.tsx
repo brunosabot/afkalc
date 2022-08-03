@@ -2,6 +2,7 @@ import React from "react";
 import heroes from "../../data/heroes.json";
 import { getAscend } from "../../lib/hero";
 import ICharacter from "../../types/ICharacter";
+import { useHeroById } from "../pages/TiersList/hooks/useHero";
 import { IFirebasePriorityListHero } from "../providers/types/IFirebasePriorityList";
 import Character from "../ui/afk/Character";
 import CharacterGrid from "../ui/CharacterGrid";
@@ -49,10 +50,13 @@ const ChoosePriorityHero: React.FC<Props> = function ChoosePriorityHero({
   engrave = 0,
   onSelect,
 }) {
+  const heroData = useHeroById(hero);
+
   return (
     <>
       <div className={styles.InputWrapper}>
         <AscendForm
+          isAwakened={heroData?.isAwakened ?? false}
           ascend={ascend}
           onChange={(value) =>
             onSelect({
