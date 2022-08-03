@@ -12,4 +12,5 @@ export default interface ICharacter {
   image: string;
   faction: Faction;
   slug: string;
+  isAwakened: boolean;
 }

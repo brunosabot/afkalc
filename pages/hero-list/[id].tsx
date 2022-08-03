@@ -95,6 +95,7 @@ const HeroList: React.FC<IProps> = function HeroList() {
         partheadfaction: 0,
         partweaponfaction: 0,
         type: Type.agility,
+        isAwakened: false,
       },
     [characters, editPopupState]
   );

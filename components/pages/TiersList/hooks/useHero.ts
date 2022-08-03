@@ -1,3 +1,4 @@
+import { useTranslation } from "next-i18next";
 import heroes from "../../../../data/heroes.json";
 import ICharacter from "../../../../types/ICharacter";
 
@@ -15,4 +16,9 @@ function getHero(t: any, hero?: number) {
 
 export default function useHero() {
   return { getHero };
+}
+
+export function useHeroById(id: number) {
+  const { t } = useTranslation();
+  return getHero(t, id);
 }

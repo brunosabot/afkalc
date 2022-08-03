@@ -6,7 +6,8 @@
     "role": "burst",
     "image": "/heroes/Uhlan.jpg",
     "slug": "uhlan",
-    "faction": "lightbearers"
+    "faction": "lightbearers",
+    "isAwakened": false
   },
   {
     "id": 2,
@@ -15,7 +16,8 @@
     "role": "aoe",
     "image": "/heroes/Priest.jpg",
     "slug": "priest",
-    "faction": "lightbearers"
+    "faction": "lightbearers",
+    "isAwakened": false
   },
   {
     "id": 3,
@@ -24,7 +26,8 @@
     "role": "buffer",
     "image": "/heroes/nBH.jpg",
     "slug": "nbh",
-    "faction": "lightbearers"
+    "faction": "lightbearers",
+    "isAwakened": false
   },
   {
     "id": 4,
@@ -33,7 +36,8 @@
     "role": "aoe",
     "image": "/heroes/Mouse.jpg",
     "slug": "mouse",
-    "faction": "maulers"
+    "faction": "maulers",
+    "isAwakened": false
   },
   {
     "id": 5,
@@ -42,7 +46,8 @@
     "role": "continuous",
     "image": "/heroes/Troll.jpg",
     "slug": "troll",
-    "faction": "maulers"
+    "faction": "maulers",
+    "isAwakened": false
   },
   {
     "id": 6,
@@ -51,7 +56,8 @@
     "role": "tank",
     "image": "/heroes/LionJugg.jpg",
     "slug": "lionjugg",
-    "faction": "maulers"
+    "faction": "maulers",
+    "isAwakened": false
   },
   {
     "id": 7,
@@ -60,7 +66,8 @@
     "role": "regen",
     "image": "/heroes/Yeanling.jpg",
     "slug": "yeanling",
-    "faction": "wilders"
+    "faction": "wilders",
+    "isAwakened": false
   },
   {
     "id": 8,
@@ -69,7 +76,8 @@
     "role": "assassin",
     "image": "/heroes/CatAssassin.jpg",
     "slug": "catassassin",
-    "faction": "wilders"
+    "faction": "wilders",
+    "isAwakened": false
   },
   {
     "id": 9,
@@ -78,7 +86,8 @@
     "role": "buffer",
     "image": "/heroes/POM.jpg",
     "slug": "pom",
-    "faction": "wilders"
+    "faction": "wilders",
+    "isAwakened": false
   },
   {
     "id": 10,
@@ -87,7 +96,8 @@
     "role": "continuous",
     "image": "/heroes/Wizard.jpg",
     "slug": "wizard",
-    "faction": "graveborns"
+    "faction": "graveborns",
+    "isAwakened": false
   },
   {
     "id": 11,
@@ -96,7 +106,8 @@
     "role": "tank",
     "image": "/heroes/DK.jpg",
     "slug": "dk",
-    "faction": "graveborns"
+    "faction": "graveborns",
+    "isAwakened": false
   },
   {
     "id": 12,
@@ -105,7 +116,8 @@
     "role": "aoe",
     "image": "/heroes/nDP.jpg",
     "slug": "ndp",
-    "faction": "graveborns"
+    "faction": "graveborns",
+    "isAwakened": false
   },
   {
     "id": 13,
@@ -114,7 +126,8 @@
     "role": "regen",
     "image": "/heroes/WD.jpg",
     "slug": "wd",
-    "faction": "maulers"
+    "faction": "maulers",
+    "isAwakened": false
   },
   {
     "id": 14,
@@ -123,7 +136,8 @@
     "role": "continuous",
     "image": "/heroes/BoneArcher.jpg",
     "slug": "bonearcher",
-    "faction": "graveborns"
+    "faction": "graveborns",
+    "isAwakened": false
   },
   {
     "id": 15,
@@ -132,7 +146,8 @@
     "role": "continuous",
     "image": "/heroes/Bear.jpg",
     "slug": "bear",
-    "faction": "maulers"
+    "faction": "maulers",
+    "isAwakened": false
   },
   {
     "id": 16,
@@ -141,7 +156,8 @@
     "role": "tank",
     "image": "/heroes/TD.jpg",
     "slug": "td",
-    "faction": "wilders"
+    "faction": "wilders",
+    "isAwakened": false
   },
   {
     "id": 17,
@@ -150,7 +166,8 @@
     "role": "regen",
     "image": "/heroes/OK.jpg",
     "slug": "ok",
-    "faction": "lightbearers"
+    "faction": "lightbearers",
+    "isAwakened": false
   },
   {
     "id": 18,
@@ -159,7 +176,8 @@
     "role": "assassin",
     "image": "/heroes/SwordMaster.jpg",
     "slug": "swordmaster",
-    "faction": "lightbearers"
+    "faction": "lightbearers",
+    "isAwakened": false
   },
   {
     "id": 19,
@@ -168,7 +186,8 @@
     "role": "control",
     "image": "/heroes/Puck.jpg",
     "slug": "puck",
-    "faction": "wilders"
+    "faction": "wilders",
+    "isAwakened": false
   },
   {
     "id": 20,
@@ -177,7 +196,8 @@
     "role": "tank",
     "image": "/heroes/SNK.jpg",
     "slug": "snk",
-    "faction": "graveborns"
+    "faction": "graveborns",
+    "isAwakened": false
   },
   {
     "id": 21,
@@ -186,7 +206,8 @@
     "role": "assassin",
     "image": "/heroes/GodA.jpg",
     "slug": "goda",
-    "faction": "celestials"
+    "faction": "celestials",
+    "isAwakened": false
   },
   {
     "id": 22,
@@ -195,7 +216,8 @@
     "role": "control",
     "image": "/heroes/DevilHunter.jpg",
     "slug": "devilhunter",
-    "faction": "lightbearers"
+    "faction": "lightbearers",
+    "isAwakened": false
   },
   {
     "id": 23,
@@ -204,7 +226,8 @@
     "role": "tank",
     "image": "/heroes/Mag.jpg",
     "slug": "mag",
-    "faction": "maulers"
+    "faction": "maulers",
+    "isAwakened": false
   },
   {
     "id": 24,
@@ -213,7 +236,8 @@
     "role": "tank",
     "image": "/heroes/TH.jpg",
     "slug": "th",
-    "faction": "wilders"
+    "faction": "wilders",
+    "isAwakened": false
   },
   {
     "id": 25,
@@ -222,7 +246,8 @@
     "role": "debuffer",
     "image": "/heroes/Bane.jpg",
     "slug": "bane",
-    "faction": "hypogeans"
+    "faction": "hypogeans",
+    "isAwakened": false
   },
   {
     "id": 26,
@@ -231,7 +256,8 @@
     "role": "aoe",
     "image": "/heroes/NOD.jpg",
     "slug": "nod",
-    "faction": "maulers"
+    "faction": "maulers",
+    "isAwakened": false
   },
   {
     "id": 27,
@@ -240,7 +266,8 @@
     "role": "aoe",
     "image": "/heroes/ElfSaber.jpg",
     "slug": "elfsaber",
-    "faction": "wilders"
+    "faction": "wilders",
+    "isAwakened": false
   },
   {
     "id": 28,
@@ -249,7 +276,8 @@
     "role": "assassin",
     "image": "/heroes/Pudge.jpg",
     "slug": "pudge",
-    "faction": "graveborns"
+    "faction": "graveborns",
+    "isAwakened": false
   },
   {
     "id": 29,
@@ -258,7 +286,8 @@
     "role": "continuous",
     "image": "/heroes/GhostSaber.jpg",
     "slug": "ghostsaber",
-    "faction": "graveborns"
+    "faction": "graveborns",
+    "isAwakened": false
   },
   {
     "id": 30,
@@ -267,7 +296,8 @@
     "role": "tank",
     "image": "/heroes/GK.jpg",
     "slug": "gk",
-    "faction": "lightbearers"
+    "faction": "lightbearers",
+    "isAwakened": false
   },
   {
     "id": 31,
@@ -276,7 +306,8 @@
     "role": "assassin",
     "image": "/heroes/Revenger.jpg",
     "slug": "revenger",
-    "faction": "graveborns"
+    "faction": "graveborns",
+    "isAwakened": false
   },
   {
     "id": 32,
@@ -285,7 +316,8 @@
     "role": "control",
     "image": "/heroes/Lust.jpg",
     "slug": "lust",
-    "faction": "hypogeans"
+    "faction": "hypogeans",
+    "isAwakened": false
   },
   {
     "id": 33,
@@ -294,7 +326,8 @@
     "role": "tank",
     "image": "/heroes/Turtle.jpg",
     "slug": "turtle",
-    "faction": "wilders"
+    "faction": "wilders",
+    "isAwakened": false
   },
   {
     "id": 34,
@@ -303,7 +336,8 @@
     "role": "buffer",
     "image": "/heroes/Merchant.jpg",
     "slug": "merchant",
-    "faction": "lightbearers"
+    "faction": "lightbearers",
+    "isAwakened": false
   },
   {
     "id": 35,
@@ -312,7 +346,8 @@
     "role": "buffer",
     "image": "/heroes/TwinsB.jpg",
     "slug": "twinsb",
-    "faction": "celestials"
+    "faction": "celestials",
+    "isAwakened": false
   },
   {
     "id": 36,
@@ -321,7 +356,8 @@
     "role": "buffer",
     "image": "/heroes/Maid.jpg",
     "slug": "maid",
-    "faction": "lightbearers"
+    "faction": "lightbearers",
+    "isAwakened": false
   },
   {
     "id": 38,
@@ -330,7 +366,8 @@
     "role": "tank",
     "image": "/heroes/Valkyrie.jpg",
     "slug": "valkyrie",
-    "faction": "maulers"
+    "faction": "maulers",
+    "isAwakened": false
   },
   {
     "id": 39,
@@ -339,7 +376,8 @@
     "role": "burst",
     "image": "/heroes/FoxMagician.jpg",
     "slug": "foxmagician",
-    "faction": "maulers"
+    "faction": "maulers",
+    "isAwakened": false
   },
   {
     "id": 40,
@@ -348,7 +386,8 @@
     "role": "assassin",
     "image": "/heroes/DT.jpg",
     "slug": "dt",
-    "faction": "hypogeans"
+    "faction": "hypogeans",
+    "isAwakened": false
   },
   {
     "id": 41,
@@ -357,7 +396,8 @@
     "role": "continuous",
     "image": "/heroes/Longbow.jpg",
     "slug": "longbow",
-    "faction": "lightbearers"
+    "faction": "lightbearers",
+    "isAwakened": false
   },
   {
     "id": 42,
@@ -366,7 +406,8 @@
     "role": "tank",
     "image": "/heroes/TimeG.jpg",
     "slug": "timeg",
-    "faction": "celestials"
+    "faction": "celestials",
+    "isAwakened": false
   },
   {
     "id": 43,
@@ -375,7 +416,8 @@
     "role": "aoe",
     "image": "/heroes/BunnyMaster.jpg",
     "slug": "bunnymaster",
-    "faction": "wilders"
+    "faction": "wilders",
+    "isAwakened": false
   },
   {
     "id": 44,
@@ -384,7 +426,8 @@
     "role": "tank",
     "image": "/heroes/Wino.jpg",
     "slug": "wino",
-    "faction": "lightbearers"
+    "faction": "lightbearers",
+    "isAwakened": false
   },
   {
     "id": 45,
@@ -393,7 +436,8 @@
     "role": "continuous",
     "image": "/heroes/Wolf.jpg",
     "slug": "wolf",
-    "faction": "maulers"
+    "faction": "maulers",
+    "isAwakened": false
   },
   {
     "id": 46,
@@ -402,7 +446,8 @@
     "role": "tank",
     "image": "/heroes/SciMonster.jpg",
     "slug": "scimonster",
-    "faction": "graveborns"
+    "faction": "graveborns",
+    "isAwakened": false
   },
   {
     "id": 47,
@@ -411,7 +456,8 @@
     "role": "continuous",
     "image": "/heroes/Phoenix.jpg",
     "slug": "phoenix",
-    "faction": "celestials"
+    "faction": "celestials",
+    "isAwakened": false
   },
   {
     "id": 48,
@@ -420,7 +466,8 @@
     "role": "tank",
     "image": "/heroes/Arthur.jpg",
     "slug": "arthur",
-    "faction": "dimensionals"
+    "faction": "dimensionals",
+    "isAwakened": false
   },
   {
     "id": 49,
@@ -429,7 +476,8 @@
     "role": "control",
     "image": "/heroes/IceD.jpg",
     "slug": "iced",
-    "faction": "hypogeans"
+    "faction": "hypogeans",
+    "isAwakened": false
   },
   {
     "id": 50,
@@ -438,7 +486,8 @@
     "role": "continuous",
     "image": "/heroes/MK.jpg",
     "slug": "mk",
-    "faction": "celestials"
+    "faction": "celestials",
+    "isAwakened": false
   },
   {
     "id": 51,
@@ -447,7 +496,8 @@
     "role": "aoe",
     "image": "/heroes/Wildkin.jpg",
     "slug": "wildkin",
-    "faction": "maulers"
+    "faction": "maulers",
+    "isAwakened": false
   },
   {
     "id": 52,
@@ -456,7 +506,8 @@
     "role": "control",
     "image": "/heroes/NT.jpg",
     "slug": "nt",
-    "faction": "wilders"
+    "faction": "wilders",
+    "isAwakened": false
   },
   {
     "id": 53,
@@ -465,7 +516,8 @@
     "role": "assassin",
     "image": "/heroes/NunAssassin.jpg",
     "slug": "nunassassin",
-    "faction": "lightbearers"
+    "faction": "lightbearers",
+    "isAwakened": false
   },
   {
     "id": 54,
@@ -474,7 +526,8 @@
     "role": "tank",
     "image": "/heroes/Fat.jpg",
     "slug": "fat",
-    "faction": "hypogeans"
+    "faction": "hypogeans",
+    "isAwakened": false
   },
   {
     "id": 55,
@@ -483,7 +536,8 @@
     "role": "aoe",
     "image": "/heroes/Mystic.jpg",
     "slug": "mystic",
-    "faction": "graveborns"
+    "faction": "graveborns",
+    "isAwakened": false
   },
   {
     "id": 56,
@@ -492,7 +546,8 @@
     "role": "assassin",
     "image": "/heroes/HouseKeeper.jpg",
     "slug": "housekeeper",
-    "faction": "lightbearers"
+    "faction": "lightbearers",
+    "isAwakened": false
   },
   {
     "id": 57,
@@ -501,7 +556,8 @@
     "role": "continuous",
     "image": "/heroes/UKYO.jpg",
     "slug": "ukyo",
-    "faction": "dimensionals"
+    "faction": "dimensionals",
+    "isAwakened": false
   },
   {
     "id": 58,
@@ -510,7 +566,8 @@
     "role": "continuous",
     "image": "/heroes/Lizard.jpg",
     "slug": "lizard",
-    "faction": "wilders"
+    "faction": "wilders",
+    "isAwakened": false
   },
   {
     "id": 59,
@@ -519,7 +576,8 @@
     "role": "tank",
     "image": "/heroes/Bones.jpg",
     "slug": "bones",
-    "faction": "graveborns"
+    "faction": "graveborns",
+    "isAwakened": false
   },
   {
     "id": 60,
@@ -528,7 +586,8 @@
     "role": "control",
     "image": "/heroes/OrcLeader.jpg",
     "slug": "orcleader",
-    "faction": "maulers"
+    "faction": "maulers",
+    "isAwakened": false
   },
   {
     "id": 61,
@@ -537,7 +596,8 @@
     "role": "continuous",
     "image": "/heroes/Spring.jpg",
     "slug": "spring",
-    "faction": "celestials"
+    "faction": "celestials",
+    "isAwakened": false
   },
   {
     "id": 62,
@@ -546,7 +606,8 @@
     "role": "burst",
     "image": "/heroes/Nakoruru.jpg",
     "slug": "nakoruru",
-    "faction": "dimensionals"
+    "faction": "dimensionals",
+    "isAwakened": false
   },
   {
     "id": 63,
@@ -555,7 +616,8 @@
     "role": "tank",
     "image": "/heroes/DKid.jpg",
     "slug": "dkid",
-    "faction": "graveborns"
+    "faction": "graveborns",
+    "isAwakened": false
   },
   {
     "id": 64,
@@ -564,7 +626,8 @@
     "role": "assassin",
     "image": "/heroes/Ezio.jpg",
     "slug": "ezio",
-    "faction": "dimensionals"
+    "faction": "dimensionals",
+    "isAwakened": false
   },
   {
     "id": 65,
@@ -573,7 +636,8 @@
     "role": "burst",
     "image": "/heroes/OA.jpg",
     "slug": "oa",
-    "faction": "maulers"
+    "faction": "maulers",
+    "isAwakened": false
   },
   {
     "id": 66,
@@ -582,7 +646,8 @@
     "role": "continuous",
     "image": "/heroes/Phantom.jpg",
     "slug": "phantom",
-    "faction": "graveborns"
+    "faction": "graveborns",
+    "isAwakened": false
   },
   {
     "id": 67,
@@ -591,7 +656,8 @@
     "role": "continuous",
     "image": "/heroes/Thor.jpg",
     "slug": "thor",
-    "faction": "celestials"
+    "faction": "celestials",
+    "isAwakened": false
   },
   {
     "id": 68,
@@ -600,7 +666,8 @@
     "role": "assassin",
     "image": "/heroes/THW.jpg",
     "slug": "thw",
-    "faction": "hypogeans"
+    "faction": "hypogeans",
+    "isAwakened": false
   },
   {
     "id": 69,
@@ -609,7 +676,8 @@
     "role": "tank",
     "image": "/heroes/Yalbed.jpg",
     "slug": "yalbed",
-    "faction": "dimensionals"
+    "faction": "dimensionals",
+    "isAwakened": false
   },
   {
     "id": 70,
@@ -618,7 +686,8 @@
     "role": "continuous",
     "image": "/heroes/Anz.jpg",
     "slug": "anz",
-    "faction": "dimensionals"
+    "faction": "dimensionals",
+    "isAwakened": false
   },
   {
     "id": 71,
@@ -627,7 +696,8 @@
     "role": "continuous",
     "image": "/heroes/SSR.jpg",
     "slug": "ssr",
-    "faction": "wilders"
+    "faction": "wilders",
+    "isAwakened": false
   },
   {
     "id": 72,
@@ -636,7 +706,8 @@
     "role": "buffer",
     "image": "/heroes/UDD.jpg",
     "slug": "udd",
-    "faction": "graveborns"
+    "faction": "graveborns",
+    "isAwakened": false
   },
   {
     "id": 73,
@@ -645,7 +716,8 @@
     "role": "regen",
     "image": "/heroes/GD.jpg",
     "slug": "gd",
-    "faction": "hypogeans"
+    "faction": "hypogeans",
+    "isAwakened": false
   },
   {
     "id": 74,
@@ -654,7 +726,8 @@
     "role": "debuffer",
     "image": "/heroes/WinterL.jpg",
     "slug": "winterl",
-    "faction": "celestials"
+    "faction": "celestials",
+    "isAwakened": false
   },
   {
     "id": 75,
@@ -663,7 +736,8 @@
     "role": "continuous",
     "image": "/heroes/QN.jpg",
     "slug": "qn",
-    "faction": "dimensionals"
+    "faction": "dimensionals",
+    "isAwakened": false
   },
   {
     "id": 76,
@@ -672,7 +746,8 @@
     "role": "continuous",
     "image": "/heroes/JK.jpg",
     "slug": "jk",
-    "faction": "dimensionals"
+    "faction": "dimensionals",
+    "isAwakened": false
   },
   {
     "id": 77,
@@ -681,7 +756,8 @@
     "role": "continuous",
     "image": "/heroes/TechMouse.jpg",
     "slug": "techmouse",
-    "faction": "maulers"
+    "faction": "maulers",
+    "isAwakened": false
   },
   {
     "id": 78,
@@ -690,7 +766,8 @@
     "role": "burst",
     "image": "/heroes/WindMan.jpg",
     "slug": "windman",
-    "faction": "wilders"
+    "faction": "wilders",
+    "isAwakened": false
   },
   {
     "id": 79,
@@ -699,7 +776,8 @@
     "role": "aoe",
     "image": "/heroes/Clergy.jpg",
     "slug": "clergy",
-    "faction": "lightbearers"
+    "faction": "lightbearers",
+    "isAwakened": false
   },
   {
     "id": 80,
@@ -708,7 +786,8 @@
     "role": "regen",
     "image": "/heroes/Princess.jpg",
     "slug": "princess",
-    "faction": "lightbearers"
+    "faction": "lightbearers",
+    "isAwakened": false
   },
   {
     "id": 81,
@@ -717,7 +796,8 @@
     "role": "burst",
     "image": "/heroes/TricRacoon.jpg",
     "slug": "tricracoon",
-    "faction": "wilders"
+    "faction": "wilders",
+    "isAwakened": false
   },
   {
     "id": 82,
@@ -726,7 +806,8 @@
     "role": "continuous",
     "image": "/heroes/AstroM.jpg",
     "slug": "astrom",
-    "faction": "celestials"
+    "faction": "celestials",
+    "isAwakened": false
   },
   {
     "id": 83,
@@ -735,7 +816,8 @@
     "role": "burst",
     "image": "/heroes/POP.jpg",
     "slug": "pop",
-    "faction": "dimensionals"
+    "faction": "dimensionals",
+    "isAwakened": false
   },
   {
     "id": 84,
@@ -744,7 +826,8 @@
     "role": "regen",
     "image": "/heroes/Siren.jpg",
     "slug": "siren",
-    "faction": "graveborns"
+    "faction": "graveborns",
+    "isAwakened": false
   },
   {
     "id": 85,
@@ -753,7 +836,8 @@
     "role": "debuffer",
     "image": "/heroes/GentryD.jpg",
     "slug": "gentryd",
-    "faction": "hypogeans"
+    "faction": "hypogeans",
+    "isAwakened": false
   },
   {
     "id": 86,
@@ -762,7 +846,8 @@
     "role": "continuous",
     "image": "/heroes/Gunner.jpg",
     "slug": "gunner",
-    "faction": "lightbearers"
+    "faction": "lightbearers",
+    "isAwakened": false
   },
   {
     "id": 87,
@@ -771,7 +856,8 @@
     "role": "regen",
     "image": "/heroes/Merlin.jpg",
     "slug": "merlin",
-    "faction": "dimensionals"
+    "faction": "dimensionals",
+    "isAwakened": false
   },
   {
     "id": 88,
@@ -780,7 +866,8 @@
     "role": "continuous",
     "image": "/heroes/CrazyFox.jpg",
     "slug": "crazyfox",
-    "faction": "maulers"
+    "faction": "maulers",
+    "isAwakened": false
   },
   {
     "id": 89,
@@ -789,7 +876,8 @@
     "role": "tank",
     "image": "/heroes/Golem.jpg",
     "slug": "golem",
-    "faction": "celestials"
+    "faction": "celestials",
+    "isAwakened": false
   },
   {
     "id": 90,
@@ -798,7 +886,8 @@
     "role": "tank",
     "image": "/heroes/Captain.jpg",
     "slug": "captain",
-    "faction": "graveborns"
+    "faction": "graveborns",
+    "isAwakened": false
   },
   {
     "id": 91,
@@ -807,7 +896,8 @@
     "role": "control",
     "image": "/heroes/DevilMage.jpg",
     "slug": "devilmage",
-    "faction": "lightbearers"
+    "faction": "lightbearers",
+    "isAwakened": false
   },
   {
     "id": 92,
@@ -816,7 +906,8 @@
     "role": "continuous",
     "image": "/heroes/LazyD.jpg",
     "slug": "lazyd",
-    "faction": "hypogeans"
+    "faction": "hypogeans",
+    "isAwakened": false
   },
   {
     "id": 93,
@@ -825,7 +916,8 @@
     "role": "tank",
     "image": "/heroes/Stone.jpg",
     "slug": "stone",
-    "faction": "maulers"
+    "faction": "maulers",
+    "isAwakened": false
   },
   {
     "id": 94,
@@ -834,7 +926,8 @@
     "role": "control",
     "image": "/heroes/LDV.jpg",
     "slug": "ldv",
-    "faction": "dimensionals"
+    "faction": "dimensionals",
+    "isAwakened": false
   },
   {
     "id": 95,
@@ -843,7 +936,8 @@
     "role": "control",
     "image": "/heroes/BDruid.jpg",
     "slug": "bdruid",
-    "faction": "wilders"
+    "faction": "wilders",
+    "isAwakened": false
   },
   {
     "id": 96,
@@ -852,7 +946,8 @@
     "role": "buffer",
     "image": "/heroes/Artisan.jpg",
     "slug": "artisan",
-    "faction": "celestials"
+    "faction": "celestials",
+    "isAwakened": false
   },
   {
     "id": 97,
@@ -861,7 +956,8 @@
     "role": "control",
     "image": "/heroes/CKnight.jpg",
     "slug": "cknight",
-    "faction": "graveborns"
+    "faction": "graveborns",
+    "isAwakened": false
   },
   {
     "id": 98,
@@ -870,7 +966,8 @@
     "role": "control",
     "image": "/heroes/SnakeMan.jpg",
     "slug": "snakeman",
-    "faction": "maulers"
+    "faction": "maulers",
+    "isAwakened": false
   },
   {
     "id": 99,
@@ -879,7 +976,8 @@
     "role": "continuous",
     "image": "/heroes/FP.jpg",
     "slug": "fp",
-    "faction": "hypogeans"
+    "faction": "hypogeans",
+    "isAwakened": false
   },
   {
     "id": 100,
@@ -888,7 +986,8 @@
     "role": "regen",
     "image": "/heroes/FlameE.jpg",
     "slug": "flamee",
-    "faction": "wilders"
+    "faction": "wilders",
+    "isAwakened": false
   },
   {
     "id": 101,
@@ -897,7 +996,8 @@
     "role": "buffer",
     "image": "/heroes/SPhoenix.jpg",
     "slug": "sphoenix",
-    "faction": "celestials"
+    "faction": "celestials",
+    "isAwakened": true
   },
   {
     "id": 102,
@@ -906,7 +1006,8 @@
     "role": "burst",
     "image": "/heroes/BM.jpg",
     "slug": "bm",
-    "faction": "lightbearers"
+    "faction": "lightbearers",
+    "isAwakened": false
   },
   {
     "id": 103,
@@ -915,7 +1016,8 @@
     "role": "burst",
     "image": "/heroes/Babayaga.jpg",
     "slug": "babayaga",
-    "faction": "dimensionals"
+    "faction": "dimensionals",
+    "isAwakened": false
   },
   {
     "id": 104,
@@ -924,7 +1026,8 @@
     "role": "debuffer",
     "image": "/heroes/Gaoler.jpg",
     "slug": "gaoler",
-    "faction": "graveborns"
+    "faction": "graveborns",
+    "isAwakened": false
   },
   {
     "id": 105,
@@ -933,7 +1036,8 @@
     "role": "continuous",
     "image": "/heroes/SBane.jpg",
     "slug": "sbane",
-    "faction": "hypogeans"
+    "faction": "hypogeans",
+    "isAwakened": true
   },
   {
     "id": 106,
@@ -942,7 +1046,8 @@
     "role": "buffer",
     "image": "/heroes/Scout.jpg",
     "slug": "scout",
-    "faction": "maulers"
+    "faction": "maulers",
+    "isAwakened": false
   },
   {
     "id": 107,
@@ -951,7 +1056,8 @@
     "role": "continuous",
     "image": "/heroes/AstroR.jpg",
     "slug": "astror",
-    "faction": "celestials"
+    "faction": "celestials",
+    "isAwakened": false
   },
   {
     "id": 108,
@@ -960,7 +1066,8 @@
     "role": "tank",
     "image": "/heroes/DruidMaster.jpg",
     "slug": "druidmaster",
-    "faction": "wilders"
+    "faction": "wilders",
+    "isAwakened": false
   },
   {
     "id": 109,
@@ -969,7 +1076,8 @@
     "role": "burst",
     "image": "/heroes/WindSM.jpg",
     "slug": "windsm",
-    "faction": "lightbearers"
+    "faction": "lightbearers",
+    "isAwakened": true
   },
   {
     "id": 110,
@@ -978,7 +1086,8 @@
     "role": "burst",
     "image": "/heroes/Hidan.jpg",
     "slug": "hidan",
-    "faction": "hypogeans"
+    "faction": "hypogeans",
+    "isAwakened": false
   },
   {
     "id": 111,
@@ -987,7 +1096,8 @@
     "role": "buffer",
     "image": "/heroes/Sonia.jpg",
     "slug": "sonia",
-    "faction": "lightbearers"
+    "faction": "lightbearers",
+    "isAwakened": false
   },
   {
     "id": 112,
@@ -996,7 +1106,8 @@
     "role": "continuous",
     "image": "/heroes/OrcMaster.jpg",
     "slug": "orcmaster",
-    "faction": "maulers"
+    "faction": "maulers",
+    "isAwakened": false
   },
   {
     "id": 113,
@@ -1005,9 +1116,9 @@
     "role": "continuous",
     "image": "/heroes/Karen.jpg",
     "slug": "karen",
-    "faction": "graveborns"
-  }
-  ,
+    "faction": "graveborns",
+    "isAwakened": false
+  },
   {
     "id": 114,
     "type": "strength",
@@ -1015,9 +1126,9 @@
     "role": "continuous",
     "image": "/heroes/SLK.jpg",
     "slug": "slk",
-    "faction": "maulers"
-  }
-  ,
+    "faction": "maulers",
+    "isAwakened": true
+  },
   {
     "id": 115,
     "type": "strength",
@@ -1025,6 +1136,7 @@
     "role": "buffer",
     "image": "/heroes/JOA.jpg",
     "slug": "joa",
-    "faction": "dimensionals"
+    "faction": "dimensionals",
+    "isAwakened": false
   }
 ]

@@ -27,6 +27,7 @@ interface Props {
     partbootsfaction: number;
     partheadfaction: number;
     partweaponfaction: number;
+    isAwakened: boolean;
     type: Type;
   };
   setLevel: UseSetLevelReturn;
@@ -35,7 +36,7 @@ interface Props {
 }
 
 const EditHero: React.FC<Props> = function EditHero({ character, setLevel, onNext, onPrev }) {
-  const { si, fi, ascend, engrave, type, id } = character;
+  const { isAwakened, si, fi, ascend, engrave, type, id } = character;
 
   return (
     <div className={styles.EditHero}>
@@ -57,6 +58,7 @@ const EditHero: React.FC<Props> = function EditHero({ character, setLevel, onNex
       </div>
       <div className={styles.Form}>
         <AscendForm
+          isAwakened={isAwakened}
           ascend={ascend}
           onChange={(ascendValue) =>
             setLevel(id, "ASCEND", getAscend(ascendValue, si, fi, engrave)).commit()
