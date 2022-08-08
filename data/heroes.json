@@ -1139,4 +1139,15 @@
     "faction": "dimensionals",
     "isAwakened": false
   }
+  ,
+  {
+    "id": 116,
+    "type": "agility",
+    "class": "ranger",
+    "role": "burst",
+    "image": "/heroes/Alen.jpg",
+    "slug": "alen",
+    "faction": "wilders",
+    "isAwakened": false
+  }
 ]
