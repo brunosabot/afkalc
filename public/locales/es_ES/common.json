@@ -44,6 +44,13 @@
   "equipment": "Equipamiento",
   "has-dimensional-key": "Tiene una llave dimensional",
   "use-my-hero-stats": "Usar stats de mi héroe",
+  "error": {
+    "error": "{{code}} Error",
+    "unknown-error": "Se ha producido un error...",
+    "404-error": "La página que estás buscando no existe...",
+    "send-message": "Si este error parece raro, no dude en ponerse en contacto conmigo.",
+    "thanks": "¡Gracias!"
+  },
   "menu": {
     "category-box": "Principal",
     "category-abex": "Expedición Abismal",
@@ -313,7 +320,8 @@
     "sonia": "Sonja",
     "orcmaster": "Anasta",
     "karen": "Kalene",
-    "slk": "Brutus"
+    "slk": "Brutus",
+    "joa": "Juana de Arco"
   },
   "enemyName": {
     "goblin": "Wrizz",
@@ -326,7 +334,7 @@
     "bossmystic": "Mago grotesco",
     "bosscthulhu": "El Devorador",
     "bossbane": "Ezizh",
-    "bossba": "The Balancer",
+    "bossba": "El Balanceador",
     "bossworm": "Marsha",
     "bosshgmn": "Adrax",
     "bosshgm": "Adrax",
