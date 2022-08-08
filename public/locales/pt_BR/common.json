@@ -44,6 +44,13 @@
   "equipment": "Equipamento",
   "has-dimensional-key": "Tem uma chave dimensional",
   "use-my-hero-stats": "Usar estatísticas de meu herói",
+  "error": {
+    "error": "{{code}} Erro",
+    "unknown-error": "Ocorreu um erro...",
+    "404-error": "A página que você está tentando carregar não existe...",
+    "send-message": "Se esse erro for anormal, por favor, entre em contato.",
+    "thanks": "Obrigado!"
+  },
   "menu": {
     "category-box": "Principal",
     "category-abex": "Expedição Abissal",
@@ -313,7 +320,9 @@
     "sonia": "Sonja",
     "orcmaster": "Anasta",
     "karen": "Kalene",
-    "slk": "Brutus"
+    "slk": "Brutus",
+    "joa": "Joana d'Arc",
+    "alen": "Eorin"
   },
   "enemyName": {
     "goblin": "Wrizz",

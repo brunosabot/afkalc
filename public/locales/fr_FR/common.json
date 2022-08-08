@@ -44,6 +44,13 @@
   "equipment": "Équipement",
   "has-dimensional-key": "Utilise une clé cosmique",
   "use-my-hero-stats": "Utiliser les statistiques de mon héros",
+  "error": {
+    "error": "{{code}} Error",
+    "unknown-error": "An error has occured...",
+    "404-error": "The page you are trying to load doesn't exist...",
+    "send-message": "If this error feels abnormal, feel free to contact me.",
+    "thanks": "Thanks !"
+  },
   "menu": {
     "category-box": "Général",
     "category-abex": "Expédition Abyssale",
@@ -313,7 +320,9 @@
     "sonia": "Sonja",
     "orcmaster": "Anasta",
     "karen": "Kalene",
-    "slk": "Brutus"
+    "slk": "Brutus",
+    "joa": "Joan of Arc",
+    "alen": "Eorin"
   },
   "enemyName": {
     "goblin": "Wrizz",
