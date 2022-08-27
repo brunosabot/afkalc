@@ -321,7 +321,9 @@
     "orcmaster": "Anasta",
     "karen": "Kalene",
     "slk": "Brutus",
-    "joa": "Joan of Arc"
+    "joa": "Joan of Arc",
+    "patronus":"Tarnos",
+    "wnt":"Solise"
   },
   "enemyName": {
     "goblin": "Wrizz",
