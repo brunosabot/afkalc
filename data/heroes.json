@@ -1150,4 +1150,26 @@
     "faction": "wilders",
     "isAwakened": false
   }
+  ,
+  {
+    "id": 117,
+    "type": "strength",
+    "class": "warrior",
+    "role": "continuous",
+    "image": "/heroes/Patronus.jpg",
+    "slug": "patronus",
+    "faction": "celestials",
+    "isAwakened": false
+  }
+  ,
+  {
+    "id": 118,
+    "type": "intelligence",
+    "class": "mage",
+    "role": "regen",
+    "image": "/heroes/WNT.jpg",
+    "slug": "wnt",
+    "faction": "wilders",
+    "isAwakened": true
+  }
 ]
