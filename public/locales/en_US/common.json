@@ -134,6 +134,7 @@
     "elite-gear": "Elite gear",
     "elite-p-gear": "Elite+ gear",
     "elite-soulstone": "Elite soulstone",
+    "superb-elite-soulstone": "Superb elite soulstone",
     "emblem-choice-chest": "Emblem choice chest",
     "faction-emblem": "Faction emblem",
     "fortuitous-emblem-chest": "Fortuitous emblem chest",
@@ -323,8 +324,8 @@
     "slk": "Brutus",
     "joa": "Joan of Arc",
     "alen": "Eorin",
-    "patronus":"Tarnos",
-    "wnt":"Solise"
+    "patronus": "Tarnos",
+    "wnt": "Solise"
   },
   "enemyName": {
     "goblin": "Wrizz",
