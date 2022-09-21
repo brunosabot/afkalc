@@ -1172,4 +1172,26 @@
     "faction": "wilders",
     "isAwakened": true
   }
+  ,
+  {
+    "id": 119,
+    "type": "intelligence",
+    "class": "mage",
+    "role": "buffer",
+    "image": "/heroes/YNF.jpg",
+    "slug": "ynf",
+    "faction": "dimensionals",
+    "isAwakened": false
+  }
+  ,
+  {
+    "id": 120,
+    "type": "strength",
+    "class": "warrior",
+    "role": "continuous",
+    "image": "/heroes/GOR.jpg",
+    "slug": "gor",
+    "faction": "dimensionals",
+    "isAwakened": false
+  }
 ]
