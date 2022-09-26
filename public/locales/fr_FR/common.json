@@ -325,7 +325,9 @@
     "joa": "Jeanne d’Arc",
     "alen": "Eorin",
     "patronus": "Tarnos",
-    "wnt": "Solise"
+    "wnt": "Solise",
+    "ynt": "Yennefer",
+    "gor": "Geralt"
   },
   "enemyName": {
     "goblin": "Wrizz",
