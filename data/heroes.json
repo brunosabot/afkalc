@@ -1165,7 +1165,7 @@
   {
     "id": 118,
     "type": "intelligence",
-    "class": "mage",
+    "class": "support",
     "role": "regen",
     "image": "/heroes/WNT.jpg",
     "slug": "wnt",
