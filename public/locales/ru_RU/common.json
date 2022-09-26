@@ -325,7 +325,9 @@
     "joa": "Жанна д'Арк",
     "alen": "Эорин",
     "patronus": "Тарнос",
-    "wnt": "Солиса"
+    "wnt": "Солиса",
+    "ynt": "Yennefer",
+    "gor": "Geralt"
   },
   "enemyName": {
     "goblin": "Врицц",
