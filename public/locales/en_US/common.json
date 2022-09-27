@@ -326,8 +326,8 @@
     "alen": "Eorin",
     "patronus": "Tarnos",
     "wnt": "Solise",
-    "ynt": "Yennefer",
-    "gor": "Geralt"
+    "ynt" : "Yennefer",
+    "gor" : "Geralt"
   },
   "enemyName": {
     "goblin": "Wrizz",
