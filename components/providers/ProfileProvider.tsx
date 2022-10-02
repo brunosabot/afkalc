@@ -8,6 +8,7 @@ import useElderTreeSetters from "./hooks/useElderTreeSetters";
 import useMigration from "./hooks/useMigration";
 import useProfileActions from "./hooks/useProfileActions";
 import useProfileSetters from "./hooks/useProfileSetters";
+import usePveSetters from "./hooks/usePveSetters";
 import ProfileContext, { defaultValues, IProfileContext } from "./ProfileContext";
 import IFirebaseProfile from "./types/IFirebaseProfile";
 
@@ -51,6 +52,16 @@ const ProfileProvider: React.FC<IProps> = function ProfileProvider({ children })
     setMainElderTree,
   } = useElderTreeSetters(result);
 
+  const {
+    setPVEKingTower,
+    setPVELightbearerTower,
+    setPVEMaulerTower,
+    setPVEWilderTower,
+    setPVEGravebornTower,
+    setPVECelestialTower,
+    setPVEHypogeanTower,
+  } = usePveSetters(result);
+
   useMigration(result);
 
   const value = useMemo<IProfileContext>(
@@ -79,6 +90,13 @@ const ProfileProvider: React.FC<IProps> = function ProfileProvider({ children })
         setMageElderTree,
         setSupportElderTree,
         setMainElderTree,
+        setPVEKingTower,
+        setPVELightbearerTower,
+        setPVEMaulerTower,
+        setPVEWilderTower,
+        setPVEGravebornTower,
+        setPVECelestialTower,
+        setPVEHypogeanTower,
       },
       values: {
         ...defaultValues,
@@ -116,6 +134,13 @@ const ProfileProvider: React.FC<IProps> = function ProfileProvider({ children })
       setMageElderTree,
       setSupportElderTree,
       setMainElderTree,
+      setPVEKingTower,
+      setPVELightbearerTower,
+      setPVEMaulerTower,
+      setPVEWilderTower,
+      setPVEGravebornTower,
+      setPVECelestialTower,
+      setPVEHypogeanTower,
       result?.data,
       values.uid,
       values.isAuth,

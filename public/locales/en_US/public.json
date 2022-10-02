@@ -1,4 +1,7 @@
 {
   "title-public": "Public profile",
-  "label-level": "Lv."
+  "label-level": "Lv.",
+  "label-floor": "{{ floor }} Floors",
+  "elder-tree": "Elder Tree",
+  "king-tower": "King's tower"
 }

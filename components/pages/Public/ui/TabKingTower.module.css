@@ -1,0 +1,107 @@
+.TabKingTower {
+  aspect-ratio: 2 / 3;
+  background-image: url("/background/king-tower.png");
+  background-size: cover;
+  position: relative;
+}
+
+.KingTower {
+  color: #fae4b6;
+  left: 29.8%;
+  position: absolute;
+  top: 43.6%;
+  width: 40%;
+}
+
+.LighbearerTower {
+  color: #74e4e4;
+  left: 9.1%;
+  position: absolute;
+  top: 49.9%;
+  width: 40%;
+}
+
+.MaulerTower {
+  color: #fea208;
+  left: 17.8%;
+  position: absolute;
+  top: 66.4%;
+  width: 40%;
+}
+
+.WilderTower {
+  color: #a3f780;
+  left: 48.5%;
+  position: absolute;
+  top: 35%;
+  width: 40%;
+}
+
+.GravebornTower {
+  color: #ebfe77;
+  left: 48.9%;
+  position: absolute;
+  top: 62.6%;
+  width: 40%;
+}
+
+.CelestialTower {
+  color: #fff;
+  left: 9.8%;
+  position: absolute;
+  top: 28%;
+  width: 40%;
+}
+
+.HypogeanTower {
+  color: #ffa2fd;
+  left: 35.8%;
+  position: absolute;
+  top: 81.5%;
+  width: 40%;
+}
+
+.FactionIcon {
+  height: 16px;
+  margin-right: 2px;
+  width: 16px;
+}
+
+.Name {
+  display: flex;
+  font-size: 14px;
+  font-weight: 600;
+  justify-content: center;
+  text-align: center;
+  text-shadow: 1px 1px 4px #000;
+  text-shadow: -1px -1px 1px #472b1b, -1px 1px 1px #472b1b, 1px -1px 1px #472b1b,
+    1px 1px 1px #472b1b, 0 1px 1px #472b1b, 0 -1px 1px #472b1b, 1px 0 1px #472b1b,
+    -1px 0 1px #472b1b;
+  width: 100%;
+}
+
+.Level {
+  display: block;
+  font-size: 14px;
+  font-weight: 600;
+  text-align: center;
+  text-shadow: 1px 1px 4px #000;
+  text-shadow: -1px -1px 1px #472b1b, -1px 1px 1px #472b1b, 1px -1px 1px #472b1b,
+    1px 1px 1px #472b1b, 0 1px 1px #472b1b, 0 -1px 1px #472b1b, 1px 0 1px #472b1b,
+    -1px 0 1px #472b1b;
+  width: 100%;
+}
+
+.Action {
+  border-radius: 50%;
+  display: flex;
+  padding: 8px;
+  position: absolute;
+  right: 0;
+  top: 0;
+  transition: var(--transition);
+}
+
+.Action:hover {
+  background-color: var(--hover-color);
+}
