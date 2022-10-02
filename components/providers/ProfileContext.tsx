@@ -7,6 +7,7 @@ import {
 } from "./types/IFirebaseAbyssalExpedition";
 import { IFirebaseElderTree } from "./types/IFirebaseElderTree";
 import { IFirebaseHeroList } from "./types/IFirebaseHeroes";
+import { IFirebasePve } from "./types/IFirebasePve";
 
 export interface IProfileActions {
   setCampaignLevel: (newCampaignLevel: string) => void;
@@ -32,6 +33,13 @@ export interface IProfileActions {
   setMageElderTree: (value: number) => Promise<void>;
   setSupportElderTree: (value: number) => Promise<void>;
   setMainElderTree: (value: number) => Promise<void>;
+  setPVEKingTower: (value: number) => Promise<void>;
+  setPVELightbearerTower: (value: number) => Promise<void>;
+  setPVEMaulerTower: (value: number) => Promise<void>;
+  setPVEWilderTower: (value: number) => Promise<void>;
+  setPVEGravebornTower: (value: number) => Promise<void>;
+  setPVECelestialTower: (value: number) => Promise<void>;
+  setPVEHypogeanTower: (value: number) => Promise<void>;
 }
 
 export interface IProfileValues {
@@ -59,6 +67,7 @@ export interface IProfileValues {
   heroes: IFirebaseHeroList;
   heroesLastUpdate: string;
   elderTree: IFirebaseElderTree;
+  pve: IFirebasePve;
 }
 
 export interface IProfileContext {
@@ -110,6 +119,16 @@ export const defaultValues: IProfileValues = {
     mage: 0,
     support: 0,
   },
+  pve: {
+    kingTower: 0,
+    lightbearerTower: 0,
+    maulerTower: 0,
+    wilderTower: 0,
+    gravebornTower: 0,
+    celestialTower: 0,
+    hypogeanTower: 0,
+    campaign: "1.1",
+  },
 };
 
 export default createContext<IProfileContext>({
@@ -139,6 +158,14 @@ export default createContext<IProfileContext>({
     setMageElderTree: () => Promise.resolve(undefined),
     setSupportElderTree: () => Promise.resolve(undefined),
     setMainElderTree: () => Promise.resolve(undefined),
+    // PVE
+    setPVEKingTower: () => Promise.resolve(undefined),
+    setPVELightbearerTower: () => Promise.resolve(undefined),
+    setPVEMaulerTower: () => Promise.resolve(undefined),
+    setPVEWilderTower: () => Promise.resolve(undefined),
+    setPVEGravebornTower: () => Promise.resolve(undefined),
+    setPVECelestialTower: () => Promise.resolve(undefined),
+    setPVEHypogeanTower: () => Promise.resolve(undefined),
   },
   values: defaultValues,
 });

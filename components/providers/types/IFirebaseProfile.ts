@@ -5,6 +5,7 @@ import {
 } from "./IFirebaseAbyssalExpedition";
 import { IFirebaseElderTree } from "./IFirebaseElderTree";
 import { IFirebaseHeroList } from "./IFirebaseHeroes";
+import { IFirebasePve } from "./IFirebasePve";
 
 export default interface IFirebaseProfile {
   id?: string;
@@ -31,4 +32,6 @@ export default interface IFirebaseProfile {
   abexBox?: number[];
 
   elderTree?: IFirebaseElderTree;
+
+  pve?: IFirebasePve;
 }

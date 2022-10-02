@@ -14,6 +14,7 @@ import {
   mdiHome,
   mdiMap,
   mdiPlaylistCheck,
+  mdiRoadVariant,
   mdiScript,
   mdiShare,
   mdiTree,
@@ -83,6 +84,9 @@ const Home: React.FC<IProps> = function Home() {
           </MenuItem>
           <MenuItem to="/top-team/0,0,0,0,0,0-0,0,0,0,0,0" icon={mdiAccountGroup}>
             {t("common:menu.top-team")}
+          </MenuItem>
+          <MenuItem to="/pve" icon={mdiRoadVariant}>
+            {t("common:menu.pve")}
           </MenuItem>
           <MenuItem to={`/public/${values.userId}`} icon={mdiEarth}>
             {t("common:menu.public")}
