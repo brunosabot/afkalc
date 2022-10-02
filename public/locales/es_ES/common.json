@@ -134,6 +134,7 @@
     "elite-gear": "Equipo élite",
     "elite-p-gear": "Equipo élite+",
     "elite-soulstone": "Piedra de alma de héroe élite",
+    "superb-elite-soulstone": "Piedra de alma élite soberbia",
     "emblem-choice-chest": "Cofre de elección del emblema",
     "faction-emblem": "Emblema de facción",
     "fortuitous-emblem-chest": "Cofre de emblema fortuito",
@@ -322,7 +323,11 @@
     "karen": "Kalene",
     "slk": "Brutus",
     "joa": "Juana de Arco",
-    "alen": "Eorin"
+    "alen": "Eorin",
+    "patronus": "Tarnos",
+    "wnt": "Solise",
+    "ynt": "Yennefer",
+    "gor": "Geralt"
   },
   "enemyName": {
     "goblin": "Wrizz",

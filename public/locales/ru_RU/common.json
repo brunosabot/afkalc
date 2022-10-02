@@ -134,6 +134,7 @@
     "elite-gear": "Элитное снаряжение",
     "elite-p-gear": "Элитное+ снаряжение",
     "elite-soulstone": "Элитный камень души",
+    "superb-elite-soulstone": "Превосходный камень души элитного героя",
     "emblem-choice-chest": "Сундук выбора эмблемы",
     "faction-emblem": "Фракционная эмблема",
     "fortuitous-emblem-chest": "Сундук выбора эмблемы",
@@ -322,7 +323,11 @@
     "karen": "Калена",
     "slk": "Брутус",
     "joa": "Жанна д'Арк",
-    "alen": "Eorin"
+    "alen": "Эорин",
+    "patronus": "Тарнос",
+    "wnt": "Солиса",
+    "ynt": "Йеннифэр",
+    "gor": "Геральт"
   },
   "enemyName": {
     "goblin": "Врицц",

@@ -134,6 +134,7 @@
     "elite-gear": "Attrezzatura elite",
     "elite-p-gear": "Attrezzatura elite+",
     "elite-soulstone": "Pietra dell'anima elite",
+    "superb-elite-soulstone": "Superb elite soulstone",
     "emblem-choice-chest": "Forziere scelta Emblema",
     "faction-emblem": "Emblema Fazione",
     "fortuitous-emblem-chest": "Forziere emblema fortuito",
@@ -322,7 +323,11 @@
     "karen": "Kalene",
     "slk": "Brutus",
     "joa": "Giovanna d'Arco",
-    "alen": "Eorin"
+    "alen": "Eorin",
+    "patronus": "Tarnos",
+    "wnt": "Solise",
+    "ynt": "Yennefer",
+    "gor": "Geralt"
   },
   "enemyName": {
     "goblin": "Wrizz",
