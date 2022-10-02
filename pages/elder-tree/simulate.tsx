@@ -12,10 +12,13 @@ import Card from "../../components/ui/card/Card";
 import CardAction from "../../components/ui/card/CardAction";
 import CardActions from "../../components/ui/card/CardActions";
 import CardTitle from "../../components/ui/card/CardTitle";
+import elderTreeJson from "../../data/elder-tree.json";
 import heroClassJson from "../../data/heroClass.json";
 import HeroClass from "../../types/HeroClass";
 
 const heroClassData = heroClassJson as HeroClass[];
+
+const MAX_LEVEL = Object.keys(elderTreeJson.ranger).length - 1;
 
 export const getStaticProps = async ({ locale }: { locale: string }) => ({
   props: {
@@ -51,11 +54,11 @@ const Simulation: React.FC<IProps> = function Simulation() {
           mage={mage}
           support={support}
         />
-        <ClassForm value={warrior} heroClass="warrior" onChange={setWarrior} />
-        <ClassForm value={tank} heroClass="tank" onChange={setTank} />
-        <ClassForm value={ranger} heroClass="ranger" onChange={setRanger} />
-        <ClassForm value={mage} heroClass="mage" onChange={setMage} />
-        <ClassForm value={support} heroClass="support" onChange={setSupport} />
+        <ClassForm value={warrior} heroClass="warrior" onChange={setWarrior} max={MAX_LEVEL} />
+        <ClassForm value={tank} heroClass="tank" onChange={setTank} max={MAX_LEVEL} />
+        <ClassForm value={ranger} heroClass="ranger" onChange={setRanger} max={MAX_LEVEL} />
+        <ClassForm value={mage} heroClass="mage" onChange={setMage} max={MAX_LEVEL} />
+        <ClassForm value={support} heroClass="support" onChange={setSupport} max={MAX_LEVEL} />
         <CardActions>
           <CardAction onClick={() => router.push("/elder-tree")}>{t("current-tree")}</CardAction>
         </CardActions>

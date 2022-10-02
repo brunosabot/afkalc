@@ -6,6 +6,7 @@ import { useRouter } from "next/router";
 import React, { useContext } from "react";
 import withLayoutPrivateColumn from "../../components/layout/withLayoutPrivateColumn";
 import ClassForm from "../../components/pages/ElderTree/ui/ClassForm";
+import MainForm from "../../components/pages/ElderTree/ui/MainForm";
 import Stat from "../../components/pages/ElderTree/ui/Stat";
 import TotalEssence from "../../components/pages/ElderTree/ui/TotalEssence";
 import ProfileContext from "../../components/providers/ProfileContext";
@@ -43,6 +44,7 @@ const ElderTree: React.FC<IProps> = function ElderTree() {
       setRangerElderTree,
       setMageElderTree,
       setSupportElderTree,
+      setMainElderTree,
     },
     values,
   } = useContext(ProfileContext);
@@ -55,19 +57,33 @@ const ElderTree: React.FC<IProps> = function ElderTree() {
         </Head>
         <CardTitle icon={mdiTree}>{t("common:menu.elder-tree")}</CardTitle>
         <TotalEssence />
+        <MainForm value={values.elderTree.main} onChange={setMainElderTree} />
         <ClassForm
+          max={values.elderTree.main}
           value={values.elderTree.warrior}
           heroClass="warrior"
           onChange={setWarriorElderTree}
         />
-        <ClassForm value={values.elderTree.tank} heroClass="tank" onChange={setTankElderTree} />
         <ClassForm
+          max={values.elderTree.main}
+          value={values.elderTree.tank}
+          heroClass="tank"
+          onChange={setTankElderTree}
+        />
+        <ClassForm
+          max={values.elderTree.main}
           value={values.elderTree.ranger}
           heroClass="ranger"
           onChange={setRangerElderTree}
         />
-        <ClassForm value={values.elderTree.mage} heroClass="mage" onChange={setMageElderTree} />
         <ClassForm
+          max={values.elderTree.main}
+          value={values.elderTree.mage}
+          heroClass="mage"
+          onChange={setMageElderTree}
+        />
+        <ClassForm
+          max={values.elderTree.main}
           value={values.elderTree.support}
           heroClass="support"
           onChange={setSupportElderTree}

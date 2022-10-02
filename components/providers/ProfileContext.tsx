@@ -31,6 +31,7 @@ export interface IProfileActions {
   setRangerElderTree: (value: number) => Promise<void>;
   setMageElderTree: (value: number) => Promise<void>;
   setSupportElderTree: (value: number) => Promise<void>;
+  setMainElderTree: (value: number) => Promise<void>;
 }
 
 export interface IProfileValues {
@@ -102,6 +103,7 @@ export const defaultValues: IProfileValues = {
   heroes: {},
   heroesLastUpdate: "",
   elderTree: {
+    main: 0,
     warrior: 0,
     tank: 0,
     ranger: 0,
@@ -136,6 +138,7 @@ export default createContext<IProfileContext>({
     setRangerElderTree: () => Promise.resolve(undefined),
     setMageElderTree: () => Promise.resolve(undefined),
     setSupportElderTree: () => Promise.resolve(undefined),
+    setMainElderTree: () => Promise.resolve(undefined),
   },
   values: defaultValues,
 });
