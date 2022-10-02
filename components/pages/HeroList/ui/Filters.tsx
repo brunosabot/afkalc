@@ -17,6 +17,7 @@ const typedHeroes: ICharacter[] = heroesJson as ICharacter[];
 
 interface IProps {
   state: State;
+  force?: boolean;
   dispatch: (action: Action) => void;
 }
 
@@ -43,20 +44,22 @@ interface State {
   directionEquip: string;
 }
 
-const Filters: React.FC<IProps> = function Filters({ state, dispatch }) {
+const Filters: React.FC<IProps> = function Filters({ force, state, dispatch }) {
   const { t } = useTranslation("hero-list");
   const { t: tC } = useTranslation("common");
   const [showFilter, setShowFilter] = useState(true);
 
   return (
     <>
-      <CheckboxField
-        name="showFilter"
-        onChange={setShowFilter}
-        value={showFilter}
-        label={t("label-show-filters")}
-      />
-      {showFilter ? (
+      {force === undefined ? (
+        <CheckboxField
+          name="showFilter"
+          onChange={setShowFilter}
+          value={showFilter}
+          label={t("label-show-filters")}
+        />
+      ) : null}
+      {(force === undefined && showFilter) || force === true ? (
         <>
           <InputField
             name="name"
