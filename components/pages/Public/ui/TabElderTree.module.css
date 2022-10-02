@@ -1,49 +1,50 @@
 .TabElderTree {
-  aspect-ratio: 2 / 3;
+  aspect-ratio: 572 / 877;
   background-image: url("/background/elder-tree.jpeg");
   background-size: cover;
+  border-radius: 0 0 8px 8px;
   position: relative;
 }
 
 .Support {
-  left: 11.8%;
+  left: 11.9%;
   position: absolute;
-  top: 35.6%;
-  width: 17.5%;
+  top: 34.9%;
+  width: 17.2%;
 }
 
 .Mage {
-  left: 20.1%;
+  left: 20.2%;
   position: absolute;
-  top: 22.9%;
-  width: 17.5%;
+  top: 22.4%;
+  width: 17.2%;
 }
 
 .Warrior {
-  left: 41.8%;
+  left: 42%;
   position: absolute;
-  top: 16.9%;
-  width: 17.5%;
+  top: 16.5%;
+  width: 17.2%;
 }
 
 .Tank {
-  left: 63.5%;
+  left: 63.7%;
   position: absolute;
-  top: 23%;
-  width: 17.5%;
+  top: 22.5%;
+  width: 17.2%;
 }
 
 .Ranger {
   left: 71.9%;
   position: absolute;
-  top: 35.6%;
-  width: 17.5%;
+  top: 35.1%;
+  width: 17.2%;
 }
 
 .Main {
   left: 41.8%;
   position: absolute;
-  top: 59%;
+  top: 43%;
   width: 17.5%;
 }
 
@@ -54,7 +55,7 @@
 
 .Level {
   background-image: linear-gradient(to left, transparent, rgb(0 0 0 / 80%), transparent);
-  bottom: -8px;
+  bottom: -14px;
   display: block;
   font-size: 14px;
   font-weight: 600;
