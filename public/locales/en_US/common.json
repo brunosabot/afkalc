@@ -76,6 +76,7 @@
     "short-loot": "Loot",
     "elder-tree": "Elder Tree",
     "abex-relic-share": "Share Relics",
+    "public": "Public Profile",
     "short-hero-list": "Heroes",
     "short-top-team": "Teams",
     "short-item-cost": "Item Cost",
@@ -326,8 +327,8 @@
     "alen": "Eorin",
     "patronus": "Tarnos",
     "wnt": "Solise",
-    "ynt" : "Yennefer",
-    "gor" : "Geralt"
+    "ynt": "Yennefer",
+    "gor": "Geralt"
   },
   "enemyName": {
     "goblin": "Wrizz",

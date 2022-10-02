@@ -8,6 +8,7 @@ import {
   mdiCog,
   mdiDiamondStone,
   mdiDiscord,
+  mdiEarth,
   mdiFastForward,
   mdiGithub,
   mdiHome,
@@ -82,6 +83,9 @@ const Home: React.FC<IProps> = function Home() {
           </MenuItem>
           <MenuItem to="/top-team/0,0,0,0,0,0-0,0,0,0,0,0" icon={mdiAccountGroup}>
             {t("common:menu.top-team")}
+          </MenuItem>
+          <MenuItem to={`/public/${values.userId}`} icon={mdiEarth}>
+            {t("common:menu.public")}
           </MenuItem>
         </MenuBox>
       </Card>
