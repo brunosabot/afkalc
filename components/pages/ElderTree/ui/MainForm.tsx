@@ -12,7 +12,7 @@ interface IProps {
 const MainForm: React.FC<IProps> = function MainForm({ onChange, value }) {
   return (
     <div className={styles.MainForm}>
-      <img src="/loot/bag_astrolabe.jpg" className={styles.Image} alt="bag_astrolabe" />
+      <img src="/elder-tree/tree-level.png" className={styles.Image} alt="bag_astrolabe" />
       <input
         value={value === 0 ? "" : value}
         className={styles.Input}

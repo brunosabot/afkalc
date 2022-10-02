@@ -6,19 +6,17 @@ import { useRouter } from "next/router";
 import React, { useState } from "react";
 import withLayoutPrivateColumn from "../../components/layout/withLayoutPrivateColumn";
 import ClassForm from "../../components/pages/ElderTree/ui/ClassForm";
+import MainForm from "../../components/pages/ElderTree/ui/MainForm";
 import Stat from "../../components/pages/ElderTree/ui/Stat";
 import TotalEssenceSimulation from "../../components/pages/ElderTree/ui/TotalEssenceSimulation";
 import Card from "../../components/ui/card/Card";
 import CardAction from "../../components/ui/card/CardAction";
 import CardActions from "../../components/ui/card/CardActions";
 import CardTitle from "../../components/ui/card/CardTitle";
-import elderTreeJson from "../../data/elder-tree.json";
 import heroClassJson from "../../data/heroClass.json";
 import HeroClass from "../../types/HeroClass";
 
 const heroClassData = heroClassJson as HeroClass[];
-
-const MAX_LEVEL = Object.keys(elderTreeJson.ranger).length - 1;
 
 export const getStaticProps = async ({ locale }: { locale: string }) => ({
   props: {
@@ -34,6 +32,7 @@ const Simulation: React.FC<IProps> = function Simulation() {
   const router = useRouter();
   const { t } = useTranslation("elder-tree");
 
+  const [main, setMain] = useState<number>(0);
   const [warrior, setWarrior] = useState<number>(0);
   const [tank, setTank] = useState<number>(0);
   const [ranger, setRanger] = useState<number>(0);
@@ -54,11 +53,12 @@ const Simulation: React.FC<IProps> = function Simulation() {
           mage={mage}
           support={support}
         />
-        <ClassForm value={warrior} heroClass="warrior" onChange={setWarrior} max={MAX_LEVEL} />
-        <ClassForm value={tank} heroClass="tank" onChange={setTank} max={MAX_LEVEL} />
-        <ClassForm value={ranger} heroClass="ranger" onChange={setRanger} max={MAX_LEVEL} />
-        <ClassForm value={mage} heroClass="mage" onChange={setMage} max={MAX_LEVEL} />
-        <ClassForm value={support} heroClass="support" onChange={setSupport} max={MAX_LEVEL} />
+        <MainForm value={main} onChange={setMain} />
+        <ClassForm value={warrior} heroClass="duras-might" onChange={setWarrior} max={main} />
+        <ClassForm value={tank} heroClass="duras-fortitude" onChange={setTank} max={main} />
+        <ClassForm value={ranger} heroClass="duras-celerity" onChange={setRanger} max={main} />
+        <ClassForm value={mage} heroClass="duras-sorcery" onChange={setMage} max={main} />
+        <ClassForm value={support} heroClass="duras-sustenance" onChange={setSupport} max={main} />
         <CardActions>
           <CardAction onClick={() => router.push("/elder-tree")}>{t("current-tree")}</CardAction>
         </CardActions>

@@ -11,7 +11,7 @@ interface IProps {
 const ClassForm: React.FC<IProps> = function ClassForm({ onChange, value, heroClass, max }) {
   return (
     <div className={styles.ClassForm}>
-      <img src={`/classes/${heroClass}.png`} className={styles.Image} alt={heroClass} />
+      <img src={`/elder-tree/${heroClass}.png`} className={styles.Image} alt={heroClass} />
       <input
         value={value === 0 ? "" : value}
         className={styles.Input}

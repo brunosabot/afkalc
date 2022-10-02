@@ -61,31 +61,31 @@ const ElderTree: React.FC<IProps> = function ElderTree() {
         <ClassForm
           max={values.elderTree.main}
           value={values.elderTree.warrior}
-          heroClass="warrior"
+          heroClass="duras-might"
           onChange={setWarriorElderTree}
         />
         <ClassForm
           max={values.elderTree.main}
           value={values.elderTree.tank}
-          heroClass="tank"
+          heroClass="duras-fortitude"
           onChange={setTankElderTree}
         />
         <ClassForm
           max={values.elderTree.main}
           value={values.elderTree.ranger}
-          heroClass="ranger"
+          heroClass="duras-celerity"
           onChange={setRangerElderTree}
         />
         <ClassForm
           max={values.elderTree.main}
           value={values.elderTree.mage}
-          heroClass="mage"
+          heroClass="duras-sorcery"
           onChange={setMageElderTree}
         />
         <ClassForm
           max={values.elderTree.main}
           value={values.elderTree.support}
-          heroClass="support"
+          heroClass="duras-sustenance"
           onChange={setSupportElderTree}
         />
         <CardActions>
