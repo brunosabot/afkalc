@@ -1138,8 +1138,7 @@
     "slug": "joa",
     "faction": "dimensionals",
     "isAwakened": false
-  }
-  ,
+  },
   {
     "id": 116,
     "type": "agility",
@@ -1149,8 +1148,7 @@
     "slug": "alen",
     "faction": "wilders",
     "isAwakened": false
-  }
-  ,
+  },
   {
     "id": 117,
     "type": "strength",
@@ -1160,8 +1158,7 @@
     "slug": "patronus",
     "faction": "celestials",
     "isAwakened": false
-  }
-  ,
+  },
   {
     "id": 118,
     "type": "intelligence",
@@ -1171,8 +1168,7 @@
     "slug": "wnt",
     "faction": "wilders",
     "isAwakened": true
-  }
-  ,
+  },
   {
     "id": 119,
     "type": "intelligence",
@@ -1182,11 +1178,10 @@
     "slug": "ynf",
     "faction": "dimensionals",
     "isAwakened": false
-  }
-  ,
+  },
   {
     "id": 120,
-    "type": "strength",
+    "type": "agility",
     "class": "warrior",
     "role": "continuous",
     "image": "/heroes/GOR.jpg",
