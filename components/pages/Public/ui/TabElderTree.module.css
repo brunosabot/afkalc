@@ -1,0 +1,80 @@
+.TabElderTree {
+  aspect-ratio: 2 / 3;
+  background-image: url("/background/elder-tree.jpeg");
+  background-size: cover;
+  position: relative;
+}
+
+.Support {
+  left: 11.8%;
+  position: absolute;
+  top: 35.6%;
+  width: 17.5%;
+}
+
+.Mage {
+  left: 20.1%;
+  position: absolute;
+  top: 22.9%;
+  width: 17.5%;
+}
+
+.Warrior {
+  left: 41.8%;
+  position: absolute;
+  top: 16.9%;
+  width: 17.5%;
+}
+
+.Tank {
+  left: 63.5%;
+  position: absolute;
+  top: 23%;
+  width: 17.5%;
+}
+
+.Ranger {
+  left: 71.9%;
+  position: absolute;
+  top: 35.6%;
+  width: 17.5%;
+}
+
+.Main {
+  left: 41.8%;
+  position: absolute;
+  top: 59%;
+  width: 17.5%;
+}
+
+.ClassImage {
+  aspect-ratio: 1 / 1;
+  width: 100%;
+}
+
+.Level {
+  background-image: linear-gradient(to left, transparent, rgb(0 0 0 / 80%), transparent);
+  bottom: -8px;
+  display: block;
+  font-size: 14px;
+  font-weight: 600;
+  padding: 2px 0;
+  position: absolute;
+  text-align: center;
+  text-shadow: 1px 1px 4px #000;
+  width: 100%;
+}
+
+.Action {
+  border-radius: 50%;
+  display: flex;
+  padding: 8px;
+  position: absolute;
+  right: 0;
+  top: 0;
+  transition: var(--transition);
+}
+
+.Action:hover {
+  background-color: var(--hover-color);
+}
