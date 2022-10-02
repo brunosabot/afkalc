@@ -4,6 +4,7 @@ export enum IFirebaseElderTreeClass {
   support = "support",
   tank = "tank",
   warrior = "warrior",
+  main = "main",
 }
 
 export type IFirebaseElderTree = {

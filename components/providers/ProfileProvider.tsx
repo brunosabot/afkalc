@@ -48,6 +48,7 @@ const ProfileProvider: React.FC<IProps> = function ProfileProvider({ children })
     setRangerElderTree,
     setMageElderTree,
     setSupportElderTree,
+    setMainElderTree,
   } = useElderTreeSetters(result);
 
   useMigration(result);
@@ -77,6 +78,7 @@ const ProfileProvider: React.FC<IProps> = function ProfileProvider({ children })
         setRangerElderTree,
         setMageElderTree,
         setSupportElderTree,
+        setMainElderTree,
       },
       values: {
         ...defaultValues,
@@ -113,6 +115,7 @@ const ProfileProvider: React.FC<IProps> = function ProfileProvider({ children })
       setRangerElderTree,
       setMageElderTree,
       setSupportElderTree,
+      setMainElderTree,
       result?.data,
       values.uid,
       values.isAuth,

@@ -82,6 +82,21 @@ export default function useElderTreeSetters(result: IFirebaseDataState<IFirebase
     },
     [document, result?.data?.elderTree]
   );
+  const setMainElderTree = useCallback(
+    async (newMainElderTree) => {
+      await document?.set(
+        {
+          elderTree: {
+            ...defaultValues.elderTree,
+            ...result?.data?.elderTree,
+            main: newMainElderTree,
+          },
+        },
+        { merge: true }
+      );
+    },
+    [document, result?.data?.elderTree]
+  );
 
   return {
     setWarriorElderTree,
@@ -89,5 +104,6 @@ export default function useElderTreeSetters(result: IFirebaseDataState<IFirebase
     setRangerElderTree,
     setMageElderTree,
     setSupportElderTree,
+    setMainElderTree,
   };
 }
