@@ -30,77 +30,22 @@ export const getStaticPaths: GetStaticPaths<{ slug: string }> = async () => ({
   fallback: "blocking",
 });
 
-// const typedHeroes: ICharacter[] = heroesJson as ICharacter[];
-
 interface IProps {
   [key: string]: never;
 }
 
 const PublicId: React.FC<IProps> = function HeroList() {
   const { t } = useTranslation("public");
-  // const { t: tC } = useTranslation("common");
   const router = useRouter();
   const { values } = useContext(ProfileContext);
   const { id } = router.query;
   const [tab, setTab] = useState<number>(0);
 
-  // const [editPopupState, setEditPopupState] = useState(0);
-  // const [showModal, setShowModal] = useState(false);
-  // const [editPopupCharacters, setEditPopupCharacters] = useState<any[]>([]);
-  // const [state, dispatch] = useFilters();
-
   const userId = useLoadId(id as string);
 
   const document = useFirestoreDocumentReference(userId ? `profile/${userId}` : undefined);
   const result = useFirestoreDocument<IFirebaseProfile>(document);
-  // const heroes = result.data?.heroes || {};
-  // const userName = result.data?.playerName;
   const isSelf = userId === values.userId;
-
-  // const setLevel = useSetLevel(document, heroes);
-  // const getValue = useGetValue(heroes);
-
-  // const typedHeroesWithName = typedHeroes.map((hero) => ({
-  //   ...hero,
-  //   name: tC(`heroesName.${hero.slug}`),
-  // }));
-
-  // const characters = useFilteredHeroes(typedHeroesWithName, heroes, state);
-
-  // const characterToEdit = useMemo(
-  //   () =>
-  //     characters.find((c) => c.id === editPopupState) ?? {
-  //       id: 0,
-  //       si: -1,
-  //       fi: 0,
-  //       ascend: 0,
-  //       engrave: 0,
-  //       partbody: 0,
-  //       partboots: 0,
-  //       parthead: 0,
-  //       partweapon: 0,
-  //       partbodyfaction: 0,
-  //       partbootsfaction: 0,
-  //       partheadfaction: 0,
-  //       partweaponfaction: 0,
-  //       type: Type.agility,
-  //       isAwakened: false,
-  //     },
-  //   [characters, editPopupState]
-  // );
-
-  // useEffect(() => {
-  //   if (id && id.length < 12 && userId) {
-  //     window.location.replace(`/hero-list/${userId}`);
-  //   }
-  // }, [id, userId]);
-
-  // const lastUpdate = useMemo(
-  //   () => dayjs(new Date(result.data?.heroesLastUpdate ?? 0)).fromNow(),
-  //   [result.data?.heroesLastUpdate]
-  // );
-
-  console.log(result.data);
 
   return (
     <Card>
