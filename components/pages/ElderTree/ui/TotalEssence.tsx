@@ -13,11 +13,13 @@ interface IProps {
 }
 
 function getCost(level: number, tree: ElderTreeFaction) {
-  if (level > MAX_LEVEL) {
-    return tree[MAX_LEVEL].totalcost + (level - MAX_LEVEL) * tree[MAX_LEVEL].cost;
+  const finalLevel = Number.isNaN(+level) ? 0 : level;
+
+  if (finalLevel > MAX_LEVEL) {
+    return tree[MAX_LEVEL].totalcost + (finalLevel - MAX_LEVEL) * tree[MAX_LEVEL].cost;
   }
 
-  return tree[level].totalcost;
+  return tree[finalLevel].totalcost;
 }
 
 const ElderTree: React.FC<IProps> = function ElderTree() {

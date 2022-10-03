@@ -14,7 +14,7 @@ export default function useElderTreeSetters(result: IFirebaseDataState<IFirebase
           elderTree: {
             ...defaultValues.elderTree,
             ...result?.data?.elderTree,
-            warrior: newWarriorElderTree,
+            warrior: newWarriorElderTree ?? 0,
           },
         },
         { merge: true }
@@ -29,7 +29,7 @@ export default function useElderTreeSetters(result: IFirebaseDataState<IFirebase
           elderTree: {
             ...defaultValues.elderTree,
             ...result?.data?.elderTree,
-            tank: newTankElderTree,
+            tank: newTankElderTree ?? 0,
           },
         },
         { merge: true }
@@ -44,7 +44,7 @@ export default function useElderTreeSetters(result: IFirebaseDataState<IFirebase
           elderTree: {
             ...defaultValues.elderTree,
             ...result?.data?.elderTree,
-            ranger: newRangerElderTree,
+            ranger: newRangerElderTree ?? 0,
           },
         },
         { merge: true }
@@ -59,7 +59,7 @@ export default function useElderTreeSetters(result: IFirebaseDataState<IFirebase
           elderTree: {
             ...defaultValues.elderTree,
             ...result?.data?.elderTree,
-            mage: newMageElderTree,
+            mage: newMageElderTree ?? 0,
           },
         },
         { merge: true }
@@ -74,7 +74,7 @@ export default function useElderTreeSetters(result: IFirebaseDataState<IFirebase
           elderTree: {
             ...defaultValues.elderTree,
             ...result?.data?.elderTree,
-            support: newSupportElderTree,
+            support: newSupportElderTree ?? 0,
           },
         },
         { merge: true }
@@ -89,7 +89,7 @@ export default function useElderTreeSetters(result: IFirebaseDataState<IFirebase
           elderTree: {
             ...defaultValues.elderTree,
             ...result?.data?.elderTree,
-            main: newMainElderTree,
+            main: newMainElderTree ?? 0,
           },
         },
         { merge: true }

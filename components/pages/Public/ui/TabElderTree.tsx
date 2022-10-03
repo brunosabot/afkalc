@@ -26,42 +26,42 @@ const TabElderTree: React.FC<ITabElderTreeProps> = function TabElderTree({ elder
       ) : null}
       <div className={classes.Support}>
         <img src="/elder-tree/duras-sustenance.png" alt="support" className={classes.ClassImage} />
-        <span className={classes.Level}>
+        <span className={classes.LevelLabel}>
           {t("label-level")}
           {elderTree?.support}
         </span>
       </div>
       <div className={classes.Mage}>
         <img src="/elder-tree/duras-sorcery.png" alt="mage" className={classes.ClassImage} />
-        <span className={classes.Level}>
+        <span className={classes.LevelLabel}>
           {t("label-level")}
           {elderTree?.mage}
         </span>
       </div>
       <div className={classes.Warrior}>
         <img src="/elder-tree/duras-might.png" alt="warrior" className={classes.ClassImage} />
-        <span className={classes.Level}>
+        <span className={classes.LevelLabel}>
           {t("label-level")}
           {elderTree?.warrior}
         </span>
       </div>
       <div className={classes.Tank}>
         <img src="/elder-tree/duras-fortitude.png" alt="tank" className={classes.ClassImage} />
-        <span className={classes.Level}>
+        <span className={classes.LevelLabel}>
           {t("label-level")}
           {elderTree?.tank}
         </span>
       </div>
       <div className={classes.Ranger}>
         <img src="/elder-tree/duras-celerity.png" alt="ranger" className={classes.ClassImage} />
-        <span className={classes.Level}>
+        <span className={classes.LevelLabel}>
           {t("label-level")}
           {elderTree?.ranger}
         </span>
       </div>
       <div className={classes.Main}>
         <img src="/elder-tree/tree-level.png" alt="" className={classes.ClassImage} />
-        <span className={classes.Level}>
+        <span className={classes.LevelLabel}>
           {t("label-level")}
           {elderTree?.main}
         </span>
