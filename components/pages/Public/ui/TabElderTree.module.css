@@ -56,7 +56,7 @@
   width: 100%;
 }
 
-.Level {
+.LevelLabel {
   background-image: linear-gradient(to left, transparent, rgb(0 0 0 / 80%), transparent);
   bottom: -14px;
   color: #fff;

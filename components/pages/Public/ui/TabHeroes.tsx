@@ -90,20 +90,3 @@ const TabHeroes: React.FC<IProps> = function TabHeroes({ heroes = [], lastUpdate
 };
 
 export default TabHeroes;
-
-/*
-
-            <HeroLine
-              label={<HeroTooltip character={character} />}
-              key={character.id}
-              id={character.id}
-              name={tC(`heroesName.${character.slug}`)}
-              setLevel={setLevel}
-              getValue={getValue}
-              isView={isSelf === false}
-              faction={character.faction}
-              link={character.link}
-              linkKey={character.linkkey}
-              onClick={() => undefined}
-            />
-*/
