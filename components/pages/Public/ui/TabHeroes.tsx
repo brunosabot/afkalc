@@ -80,6 +80,7 @@ const TabHeroes: React.FC<IProps> = function TabHeroes({ heroes = [], lastUpdate
               fiLevel={getValue(character.id, "fi")}
               engraveLevel={getValue(character.id, "engrave")}
               size="large"
+              key={character.id}
             />
           ))}
         </CharacterGrid>

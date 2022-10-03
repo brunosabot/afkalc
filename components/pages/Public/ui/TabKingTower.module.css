@@ -1,64 +1,68 @@
 .TabKingTower {
-  aspect-ratio: 2 / 3;
-  background-image: url("/background/king-tower.png");
-  background-size: cover;
+  border-radius: 0 0 8px 8px;
+  overflow: hidden;
   position: relative;
+}
+
+.Background {
+  display: block;
+  width: 100%;
 }
 
 .KingTower {
   color: #fae4b6;
-  left: 29.8%;
+  left: 24.8%;
   position: absolute;
-  top: 43.6%;
-  width: 40%;
+  top: 41.1%;
+  width: 50%;
 }
 
 .LighbearerTower {
   color: #74e4e4;
-  left: 9.1%;
+  left: 4.1%;
   position: absolute;
-  top: 49.9%;
-  width: 40%;
+  top: 47.4%;
+  width: 50%;
 }
 
 .MaulerTower {
   color: #fea208;
-  left: 17.8%;
+  left: 7.8%;
   position: absolute;
-  top: 66.4%;
-  width: 40%;
+  top: 63.9%;
+  width: 50%;
 }
 
 .WilderTower {
   color: #a3f780;
-  left: 48.5%;
+  left: 43.5%;
   position: absolute;
-  top: 35%;
-  width: 40%;
+  top: 32.5%;
+  width: 50%;
 }
 
 .GravebornTower {
   color: #ebfe77;
-  left: 48.9%;
+  left: 43.9%;
   position: absolute;
-  top: 62.6%;
-  width: 40%;
+  top: 60.1%;
+  width: 50%;
 }
 
 .CelestialTower {
   color: #fff;
-  left: 9.8%;
+  left: 4.8%;
   position: absolute;
-  top: 28%;
-  width: 40%;
+  top: 25.5%;
+  width: 50%;
 }
 
 .HypogeanTower {
   color: #ffa2fd;
-  left: 35.8%;
+  left: 30.8%;
   position: absolute;
-  top: 81.5%;
-  width: 40%;
+  top: 79%;
+  width: 50%;
 }
 
 .FactionIcon {
