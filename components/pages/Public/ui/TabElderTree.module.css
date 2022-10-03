@@ -1,9 +1,12 @@
 .TabElderTree {
-  aspect-ratio: 572 / 877;
-  background-image: url("/background/elder-tree.jpeg");
-  background-size: cover;
   border-radius: 0 0 8px 8px;
+  overflow: hidden;
   position: relative;
+}
+
+.Background {
+  display: block;
+  width: 100%;
 }
 
 .Support {
@@ -56,6 +59,7 @@
 .Level {
   background-image: linear-gradient(to left, transparent, rgb(0 0 0 / 80%), transparent);
   bottom: -14px;
+  color: #fff;
   display: block;
   font-size: 14px;
   font-weight: 600;

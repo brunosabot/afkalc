@@ -66,7 +66,7 @@ const MemberListItem: React.FC<IProps> = function MemberListItem({ member, isOwn
           <Svg d={mdiAccountRemove} onClick={onRemove} />
         ) : null}
 
-        <Link href={`/hero-list/${member.id}`}>
+        <Link href={`/public/${member.id}`}>
           <a className={styles.Link}>
             <Svg d={mdiViewList} />
           </a>

@@ -17,6 +17,7 @@ const TabKingTower: React.FC<ITabKingTowerProps> = function TabKingTower({ pve, 
 
   return (
     <div className={classes.TabKingTower}>
+      <img src="/background/king-tower.png" className={classes.Background} alt="" />
       {isSelf ? (
         <Link href="/pve">
           <a className={classes.Action}>

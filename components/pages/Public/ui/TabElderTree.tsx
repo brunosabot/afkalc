@@ -16,6 +16,7 @@ const TabElderTree: React.FC<ITabElderTreeProps> = function TabElderTree({ elder
 
   return (
     <div className={classes.TabElderTree}>
+      <img src="/background/elder-tree.jpeg" className={classes.Background} alt="" />
       {isSelf ? (
         <Link href="/elder-tree">
           <a className={classes.Action}>
