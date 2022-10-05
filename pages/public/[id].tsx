@@ -49,7 +49,9 @@ const PublicId: React.FC<IProps> = function HeroList() {
 
   return (
     <Card>
-      <CardTitle icon={mdiEarth}>{t("title-public")}</CardTitle>
+      <CardTitle icon={mdiEarth}>
+        {t("title-public")} - {values.playerName}
+      </CardTitle>
       <CardTabs>
         <CardTab active={tab === 0} onClick={() => setTab(0)}>
           {t("elder-tree")}
