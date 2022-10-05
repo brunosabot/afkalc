@@ -1,5 +1,6 @@
 {
-  "abex-roster-desc": "Wähle deine Truppen für AFK Arenas Abgrund-Expedition",
+  "abex-roster-desc": "Wähle deine Truppen für AFK Arena's Abgrund-Expedition",
   "label-box-hero-list": "Ausgewählte Helden",
-  "label-clear-characters": "Helden entfernen"
+  "label-clear-characters": "Helden entfernen",
+  "label-clear-characters-star": "Helden löschen (5 weitere Slots)"
 }
