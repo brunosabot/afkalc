@@ -50,7 +50,7 @@ const PublicId: React.FC<IProps> = function HeroList() {
   return (
     <Card>
       <CardTitle icon={mdiEarth}>
-        {t("title-public")} - {values.playerName}
+        {t("title-public")} - {result.data?.playerName}
       </CardTitle>
       <CardTabs>
         <CardTab active={tab === 0} onClick={() => setTab(0)}>
