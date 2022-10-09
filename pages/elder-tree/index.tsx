@@ -13,6 +13,7 @@ import ProfileContext from "../../components/providers/ProfileContext";
 import Card from "../../components/ui/card/Card";
 import CardAction from "../../components/ui/card/CardAction";
 import CardActions from "../../components/ui/card/CardActions";
+import CardHelp from "../../components/ui/card/CardHelp";
 import CardTitle from "../../components/ui/card/CardTitle";
 import CardWarn from "../../components/ui/card/CardWarn";
 import elderTreeJson from "../../data/elder-tree.json";
@@ -57,6 +58,7 @@ const ElderTree: React.FC<IProps> = function ElderTree() {
         </Head>
         <CardTitle icon={mdiTree}>{t("common:menu.elder-tree")}</CardTitle>
         <TotalEssence />
+        {values.elderTree.main <= 10 ? <CardHelp>{t("main-tree-empty")}</CardHelp> : null}
         <MainForm value={values.elderTree.main} onChange={setMainElderTree} />
         <ClassForm
           max={values.elderTree.main}
