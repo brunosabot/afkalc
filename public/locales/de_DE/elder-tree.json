@@ -1,7 +1,7 @@
 {
-  "simulate": "Simulate",
-  "current-tree": "Current tree",
-  "max-data-reach": "Maximum stat data reach. The values are therefore not exact.",
+  "simulate": "simuliere",
+  "current-tree": "Aktueller Baum",
+  "max-data-reach": "Maximale Wert-Datenreichweite. Die Werte sind daher nicht exakt.",
   "hp": "HP",
   "hp.pr": "HP%",
   "atk": "ATK",
@@ -9,8 +9,8 @@
   "arm": "DEF",
   "arm.pr": "DEF%",
   "hit": "ACC",
-  "dodg": "DODGE",
-  "mspd": "HASTE",
+  "dodg": "Ausweichen",
+  "mspd": "Hast",
   "crit": "CRIT",
-  "lfs": "LL"
+  "lfs": "Lebensentzug"
 }

@@ -1,10 +1,10 @@
 {
-  "title-public": "PVE Progression",
-  "label-kings-tower": "King's Tower",
-  "label-lightbearer-tower": "Tower of Light",
-  "label-mauler-tower": "The Brutal Citadel",
-  "label-wilder-tower": "The World Tree",
-  "label-graveborn-tower": "The Forsaken Necropolis",
-  "label-celestial-tower": "Celestial Sanctum",
-  "label-hypogean-tower": "Infernal Fortress"
+  "title-public": "PvE Fortschritt",
+  "label-kings-tower": "Königsturm",
+  "label-lightbearer-tower": "Turm des Lichtes",
+  "label-mauler-tower": "Die Brutale Zitadelle",
+  "label-wilder-tower": "Der Weltenbaum",
+  "label-graveborn-tower": "Die Verlassene Nekropolis",
+  "label-celestial-tower": "Himmlisches Heiligtum",
+  "label-hypogean-tower": "Höllische Festung"
 }

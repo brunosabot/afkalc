@@ -1,8 +1,8 @@
 {
-  "title-public": "Public profile",
-  "label-level": "Lv.",
-  "label-floor": "{{ floor }} Floors",
-  "elder-tree": "Elder Tree",
-  "king-tower": "King's tower",
-  "heroes": "Heroes"
+  "title-public": "Öffentliches Profil",
+  "label-level": "Level",
+  "label-floor": "{{ floor }} Stockwerke",
+  "elder-tree": "Der Alte Baum",
+  "king-tower": "Königsturm",
+  "heroes": "Helden"
 }
