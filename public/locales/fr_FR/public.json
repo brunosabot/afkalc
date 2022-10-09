@@ -4,5 +4,7 @@
   "label-floor": "{{ floor }} Étages",
   "elder-tree": "Arbre des anciens",
   "king-tower": "Tour du roi",
-  "heroes": "Héros"
+  "heroes": "Héros",
+  "campaign": "Campaign",
+  "resonating-crystal": "Resonating Crystal"
 }
