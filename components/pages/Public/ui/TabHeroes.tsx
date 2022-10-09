@@ -6,7 +6,7 @@ import React, { useMemo, useState } from "react";
 import heroesJson from "../../../../data/heroes.json";
 import ICharacter from "../../../../types/ICharacter";
 import { IFirebaseHeroList } from "../../../providers/types/IFirebaseHeroes";
-import Character from "../../../ui/afk/Character";
+import HeroTooltip from "../../../tooltip/HeroTooltip";
 import CardHelp from "../../../ui/card/CardHelp";
 import CharacterGrid from "../../../ui/CharacterGrid";
 import Svg from "../../../ui/Svg";
@@ -14,6 +14,7 @@ import useFilteredHeroes from "../../HeroList/hooks/useFilteredHeroes";
 import useFilters from "../../HeroList/hooks/useFilters";
 import useGetValue from "../../HeroList/hooks/useGetValue";
 import Filters from "../../HeroList/ui/Filters";
+import PublicCharacter from "./PublicCharacter";
 import classes from "./TabHeroes.module.css";
 
 const typedHeroes: ICharacter[] = heroesJson as ICharacter[];
@@ -71,9 +72,10 @@ const TabHeroes: React.FC<IProps> = function TabHeroes({ heroes = [], lastUpdate
       ) : (
         <CharacterGrid size="large">
           {characters.map((character) => (
-            <Character
+            <PublicCharacter
+              label={<HeroTooltip character={character} />}
               id={character.id}
-              name={character.name}
+              name={character.name ?? ""}
               ascendLevel={getValue(character.id, "ascend")}
               disabled={getValue(character.id, "ascend") === 0}
               siLevel={getValue(character.id, "si")}
