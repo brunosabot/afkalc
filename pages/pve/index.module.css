@@ -1,0 +1,10 @@
+.MaxCrystalUpdate {
+  background: transparent;
+  border: 0;
+  color: inherit;
+  cursor: pointer;
+  font-size: inherit;
+  margin: 0 0 0 8px;
+  padding: 0;
+  text-decoration: underline;
+}
