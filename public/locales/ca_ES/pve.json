@@ -6,5 +6,11 @@
   "label-wilder-tower": "The World Tree",
   "label-graveborn-tower": "The Forsaken Necropolis",
   "label-celestial-tower": "Celestial Sanctum",
-  "label-hypogean-tower": "Infernal Fortress"
+  "label-hypogean-tower": "Infernal Fortress",
+  "label-campaign": "Campaign",
+  "label-campaign-helper": "(format: 42-15)",
+  "label-crystal": "Resonating Crystal",
+  "label-crystal-max": "Resonating Crystal max",
+  "label-crystal-level": "Crystal level",
+  "label-level": "Lvl {{ level }}"
 }
