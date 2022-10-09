@@ -162,11 +162,12 @@ const Home: React.FC<IProps> = function Home() {
           }}
         >
           {process.env.NODE_ENV === "development" ? <LangButton lang="dev" emoji="👨‍💻" /> : null}
-          <LangButton lang="fr_FR" emoji="🇫🇷" />
+          <LangButton lang="de_DE" emoji="🇩🇪" />
           <LangButton lang="en_US" emoji="🇺🇸‍" />
-          <LangButton lang="pt_BR" emoji="🇧🇷" />
           <LangButton lang="es_ES" emoji="🇪🇸" />
+          <LangButton lang="fr_FR" emoji="🇫🇷" />
           <LangButton lang="it_IT" emoji="🇮🇹" />
+          <LangButton lang="pt_BR" emoji="🇧🇷" />
           <LangButton lang="ru_RU" emoji="🇷🇺" />
           <MoreLangButton />
         </div>
