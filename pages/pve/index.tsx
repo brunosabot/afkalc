@@ -2,13 +2,15 @@ import { mdiRoadVariant } from "@mdi/js";
 import { useTranslation } from "next-i18next";
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 import Head from "next/head";
-import React, { useContext } from "react";
+import React, { useContext, useMemo } from "react";
 import withLayoutPrivateColumn from "../../components/layout/withLayoutPrivateColumn";
 import CampaignForm from "../../components/pages/Pve/ui/CampaignForm";
 import FactionForm from "../../components/pages/Pve/ui/FactionForm";
 import ProfileContext from "../../components/providers/ProfileContext";
 import Card from "../../components/ui/card/Card";
 import CardTitle from "../../components/ui/card/CardTitle";
+import CardWarn from "../../components/ui/card/CardWarn";
+import classes from "./index.module.css";
 
 export const getStaticProps = async ({ locale }: { locale: string }) => ({
   props: {
@@ -39,12 +41,30 @@ const ElderTree: React.FC<IProps> = function ElderTree() {
     values,
   } = useContext(ProfileContext);
 
+  const maxCalculated = useMemo(() => {
+    const heroesAscended = Object.values(values.heroes).filter((hero) => hero.ascend > 6);
+
+    return 240 + 5 * heroesAscended.length;
+  }, [values.heroes]);
+
   return (
     <Card>
       <Head>
         <title>{`${t("common:menu.pve")} - Afkalc`}</title>
       </Head>
       <CardTitle icon={mdiRoadVariant}>{t("common:menu.pve")}</CardTitle>
+      {maxCalculated !== values.pve.crystalMax ? (
+        <CardWarn>
+          {t("max-crystal-differ", { maxCalculated })}
+          <button
+            type="button"
+            className={classes.MaxCrystalUpdate}
+            onClick={() => setPVECrystalMax(maxCalculated)}
+          >
+            {t("max-crystal-update", { maxCalculated })}
+          </button>
+        </CardWarn>
+      ) : null}
       <CampaignForm
         label={t("label-campaign")}
         value={values.pve.campaign}
