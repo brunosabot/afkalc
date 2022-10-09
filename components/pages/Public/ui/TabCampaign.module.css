@@ -1,0 +1,58 @@
+.TabCampaign {
+  border-radius: 0 0 8px 8px;
+  overflow: hidden;
+  position: relative;
+}
+
+.Background {
+  display: block;
+  width: 100%;
+}
+
+.Campaign {
+  color: #fae4b6;
+  left: 25%;
+  position: absolute;
+  top: 50%;
+  width: 50%;
+}
+
+.Name {
+  display: flex;
+  font-size: 16px;
+  font-weight: 600;
+  justify-content: center;
+  margin-bottom: 8px;
+  text-align: center;
+  text-shadow: 1px 1px 4px #000;
+  text-shadow: -1px -1px 1px #472b1b, -1px 1px 1px #472b1b, 1px -1px 1px #472b1b,
+    1px 1px 1px #472b1b, 0 1px 1px #472b1b, 0 -1px 1px #472b1b, 1px 0 1px #472b1b,
+    -1px 0 1px #472b1b;
+  width: 100%;
+}
+
+.Level {
+  display: block;
+  font-size: 20px;
+  font-weight: 600;
+  text-align: center;
+  text-shadow: 1px 1px 4px #000;
+  text-shadow: -1px -1px 1px #472b1b, -1px 1px 1px #472b1b, 1px -1px 1px #472b1b,
+    1px 1px 1px #472b1b, 0 1px 1px #472b1b, 0 -1px 1px #472b1b, 1px 0 1px #472b1b,
+    -1px 0 1px #472b1b;
+  width: 100%;
+}
+
+.Action {
+  border-radius: 50%;
+  display: flex;
+  padding: 8px;
+  position: absolute;
+  right: 0;
+  top: 0;
+  transition: var(--transition);
+}
+
+.Action:hover {
+  background-color: var(--hover-color);
+}

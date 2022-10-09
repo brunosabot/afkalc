@@ -7,4 +7,6 @@ export type IFirebasePve = {
   celestialTower: number;
   hypogeanTower: number;
   campaign: string;
+  crystal: number;
+  crystalMax: number;
 };
