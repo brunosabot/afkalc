@@ -9,9 +9,11 @@ import useFirestoreDocumentReference from "../../components/hooks/useFirestoreDo
 import withLayoutPrivate from "../../components/layout/withLayoutPrivate";
 import useLoadId from "../../components/pages/HeroList/hooks/useLoadId";
 import ShareBanner from "../../components/pages/Public/ui/ShareBanner";
+import TabCampaign from "../../components/pages/Public/ui/TabCampaign";
 import TabElderTree from "../../components/pages/Public/ui/TabElderTree";
 import TabHeroes from "../../components/pages/Public/ui/TabHeroes";
 import TabKingTower from "../../components/pages/Public/ui/TabKingTower";
+import TabResonatingCrystal from "../../components/pages/Public/ui/TabResonatingCrystal";
 import ProfileContext from "../../components/providers/ProfileContext";
 import IFirebaseProfile from "../../components/providers/types/IFirebaseProfile";
 import Card from "../../components/ui/card/Card";
@@ -54,27 +56,35 @@ const PublicId: React.FC<IProps> = function HeroList() {
       </CardTitle>
       <CardTabs>
         <CardTab active={tab === 0} onClick={() => setTab(0)}>
-          {t("elder-tree")}
+          {t("heroes")}
         </CardTab>
         <CardTab active={tab === 1} onClick={() => setTab(1)}>
-          {t("king-tower")}
+          {t("elder-tree")}
         </CardTab>
         <CardTab active={tab === 2} onClick={() => setTab(2)}>
-          {t("heroes")}
+          {t("king-tower")}
+        </CardTab>
+        <CardTab active={tab === 3} onClick={() => setTab(3)}>
+          {t("campaign")}
+        </CardTab>
+        <CardTab active={tab === 4} onClick={() => setTab(4)}>
+          {t("resonating-crystal")}
         </CardTab>
       </CardTabs>
 
       {isSelf ? <ShareBanner userId={userId} /> : null}
 
-      {tab === 0 ? <TabElderTree elderTree={result.data?.elderTree} isSelf={isSelf} /> : null}
-      {tab === 1 ? <TabKingTower pve={result.data?.pve} isSelf={isSelf} /> : null}
-      {tab === 2 ? (
+      {tab === 0 ? (
         <TabHeroes
           heroes={result.data?.heroes}
           lastUpdate={result.data?.heroesLastUpdate}
           isSelf={isSelf}
         />
       ) : null}
+      {tab === 1 ? <TabElderTree elderTree={result.data?.elderTree} isSelf={isSelf} /> : null}
+      {tab === 2 ? <TabKingTower pve={result.data?.pve} isSelf={isSelf} /> : null}
+      {tab === 3 ? <TabCampaign pve={result.data?.pve} isSelf={isSelf} /> : null}
+      {tab === 4 ? <TabResonatingCrystal pve={result.data?.pve} isSelf={isSelf} /> : null}
     </Card>
   );
 };

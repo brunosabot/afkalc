@@ -4,6 +4,7 @@ import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 import Head from "next/head";
 import React, { useContext } from "react";
 import withLayoutPrivateColumn from "../../components/layout/withLayoutPrivateColumn";
+import CampaignForm from "../../components/pages/Pve/ui/CampaignForm";
 import FactionForm from "../../components/pages/Pve/ui/FactionForm";
 import ProfileContext from "../../components/providers/ProfileContext";
 import Card from "../../components/ui/card/Card";
@@ -24,6 +25,7 @@ const ElderTree: React.FC<IProps> = function ElderTree() {
 
   const {
     actions: {
+      setPVECampaign,
       setPVEKingTower,
       setPVELightbearerTower,
       setPVEMaulerTower,
@@ -31,6 +33,8 @@ const ElderTree: React.FC<IProps> = function ElderTree() {
       setPVEGravebornTower,
       setPVECelestialTower,
       setPVEHypogeanTower,
+      setPVECrystal,
+      setPVECrystalMax,
     },
     values,
   } = useContext(ProfileContext);
@@ -41,6 +45,12 @@ const ElderTree: React.FC<IProps> = function ElderTree() {
         <title>{`${t("common:menu.pve")} - Afkalc`}</title>
       </Head>
       <CardTitle icon={mdiRoadVariant}>{t("common:menu.pve")}</CardTitle>
+      <CampaignForm
+        label={t("label-campaign")}
+        value={values.pve.campaign}
+        onChange={setPVECampaign}
+        helper={t("label-campaign-helper")}
+      />
       <FactionForm
         label={t("label-kings-tower")}
         value={values.pve.kingTower}
@@ -82,6 +92,18 @@ const ElderTree: React.FC<IProps> = function ElderTree() {
         value={values.pve.hypogeanTower}
         faction="hypogeans"
         onChange={setPVEHypogeanTower}
+      />
+      <FactionForm
+        label={t("label-crystal")}
+        value={values.pve.crystal}
+        faction="king"
+        onChange={setPVECrystal}
+      />
+      <FactionForm
+        label={t("label-crystal-max")}
+        value={values.pve.crystalMax}
+        faction="king"
+        onChange={setPVECrystalMax}
       />
     </Card>
   );

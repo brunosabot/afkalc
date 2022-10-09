@@ -33,6 +33,7 @@ export interface IProfileActions {
   setMageElderTree: (value: number) => Promise<void>;
   setSupportElderTree: (value: number) => Promise<void>;
   setMainElderTree: (value: number) => Promise<void>;
+  setPVECampaign: (value: string) => Promise<void>;
   setPVEKingTower: (value: number) => Promise<void>;
   setPVELightbearerTower: (value: number) => Promise<void>;
   setPVEMaulerTower: (value: number) => Promise<void>;
@@ -40,6 +41,8 @@ export interface IProfileActions {
   setPVEGravebornTower: (value: number) => Promise<void>;
   setPVECelestialTower: (value: number) => Promise<void>;
   setPVEHypogeanTower: (value: number) => Promise<void>;
+  setPVECrystal: (value: number) => Promise<void>;
+  setPVECrystalMax: (value: number) => Promise<void>;
 }
 
 export interface IProfileValues {
@@ -127,7 +130,9 @@ export const defaultValues: IProfileValues = {
     gravebornTower: 0,
     celestialTower: 0,
     hypogeanTower: 0,
-    campaign: "1.1",
+    campaign: "1-1",
+    crystal: 1,
+    crystalMax: 1,
   },
 };
 
@@ -159,6 +164,7 @@ export default createContext<IProfileContext>({
     setSupportElderTree: () => Promise.resolve(undefined),
     setMainElderTree: () => Promise.resolve(undefined),
     // PVE
+    setPVECampaign: () => Promise.resolve(undefined),
     setPVEKingTower: () => Promise.resolve(undefined),
     setPVELightbearerTower: () => Promise.resolve(undefined),
     setPVEMaulerTower: () => Promise.resolve(undefined),
@@ -166,6 +172,8 @@ export default createContext<IProfileContext>({
     setPVEGravebornTower: () => Promise.resolve(undefined),
     setPVECelestialTower: () => Promise.resolve(undefined),
     setPVEHypogeanTower: () => Promise.resolve(undefined),
+    setPVECrystal: () => Promise.resolve(undefined),
+    setPVECrystalMax: () => Promise.resolve(undefined),
   },
   values: defaultValues,
 });

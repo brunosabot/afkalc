@@ -1,0 +1,31 @@
+.CampaignForm {
+  align-items: center;
+  display: flex;
+  gap: 8px;
+  padding: 0 16px 16px;
+}
+
+.Invalid {
+  color: var(--error-text-color);
+}
+
+.Image {
+  height: 32px;
+  width: 32px;
+}
+
+.Label {
+  flex-grow: 1;
+}
+
+.Input {
+  background-color: transparent;
+  border: 1px solid var(--card-border-color);
+  border-radius: 4px;
+  box-sizing: border-box;
+  color: inherit;
+  font-size: inherit;
+  height: 32px;
+  padding: 8px;
+  width: 64px;
+}

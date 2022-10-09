@@ -53,6 +53,7 @@ const ProfileProvider: React.FC<IProps> = function ProfileProvider({ children })
   } = useElderTreeSetters(result);
 
   const {
+    setPVECampaign,
     setPVEKingTower,
     setPVELightbearerTower,
     setPVEMaulerTower,
@@ -60,6 +61,8 @@ const ProfileProvider: React.FC<IProps> = function ProfileProvider({ children })
     setPVEGravebornTower,
     setPVECelestialTower,
     setPVEHypogeanTower,
+    setPVECrystal,
+    setPVECrystalMax,
   } = usePveSetters(result);
 
   useMigration(result);
@@ -90,6 +93,7 @@ const ProfileProvider: React.FC<IProps> = function ProfileProvider({ children })
         setMageElderTree,
         setSupportElderTree,
         setMainElderTree,
+        setPVECampaign,
         setPVEKingTower,
         setPVELightbearerTower,
         setPVEMaulerTower,
@@ -97,6 +101,8 @@ const ProfileProvider: React.FC<IProps> = function ProfileProvider({ children })
         setPVEGravebornTower,
         setPVECelestialTower,
         setPVEHypogeanTower,
+        setPVECrystal,
+        setPVECrystalMax,
       },
       values: {
         ...defaultValues,
@@ -134,6 +140,7 @@ const ProfileProvider: React.FC<IProps> = function ProfileProvider({ children })
       setMageElderTree,
       setSupportElderTree,
       setMainElderTree,
+      setPVECampaign,
       setPVEKingTower,
       setPVELightbearerTower,
       setPVEMaulerTower,
@@ -141,6 +148,8 @@ const ProfileProvider: React.FC<IProps> = function ProfileProvider({ children })
       setPVEGravebornTower,
       setPVECelestialTower,
       setPVEHypogeanTower,
+      setPVECrystal,
+      setPVECrystalMax,
       result?.data,
       values.uid,
       values.isAuth,

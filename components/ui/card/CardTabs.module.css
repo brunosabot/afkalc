@@ -1,7 +1,46 @@
-.CardTabs {
+.CardTabsWrapper {
   border-bottom: 1px solid var(--list-border);
   border-top: 1px solid var(--list-border);
-  display: flex;
-  justify-content: space-evenly;
+  box-sizing: border-box;
   margin-bottom: 8px;
+  overflow: hidden;
+  position: relative;
+  width: 100%;
+}
+
+.CardTabs {
+  box-sizing: border-box;
+  display: flex;
+  overflow: hidden;
+  width: 100%;
+}
+
+.WithScroll .CardTabs {
+  padding: 0 40px;
+}
+
+.CardTabsButtonLeft {
+  background-color: var(--card-color);
+  border: 0;
+  display: block;
+  height: 48px;
+  left: 0;
+  margin: 0;
+  padding: 0;
+  position: absolute;
+  top: 0;
+  width: 40px;
+}
+
+.CardTabsButtonRight {
+  background-color: var(--card-color);
+  border: 0;
+  display: block;
+  height: 48px;
+  margin: 0;
+  padding: 0;
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 40px;
 }

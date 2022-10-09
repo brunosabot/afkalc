@@ -7,6 +7,21 @@ import IFirebaseProfile from "../types/IFirebaseProfile";
 export default function usePveSetters(result: IFirebaseDataState<IFirebaseProfile>) {
   const document = useFirestoreDocumentReference(`profile/%ID%`);
 
+  const setPVECampaign = useCallback(
+    async (newCampaignPve) => {
+      await document?.set(
+        {
+          pve: {
+            ...defaultValues.pve,
+            ...result?.data?.pve,
+            campaign: newCampaignPve,
+          },
+        },
+        { merge: true }
+      );
+    },
+    [document, result?.data?.pve]
+  );
   const setPVEKingTower = useCallback(
     async (newKingTowerPve) => {
       await document?.set(
@@ -112,8 +127,41 @@ export default function usePveSetters(result: IFirebaseDataState<IFirebaseProfil
     },
     [document, result?.data?.pve]
   );
+  const setPVECrystal = useCallback(
+    async (newCrystalPve) => {
+      await document?.set(
+        {
+          pve: {
+            ...defaultValues.pve,
+            ...result?.data?.pve,
+            crystal: newCrystalPve,
+          },
+        },
+        { merge: true }
+      );
+    },
+    [document, result?.data?.pve]
+  );
+  const setPVECrystalMax = useCallback(
+    async (newCrystalMaxPve) => {
+      await document?.set(
+        {
+          pve: {
+            ...defaultValues.pve,
+            ...result?.data?.pve,
+            crystalMax: newCrystalMaxPve,
+          },
+        },
+        { merge: true }
+      );
+    },
+    [document, result?.data?.pve]
+  );
 
   return {
+    setPVECrystal,
+    setPVECrystalMax,
+    setPVECampaign,
     setPVEKingTower,
     setPVELightbearerTower,
     setPVEMaulerTower,
