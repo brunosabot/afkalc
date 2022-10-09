@@ -6,5 +6,11 @@
   "label-wilder-tower": "Der Weltenbaum",
   "label-graveborn-tower": "Die Verlassene Nekropolis",
   "label-celestial-tower": "Himmlisches Heiligtum",
-  "label-hypogean-tower": "Höllische Festung"
+  "label-hypogean-tower": "Höllische Festung",
+  "label-campaign": "Campaign",
+  "label-campaign-helper": "(format: 42-15)",
+  "label-crystal": "Resonating Crystal",
+  "label-crystal-max": "Resonating Crystal max",
+  "label-crystal-level": "Crystal level",
+  "label-level": "Lvl {{ level }}"
 }
