@@ -6,5 +6,13 @@
   "label-wilder-tower": "El árbol del mundo",
   "label-graveborn-tower": "La Necrópolis Abandonada",
   "label-celestial-tower": "Santuario Celestial",
-  "label-hypogean-tower": "Fortaleza infernal"
+  "label-hypogean-tower": "Fortaleza infernal",
+  "label-campaign": "Campaign",
+  "label-campaign-helper": "(format: 42-15)",
+  "label-crystal": "Resonating Crystal",
+  "label-crystal-max": "Resonating Crystal max",
+  "label-crystal-level": "Crystal level",
+  "label-level": "Lvl {{ level }}",
+  "max-crystal-differ": "The max crystal calculated ({{ maxCalculated }}) is different from the one saved.",
+  "max-crystal-update": "Update the value to {{ maxCalculated }}"
 }
