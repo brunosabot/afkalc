@@ -12,5 +12,6 @@
   "dodg": "УКЛ",
   "mspd": "УСКР",
   "crit": "КРИТ",
-  "lfs": "ВЖ"
+  "lfs": "ВЖ",
+  "main-tree-empty": "Fill your main elder tree up to 11 to start changing the branch values"
 }
