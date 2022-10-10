@@ -4,5 +4,7 @@
   "label-floor": "{{ floor }} Stockwerke",
   "elder-tree": "Der Alte Baum",
   "king-tower": "Königsturm",
-  "heroes": "Helden"
+  "heroes": "Helden",
+  "campaign": "Kampagne",
+  "resonating-crystal": "Resonierender Kristall"
 }
