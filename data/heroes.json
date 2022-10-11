@@ -1188,5 +1188,15 @@
     "slug": "gor",
     "faction": "dimensionals",
     "isAwakened": false
+  },
+  {
+    "id": 121,
+    "type": "strength",
+    "class": "tank",
+    "role": "tank",
+    "image": "/heroes/Chimera.jpg",
+    "slug": "chimera",
+    "faction": "hypogeans",
+    "isAwakened": false
   }
 ]
