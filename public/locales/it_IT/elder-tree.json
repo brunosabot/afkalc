@@ -12,5 +12,6 @@
   "dodg": "DODGE",
   "mspd": "FRETTA",
   "crit": "CRIT",
-  "lfs": "LL"
+  "lfs": "LL",
+  "main-tree-empty": "Fill your main elder tree up to 11 to start changing the branch values"
 }

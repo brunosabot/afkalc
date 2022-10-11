@@ -12,5 +12,6 @@
   "dodg": "ESQUIVA",
   "mspd": "PRESSA",
   "crit": "CRIT",
-  "lfs": "SS"
+  "lfs": "SS",
+  "main-tree-empty": "Fill your main elder tree up to 11 to start changing the branch values"
 }

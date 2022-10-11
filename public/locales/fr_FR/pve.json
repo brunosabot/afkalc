@@ -6,5 +6,13 @@
   "label-wilder-tower": "L'arbre-monde",
   "label-graveborn-tower": "La nécropole abandonnée",
   "label-celestial-tower": "Sanctuaire céleste",
-  "label-hypogean-tower": "Forteresse infernale"
+  "label-hypogean-tower": "Forteresse infernale",
+  "label-campaign": "Campagne",
+  "label-campaign-helper": "(format : 42-15)",
+  "label-crystal": "Cristal résonant",
+  "label-crystal-max": "Cristal résonant max",
+  "label-crystal-level": "Niveau de cristal",
+  "label-level": "Lvl {{ level }}",
+  "max-crystal-differ": "The max crystal calculated ({{ maxCalculated }}) is different from the one saved.",
+  "max-crystal-update": "Update the value to {{ maxCalculated }}"
 }
