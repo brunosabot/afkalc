@@ -7,12 +7,12 @@
   "label-graveborn-tower": "The Forsaken Necropolis",
   "label-celestial-tower": "Celestial Sanctum",
   "label-hypogean-tower": "Infernal Fortress",
-  "label-campaign": "Campaign",
-  "label-campaign-helper": "(format: 42-15)",
-  "label-crystal": "Resonating Crystal",
-  "label-crystal-max": "Resonating Crystal max",
-  "label-crystal-level": "Crystal level",
-  "label-level": "Lvl {{ level }}",
+  "label-campaign": "Campanha",
+  "label-campaign-helper": "(formato: 42-15)",
+  "label-crystal": "Cristal Ressonante",
+  "label-crystal-max": "Cristal Ressonante Máximo",
+  "label-crystal-level": "Nível do Cristal",
+  "label-level": "Nvl {{level}}",
   "max-crystal-differ": "The max crystal calculated ({{ maxCalculated }}) is different from the one saved.",
   "max-crystal-update": "Update the value to {{ maxCalculated }}"
 }
