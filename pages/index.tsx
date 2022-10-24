@@ -13,6 +13,7 @@ import {
   mdiGithub,
   mdiHome,
   mdiMap,
+  mdiPaw,
   mdiPlaylistCheck,
   mdiRoadVariant,
   mdiScript,
@@ -72,6 +73,9 @@ const Home: React.FC<IProps> = function Home() {
         <MenuBox>
           <MenuItem to={`/hero-list/${values.userId}`} icon={mdiViewList}>
             {t("common:menu.hero-list")}
+          </MenuItem>
+          <MenuItem to="/hero-list/pets" icon={mdiPaw}>
+            {t("common:menu.pet-list")}
           </MenuItem>
           <MenuItem to="/elder-tree" icon={mdiTree}>
             {t("common:menu.elder-tree")}

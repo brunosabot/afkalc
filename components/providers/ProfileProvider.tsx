@@ -5,7 +5,7 @@ import Spinner from "../ui/Spinner";
 import { FirebaseContext } from "./FirebaseProvider";
 import useAbyssalExpeditionSetters from "./hooks/useAbyssalExpeditionSetters";
 import useElderTreeSetters from "./hooks/useElderTreeSetters";
-import useMigration from "./hooks/useMigration";
+import usePetSetters from "./hooks/usePetSetters";
 import useProfileActions from "./hooks/useProfileActions";
 import useProfileSetters from "./hooks/useProfileSetters";
 import usePveSetters from "./hooks/usePveSetters";
@@ -65,7 +65,7 @@ const ProfileProvider: React.FC<IProps> = function ProfileProvider({ children })
     setPVECrystalMax,
   } = usePveSetters(result);
 
-  useMigration(result);
+  const { setPetAgilityBuff, setPetIntelligenceBuff, setPetStrengthBuff } = usePetSetters(result);
 
   const value = useMemo<IProfileContext>(
     () => ({
@@ -103,6 +103,9 @@ const ProfileProvider: React.FC<IProps> = function ProfileProvider({ children })
         setPVEHypogeanTower,
         setPVECrystal,
         setPVECrystalMax,
+        setPetAgilityBuff,
+        setPetIntelligenceBuff,
+        setPetStrengthBuff,
       },
       values: {
         ...defaultValues,
@@ -150,6 +153,9 @@ const ProfileProvider: React.FC<IProps> = function ProfileProvider({ children })
       setPVEHypogeanTower,
       setPVECrystal,
       setPVECrystalMax,
+      setPetAgilityBuff,
+      setPetIntelligenceBuff,
+      setPetStrengthBuff,
       result?.data,
       values.uid,
       values.isAuth,

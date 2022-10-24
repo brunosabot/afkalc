@@ -1,0 +1,13 @@
+.PetGrid {
+  display: grid;
+  gap: 16px;
+  grid-template-columns: repeat(auto-fill, 64px);
+  justify-content: center;
+  padding: 0 16px 16px;
+  padding-bottom: 16px;
+}
+
+.PetGrid--large {
+  gap: 16px;
+  grid-template-columns: repeat(auto-fill, 64px);
+}

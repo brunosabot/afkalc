@@ -1,0 +1,28 @@
+.FieldCheckbox > * {
+  padding: 0;
+}
+
+.EditPetSwitch {
+  display: flex;
+  justify-content: space-between;
+}
+
+.Form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin-top: 32px;
+}
+
+.Button {
+  background-color: transparent;
+  border: 0;
+  border-radius: 50%;
+  cursor: pointer;
+  padding: 0;
+  width: 56px;
+}
+
+.Button:hover {
+  background: var(--hover-color);
+}
