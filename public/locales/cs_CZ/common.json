@@ -78,6 +78,7 @@
     "abex-relic-share": "Sdílet Relics",
     "public": "Public Profile",
     "pve": "PVE Progression",
+    "pet-list": "Pet list",
     "short-hero-list": "Hrdinové",
     "short-top-team": "Týmy",
     "short-item-cost": "Cena itemu",
@@ -355,5 +356,15 @@
     "bossrog": "Continuum Stalker",
     "bosslionact": "Dune Destroyer",
     "bossdm": "Azmonath"
+  },
+  "petName": {
+    "6001": "Dreary Ball",
+    "6002": "Tufty Ears",
+    "6003": "Grassy Orb",
+    "6004": "Polar Beast",
+    "6005": "Fire Breather",
+    "6006": "Blade Ridge",
+    "6007": "Winged Lion",
+    "6008": "Rock Crown Lizard"
   }
 }
