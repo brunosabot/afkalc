@@ -78,6 +78,7 @@
     "abex-relic-share": "Compartir Reliquias",
     "public": "Perfil público",
     "pve": "Progresión de PVE",
+    "pet-list": "Pet list",
     "short-hero-list": "Héroes",
     "short-top-team": "Equipos",
     "short-item-cost": "Comparación",
@@ -355,5 +356,15 @@
     "bossrog": "Acosador continuo",
     "bosslionact": "Destructora de dunas",
     "bossdm": "Azmonath"
+  },
+  "petName": {
+    "6001": "Dreary Ball",
+    "6002": "Tufty Ears",
+    "6003": "Grassy Orb",
+    "6004": "Polar Beast",
+    "6005": "Fire Breather",
+    "6006": "Blade Ridge",
+    "6007": "Winged Lion",
+    "6008": "Rock Crown Lizard"
   }
 }
