@@ -13,6 +13,7 @@ import TabCampaign from "../../components/pages/Public/ui/TabCampaign";
 import TabElderTree from "../../components/pages/Public/ui/TabElderTree";
 import TabHeroes from "../../components/pages/Public/ui/TabHeroes";
 import TabKingTower from "../../components/pages/Public/ui/TabKingTower";
+import TabPets from "../../components/pages/Public/ui/TabPets";
 import TabResonatingCrystal from "../../components/pages/Public/ui/TabResonatingCrystal";
 import ProfileContext from "../../components/providers/ProfileContext";
 import IFirebaseProfile from "../../components/providers/types/IFirebaseProfile";
@@ -70,6 +71,9 @@ const PublicId: React.FC<IProps> = function HeroList() {
         <CardTab active={tab === 4} onClick={() => setTab(4)}>
           {t("resonating-crystal")}
         </CardTab>
+        <CardTab active={tab === 5} onClick={() => setTab(5)}>
+          {t("pets")}
+        </CardTab>
       </CardTabs>
 
       {isSelf ? <ShareBanner userId={userId} /> : null}
@@ -85,6 +89,7 @@ const PublicId: React.FC<IProps> = function HeroList() {
       {tab === 2 ? <TabKingTower pve={result.data?.pve} isSelf={isSelf} /> : null}
       {tab === 3 ? <TabCampaign pve={result.data?.pve} isSelf={isSelf} /> : null}
       {tab === 4 ? <TabResonatingCrystal pve={result.data?.pve} isSelf={isSelf} /> : null}
+      {tab === 5 ? <TabPets pets={result.data?.pets} /> : null}
     </Card>
   );
 };

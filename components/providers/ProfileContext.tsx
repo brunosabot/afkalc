@@ -7,6 +7,7 @@ import {
 } from "./types/IFirebaseAbyssalExpedition";
 import { IFirebaseElderTree } from "./types/IFirebaseElderTree";
 import { IFirebaseHeroList } from "./types/IFirebaseHeroes";
+import { IFirebasePetList } from "./types/IFirebasePets";
 import { IFirebasePve } from "./types/IFirebasePve";
 
 export interface IProfileActions {
@@ -17,6 +18,9 @@ export interface IProfileActions {
   setPlayerName: (newPlayerName: string) => void;
   setFavoritePriorityList: (newFavoritePriorityList: string[]) => void;
   setFavoriteTreeList: (newTreePriorityList: string[]) => void;
+  setPetAgilityBuff: (petId: string, petAgilityBuff: number) => Promise<void>;
+  setPetIntelligenceBuff: (petId: string, petIntelligenceBuff: number) => Promise<void>;
+  setPetStrengthBuff: (petId: string, petStrengthBuff: number) => Promise<void>;
   deleteUser: () => void;
   downloadData: () => void;
   setAbexCurrentRelics: (newCurrentRelics: IFirebaseAbyssalExpeditionClassRelics) => Promise<void>;
@@ -68,6 +72,7 @@ export interface IProfileValues {
   abexTiles: IFirebaseAbyssalExpeditionTilesList;
   abexBox: number[];
   heroes: IFirebaseHeroList;
+  pets: IFirebasePetList;
   heroesLastUpdate: string;
   elderTree: IFirebaseElderTree;
   pve: IFirebasePve;
@@ -114,6 +119,7 @@ export const defaultValues: IProfileValues = {
   favoriteTreeList: [],
   heroes: {},
   heroesLastUpdate: "",
+  pets: {},
   elderTree: {
     main: 0,
     warrior: 0,
@@ -147,6 +153,9 @@ export default createContext<IProfileContext>({
     setFavoriteTreeList: () => undefined,
     deleteUser: () => undefined,
     downloadData: () => undefined,
+    setPetAgilityBuff: () => Promise.resolve(undefined),
+    setPetIntelligenceBuff: () => Promise.resolve(undefined),
+    setPetStrengthBuff: () => Promise.resolve(undefined),
     // Abyssal Expedition
     setAbexCurrentRelics: () => Promise.resolve(undefined),
     setAbexGoalRelics: () => Promise.resolve(undefined),
