@@ -44,6 +44,7 @@
   "equipment": "Equipamiento",
   "has-dimensional-key": "Tiene una llave dimensional",
   "use-my-hero-stats": "Usar stats de mi héroe",
+  "use-my-pet-stats": "Use stats from my pet",
   "error": {
     "error": "{{code}} Error",
     "unknown-error": "Se ha producido un error...",
@@ -78,7 +79,7 @@
     "abex-relic-share": "Compartir Reliquias",
     "public": "Perfil público",
     "pve": "Progresión de PVE",
-    "pet-list": "Pet list",
+    "pet-list": "Lista de mascotas",
     "short-hero-list": "Héroes",
     "short-top-team": "Equipos",
     "short-item-cost": "Comparación",
@@ -209,7 +210,10 @@
     "ascend": "Ascensión",
     "engrave": "Grabados",
     "unlocked": "desbloqueado",
-    "faction": "Facción"
+    "faction": "Facción",
+    "agilityBuff": "Agility Buff",
+    "intelligenceBuff": "Intelligence Buff",
+    "strengthBuff": "Strength Buff"
   },
   "heroesName": {
     "uhlan": "Estrilda",
@@ -331,7 +335,8 @@
     "wnt": "Solise",
     "ynt": "Yennefer",
     "gor": "Geralt",
-    "chimera": "Canisa & Ruke"
+    "chimera": "Canisa & Ruke",
+    "flora": "Nevanthi"
   },
   "enemyName": {
     "goblin": "Wrizz",
@@ -358,13 +363,14 @@
     "bossdm": "Azmonath"
   },
   "petName": {
-    "6001": "Dreary Ball",
-    "6002": "Tufty Ears",
-    "6003": "Grassy Orb",
-    "6004": "Polar Beast",
-    "6005": "Fire Breather",
-    "6006": "Blade Ridge",
-    "6007": "Winged Lion",
-    "6008": "Rock Crown Lizard"
+    "6001": "Bola sombría",
+    "6002": "Orejas peludas",
+    "6003": "Orbe yerboso",
+    "6004": "Bestia polar",
+    "6005": "Escupefuego",
+    "6006": "Cresta filosa",
+    "6007": "León alado",
+    "6008": "Lagarto corona pétrea",
+    "6009": "Feline Vesperio"
   }
 }
