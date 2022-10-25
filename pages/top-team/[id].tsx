@@ -9,6 +9,7 @@ import useShareUrl from "../../components/pages/TopTeam/hooks/useShareUrl";
 import useTitle from "../../components/pages/TopTeam/hooks/useTitle";
 import Board from "../../components/pages/TopTeam/ui/Board";
 import EnemiPosition from "../../components/pages/TopTeam/ui/EnemiPosition";
+import PetPosition from "../../components/pages/TopTeam/ui/PetPosition";
 import PlayerPosition from "../../components/pages/TopTeam/ui/PlayerPosition";
 import ShareBanner from "../../components/pages/TopTeam/ui/ShareBanner";
 import Card from "../../components/ui/card/Card";
@@ -24,6 +25,12 @@ export const getStaticPaths: GetStaticPaths<{ slug: string }> = async () => ({
   fallback: "blocking",
 });
 
+interface Pet {
+  id: string;
+  agilityBuff: number;
+  intelligenceBuff: number;
+  strengthBuff: number;
+}
 interface Hero {
   id: number;
   ascend: number;
@@ -41,7 +48,18 @@ interface Props {
   [key: string]: never;
 }
 
-function parseHero(encodedHero: string) {
+function parsePet(encodedPet: string) {
+  const [id = 0, agilityBuff = 0, intelligenceBuff = 0, strengthBuff = 0] = encodedPet
+    .split("")
+    .map((e) => e.charCodeAt(0))
+    .map((e) => +e - 48);
+
+  return { id: `${6000 + id}`, agilityBuff, intelligenceBuff, strengthBuff };
+}
+
+function parseHero(encodedHero: string, i: number): Hero | Pet {
+  if (i === 5) return parsePet(encodedHero);
+
   const [id = 0, ascend = 0, si = -1, fi = 0, engrave = 0, artifact = 0] = encodedHero
     .split("")
     .map((e) => e.charCodeAt(0))
@@ -50,7 +68,9 @@ function parseHero(encodedHero: string) {
   return { id, ascend, si, fi, engrave, artifact };
 }
 
-function parseEnemy(encodedHero: string) {
+function parseEnemy(encodedHero: string, i: number): Enemy | Pet {
+  if (i === 5) return parsePet(encodedHero);
+
   const [typeCode = "e", id = 0, ascend = 0, si = -1, fi = 0, engrave = 0, artifact = 0] =
     encodedHero
       .split("")
@@ -62,7 +82,24 @@ function parseEnemy(encodedHero: string) {
   return { type, id, ascend, si, fi, engrave, artifact };
 }
 
-function stringifyHero(hero: Hero) {
+function isPet(pet: Hero | Pet): pet is Pet {
+  return Object.prototype.hasOwnProperty.call(pet, "agilityBuff");
+}
+
+function stringifyPet(pet: Pet) {
+  const idCode = String.fromCharCode(parseInt(pet.id || "6000", 10) - 6000 + 48);
+  const agilityBuffCode = String.fromCharCode((pet.agilityBuff || 0) + 48);
+  const intelligenceBuffCode = String.fromCharCode((pet.intelligenceBuff || 0) + 48);
+  const strengthBuffCode = String.fromCharCode((pet.strengthBuff || 0) + 48);
+
+  const code = `${idCode}${agilityBuffCode}${intelligenceBuffCode}${strengthBuffCode}`;
+
+  return code;
+}
+
+function stringifyHero(hero: Hero | Pet) {
+  if (isPet(hero)) return stringifyPet(hero);
+
   const idCode = String.fromCharCode((hero.id || 0) + 48);
   const ascendCode = String.fromCharCode((hero.ascend || 0) + 48);
   const siCode = String.fromCharCode((hero.si || 0) + 48);
@@ -75,7 +112,9 @@ function stringifyHero(hero: Hero) {
   return code;
 }
 
-function stringifyEnemi(enemy: Enemy) {
+function stringifyEnemi(enemy: Enemy | Pet) {
+  if (isPet(enemy)) return stringifyPet(enemy);
+
   const { type } = enemy;
   const idCode = String.fromCharCode((enemy.id || 0) + 48);
   const ascendCode = String.fromCharCode((enemy.ascend || 0) + 48);
@@ -89,6 +128,12 @@ function stringifyEnemi(enemy: Enemy) {
   return code;
 }
 
+function normalizeOurs(ours: string) {
+  const val = ours.split(",");
+  while (val.length < 6) val.push("");
+  return val;
+}
+
 const TopTeam: React.FC<Props> = function TopTeam() {
   const router = useRouter();
   const { id } = router.query;
@@ -96,10 +141,27 @@ const TopTeam: React.FC<Props> = function TopTeam() {
   const [heroId, setHeroId] = useState(id);
 
   const [ours, theirs] = decodeURIComponent(heroId as string).split("-");
-  const [pos1, pos2, pos3, pos4, pos5] = ours.split(",").map(parseHero);
-  const [ene1, ene2, ene3, ene4, ene5] = theirs.split(",").map(parseEnemy);
+  const [pos1, pos2, pos3, pos4, pos5, pet] = normalizeOurs(ours).map(parseHero) as [
+    Hero,
+    Hero,
+    Hero,
+    Hero,
+    Hero,
+    Pet
+  ];
+  const [ene1, ene2, ene3, ene4, ene5, epet] = normalizeOurs(theirs).map(parseEnemy) as [
+    Enemy,
+    Enemy,
+    Enemy,
+    Enemy,
+    Enemy,
+    Pet
+  ];
 
-  const url = useShareUrl([pos1, pos2, pos3, pos4, pos5], [ene1, ene2, ene3, ene4, ene5]);
+  const url = useShareUrl(
+    [pos1, pos2, pos3, pos4, pos5, pet],
+    [ene1, ene2, ene3, ene4, ene5, epet]
+  );
 
   useEffect(() => {
     router.replace(url, undefined, { shallow: true });
@@ -107,7 +169,7 @@ const TopTeam: React.FC<Props> = function TopTeam() {
   }, [url]);
 
   const onSelect = (position: number) => (hero: Hero) => {
-    const heroes = [pos1, pos2, pos3, pos4, pos5];
+    const heroes = [pos1, pos2, pos3, pos4, pos5, pet];
     heroes[position - 1] = hero;
 
     const encodedHeroes = heroes.map(stringifyHero).map(encodeURIComponent);
@@ -116,9 +178,30 @@ const TopTeam: React.FC<Props> = function TopTeam() {
     setHeroId(newString);
   };
 
+  const onSelectPet = (position: number) => (thePet: Pet) => {
+    const heroes = [pos1, pos2, pos3, pos4, pos5, thePet];
+    heroes[position - 1] = thePet;
+
+    const encodedHeroes = heroes.map(stringifyHero).map(encodeURIComponent);
+
+    const newString = `${encodedHeroes.join(",")}-${theirs}`;
+
+    setHeroId(newString);
+  };
+
   const onSelectEnemy = (position: number) => (enemy: Enemy) => {
-    const enemies = [ene1, ene2, ene3, ene4, ene5];
+    const enemies = [ene1, ene2, ene3, ene4, ene5, epet];
     enemies[position - 6] = enemy;
+
+    const encodedEnemies = enemies.map(stringifyEnemi).map(encodeURIComponent);
+    const newString = `${ours}-${encodedEnemies.join(",")}`;
+
+    setHeroId(newString);
+  };
+
+  const onSelectEnemiPet = (position: number) => (thePet: Pet) => {
+    const enemies = [ene1, ene2, ene3, ene4, ene5, thePet];
+    enemies[position - 6] = thePet;
 
     const encodedEnemies = enemies.map(stringifyEnemi).map(encodeURIComponent);
     const newString = `${ours}-${encodedEnemies.join(",")}`;
@@ -147,6 +230,9 @@ const TopTeam: React.FC<Props> = function TopTeam() {
         <PlayerPosition onSelect={onSelect} position={3} hero={pos3} />
         <PlayerPosition onSelect={onSelect} position={4} hero={pos4} />
         <PlayerPosition onSelect={onSelect} position={5} hero={pos5} />
+
+        <PetPosition onSelect={onSelectPet} position={6} pet={pet} />
+        <PetPosition onSelect={onSelectEnemiPet} position={11} pet={epet} />
 
         <EnemiPosition onSelect={onSelectEnemy} position={6} enemi={ene1} />
         <EnemiPosition onSelect={onSelectEnemy} position={7} enemi={ene2} />

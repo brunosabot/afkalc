@@ -44,6 +44,7 @@
   "equipment": "Equipment",
   "has-dimensional-key": "Has a dimensional key",
   "use-my-hero-stats": "Use stats from my hero",
+  "use-my-pet-stats": "Use stats from my pet",
   "error": {
     "error": "{{code}} Error",
     "unknown-error": "An error has occured...",
@@ -209,7 +210,10 @@
     "ascend": "Ascension",
     "engrave": "Engraving",
     "unlocked": "unlocked",
-    "faction": "Faction"
+    "faction": "Faction",
+    "agilityBuff": "Agility Buff",
+    "intelligenceBuff": "Intelligence Buff",
+    "strengthBuff": "Strength Buff"
   },
   "heroesName": {
     "uhlan": "Estrilda",

@@ -1,0 +1,32 @@
+.PetPosition {
+  align-items: center;
+  box-sizing: border-box;
+  cursor: pointer;
+  display: flex;
+  height: 56px;
+  justify-content: center;
+  position: absolute;
+  width: 56px;
+}
+
+.PetPosition--6 {
+  left: 1%;
+  top: 94px;
+}
+
+.PetPosition--11 {
+  right: 1%;
+  top: 94px;
+}
+
+.Add {
+  background-color: var(--card-color);
+  border: 0;
+  border-radius: 8px 0 16px;
+  color: var(--text-color);
+  cursor: pointer;
+  font-size: 36px;
+  height: 100%;
+  outline: 0;
+  width: 100%;
+}

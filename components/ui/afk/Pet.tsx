@@ -13,7 +13,9 @@ interface IProps {
   strengthBuff: number;
   intelligenceBuff: number;
   agilityBuff: number;
+  highlight?: boolean;
   onClick?: () => void;
+  size?: "normal" | "small";
   // Used by the tooltip
   // eslint-disable-next-line react/no-unused-prop-types
   label?: any;
@@ -25,6 +27,8 @@ const Pet: React.FC<IProps> = function Pet({
   intelligenceBuff,
   agilityBuff,
   onClick = () => {},
+  highlight = false,
+  size = "normal",
 }) {
   const { t } = useTranslation("common");
 
@@ -34,11 +38,15 @@ const Pet: React.FC<IProps> = function Pet({
 
   const level = strengthBuff + intelligenceBuff + agilityBuff;
   const isLocked = strengthBuff === -1 || intelligenceBuff === -1 || agilityBuff === -1;
+  const highlightClassName = highlight ? styles.Highlight : "";
+  const smallClassName = size === "small" ? styles.Small : "";
 
   return (
     <div>
       <div
-        className={`${styles.Wrapper} ${isLocked ? styles.Locked : ""}`}
+        className={`${styles.Wrapper} ${
+          isLocked ? styles.Locked : ""
+        } ${smallClassName} ${highlightClassName}`}
         onClick={onClick}
         role="button"
         tabIndex={-1}
@@ -48,8 +56,8 @@ const Pet: React.FC<IProps> = function Pet({
       >
         <Image
           src={`/api/pet?elevation=${currentPet.elevation}&id=${id}&level=${level}`}
-          width={64}
-          height={64}
+          width={size === "normal" ? 64 : 56}
+          height={size === "normal" ? 64 : 56}
           layout="fixed"
           alt={t(`common:petName.${id}`)}
         />
