@@ -4,5 +4,7 @@
   "label-floor": "{{ floor }} pisos",
   "elder-tree": "Árbol Anciano",
   "king-tower": "Torre del Rey",
-  "heroes": "Héroes"
+  "heroes": "Héroes",
+  "campaign": "Campaña",
+  "resonating-crystal": "Cristal Resonante"
 }
