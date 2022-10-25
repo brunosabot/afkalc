@@ -331,7 +331,8 @@
     "wnt": "Solise",
     "ynt": "Yennefer",
     "gor": "Geralt",
-    "chimera": "Canisa & Ruke"
+    "chimera": "Canisa & Ruke",
+    "flora":"Nevanthi"
   },
   "enemyName": {
     "goblin": "Wrizz",
@@ -365,6 +366,7 @@
     "6005": "Fire Breather",
     "6006": "Blade Ridge",
     "6007": "Winged Lion",
-    "6008": "Rock Crown Lizard"
+    "6008": "Rock Crown Lizard",
+    "6009": "Feline Vesperio"
   }
 }
