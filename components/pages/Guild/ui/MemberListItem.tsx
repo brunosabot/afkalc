@@ -12,10 +12,18 @@ import styles from "./MemberListItem.module.css";
 interface IProps {
   isOwner: boolean;
   isDeputy: boolean;
+  showTree: boolean;
+  showTower: boolean;
   member: IFirebaseProfile;
 }
 
-const MemberListItem: React.FC<IProps> = function MemberListItem({ member, isOwner, isDeputy }) {
+const MemberListItem: React.FC<IProps> = function MemberListItem({
+  member,
+  isOwner,
+  isDeputy,
+  showTree,
+  showTower,
+}) {
   const { actions, values } = useContext(GuildContext);
   const { values: profileValues } = useContext(ProfileContext);
   const { t } = useTranslation("guild");
@@ -42,36 +50,102 @@ const MemberListItem: React.FC<IProps> = function MemberListItem({ member, isOwn
 
   return (
     <div className={styles.MemberListItem}>
-      <span className={styles.Content}>
-        <span className={styles.Title}>
-          <span>{member.playerName || t("label-player-unknown")}</span>
-          {isOwner ? <Svg d={mdiCrown} /> : null}
-          {isDeputy ? <Svg d={mdiOctagramOutline} /> : null}
+      <div className={styles.ContentWrapper}>
+        <span className={styles.Content}>
+          <span className={styles.Title}>
+            <span>{member.playerName || t("label-player-unknown")}</span>
+            {isOwner ? <Svg d={mdiCrown} /> : null}
+            {isDeputy ? <Svg d={mdiOctagramOutline} /> : null}
+            {member.pve?.campaign ? (
+              <span className={styles.Campaign}>
+                - {t("label-stage")} {member.pve?.campaign}
+              </span>
+            ) : null}
+            {member.pve?.crystal && member.pve?.crystalMax ? (
+              <span className={styles.Campaign}>
+                - {t("label-level")} {member.pve?.crystal}/{member.pve?.crystalMax}
+              </span>
+            ) : null}
+          </span>
 
-          {member.campaignLevel ? (
-            <span className={styles.Campaign}>
-              {t("label-campaign")} {member.campaignLevel}
-            </span>
+          <span className={`${styles.Subtitle} ${isOverloadDate ? styles.Overload : ""}`}>
+            {lastUpdateAgo}
+          </span>
+        </span>
+
+        <div className={styles.Actions}>
+          {(values.isOwner || (values.isDeputy && isOwner === false && isDeputy === false)) &&
+          member.id !== profileValues.userId ? (
+            <Svg d={mdiAccountRemove} onClick={onRemove} />
           ) : null}
-        </span>
 
-        <span className={`${styles.Subtitle} ${isOverloadDate ? styles.Overload : ""}`}>
-          {lastUpdateAgo}
-        </span>
-      </span>
-
-      <div className={styles.Actions}>
-        {(values.isOwner || (values.isDeputy && isOwner === false && isDeputy === false)) &&
-        member.id !== profileValues.userId ? (
-          <Svg d={mdiAccountRemove} onClick={onRemove} />
-        ) : null}
-
-        <Link href={`/public/${member.id}`}>
-          <a className={styles.Link}>
-            <Svg d={mdiViewList} />
-          </a>
-        </Link>
+          <Link href={`/public/${member.id}`}>
+            <a className={styles.Link}>
+              <Svg d={mdiViewList} />
+            </a>
+          </Link>
+        </div>
       </div>
+      {showTree ? (
+        <div className={styles.TreeWrapper}>
+          <div className={styles.TreeItem}>
+            <img src="/elder-tree/tree-level.png" className={styles.Image} alt="" />
+            {member.elderTree?.main ?? 0}
+          </div>
+          <div className={styles.TreeItem}>
+            <img src="/elder-tree/duras-might.png" className={styles.Image} alt="" />{" "}
+            {member.elderTree?.warrior ?? 0}
+          </div>
+          <div className={styles.TreeItem}>
+            <img src="/elder-tree/duras-fortitude.png" className={styles.Image} alt="" />{" "}
+            {member.elderTree?.tank ?? 0}
+          </div>
+          <div className={styles.TreeItem}>
+            <img src="/elder-tree/duras-celerity.png" className={styles.Image} alt="" />{" "}
+            {member.elderTree?.ranger ?? 0}
+          </div>
+          <div className={styles.TreeItem}>
+            <img src="/elder-tree/duras-sorcery.png" className={styles.Image} alt="" />{" "}
+            {member.elderTree?.mage ?? 0}
+          </div>
+          <div className={styles.TreeItem}>
+            <img src="/elder-tree/duras-sustenance.png" className={styles.Image} alt="" />{" "}
+            {member.elderTree?.support ?? 0}
+          </div>
+        </div>
+      ) : null}
+
+      {showTower ? (
+        <div className={styles.TreeWrapper}>
+          <div className={styles.TreeItem}>
+            <span className={styles.Image}>👑</span> {member.pve?.kingTower ?? 1}
+          </div>
+          <div className={styles.TreeItem}>
+            <img src="/factions/lightbearers.png" className={styles.Image} alt="" />{" "}
+            {member.pve?.lightbearerTower ?? 1}
+          </div>
+          <div className={styles.TreeItem}>
+            <img src="/factions/maulers.png" className={styles.Image} alt="" />{" "}
+            {member.pve?.maulerTower ?? 1}
+          </div>
+          <div className={styles.TreeItem}>
+            <img src="/factions/wilders.png" className={styles.Image} alt="" />{" "}
+            {member.pve?.wilderTower ?? 1}
+          </div>
+          <div className={styles.TreeItem}>
+            <img src="/factions/graveborns.png" className={styles.Image} alt="" />{" "}
+            {member.pve?.gravebornTower ?? 1}
+          </div>
+          <div className={styles.TreeItem}>
+            <img src="/factions/celestials.png" className={styles.Image} alt="" />{" "}
+            {member.pve?.celestialTower ?? 1}
+          </div>
+          <div className={styles.TreeItem}>
+            <img src="/factions/hypogeans.png" className={styles.Image} alt="" />{" "}
+            {member.pve?.hypogeanTower ?? 1}
+          </div>
+        </div>
+      ) : null}
     </div>
   );
 };
