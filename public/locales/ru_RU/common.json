@@ -44,6 +44,7 @@
   "equipment": "Снаряжение",
   "has-dimensional-key": "Имеет ключ от других измерений",
   "use-my-hero-stats": "Использовать данные моего героя",
+  "use-my-pet-stats": "Use stats from my pet",
   "error": {
     "error": "Ошибка {{code}}",
     "unknown-error": "Произошла ошибка...",
@@ -209,7 +210,10 @@
     "ascend": "Вознесение",
     "engrave": "Гравировка",
     "unlocked": "разблокирован",
-    "faction": "Фракция"
+    "faction": "Фракция",
+    "agilityBuff": "Agility Buff",
+    "intelligenceBuff": "Intelligence Buff",
+    "strengthBuff": "Strength Buff"
   },
   "heroesName": {
     "uhlan": "Эстрильда",
@@ -331,7 +335,8 @@
     "wnt": "Солиса",
     "ynt": "Йеннифэр",
     "gor": "Геральт",
-    "chimera": "Canisa & Ruke"
+    "chimera": "Canisa & Ruke",
+    "flora": "Nevanthi"
   },
   "enemyName": {
     "goblin": "Врицц",
@@ -365,6 +370,7 @@
     "6005": "Fire Breather",
     "6006": "Blade Ridge",
     "6007": "Winged Lion",
-    "6008": "Rock Crown Lizard"
+    "6008": "Rock Crown Lizard",
+    "6009": "Feline Vesperio"
   }
 }
