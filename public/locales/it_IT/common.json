@@ -44,6 +44,7 @@
   "equipment": "Equipaggiamento",
   "has-dimensional-key": "Ha una chiave dimensionale",
   "use-my-hero-stats": "Usa le statistiche del mio eroe",
+  "use-my-pet-stats": "Use stats from my pet",
   "error": {
     "error": "{{code}} Error",
     "unknown-error": "An error has occured...",
@@ -209,7 +210,10 @@
     "ascend": "Ascensione",
     "engrave": "Incisione",
     "unlocked": "sbloccato",
-    "faction": "Fazione"
+    "faction": "Fazione",
+    "agilityBuff": "Agility Buff",
+    "intelligenceBuff": "Intelligence Buff",
+    "strengthBuff": "Strength Buff"
   },
   "heroesName": {
     "uhlan": "Estrilda",
@@ -331,7 +335,8 @@
     "wnt": "Solise",
     "ynt": "Yennefer",
     "gor": "Geralt",
-    "chimera": "Canisa & Ruke"
+    "chimera": "Canisa & Ruke",
+    "flora": "Nevanthi"
   },
   "enemyName": {
     "goblin": "Wrizz",
@@ -365,6 +370,7 @@
     "6005": "Fire Breather",
     "6006": "Blade Ridge",
     "6007": "Winged Lion",
-    "6008": "Rock Crown Lizard"
+    "6008": "Rock Crown Lizard",
+    "6009": "Feline Vesperio"
   }
 }
