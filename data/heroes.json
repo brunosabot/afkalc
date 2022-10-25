@@ -1198,5 +1198,15 @@
     "slug": "chimera",
     "faction": "hypogeans",
     "isAwakened": false
+  },
+  {
+    "id": 122,
+    "type": "intelligence",
+    "class": "support",
+    "role": "regen",
+    "image": "/heroes/Flora.jpg",
+    "slug": "flora",
+    "faction": "wilders",
+    "isAwakened": false
   }
 ]
