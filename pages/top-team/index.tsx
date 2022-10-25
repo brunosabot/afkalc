@@ -15,7 +15,7 @@ const TopTeam: React.FC<IProps> = function TopTeam() {
   const router = useRouter();
 
   if (process.browser) {
-    router.push(`/top-team/0,0,0,0,0,0-0,0,0,0,0,0`);
+    router.push(`/top-team/0,0,0,0,0,0,0-0,0,0,0,0,0`);
   }
 
   return <div />;
