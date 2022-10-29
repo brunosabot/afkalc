@@ -44,7 +44,7 @@
   "equipment": "Equipamiento",
   "has-dimensional-key": "Tiene una llave dimensional",
   "use-my-hero-stats": "Usar stats de mi héroe",
-  "use-my-pet-stats": "Use stats from my pet",
+  "use-my-pet-stats": "Usar stats de mi pet",
   "error": {
     "error": "{{code}} Error",
     "unknown-error": "Se ha producido un error...",
@@ -211,9 +211,9 @@
     "engrave": "Grabados",
     "unlocked": "desbloqueado",
     "faction": "Facción",
-    "agilityBuff": "Agility Buff",
-    "intelligenceBuff": "Intelligence Buff",
-    "strengthBuff": "Strength Buff"
+    "agilityBuff": "Buff de Agilidad",
+    "intelligenceBuff": "Buff de inteligencia",
+    "strengthBuff": "Buff de fuerza"
   },
   "heroesName": {
     "uhlan": "Estrilda",
@@ -371,6 +371,6 @@
     "6006": "Cresta filosa",
     "6007": "León alado",
     "6008": "Lagarto corona pétrea",
-    "6009": "Feline Vesperio"
+    "6009": "Vesperio felino"
   }
 }
