@@ -4,5 +4,7 @@
   "label-floor": "{{ floor }} Floors",
   "elder-tree": "Elder Tree",
   "king-tower": "King's tower",
-  "heroes": "Heroes"
+  "heroes": "Heroes",
+  "campaign": "Campaign",
+  "resonating-crystal": "Resonating Crystal"
 }
