@@ -12,7 +12,7 @@ export enum TooltipPosition {
 }
 
 interface IRequiredComponentProps {
-  label: React.ReactElement;
+  label?: React.ReactElement;
 }
 
 interface IWithTooltipProps {
@@ -93,11 +93,13 @@ export function withTooltip<P extends IRequiredComponentProps>(
         onMouseOverCapture={onMouseOverCapture}
         onMouseOutCapture={onMouseOutCapture}
       >
-        <ModalPortal active={show[0] !== 0 || show[1] !== 0}>
-          <TooltipComponent left={show[0]} top={show[1]} position={localPosition}>
-            {props.label}
-          </TooltipComponent>
-        </ModalPortal>
+        {props.label ? (
+          <ModalPortal active={show[0] !== 0 || show[1] !== 0}>
+            <TooltipComponent left={show[0]} top={show[1]} position={localPosition}>
+              {props.label}
+            </TooltipComponent>
+          </ModalPortal>
+        ) : null}
         <WrappedComponent {...(props as P)} />
       </span>
     );

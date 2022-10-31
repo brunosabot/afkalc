@@ -5,6 +5,7 @@ import {
 } from "./IFirebaseAbyssalExpedition";
 import { IFirebaseElderTree } from "./IFirebaseElderTree";
 import { IFirebaseHeroList } from "./IFirebaseHeroes";
+import { IFirebasePetList } from "./IFirebasePets";
 import { IFirebasePve } from "./IFirebasePve";
 
 export default interface IFirebaseProfile {
@@ -18,6 +19,8 @@ export default interface IFirebaseProfile {
   shareId?: string;
   favoritePriorityList?: string[];
   favoriteTreeList?: string[];
+
+  pets: IFirebasePetList;
 
   // Hero List
   heroes?: IFirebaseHeroList;

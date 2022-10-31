@@ -1,0 +1,19 @@
+.Wrapper {
+  height: 64px;
+  width: 64px;
+}
+
+.Small {
+  height: 56px;
+  width: 56px;
+}
+
+.Highlight {
+  background-color: var(--accent-color);
+  outline: 3px solid var(--accent-color);
+}
+
+.Locked {
+  filter: grayscale(0.8);
+  opacity: 0.6;
+}

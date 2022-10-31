@@ -3,6 +3,7 @@
   border-bottom: 1px solid var(--list-border);
   box-sizing: border-box;
   display: flex;
+  flex-direction: column;
   margin: 0 16px;
   min-height: 48px;
   padding: 8px 0;
@@ -41,6 +42,12 @@
   background: var(--hover-color);
 }
 
+.ContentWrapper {
+  align-items: center;
+  display: flex;
+  width: 100%;
+}
+
 .Content {
   align-items: flex-start;
   display: flex;
@@ -51,7 +58,8 @@
 .Title {
   align-items: center;
   display: flex;
-  gap: 8px;
+  flex-wrap: wrap;
+  gap: 0 8px;
 }
 
 .Subtitle {
@@ -64,6 +72,7 @@
 }
 
 .Actions {
+  align-self: flex-start;
   display: flex;
 }
 
@@ -72,5 +81,28 @@
 }
 
 .Campaign {
+  color: rgb(255 255 255 / 65%);
   font-size: 0.85em;
+  white-space: nowrap;
+}
+
+.Image {
+  height: 20px;
+  text-align: center;
+  width: 20px;
+}
+
+.TreeWrapper {
+  display: flex;
+  flex-wrap: wrap;
+  font-size: 0.85em;
+  gap: 6px 12px;
+  margin: 8px 0 0;
+  width: 100%;
+}
+
+.TreeItem {
+  align-items: center;
+  display: flex;
+  gap: 4px;
 }

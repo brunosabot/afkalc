@@ -1,0 +1,11 @@
+[
+  { "id": "6001", "hasBasic": false, "elevation": "rare" },
+  { "id": "6002", "hasBasic": false, "elevation": "rare" },
+  { "id": "6003", "hasBasic": false, "elevation": "rare" },
+  { "id": "6004", "hasBasic": true, "elevation": "elite" },
+  { "id": "6005", "hasBasic": true, "elevation": "elite" },
+  { "id": "6006", "hasBasic": true, "elevation": "elite" },
+  { "id": "6007", "hasBasic": true, "elevation": "elite" },
+  { "id": "6008", "hasBasic": true, "elevation": "elite" },
+  { "id": "6009", "hasBasic": true, "elevation": "elite" }
+]
