@@ -1,8 +1,9 @@
 import { GetStaticPaths } from "next";
+import { useTranslation } from "next-i18next";
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 import Head from "next/head";
 import { useRouter } from "next/router";
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import withLayoutPublicColumn from "../../components/layout/withLayoutPublicColumn";
 import useDescription from "../../components/pages/TopTeam/hooks/useDescription";
 import useShareUrl from "../../components/pages/TopTeam/hooks/useShareUrl";
@@ -12,7 +13,11 @@ import EnemiPosition from "../../components/pages/TopTeam/ui/EnemiPosition";
 import PetPosition from "../../components/pages/TopTeam/ui/PetPosition";
 import PlayerPosition from "../../components/pages/TopTeam/ui/PlayerPosition";
 import ShareBanner from "../../components/pages/TopTeam/ui/ShareBanner";
+import ProfileContext from "../../components/providers/ProfileContext";
 import Card from "../../components/ui/card/Card";
+import CardAction from "../../components/ui/card/CardAction";
+import CardActions from "../../components/ui/card/CardActions";
+import classes from "./id.module.css";
 
 export const getStaticProps = async ({ locale }: { locale: string }) => ({
   props: {
@@ -137,6 +142,9 @@ function normalizeOurs(ours: string) {
 const TopTeam: React.FC<Props> = function TopTeam() {
   const router = useRouter();
   const { id } = router.query;
+  const { values } = useContext(ProfileContext);
+
+  const { t } = useTranslation("top-team");
 
   const [heroId, setHeroId] = useState(id);
 
@@ -209,6 +217,38 @@ const TopTeam: React.FC<Props> = function TopTeam() {
     setHeroId(newString);
   };
 
+  const onApplyMyStats = () => {
+    function getHeroValues(theId: number) {
+      return {
+        id: theId,
+        ascend: values.heroes[theId]?.ascend ?? 0,
+        si: values.heroes[theId]?.si ?? -1,
+        fi: values.heroes[theId]?.fi ?? 0,
+        engrave: values.heroes[theId]?.engrave ?? 0,
+        artifact: 0,
+      };
+    }
+
+    const heroes = [
+      getHeroValues(pos1.id),
+      getHeroValues(pos2.id),
+      getHeroValues(pos3.id),
+      getHeroValues(pos4.id),
+      getHeroValues(pos5.id),
+      {
+        id: pet.id,
+        agilityBuff: values.pets[pet.id]?.agilityBuff ?? 0,
+        intelligenceBuff: values.pets[pet.id]?.intelligenceBuff ?? -1,
+        strengthBuff: values.pets[pet.id]?.strengthBuff ?? 0,
+      },
+    ];
+
+    const encodedHeroes = heroes.map(stringifyHero).map(encodeURIComponent);
+    const newString = `${encodedHeroes.join(",")}-${theirs}`;
+
+    setHeroId(newString);
+  };
+
   const description = useDescription([pos1, pos2, pos3, pos4, pos5]);
   const title = useTitle([ene1, ene2, ene3, ene4, ene5]);
 
@@ -240,6 +280,12 @@ const TopTeam: React.FC<Props> = function TopTeam() {
         <EnemiPosition onSelect={onSelectEnemy} position={9} enemi={ene4} />
         <EnemiPosition onSelect={onSelectEnemy} position={10} enemi={ene5} />
       </Board>
+
+      <div className={classes.Actions}>
+        <CardActions>
+          <CardAction onClick={onApplyMyStats}>{t("apply-all-stats")}</CardAction>
+        </CardActions>
+      </div>
     </Card>
   );
 };
