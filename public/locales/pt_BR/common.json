@@ -44,6 +44,7 @@
   "equipment": "Equipamento",
   "has-dimensional-key": "Tem uma chave dimensional",
   "use-my-hero-stats": "Usar estatísticas de meu herói",
+  "use-my-pet-stats": "Usar estatísticas do meu pet",
   "error": {
     "error": "{{code}} Erro",
     "unknown-error": "Ocorreu um erro...",
@@ -77,7 +78,8 @@
     "elder-tree": "Árvore Antiga",
     "abex-relic-share": "Compartilhar Relíquias",
     "public": "Perfil Público",
-    "pve": "PVE Progression",
+    "pve": "Progressão PVE",
+    "pet-list": "Lista de Pets",
     "short-hero-list": "Heróis",
     "short-top-team": "Times",
     "short-item-cost": "Custo do Item",
@@ -208,7 +210,10 @@
     "ascend": "Ascensão",
     "engrave": "Engraving",
     "unlocked": "desbloqueado",
-    "faction": "Facção"
+    "faction": "Facção",
+    "agilityBuff": "Buff de Agilidade",
+    "intelligenceBuff": "Buff de Inteligência",
+    "strengthBuff": "Buff de Força"
   },
   "heroesName": {
     "uhlan": "Estrilda",
@@ -330,7 +335,8 @@
     "wnt": "Solise",
     "ynt": "Yennefer",
     "gor": "Geralt",
-    "chimera": "Canisa & Ruke"
+    "chimera": "Canisa & Ruke",
+    "flora": "Nevanthi"
   },
   "enemyName": {
     "goblin": "Wrizz",
@@ -355,5 +361,16 @@
     "bossrog": "Perseguidor do Espaço-Tempo",
     "bosslionact": "Destruidor de Dunas",
     "bossdm": "Azmonath"
+  },
+  "petName": {
+    "6001": "Bola Melancólica",
+    "6002": "Orelhas Fofas",
+    "6003": "Orbe Gramíneo",
+    "6004": "Besta Polar",
+    "6005": "Cuspidor de Fogo",
+    "6006": "Ponta da Lâmina",
+    "6007": "Leão Alado",
+    "6008": "Lagarto da Coroa de Pedra",
+    "6009": "Felino Vesperio"
   }
 }

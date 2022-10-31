@@ -44,6 +44,7 @@
   "equipment": "Équipement",
   "has-dimensional-key": "Utilise une clé cosmique",
   "use-my-hero-stats": "Utiliser les statistiques de mon héros",
+  "use-my-pet-stats": "Utiliser les stats de mon familier",
   "error": {
     "error": "Erreur {{code}}",
     "unknown-error": "Une erreur est survenue...",
@@ -78,6 +79,7 @@
     "abex-relic-share": "Partage reliques",
     "public": "Profil Public",
     "pve": "Progression PVE",
+    "pet-list": "Familiers",
     "short-hero-list": "Héros",
     "short-top-team": "Équipes",
     "short-item-cost": "Coût",
@@ -208,7 +210,10 @@
     "ascend": "Ascension",
     "engrave": "Gravure",
     "unlocked": "déverrouillé",
-    "faction": "Faction"
+    "faction": "Faction",
+    "agilityBuff": "Bonus d'agilité",
+    "intelligenceBuff": "Bonus d'intelligence",
+    "strengthBuff": "Bonus de force"
   },
   "heroesName": {
     "uhlan": "Estrilda",
@@ -330,7 +335,8 @@
     "wnt": "Solise",
     "ynt": "Yennefer",
     "gor": "Geralt",
-    "chimera": "Canisa & Ruke"
+    "chimera": "Canisa & Ruke",
+    "flora": "Nevanthi"
   },
   "enemyName": {
     "goblin": "Wrizz",
@@ -355,5 +361,16 @@
     "bossrog": "Rôdeur de Continuum",
     "bosslionact": "L'Arase-dunes",
     "bossdm": "Azmonath"
+  },
+  "petName": {
+    "6001": "Boule charbonneuse",
+    "6002": "Oreilles-d'or",
+    "6003": "Orbederbe",
+    "6004": "Gniâk des glaces",
+    "6005": "Crache-feu",
+    "6006": "Lame-lézard",
+    "6007": "Lion ailé",
+    "6008": "Lézard royal des rochers",
+    "6009": "Félin vespéral"
   }
 }

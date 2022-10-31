@@ -7,12 +7,12 @@
   "label-graveborn-tower": "La Necrópolis Abandonada",
   "label-celestial-tower": "Santuario Celestial",
   "label-hypogean-tower": "Fortaleza infernal",
-  "label-campaign": "Campaign",
-  "label-campaign-helper": "(format: 42-15)",
-  "label-crystal": "Resonating Crystal",
-  "label-crystal-max": "Resonating Crystal max",
-  "label-crystal-level": "Crystal level",
+  "label-campaign": "Campaña",
+  "label-campaign-helper": "(formato: 42-15)",
+  "label-crystal": "Cristal Resonante",
+  "label-crystal-max": "Nivel máximo Cristal Resonante",
+  "label-crystal-level": "Nivel del cristal",
   "label-level": "Lvl {{ level }}",
-  "max-crystal-differ": "The max crystal calculated ({{ maxCalculated }}) is different from the one saved.",
-  "max-crystal-update": "Update the value to {{ maxCalculated }}"
+  "max-crystal-differ": "El nivel máximo calculado del cristal ({{ maxCalculated }}) es diferente del que se ha guardado.",
+  "max-crystal-update": "Actualizar el valor a {{ maxCalculated }}"
 }

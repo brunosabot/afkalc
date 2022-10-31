@@ -44,6 +44,7 @@
   "equipment": "Снаряжение",
   "has-dimensional-key": "Имеет ключ от других измерений",
   "use-my-hero-stats": "Использовать данные моего героя",
+  "use-my-pet-stats": "Use stats from my pet",
   "error": {
     "error": "Ошибка {{code}}",
     "unknown-error": "Произошла ошибка...",
@@ -78,6 +79,7 @@
     "abex-relic-share": "Поделиться реликвиями",
     "public": "Public Profile",
     "pve": "PVE Progression",
+    "pet-list": "Pet list",
     "short-hero-list": "Герои",
     "short-top-team": "Команды",
     "short-item-cost": "Стоимость предмета",
@@ -208,7 +210,10 @@
     "ascend": "Вознесение",
     "engrave": "Гравировка",
     "unlocked": "разблокирован",
-    "faction": "Фракция"
+    "faction": "Фракция",
+    "agilityBuff": "Agility Buff",
+    "intelligenceBuff": "Intelligence Buff",
+    "strengthBuff": "Strength Buff"
   },
   "heroesName": {
     "uhlan": "Эстрильда",
@@ -330,7 +335,8 @@
     "wnt": "Солиса",
     "ynt": "Йеннифэр",
     "gor": "Геральт",
-    "chimera": "Canisa & Ruke"
+    "chimera": "Canisa & Ruke",
+    "flora": "Nevanthi"
   },
   "enemyName": {
     "goblin": "Врицц",
@@ -355,5 +361,16 @@
     "bossrog": "Преследователь Континуума",
     "bosslionact": "Крушитель барханов",
     "bossdm": "Азмонат"
+  },
+  "petName": {
+    "6001": "Dreary Ball",
+    "6002": "Tufty Ears",
+    "6003": "Grassy Orb",
+    "6004": "Polar Beast",
+    "6005": "Fire Breather",
+    "6006": "Blade Ridge",
+    "6007": "Winged Lion",
+    "6008": "Rock Crown Lizard",
+    "6009": "Feline Vesperio"
   }
 }

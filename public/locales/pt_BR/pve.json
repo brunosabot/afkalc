@@ -1,18 +1,18 @@
 {
-  "title-public": "PVE Progression",
-  "label-kings-tower": "King's Tower",
-  "label-lightbearer-tower": "Tower of Light",
-  "label-mauler-tower": "The Brutal Citadel",
-  "label-wilder-tower": "The World Tree",
-  "label-graveborn-tower": "The Forsaken Necropolis",
-  "label-celestial-tower": "Celestial Sanctum",
-  "label-hypogean-tower": "Infernal Fortress",
+  "title-public": "Progressão PVE",
+  "label-kings-tower": "Torre do Rei",
+  "label-lightbearer-tower": "Torre da Luz",
+  "label-mauler-tower": "A Cidadela Brutal",
+  "label-wilder-tower": "A Árvore do Mundo",
+  "label-graveborn-tower": "Necrópole abandonada",
+  "label-celestial-tower": "Santuário Celestial",
+  "label-hypogean-tower": "Fortaleza Infernal",
   "label-campaign": "Campanha",
   "label-campaign-helper": "(formato: 42-15)",
   "label-crystal": "Cristal Ressonante",
   "label-crystal-max": "Cristal Ressonante Máximo",
   "label-crystal-level": "Nível do Cristal",
   "label-level": "Nvl {{level}}",
-  "max-crystal-differ": "The max crystal calculated ({{ maxCalculated }}) is different from the one saved.",
-  "max-crystal-update": "Update the value to {{ maxCalculated }}"
+  "max-crystal-differ": "O cristal máximo calculado ({{ maxCalculated }}) é diferente do salvo.",
+  "max-crystal-update": "Atualizar o valor para {{ maxCalculated }}"
 }

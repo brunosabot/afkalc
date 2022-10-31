@@ -1,10 +1,10 @@
 {
   "title-public": "Perfil Público",
   "label-level": "Nv.",
-  "label-floor": "{{ floor }} Floors",
-  "elder-tree": "Elder Tree",
-  "king-tower": "King's tower",
-  "heroes": "Heroes",
+  "label-floor": "{{ floor }} Andares",
+  "elder-tree": "Árvore Antiga",
+  "king-tower": "Torre do Rei",
+  "heroes": "Heróis",
   "campaign": "Campanha",
   "resonating-crystal": "Cristal Ressonante"
 }
