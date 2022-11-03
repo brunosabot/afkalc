@@ -44,7 +44,7 @@
   "equipment": "Снаряжение",
   "has-dimensional-key": "Имеет ключ от других измерений",
   "use-my-hero-stats": "Использовать данные моего героя",
-  "use-my-pet-stats": "Use stats from my pet",
+  "use-my-pet-stats": "Использовать данные моего питомца",
   "error": {
     "error": "Ошибка {{code}}",
     "unknown-error": "Произошла ошибка...",
@@ -77,7 +77,7 @@
     "short-loot": "Лут",
     "elder-tree": "Древнее дерево",
     "abex-relic-share": "Поделиться реликвиями",
-    "public": "Public Profile",
+    "public": "Публичный профиль",
     "pve": "PVE Progression",
     "pet-list": "Pet list",
     "short-hero-list": "Герои",
