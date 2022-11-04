@@ -78,8 +78,8 @@
     "elder-tree": "Древнее дерево",
     "abex-relic-share": "Поделиться реликвиями",
     "public": "Публичный профиль",
-    "pve": "PVE Progression",
-    "pet-list": "Pet list",
+    "pve": "Прогресс PVE",
+    "pet-list": "Список питомцев",
     "short-hero-list": "Герои",
     "short-top-team": "Команды",
     "short-item-cost": "Стоимость предмета",
@@ -211,9 +211,9 @@
     "engrave": "Гравировка",
     "unlocked": "разблокирован",
     "faction": "Фракция",
-    "agilityBuff": "Agility Buff",
-    "intelligenceBuff": "Intelligence Buff",
-    "strengthBuff": "Strength Buff"
+    "agilityBuff": "Бафф ловкости",
+    "intelligenceBuff": "Бафф интеллекта",
+    "strengthBuff": "Бафф силы"
   },
   "heroesName": {
     "uhlan": "Эстрильда",
@@ -335,8 +335,8 @@
     "wnt": "Солиса",
     "ynt": "Йеннифэр",
     "gor": "Геральт",
-    "chimera": "Canisa & Ruke",
-    "flora": "Nevanthi"
+    "chimera": "Каниса и Рюк",
+    "flora": "Неванти"
   },
   "enemyName": {
     "goblin": "Врицц",
@@ -363,14 +363,14 @@
     "bossdm": "Азмонат"
   },
   "petName": {
-    "6001": "Dreary Ball",
-    "6002": "Tufty Ears",
-    "6003": "Grassy Orb",
-    "6004": "Polar Beast",
-    "6005": "Fire Breather",
-    "6006": "Blade Ridge",
-    "6007": "Winged Lion",
-    "6008": "Rock Crown Lizard",
-    "6009": "Feline Vesperio"
+    "6001": "Мрачношар",
+    "6002": "Пушистоух",
+    "6003": "Травяной шар",
+    "6004": "Полярный зверь",
+    "6005": "Огнеплюй",
+    "6006": "Острый гребень",
+    "6007": "Крылатый Лев",
+    "6008": "Ящерица каменной короны",
+    "6009": "Ночной кот"
   }
 }
