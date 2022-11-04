@@ -1,10 +1,10 @@
 {
-  "title-public": "Public profile",
-  "label-level": "Lv.",
-  "label-floor": "{{ floor }} Floors",
-  "elder-tree": "Elder Tree",
-  "king-tower": "King's tower",
-  "heroes": "Heroes",
-  "campaign": "Campaign",
-  "resonating-crystal": "Resonating Crystal"
+  "title-public": "Публичный профиль",
+  "label-level": "Ур.",
+  "label-floor": "{{ floor }} этажей",
+  "elder-tree": "Древнее дерево",
+  "king-tower": "Башня короля",
+  "heroes": "Герои",
+  "campaign": "Кампания",
+  "resonating-crystal": "Резонирующий кристалл"
 }
