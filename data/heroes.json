@@ -1208,5 +1208,15 @@
     "slug": "flora",
     "faction": "wilders",
     "isAwakened": false
+  },
+  {
+    "id": 123,
+    "type": "strength",
+    "class": "ranger",
+    "role": "continuous",
+    "image": "/heroes/SBD.jpg",
+    "slug": "sbd",
+    "faction": "graveborns",
+    "isAwakened": true
   }
 ]
