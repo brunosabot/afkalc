@@ -336,7 +336,8 @@
     "ynt": "Yennefer",
     "gor": "Geralt",
     "chimera": "Canisa & Ruke",
-    "flora": "Nevanthi"
+    "flora": "Nevanthi",
+    "sbd":"Baden"
   },
   "enemyName": {
     "goblin": "Wrizz",
