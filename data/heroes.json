@@ -1218,5 +1218,15 @@
     "slug": "sbd",
     "faction": "graveborns",
     "isAwakened": true
+  },
+  {
+    "id": 124,
+    "type": "intelligence",
+    "class": "support",
+    "role": "buffer",
+    "image": "/heroes/CurseCarrier.jpg",
+    "slug": "cursecarrier",
+    "faction": "maulers",
+    "isAwakened": false
   }
 ]
