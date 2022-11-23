@@ -337,7 +337,8 @@
     "gor": "Geralt",
     "chimera": "Canisa & Ruke",
     "flora": "Nevanthi",
-    "sbd": "Baden"
+    "sbd": "Baden",
+    "cursecarrier": "Salaki"
   },
   "enemyName": {
     "goblin": "Wrizz",
@@ -372,6 +373,7 @@
     "6006": "Cresta filosa",
     "6007": "León alado",
     "6008": "Lagarto corona pétrea",
-    "6009": "Vesperio felino"
+    "6009": "Vesperio felino",
+    "6010": "Bellbellow"
   }
 }
