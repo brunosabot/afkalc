@@ -1228,5 +1228,15 @@
     "slug": "cursecarrier",
     "faction": "maulers",
     "isAwakened": false
+  },
+  {
+    "id": 125,
+    "type": "intelligence",
+    "class": "support",
+    "role": "buffer",
+    "image": "/heroes/Bishop.jpg",
+    "slug": "bishop",
+    "faction": "lightbearers",
+    "isAwakened": false
   }
 ]
