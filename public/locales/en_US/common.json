@@ -337,9 +337,9 @@
     "gor": "Geralt",
     "chimera": "Canisa & Ruke",
     "flora": "Nevanthi",
-    "sbd": "Baden",
-    "cursecarrier": "Salaki",
-    "bishop": "Palmer"
+    "sbd":"Baden",
+    "cursecarrier":"Salaki",
+    "bishop":"Palmer"
   },
   "enemyName": {
     "goblin": "Wrizz",
