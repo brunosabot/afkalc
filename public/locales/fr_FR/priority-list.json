@@ -35,5 +35,6 @@
   "checked-items-hidden": "Les éléments terminés sont masqués. Cliquez sur la case à cocher pour tous les afficher",
   "sort-by-name": "Trier par nom",
   "sort-by-last-update": "Trier par date",
-  "sort-by-percentage": "Trier par pourcentage"
+  "sort-by-percentage": "Trier par pourcentage",
+  "label-add-pet-list": "New pet list"
 }
