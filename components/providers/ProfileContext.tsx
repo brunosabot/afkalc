@@ -18,6 +18,7 @@ export interface IProfileActions {
   setPlayerName: (newPlayerName: string) => void;
   setFavoritePriorityList: (newFavoritePriorityList: string[]) => void;
   setFavoriteTreeList: (newTreePriorityList: string[]) => void;
+  setFavoritePetList: (newTreePriorityList: string[]) => void;
   setPetAgilityBuff: (petId: string, petAgilityBuff: number) => Promise<void>;
   setPetIntelligenceBuff: (petId: string, petIntelligenceBuff: number) => Promise<void>;
   setPetStrengthBuff: (petId: string, petStrengthBuff: number) => Promise<void>;
@@ -66,6 +67,7 @@ export interface IProfileValues {
   shareId?: string;
   favoritePriorityList: string[];
   favoriteTreeList: string[];
+  favoritePetList: string[];
   abexGoalRelics: IFirebaseAbyssalExpeditionClassRelics;
   abexCurrentRelics: IFirebaseAbyssalExpeditionClassRelics;
   abexRelicInventory: IFirebaseAbyssalExpeditionInventory;
@@ -117,6 +119,7 @@ export const defaultValues: IProfileValues = {
   abexTiles: {},
   favoritePriorityList: [],
   favoriteTreeList: [],
+  favoritePetList: [],
   heroes: {},
   heroesLastUpdate: "",
   pets: {},
@@ -151,6 +154,7 @@ export default createContext<IProfileContext>({
     setPlayerName: () => undefined,
     setFavoritePriorityList: () => undefined,
     setFavoriteTreeList: () => undefined,
+    setFavoritePetList: () => undefined,
     deleteUser: () => undefined,
     downloadData: () => undefined,
     setPetAgilityBuff: () => Promise.resolve(undefined),

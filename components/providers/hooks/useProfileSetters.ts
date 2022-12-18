@@ -61,10 +61,18 @@ export default function useProfileSetters() {
     },
     [document, values.uid]
   );
+  const setFavoritePetList = useCallback(
+    (favoritePetList: string[]) => {
+      if (values.uid === "") return;
+      document?.set({ ownerId: values.uid, favoritePetList }, { merge: true });
+    },
+    [document, values.uid]
+  );
 
   return {
     setFavoritePriorityList,
     setFavoriteTreeList,
+    setFavoritePetList,
     setCampaignLevel,
     setCampaignSuccessDate,
     setPlayerLevel,

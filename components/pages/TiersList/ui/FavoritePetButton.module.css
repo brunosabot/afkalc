@@ -1,0 +1,23 @@
+.FavoritePetButton {
+  align-items: center;
+  background-color: transparent;
+  border: 0;
+  border-radius: 50%;
+  color: var(--text-color);
+  cursor: pointer;
+  display: flex;
+  height: 40px;
+  justify-content: center;
+  outline: 0;
+  padding: 0;
+  transition: var(--transition);
+  width: 40px;
+}
+
+.FavoritePetButton:hover {
+  background-color: var(--hover-color);
+}
+
+.IsFavorite {
+  color: var(--like-color);
+}

@@ -12,6 +12,7 @@ import { appWithTranslation } from "next-i18next";
 import React from "react";
 import FirebaseProvider from "../components/providers/FirebaseProvider";
 import GuildProvider from "../components/providers/GuildProvider";
+import PetListProvider from "../components/providers/PetListProvider";
 import PriorityListProvider from "../components/providers/PriorityListProvider";
 import ProfileProvider from "../components/providers/ProfileProvider";
 import TreeListProvider from "../components/providers/TreeListProvider";
@@ -36,11 +37,13 @@ const MyApp = function MyApp({ Component, pageProps }: any) {
       <ProfileProvider>
         <PriorityListProvider>
           <TreeListProvider>
-            <GuildProvider>
-              <UserProvider>
-                <Component {...pageProps} />
-              </UserProvider>
-            </GuildProvider>
+            <PetListProvider>
+              <GuildProvider>
+                <UserProvider>
+                  <Component {...pageProps} />
+                </UserProvider>
+              </GuildProvider>
+            </PetListProvider>
           </TreeListProvider>
         </PriorityListProvider>
       </ProfileProvider>

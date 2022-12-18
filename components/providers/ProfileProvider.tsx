@@ -24,6 +24,7 @@ const ProfileProvider: React.FC<IProps> = function ProfileProvider({ children })
   const {
     setFavoritePriorityList,
     setFavoriteTreeList,
+    setFavoritePetList,
     setCampaignLevel,
     setCampaignSuccessDate,
     setPlayerLevel,
@@ -77,6 +78,7 @@ const ProfileProvider: React.FC<IProps> = function ProfileProvider({ children })
         setPlayerName,
         setFavoritePriorityList,
         setFavoriteTreeList,
+        setFavoritePetList,
         deleteUser,
         downloadData,
         setAbexCurrentRelics,
@@ -127,6 +129,7 @@ const ProfileProvider: React.FC<IProps> = function ProfileProvider({ children })
       setPlayerName,
       setFavoritePriorityList,
       setFavoriteTreeList,
+      setFavoritePetList,
       deleteUser,
       downloadData,
       setAbexCurrentRelics,

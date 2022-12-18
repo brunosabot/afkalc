@@ -1,0 +1,27 @@
+.PetStepLine {
+  align-items: center;
+  display: flex;
+  gap: 16px;
+  padding: 4px 8px 4px 16px;
+}
+
+.Name {
+  flex-grow: 1;
+}
+
+.PetStepLine > svg {
+  padding: 8px;
+}
+
+.Button {
+  align-items: center;
+  align-self: stretch;
+  background: transparent;
+  border: 0;
+  display: flex;
+  height: 56px;
+  justify-content: center;
+  overflow: hidden;
+  padding: 0;
+  width: 56px;
+}

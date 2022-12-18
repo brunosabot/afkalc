@@ -1,12 +1,14 @@
-import { mdiAccountGroup, mdiPlaylistStar, mdiTree } from "@mdi/js";
+import { mdiAccountGroup, mdiPaw, mdiPlaylistStar, mdiTree } from "@mdi/js";
 import { useTranslation } from "next-i18next";
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 import { useRouter } from "next/router";
 import React, { useCallback, useContext, useEffect } from "react";
 import withLayoutPrivate from "../../components/layout/withLayoutPrivate";
 import Create from "../../components/pages/TiersList/ui/Create";
+import CreatePet from "../../components/pages/TiersList/ui/CreatePet";
 import CreateTree from "../../components/pages/TiersList/ui/CreateTree";
 import ListItemEmpty from "../../components/pages/TiersList/ui/ListItemEmpty";
+import PetListContext from "../../components/providers/PetListContext";
 import PriorityListContext from "../../components/providers/PriorityListContext";
 import TreeListContext from "../../components/providers/TreeListContext";
 import Card from "../../components/ui/card/Card";
@@ -39,9 +41,15 @@ const PriorityList: React.FC<IProps> = function PriorityList() {
     values: { favorites: favoritesTree, treeList },
   } = useContext(TreeListContext);
 
+  const {
+    actions: { createList: createPetList, load: loadPet },
+    values: { favorites: favoritesPet, petList },
+  } = useContext(PetListContext);
+
   useEffect(() => {
     load();
     loadTree();
+    loadPet();
   });
 
   const onCreate = useCallback(() => {
@@ -55,6 +63,12 @@ const PriorityList: React.FC<IProps> = function PriorityList() {
       router.push(`/tiers-list/tree/${newId}`);
     });
   }, [createTreeList, router]);
+
+  const onCreatePet = useCallback(() => {
+    createPetList().then((newId) => {
+      router.push(`/tiers-list/pet/${newId}`);
+    });
+  }, [createPetList, router]);
 
   return (
     <Card>
@@ -75,6 +89,11 @@ const PriorityList: React.FC<IProps> = function PriorityList() {
             {list.title}
           </ListItem>
         ))}
+        {favoritesPet.map((list) => (
+          <ListItem icon={mdiPaw} href={`/tiers-list/pet/${list.id}`} key={list.id}>
+            {list.title}
+          </ListItem>
+        ))}
       </List>
 
       <CardSubTitle>{t("label-created")}</CardSubTitle>
@@ -92,9 +111,15 @@ const PriorityList: React.FC<IProps> = function PriorityList() {
             {list.title}
           </ListItem>
         ))}
+        {petList.map((list) => (
+          <ListItem icon={mdiPaw} href={`/tiers-list/pet/${list.id}`} key={list.id}>
+            {list.title}
+          </ListItem>
+        ))}
       </List>
 
       <CardActions>
+        <CreatePet onClick={onCreatePet} />
         <CreateTree onClick={onCreateTree} />
         <Create onClick={onCreate} />
       </CardActions>
