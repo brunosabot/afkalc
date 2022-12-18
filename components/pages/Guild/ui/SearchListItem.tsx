@@ -38,10 +38,8 @@ const SearchListItem: React.FC<IProps> = function SearchListItem({
       </span>
 
       <div className={styles.Actions}>
-        <Link href={`/hero-list/${member.id}`}>
-          <a className={styles.Link}>
-            <Svg d={mdiViewList} />
-          </a>
+        <Link href={`/hero-list/${member.id}`} className={styles.Link}>
+          <Svg d={mdiViewList} />
         </Link>
       </div>
     </div>

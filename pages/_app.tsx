@@ -17,7 +17,6 @@ import PriorityListProvider from "../components/providers/PriorityListProvider";
 import ProfileProvider from "../components/providers/ProfileProvider";
 import TreeListProvider from "../components/providers/TreeListProvider";
 import UserProvider from "../components/providers/UserProvider";
-import nextI18NextConfig from "../next-i18next.config";
 import "../styles/globals.css";
 
 dayjs.extend(customParseFormat);
@@ -51,4 +50,4 @@ const MyApp = function MyApp({ Component, pageProps }: any) {
   );
 };
 
-export default appWithTranslation(MyApp, nextI18NextConfig);
+export default appWithTranslation(MyApp);

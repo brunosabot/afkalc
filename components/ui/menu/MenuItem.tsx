@@ -18,12 +18,10 @@ const MenuItem: React.FC<IProps> = function MenuItem({
   icon = undefined,
 }) {
   return (
-    <Link href={to}>
-      <a className={`${className} ${styles.Link}`}>
-        <Svg d={icon === undefined ? mdiCircleSmall : icon} />
+    <Link href={to} className={`${className} ${styles.Link}`}>
+      <Svg d={icon === undefined ? mdiCircleSmall : icon} />
 
-        {children}
-      </a>
+      {children}
     </Link>
   );
 };

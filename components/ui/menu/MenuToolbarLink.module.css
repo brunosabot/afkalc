@@ -7,6 +7,7 @@
   height: 60px;
   justify-content: center;
   padding: 0 4px;
+  text-decoration: none;
   transition: var(--transition);
   width: 52px;
 }

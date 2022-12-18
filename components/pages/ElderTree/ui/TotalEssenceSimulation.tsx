@@ -1,3 +1,4 @@
+import Image from "next/image";
 import React, { useContext, useMemo } from "react";
 import elderTreeJson from "../../../../data/elder-tree.json";
 import ElderTreeJson from "../../../../types/ElderTreeJson";
@@ -45,7 +46,13 @@ const TotalEssenceSimulation: React.FC<IProps> = function TotalEssenceSimulation
 
   return (
     <div className={styles.TotalEssence}>
-      <img src="/loot/twisted-essence.jpg" className={styles.Image} alt="twisted-essence" />{" "}
+      <Image
+        src="/loot/twisted-essence.jpg"
+        className={styles.Image}
+        alt="twisted-essence"
+        height={32}
+        width={32}
+      />{" "}
       <span className={currentEssence > totalEssence ? styles.Error : undefined}>
         {currentEssence} / {totalEssence}
       </span>

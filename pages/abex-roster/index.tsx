@@ -31,7 +31,7 @@ const AbexRoster: React.FC<IProps> = function AbexRoster() {
       <CardTitle icon={mdiAccountMultiplePlusOutline}>{t("common:menu.abex-roster")}</CardTitle>
       <Head>
         <title>{`${t("common:menu.abex-roster")} - Afkalc`}</title>
-        <meta name="description" content={t("abex-roster-desc")} />
+        <meta name="description" content={t("abex-roster-desc") ?? ""} />
       </Head>
 
       <div className={styles.AbexBox}>

@@ -26,7 +26,7 @@ const Guild: React.FC<IProps> = function Guild() {
     <>
       <Head>
         <title>{`${t("common:menu.guild")} - Afkalc`}</title>
-        <meta name="description" content={t("common:guild-desc")} />
+        <meta name="description" content={t("common:guild-desc") ?? ""} />
       </Head>
       {values.guild?.id ? <View /> : <Register />}
     </>

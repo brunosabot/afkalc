@@ -32,7 +32,7 @@ const Error: React.FC<IProps> = function Error({ statusCode }) {
       <CardTitle icon={mdiAlertCircleOutline}>{t("error.error", { code: statusCode })}</CardTitle>
       <Head>
         <title>{`${t("common:menu.home")} - Afkalc`}</title>
-        <meta name="description" content={t("common:welcome")} />
+        <meta name="description" content={t("common:welcome") ?? ""} />
       </Head>
       <CardWarn>{text}</CardWarn>
       <svg

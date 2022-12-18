@@ -19,7 +19,7 @@ const CardShare: React.FC<IProps> = function CardShare({
   const [copy, setCopy] = useState(false);
 
   const onClick = useCallback(
-    (event) => {
+    (event: React.MouseEvent<HTMLInputElement>) => {
       if (shouldCopy) {
         (event.target as HTMLInputElement).select();
         document.execCommand("copy");

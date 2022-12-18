@@ -7,7 +7,6 @@ import {
   mdiCircleMultiple,
   mdiCog,
   mdiDiamondStone,
-  mdiDiscord,
   mdiEarth,
   mdiFastForward,
   mdiGithub,
@@ -61,7 +60,7 @@ const Home: React.FC<IProps> = function Home() {
         <CardTitle icon={mdiHome}>{t("common:welcome")}</CardTitle>
         <Head>
           <title>{`${t("common:menu.home")} - Afkalc`}</title>
-          <meta name="description" content={t("common:welcome")} />
+          <meta name="description" content={t("common:welcome") ?? ""} />
         </Head>
         <CardHelp>
           {t("common:logged-user-on-app", { counter: firebaseValues.userCounter })}
@@ -146,9 +145,7 @@ const Home: React.FC<IProps> = function Home() {
           <MenuItem to="/settings" icon={mdiCog}>
             {t("common:menu.settings")}
           </MenuItem>
-          <MenuItemExternal to="https://discord.gg/NSZFSdr9BW" icon={mdiDiscord}>
-            Discord
-          </MenuItemExternal>
+          <MenuItemExternal to="https://discord.gg/NSZFSdr9BW">Discord</MenuItemExternal>
           <MenuItemExternal to="https://github.com/brunosabot/afkalc" icon={mdiGithub}>
             {t("common:contribution.edit-on-github")}
           </MenuItemExternal>

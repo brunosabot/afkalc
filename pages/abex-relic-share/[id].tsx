@@ -1,6 +1,7 @@
 import { mdiShare } from "@mdi/js";
 import { useTranslation } from "next-i18next";
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
+import Image from "next/image";
 import { useRouter } from "next/router";
 import React, { useEffect } from "react";
 import withLayoutPublicColumn from "../../components/layout/withLayoutPublicColumn";
@@ -83,11 +84,13 @@ const AbexRelicShare: React.FC<IProps> = function AbexRelicShare() {
         <div className={classes.Category}>
           {heroClassKeys.map((heroClass, i) => (
             <span className={classes.Bloc}>
-              <img
+              <Image
                 key={heroClass}
                 src={`/classes/${heroClass}.png`}
                 className={classes.Image}
                 alt={`${heroClass}`}
+                height={32}
+                width={32}
               />
               <input
                 value={elderTree[i]}
@@ -110,11 +113,13 @@ const AbexRelicShare: React.FC<IProps> = function AbexRelicShare() {
         <div className={classes.Category}>
           {heroClassKeys.map((heroClass, i) => (
             <span className={classes.Bloc}>
-              <img
+              <Image
                 key={heroClass}
                 src={`/classes/${heroClass}.png`}
                 className={classes.Image}
                 alt={`${heroClass}`}
+                height={32}
+                width={32}
               />
               <input
                 value={relics[i]}

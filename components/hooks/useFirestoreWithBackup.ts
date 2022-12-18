@@ -54,7 +54,7 @@ export default function useFirestoreWithBackup<T>(
   }, [values.isAuth, firestoreValue, localStorageValue, docRef, key, values.uid, partialUpdateRef]);
 
   const setValue = useCallback(
-    (value) => {
+    (value: T) => {
       if (values.isAuth) {
         setFirestoreValue(value);
       } else {
@@ -64,12 +64,10 @@ export default function useFirestoreWithBackup<T>(
     [setFirestoreValue, setLocalStorageValue, values.isAuth]
   );
 
-  const localValue = useMemo(() => (values.isAuth || isView ? firestoreValue : localStorageValue), [
-    isView,
-    values.isAuth,
-    firestoreValue,
-    localStorageValue,
-  ]);
+  const localValue = useMemo(
+    () => (values.isAuth || isView ? firestoreValue : localStorageValue),
+    [isView, values.isAuth, firestoreValue, localStorageValue]
+  );
 
   return [localValue, setValue];
 }

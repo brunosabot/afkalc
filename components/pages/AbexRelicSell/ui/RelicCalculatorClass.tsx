@@ -19,7 +19,13 @@ const RelicCalculatorClass: React.FC<Props> = function RelicCalculatorClass({
 }) {
   return (
     <div className={styles.Class}>
-      <img src={`/classes/${name}.png`} className={styles.Image} alt={name} />
+      <Image
+        src={`/classes/${name}.png`}
+        className={styles.Image}
+        alt={name}
+        height={32}
+        width={32}
+      />
       {current.map((relic, position) => {
         const currentRelicLevel = Math.floor(relic / 1000) as RelicLevel;
         const relicClass = styles[`Relic--${currentRelicLevel}`];

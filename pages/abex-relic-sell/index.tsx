@@ -37,7 +37,7 @@ const AbexRelicSell: React.FC<IProps> = function AbexRelicSell() {
 
   const resetRelics = () => {
     // eslint-disable-next-line no-alert
-    if (window.confirm(t("confirm-reset-box"))) {
+    if (window.confirm(t("confirm-reset-box") ?? "")) {
       actions.resetAbexRelicsAndInventory();
     }
   };
@@ -52,7 +52,7 @@ const AbexRelicSell: React.FC<IProps> = function AbexRelicSell() {
       </CardTitle>
       <Head>
         <title>{`${t("common:menu.abex-relic-sell")} - Afkalc`}</title>
-        <meta name="description" content={t("abex-relic-sell-desc")} />
+        <meta name="description" content={t("abex-relic-sell-desc") ?? ""} />
       </Head>
 
       {showHelp ? <CardHelp>{t("help")}</CardHelp> : null}

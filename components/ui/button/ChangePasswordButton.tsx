@@ -1,6 +1,6 @@
 import { mdiClose, mdiSend } from "@mdi/js";
 import { useTranslation } from "next-i18next";
-import React, { useCallback, useContext, useState } from "react";
+import React, { FormEvent, useCallback, useContext, useState } from "react";
 import { FirebaseContext } from "../../providers/FirebaseProvider";
 import Svg from "../Svg";
 import styles from "./ChangePasswordButton.module.css";
@@ -19,7 +19,7 @@ const ChangePasswordButton: React.FC<IProps> = function ChangePasswordButton() {
   const { actions } = useContext(FirebaseContext);
 
   const onSubmit = useCallback(
-    async (e) => {
+    async (e: FormEvent) => {
       e.preventDefault();
       if (step >= 1) {
         try {
@@ -33,7 +33,9 @@ const ChangePasswordButton: React.FC<IProps> = function ChangePasswordButton() {
         setStep(0);
         setOldPassword("");
         setNewPassword("");
-        e.target.blur();
+
+        const target = e.target as HTMLElement | null;
+        target?.blur();
       }
       setStep(step + 1);
     },
@@ -41,13 +43,15 @@ const ChangePasswordButton: React.FC<IProps> = function ChangePasswordButton() {
   );
 
   const onCancel = useCallback(
-    (e) => {
+    (e: React.MouseEvent<HTMLButtonElement>) => {
       e.preventDefault();
       const newStep = Math.max(step - 1, 0);
       if (newStep === 0) {
         setOldPassword("");
         setNewPassword("");
-        e.target.blur();
+
+        const target = e.target as HTMLElement | null;
+        target?.blur();
       }
       setStep(newStep);
     },
@@ -65,7 +69,7 @@ const ChangePasswordButton: React.FC<IProps> = function ChangePasswordButton() {
         <input
           key="old-password"
           className={styles.ChangePasswordInput}
-          placeholder={t("label-old-password")}
+          placeholder={t("label-old-password") ?? ""}
           autoComplete="current-password"
           type="oldPassword"
           onChange={(e) => {
@@ -78,7 +82,7 @@ const ChangePasswordButton: React.FC<IProps> = function ChangePasswordButton() {
         <input
           key="new-password"
           className={styles.ChangePasswordInput}
-          placeholder={t("label-new-password")}
+          placeholder={t("label-new-password") ?? ""}
           autoComplete="new-password"
           type="password"
           onChange={(e) => {

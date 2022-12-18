@@ -1,6 +1,6 @@
 import { mdiClose, mdiSend } from "@mdi/js";
 import { useTranslation } from "next-i18next";
-import React, { useCallback, useContext, useState } from "react";
+import React, { FormEvent, useCallback, useContext, useState } from "react";
 import { FirebaseContext } from "../../providers/FirebaseProvider";
 import Svg from "../Svg";
 import styles from "./ForgottenPassword.module.css";
@@ -19,7 +19,7 @@ const ForgottenPassword: React.FC<IProps> = function ForgottenPassword() {
 
   // actions.sendPasswordMail()
   const onSubmit = useCallback(
-    async (e) => {
+    async (e: FormEvent) => {
       e.preventDefault();
       if (step >= 1) {
         await actions.sendPasswordMail(email);
@@ -31,12 +31,13 @@ const ForgottenPassword: React.FC<IProps> = function ForgottenPassword() {
   );
 
   const onCancel = useCallback(
-    (e) => {
+    (e: React.MouseEvent<HTMLButtonElement>) => {
       e.preventDefault();
       const newStep = Math.max(step - 1, 0);
       if (newStep === 0) {
         setEmail("");
-        e.target.blur();
+        const target = e.target as HTMLElement | null;
+        target?.blur();
       }
       setStep(newStep);
     },
@@ -63,7 +64,7 @@ const ForgottenPassword: React.FC<IProps> = function ForgottenPassword() {
       >
         <input
           className={styles.ForgottenPassword}
-          placeholder={t("label-email")}
+          placeholder={t("label-email") ?? ""}
           autoComplete="email"
           type="email"
           onChange={(e) => {

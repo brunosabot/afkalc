@@ -38,14 +38,14 @@ const AbexRelic: React.FC<IProps> = function AbexRelic() {
 
   const resetTimers = () => {
     // eslint-disable-next-line no-alert
-    if (window.confirm(t("confirm-reset-timers"))) {
+    if (window.confirm(t("confirm-reset-timers") ?? "")) {
       actions.resetAbexTilesTimers();
     }
   };
 
   const resetFields = () => {
     // eslint-disable-next-line no-alert
-    if (window.confirm(t("confirm-reset-box"))) {
+    if (window.confirm(t("confirm-reset-box") ?? "")) {
       actions.resetAbexTiles();
     }
   };
@@ -56,7 +56,7 @@ const AbexRelic: React.FC<IProps> = function AbexRelic() {
         <CardTitle icon={mdiMap}>{t("common:menu.abex-relic")}</CardTitle>
         <Head>
           <title>{`${t("common:menu.abex-relic")} - Afkalc`}</title>
-          <meta name="description" content={t("abex-relic-desc")} />
+          <meta name="description" content={t("abex-relic-desc") ?? ""} />
         </Head>
 
         <TileResume />

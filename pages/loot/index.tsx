@@ -37,7 +37,7 @@ const Loot: React.FC<IProps> = function Loot() {
     [campaignSuccessDate]
   );
   const setPass = useCallback(
-    (value) => {
+    (value: string) => {
       try {
         const successDate = dayjs(value, "L LTS").toDate().toISOString();
         setCampaignSuccessDate(successDate);
@@ -57,7 +57,7 @@ const Loot: React.FC<IProps> = function Loot() {
       <Card>
         <Head>
           <title>{`${t("common:menu.loot")} - Afkalc`}</title>
-          <meta name="description" content={t("help")} />
+          <meta name="description" content={t("help") ?? ""} />
         </Head>
 
         <CardTitle

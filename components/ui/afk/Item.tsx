@@ -1,4 +1,5 @@
 import { useTranslation } from "next-i18next";
+import Image from "next/image";
 import React from "react";
 import resources from "../../../data/resources.json";
 import styles from "./Item.module.css";
@@ -45,7 +46,13 @@ const Item: React.FC<IProps> = function Item({
         if (event.key === "Enter" && onClick) onClick();
       }}
     >
-      <img src={resource.image} className={styles.Item} alt={t(`item.${name}`)} />
+      <Image
+        src={resource.image}
+        className={styles.Item}
+        alt={t(`item.${name}`) ?? ""}
+        height={40}
+        width={40}
+      />
       {infos ? <span className={styles.Infos}>{t(`duration.${infos}`)}</span> : null}
       {secondaryInfos ? (
         <span className={styles.SecondaryInfos}>{t(`improvment.${secondaryInfos}`)}</span>

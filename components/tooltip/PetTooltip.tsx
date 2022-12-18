@@ -17,18 +17,21 @@ const PetTooltip: React.FC<IProps> = function PetTooltip({ pet }) {
 
       <div className={classes.BuffWrapper}>
         <Image
+          alt=""
           src={`/api/pet-buff?type=strength&level=${pet.strengthBuff}`}
           className={classes.Buff}
           height={69}
           width={108}
         />
         <Image
+          alt=""
           src={`/api/pet-buff?type=intelligence&level=${pet.intelligenceBuff}`}
           className={classes.Buff}
           height={69}
           width={108}
         />
         <Image
+          alt=""
           src={`/api/pet-buff?type=agility&level=${pet.agilityBuff}`}
           className={classes.Buff}
           height={69}

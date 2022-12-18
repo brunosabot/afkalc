@@ -39,7 +39,7 @@ export function withTooltip<P extends IRequiredComponentProps>(
     const refTimeout = useRef<number>(0);
     const [localPosition, setLocalPosition] = useState<TooltipPosition>(position);
 
-    const calculatePosition = useCallback((p) => {
+    const calculatePosition = useCallback((p: TooltipPosition) => {
       if (refSpan.current === null) return [0, 0];
 
       let el: HTMLElement | null = refSpan.current;

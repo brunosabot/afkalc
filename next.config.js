@@ -7,6 +7,7 @@ const moduleExports = {
   generateEtags: false,
   images: {
     minimumCacheTTL: 864000,
+    domains: ["cdn.buymeacoffee.com"],
   },
   async redirects() {
     return [

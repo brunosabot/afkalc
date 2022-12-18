@@ -30,7 +30,7 @@ const FoodResume: React.FC<IProps> = function FoodResume() {
 
   return (
     <span className={styles.FoodCount}>
-      <Image src="/loot/food.png" height={24} width={24} />
+      <Image src="/loot/food.png" height={24} width={24} alt="" />
       {foodUntilTheEnd}
     </span>
   );

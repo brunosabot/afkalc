@@ -1,3 +1,4 @@
+import Image from "next/image";
 import React from "react";
 import styles from "./FilterButtons.module.css";
 
@@ -24,7 +25,13 @@ const FilterButtons: React.FC<IProps> = function FilterButtons({
 
         return (
           <button key={e} className={className} type="button" onClick={onCLick}>
-            <img alt={e} className={styles.Image} src={`/${imagePath}/${e}.png`} />
+            <Image
+              alt={e}
+              className={styles.Image}
+              src={`/${imagePath}/${e}.png`}
+              height={40}
+              width={40}
+            />
           </button>
         );
       })}

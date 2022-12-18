@@ -1,3 +1,4 @@
+import Image from "next/image";
 import React from "react";
 import { getRelicRank } from "../../../../lib/abex";
 import HeroClass from "../../../../types/HeroClass";
@@ -19,7 +20,13 @@ const TabAbex: React.FC<IProps> = function TabAbex({ member }) {
 
         return (
           <React.Fragment key={className}>
-            <img className={styles.Class} src={`/classes/${className}.png`} alt={`${className}`} />
+            <Image
+              className={styles.Class}
+              src={`/classes/${className}.png`}
+              alt={`${className}`}
+              height={20}
+              width={20}
+            />
             {rank}
           </React.Fragment>
         );

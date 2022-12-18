@@ -2,7 +2,7 @@ import { useCallback } from "react";
 
 export default function useUp<T>(items: T[], setItems: (newItems: T[]) => void) {
   return useCallback(
-    (itemToFind, currentIndex) => {
+    (itemToFind: T, currentIndex: number) => {
       const newHeroes = [...items];
       [newHeroes[currentIndex - 1], newHeroes[currentIndex]] = [
         newHeroes[currentIndex],

@@ -59,10 +59,8 @@ const TabHeroes: React.FC<IProps> = function TabHeroes({ heroes = [], lastUpdate
         </button>
 
         {isSelf ? (
-          <Link href="/hero-list/">
-            <a className={classes.Action}>
-              <Svg d={mdiPencil} />
-            </a>
+          <Link href="/hero-list/" className={classes.Action}>
+            <Svg d={mdiPencil} />
           </Link>
         ) : null}
       </div>

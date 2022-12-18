@@ -1,6 +1,7 @@
 import { mdiAccountRemove, mdiCrown, mdiOctagramOutline, mdiViewList } from "@mdi/js";
 import dayjs from "dayjs";
 import { useTranslation } from "next-i18next";
+import Image from "next/image";
 import Link from "next/link";
 import React, { useCallback, useContext, useMemo } from "react";
 import GuildContext from "../../../providers/GuildContext";
@@ -43,7 +44,7 @@ const MemberListItem: React.FC<IProps> = function MemberListItem({
 
   const onRemove = useCallback(() => {
     // eslint-disable-next-line no-alert
-    if (member.id && window.confirm(t("confirm-kick"))) {
+    if (member.id && window.confirm(t("confirm-kick") ?? "")) {
       actions.removeFromGuild(member.id);
     }
   }, [actions, member.id, t]);
@@ -79,37 +80,71 @@ const MemberListItem: React.FC<IProps> = function MemberListItem({
             <Svg d={mdiAccountRemove} onClick={onRemove} />
           ) : null}
 
-          <Link href={`/public/${member.id}`}>
-            <a className={styles.Link}>
-              <Svg d={mdiViewList} />
-            </a>
+          <Link href={`/public/${member.id}`} className={styles.Link}>
+            <Svg d={mdiViewList} />
           </Link>
         </div>
       </div>
       {showTree ? (
         <div className={styles.TreeWrapper}>
           <div className={styles.TreeItem}>
-            <img src="/elder-tree/tree-level.png" className={styles.Image} alt="" />
+            <Image
+              src="/elder-tree/tree-level.png"
+              className={styles.Image}
+              alt=""
+              height={20}
+              width={20}
+            />
             {member.elderTree?.main ?? 0}
           </div>
           <div className={styles.TreeItem}>
-            <img src="/elder-tree/duras-might.png" className={styles.Image} alt="" />{" "}
+            <Image
+              src="/elder-tree/duras-might.png"
+              className={styles.Image}
+              alt=""
+              height={20}
+              width={20}
+            />{" "}
             {member.elderTree?.warrior ?? 0}
           </div>
           <div className={styles.TreeItem}>
-            <img src="/elder-tree/duras-fortitude.png" className={styles.Image} alt="" />{" "}
+            <Image
+              src="/elder-tree/duras-fortitude.png"
+              className={styles.Image}
+              alt=""
+              height={20}
+              width={20}
+            />{" "}
             {member.elderTree?.tank ?? 0}
           </div>
           <div className={styles.TreeItem}>
-            <img src="/elder-tree/duras-celerity.png" className={styles.Image} alt="" />{" "}
+            <Image
+              src="/elder-tree/duras-celerity.png"
+              className={styles.Image}
+              alt=""
+              height={20}
+              width={20}
+            />{" "}
             {member.elderTree?.ranger ?? 0}
           </div>
           <div className={styles.TreeItem}>
-            <img src="/elder-tree/duras-sorcery.png" className={styles.Image} alt="" />{" "}
+            <Image
+              src="/elder-tree/duras-sorcery.png"
+              className={styles.Image}
+              alt=""
+              height={20}
+              width={20}
+            />{" "}
             {member.elderTree?.mage ?? 0}
           </div>
           <div className={styles.TreeItem}>
-            <img src="/elder-tree/duras-sustenance.png" className={styles.Image} alt="" />{" "}
+            <Image
+              src="/elder-tree/duras-sustenance.png"
+              className={styles.Image}
+              alt=""
+              height={20}
+              width={20}
+            />{" "}
             {member.elderTree?.support ?? 0}
           </div>
         </div>
@@ -121,27 +156,63 @@ const MemberListItem: React.FC<IProps> = function MemberListItem({
             <span className={styles.Image}>👑</span> {member.pve?.kingTower ?? 1}
           </div>
           <div className={styles.TreeItem}>
-            <img src="/factions/lightbearers.png" className={styles.Image} alt="" />{" "}
+            <Image
+              src="/factions/lightbearers.png"
+              className={styles.Image}
+              alt=""
+              height={20}
+              width={20}
+            />{" "}
             {member.pve?.lightbearerTower ?? 1}
           </div>
           <div className={styles.TreeItem}>
-            <img src="/factions/maulers.png" className={styles.Image} alt="" />{" "}
+            <Image
+              src="/factions/maulers.png"
+              className={styles.Image}
+              alt=""
+              height={20}
+              width={20}
+            />{" "}
             {member.pve?.maulerTower ?? 1}
           </div>
           <div className={styles.TreeItem}>
-            <img src="/factions/wilders.png" className={styles.Image} alt="" />{" "}
+            <Image
+              src="/factions/wilders.png"
+              className={styles.Image}
+              alt=""
+              height={20}
+              width={20}
+            />{" "}
             {member.pve?.wilderTower ?? 1}
           </div>
           <div className={styles.TreeItem}>
-            <img src="/factions/graveborns.png" className={styles.Image} alt="" />{" "}
+            <Image
+              src="/factions/graveborns.png"
+              className={styles.Image}
+              alt=""
+              height={20}
+              width={20}
+            />{" "}
             {member.pve?.gravebornTower ?? 1}
           </div>
           <div className={styles.TreeItem}>
-            <img src="/factions/celestials.png" className={styles.Image} alt="" />{" "}
+            <Image
+              src="/factions/celestials.png"
+              className={styles.Image}
+              alt=""
+              height={20}
+              width={20}
+            />{" "}
             {member.pve?.celestialTower ?? 1}
           </div>
           <div className={styles.TreeItem}>
-            <img src="/factions/hypogeans.png" className={styles.Image} alt="" />{" "}
+            <Image
+              src="/factions/hypogeans.png"
+              className={styles.Image}
+              alt=""
+              height={20}
+              width={20}
+            />{" "}
             {member.pve?.hypogeanTower ?? 1}
           </div>
         </div>

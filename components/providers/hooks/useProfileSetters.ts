@@ -7,7 +7,7 @@ export default function useProfileSetters() {
   const document = useFirestoreDocumentReference(`profile/%ID%`);
 
   const setCampaignLevel = useCallback(
-    (campaignLevel) => {
+    (campaignLevel: string) => {
       if (values.uid === "") return;
       document?.set({ ownerId: values.uid, campaignLevel }, { merge: true });
     },
@@ -15,7 +15,7 @@ export default function useProfileSetters() {
   );
 
   const setCampaignSuccessDate = useCallback(
-    (campaignSuccessDate) => {
+    (campaignSuccessDate: string) => {
       if (values.uid === "") return;
       document?.set({ ownerId: values.uid, campaignSuccessDate }, { merge: true });
     },
@@ -23,7 +23,7 @@ export default function useProfileSetters() {
   );
 
   const setPlayerLevel = useCallback(
-    (playerLevel) => {
+    (playerLevel: number) => {
       if (values.uid === "") return;
       document?.set({ ownerId: values.uid, playerLevel }, { merge: true });
     },
@@ -31,7 +31,7 @@ export default function useProfileSetters() {
   );
 
   const setPlayerVipLevel = useCallback(
-    (playerVipLevel) => {
+    (playerVipLevel: number) => {
       if (values.uid === "") return;
       document?.set({ ownerId: values.uid, playerVipLevel }, { merge: true });
     },
@@ -39,7 +39,7 @@ export default function useProfileSetters() {
   );
 
   const setPlayerName = useCallback(
-    (playerName) => {
+    (playerName: string) => {
       if (values.uid === "") return;
       document?.set({ ownerId: values.uid, playerName }, { merge: true });
     },

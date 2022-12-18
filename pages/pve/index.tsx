@@ -69,7 +69,7 @@ const ElderTree: React.FC<IProps> = function ElderTree() {
         label={t("label-campaign")}
         value={values.pve.campaign}
         onChange={setPVECampaign}
-        helper={t("label-campaign-helper")}
+        helper={t("label-campaign-helper") ?? ""}
       />
       <FactionForm
         label={t("label-kings-tower")}

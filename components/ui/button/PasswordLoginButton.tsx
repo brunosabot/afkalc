@@ -1,6 +1,6 @@
 import { mdiClose, mdiSend } from "@mdi/js";
 import { useTranslation } from "next-i18next";
-import React, { useCallback, useContext, useState } from "react";
+import React, { FormEvent, useCallback, useContext, useState } from "react";
 import { FirebaseContext } from "../../providers/FirebaseProvider";
 import Svg from "../Svg";
 import styles from "./PasswordLoginButton.module.css";
@@ -18,7 +18,7 @@ const PasswordLoginButton: React.FC<IProps> = function PasswordLoginButton({ isL
   const { actions } = useContext(FirebaseContext);
 
   const onSubmit = useCallback(
-    (e) => {
+    (e: FormEvent) => {
       e.preventDefault();
       if (step >= 1) {
         if (isLink) {
@@ -33,13 +33,14 @@ const PasswordLoginButton: React.FC<IProps> = function PasswordLoginButton({ isL
   );
 
   const onCancel = useCallback(
-    (e) => {
+    (e: React.MouseEvent<HTMLButtonElement>) => {
       e.preventDefault();
       const newStep = Math.max(step - 1, 0);
       if (newStep === 0) {
         setEmail("");
         setPassword("");
-        e.target.blur();
+        const target = e.target as HTMLElement | null;
+        target?.blur();
       }
       setStep(newStep);
     },
@@ -52,7 +53,7 @@ const PasswordLoginButton: React.FC<IProps> = function PasswordLoginButton({ isL
         <input
           key="email"
           className={`${styles.PasswordLoginInput} ${error ? styles.Error : ""}`}
-          placeholder={t("label-email")}
+          placeholder={t("label-email") ?? ""}
           autoComplete="email"
           type="email"
           onChange={(e) => {
@@ -65,7 +66,7 @@ const PasswordLoginButton: React.FC<IProps> = function PasswordLoginButton({ isL
         <input
           key="password"
           className={`${styles.PasswordLoginInput} ${error ? styles.Error : ""}`}
-          placeholder={t("label-password")}
+          placeholder={t("label-password") ?? ""}
           autoComplete="current-password"
           type="password"
           onChange={(e) => {

@@ -27,7 +27,7 @@ const CardDeputies: React.FC<IProps> = function CardDeputies() {
   );
 
   const removeDeputy = useCallback(
-    (id) => {
+    (id?: string) => {
       if (id) {
         actions.removeDeputy(id);
       }
@@ -36,7 +36,7 @@ const CardDeputies: React.FC<IProps> = function CardDeputies() {
   );
 
   const addDeputy = useCallback(
-    (id) => {
+    (id?: string) => {
       if (id) {
         actions.addDeputy(id);
         setName("");
