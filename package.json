@@ -19,6 +19,7 @@
   },
   "dependencies": {
     "@mdi/js": "^6.5.95",
+    "@next/eslint-plugin-next": "^13.0.7",
     "@testing-library/react-hooks": "^7.0.2",
     "canvas": "^2.9.0",
     "dayjs": "^1.10.7",
