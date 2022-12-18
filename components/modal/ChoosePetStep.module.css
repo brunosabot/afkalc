@@ -1,0 +1,17 @@
+.ChoosePetStep {
+  max-width: 348px;
+}
+
+.Heroes {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px;
+  margin-bottom: 16px;
+}
+
+.InputWrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin-bottom: 16px;
+}
