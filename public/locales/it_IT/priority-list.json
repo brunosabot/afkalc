@@ -35,5 +35,6 @@
   "checked-items-hidden": "Le liste completate sono nascoste. Clicca sulla casella per mostrarle tutte",
   "sort-by-name": "Ordina per nome",
   "sort-by-last-update": "Ordina per ultimo aggiornamento",
-  "sort-by-percentage": "Ordina per percentuale"
+  "sort-by-percentage": "Ordina per percentuale",
+  "label-add-pet-list": "New pet list"
 }
