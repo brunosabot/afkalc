@@ -34,7 +34,7 @@ const ItemCost: React.FC<IProps> = function ItemCost() {
     <>
       <Head>
         <title>{`${t("common:menu.item-cost")} - Afkalc`}</title>
-        <meta name="description" content={t("help")} />
+        <meta name="description" content={t("help") ?? ""} />
       </Head>
       <Card>
         <CardTitle

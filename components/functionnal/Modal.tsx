@@ -18,7 +18,7 @@ const Modal: React.FC<Props> = function Modal({ active, children, onClose }) {
   };
 
   const onEchap = useCallback(
-    (event) => {
+    (event: KeyboardEvent) => {
       if (event.keyCode === 27) {
         onClose();
       }

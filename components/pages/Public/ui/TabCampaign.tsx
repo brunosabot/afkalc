@@ -18,10 +18,8 @@ const TabCampaign: React.FC<ITabCampaignProps> = function TabCampaign({ pve, isS
     <div className={classes.TabCampaign}>
       <img src="/background/bbg_idle_map_27.png" className={classes.Background} alt="" />
       {isSelf ? (
-        <Link href="/pve">
-          <a className={classes.Action}>
-            <Svg d={mdiPencil} />
-          </a>
+        <Link href="/pve" className={classes.Action}>
+          <Svg d={mdiPencil} />
         </Link>
       ) : null}
       <div className={classes.Campaign}>

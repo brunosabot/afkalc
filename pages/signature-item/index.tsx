@@ -2,7 +2,7 @@ import { mdiChevronTripleUp, mdiHelpBox } from "@mdi/js";
 import { useTranslation } from "next-i18next";
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 import Head from "next/head";
-import React, { useCallback, useState } from "react";
+import React, { Dispatch, SetStateAction, useCallback, useState } from "react";
 import withLayoutPrivateColumn from "../../components/layout/withLayoutPrivateColumn";
 import useCountEmblem from "../../components/pages/SignatureItem/hooks/useCountEmblem";
 import SignatureItemLeft from "../../components/pages/SignatureItem/ui/SignatureItemLeft";
@@ -32,7 +32,7 @@ const SignatureItem: React.FC<IProps> = function SignatureItem() {
   const target = useCountEmblem(targetLevel, currentLevel);
 
   const onChange = useCallback(
-    (setter) => (e: string) => {
+    (setter: Dispatch<SetStateAction<number>>) => (e: string) => {
       const val = Number(e);
       if (!Number.isNaN(val) && val >= 0 && val <= 40) {
         setter(val);
@@ -48,7 +48,7 @@ const SignatureItem: React.FC<IProps> = function SignatureItem() {
       <Card>
         <Head>
           <title>{`${t("common:menu.signature-item")} - Afkalc`}</title>
-          <meta name="description" content={t("help")} />
+          <meta name="description" content={t("help") ?? ""} />
         </Head>
         <CardTitle
           icon={mdiChevronTripleUp}

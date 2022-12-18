@@ -1,3 +1,4 @@
+import Image from "next/image";
 import React from "react";
 import styles from "./ClassForm.module.css";
 
@@ -11,7 +12,13 @@ interface IProps {
 const ClassForm: React.FC<IProps> = function ClassForm({ onChange, value, heroClass, max }) {
   return (
     <div className={styles.ClassForm}>
-      <img src={`/elder-tree/${heroClass}.png`} className={styles.Image} alt={heroClass} />
+      <Image
+        src={`/elder-tree/${heroClass}.png`}
+        className={styles.Image}
+        alt={heroClass}
+        height={32}
+        width={32}
+      />
       <input
         value={value === 0 ? "" : value}
         className={styles.Input}

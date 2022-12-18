@@ -232,7 +232,7 @@ const FirebaseProvider: React.FC<IProps> = function FirebaseProvider({ children 
   }, [handleUser]);
 
   const linkWithPassword = useCallback(
-    async (email, password) => {
+    async (email: string, password: string) => {
       const { currentUser } = firebase.auth();
       if (currentUser === null) return;
 

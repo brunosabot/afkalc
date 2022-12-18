@@ -5,6 +5,7 @@ import styles from "./CardAction.module.css";
 interface Props {
   onClick: () => void;
   icon?: string;
+  children: React.ReactNode;
 }
 
 const CardAction: React.FC<Props> = function CardAction({ onClick, children, icon }) {

@@ -1,5 +1,6 @@
 import { mdiPencil } from "@mdi/js";
 import { useTranslation } from "next-i18next";
+import Image from "next/image";
 import Link from "next/link";
 import React from "react";
 import { IFirebaseElderTree } from "../../../providers/types/IFirebaseElderTree";
@@ -18,49 +19,83 @@ const TabElderTree: React.FC<ITabElderTreeProps> = function TabElderTree({ elder
     <div className={classes.TabElderTree}>
       <img src="/background/elder-tree.jpeg" className={classes.Background} alt="" />
       {isSelf ? (
-        <Link href="/elder-tree">
-          <a className={classes.Action}>
-            <Svg d={mdiPencil} />
-          </a>
+        <Link href="/elder-tree" className={classes.Action}>
+          <Svg d={mdiPencil} />
         </Link>
       ) : null}
       <div className={classes.Support}>
-        <img src="/elder-tree/duras-sustenance.png" alt="support" className={classes.ClassImage} />
+        <Image
+          src="/elder-tree/duras-sustenance.png"
+          alt="support"
+          className={classes.ClassImage}
+          height={80}
+          width={80}
+        />
         <span className={classes.LevelLabel}>
           {t("label-level")}
           {elderTree?.support}
         </span>
       </div>
       <div className={classes.Mage}>
-        <img src="/elder-tree/duras-sorcery.png" alt="mage" className={classes.ClassImage} />
+        <Image
+          src="/elder-tree/duras-sorcery.png"
+          alt="mage"
+          className={classes.ClassImage}
+          height={80}
+          width={80}
+        />
         <span className={classes.LevelLabel}>
           {t("label-level")}
           {elderTree?.mage}
         </span>
       </div>
       <div className={classes.Warrior}>
-        <img src="/elder-tree/duras-might.png" alt="warrior" className={classes.ClassImage} />
+        <Image
+          src="/elder-tree/duras-might.png"
+          alt="warrior"
+          className={classes.ClassImage}
+          height={80}
+          width={80}
+        />
         <span className={classes.LevelLabel}>
           {t("label-level")}
           {elderTree?.warrior}
         </span>
       </div>
       <div className={classes.Tank}>
-        <img src="/elder-tree/duras-fortitude.png" alt="tank" className={classes.ClassImage} />
+        <Image
+          src="/elder-tree/duras-fortitude.png"
+          alt="tank"
+          className={classes.ClassImage}
+          height={80}
+          width={80}
+        />
         <span className={classes.LevelLabel}>
           {t("label-level")}
           {elderTree?.tank}
         </span>
       </div>
       <div className={classes.Ranger}>
-        <img src="/elder-tree/duras-celerity.png" alt="ranger" className={classes.ClassImage} />
+        <Image
+          src="/elder-tree/duras-celerity.png"
+          alt="ranger"
+          className={classes.ClassImage}
+          height={80}
+          width={80}
+        />
         <span className={classes.LevelLabel}>
           {t("label-level")}
           {elderTree?.ranger}
         </span>
       </div>
       <div className={classes.Main}>
-        <img src="/elder-tree/tree-level.png" alt="" className={classes.ClassImage} />
+        <Image
+          src="/elder-tree/tree-level.png"
+          alt=""
+          className={classes.ClassImage}
+          height={80}
+          width={80}
+        />
         <span className={classes.LevelLabel}>
           {t("label-level")}
           {elderTree?.main}

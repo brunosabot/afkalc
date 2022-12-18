@@ -58,7 +58,6 @@ const Pet: React.FC<IProps> = function Pet({
           src={`/api/pet?elevation=${currentPet.elevation}&id=${id}&level=${level}`}
           width={size === "normal" ? 64 : 56}
           height={size === "normal" ? 64 : 56}
-          layout="fixed"
           alt={t(`common:petName.${id}`)}
         />
       </div>

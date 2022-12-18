@@ -1,4 +1,5 @@
 import { useTranslation } from "next-i18next";
+import Image from "next/image";
 import React from "react";
 import artifacts from "../../../data/artifacts.json";
 import styles from "./Artifact.module.css";
@@ -34,7 +35,13 @@ const Artifact: React.FC<IProps> = function Artifact({
         if (event.key === "Enter") onClick();
       }}
     >
-      <img src={artifact.image} className={styles.Artifact} alt={t(`artifact.${name}`)} />
+      <Image
+        src={artifact.image}
+        className={styles.Artifact}
+        alt={t(`artifact.${name}`) ?? ""}
+        height={64}
+        width={64}
+      />
     </div>
   );
 };

@@ -31,6 +31,7 @@ const Equip: React.FC<Props> = function Equip({
       className={classes.Equip}
       height={size}
       width={size}
+      alt=""
     />
   );
 };

@@ -8,7 +8,7 @@ export default function usePveSetters(result: IFirebaseDataState<IFirebaseProfil
   const document = useFirestoreDocumentReference(`profile/%ID%`);
 
   const setPVECampaign = useCallback(
-    async (newCampaignPve) => {
+    async (newCampaignPve: string) => {
       await document?.set(
         {
           pve: {
@@ -23,7 +23,7 @@ export default function usePveSetters(result: IFirebaseDataState<IFirebaseProfil
     [document, result?.data?.pve]
   );
   const setPVEKingTower = useCallback(
-    async (newKingTowerPve) => {
+    async (newKingTowerPve: number) => {
       await document?.set(
         {
           pve: {
@@ -38,7 +38,7 @@ export default function usePveSetters(result: IFirebaseDataState<IFirebaseProfil
     [document, result?.data?.pve]
   );
   const setPVELightbearerTower = useCallback(
-    async (newLightbearerTowerPve) => {
+    async (newLightbearerTowerPve: number) => {
       await document?.set(
         {
           pve: {
@@ -53,7 +53,7 @@ export default function usePveSetters(result: IFirebaseDataState<IFirebaseProfil
     [document, result?.data?.pve]
   );
   const setPVEMaulerTower = useCallback(
-    async (newMaulerTowerPve) => {
+    async (newMaulerTowerPve: number) => {
       await document?.set(
         {
           pve: {
@@ -68,7 +68,7 @@ export default function usePveSetters(result: IFirebaseDataState<IFirebaseProfil
     [document, result?.data?.pve]
   );
   const setPVEWilderTower = useCallback(
-    async (newWilderTowerPve) => {
+    async (newWilderTowerPve: number) => {
       await document?.set(
         {
           pve: {
@@ -83,7 +83,7 @@ export default function usePveSetters(result: IFirebaseDataState<IFirebaseProfil
     [document, result?.data?.pve]
   );
   const setPVEGravebornTower = useCallback(
-    async (newGravebornTowerPve) => {
+    async (newGravebornTowerPve: number) => {
       await document?.set(
         {
           pve: {
@@ -98,7 +98,7 @@ export default function usePveSetters(result: IFirebaseDataState<IFirebaseProfil
     [document, result?.data?.pve]
   );
   const setPVECelestialTower = useCallback(
-    async (newCelestialTowerPve) => {
+    async (newCelestialTowerPve: number) => {
       await document?.set(
         {
           pve: {
@@ -113,7 +113,7 @@ export default function usePveSetters(result: IFirebaseDataState<IFirebaseProfil
     [document, result?.data?.pve]
   );
   const setPVEHypogeanTower = useCallback(
-    async (newHypogeanTowerPve) => {
+    async (newHypogeanTowerPve: number) => {
       await document?.set(
         {
           pve: {
@@ -128,7 +128,7 @@ export default function usePveSetters(result: IFirebaseDataState<IFirebaseProfil
     [document, result?.data?.pve]
   );
   const setPVECrystal = useCallback(
-    async (newCrystalPve) => {
+    async (newCrystalPve: number) => {
       await document?.set(
         {
           pve: {
@@ -143,7 +143,7 @@ export default function usePveSetters(result: IFirebaseDataState<IFirebaseProfil
     [document, result?.data?.pve]
   );
   const setPVECrystalMax = useCallback(
-    async (newCrystalMaxPve) => {
+    async (newCrystalMaxPve: number) => {
       await document?.set(
         {
           pve: {

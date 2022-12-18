@@ -20,9 +20,9 @@ const CardOwner: React.FC<IProps> = function CardOwner() {
   const isOwner = values.guild.ownerId === profileValues.userId;
 
   const giveOwnership = useCallback(
-    (id) => {
+    (id?: string) => {
       // eslint-disable-next-line no-alert
-      if (id && window.confirm(t("confirm-transfer-ownership"))) {
+      if (id && window.confirm(t("confirm-transfer-ownership") ?? "")) {
         actions.giveOwnership(id);
       }
     },

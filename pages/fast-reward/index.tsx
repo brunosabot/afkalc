@@ -43,7 +43,7 @@ const FastReward: React.FC<IProps> = function FastReward() {
     <>
       <Head>
         <title>{`${t("common:menu.fast-reward")} - Afkalc`}</title>
-        <meta name="description" content={t("help")} />
+        <meta name="description" content={t("help") ?? ""} />
       </Head>
       <Card>
         <CardTitle

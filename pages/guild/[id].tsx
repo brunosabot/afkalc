@@ -79,7 +79,7 @@ const GuildId: React.FC<IProps> = function GuildId() {
     <>
       <Head>
         <title>{`${t("common:menu.guild")} - Afkalc`}</title>
-        <meta name="description" content={t("common:guild-desc")} />
+        <meta name="description" content={t("common:guild-desc") ?? ""} />
       </Head>
       <Card>
         <CardTitle>{t("title-join-specific-guild", { name: result.data?.name })}</CardTitle>

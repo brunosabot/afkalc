@@ -1,4 +1,5 @@
 import { useTranslation } from "next-i18next";
+import Image from "next/image";
 import React from "react";
 import styles from "./FactionLine.module.css";
 
@@ -12,7 +13,13 @@ const FactionLine: React.FC<IProps> = function FactionLine({ name }) {
 
   return (
     <div className={styles.Faction}>
-      <img className={styles.Image} src={`/factions/${fileName}.png`} alt={name} />
+      <Image
+        className={styles.Image}
+        src={`/factions/${fileName}.png`}
+        alt={name}
+        height={64}
+        width={64}
+      />
       <div className={styles.Name}>{t(`faction-${name}`)}</div>
     </div>
   );

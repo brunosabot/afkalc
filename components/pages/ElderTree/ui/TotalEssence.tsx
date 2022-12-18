@@ -1,3 +1,4 @@
+import Image from "next/image";
 import React, { useContext, useMemo } from "react";
 import elderTreeJson from "../../../../data/elder-tree.json";
 import ElderTreeJson, { ElderTreeFaction } from "../../../../types/ElderTreeJson";
@@ -43,7 +44,13 @@ const ElderTree: React.FC<IProps> = function ElderTree() {
 
   return (
     <div className={styles.TotalEssence}>
-      <img src="/loot/twisted-essence.jpg" className={styles.Image} alt="twisted-essence" />{" "}
+      <Image
+        src="/loot/twisted-essence.jpg"
+        className={styles.Image}
+        alt="twisted-essence"
+        height={32}
+        width={32}
+      />{" "}
       {totalEssence}
     </div>
   );

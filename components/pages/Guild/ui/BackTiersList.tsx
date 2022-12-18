@@ -14,12 +14,10 @@ const BackTiersList: React.FC<Props> = function BackTiersList({ id }) {
 
   return (
     <div className={styles.BackTiersList}>
-      <Link href={`/tiers-list/${id}`}>
-        <a className={styles.Link}>
-          <Svg d={mdiArrowLeft} />
+      <Link href={`/tiers-list/${id}`} className={styles.Link}>
+        <Svg d={mdiArrowLeft} />
 
-          {t("label-back")}
-        </a>
+        {t("label-back")}
       </Link>
     </div>
   );

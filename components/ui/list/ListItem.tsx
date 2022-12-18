@@ -13,12 +13,10 @@ interface IProps {
 const ListItem: React.FC<IProps> = function ListItem({ icon, children, actions, href }) {
   if (href !== undefined) {
     return (
-      <Link href={href} passHref>
-        <a className={styles.ListItem}>
-          {icon ? <Svg d={icon} /> : null}
-          <div className={styles.ListItemTitle}>{children}</div>
-          {actions ? <div className={styles.ListItemAction}>{actions}</div> : null}
-        </a>
+      <Link href={href} passHref className={styles.ListItem}>
+        {icon ? <Svg d={icon} /> : null}
+        <div className={styles.ListItemTitle}>{children}</div>
+        {actions ? <div className={styles.ListItemAction}>{actions}</div> : null}
       </Link>
     );
   }

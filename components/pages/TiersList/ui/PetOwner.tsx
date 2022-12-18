@@ -40,7 +40,7 @@ const PetOwner: React.FC<IProps> = function PetOwner({ listId, result }) {
 
   const onDeleteList = useCallback(() => {
     // eslint-disable-next-line no-alert
-    if (window.confirm(t("label-confirm-delete"))) {
+    if (window.confirm(t("label-confirm-delete") ?? "")) {
       deleteList(listId).then(() => {
         router.push("/tiers-list");
       });

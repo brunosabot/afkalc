@@ -14,12 +14,10 @@ const Back: React.FC<Props> = function Back({ id }) {
 
   return (
     <div className={styles.Back}>
-      <Link href={`/guild/tiers-list/${id}`}>
-        <a className={styles.Link}>
-          <Svg d={mdiArrowLeft} />
+      <Link href={`/guild/tiers-list/${id}`} className={styles.Link}>
+        <Svg d={mdiArrowLeft} />
 
-          {t("label-back")}
-        </a>
+        {t("label-back")}
       </Link>
     </div>
   );

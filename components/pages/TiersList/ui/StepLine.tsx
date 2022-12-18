@@ -1,5 +1,6 @@
 import { mdiArrowDownBold, mdiArrowUpBold, mdiDelete } from "@mdi/js";
 import { useTranslation } from "next-i18next";
+import Image from "next/image";
 import React, { useState } from "react";
 import Modal from "../../../functionnal/Modal";
 import ChooseTreeStep from "../../../modal/ChooseTreeStep";
@@ -42,7 +43,13 @@ const StepLine: React.FC<Props> = function StepLine({
         }}
         type="button"
       >
-        <img src={`/classes/${step.heroClass}.png`} className={styles.Image} alt={step.heroClass} />
+        <Image
+          src={`/classes/${step.heroClass}.png`}
+          className={styles.Image}
+          alt={step.heroClass}
+          height={24}
+          width={24}
+        />
       </button>
 
       <span className={styles.Name}>

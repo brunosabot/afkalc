@@ -1,4 +1,5 @@
 import { mdiLink } from "@mdi/js";
+import Image from "next/image";
 import React, { useState } from "react";
 import Modal from "../../../functionnal/Modal";
 import { withTooltip } from "../../../functionnal/withTooltip";
@@ -48,7 +49,13 @@ const HeroLine: React.FC<IProps> = function HeroLine({
             <Character id={link} size="small" onClick={() => setShowModal(true)} />
           </div>
           {linkKey ? (
-            <img src="/loot/cosmic-key.jpg" className={styles.DimensionalKey} alt="" />
+            <Image
+              src="/loot/cosmic-key.jpg"
+              className={styles.DimensionalKey}
+              alt=""
+              height={20}
+              width={20}
+            />
           ) : null}
         </>
       );

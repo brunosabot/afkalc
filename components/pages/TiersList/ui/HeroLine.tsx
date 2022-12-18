@@ -1,7 +1,6 @@
 import { mdiArrowDownBold, mdiArrowUpBold, mdiDelete } from "@mdi/js";
 import { useTranslation } from "next-i18next";
 import React, { useState } from "react";
-import IHeroDetails from "../../../../types/IHeroDetails";
 import Modal from "../../../functionnal/Modal";
 import ChoosePriorityHero from "../../../modal/ChoosePriorityHero";
 import {
@@ -15,10 +14,10 @@ import styles from "./HeroLine.module.css";
 
 interface Props {
   hero: IFirebasePriorityListHero;
-  onSelect: (value: IHeroDetails, index: number) => void;
-  onDelete?: (value: IHeroDetails, index: number) => void;
-  onUp?: (value: IHeroDetails, index: number) => void;
-  onDown?: (value: IHeroDetails, index: number) => void;
+  onSelect: (value: IFirebasePriorityListHero, index: number) => void;
+  onDelete?: (value: IFirebasePriorityListHero, index: number) => void;
+  onUp?: (value: IFirebasePriorityListHero, index: number) => void;
+  onDown?: (value: IFirebasePriorityListHero, index: number) => void;
   index: number;
   length: number;
   requirement: IFirebasePriorityListRequirement;

@@ -1,6 +1,6 @@
 {
   "root": true,
-  "extends": ["airbnb", "airbnb-typescript", "prettier"],
+  "extends": ["plugin:@next/next/recommended", "airbnb", "airbnb-typescript", "prettier"],
   "parser": "@typescript-eslint/parser",
   "parserOptions": {
     "project": "./tsconfig.json",

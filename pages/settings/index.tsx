@@ -34,7 +34,7 @@ const Settings: React.FC<IProps> = function Settings() {
 
   const deleteUser = useCallback(() => {
     // eslint-disable-next-line no-alert
-    if (window.confirm(t("confirm-remove")) === false) {
+    if (window.confirm(t("confirm-remove") ?? "") === false) {
       actions.deleteUser();
     }
   }, [actions, t]);
@@ -44,7 +44,7 @@ const Settings: React.FC<IProps> = function Settings() {
       <Card>
         <Head>
           <title>{`${t("common:menu.settings")} - Afkalc`}</title>
-          <meta name="description" content={t("common:settings-desc")} />
+          <meta name="description" content={t("common:settings-desc") ?? ""} />
         </Head>
 
         {values.userId ? (

@@ -9,8 +9,8 @@ interface IProps {
 
 const ListItem: React.FC<IProps> = function ListItem({ href, children }) {
   return (
-    <Link href={href}>
-      <a className={styles.ListItem}>{children}</a>
+    <Link href={href} className={styles.ListItem}>
+      {children}
     </Link>
   );
 };

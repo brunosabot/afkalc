@@ -1,6 +1,11 @@
 import { useCallback } from "react";
 import useFirestoreDocumentReference from "../../hooks/useFirestoreDocumentReference";
 import { defaultValues } from "../ProfileContext";
+import {
+  IFirebaseAbyssalExpeditionClassRelics,
+  IFirebaseAbyssalExpeditionInventory,
+  IFirebaseAbyssalExpeditionTilesList,
+} from "../types/IFirebaseAbyssalExpedition";
 import IFirebaseDataState from "../types/IFirebaseDataState";
 import IFirebaseProfile from "../types/IFirebaseProfile";
 
@@ -8,7 +13,7 @@ export default function useAbyssalExpeditionSetters(result: IFirebaseDataState<I
   const document = useFirestoreDocumentReference(`profile/%ID%`);
 
   const setAbexCurrentRelics = useCallback(
-    async (newAbexCurrentRelics) => {
+    async (newAbexCurrentRelics: IFirebaseAbyssalExpeditionClassRelics) => {
       await document?.set(
         { abexCurrentRelics: newAbexCurrentRelics, abexLastUpdate: new Date().toISOString() },
         { merge: true }
@@ -17,7 +22,7 @@ export default function useAbyssalExpeditionSetters(result: IFirebaseDataState<I
     [document]
   );
   const setAbexGoalRelics = useCallback(
-    async (newAbexGoalRelics) => {
+    async (newAbexGoalRelics: IFirebaseAbyssalExpeditionClassRelics) => {
       await document?.set(
         { abexGoalRelics: newAbexGoalRelics, abexLastUpdate: new Date().toISOString() },
         { merge: true }
@@ -26,7 +31,7 @@ export default function useAbyssalExpeditionSetters(result: IFirebaseDataState<I
     [document]
   );
   const setAbexRelicInventory = useCallback(
-    async (newAbexRelicInventory) => {
+    async (newAbexRelicInventory: IFirebaseAbyssalExpeditionInventory) => {
       await document?.set(
         { abexRelicInventory: newAbexRelicInventory, abexLastUpdate: new Date().toISOString() },
         { merge: true }
@@ -46,7 +51,7 @@ export default function useAbyssalExpeditionSetters(result: IFirebaseDataState<I
     );
   }, [document]);
   const setAbexTiles = useCallback(
-    async (newAbexTiles) => {
+    async (newAbexTiles: IFirebaseAbyssalExpeditionTilesList) => {
       await document?.set(
         { abexTiles: newAbexTiles, abexLastUpdate: new Date().toISOString() },
         { merge: true }
@@ -55,7 +60,7 @@ export default function useAbyssalExpeditionSetters(result: IFirebaseDataState<I
     [document]
   );
   const setAbexBox = useCallback(
-    async (newAbexBox) => {
+    async (newAbexBox: number[]) => {
       await document?.set(
         { abexBox: newAbexBox, abexLastUpdate: new Date().toISOString() },
         { merge: true }

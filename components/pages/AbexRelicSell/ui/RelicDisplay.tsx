@@ -1,4 +1,5 @@
 import { mdiMinus, mdiPlus } from "@mdi/js";
+import Image from "next/image";
 import React from "react";
 import abexRelicData from "../../../../data/abex-relics.json";
 import HeroClass from "../../../../types/HeroClass";
@@ -50,12 +51,14 @@ const RelicDisplay: React.FC<Props> = function RelicDisplay({
         icon={mdiMinus}
       />
       <div className={`${styles.Relic} ${relicClass}`}>
-        <img
+        <Image
           key={currentRelic}
           src={`/relics/relic_${currentRelic}.png`}
           className={styles.Image}
           style={{ height: "100%" }}
           alt={`${currentRelic}`}
+          height={42}
+          width={42}
         />
       </div>
       <RelicPlus

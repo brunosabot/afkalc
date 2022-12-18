@@ -41,7 +41,7 @@ const EliteSummon: React.FC<IProps> = function EliteSummon() {
       <Card>
         <Head>
           <title>{`${t("common:menu.elite-summon")} - Afkalc`}</title>
-          <meta name="description" content={t("help")} />
+          <meta name="description" content={t("help") ?? ""} />
         </Head>
         <CardTitle
           icon={mdiScript}

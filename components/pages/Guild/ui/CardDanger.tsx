@@ -21,14 +21,14 @@ const CardDanger: React.FC<IProps> = function CardDanger() {
 
   const onRemoveGuild = useCallback(() => {
     // eslint-disable-next-line no-alert
-    if (window.confirm(t("confirm-drop-guild"))) {
+    if (window.confirm(t("confirm-drop-guild") ?? "")) {
       actions.removeGuild();
     }
   }, [actions, t]);
 
   const onQuitGuild = useCallback(() => {
     // eslint-disable-next-line no-alert
-    if (window.confirm(t("confirm-quit-guild"))) {
+    if (window.confirm(t("confirm-quit-guild") ?? "")) {
       actions.quitGuild();
     }
   }, [actions, t]);

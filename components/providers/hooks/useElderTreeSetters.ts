@@ -8,7 +8,7 @@ export default function useElderTreeSetters(result: IFirebaseDataState<IFirebase
   const document = useFirestoreDocumentReference(`profile/%ID%`);
 
   const setWarriorElderTree = useCallback(
-    async (newWarriorElderTree) => {
+    async (newWarriorElderTree: number) => {
       await document?.set(
         {
           elderTree: {
@@ -23,7 +23,7 @@ export default function useElderTreeSetters(result: IFirebaseDataState<IFirebase
     [document, result?.data?.elderTree]
   );
   const setTankElderTree = useCallback(
-    async (newTankElderTree) => {
+    async (newTankElderTree: number) => {
       await document?.set(
         {
           elderTree: {
@@ -38,7 +38,7 @@ export default function useElderTreeSetters(result: IFirebaseDataState<IFirebase
     [document, result?.data?.elderTree]
   );
   const setRangerElderTree = useCallback(
-    async (newRangerElderTree) => {
+    async (newRangerElderTree: number) => {
       await document?.set(
         {
           elderTree: {
@@ -53,7 +53,7 @@ export default function useElderTreeSetters(result: IFirebaseDataState<IFirebase
     [document, result?.data?.elderTree]
   );
   const setMageElderTree = useCallback(
-    async (newMageElderTree) => {
+    async (newMageElderTree: number) => {
       await document?.set(
         {
           elderTree: {
@@ -68,7 +68,7 @@ export default function useElderTreeSetters(result: IFirebaseDataState<IFirebase
     [document, result?.data?.elderTree]
   );
   const setSupportElderTree = useCallback(
-    async (newSupportElderTree) => {
+    async (newSupportElderTree: number) => {
       await document?.set(
         {
           elderTree: {
@@ -83,7 +83,7 @@ export default function useElderTreeSetters(result: IFirebaseDataState<IFirebase
     [document, result?.data?.elderTree]
   );
   const setMainElderTree = useCallback(
-    async (newMainElderTree) => {
+    async (newMainElderTree: number) => {
       await document?.set(
         {
           elderTree: {

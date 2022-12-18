@@ -21,10 +21,8 @@ const TabResonatingCrystal: React.FC<ITabResonatingCrystalProps> = function TabR
     <div className={classes.TabResonatingCrystal}>
       <img src="/background/img_backflow_freeHero_bg.png" className={classes.Background} alt="" />
       {isSelf ? (
-        <Link href="/pve">
-          <a className={classes.Action}>
-            <Svg d={mdiPencil} />
-          </a>
+        <Link href="/pve" className={classes.Action}>
+          <Svg d={mdiPencil} />
         </Link>
       ) : null}
       <div className={classes.ResonatingCrystal}>

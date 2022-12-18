@@ -33,7 +33,7 @@ export default function useFirestoreValue<T>(
   }, [isAuth, docRef, setLocalValue, forceCreate, isView, key, partialUpdateRef, uid]);
 
   const setValue = useCallback(
-    (value) => {
+    (value: unknown) => {
       if (docRef !== null) {
         partialUpdateRef(docRef, { [key]: value }, uid);
       }

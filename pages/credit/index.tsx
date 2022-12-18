@@ -31,7 +31,7 @@ const Credit: React.FC<IProps> = function Credit() {
       <CardTitle icon={mdiAccountHeart}>{t("common:menu.credit")}</CardTitle>
       <Head>
         <title>{`${t("common:menu.credit")} - Afkalc`}</title>
-        <meta name="description" content={t("common:credit-desc")} />
+        <meta name="description" content={t("common:credit-desc") ?? ""} />
       </Head>
 
       <div style={{ padding: "16px" }}>{t("common:credit-desc")}</div>

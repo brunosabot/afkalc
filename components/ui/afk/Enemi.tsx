@@ -58,7 +58,6 @@ const Enemi: React.FC<IProps> = function Enemi({
         src={src}
         width={dimension}
         height={dimension}
-        layout="fixed"
         alt={t(`common:enemyName.${resource?.slug}`)}
       />
     </div>

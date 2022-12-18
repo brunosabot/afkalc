@@ -1,3 +1,4 @@
+import Image from "next/image";
 import React from "react";
 import elderTreeJson from "../../../../data/elder-tree.json";
 import styles from "./MainForm.module.css";
@@ -12,7 +13,13 @@ interface IProps {
 const MainForm: React.FC<IProps> = function MainForm({ onChange, value }) {
   return (
     <div className={styles.MainForm}>
-      <img src="/elder-tree/tree-level.png" className={styles.Image} alt="bag_astrolabe" />
+      <Image
+        src="/elder-tree/tree-level.png"
+        className={styles.Image}
+        alt="bag_astrolabe"
+        height={32}
+        width={32}
+      />
       <input
         value={value === 0 ? "" : value}
         className={styles.Input}

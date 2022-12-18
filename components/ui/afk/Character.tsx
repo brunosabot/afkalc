@@ -70,10 +70,16 @@ const Character: React.FC<ICharacterProps> = function Character({
         if (event.key === "Enter") onClick();
       }}
     >
-      <Image src={src} width={dimension} height={dimension} layout="fixed" alt={resource?.name} />
+      <Image src={src} width={dimension} height={dimension} alt={resource?.name ?? ""} />
 
       {activeArtifact ? (
-        <img className={`${styles.Artifact}`} src={activeArtifact?.image} alt="" />
+        <Image
+          className={`${styles.Artifact}`}
+          src={activeArtifact?.image}
+          alt=""
+          height={30}
+          width={30}
+        />
       ) : null}
     </div>
   );
