@@ -35,5 +35,6 @@
   "checked-items-hidden": "Завершенные элементы скрыты. Установите галочку, чтобы показать все",
   "sort-by-name": "Сортировать по имени",
   "sort-by-last-update": "Сортировать по дате обновления",
-  "sort-by-percentage": "Сортировать по процентам"
+  "sort-by-percentage": "Сортировать по процентам",
+  "label-add-pet-list": "New pet list"
 }
