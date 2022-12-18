@@ -35,5 +35,6 @@
   "checked-items-hidden": "Abgeschlossene Elemente sind ausgeblendet. Klicke auf das Kontrollkästchen, um alle anzuzeigen",
   "sort-by-name": "Nach Namen sortieren",
   "sort-by-last-update": "Nach letztem Update sortieren",
-  "sort-by-percentage": "Prozentual sortieren"
+  "sort-by-percentage": "Prozentual sortieren",
+  "label-add-pet-list": "New pet list"
 }
