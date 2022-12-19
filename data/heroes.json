@@ -1238,5 +1238,15 @@
     "slug": "bishop",
     "faction": "lightbearers",
     "isAwakened": false
+  },
+  {
+    "id": 126,
+    "type": "agility",
+    "class": "tank",
+    "role": "tank",
+    "image": "/heroes/Mars.jpg",
+    "slug": "mars",
+    "faction": "celestials",
+    "isAwakened": false
   }
 ]
