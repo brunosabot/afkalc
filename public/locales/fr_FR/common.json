@@ -333,13 +333,14 @@
     "alen": "Eorin",
     "patronus": "Tarnos",
     "wnt": "Solise",
-    "ynt": "Yennefer",
+    "ynf": "Yennefer",
     "gor": "Geralt",
     "chimera": "Canisa & Ruke",
     "flora": "Nevanthi",
     "sbd": "Baden",
     "cursecarrier": "Salaki",
-    "bishop": "Palmer"
+    "bishop": "Palmier",
+    "mars": "Veithael"
   },
   "enemyName": {
     "goblin": "Wrizz",
@@ -375,6 +376,7 @@
     "6007": "Lion ailé",
     "6008": "Lézard royal des rochers",
     "6009": "Félin vespéral",
-    "6010": "Bellbellow"
+    "6010": "Cerf brame-de-cristal",
+    "6011": "Flutterplume Owl"
   }
 }
