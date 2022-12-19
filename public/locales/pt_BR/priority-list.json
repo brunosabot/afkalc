@@ -35,5 +35,6 @@
   "checked-items-hidden": "Os itens completados estão ocultos. Clique na caixa de seleção para mostrar todos",
   "sort-by-name": "Ordenar por nome",
   "sort-by-last-update": "Ordenar pela última atualização",
-  "sort-by-percentage": "Ordenar por porcentagem"
+  "sort-by-percentage": "Ordenar por porcentagem",
+  "label-add-pet-list": "Nova lista de Pets"
 }
