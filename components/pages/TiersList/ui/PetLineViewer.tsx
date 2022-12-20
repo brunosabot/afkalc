@@ -14,8 +14,11 @@ interface IProps {
 const PetLineViewer: React.FC<IProps> = function PetLineViewer({ shouldShowChecked, step, pets }) {
   const { t } = useTranslation("priority-list");
 
-  const currentLevel =
-    pets[step.pet].agilityBuff + pets[step.pet].intelligenceBuff + pets[step.pet].strengthBuff;
+  const agi = pets[step.pet]?.agilityBuff ?? 0;
+  const int = pets[step.pet]?.intelligenceBuff ?? 0;
+  const str = pets[step.pet]?.strengthBuff ?? 0;
+
+  const currentLevel = agi + int + str;
   const isDone = currentLevel >= step.level;
 
   if (isDone && shouldShowChecked === false) return null;
