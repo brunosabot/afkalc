@@ -5,7 +5,7 @@
   "item-amplifying-emblem": "Емблема підсилення",
   "item-faction-emblem": "Емблема фракції",
   "item-celest-Hypogean-emblem": "Емблема божественності/руйнування",
-  "label-si": "Фірмові-речі +{{si}}",
-  "label-current-si": "Current SI level",
-  "label-target-si": "Target SI level"
+  "label-si": "Si +{{si}}",
+  "label-current-si": "Поточний рівень SI",
+  "label-target-si": "Потрібний рівень SI"
 }
