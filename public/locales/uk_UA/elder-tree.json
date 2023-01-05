@@ -1,7 +1,7 @@
 {
-  "simulate": "Simulate",
-  "current-tree": "Current tree",
-  "max-data-reach": "Maximum stat data reach. The values are therefore not exact.",
+  "simulate": "Симуляція",
+  "current-tree": "Поточне дерево",
+  "max-data-reach": "Максимальне охоплення статистичних даних. Тому значення не точні.",
   "hp": "HP",
   "hp.pr": "HP%",
   "atk": "ATK",
@@ -9,9 +9,9 @@
   "arm": "DEF",
   "arm.pr": "DEF%",
   "hit": "ACC",
-  "dodg": "DODGE",
-  "mspd": "HASTE",
-  "crit": "CRIT",
+  "dodg": "УХИЛЕННЯ",
+  "mspd": "ПРИСКОРЕННЯ",
+  "crit": "КРИТ",
   "lfs": "LL",
-  "main-tree-empty": "Fill your main elder tree up to 11 to start changing the branch values"
+  "main-tree-empty": "Заповніть своє основне дерево до 11, щоб почати змінювати значення гілок"
 }
