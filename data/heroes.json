@@ -1248,5 +1248,15 @@
     "slug": "mars",
     "faction": "celestials",
     "isAwakened": false
+  },
+  {
+    "id": 127,
+    "type": "agility",
+    "class": "ranger",
+    "role": "continuous",
+    "image": "/heroes/HLM.jpg",
+    "slug": "hlm",
+    "faction": "dimensionals",
+    "isAwakened": false
   }
 ]
