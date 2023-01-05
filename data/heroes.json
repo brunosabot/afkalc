@@ -1254,7 +1254,7 @@
     "type": "agility",
     "class": "ranger",
     "role": "continuous",
-    "image": "/heroes/HLM.jpg",
+    "image": "/heroes/HML.jpg",
     "slug": "hlm",
     "faction": "dimensionals",
     "isAwakened": false
