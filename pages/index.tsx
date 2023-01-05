@@ -9,6 +9,7 @@ import {
   mdiDiamondStone,
   mdiEarth,
   mdiFastForward,
+  mdiGift,
   mdiGithub,
   mdiHome,
   mdiMap,
@@ -24,6 +25,7 @@ import {
 import { useTranslation } from "next-i18next";
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 import Head from "next/head";
+import { useRouter } from "next/router";
 import React, { useContext } from "react";
 import withLayoutPrivateColumn from "../components/layout/withLayoutPrivateColumn";
 import { FirebaseContext } from "../components/providers/FirebaseProvider";
@@ -32,12 +34,15 @@ import LangButton from "../components/ui/button/LangButton";
 import LogoutButton from "../components/ui/button/LogoutButton";
 import MoreLangButton from "../components/ui/button/MoreLangButton";
 import Card from "../components/ui/card/Card";
+import CardAction from "../components/ui/card/CardAction";
+import CardActions from "../components/ui/card/CardActions";
 import CardHelp from "../components/ui/card/CardHelp";
 import CardTitle from "../components/ui/card/CardTitle";
 import Donate from "../components/ui/Donate";
 import MenuBox from "../components/ui/menu/MenuBox";
 import MenuItem from "../components/ui/menu/MenuItem";
 import MenuItemExternal from "../components/ui/menu/MenuItemExternal";
+import Svg from "../components/ui/Svg";
 
 export const getStaticProps = async ({ locale }: { locale: string }) => ({
   props: {
@@ -50,6 +55,7 @@ interface IProps {
 }
 
 const Home: React.FC<IProps> = function Home() {
+  const router = useRouter();
   const { values } = useContext(ProfileContext);
   const { values: firebaseValues } = useContext(FirebaseContext);
   const { t } = useTranslation("common");
@@ -65,6 +71,12 @@ const Home: React.FC<IProps> = function Home() {
         <CardHelp>
           {t("common:logged-user-on-app", { counter: firebaseValues.userCounter })}
         </CardHelp>
+        <CardActions>
+          <CardAction onClick={() => router.push("/donate")}>
+            <Svg d={mdiGift} />
+            {t("menu.donate")}
+          </CardAction>
+        </CardActions>
       </Card>
 
       <Card>
