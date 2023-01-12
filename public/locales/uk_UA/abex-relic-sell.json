@@ -1,19 +1,19 @@
 {
-  "abex-relic-sell-desc": "Калькулятор продажу для реліквій",
+  "abex-relic-sell-desc": "Калькулятор реліквій для продажу",
   "confirm-reset-box": "Це призведе до скидання всіх наявних даних. Ви дійсно бажаєте продовжити?",
   "reset-box": "Скинути налаштування",
   "help": "Виберіть відкриті реліквії, позначте бажані, виберіть наявні реліквії. Мітка з'явиться на предметах, які можна продати",
   "label-goal": "Ціль",
-  "label-current": "Поточна",
+  "label-current": "Поточний",
   "label-inventory": "Інвентар",
   "label-calculator": "Вартість відсутніх",
   "label-warn-testing": "Ці цифри слід використовувати обережно. Вони недостатньо перевірені",
   "label-cost-unknown": "Вартість відсутніх реліквій:",
   "label-cost-total": "Загальна вартість покращення:",
   "elevation-level-0": "Немає",
-  "elevation-level-1": "Звичайна",
-  "elevation-level-2": "Рідкісна",
-  "elevation-level-3": "Елітна",
-  "elevation-level-4": "Легендарна",
-  "elevation-level-5": "Міфічна"
+  "elevation-level-1": "Звичайний",
+  "elevation-level-2": "Рідкісний",
+  "elevation-level-3": "Елітний",
+  "elevation-level-4": "Легендарний",
+  "elevation-level-5": "Міфічний"
 }
