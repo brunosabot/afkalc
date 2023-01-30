@@ -1258,5 +1258,25 @@
     "slug": "hlm",
     "faction": "dimensionals",
     "isAwakened": false
+  },
+  {
+    "id": 128,
+    "type": "intelligence",
+    "class": "mage",
+    "role": "burst",
+    "image": "/heroes/HFP.jpg",
+    "slug": "hfp",
+    "faction": "lightbearers",
+    "isAwakened": true
+  },
+  {
+    "id": 129,
+    "type": "agility",
+    "class": "warrior",
+    "role": "control",
+    "image": "/heroes/TSL.jpg",
+    "slug": "tsl",
+    "faction": "wilders",
+    "isAwakened": false
   }
 ]
