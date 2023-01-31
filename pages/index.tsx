@@ -182,6 +182,7 @@ const Home: React.FC<IProps> = function Home() {
           <LangButton lang="it_IT" emoji="🇮🇹" />
           <LangButton lang="pt_BR" emoji="🇧🇷" />
           <LangButton lang="ru_RU" emoji="🇷🇺" />
+          <LangButton lang="uk_UA" emoji="🇺🇦" />
           <MoreLangButton />
         </div>
 
