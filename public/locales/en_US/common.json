@@ -342,8 +342,8 @@
     "bishop": "Palmer",
     "mars": "Veithael",
     "hlm": "Mulan",
-    "hfp": "Belinda",
-    "tsl": "Tamrus"
+    "hfp":"Belinda",
+    "tsl":"Tamrus"
   },
   "enemyName": {
     "goblin": "Wrizz",
