@@ -341,7 +341,11 @@
     "cursecarrier": "Salaki",
     "bishop": "Palmer",
     "mars": "Veithael",
-    "hlm": "Mulan"
+    "hlm": "Mulan",
+    "hfp": "Belinda",
+    "tsl": "Tamrus",
+    "doa": "Olgath",
+    "adwin": "Edwin"
   },
   "enemyName": {
     "goblin": "Wrizz",
@@ -378,6 +382,8 @@
     "6008": "Rock Crown Lizard",
     "6009": "Feline Vesperio",
     "6010": "Bellbellow",
-    "6011": "Flutterplume Owl"
+    "6011": "Flutterplume Owl",
+    "6012": "Talismane",
+    "6013": "Phantasmoth"
   }
 }
