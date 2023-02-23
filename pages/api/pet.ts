@@ -32,6 +32,23 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse<
 
     if (pet) ctx.drawImage(pet, 0, 0, 176, (176 * 125) / 93);
 
+    if (queryLevel >= 0) {
+      ctx.font = "32px monospace 900";
+      ctx.textAlign = "right";
+      ctx.fillText(`Lvl ${queryLevel}`, 148, 30);
+
+      ctx.shadowBlur = 1;
+      ctx.shadowColor = "rgba(0, 0, 0, 0.3)";
+      ctx.fillStyle = "#F6ED96";
+      ctx.strokeStyle = "rgba(0, 0, 0, 0.3)";
+      ctx.lineWidth = 5;
+
+      ctx.strokeText(`Lvl ${queryLevel}`, 148, 35);
+      ctx.fillText(`Lvl ${queryLevel}`, 148, 35);
+
+      ctx.shadowBlur = 0;
+    }
+
     ctx.clearRect(0, 0, 14, 19);
     ctx.clearRect(0, 0, 19, 14);
 
