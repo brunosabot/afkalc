@@ -1278,5 +1278,25 @@
     "slug": "tsl",
     "faction": "wilders",
     "isAwakened": false
+  },
+  {
+    "id": 130,
+    "type": "agility",
+    "class": "ranger",
+    "role": "continuous",
+    "image": "/heroes/DOA.jpg",
+    "slug": "doa",
+    "faction": "hypogeans",
+    "isAwakened": false
+  },
+  {
+    "id": 131,
+    "type": "strength",
+    "class": "tank",
+    "role": "tank",
+    "image": "/heroes/Adwin.jpg",
+    "slug": "adwin",
+    "faction": "graveborns",
+    "isAwakened": false
   }
 ]
