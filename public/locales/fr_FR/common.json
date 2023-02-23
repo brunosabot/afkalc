@@ -343,7 +343,9 @@
     "mars": "Veithael",
     "hlm": "Mulan",
     "hfp": "Belinda",
-    "tsl": "Tamrus"
+    "tsl": "Tamrus",
+    "doa": "Olgath",
+    "adwin": "Edwin"
   },
   "enemyName": {
     "goblin": "Wrizz",
@@ -380,6 +382,8 @@
     "6008": "Lézard royal des rochers",
     "6009": "Félin vespéral",
     "6010": "Cerf brame-de-cristal",
-    "6011": "Chouette aigrette"
+    "6011": "Chouette aigrette",
+    "6012": "Talismane",
+    "6013": "Phantasmoth"
   }
 }
