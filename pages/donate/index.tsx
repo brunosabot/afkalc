@@ -4,10 +4,12 @@ import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 import Head from "next/head";
 import React from "react";
 import withLayoutPrivateColumn from "../../components/layout/withLayoutPrivateColumn";
+import BuyMeACoffee from "../../components/pages/Donate/BuyMeACoffee";
 import Crypto from "../../components/pages/Donate/Crypto";
+import Patreon from "../../components/pages/Donate/Patreon";
+import Paypal from "../../components/pages/Donate/Paypal";
 import Card from "../../components/ui/card/Card";
 import CardTitle from "../../components/ui/card/CardTitle";
-import styles from "./index.module.css";
 
 export const getStaticProps = async ({ locale }: { locale: string }) => ({
   props: {
@@ -31,34 +33,18 @@ const Donate: React.FC<IProps> = function Donate() {
 
         <CardTitle icon={mdiGiftOutline}>{t("common:menu.donate")}</CardTitle>
 
-        <a
-          href="https://www.buymeacoffee.com/afkalc"
-          target="_blank"
-          rel="noreferrer"
-          className={styles.BuyMeACoffee}
+        <div
+          style={{
+            textAlign: "center",
+            display: "flex",
+            gap: "16px",
+            marginBottom: "16px",
+            flexDirection: "column",
+          }}
         >
-          <img
-            src="https://cdn.buymeacoffee.com/buttons/v2/default-red.png"
-            alt="Buy Me A Coffee"
-            className={styles.BuyMeACoffeeImage}
-          />
-        </a>
-
-        <div className={styles.PatreonWrapper}>
-          <a
-            href="https://www.patreon.com/bePatron?u=51828187"
-            className={styles.Patreon}
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <svg viewBox="0 0 569 546" xmlns="http://www.w3.org/2000/svg" height="16" width="16">
-              <g>
-                <circle cx="362.589996" cy="204.589996" r="204.589996" />
-                <rect height="545.799988" width="100" x="0" y="0" />
-              </g>
-            </svg>
-            Become a Patron!
-          </a>
+          <BuyMeACoffee />
+          <Patreon />
+          <Paypal />
         </div>
       </Card>
       <Card>

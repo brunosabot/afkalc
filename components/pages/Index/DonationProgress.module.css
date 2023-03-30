@@ -1,0 +1,9 @@
+.Bar {
+  margin: 8px 0;
+  width: 100%;
+}
+
+.Info {
+  display: flex;
+  justify-content: space-between;
+}
