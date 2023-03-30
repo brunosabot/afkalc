@@ -28,6 +28,7 @@ import Head from "next/head";
 import { useRouter } from "next/router";
 import React, { useContext } from "react";
 import withLayoutPrivateColumn from "../components/layout/withLayoutPrivateColumn";
+import DonationProgress from "../components/pages/Index/DonationProgress";
 import { FirebaseContext } from "../components/providers/FirebaseProvider";
 import ProfileContext from "../components/providers/ProfileContext";
 import LangButton from "../components/ui/button/LangButton";
@@ -71,6 +72,11 @@ const Home: React.FC<IProps> = function Home() {
         <CardHelp>
           {t("common:logged-user-on-app", { counter: firebaseValues.userCounter })}
         </CardHelp>
+        <DonationProgress
+          earnings={firebaseValues.costs.earning}
+          spendings={firebaseValues.costs.spending}
+          donations={firebaseValues.donation}
+        />
         <CardActions>
           <CardAction onClick={() => router.push("/donate")}>
             <Svg d={mdiGift} />
