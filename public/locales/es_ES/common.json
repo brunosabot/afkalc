@@ -37,9 +37,9 @@
   "loading": "Cargando",
   "user-on-app": "¡Únete a {{counter}} usuarios que ya están usando la aplicación!",
   "logged-user-on-app": "¡Sois {{counter}} usuarios usando la aplicación! ¡Gracias!",
-  "earnings": "Donaciones",
-  "spendings": "Costos",
-  "sponsors": "Patrocinadores",
+  "earnings": "Donaciones:",
+  "spendings": "Coste anual:",
+  "sponsors": "Patrocinadores:",
   "add": "Añadir",
   "equipment": "Equipamiento",
   "has-dimensional-key": "Tiene una llave dimensional",
@@ -383,7 +383,7 @@
     "6009": "Vesperio felino",
     "6010": "Cerbramido",
     "6011": "Lechuza batepluma",
-    "6012": "Talismane",
-    "6013": "Phantasmoth"
+    "6012": "Amuleón",
+    "6013": "Espirililla"
   }
 }
