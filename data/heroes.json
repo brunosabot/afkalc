@@ -1298,5 +1298,15 @@
     "slug": "adwin",
     "faction": "graveborns",
     "isAwakened": false
+  },
+  {
+    "id": 132,
+    "type": "strength",
+    "class": "mage",
+    "role": "continuous",
+    "image": "/heroes/BSparrow.jpg",
+    "slug": "bsparrow",
+    "faction": "hypogeans",
+    "isAwakened": true
   }
 ]
