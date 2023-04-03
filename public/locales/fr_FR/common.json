@@ -44,7 +44,7 @@
   "equipment": "Équipement",
   "has-dimensional-key": "Utilise une clé cosmique",
   "use-my-hero-stats": "Utiliser les statistiques de mon héros",
-  "use-my-pet-stats": "Use stats from my beast",
+  "use-my-pet-stats": "Utiliser les stats de ma créature",
   "error": {
     "error": "Erreur {{code}}",
     "unknown-error": "Une erreur est survenue...",
@@ -79,7 +79,7 @@
     "abex-relic-share": "Partage reliques",
     "public": "Profil Public",
     "pve": "Progression PVE",
-    "pet-list": "Beast list",
+    "pet-list": "Liste des créatures",
     "short-hero-list": "Héros",
     "short-top-team": "Équipes",
     "short-item-cost": "Coût",
@@ -345,7 +345,8 @@
     "hfp": "Belinda",
     "tsl": "Tamrus",
     "doa": "Olgath",
-    "adwin": "Edwin"
+    "adwin": "Edwin",
+    "bsparrow": "Maetria"
   },
   "enemyName": {
     "goblin": "Wrizz",
