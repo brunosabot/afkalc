@@ -44,7 +44,7 @@
   "equipment": "Equipamiento",
   "has-dimensional-key": "Tiene una llave dimensional",
   "use-my-hero-stats": "Usar stats de mi héroe",
-  "use-my-pet-stats": "Use stats from my beast",
+  "use-my-pet-stats": "Usar stats de mi bestia",
   "error": {
     "error": "{{code}} Error",
     "unknown-error": "Se ha producido un error...",
@@ -79,7 +79,7 @@
     "abex-relic-share": "Compartir Reliquias",
     "public": "Perfil público",
     "pve": "Progresión de PVE",
-    "pet-list": "Beast list",
+    "pet-list": "Lista de bestias",
     "short-hero-list": "Héroes",
     "short-top-team": "Equipos",
     "short-item-cost": "Comparación",
@@ -345,7 +345,8 @@
     "hfp": "Belinda",
     "tsl": "Tamrus",
     "doa": "Olgath",
-    "adwin": "Edwin"
+    "adwin": "Edwin",
+    "bsparrow": "Maetria"
   },
   "enemyName": {
     "goblin": "Wrizz",
