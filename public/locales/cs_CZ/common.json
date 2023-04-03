@@ -44,7 +44,7 @@
   "equipment": "Equipment",
   "has-dimensional-key": "Has a dimensional key",
   "use-my-hero-stats": "Use stats from my hero",
-  "use-my-pet-stats": "Use stats from my pet",
+  "use-my-pet-stats": "Use stats from my beast",
   "error": {
     "error": "{{code}} Error",
     "unknown-error": "An error has occured...",
@@ -79,7 +79,7 @@
     "abex-relic-share": "Sdílet Relics",
     "public": "Public Profile",
     "pve": "PVE Progression",
-    "pet-list": "Pet list",
+    "pet-list": "Beast list",
     "short-hero-list": "Hrdinové",
     "short-top-team": "Týmy",
     "short-item-cost": "Cena itemu",

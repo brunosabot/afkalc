@@ -44,7 +44,7 @@
   "equipment": "Спорядження",
   "has-dimensional-key": "Має ключ від вимірів",
   "use-my-hero-stats": "Використовувати дані мого героя",
-  "use-my-pet-stats": "Використовувати дані мого улюбленця",
+  "use-my-pet-stats": "Use stats from my beast",
   "error": {
     "error": "Помилка {{code}}",
     "unknown-error": "Сталася помилка...",
@@ -79,7 +79,7 @@
     "abex-relic-share": "Поділитися реліквіями",
     "public": "Публічний профіль",
     "pve": "Прогрес PVE",
-    "pet-list": "Список улюбленців",
+    "pet-list": "Beast list",
     "short-hero-list": "Герої",
     "short-top-team": "Команди",
     "short-item-cost": "Вартість предмета",
