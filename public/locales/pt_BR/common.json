@@ -44,7 +44,7 @@
   "equipment": "Equipamento",
   "has-dimensional-key": "Tem uma chave dimensional",
   "use-my-hero-stats": "Usar estatísticas de meu herói",
-  "use-my-pet-stats": "Use stats from my beast",
+  "use-my-pet-stats": "Usar os status do meu pet",
   "error": {
     "error": "{{code}} Erro",
     "unknown-error": "Ocorreu um erro...",
@@ -79,7 +79,7 @@
     "abex-relic-share": "Compartilhar Relíquias",
     "public": "Perfil Público",
     "pve": "Progressão PVE",
-    "pet-list": "Beast list",
+    "pet-list": "Lista de Pets",
     "short-hero-list": "Heróis",
     "short-top-team": "Times",
     "short-item-cost": "Custo do Item",
