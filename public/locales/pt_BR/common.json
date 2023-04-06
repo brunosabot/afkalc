@@ -1,5 +1,5 @@
 {
-  "welcome": "Bem vindo à AFKalc, a ferramenta de cálculo para AFK Arena",
+  "welcome": "Bem-vindo à AFKalc, a ferramenta de cálculo para AFK Arena",
   "label-copied": "Link copiado",
   "require-login": "É preciso fazer login para usar este recurso",
   "credit-desc": "Pela ajuda na coleta de dados, criação de ótimos guias e desenvolvimento do aplicativo, obrigado a:",
@@ -386,6 +386,6 @@
     "6011": "Tremepena",
     "6012": "Talisjuba",
     "6013": "Mariposespectro",
-    "6014": "Savage Soufflé"
+    "6014": "Suflê Selvagem"
   }
 }
