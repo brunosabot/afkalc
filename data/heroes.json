@@ -1308,5 +1308,15 @@
     "slug": "bsparrow",
     "faction": "hypogeans",
     "isAwakened": true
+  },
+  {
+    "id": 133,
+    "type": "agility",
+    "class": "ranger",
+    "role": "continuous",
+    "image": "/heroes/Slacker.jpg",
+    "slug": "slacker",
+    "faction": "maulers",
+    "isAwakened": false
   }
 ]
