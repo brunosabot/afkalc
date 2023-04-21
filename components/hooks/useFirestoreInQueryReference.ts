@@ -1,6 +1,6 @@
 import { useContext, useMemo } from "react";
-import firebase from "../providers/firebase";
 import { FirebaseContext } from "../providers/FirebaseProvider";
+import firebase from "../providers/firebase";
 
 const firestore = firebase.firestore();
 

@@ -1,8 +1,9 @@
 import { useRouter } from "next/router";
 import { useCallback, useContext } from "react";
-import firebase from "../firebase";
 import { FirebaseContext } from "../FirebaseProvider";
+import firebase from "../firebase";
 
+const auth = firebase.auth();
 const firestore = firebase.firestore();
 
 export default function useProfileActions() {
@@ -10,7 +11,7 @@ export default function useProfileActions() {
   const { actions } = useContext(FirebaseContext);
 
   const deleteUser = useCallback(() => {
-    const uid = firebase.auth().currentUser?.uid;
+    const uid = auth.currentUser?.uid;
 
     if (uid === undefined) return;
     actions
@@ -40,7 +41,7 @@ export default function useProfileActions() {
         ])
       )
       .then(() => {
-        firebase.auth().currentUser?.delete();
+        auth.currentUser?.delete();
       })
       .then(() => {
         router.push(`/`);
@@ -48,7 +49,7 @@ export default function useProfileActions() {
   }, [actions, router]);
 
   const downloadData = useCallback(async () => {
-    const uid = firebase.auth().currentUser?.uid;
+    const uid = auth.currentUser?.uid;
 
     if (uid === undefined) return;
 
