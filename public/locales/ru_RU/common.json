@@ -347,7 +347,9 @@
     "doa": "Олгат",
     "adwin": "Эдвин",
     "bsparrow": "Метрия",
-    "slacker": "Крассио"
+    "slacker": "Крассио",
+    "rm": "Rem",
+    "emt": "Emilia"
   },
   "enemyName": {
     "goblin": "Врицц",
