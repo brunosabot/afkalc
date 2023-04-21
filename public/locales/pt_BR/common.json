@@ -1,5 +1,5 @@
 {
-  "welcome": "Bem vindo à AFKalc, a ferramenta de cálculo para AFK Arena",
+  "welcome": "Bem-vindo à AFKalc, a ferramenta de cálculo para AFK Arena",
   "label-copied": "Link copiado",
   "require-login": "É preciso fazer login para usar este recurso",
   "credit-desc": "Pela ajuda na coleta de dados, criação de ótimos guias e desenvolvimento do aplicativo, obrigado a:",
@@ -44,7 +44,7 @@
   "equipment": "Equipamento",
   "has-dimensional-key": "Tem uma chave dimensional",
   "use-my-hero-stats": "Usar estatísticas de meu herói",
-  "use-my-pet-stats": "Use stats from my beast",
+  "use-my-pet-stats": "Usar os status do meu pet",
   "error": {
     "error": "{{code}} Erro",
     "unknown-error": "Ocorreu um erro...",
@@ -79,7 +79,7 @@
     "abex-relic-share": "Compartilhar Relíquias",
     "public": "Perfil Público",
     "pve": "Progressão PVE",
-    "pet-list": "Beast list",
+    "pet-list": "Lista de Pets",
     "short-hero-list": "Heróis",
     "short-top-team": "Times",
     "short-item-cost": "Custo do Item",
@@ -345,7 +345,9 @@
     "hfp": "Belinda",
     "tsl": "Tamrus",
     "doa": "Olgath",
-    "adwin": "Edwin"
+    "adwin": "Edwin",
+    "bsparrow": "Maetria",
+    "slacker": "Crassio"
   },
   "enemyName": {
     "goblin": "Wrizz",
@@ -384,6 +386,7 @@
     "6010": "BellBigousdotoin",
     "6011": "Tremepena",
     "6012": "Talisjuba",
-    "6013": "Mariposespectro"
+    "6013": "Mariposespectro",
+    "6014": "Suflê Selvagem"
   }
 }
