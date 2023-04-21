@@ -3,3 +3,6 @@
 
 npx tsc --noEmit
 npx lint-staged
+
+node ./scripts/elder-tree.js
+git add data/elder-tree.json

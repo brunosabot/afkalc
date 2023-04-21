@@ -1308,5 +1308,35 @@
     "slug": "bsparrow",
     "faction": "hypogeans",
     "isAwakened": true
+  },
+  {
+    "id": 133,
+    "type": "agility",
+    "class": "ranger",
+    "role": "continuous",
+    "image": "/heroes/Slacker.jpg",
+    "slug": "slacker",
+    "faction": "maulers",
+    "isAwakened": false
+  },
+  {
+    "id": 134,
+    "type": "intelligence",
+    "class": "mage",
+    "role": "control",
+    "image": "/heroes/EMT.jpg",
+    "slug": "emt",
+    "faction": "dimensionals",
+    "isAwakened": false
+  },
+  {
+    "id": 135,
+    "type": "strength",
+    "class": "warrior",
+    "role": "continuous",
+    "image": "/heroes/RM.jpg",
+    "slug": "rm",
+    "faction": "dimensionals",
+    "isAwakened": false
   }
 ]
