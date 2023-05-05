@@ -349,7 +349,8 @@
     "bsparrow": "Maetria",
     "slacker": "Fario",
     "rm": "Rem",
-    "emt": "Émilia"
+    "emt": "Émilia",
+    "divineblade": "Athalia"
   },
   "enemyName": {
     "goblin": "Wrizz",
@@ -389,6 +390,7 @@
     "6011": "Chouette aigrette",
     "6012": "Talismane",
     "6013": "Phantasmoth",
-    "6014": "Soufflé sauvage"
+    "6014": "Soufflé sauvage",
+    "6015": "Slumber Seal"
   }
 }
