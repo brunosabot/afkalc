@@ -1338,5 +1338,15 @@
     "slug": "rm",
     "faction": "dimensionals",
     "isAwakened": false
+  },
+  {
+    "id": 136,
+    "type": "agility",
+    "class": "warrior",
+    "role": "burst",
+    "image": "/heroes/DivineBlade.jpg",
+    "slug": "divineblade",
+    "faction": "celestials",
+    "isAwakened": true
   }
 ]
