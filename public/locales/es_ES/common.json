@@ -349,7 +349,8 @@
     "bsparrow": "Maetria",
     "slacker": "Crassio",
     "rm": "Rem",
-    "emt": "Emilia"
+    "emt": "Emilia",
+    "divineblade": "Athalia"
   },
   "enemyName": {
     "goblin": "Wrizz",
@@ -389,6 +390,7 @@
     "6011": "Lechuza batepluma",
     "6012": "Amuleón",
     "6013": "Espirililla",
-    "6014": "Soufflé salvaje"
+    "6014": "Soufflé salvaje",
+    "6015": "Slumber Seal"
   }
 }
