@@ -345,7 +345,11 @@
     "hfp": "Belinda",
     "tsl": "Tamrus",
     "doa": "Olgath",
-    "adwin": "Edwin"
+    "adwin": "Edwin",
+    "bsparrow": "Maetria",
+    "slacker": "Crassio",
+    "rm": "Rem",
+    "emt": "Emilia"
   },
   "enemyName": {
     "goblin": "Wrizz",
@@ -384,6 +388,7 @@
     "6010": "Bellbellow",
     "6011": "Flutterplume Owl",
     "6012": "Talismane",
-    "6013": "Phantasmoth"
+    "6013": "Phantasmoth",
+    "6014": "Savage Soufflé"
   }
 }

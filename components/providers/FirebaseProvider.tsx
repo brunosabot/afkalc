@@ -1,65 +1,68 @@
 import React, { useCallback, useEffect, useMemo, useState } from "react";
 import firebase from "./firebase";
 
-const userCounterRef = firebase.database().ref("counters/users");
-const abexEndtimeRef = firebase.database().ref("abex/endtime");
-const donationRef = firebase.database().ref("donation");
-const costsRef = firebase.database().ref("costs");
+const auth = firebase.auth();
+const database = firebase.database();
+
+const userCounterRef = database.ref("counters/users");
+const abexEndtimeRef = database.ref("abex/endtime");
+const donationRef = database.ref("donation");
+const costsRef = database.ref("costs");
 
 const googleAuthProvider = new firebase.auth.GoogleAuthProvider();
 const facebookAuthProvider = new firebase.auth.FacebookAuthProvider();
 const twitterAuthProvider = new firebase.auth.TwitterAuthProvider();
 
 async function logOut() {
-  await firebase.auth().signOut();
+  await auth.signOut();
 }
 
 async function logInGoogle() {
   await firebase
     .auth()
     .setPersistence(firebase.auth.Auth.Persistence.LOCAL)
-    .then(() => firebase.auth().signInWithPopup(googleAuthProvider));
+    .then(() => auth.signInWithPopup(googleAuthProvider));
 }
 
 async function logInFacebook() {
   await firebase
     .auth()
     .setPersistence(firebase.auth.Auth.Persistence.LOCAL)
-    .then(() => firebase.auth().signInWithPopup(facebookAuthProvider));
+    .then(() => auth.signInWithPopup(facebookAuthProvider));
 }
 
 async function logInTwitter() {
   await firebase
     .auth()
     .setPersistence(firebase.auth.Auth.Persistence.LOCAL)
-    .then(() => firebase.auth().signInWithPopup(twitterAuthProvider));
+    .then(() => auth.signInWithPopup(twitterAuthProvider));
 }
 
 async function logInPassword(email: string, password: string) {
-  const a = await firebase.auth().fetchSignInMethodsForEmail(email);
+  const a = await auth.fetchSignInMethodsForEmail(email);
   if (a.includes("password")) {
     await firebase
       .auth()
       .setPersistence(firebase.auth.Auth.Persistence.LOCAL)
-      .then(() => firebase.auth().signInWithEmailAndPassword(email, password));
+      .then(() => auth.signInWithEmailAndPassword(email, password));
   } else {
     await firebase
       .auth()
       .setPersistence(firebase.auth.Auth.Persistence.LOCAL)
-      .then(() => firebase.auth().createUserWithEmailAndPassword(email, password));
+      .then(() => auth.createUserWithEmailAndPassword(email, password));
   }
 }
 
 async function logInAnonymously() {
-  await firebase.auth().signInAnonymously();
+  await auth.signInAnonymously();
 }
 
 async function sendPasswordMail(email: string) {
-  await firebase.auth().sendPasswordResetEmail(email);
+  await auth.sendPasswordResetEmail(email);
 }
 
 async function reLogIn() {
-  const { currentUser } = firebase.auth();
+  const { currentUser } = auth;
   if (currentUser) {
     await currentUser.reauthenticateWithPopup(googleAuthProvider);
   }
@@ -206,51 +209,51 @@ const FirebaseProvider: React.FC<IProps> = function FirebaseProvider({ children 
   }, []);
 
   useEffect(() => {
-    firebase.auth().onAuthStateChanged((user) => {
+    auth.onAuthStateChanged((user) => {
       setIsLoaded(true);
       handleUser(user);
     });
   }, [handleUser]);
 
   const linkWithGoogle = useCallback(async () => {
-    const { currentUser } = firebase.auth();
+    const { currentUser } = auth;
     if (currentUser === null) return;
 
     const linkResult = await currentUser.linkWithPopup(googleAuthProvider);
 
     if (linkResult.credential) {
-      const { user } = await firebase.auth().signInWithCredential(linkResult.credential);
+      const { user } = await auth.signInWithCredential(linkResult.credential);
       handleUser(user);
     }
   }, [handleUser]);
 
   const linkWithFacebook = useCallback(async () => {
-    const { currentUser } = firebase.auth();
+    const { currentUser } = auth;
     if (currentUser === null) return;
 
     const linkResult = await currentUser.linkWithPopup(facebookAuthProvider);
 
     if (linkResult.credential) {
-      const { user } = await firebase.auth().signInWithCredential(linkResult.credential);
+      const { user } = await auth.signInWithCredential(linkResult.credential);
       handleUser(user);
     }
   }, [handleUser]);
 
   const linkWithTwitter = useCallback(async () => {
-    const { currentUser } = firebase.auth();
+    const { currentUser } = auth;
     if (currentUser === null) return;
 
     const linkResult = await currentUser.linkWithPopup(twitterAuthProvider);
 
     if (linkResult.credential) {
-      const { user } = await firebase.auth().signInWithCredential(linkResult.credential);
+      const { user } = await auth.signInWithCredential(linkResult.credential);
       handleUser(user);
     }
   }, [handleUser]);
 
   const linkWithPassword = useCallback(
     async (email: string, password: string) => {
-      const { currentUser } = firebase.auth();
+      const { currentUser } = auth;
       if (currentUser === null) return;
 
       const credential = firebase.auth.EmailAuthProvider.credential(email, password);
@@ -262,7 +265,7 @@ const FirebaseProvider: React.FC<IProps> = function FirebaseProvider({ children 
   );
 
   const changePassword = useCallback(async (oldPassword: string, newPassword: string) => {
-    const { currentUser } = firebase.auth();
+    const { currentUser } = auth;
     if (currentUser === null || currentUser.email === null) return;
 
     const credential = firebase.auth.EmailAuthProvider.credential(currentUser.email, oldPassword);
