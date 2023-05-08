@@ -31,7 +31,7 @@ export default function useSetLevel(
   const newHeroes: IFirebaseHeroList = { ...heroes };
 
   function setLevel(hero: number, key: IFirebasePriorityListRequirement, value: number) {
-    if (document === undefined)
+    if (document === undefined || hero === 0)
       return {
         again: () => setLevel,
         commit: () => Promise.resolve(undefined),
