@@ -42,7 +42,9 @@ const ElderTree: React.FC<IProps> = function ElderTree() {
   } = useContext(ProfileContext);
 
   const maxCalculated = useMemo(() => {
-    const heroesAscended = Object.values(values.heroes).filter((hero) => hero.ascend > 6);
+    const heroesAscended = Object.entries(values.heroes).filter(
+      ([id, hero]) => hero.ascend > 6 && +id !== 0
+    );
 
     return 240 + 5 * heroesAscended.length;
   }, [values.heroes]);
