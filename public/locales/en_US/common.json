@@ -45,7 +45,6 @@
   "has-dimensional-key": "Has a dimensional key",
   "use-my-hero-stats": "Use stats from my hero",
   "use-my-pet-stats": "Use stats from my beast",
-  "export": "Export",
   "error": {
     "error": "{{code}} Error",
     "unknown-error": "An error has occured...",
