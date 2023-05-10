@@ -1,6 +1,7 @@
-import { mdiDoor, mdiNuke } from "@mdi/js";
+import { mdiDoor, mdiExport, mdiNuke } from "@mdi/js";
 import { useTranslation } from "next-i18next";
 import React, { useCallback, useContext } from "react";
+import { getProfileJson } from "../../../../lib/export";
 import GuildContext from "../../../providers/GuildContext";
 import ProfileContext from "../../../providers/ProfileContext";
 import CardAction from "../../../ui/card/CardAction";
@@ -33,6 +34,18 @@ const CardDanger: React.FC<IProps> = function CardDanger() {
     }
   }, [actions, t]);
 
+  const exportProfiles = () => {
+    const data = values.members.map((member) => getProfileJson(member));
+
+    const a = window.document.createElement("a");
+    window.document.body.appendChild(a);
+    a.download = "guild.json";
+    a.href = `data:application/json;base64,${Buffer.from(
+      JSON.stringify(data, undefined, 2)
+    ).toString("base64")}`;
+    a.click();
+  };
+
   return (
     <>
       <span style={{ color: "var(--error-background-color)" }}>
@@ -42,6 +55,9 @@ const CardDanger: React.FC<IProps> = function CardDanger() {
       <CardOwner />
 
       <CardActions>
+        <CardAction onClick={exportProfiles} icon={mdiExport}>
+          {t("common:export")}
+        </CardAction>
         {isOwner ? (
           <CardAction onClick={onRemoveGuild} icon={mdiNuke}>
             {t("label-drop-guild")}

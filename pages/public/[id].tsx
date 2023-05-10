@@ -1,4 +1,4 @@
-import { mdiEarth } from "@mdi/js";
+import { mdiEarth, mdiExport } from "@mdi/js";
 import { GetStaticPaths } from "next";
 import { useTranslation } from "next-i18next";
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
@@ -18,9 +18,11 @@ import TabResonatingCrystal from "../../components/pages/Public/ui/TabResonating
 import ProfileContext from "../../components/providers/ProfileContext";
 import IFirebaseProfile from "../../components/providers/types/IFirebaseProfile";
 import Card from "../../components/ui/card/Card";
+import CardAction from "../../components/ui/card/CardAction";
 import CardTab from "../../components/ui/card/CardTab";
 import CardTabs from "../../components/ui/card/CardTabs";
 import CardTitle from "../../components/ui/card/CardTitle";
+import { getProfileJson } from "../../lib/export";
 
 export const getStaticProps = async ({ locale }: { locale: string }) => ({
   props: {
@@ -50,9 +52,30 @@ const PublicId: React.FC<IProps> = function HeroList() {
   const result = useFirestoreDocument<IFirebaseProfile>(document);
   const isSelf = userId === values.userId;
 
+  const exportProfile = () => {
+    const data = getProfileJson(values);
+
+    const a = window.document.createElement("a");
+    window.document.body.appendChild(a);
+    a.download = "profile.json";
+    a.href = `data:application/json;base64,${Buffer.from(
+      JSON.stringify(data, undefined, 2)
+    ).toString("base64")}`;
+    a.click();
+  };
+
   return (
     <Card>
-      <CardTitle icon={mdiEarth}>
+      <CardTitle
+        icon={mdiEarth}
+        action={
+          isSelf ? (
+            <CardAction onClick={exportProfile} icon={mdiExport}>
+              {t("common:export")}
+            </CardAction>
+          ) : null
+        }
+      >
         {t("title-public")} - {result.data?.playerName}
       </CardTitle>
       <CardTabs>
