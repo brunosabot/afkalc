@@ -5,7 +5,7 @@
   "item-amplifying-emblem": "Amplifying emblem",
   "item-faction-emblem": "Faction emblem",
   "item-celest-Hypogean-emblem": "Celest/Hypogean emblem",
-  "label-si": "SI +{{si}}",
-  "label-current-si": "Current SI level",
-  "label-target-si": "Target SI level"
+  "label-si": "İE +{{si}}",
+  "label-current-si": "Varsayılan İE seviyesi",
+  "label-target-si": "Hedef İE seviyesi"
 }
