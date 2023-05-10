@@ -45,6 +45,7 @@
   "has-dimensional-key": "Имеет ключ от других измерений",
   "use-my-hero-stats": "Использовать данные моего героя",
   "use-my-pet-stats": "Использовать данные моего питомца",
+  "export": "Export",
   "error": {
     "error": "Ошибка {{code}}",
     "unknown-error": "Произошла ошибка...",
