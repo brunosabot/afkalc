@@ -65,6 +65,7 @@ function mapHeroes(heroes: IFirebaseHeroList) {
 
       return {
         name: heroName,
+        isAwakened: hero.isAwakened,
         furniture: {
           mythicCount: playerHero.fi ?? 0,
         },
