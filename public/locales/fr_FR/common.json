@@ -45,6 +45,7 @@
   "has-dimensional-key": "Utilise une clé cosmique",
   "use-my-hero-stats": "Utiliser les statistiques de mon héros",
   "use-my-pet-stats": "Utiliser les stats de ma créature",
+  "export": "Export",
   "error": {
     "error": "Erreur {{code}}",
     "unknown-error": "Une erreur est survenue...",
