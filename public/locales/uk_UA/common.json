@@ -45,6 +45,7 @@
   "has-dimensional-key": "Має ключ від вимірів",
   "use-my-hero-stats": "Використовувати дані мого героя",
   "use-my-pet-stats": "Використовувати дані мого улюбленця",
+  "export": "Export",
   "error": {
     "error": "Помилка {{code}}",
     "unknown-error": "Сталася помилка...",
