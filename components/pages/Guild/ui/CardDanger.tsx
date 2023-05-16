@@ -55,9 +55,11 @@ const CardDanger: React.FC<IProps> = function CardDanger() {
       <CardOwner />
 
       <CardActions>
-        <CardAction onClick={exportProfiles} icon={mdiExport}>
-          {t("common:export")}
-        </CardAction>
+        {values.isOwner || values.isDeputy ? (
+          <CardAction onClick={exportProfiles} icon={mdiExport}>
+            {t("common:export")}
+          </CardAction>
+        ) : null}
         {isOwner ? (
           <CardAction onClick={onRemoveGuild} icon={mdiNuke}>
             {t("label-drop-guild")}
