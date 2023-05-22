@@ -1348,5 +1348,15 @@
     "slug": "divineblade",
     "faction": "celestials",
     "isAwakened": true
+  },
+  {
+    "id": 137,
+    "type": "strength",
+    "class": "tank",
+    "role": "tank",
+    "image": "/heroes/HammerMan.jpg",
+    "slug": "hammerman",
+    "faction": "lightbearers",
+    "isAwakened": false
   }
 ]
