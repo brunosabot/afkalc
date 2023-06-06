@@ -45,6 +45,7 @@
   "has-dimensional-key": "Имеет ключ от других измерений",
   "use-my-hero-stats": "Использовать данные моего героя",
   "use-my-pet-stats": "Использовать данные моего питомца",
+  "export": "Экспорт",
   "error": {
     "error": "Ошибка {{code}}",
     "unknown-error": "Произошла ошибка...",
@@ -350,7 +351,8 @@
     "slacker": "Крассио",
     "rm": "Рем",
     "emt": "Эмилия",
-    "divineblade": "Аталия"
+    "divineblade": "Аталия",
+    "hammerman": "Ginneas"
   },
   "enemyName": {
     "goblin": "Врицц",

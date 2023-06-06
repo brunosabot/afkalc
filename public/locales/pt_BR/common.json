@@ -45,6 +45,7 @@
   "has-dimensional-key": "Tem uma chave dimensional",
   "use-my-hero-stats": "Usar estatísticas de meu herói",
   "use-my-pet-stats": "Usar os status do meu pet",
+  "export": "Exportar",
   "error": {
     "error": "{{code}} Erro",
     "unknown-error": "Ocorreu um erro...",
@@ -350,7 +351,8 @@
     "slacker": "Crassio",
     "rm": "Rem",
     "emt": "Emilia",
-    "divineblade": "Athalia"
+    "divineblade": "Athalia",
+    "hammerman": "Ginneas"
   },
   "enemyName": {
     "goblin": "Wrizz",
