@@ -1358,5 +1358,15 @@
     "slug": "hammerman",
     "faction": "lightbearers",
     "isAwakened": false
+  },
+  {
+    "id": 138,
+    "type": "intelligence",
+    "class": "mage",
+    "role": "continuous",
+    "image": "/heroes/Summer.jpg",
+    "slug": "summer",
+    "faction": "celestials",
+    "isAwakened": false
   }
 ]
