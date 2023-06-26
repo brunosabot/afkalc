@@ -1368,5 +1368,15 @@
     "slug": "summer",
     "faction": "celestials",
     "isAwakened": false
+  },
+  {
+    "id": 139,
+    "type": "intelligence",
+    "class": "mage",
+    "role": "continuous",
+    "image": "/heroes/SO.jpg",
+    "slug": "so",
+    "faction": "wilders",
+    "isAwakened": false
   }
 ]
