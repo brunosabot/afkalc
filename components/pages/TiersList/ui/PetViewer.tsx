@@ -1,6 +1,7 @@
-import { mdiContentCopy, mdiPaw } from "@mdi/js";
+import { mdiAccountSupervisor, mdiContentCopy, mdiPaw } from "@mdi/js";
 import dayjs from "dayjs";
 import { useTranslation } from "next-i18next";
+import { useRouter } from "next/router";
 import React, { useContext, useMemo, useState } from "react";
 import ProfileContext from "../../../providers/ProfileContext";
 import IFirebasePetList from "../../../providers/types/IFirebasePetList";
@@ -21,6 +22,7 @@ interface IProps {
 }
 
 const PetViewer: React.FC<IProps> = function PetViewer({ listId, result }) {
+  const router = useRouter();
   const { values } = useContext(ProfileContext);
   const [showChecked, setShowChecked] = useState<boolean>(false);
   const { t } = useTranslation("priority-list");
@@ -66,6 +68,12 @@ const PetViewer: React.FC<IProps> = function PetViewer({ listId, result }) {
       <CardActions>
         <CardAction icon={mdiContentCopy} onClick={onDuplicateList}>
           {t("label-duplicate")}
+        </CardAction>
+        <CardAction
+          icon={mdiAccountSupervisor}
+          onClick={() => router.push(`/guild/tiers-list/pet/${router.query.id}`)}
+        >
+          {t("label-see-guild")}
         </CardAction>
       </CardActions>
     </Card>

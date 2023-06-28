@@ -28,9 +28,9 @@ const PetLineViewer: React.FC<IProps> = function PetLineViewer({ shouldShowCheck
       <Pet
         key={step.pet}
         id={`${step.pet}`}
-        agilityBuff={0}
-        intelligenceBuff={0}
-        strengthBuff={0}
+        agilityBuff={agi}
+        intelligenceBuff={int}
+        strengthBuff={str}
         size="small"
       />
 
