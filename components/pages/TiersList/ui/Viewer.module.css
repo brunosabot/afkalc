@@ -95,8 +95,12 @@
 .Infos {
   display: flex;
   flex-direction: column;
+  flex-grow: 2000;
   gap: 0;
   position: relative;
+
+  /* Hack Safari */
+  width: 1px;
 }
 
 .DetailsTitle {
