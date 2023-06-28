@@ -1,0 +1,62 @@
+.PetTiersList {
+  align-items: center;
+  background-color: transparent;
+  border: 0;
+  color: var(--secondary-text-color);
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  font-size: 0.8rem;
+  gap: 4px;
+  position: relative;
+}
+
+.IsOk::after {
+  background-color: var(--error-background-color);
+  content: "";
+  filter: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg"><filter id="marker"><feTurbulence seed="1" type="fractalNoise" baseFrequency="0.001 0.15" numOctaves="1" result="warp" /><feDisplacementMap xChannelSelector="R" yChannelSelector="G" scale="18" in="SourceGraphic" in2="warp" /></filter></svg>#marker');
+  height: 16px;
+  left: -8px;
+  opacity: 0.8;
+  position: absolute;
+  right: -8px;
+  top: 24px;
+  transform: rotate(-35deg) translateY(-50%);
+  z-index: 1;
+}
+
+.IsOk:nth-child(10n + 1)::after {
+  filter: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg"><filter id="marker"><feTurbulence seed="2" type="fractalNoise" baseFrequency="0.001 0.15" numOctaves="1" result="warp" /><feDisplacementMap xChannelSelector="R" yChannelSelector="G" scale="18" in="SourceGraphic" in2="warp" /></filter></svg>#marker');
+}
+
+.IsOk:nth-child(10n + 2)::after {
+  filter: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg"><filter id="marker"><feTurbulence seed="3" type="fractalNoise" baseFrequency="0.001 0.15" numOctaves="1" result="warp" /><feDisplacementMap xChannelSelector="R" yChannelSelector="G" scale="18" in="SourceGraphic" in2="warp" /></filter></svg>#marker');
+}
+
+.IsOk:nth-child(10n + 3)::after {
+  filter: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg"><filter id="marker"><feTurbulence seed="4" type="fractalNoise" baseFrequency="0.001 0.15" numOctaves="1" result="warp" /><feDisplacementMap xChannelSelector="R" yChannelSelector="G" scale="18" in="SourceGraphic" in2="warp" /></filter></svg>#marker');
+}
+
+.IsOk:nth-child(10n + 4)::after {
+  filter: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg"><filter id="marker"><feTurbulence seed="5" type="fractalNoise" baseFrequency="0.001 0.15" numOctaves="1" result="warp" /><feDisplacementMap xChannelSelector="R" yChannelSelector="G" scale="18" in="SourceGraphic" in2="warp" /></filter></svg>#marker');
+}
+
+.IsOk:nth-child(10n + 5)::after {
+  filter: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg"><filter id="marker"><feTurbulence seed="6" type="fractalNoise" baseFrequency="0.001 0.15" numOctaves="1" result="warp" /><feDisplacementMap xChannelSelector="R" yChannelSelector="G" scale="18" in="SourceGraphic" in2="warp" /></filter></svg>#marker');
+}
+
+.IsOk:nth-child(10n + 6)::after {
+  filter: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg"><filter id="marker"><feTurbulence seed="7" type="fractalNoise" baseFrequency="0.001 0.15" numOctaves="1" result="warp" /><feDisplacementMap xChannelSelector="R" yChannelSelector="G" scale="18" in="SourceGraphic" in2="warp" /></filter></svg>#marker');
+}
+
+.IsOk:nth-child(10n + 7)::after {
+  filter: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg"><filter id="marker"><feTurbulence seed="8" type="fractalNoise" baseFrequency="0.001 0.15" numOctaves="1" result="warp" /><feDisplacementMap xChannelSelector="R" yChannelSelector="G" scale="18" in="SourceGraphic" in2="warp" /></filter></svg>#marker');
+}
+
+.IsOk:nth-child(10n + 8)::after {
+  filter: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg"><filter id="marker"><feTurbulence seed="9" type="fractalNoise" baseFrequency="0.001 0.15" numOctaves="1" result="warp" /><feDisplacementMap xChannelSelector="R" yChannelSelector="G" scale="18" in="SourceGraphic" in2="warp" /></filter></svg>#marker');
+}
+
+.IsOk:nth-child(10n + 9)::after {
+  filter: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg"><filter id="marker"><feTurbulence seed="10" type="fractalNoise" baseFrequency="0.001 0.15" numOctaves="1" result="warp" /><feDisplacementMap xChannelSelector="R" yChannelSelector="G" scale="18" in="SourceGraphic" in2="warp" /></filter></svg>#marker');
+}

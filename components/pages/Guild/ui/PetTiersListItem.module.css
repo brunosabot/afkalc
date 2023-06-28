@@ -1,0 +1,19 @@
+.Title {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.Subtitle {
+  color: var(--secondary-text-color);
+  font-size: 0.85em;
+}
+
+.Update {
+  margin: 0 16px;
+}
+
+.Value {
+  text-align: right;
+  width: 40px;
+}
