@@ -1378,5 +1378,15 @@
     "slug": "so",
     "faction": "wilders",
     "isAwakened": false
+  },
+  {
+    "id": 140,
+    "type": "intelligence",
+    "class": "support",
+    "role": "buffer",
+    "image": "/heroes/SQ.jpg",
+    "slug": "sq",
+    "faction": "maulers",
+    "isAwakened": true
   }
 ]
