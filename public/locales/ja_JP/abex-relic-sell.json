@@ -1,7 +1,7 @@
 {
-  "abex-relic-sell-desc": "Calculator for relic to sell",
-  "confirm-reset-box": "This will reset all your existing data, do you really want to continue?",
-  "reset-box": "Reset The Box",
+  "abex-relic-sell-desc": "聖物分解計算機",
+  "confirm-reset-box": "既存のデータはすべてリセットされます。本当に続けますか？",
+  "reset-box": "ボックスをリセットする",
   "help": "Enter the relics you have unlocked, enter your goals, enter the relics from your inventory. A chip will appear to indicate the ones you don't need anymore",
   "label-goal": "Goal",
   "label-current": "Current",
