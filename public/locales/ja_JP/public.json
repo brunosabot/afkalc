@@ -1,11 +1,11 @@
 {
-  "title-public": "Public profile",
+  "title-public": "公開プロフィール",
   "label-level": "Lv.",
-  "label-floor": "{{ floor }} Floors",
-  "elder-tree": "Elder Tree",
-  "king-tower": "King's tower",
-  "heroes": "Heroes",
-  "campaign": "Campaign",
-  "resonating-crystal": "Resonating Crystal",
-  "pets": "Beasts"
+  "label-floor": "{{ floor }} 階",
+  "elder-tree": "エルダーツリー",
+  "king-tower": "王座の塔",
+  "heroes": "英雄",
+  "campaign": "メインステージ",
+  "resonating-crystal": "共鳴クリスタル",
+  "pets": "狩りモン"
 }
