@@ -54,7 +54,7 @@
     "thanks": "Thanks !"
   },
   "menu": {
-    "category-box": "Main",
+    "category-box": "メイン",
     "category-abex": "チーム遠征",
     "category-calc": "計算ツール",
     "category-misc": "Miscellanous",
@@ -71,7 +71,7 @@
     "abex-relic": "Relic Loots",
     "abex-relic-sell": "Relics to sell",
     "abex-roster": "Roster",
-    "logout": "Logout",
+    "logout": "ログアウト",
     "settings": "設定＆プライバシー",
     "guild": "ギルド",
     "donate": "Donate",
