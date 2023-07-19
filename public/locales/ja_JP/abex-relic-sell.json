@@ -9,7 +9,7 @@
   "label-calculator": "不足しているコスト",
   "label-warn-testing": "この機能は注意して使用する必要があります。 十分にテストされていません。",
   "label-cost-unknown": "未所有の聖物のコスト",
-  "label-cost-total": "アップグレードの合計コスト:",
+  "label-cost-total": "合計必要コスト:",
   "elevation-level-0": "なし",
   "elevation-level-1": "コモン",
   "elevation-level-2": "レア",
