@@ -74,7 +74,7 @@
     "logout": "ログアウト",
     "settings": "設定＆プライバシー",
     "guild": "ギルド",
-    "donate": "Donate",
+    "donate": "支援する",
     "short-loot": "Loot",
     "elder-tree": "エルダーツリー",
     "abex-relic-share": "聖物を共有",
@@ -95,7 +95,7 @@
     "support": "サポート"
   },
   "contribution": {
-    "edit-on-github": "Edit on GitHub"
+    "edit-on-github": "GitHubで編集する"
   },
   "external": {
     "reddit": "Reddit"
@@ -394,9 +394,9 @@
     "6010": "Bellbellow",
     "6011": "Flutterplume Owl",
     "6012": "Talismane",
-    "6013": "Phantasmoth",
-    "6014": "Savage Soufflé",
-    "6015": "Slumber Seal",
-    "6016": "Fox Fatale"
+    "6013": "ラスターファレーナ",
+    "6014": "スイートフレイ",
+    "6015": "だらざらし",
+    "6016": "ロッサヴォルペ"
   }
 }
