@@ -13,6 +13,6 @@
   "label-crystal-max": "共鳴クリスタル上限",
   "label-crystal-level": "クリスタルレベル",
   "label-level": "Lv {{ level }}",
-  "max-crystal-differ": "計算された最大クリスタル ({{ maxCalculated }}) は保存されたクリスタルとは異なります。",
-  "max-crystal-update": "値を {{ maxCalculated }} に更新"
+  "max-crystal-differ": "計算された最大クリスタル ({{ maxCalculated }}) は保存されたものと異なります。",
+  "max-crystal-update": "値を {{ maxCalculated }} に更新します。"
 }
