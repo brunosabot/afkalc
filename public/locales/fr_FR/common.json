@@ -45,7 +45,7 @@
   "has-dimensional-key": "Utilise une clé cosmique",
   "use-my-hero-stats": "Utiliser les statistiques de mon héros",
   "use-my-pet-stats": "Utiliser les stats de ma créature",
-  "export": "Export",
+  "export": "Exporter",
   "error": {
     "error": "Erreur {{code}}",
     "unknown-error": "Une erreur est survenue...",
@@ -355,7 +355,8 @@
     "hammerman": "Ginneas",
     "summer": "Daemia",
     "so": "Trishea",
-    "sq": "Safiya"
+    "sq": "Safiya",
+    "bc": "Ivan"
   },
   "enemyName": {
     "goblin": "Wrizz",
@@ -396,7 +397,7 @@
     "6012": "Talismane",
     "6013": "Phantasmoth",
     "6014": "Soufflé sauvage",
-    "6015": "Slumber Seal",
-    "6016": "Fox Fatale"
+    "6015": "Phoque-ronflant",
+    "6016": "Renarde enjôleuse"
   }
 }
