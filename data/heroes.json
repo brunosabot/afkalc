@@ -1388,5 +1388,15 @@
     "slug": "sq",
     "faction": "maulers",
     "isAwakened": true
+  },
+  {
+    "id": 141,
+    "type": "intelligence",
+    "class": "support",
+    "role": "buffer",
+    "image": "/heroes/BC.jpg",
+    "slug": "bc",
+    "faction": "graveborns",
+    "isAwakened": false
   }
 ]
