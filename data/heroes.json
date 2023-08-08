@@ -1398,5 +1398,15 @@
     "slug": "bc",
     "faction": "graveborns",
     "isAwakened": false
+  },
+  {
+    "id": 142,
+    "type": "strength",
+    "class": "tank",
+    "role": "regen",
+    "image": "/heroes/SWQ.jpg",
+    "slug": "swq",
+    "faction": "maulers",
+    "isAwakened": false
   }
 ]
