@@ -1,110 +1,62 @@
-.Item {
+.PetTiersList {
   align-items: center;
+  background-color: transparent;
+  border: 0;
+  color: var(--secondary-text-color);
+  cursor: pointer;
   display: flex;
-  gap: 8px;
-  padding: 8px 16px 8px 13px;
+  flex-direction: column;
+  font-size: 0.8rem;
+  gap: 4px;
   position: relative;
 }
 
-.IsOk .Infos::after {
+.IsOk::after {
   background-color: var(--error-background-color);
   content: "";
   filter: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg"><filter id="marker"><feTurbulence seed="1" type="fractalNoise" baseFrequency="0.001 0.15" numOctaves="1" result="warp" /><feDisplacementMap xChannelSelector="R" yChannelSelector="G" scale="18" in="SourceGraphic" in2="warp" /></filter></svg>#marker');
   height: 16px;
-  left: -132px;
-  opacity: 0.5;
+  left: -8px;
+  opacity: 0.8;
   position: absolute;
-  right: -32px;
-  top: 50%;
-  transform: rotate(-1deg) translateY(-50%);
+  right: -8px;
+  top: 24px;
+  transform: rotate(-35deg) translateY(-50%);
   z-index: 1;
 }
 
-.IsOk:nth-child(10n + 1) .Infos::after {
+.IsOk:nth-child(10n + 1)::after {
   filter: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg"><filter id="marker"><feTurbulence seed="2" type="fractalNoise" baseFrequency="0.001 0.15" numOctaves="1" result="warp" /><feDisplacementMap xChannelSelector="R" yChannelSelector="G" scale="18" in="SourceGraphic" in2="warp" /></filter></svg>#marker');
 }
 
-.IsOk:nth-child(10n + 2) .Infos::after {
+.IsOk:nth-child(10n + 2)::after {
   filter: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg"><filter id="marker"><feTurbulence seed="3" type="fractalNoise" baseFrequency="0.001 0.15" numOctaves="1" result="warp" /><feDisplacementMap xChannelSelector="R" yChannelSelector="G" scale="18" in="SourceGraphic" in2="warp" /></filter></svg>#marker');
 }
 
-.IsOk:nth-child(10n + 3) .Infos::after {
+.IsOk:nth-child(10n + 3)::after {
   filter: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg"><filter id="marker"><feTurbulence seed="4" type="fractalNoise" baseFrequency="0.001 0.15" numOctaves="1" result="warp" /><feDisplacementMap xChannelSelector="R" yChannelSelector="G" scale="18" in="SourceGraphic" in2="warp" /></filter></svg>#marker');
 }
 
-.IsOk:nth-child(10n + 4) .Infos::after {
+.IsOk:nth-child(10n + 4)::after {
   filter: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg"><filter id="marker"><feTurbulence seed="5" type="fractalNoise" baseFrequency="0.001 0.15" numOctaves="1" result="warp" /><feDisplacementMap xChannelSelector="R" yChannelSelector="G" scale="18" in="SourceGraphic" in2="warp" /></filter></svg>#marker');
 }
 
-.IsOk:nth-child(10n + 5) .Infos::after {
+.IsOk:nth-child(10n + 5)::after {
   filter: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg"><filter id="marker"><feTurbulence seed="6" type="fractalNoise" baseFrequency="0.001 0.15" numOctaves="1" result="warp" /><feDisplacementMap xChannelSelector="R" yChannelSelector="G" scale="18" in="SourceGraphic" in2="warp" /></filter></svg>#marker');
 }
 
-.IsOk:nth-child(10n + 6) .Infos::after {
+.IsOk:nth-child(10n + 6)::after {
   filter: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg"><filter id="marker"><feTurbulence seed="7" type="fractalNoise" baseFrequency="0.001 0.15" numOctaves="1" result="warp" /><feDisplacementMap xChannelSelector="R" yChannelSelector="G" scale="18" in="SourceGraphic" in2="warp" /></filter></svg>#marker');
 }
 
-.IsOk:nth-child(10n + 7) .Infos::after {
+.IsOk:nth-child(10n + 7)::after {
   filter: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg"><filter id="marker"><feTurbulence seed="8" type="fractalNoise" baseFrequency="0.001 0.15" numOctaves="1" result="warp" /><feDisplacementMap xChannelSelector="R" yChannelSelector="G" scale="18" in="SourceGraphic" in2="warp" /></filter></svg>#marker');
 }
 
-.IsOk:nth-child(10n + 8) .Infos::after {
+.IsOk:nth-child(10n + 8)::after {
   filter: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg"><filter id="marker"><feTurbulence seed="9" type="fractalNoise" baseFrequency="0.001 0.15" numOctaves="1" result="warp" /><feDisplacementMap xChannelSelector="R" yChannelSelector="G" scale="18" in="SourceGraphic" in2="warp" /></filter></svg>#marker');
 }
 
-.IsOk:nth-child(10n + 9) .Infos::after {
+.IsOk:nth-child(10n + 9)::after {
   filter: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg"><filter id="marker"><feTurbulence seed="10" type="fractalNoise" baseFrequency="0.001 0.15" numOctaves="1" result="warp" /><feDisplacementMap xChannelSelector="R" yChannelSelector="G" scale="18" in="SourceGraphic" in2="warp" /></filter></svg>#marker');
-}
-
-.Name {
-  flex-grow: 1;
-  width: 100%;
-}
-
-.Placeholder {
-  flex-grow: 1;
-}
-
-.Button {
-  align-items: center;
-  background-color: transparent;
-  border: 0;
-  border-radius: 4px;
-  color: inherit;
-  cursor: pointer;
-  display: flex;
-  font-size: 14px;
-  font-weight: 500;
-  gap: 8px;
-  height: 36px;
-  margin-right: -16px;
-  outline: 0;
-  padding: 0 16px 0 12px;
-  transition: var(--transition);
-}
-
-.Button:hover {
-  background-color: var(--hover-color);
-}
-
-.Button svg {
-  height: 18px;
-  width: 18px;
-}
-
-.Infos {
-  display: flex;
-  flex-direction: column;
-  flex-grow: 2000;
-  gap: 0;
-  position: relative;
-
-  /* Hack Safari */
-  width: 1px;
-}
-
-.DetailsTitle {
-  color: var(--secondary-text-color);
-  font-size: 0.85em;
-  margin-right: 4px;
 }

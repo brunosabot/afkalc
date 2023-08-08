@@ -1368,5 +1368,45 @@
     "slug": "summer",
     "faction": "celestials",
     "isAwakened": false
+  },
+  {
+    "id": 139,
+    "type": "intelligence",
+    "class": "mage",
+    "role": "continuous",
+    "image": "/heroes/SO.jpg",
+    "slug": "so",
+    "faction": "wilders",
+    "isAwakened": false
+  },
+  {
+    "id": 140,
+    "type": "intelligence",
+    "class": "support",
+    "role": "buffer",
+    "image": "/heroes/SQ.jpg",
+    "slug": "sq",
+    "faction": "maulers",
+    "isAwakened": true
+  },
+  {
+    "id": 141,
+    "type": "intelligence",
+    "class": "support",
+    "role": "buffer",
+    "image": "/heroes/BC.jpg",
+    "slug": "bc",
+    "faction": "graveborns",
+    "isAwakened": false
+  },
+  {
+    "id": 142,
+    "type": "strength",
+    "class": "tank",
+    "role": "regen",
+    "image": "/heroes/SWQ.jpg",
+    "slug": "swq",
+    "faction": "maulers",
+    "isAwakened": false
   }
 ]

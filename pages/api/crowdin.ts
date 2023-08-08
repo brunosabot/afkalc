@@ -35,6 +35,9 @@ async function sendWebhook(message: string) {
 
 async function handleRequest(query: InputData) {
   const { event, file, file_id: fileId, user, language, project }: InputData = query;
+
+  if (language === undefined) return;
+
   const fileUrl = getFileUrl(project, fileId, language);
   const projectUrl = getProjectUrl(project);
 

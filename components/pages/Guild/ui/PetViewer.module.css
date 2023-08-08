@@ -1,8 +1,8 @@
 .Item {
   align-items: center;
   display: flex;
-  gap: 8px;
-  padding: 8px 16px 8px 13px;
+  gap: 16px;
+  padding: 8px 24px;
   position: relative;
 }
 
@@ -11,7 +11,7 @@
   content: "";
   filter: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg"><filter id="marker"><feTurbulence seed="1" type="fractalNoise" baseFrequency="0.001 0.15" numOctaves="1" result="warp" /><feDisplacementMap xChannelSelector="R" yChannelSelector="G" scale="18" in="SourceGraphic" in2="warp" /></filter></svg>#marker');
   height: 16px;
-  left: -132px;
+  left: -72px;
   opacity: 0.5;
   position: absolute;
   right: -32px;
@@ -95,12 +95,8 @@
 .Infos {
   display: flex;
   flex-direction: column;
-  flex-grow: 2000;
   gap: 0;
   position: relative;
-
-  /* Hack Safari */
-  width: 1px;
 }
 
 .DetailsTitle {
