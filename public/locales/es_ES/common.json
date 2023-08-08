@@ -352,7 +352,11 @@
     "rm": "Rem",
     "emt": "Emilia",
     "divineblade": "Athalia",
-    "hammerman": "Ginneas"
+    "hammerman": "Ginneas",
+    "summer": "Daemia",
+    "so": "Trishea",
+    "sq": "Safiya",
+    "bc": "Ivan"
   },
   "enemyName": {
     "goblin": "Wrizz",
@@ -393,6 +397,7 @@
     "6012": "Amuleón",
     "6013": "Espirililla",
     "6014": "Soufflé salvaje",
-    "6015": "Foca serena"
+    "6015": "Foca serena",
+    "6016": "Vulpina cautivadora"
   }
 }

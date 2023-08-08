@@ -1,13 +1,13 @@
 {
-  "help": "This tool is aimed to give you an estimation of how many diamants you will need to get enough hero copies to get an ascend hero",
-  "current-count-label": "Enter your desired hero current count:",
-  "current-elite": "Elite heroes you have",
-  "current-elite-p": "Elite+ heroes you have",
-  "current-legendary": "Legendary heroes you have",
-  "current-legendary-p": "Legendary+ heroes you have",
-  "current-mythic": "Mythic heroes you have",
-  "current-mythic-p": "Mythic+ heroes you have",
-  "required-count-label": "To have enough copy for an ascend hero, you need:",
+  "help": "このツールは、神話英雄を獲得するために十分な英雄のコピーを入手するにあたって必要なダイヤモンドの数を見積もることを目的としています。",
+  "current-count-label": "希望する英雄の現在の数を入力してください:",
+  "current-elite": "所持しているエリート英雄",
+  "current-elite-p": "所持しているエリート+英雄",
+  "current-legendary": "所持しているエピック英雄",
+  "current-legendary-p": "所持しているエピック+英雄",
+  "current-mythic": "所持している伝説英雄",
+  "current-mythic-p": "所持している伝説+英雄",
+  "required-count-label": "神話英雄にするためには、以下が必要です:",
   "required-nothing": "Nothing, you're good to go!",
   "required-count": "≈ {{diams}}"
 }

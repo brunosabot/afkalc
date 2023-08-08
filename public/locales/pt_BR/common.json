@@ -352,7 +352,11 @@
     "rm": "Rem",
     "emt": "Emilia",
     "divineblade": "Athalia",
-    "hammerman": "Ginneas"
+    "hammerman": "Ginneas",
+    "summer": "Daemia",
+    "so": "Trishea",
+    "sq": "Safiya",
+    "bc": "Ivan"
   },
   "enemyName": {
     "goblin": "Wrizz",
@@ -393,6 +397,7 @@
     "6012": "Talisjuba",
     "6013": "Mariposespectro",
     "6014": "Suflê Selvagem",
-    "6015": "Foca Soneca"
+    "6015": "Foca Soneca",
+    "6016": "Raposa Fatale"
   }
 }

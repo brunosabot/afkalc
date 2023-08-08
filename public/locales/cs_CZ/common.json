@@ -352,7 +352,11 @@
     "rm": "Rem",
     "emt": "Emilia",
     "divineblade": "Athalia",
-    "hammerman": "Ginneas"
+    "hammerman": "Ginneas",
+    "summer": "Daemia",
+    "so": "Trishea",
+    "sq": "Safiya",
+    "bc": "Ivan"
   },
   "enemyName": {
     "goblin": "Wrizz",
@@ -393,6 +397,7 @@
     "6012": "Talismane",
     "6013": "Phantasmoth",
     "6014": "Savage Soufflé",
-    "6015": "Slumber Seal"
+    "6015": "Slumber Seal",
+    "6016": "Fox Fatale"
   }
 }
