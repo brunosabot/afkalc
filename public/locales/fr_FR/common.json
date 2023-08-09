@@ -44,7 +44,7 @@
   "equipment": "Équipement",
   "has-dimensional-key": "Utilise une clé cosmique",
   "use-my-hero-stats": "Utiliser les statistiques de mon héros",
-  "use-my-pet-stats": "Utiliser les stats de ma créature",
+  "use-my-pet-stats": "Utiliser les caractéristiques de ma créature",
   "export": "Exporter",
   "error": {
     "error": "Erreur {{code}}",
