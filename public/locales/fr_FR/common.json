@@ -357,7 +357,9 @@
     "so": "Trishea",
     "sq": "Safiya",
     "bc": "Ivan",
-    "swq": "Naroko"
+    "swq": "Naroko",
+    "liberta": "Liberta",
+    "lucilla": "Lucilla"
   },
   "enemyName": {
     "goblin": "Wrizz",
@@ -399,6 +401,7 @@
     "6013": "Phantasmoth",
     "6014": "Soufflé sauvage",
     "6015": "Phoque-ronflant",
-    "6016": "Renarde enjôleuse"
+    "6016": "Renarde enjôleuse",
+    "6017": "Shroom Spooder"
   }
 }
