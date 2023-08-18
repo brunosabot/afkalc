@@ -1408,5 +1408,25 @@
     "slug": "swq",
     "faction": "maulers",
     "isAwakened": false
+  },
+  {
+    "id": 143,
+    "type": "intelligence",
+    "class": "support",
+    "role": "continuous",
+    "image": "/heroes/Liberta.jpg",
+    "slug": "liberta",
+    "faction": "celestials",
+    "isAwakened": false
+  },
+  {
+    "id": 144,
+    "type": "strength",
+    "class": "support",
+    "role": "debuffer",
+    "image": "/heroes/Lucilla.jpg",
+    "slug": "lucilla",
+    "faction": "hypogeans",
+    "isAwakened": false
   }
 ]
