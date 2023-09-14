@@ -1428,5 +1428,15 @@
     "slug": "lucilla",
     "faction": "hypogeans",
     "isAwakened": false
+  },
+  {
+    "id": 145,
+    "type": "agility",
+    "class": "ranger",
+    "role": "continuous",
+    "image": "/heroes/AstroPOM.jpg",
+    "slug": "astropom",
+    "faction": "wilders",
+    "isAwakened": true
   }
 ]
