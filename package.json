@@ -14,7 +14,7 @@
     "lint:ts": "tsc -p tsconfig.json",
     "prettier": "prettier --write '**/*.@(ts|tsx|js|jsx|css)'",
     "test": "jest --watch",
-    "test:lint-staged": "cross-env CI=true jest --findRelatedTests",
+    "test:lint-staged": "cross-env CI=true jest --findRelatedTests --passWithNoTests",
     "test:watch": "jest --watch"
   },
   "dependencies": {

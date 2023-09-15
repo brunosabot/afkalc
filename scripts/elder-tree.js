@@ -32,7 +32,10 @@ Object.keys(branchAdditionalStats).forEach((key) => {
     const previousLevel = elderTreeJson[key][i - 1];
 
     if (i % 5 === 0) {
-      elderTreeJson[key][i] = previousLevel;
+      elderTreeJson[key][i] = {
+        ...previousLevel,
+        totalcost: previousLevel.totalcost + previousLevel.cost,
+      };
     } else {
       elderTreeJson[key][i] = {
         ...previousLevel,
