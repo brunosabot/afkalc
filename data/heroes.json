@@ -1438,5 +1438,15 @@
     "slug": "astropom",
     "faction": "wilders",
     "isAwakened": true
+  },
+  {
+    "id": 146,
+    "type": "strength",
+    "class": "warrior",
+    "role": "buffer",
+    "image": "/heroes/Admiral.jpg",
+    "slug": "admiral",
+    "faction": "lightbearers",
+    "isAwakened": false
   }
 ]
