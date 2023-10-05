@@ -1,11 +1,11 @@
 {
-  "title-public": "Public profile",
+  "title-public": "Profilo Pubblico",
   "label-level": "Lv.",
-  "label-floor": "{{ floor }} Floors",
-  "elder-tree": "Elder Tree",
-  "king-tower": "King's tower",
-  "heroes": "Heroes",
-  "campaign": "Campaign",
-  "resonating-crystal": "Resonating Crystal",
-  "pets": "Beasts"
+  "label-floor": "{{ floor }} Piani",
+  "elder-tree": "Albero Anziano",
+  "king-tower": "Torre Del Re",
+  "heroes": "Eroi",
+  "campaign": "Campagna",
+  "resonating-crystal": "Cristallo Risonante",
+  "pets": "Bestie"
 }
