@@ -139,7 +139,7 @@
     "elite-gear": "Attrezzatura elite",
     "elite-p-gear": "Attrezzatura elite+",
     "elite-soulstone": "Pietra dell'anima elite",
-    "superb-elite-soulstone": "Superb elite soulstone",
+    "superb-elite-soulstone": "Superba pietra dell'anima d'élite",
     "emblem-choice-chest": "Forziere scelta Emblema",
     "faction-emblem": "Emblema Fazione",
     "fortuitous-emblem-chest": "Forziere emblema fortuito",
@@ -212,9 +212,9 @@
     "engrave": "Incisione",
     "unlocked": "sbloccato",
     "faction": "Fazione",
-    "agilityBuff": "Agility Buff",
-    "intelligenceBuff": "Intelligence Buff",
-    "strengthBuff": "Strength Buff"
+    "agilityBuff": "Buff Dell'Agilità",
+    "intelligenceBuff": "Buff Dell'Intelligenza",
+    "strengthBuff": "Buff della Forza"
   },
   "heroesName": {
     "uhlan": "Estrilda",
@@ -399,7 +399,7 @@
     "6009": "Felino Vesperio",
     "6010": "Soffietto",
     "6011": "Gufo Di Flutterplume",
-    "6012": "Talismane",
+    "6012": "Talismano",
     "6013": "Phantasmoth",
     "6014": "Soufflé Selvaggio",
     "6015": "Sigillo Del Sonno",
