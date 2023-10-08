@@ -1448,5 +1448,15 @@
     "slug": "admiral",
     "faction": "lightbearers",
     "isAwakened": false
+  },
+  {
+    "id": 147,
+    "type": "agility",
+    "class": "ranger",
+    "role": "debuffer",
+    "image": "/heroes/Robin.jpg",
+    "slug": "robin",
+    "faction": "dimensionals",
+    "isAwakened": false
   }
 ]
