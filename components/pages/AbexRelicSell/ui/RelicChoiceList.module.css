@@ -5,16 +5,35 @@
 }
 
 .Box {
-  height: 200px;
-  margin-top: 58px;
-  position: relative;
   width: 240px;
 }
 
 .BoxValue {
   font-size: 1.5em;
-  left: 50%;
-  position: absolute;
-  top: -58px;
-  transform: translate(-50%);
+  margin-bottom: 16px;
+}
+
+.BoxFasts {
+  display: flex;
+  gap: 4px;
+  justify-content: space-between;
+}
+
+.BoxFastReset {
+  background: transparent;
+  border: 0;
+  text-decoration: underline;
+}
+
+.BoxFast {
+  background-color: var(--background-color);
+  border: 0;
+  border: 1px solid var(--card-border-color);
+  border-radius: 3px;
+  color: inherit;
+  cursor: pointer;
+  flex-grow: 1;
+  height: 32px;
+  outline: 0;
+  padding: 0 4px;
 }
