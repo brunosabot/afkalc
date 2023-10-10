@@ -4,6 +4,8 @@ import { useTranslation } from "next-i18next";
 import Image from "next/image";
 import Link from "next/link";
 import React, { useCallback, useContext, useMemo } from "react";
+import elderTreeJson from "../../../../data/elder-tree.json";
+import ElderTreeJson, { ElderTreeFaction } from "../../../../types/ElderTreeJson";
 import GuildContext from "../../../providers/GuildContext";
 import ProfileContext from "../../../providers/ProfileContext";
 import IFirebaseProfile from "../../../providers/types/IFirebaseProfile";
@@ -16,6 +18,20 @@ interface IProps {
   showTree: boolean;
   showTower: boolean;
   member: IFirebaseProfile;
+}
+
+const elderTreeData = elderTreeJson as ElderTreeJson;
+
+const MAX_LEVEL = Object.keys(elderTreeJson.ranger).length - 1;
+
+function getCost(level: number, tree: ElderTreeFaction) {
+  const finalLevel = Number.isNaN(+level) ? 0 : level;
+
+  if (finalLevel > MAX_LEVEL) {
+    return tree[MAX_LEVEL].totalcost + (finalLevel - MAX_LEVEL) * tree[MAX_LEVEL].cost;
+  }
+
+  return tree[finalLevel].totalcost;
 }
 
 const MemberListItem: React.FC<IProps> = function MemberListItem({
@@ -48,6 +64,22 @@ const MemberListItem: React.FC<IProps> = function MemberListItem({
       actions.removeFromGuild(member.id);
     }
   }, [actions, member.id, t]);
+
+  const totalEssence = useMemo(() => {
+    const warrior = getCost(member?.elderTree?.warrior ?? 0, elderTreeData.warrior);
+    const tank = getCost(member?.elderTree?.tank ?? 0, elderTreeData.tank);
+    const ranger = getCost(member?.elderTree?.ranger ?? 0, elderTreeData.ranger);
+    const mage = getCost(member?.elderTree?.mage ?? 0, elderTreeData.mage);
+    const support = getCost(member?.elderTree?.support ?? 0, elderTreeData.support);
+
+    return warrior + tank + ranger + mage + support;
+  }, [
+    member?.elderTree?.mage,
+    member?.elderTree?.ranger,
+    member?.elderTree?.support,
+    member?.elderTree?.tank,
+    member?.elderTree?.warrior,
+  ]);
 
   return (
     <div className={styles.MemberListItem}>
@@ -86,68 +118,82 @@ const MemberListItem: React.FC<IProps> = function MemberListItem({
         </div>
       </div>
       {showTree ? (
-        <div className={styles.TreeWrapper}>
-          <div className={styles.TreeItem}>
-            <Image
-              src="/elder-tree/tree-level.png"
-              className={styles.Image}
-              alt=""
-              height={20}
-              width={20}
-            />
-            {member.elderTree?.main ?? 0}
+        <>
+          <div className={styles.TreeWrapper}>
+            <div className={styles.TreeItem}>
+              <Image
+                src="/elder-tree/tree-level.png"
+                className={styles.Image}
+                alt=""
+                height={20}
+                width={20}
+              />
+              {member.elderTree?.main ?? 0}
+            </div>
+            <div className={styles.TreeItem}>
+              <Image
+                src="/loot/twisted-essence.jpg"
+                className={styles.Image}
+                alt=""
+                height={20}
+                width={20}
+              />{" "}
+              {totalEssence}
+            </div>
           </div>
-          <div className={styles.TreeItem}>
-            <Image
-              src="/elder-tree/duras-might.png"
-              className={styles.Image}
-              alt=""
-              height={20}
-              width={20}
-            />{" "}
-            {member.elderTree?.warrior ?? 0}
+          <div className={styles.TreeWrapper}>
+            <div className={styles.TreeItem}>
+              <Image
+                src="/elder-tree/duras-might.png"
+                className={styles.Image}
+                alt=""
+                height={20}
+                width={20}
+              />{" "}
+              {member.elderTree?.warrior ?? 0}
+            </div>
+            <div className={styles.TreeItem}>
+              <Image
+                src="/elder-tree/duras-fortitude.png"
+                className={styles.Image}
+                alt=""
+                height={20}
+                width={20}
+              />{" "}
+              {member.elderTree?.tank ?? 0}
+            </div>
+            <div className={styles.TreeItem}>
+              <Image
+                src="/elder-tree/duras-celerity.png"
+                className={styles.Image}
+                alt=""
+                height={20}
+                width={20}
+              />{" "}
+              {member.elderTree?.ranger ?? 0}
+            </div>
+            <div className={styles.TreeItem}>
+              <Image
+                src="/elder-tree/duras-sorcery.png"
+                className={styles.Image}
+                alt=""
+                height={20}
+                width={20}
+              />{" "}
+              {member.elderTree?.mage ?? 0}
+            </div>
+            <div className={styles.TreeItem}>
+              <Image
+                src="/elder-tree/duras-sustenance.png"
+                className={styles.Image}
+                alt=""
+                height={20}
+                width={20}
+              />{" "}
+              {member.elderTree?.support ?? 0}
+            </div>
           </div>
-          <div className={styles.TreeItem}>
-            <Image
-              src="/elder-tree/duras-fortitude.png"
-              className={styles.Image}
-              alt=""
-              height={20}
-              width={20}
-            />{" "}
-            {member.elderTree?.tank ?? 0}
-          </div>
-          <div className={styles.TreeItem}>
-            <Image
-              src="/elder-tree/duras-celerity.png"
-              className={styles.Image}
-              alt=""
-              height={20}
-              width={20}
-            />{" "}
-            {member.elderTree?.ranger ?? 0}
-          </div>
-          <div className={styles.TreeItem}>
-            <Image
-              src="/elder-tree/duras-sorcery.png"
-              className={styles.Image}
-              alt=""
-              height={20}
-              width={20}
-            />{" "}
-            {member.elderTree?.mage ?? 0}
-          </div>
-          <div className={styles.TreeItem}>
-            <Image
-              src="/elder-tree/duras-sustenance.png"
-              className={styles.Image}
-              alt=""
-              height={20}
-              width={20}
-            />{" "}
-            {member.elderTree?.support ?? 0}
-          </div>
-        </div>
+        </>
       ) : null}
 
       {showTower ? (
