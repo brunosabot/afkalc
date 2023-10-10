@@ -6,7 +6,9 @@ const withLayoutPublic = <P extends object>(Component: React.ComponentType<P>) =
     return (
       <>
         <Menu />
-        <Component {...pageProps} />
+        <div id="page">
+          <Component {...pageProps} />
+        </div>
       </>
     );
   };
