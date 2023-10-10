@@ -1,4 +1,5 @@
 import React, { useCallback, useState } from "react";
+import abexRelicData from "../../../../data/abex-relics.json";
 import heroClassData from "../../../../data/heroClass.json";
 import { getRelicRank } from "../../../../lib/abex";
 import HeroClass from "../../../../types/HeroClass";
@@ -30,6 +31,14 @@ const RelicChoiceList: React.FC<IProps> = function RelicChoiceList({ current, se
     [current, setCurrent]
   );
 
+  const fastUpdate = (level: "0" | "1" | "2" | "3" | "4" | "5") => {
+    const newCurrent = { ...current };
+
+    newCurrent[theClass] = abexRelicData.tree[theClass][level];
+
+    setCurrent(newCurrent);
+  };
+
   return (
     <div className={styles.Wrapper}>
       <EvenColumn>
@@ -45,17 +54,43 @@ const RelicChoiceList: React.FC<IProps> = function RelicChoiceList({ current, se
 
       <div className={styles.Box}>
         <div className={styles.BoxValue}>
-          <CardHelp>{getRelicRank(current[theClass])}</CardHelp>
+          <CardHelp>
+            <div style={{ display: "flex", justifyContent: "space-between" }}>
+              {getRelicRank(current[theClass])}
+              <button className={styles.BoxFastReset} onClick={() => fastUpdate("0")} type="button">
+                Reset
+              </button>
+            </div>
+          </CardHelp>
+          <div className={styles.BoxFasts}>
+            <button className={styles.BoxFast} onClick={() => fastUpdate("1")} type="button">
+              2.0
+            </button>
+            <button className={styles.BoxFast} onClick={() => fastUpdate("2")} type="button">
+              3.0
+            </button>
+            <button className={styles.BoxFast} onClick={() => fastUpdate("3")} type="button">
+              4.0
+            </button>
+            <button className={styles.BoxFast} onClick={() => fastUpdate("4")} type="button">
+              5.0
+            </button>
+            <button className={styles.BoxFast} onClick={() => fastUpdate("5")} type="button">
+              5.6
+            </button>
+          </div>
         </div>
-        {current[theClass].map((relic: number, i: number) => (
-          <RelicDisplay
-            key={relic}
-            position={i + 1}
-            theClass={theClass}
-            active={current[theClass][i]}
-            onClick={updateCurrent}
-          />
-        ))}
+        <div style={{ position: "relative", height: "200px" }}>
+          {current[theClass].map((relic: number, i: number) => (
+            <RelicDisplay
+              key={relic}
+              position={i + 1}
+              theClass={theClass}
+              active={current[theClass][i]}
+              onClick={updateCurrent}
+            />
+          ))}
+        </div>
       </div>
 
       <span />
