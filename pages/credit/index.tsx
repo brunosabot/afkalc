@@ -3,7 +3,7 @@ import { useTranslation } from "next-i18next";
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 import Head from "next/head";
 import React, { useContext } from "react";
-import withLayoutPrivate from "../../components/layout/withLayoutPrivate";
+import withLayoutPublic from "../../components/layout/withLayoutPublic";
 import ListItem from "../../components/pages/Credit/ui/ListItem";
 import { FirebaseContext } from "../../components/providers/FirebaseProvider";
 import Card from "../../components/ui/card/Card";
@@ -66,4 +66,4 @@ const Credit: React.FC<IProps> = function Credit() {
   );
 };
 
-export default withLayoutPrivate(Credit);
+export default withLayoutPublic(Credit);
