@@ -12,6 +12,7 @@ interface IProps {
   style?: React.CSSProperties;
   small?: boolean;
   name: string;
+  placeholder?: string;
   list?: string;
   inputMode?: "numeric" | undefined;
 }
@@ -25,6 +26,7 @@ const InputField: React.FC<IProps> = function InputField({
   small = false,
   readOnly = false,
   style = undefined,
+  placeholder = undefined,
   maxLength = undefined,
   inputMode = undefined,
   list = undefined,
@@ -72,6 +74,7 @@ const InputField: React.FC<IProps> = function InputField({
         onChange={onChangeLocal}
         inputMode={inputMode}
         list={list}
+        placeholder={placeholder}
       />
     </div>
   );
