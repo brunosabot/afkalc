@@ -3,7 +3,7 @@ import { useTranslation } from "next-i18next";
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 import Head from "next/head";
 import React from "react";
-import withLayoutPrivateColumn from "../../components/layout/withLayoutPrivateColumn";
+import withLayoutPublicColumn from "../../components/layout/withLayoutPublicColumn";
 import BuyMeACoffee from "../../components/pages/Donate/BuyMeACoffee";
 import Crypto from "../../components/pages/Donate/Crypto";
 import Patreon from "../../components/pages/Donate/Patreon";
@@ -57,4 +57,4 @@ const Donate: React.FC<IProps> = function Donate() {
   );
 };
 
-export default withLayoutPrivateColumn(Donate);
+export default withLayoutPublicColumn(Donate);

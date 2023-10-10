@@ -3,14 +3,14 @@ import { useTranslation } from "next-i18next";
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 import Head from "next/head";
 import React, { Dispatch, SetStateAction, useCallback, useState } from "react";
-import withLayoutPrivateColumn from "../../components/layout/withLayoutPrivateColumn";
+import withLayoutPublicColumn from "../../components/layout/withLayoutPublicColumn";
 import useCountEmblem from "../../components/pages/SignatureItem/hooks/useCountEmblem";
 import SignatureItemLeft from "../../components/pages/SignatureItem/ui/SignatureItemLeft";
+import InputField from "../../components/ui/InputField";
+import Svg from "../../components/ui/Svg";
 import Card from "../../components/ui/card/Card";
 import CardHelp from "../../components/ui/card/CardHelp";
 import CardTitle from "../../components/ui/card/CardTitle";
-import InputField from "../../components/ui/InputField";
-import Svg from "../../components/ui/Svg";
 
 export const getStaticProps = async ({ locale }: { locale: string }) => ({
   props: {
@@ -97,4 +97,4 @@ const SignatureItem: React.FC<IProps> = function SignatureItem() {
   );
 };
 
-export default withLayoutPrivateColumn(SignatureItem);
+export default withLayoutPublicColumn(SignatureItem);

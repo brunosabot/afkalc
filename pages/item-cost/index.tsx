@@ -3,14 +3,14 @@ import { useTranslation } from "next-i18next";
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 import Head from "next/head";
 import React, { useState } from "react";
-import withLayoutPrivate from "../../components/layout/withLayoutPrivate";
+import withLayoutPublic from "../../components/layout/withLayoutPublic";
 import useTotal from "../../components/pages/ItemCost/hooks/useTotal";
 import Block from "../../components/pages/ItemCost/ui/Block";
 import Help from "../../components/pages/ItemCost/ui/Help";
 import TotalCost from "../../components/pages/ItemCost/ui/TotalCost";
+import Svg from "../../components/ui/Svg";
 import Card from "../../components/ui/card/Card";
 import CardTitle from "../../components/ui/card/CardTitle";
-import Svg from "../../components/ui/Svg";
 
 export const getStaticProps = async ({ locale }: { locale: string }) => ({
   props: {
@@ -65,4 +65,4 @@ const ItemCost: React.FC<IProps> = function ItemCost() {
   );
 };
 
-export default withLayoutPrivate(ItemCost);
+export default withLayoutPublic(ItemCost);
