@@ -356,7 +356,12 @@
     "summer": "Daemia",
     "so": "Trishea",
     "sq": "Safiya",
-    "bc": "Ivan"
+    "bc": "Ivan",
+    "swq": "Naroko",
+    "liberta": "Liberta",
+    "lucilla": "Lucilla",
+    "astropom": "Lyca",
+    "admiral": "Jerome"
   },
   "enemyName": {
     "goblin": "Wrizz",
@@ -398,6 +403,7 @@
     "6013": "Mariposespectro",
     "6014": "Suflê Selvagem",
     "6015": "Foca Soneca",
-    "6016": "Raposa Fatale"
+    "6016": "Raposa Fatale",
+    "6017": "Cogumeranha"
   }
 }

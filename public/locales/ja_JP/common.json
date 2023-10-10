@@ -356,7 +356,12 @@
     "summer": "ダミア",
     "so": "トリシア",
     "sq": "サフィア",
-    "bc": "Ivan"
+    "bc": "Ivan",
+    "swq": "Naroko",
+    "liberta": "Liberta",
+    "lucilla": "Lucilla",
+    "astropom": "Lyca",
+    "admiral": "Jerome"
   },
   "enemyName": {
     "goblin": "リズ",
@@ -398,6 +403,7 @@
     "6013": "ラスターファレーナ",
     "6014": "スイートフレイ",
     "6015": "だらざらし",
-    "6016": "ロッサヴォルペ"
+    "6016": "ロッサヴォルペ",
+    "6017": "Shroom Spooder"
   }
 }

@@ -13,6 +13,6 @@
   "label-crystal-max": "Resonierender Kristall Max",
   "label-crystal-level": "Kristalllevel",
   "label-level": "Level {{ level }}",
-  "max-crystal-differ": "The max crystal calculated ({{ maxCalculated }}) is different from the one saved.",
-  "max-crystal-update": "Update the value to {{ maxCalculated }}"
+  "max-crystal-differ": "Der maximal berechnete Kristall ({{ maxCalculated }}) weicht vom gespeicherten ab.",
+  "max-crystal-update": "Aktualisiere den Wert auf {{ maxCalculated }}"
 }
