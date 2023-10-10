@@ -4,14 +4,14 @@ import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 import Head from "next/head";
 import React, { useState } from "react";
 import useOnChangeNumber from "../../components/hooks/useOnChangeNumber";
-import withLayoutPrivateColumn from "../../components/layout/withLayoutPrivateColumn";
+import withLayoutPublicColumn from "../../components/layout/withLayoutPublicColumn";
+import InputField from "../../components/ui/InputField";
+import Svg from "../../components/ui/Svg";
 import Item from "../../components/ui/afk/Item";
 import Card from "../../components/ui/card/Card";
 import CardHelp from "../../components/ui/card/CardHelp";
 import CardTitle from "../../components/ui/card/CardTitle";
 import CardValue from "../../components/ui/card/CardValue";
-import InputField from "../../components/ui/InputField";
-import Svg from "../../components/ui/Svg";
 import { getEstimatedDiamsForSummon } from "../../lib/summon";
 
 export const getStaticProps = async ({ locale }: { locale: string }) => ({
@@ -109,4 +109,4 @@ const EliteSummon: React.FC<IProps> = function EliteSummon() {
   );
 };
 
-export default withLayoutPrivateColumn(EliteSummon);
+export default withLayoutPublicColumn(EliteSummon);
