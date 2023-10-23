@@ -361,7 +361,8 @@
     "liberta": "Liberta",
     "lucilla": "Lucilla",
     "astropom": "Lyca",
-    "admiral": "Jerome"
+    "admiral": "Jerome",
+    "robin": "Robin Hood"
   },
   "enemyName": {
     "goblin": "リズ",
@@ -404,6 +405,7 @@
     "6014": "スイートフレイ",
     "6015": "だらざらし",
     "6016": "ロッサヴォルペ",
-    "6017": "Shroom Spooder"
+    "6017": "Shroom Spooder",
+    "6018": "Raddish Rotunda"
   }
 }

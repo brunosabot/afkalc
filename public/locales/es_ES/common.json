@@ -361,7 +361,8 @@
     "liberta": "Liberta",
     "lucilla": "Lucilla",
     "astropom": "Lyca",
-    "admiral": "Jerome"
+    "admiral": "Jerome",
+    "robin": "Robin Hood"
   },
   "enemyName": {
     "goblin": "Wrizz",
@@ -404,6 +405,7 @@
     "6014": "Soufflé salvaje",
     "6015": "Foca serena",
     "6016": "Vulpina cautivadora",
-    "6017": "Setaraña"
+    "6017": "Setaraña",
+    "6018": "Raddish Rotunda"
   }
 }

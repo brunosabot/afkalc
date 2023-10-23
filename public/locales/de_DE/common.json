@@ -361,7 +361,8 @@
     "liberta": "Liberta",
     "lucilla": "Lucilla",
     "astropom": "Lyca",
-    "admiral": "Jerome"
+    "admiral": "Jerome",
+    "robin": "Robin Hood"
   },
   "enemyName": {
     "goblin": "Wrizz",
@@ -404,6 +405,7 @@
     "6014": "Wildes Soufflé",
     "6015": "Schlummerrobbe",
     "6016": "Fuchs Fatale",
-    "6017": "Spinnen-Pilz"
+    "6017": "Spinnen-Pilz",
+    "6018": "Radieschen Rotunde"
   }
 }
