@@ -1458,5 +1458,15 @@
     "slug": "robin",
     "faction": "dimensionals",
     "isAwakened": false
+  },
+  {
+    "id": 148,
+    "type": "intelligence",
+    "class": "tank",
+    "role": "tank",
+    "image": "/heroes/Calypso.jpg",
+    "slug": "calypso",
+    "faction": "graveborns",
+    "isAwakened": true
   }
 ]
