@@ -1468,5 +1468,15 @@
     "slug": "calypso",
     "faction": "graveborns",
     "isAwakened": true
+  },
+  {
+    "id": 149,
+    "type": "intelligence",
+    "class": "mage",
+    "role": "control",
+    "image": "/heroes/Ringer.jpg",
+    "slug": "ringer",
+    "faction": "graveborns",
+    "isAwakened": false
   }
 ]
