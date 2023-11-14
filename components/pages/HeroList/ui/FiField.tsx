@@ -31,6 +31,7 @@ const FiField: React.FC<IProps> = function FiField({
       maxLength={1}
       style={{ width: "32px", textAlign: "center" }}
       name={`fi-${id}`}
+      type="number"
       inputMode="numeric"
     />
   );

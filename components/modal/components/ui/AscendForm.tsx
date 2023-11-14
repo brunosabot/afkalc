@@ -24,6 +24,7 @@ const AscendForm: React.FC<Props> = function AscendForm({ isAwakened, ascend, on
       }))}
       small
       name="ascend"
+      type="number"
       label={t(`concept.ascend`)}
       value={ascend}
       onChange={(value) => onChange(parseInt(value, 10))}

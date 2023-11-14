@@ -64,6 +64,7 @@ const FastReward: React.FC<IProps> = function FastReward() {
         />
         <InputField
           inputMode="numeric"
+          type="number"
           name="player-level"
           value={playerLevel}
           label={t("player-level")}

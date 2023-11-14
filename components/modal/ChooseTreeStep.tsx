@@ -46,6 +46,7 @@ const ChooseTreeStep: React.FC<Props> = function ChooseTreeStep({
           style={{ width: "100px" }}
           small
           name="si"
+          type="number"
           label={t(`concept.si`)}
           value={level}
           onChange={(value) =>

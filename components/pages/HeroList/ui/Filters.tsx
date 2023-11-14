@@ -102,6 +102,7 @@ const Filters: React.FC<IProps> = function Filters({ force, state, dispatch }) {
             label={t("common:concept.si")}
             dispatch={dispatch}
             name="si"
+            type="number"
           />
           <InputFilter
             value={state.fi}
@@ -109,6 +110,7 @@ const Filters: React.FC<IProps> = function Filters({ force, state, dispatch }) {
             label={t("common:concept.fi")}
             dispatch={dispatch}
             name="fi"
+            type="number"
           />
           <SelectFilter
             value={state.ascend}
@@ -127,6 +129,7 @@ const Filters: React.FC<IProps> = function Filters({ force, state, dispatch }) {
             label={t("common:concept.engrave")}
             dispatch={dispatch}
             name="engrave"
+            type="number"
           />
           <SelectFilter
             value={state.equip}

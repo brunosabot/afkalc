@@ -57,6 +57,7 @@ const SiForm: React.FC<Props> = function SiForm({ hero, si, onChange }) {
         <InputField
           small
           name="si"
+          type="number"
           label={t(`concept.si`)}
           value={si === -1 ? "" : si}
           disabled={si === -1}

@@ -56,6 +56,7 @@ const ChoosePetStep: React.FC<Props> = function ChoosePetStep({ pet = 6001, leve
           style={{ width: "100px" }}
           small
           name="si"
+          type="number"
           label={t(`level`)}
           value={level}
           onChange={(value) =>

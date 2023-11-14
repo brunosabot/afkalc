@@ -20,6 +20,7 @@ const InputFilter: React.FC<IProps> = function InputFilter({
   dispatch,
   name,
   label,
+  type = "text"
 }) {
   return (
     <div className={styles.Wrapper}>
@@ -41,6 +42,7 @@ const InputFilter: React.FC<IProps> = function InputFilter({
       <input
         className={styles.Value}
         value={value}
+        type={type}
         onChange={(e) => dispatch({ type: name, value: e.target.value })}
       />
     </div>
