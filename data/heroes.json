@@ -1488,5 +1488,15 @@
     "slug": "bassd",
     "faction": "hypogeans",
     "isAwakened": false
+  },
+  {
+    "id": 151,
+    "type": "intelligence",
+    "class": "mage",
+    "role": "continuous",
+    "image": "/heroes/TopMaster.jpg",
+    "slug": "topmaster",
+    "faction": "maulers",
+    "isAwakened": false
   }
 ]
