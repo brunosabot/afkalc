@@ -54,6 +54,7 @@ const ChooseHero: React.FC<Props> = function ChooseHero({
             style={{ width: "60px" }}
             small
             name="si"
+            type="number"
             label={t(`concept.si`)}
             value={si}
             onChange={(value) => onSelect(DetailType.SI, parseInt(value, 10))}
@@ -62,6 +63,7 @@ const ChooseHero: React.FC<Props> = function ChooseHero({
             style={{ width: "60px" }}
             small
             name="fi"
+            type="number"
             label={t(`concept.fi`)}
             value={fi}
             onChange={(value) => onSelect(DetailType.INN, parseInt(value, 10))}

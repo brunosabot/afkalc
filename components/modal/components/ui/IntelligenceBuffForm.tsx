@@ -29,6 +29,7 @@ const IntelligenceBuffForm: React.FC<Props> = function IntelligenceBuffForm({
       <InputField
         small
         name="intelligenceBuff"
+        type="number"
         label={t(`concept.intelligenceBuff`)}
         value={intelligenceBuff}
         onChange={(intelligenceBuffValue) => onChange(parseInt(intelligenceBuffValue, 10))}

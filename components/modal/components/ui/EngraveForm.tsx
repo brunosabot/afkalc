@@ -40,6 +40,7 @@ const EngraveForm: React.FC<Props> = function EngraveForm({ hero, engrave, onCha
       <InputField
         small
         name="engrave"
+        type="number"
         label={t(`concept.engrave`)}
         value={engrave}
         onChange={(engraveValue) => onChange(parseInt(engraveValue, 10))}

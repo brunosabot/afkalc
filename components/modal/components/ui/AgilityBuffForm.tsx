@@ -26,6 +26,7 @@ const AgilityBuffForm: React.FC<Props> = function AgilityBuffForm({ agilityBuff,
       <InputField
         small
         name="agilityBuff"
+        type="number"
         label={t(`concept.agilityBuff`)}
         value={agilityBuff}
         onChange={(agilityBuffValue) => onChange(parseInt(agilityBuffValue, 10))}

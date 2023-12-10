@@ -137,6 +137,7 @@ const Owner: React.FC<IProps> = function Owner({ listId, result }) {
           <InputField
             label={t("label-value")}
             name="requirementValue"
+            type="number"
             value={requirementValue}
             onChange={(newValue) => setRequirementValue(listId, parseFloat(newValue || "0"))}
           />

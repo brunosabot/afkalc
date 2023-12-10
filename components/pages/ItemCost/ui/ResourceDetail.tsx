@@ -38,6 +38,7 @@ const ResourceDetail: React.FC<Props> = function ResourceDetail({
         value={value}
         onChange={(v) => onValue(v || "0")}
         name={`resource-count-${side}-${resource}`}
+        type="number"
         style={{ width: "90px" }}
       />
       <div className={styles.Cost}>

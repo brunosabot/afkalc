@@ -23,6 +23,7 @@ const FiForm: React.FC<Props> = function FiForm({ fi, onChange }) {
       <InputField
         small
         name="fi"
+        type="number"
         label={t(`concept.fi`)}
         value={fi}
         onChange={(fiValue) => onChange(parseInt(fiValue, 10))}
