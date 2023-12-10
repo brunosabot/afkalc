@@ -61,12 +61,14 @@ const SignatureItem: React.FC<IProps> = function SignatureItem() {
 
         <InputField
           name="current-si"
+          type="number"
           value={currentLevel}
           label={t("label-current-si")}
           onChange={onChange(setCurrentLevel)}
         />
         <InputField
           name="target-si"
+          type="number"
           value={targetLevel}
           label={t("label-target-si")}
           onChange={onChange(setTargetLevel)}

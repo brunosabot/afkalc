@@ -24,6 +24,7 @@ const SiField: React.FC<IProps> = function SiField({ id, setLevel, getValue, isV
       maxLength={2}
       style={{ width: "32px", textAlign: "center" }}
       name={`si-${id}`}
+      type="number"
       inputMode="numeric"
     />
   );

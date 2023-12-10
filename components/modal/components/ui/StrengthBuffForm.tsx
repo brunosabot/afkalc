@@ -26,6 +26,7 @@ const StrengthBuffForm: React.FC<Props> = function StrengthBuffForm({ strengthBu
       <InputField
         small
         name="strengthBuff"
+        type="number"
         label={t(`concept.strengthBuff`)}
         value={strengthBuff}
         onChange={(strengthBuffValue) => onChange(parseInt(strengthBuffValue, 10))}

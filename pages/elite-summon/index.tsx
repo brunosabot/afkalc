@@ -55,36 +55,42 @@ const EliteSummon: React.FC<IProps> = function EliteSummon() {
         <InputField
           value={elite}
           name="current-elite"
+          type="number"
           label={t("current-elite")}
           onChange={onChange(setElite)}
         />
         <InputField
           value={eliteP}
           name="current-elite-p"
+          type="number"
           label={t("current-elite-p")}
           onChange={onChange(setEliteP)}
         />
         <InputField
           value={legendary}
           name="current-legendary"
+          type="number"
           label={t("current-legendary")}
           onChange={onChange(setLegendary)}
         />
         <InputField
           value={legendaryP}
           name="current-legendary-p"
+          type="number"
           label={t("current-legendary-p")}
           onChange={onChange(setLegendaryP)}
         />
         <InputField
           value={mythic}
           name="current-mythic"
+          type="number"
           label={t("current-mythic")}
           onChange={onChange(setMythic)}
         />
         <InputField
           value={mythicP}
           name="current-mythic-p"
+          type="number"
           label={t("current-mythic-p")}
           onChange={onChange(setMythicP)}
         />
