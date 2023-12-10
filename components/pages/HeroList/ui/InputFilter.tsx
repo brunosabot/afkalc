@@ -12,6 +12,7 @@ interface IProps {
   name: string;
   label: string;
   dispatch: (action: Action) => void;
+  type: string;
 }
 
 const InputFilter: React.FC<IProps> = function InputFilter({
@@ -20,7 +21,7 @@ const InputFilter: React.FC<IProps> = function InputFilter({
   dispatch,
   name,
   label,
-  type = "text"
+  type = "text",
 }) {
   return (
     <div className={styles.Wrapper}>
