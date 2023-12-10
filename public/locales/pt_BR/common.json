@@ -362,7 +362,9 @@
     "lucilla": "Lucilla",
     "astropom": "Lyca",
     "admiral": "Jerome",
-    "robin": "Robin Hood"
+    "robin": "Robin Hood",
+    "calypso": "Shemira",
+    "ringer": "Dama Simona"
   },
   "enemyName": {
     "goblin": "Wrizz",
@@ -406,6 +408,6 @@
     "6015": "Foca Soneca",
     "6016": "Raposa Fatale",
     "6017": "Cogumeranha",
-    "6018": "Raddish Rotunda"
+    "6018": "Rabanete Rotundo"
   }
 }
