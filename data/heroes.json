@@ -1498,5 +1498,25 @@
     "slug": "topmaster",
     "faction": "maulers",
     "isAwakened": false
+  },
+  {
+    "id": 152,
+    "type": "intelligence",
+    "class": "mage",
+    "role": "continuous",
+    "image": "/heroes/Ruler.jpg",
+    "slug": "ruler",
+    "faction": "celestials",
+    "isAwakened": true
+  },
+  {
+    "id": 153,
+    "type": "intelligence",
+    "class": "mage",
+    "role": "aoe",
+    "image": "/heroes/Disorder.jpg",
+    "slug": "disorder",
+    "faction": "hypogeans",
+    "isAwakened": true
   }
 ]
