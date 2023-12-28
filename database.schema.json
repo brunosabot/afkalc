@@ -1,0 +1,13 @@
+{
+  "abex": {
+    "endtime": "2000-01-01T00:00:00.000Z"
+  },
+  "costs": {
+    "earning": 10,
+    "spending": 10
+  },
+  "counters": {
+    "users": 0
+  },
+  "donation": ["Nonow"]
+}
