@@ -1518,5 +1518,15 @@
     "slug": "disorder",
     "faction": "hypogeans",
     "isAwakened": true
+  },
+  {
+    "id": 154,
+    "type": "intelligence",
+    "class": "tank",
+    "role": "tank",
+    "image": "/heroes/DHT.jpg",
+    "slug": "dht",
+    "faction": "wilders",
+    "isAwakened": false
   }
 ]
