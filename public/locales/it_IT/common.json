@@ -366,7 +366,9 @@
     "calypso": "Shemira",
     "ringer": "Lady Simona",
     "bassd": "Lavatune",
-    "topmaster": "Vika"
+    "topmaster": "Vika",
+    "ruler": "Gavus",
+    "disorder": "Eugene"
   },
   "enemyName": {
     "goblin": "Wrizz",
@@ -410,6 +412,7 @@
     "6015": "Sigillo Del Sonno",
     "6016": "Volpe Fatale",
     "6017": "Spooder Dei Funghi",
-    "6018": "Raddish Rotunda"
+    "6018": "Raddish Rotunda",
+    "6019": "Pandy Dumpty"
   }
 }

@@ -366,7 +366,9 @@
     "calypso": "Shemira",
     "ringer": "Lady Simona",
     "bassd": "Lavatune",
-    "topmaster": "Vika"
+    "topmaster": "Vika",
+    "ruler": "Gavus",
+    "disorder": "Eugene"
   },
   "enemyName": {
     "goblin": "リズ",
@@ -410,6 +412,7 @@
     "6015": "だらざらし",
     "6016": "ロッサヴォルペ",
     "6017": "Shroom Spooder",
-    "6018": "Raddish Rotunda"
+    "6018": "Raddish Rotunda",
+    "6019": "Pandy Dumpty"
   }
 }

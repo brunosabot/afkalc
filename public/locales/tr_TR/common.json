@@ -1,8 +1,8 @@
 {
-  "welcome": "Welcome on Afkalc, the calculation tool for AFK Arena",
-  "label-copied": "Link copied",
-  "require-login": "You must log in to access this feature",
-  "credit-desc": "For their help in data collection, providing great content or for the app development, thanks to:",
+  "welcome": "AFK Arena'nın hesaplama aracı Afkalc'a hoş geldiniz",
+  "label-copied": "Bağlantı kopyalandı",
+  "require-login": "Bu özelliğe erişmek için giriş yapmalısınız",
+  "credit-desc": "Veri toplama, harika içerik sunma veya uygulama geliştirme konusundaki yardımları için aşağıdakilere teşekkür ederiz:",
   "temporary-account": "You are logged as a guest. Your changes will only be available temporary.",
   "go-registration": "Go to registration",
   "app-discovery": "App discovery without account",
@@ -56,46 +56,46 @@
   "menu": {
     "category-box": "Main",
     "category-abex": "Abyssal Expedition",
-    "category-calc": "Calculation tools",
-    "category-misc": "Miscellanous",
-    "home": "Home",
-    "signature-item": "SI Emblem",
-    "elite-summon": "Elite Summon",
-    "loot": "Loot",
-    "hero-list": "Hero List",
-    "fast-reward": "Fast Reward",
-    "top-team": "Top Team",
-    "item-cost": "Item Cost",
-    "priority-list": "Tiers List",
-    "credit": "Credits",
-    "abex-relic": "Relic Loots",
-    "abex-relic-sell": "Relics to sell",
-    "abex-roster": "Roster",
-    "logout": "Logout",
-    "settings": "Settings & Privacy",
-    "guild": "Guild",
-    "donate": "Donate",
-    "short-loot": "Loot",
-    "elder-tree": "Elder Tree",
-    "abex-relic-share": "Share Relics",
-    "public": "Public Profile",
-    "pve": "PVE Progression",
-    "pet-list": "Beast list",
-    "short-hero-list": "Heroes",
-    "short-top-team": "Teams",
-    "short-item-cost": "Item Cost",
-    "short-guild": "Guild",
-    "short-priority-list": "Tiers List"
+    "category-calc": "Hesaplama aracı",
+    "category-misc": "Çeşitli",
+    "home": "Ana sayfa",
+    "signature-item": "Karakter imzası",
+    "elite-summon": "Seçkin çağırma",
+    "loot": "Ganimet",
+    "hero-list": "Kahraman listesi",
+    "fast-reward": "Hızlı Ödüller",
+    "top-team": "En İyi Takımlar",
+    "item-cost": "Tutar",
+    "priority-list": "Kahraman listesi",
+    "credit": "Emeği geçenler",
+    "abex-relic": "Kalıntı Yağmalamaları",
+    "abex-relic-sell": "Satılacak emanetler",
+    "abex-roster": "Görev Listesi",
+    "logout": "Oturumu kapat",
+    "settings": "Ayarlar ve Gizlilik",
+    "guild": "Klan",
+    "donate": "Bağış",
+    "short-loot": "Ganimet",
+    "elder-tree": "Yaşlı Ağaç",
+    "abex-relic-share": "Kalıntıları paylaş",
+    "public": "Herkese Açık Profil",
+    "pve": "PVE İlerlemesi",
+    "pet-list": "Canavar listesi",
+    "short-hero-list": "Kahramanlar",
+    "short-top-team": "Takımlar",
+    "short-item-cost": "Tutar",
+    "short-guild": "Klan",
+    "short-priority-list": "Kahraman listesi"
   },
   "heroClass": {
-    "warrior": "Warrior",
+    "warrior": "Savaşçı",
     "tank": "Tank",
-    "ranger": "Ranger",
-    "mage": "Mage",
-    "support": "Support"
+    "ranger": "Korucu",
+    "mage": "Büyücü",
+    "support": "Destek"
   },
   "contribution": {
-    "edit-on-github": "Edit on GitHub"
+    "edit-on-github": "Github'da düzenle"
   },
   "external": {
     "reddit": "Reddit"
@@ -107,17 +107,17 @@
     "t4": "T4"
   },
   "duration": {
-    "2-hours": "2 Hours",
-    "6-hours": "6 Hours",
-    "8-hours": "8 Hours",
-    "24-hours": "24 Hours"
+    "2-hours": "2 Saat",
+    "6-hours": "6 Saat",
+    "8-hours": "8 Saat",
+    "24-hours": "24 Saat"
   },
   "item": {
-    "24h-hero-essence": "24h hero's essence",
-    "24h-gold": "24h gold",
-    "24h-xp": "24h experience",
-    "2h-hero-essence": "2h hero's essence",
-    "2h-gold": "2h gold",
+    "24h-hero-essence": "24 saatlik kahramanın özü",
+    "24h-gold": "24 saatlik altın",
+    "24h-xp": "24 saatlik kazanılan deneyim",
+    "2h-hero-essence": "2 saatlik kahramanın özü",
+    "2h-gold": "2 saatlik altın",
     "2h-xp": "2h experience",
     "6h-hero-essence": "6h hero's essence",
     "6h-gold": "6h gold",
@@ -366,7 +366,9 @@
     "calypso": "Shemira",
     "ringer": "Lady Simona",
     "bassd": "Lavatune",
-    "topmaster": "Vika"
+    "topmaster": "Vika",
+    "ruler": "Gavus",
+    "disorder": "Eugene"
   },
   "enemyName": {
     "goblin": "Wrizz",
@@ -410,6 +412,7 @@
     "6015": "Slumber Seal",
     "6016": "Fox Fatale",
     "6017": "Shroom Spooder",
-    "6018": "Raddish Rotunda"
+    "6018": "Raddish Rotunda",
+    "6019": "Pandy Dumpty"
   }
 }
