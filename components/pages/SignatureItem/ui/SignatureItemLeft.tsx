@@ -37,7 +37,7 @@ const SignatureItemLeft: React.FC<IProps> = function SignatureItemLeft({
         {amplifying > 0 ? <Item count={amplifying} size="large" name="amplifying-emblem" /> : null}
         {faction > 0 ? <Item count={faction} size="large" name="faction-emblem" /> : null}
         {celest > 0 ? <Item count={celest} size="large" name="chad-emblem" /> : null}
-        {epic > 0 ? <Item count={epic} size="large" name="item_618" /> : epic}
+        {epic > 0 ? <Item count={epic} size="large" name="item_618" /> : null}
       </FlexGap>
     </Card>
   );
