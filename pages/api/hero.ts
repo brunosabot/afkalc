@@ -34,7 +34,8 @@ function getHeroFrame(ascendLevel: number) {
 }
 
 function getSiImageName(siLevel: number) {
-  if (siLevel === 40) return "40";
+  if (siLevel === 50) return "50";
+  if (siLevel >= 40) return "40";
   if (siLevel >= 30) return "30";
   if (siLevel >= 20) return "20";
   if (siLevel >= 10) return "10";
