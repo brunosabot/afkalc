@@ -18,6 +18,7 @@ const siChad: [number, string][] = [
   [30, "+30"],
   [35, "+35"],
   [40, "+40"],
+  [50, "+50"],
 ];
 const si4f: [number, string][] = [
   [5, "+5"],
@@ -26,6 +27,8 @@ const si4f: [number, string][] = [
   [20, "+20"],
   [25, "+25"],
   [30, "+30"],
+  [40, "+40"],
+  [50, "+50"],
 ];
 interface Props {
   hero: number;
@@ -62,6 +65,7 @@ const SiForm: React.FC<Props> = function SiForm({ hero, si, onChange }) {
           value={si === -1 ? "" : si}
           disabled={si === -1}
           onChange={(value) => onChange(parseInt(value, 10))}
+          max={50}
         />
         <FastButtons values={isChad ? siChad : si4f} onClick={onChange} />
       </div>

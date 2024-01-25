@@ -15,6 +15,7 @@ interface IProps {
   placeholder?: string;
   list?: string;
   inputMode?: "numeric" | undefined;
+  max?: number;
 }
 
 const InputField: React.FC<IProps> = function InputField({
@@ -30,6 +31,7 @@ const InputField: React.FC<IProps> = function InputField({
   maxLength = undefined,
   inputMode = undefined,
   list = undefined,
+  max = undefined,
   name,
 }) {
   const refId = useRef(`input-field_${name}`);
@@ -75,6 +77,7 @@ const InputField: React.FC<IProps> = function InputField({
         inputMode={inputMode}
         list={list}
         placeholder={placeholder}
+        max={max}
       />
     </div>
   );
