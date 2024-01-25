@@ -12,6 +12,7 @@ interface IProps {
   amplifying: number;
   faction: number;
   celest: number;
+  epic: number;
 }
 
 const SignatureItemLeft: React.FC<IProps> = function SignatureItemLeft({
@@ -20,10 +21,11 @@ const SignatureItemLeft: React.FC<IProps> = function SignatureItemLeft({
   amplifying,
   faction,
   celest,
+  epic,
 }) {
   const { t } = useTranslation("signature-item");
 
-  if (primordial === 0 && amplifying === 0 && faction === 0 && celest === 0) {
+  if (primordial === 0 && amplifying === 0 && faction === 0 && celest === 0 && epic === 0) {
     return null;
   }
 
@@ -35,6 +37,7 @@ const SignatureItemLeft: React.FC<IProps> = function SignatureItemLeft({
         {amplifying > 0 ? <Item count={amplifying} size="large" name="amplifying-emblem" /> : null}
         {faction > 0 ? <Item count={faction} size="large" name="faction-emblem" /> : null}
         {celest > 0 ? <Item count={celest} size="large" name="chad-emblem" /> : null}
+        {epic > 0 ? <Item count={epic} size="large" name="item_618" /> : epic}
       </FlexGap>
     </Card>
   );
