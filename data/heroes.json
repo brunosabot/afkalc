@@ -1528,5 +1528,15 @@
     "slug": "dht",
     "faction": "wilders",
     "isAwakened": false
+  },
+  {
+    "id": 155,
+    "type": "agility",
+    "class": "ranger",
+    "role": "continuous",
+    "image": "/heroes/Mess.jpg",
+    "slug": "mess",
+    "faction": "celestials",
+    "isAwakened": false
   }
 ]
