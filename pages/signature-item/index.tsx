@@ -24,11 +24,12 @@ interface IProps {
 const SignatureItem: React.FC<IProps> = function SignatureItem() {
   const { t } = useTranslation("signature-item");
   const [currentLevel, setCurrentLevel] = useState(0);
-  const [targetLevel, setTargetLevel] = useState(40);
+  const [targetLevel, setTargetLevel] = useState(50);
   const [showHelp, setShowHelp] = useState(false);
 
   const twenty = useCountEmblem(20, currentLevel);
   const thirty = useCountEmblem(30, currentLevel);
+  const fourty = useCountEmblem(40, currentLevel);
   const target = useCountEmblem(targetLevel, currentLevel);
 
   const onChange = useCallback(
@@ -41,7 +42,7 @@ const SignatureItem: React.FC<IProps> = function SignatureItem() {
     []
   );
 
-  const levels = Array.from(new Set([20, 30, targetLevel]));
+  const levels = Array.from(new Set([20, 30, 40, targetLevel]));
 
   return (
     <>
@@ -78,9 +79,10 @@ const SignatureItem: React.FC<IProps> = function SignatureItem() {
       {levels
         .sort((a, b) => b - a)
         .map((level) => {
-          const [primordial, amplifying, faction, celest] = {
+          const [primordial, amplifying, faction, celest, epic] = {
             20: twenty,
             30: thirty,
+            40: fourty,
             [targetLevel]: target,
           }[level];
 
@@ -92,6 +94,7 @@ const SignatureItem: React.FC<IProps> = function SignatureItem() {
               amplifying={amplifying}
               faction={faction}
               celest={celest}
+              epic={epic}
             />
           );
         })}

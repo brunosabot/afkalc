@@ -89,5 +89,6 @@
   { "name": "invigorating-essence", "image": "/loot/invigorating-essence.jpg" },
   { "name": "twisted-essence", "cost": 10, "image": "/loot/twisted-essence.jpg" },
   { "name": "elemental-shard", "cost": 10, "image": "/loot/totem_icon_1.jpg" },
-  { "name": "elemental-core", "cost": 20, "image": "/loot/totem_icon_2.jpg" }
+  { "name": "elemental-core", "cost": 20, "image": "/loot/totem_icon_2.jpg" },
+  { "name": "item_618", "cost": 250, "image": "/loot/item_618.jpg" }
 ]

@@ -16,12 +16,14 @@ const items = emblemLevel as IEmblemLevels;
 export default function useCountEmblem(
   max: number,
   currentLevel: number
-): [number, number, number, number] {
+): [number, number, number, number, number] {
   return useMemo(() => {
     let primordial = 0;
     let amplifying = 0;
     let faction = 0;
     let celest = 0;
+    let epic = 0;
+
     for (let i = currentLevel + 1; i <= max; i += 1) {
       if (items[i].type === "primordial") {
         primordial += items[i].count;
@@ -31,9 +33,11 @@ export default function useCountEmblem(
         faction += items[i].count;
       } else if (items[i].type === "celest") {
         celest += items[i].count;
+      } else if (items[i].type === "epic") {
+        epic += items[i].count;
       }
     }
 
-    return [primordial, amplifying, faction, celest];
+    return [primordial, amplifying, faction, celest, epic];
   }, [max, currentLevel]);
 }
