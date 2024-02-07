@@ -171,7 +171,8 @@
     "twisted-essence": "Есенція викривленості",
     "wilder-emblem": "Емблема природи",
     "elemental-shard": "Осколок стихії",
-    "elemental-core": "Ядро стихії"
+    "elemental-core": "Ядро стихії",
+    "item_618": "Епічна скриня вибору емблем"
   },
   "artifact": {
     "grace": "Благодать Дюри",
@@ -369,7 +370,8 @@
     "topmaster": "Віка",
     "ruler": "Ґавус",
     "disorder": "Євген",
-    "dht": "Atheus"
+    "dht": "Атей",
+    "mess": "Малкрі"
   },
   "enemyName": {
     "goblin": "Вріз",

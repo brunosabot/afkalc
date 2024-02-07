@@ -171,7 +171,8 @@
     "twisted-essence": "Twisted essence",
     "wilder-emblem": "Wilder emblem",
     "elemental-shard": "Elemental Shard",
-    "elemental-core": "Elemental Core"
+    "elemental-core": "Elemental Core",
+    "item_618": "Epic emblem choice chest"
   },
   "artifact": {
     "grace": "Dura's Grace",
@@ -369,7 +370,8 @@
     "topmaster": "Vika",
     "ruler": "Gavus",
     "disorder": "Eugene",
-    "dht": "Atheus"
+    "dht": "Atheus",
+    "mess": "Malkrie"
   },
   "enemyName": {
     "goblin": "Wrizz",

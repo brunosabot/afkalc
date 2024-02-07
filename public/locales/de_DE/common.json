@@ -171,7 +171,8 @@
     "twisted-essence": "Verdrehte Essenz",
     "wilder-emblem": "Wildvolk-Emblem",
     "elemental-shard": "Elementar-Splitter",
-    "elemental-core": "Elementar-Kern"
+    "elemental-core": "Elementar-Kern",
+    "item_618": "Epik-Emblem-Wahltruhe"
   },
   "artifact": {
     "grace": "Duras Gnade",
@@ -369,7 +370,8 @@
     "topmaster": "Vika",
     "ruler": "Gavus",
     "disorder": "Eugene",
-    "dht": "Atheus"
+    "dht": "Atheus",
+    "mess": "Malkrie"
   },
   "enemyName": {
     "goblin": "Wrizz",
