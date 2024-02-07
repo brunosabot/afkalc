@@ -1538,5 +1538,15 @@
     "slug": "mess",
     "faction": "celestials",
     "isAwakened": false
+  },
+  {
+    "id": 156,
+    "type": "strength",
+    "class": "tank",
+    "role": "tank",
+    "image": "/heroes/Paladin.jpg",
+    "slug": "paladin",
+    "faction": "lightbearers",
+    "isAwakened": true
   }
 ]
