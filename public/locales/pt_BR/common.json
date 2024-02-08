@@ -371,7 +371,8 @@
     "ruler": "Gavus",
     "disorder": "Eugene",
     "dht": "Atheus",
-    "mess": "Malkrie"
+    "mess": "Malkrie",
+    "paladin": "Lucius"
   },
   "enemyName": {
     "goblin": "Wrizz",
@@ -416,6 +417,7 @@
     "6016": "Raposa Fatale",
     "6017": "Cogumeranha",
     "6018": "Rabanete Rotundo",
-    "6019": "Pandy Dumpty"
+    "6019": "Pandy Dumpty",
+    "6020": "Ice Crown"
   }
 }
