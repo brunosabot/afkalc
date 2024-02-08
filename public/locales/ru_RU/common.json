@@ -371,7 +371,8 @@
     "ruler": "Gavus",
     "disorder": "Eugene",
     "dht": "Atheus",
-    "mess": "Malkrie"
+    "mess": "Malkrie",
+    "paladin": "Lucius"
   },
   "enemyName": {
     "goblin": "Врицц",
@@ -416,6 +417,7 @@
     "6016": "Роковая лиса",
     "6017": "Грибной паук",
     "6018": "Редисочная ротонда",
-    "6019": "Pandy Dumpty"
+    "6019": "Pandy Dumpty",
+    "6020": "Ice Crown"
   }
 }
