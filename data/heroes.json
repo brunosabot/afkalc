@@ -1548,5 +1548,25 @@
     "slug": "paladin",
     "faction": "lightbearers",
     "isAwakened": true
+  },
+  {
+    "id": 157,
+    "type": "agility",
+    "class": "warrior",
+    "role": "control",
+    "image": "/heroes/TangoD.jpg",
+    "slug": "tangod",
+    "faction": "lightbearers",
+    "isAwakened": false
+  },
+  {
+    "id": 158,
+    "type": "strength",
+    "class": "warrior",
+    "role": "buffer",
+    "image": "/heroes/TombKeeper.jpg",
+    "slug": "tombkeeper",
+    "faction": "graveborns",
+    "isAwakened": false
   }
 ]
