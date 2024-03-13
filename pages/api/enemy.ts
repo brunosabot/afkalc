@@ -34,7 +34,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse<
   const buffer = canvas.toBuffer("image/png");
 
   res.setHeader("Content-Type", "image/png");
-  res.setHeader("Cache-Control", "public, max-age=864000, immutable");
+  res.setHeader("Cache-Control", "public, max-age=86400, immutable");
 
   res.status(200);
   res.write(buffer);
