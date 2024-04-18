@@ -1583,7 +1583,7 @@
     "id": 160,
     "type": "intelligence",
     "class": "support",
-    "role": "continuous",
+    "role": "control",
     "image": "/heroes/DPop.png",
     "slug": "dpop",
     "faction": "draconis",
@@ -1593,7 +1593,7 @@
     "id": 161,
     "type": "agility",
     "class": "ranger",
-    "role": "burst",
+    "role": "continuous",
     "image": "/heroes/DVain.png",
     "slug": "dvain",
     "faction": "draconis",
@@ -1603,10 +1603,30 @@
     "id": 162,
     "type": "intelligence",
     "class": "tank",
-    "role": "control",
+    "role": "tank",
     "image": "/heroes/DHerald.png",
     "slug": "dherald",
     "faction": "draconis",
     "isAwakened": false
+  },
+  {
+    "id": 163,
+    "type": "intelligence",
+    "class": "mage",
+    "role": "continuous",
+    "image": "/heroes/DFiery.png",
+    "slug": "dfiery",
+    "faction": "draconis",
+    "isAwakened": true
+  },
+  {
+    "id": 164,
+    "type": "strength",
+    "class": "ranger",
+    "role": "continuous",
+    "image": "/heroes/DLongbow.png",
+    "slug": "dlongbow",
+    "faction": "draconis",
+    "isAwakened": true
   }
 ]
