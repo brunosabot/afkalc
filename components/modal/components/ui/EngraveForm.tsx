@@ -33,6 +33,7 @@ const EngraveForm: React.FC<Props> = function EngraveForm({ hero, engrave, onCha
     resource?.faction === "dimensionals" ||
     resource?.faction === "celestials" ||
     resource?.faction === "hypogeans" ||
+    resource?.faction === "draconis" ||
     resource?.isAwakened === true;
 
   return (

@@ -1578,5 +1578,35 @@
     "slug": "purga",
     "faction": "hypogeans",
     "isAwakened": false
+  },
+  {
+    "id": 160,
+    "type": "intelligence",
+    "class": "support",
+    "role": "continuous",
+    "image": "/heroes/DPop.png",
+    "slug": "dpop",
+    "faction": "draconis",
+    "isAwakened": false
+  },
+  {
+    "id": 161,
+    "type": "agility",
+    "class": "ranger",
+    "role": "burst",
+    "image": "/heroes/DVain.png",
+    "slug": "dvain",
+    "faction": "draconis",
+    "isAwakened": false
+  },
+  {
+    "id": 162,
+    "type": "intelligence",
+    "class": "tank",
+    "role": "control",
+    "image": "/heroes/DHerald.png",
+    "slug": "dherald",
+    "faction": "draconis",
+    "isAwakened": false
   }
 ]
