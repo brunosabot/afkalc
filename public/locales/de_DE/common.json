@@ -371,7 +371,10 @@
     "ruler": "Gavus",
     "disorder": "Eugene",
     "dht": "Atheus",
-    "mess": "Malkrie"
+    "mess": "Malkrie",
+    "paladin": "Lucius",
+    "tangod": "Adrian & Elyse",
+    "tombkeeper": "Bronn"
   },
   "enemyName": {
     "goblin": "Wrizz",
@@ -416,6 +419,7 @@
     "6016": "Fuchs Fatale",
     "6017": "Spinnen-Pilz",
     "6018": "Radieschen Rotunde",
-    "6019": "Pandy Dumpty"
+    "6019": "Pandy Dumpty",
+    "6020": "Ice Crown"
   }
 }
