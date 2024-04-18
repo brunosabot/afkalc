@@ -1568,5 +1568,15 @@
     "slug": "tombkeeper",
     "faction": "graveborns",
     "isAwakened": false
+  },
+  {
+    "id": 159,
+    "type": "strength",
+    "class": "warrior",
+    "role": "continuous",
+    "image": "/heroes/Purga.jpg",
+    "slug": "purga",
+    "faction": "hypogeans",
+    "isAwakened": false
   }
 ]
