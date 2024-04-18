@@ -21,7 +21,7 @@
     "@mdi/js": "^7.2.96",
     "@next/eslint-plugin-next": "^13.2.4",
     "@testing-library/react-hooks": "^8.0.1",
-    "canvas": "^2.11.0",
+    "canvas": "^2.11.2",
     "dayjs": "^1.11.7",
     "fast-csv": "^4.3.6",
     "firebase": "^8.4.3",

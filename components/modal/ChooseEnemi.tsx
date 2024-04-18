@@ -2,9 +2,9 @@ import React from "react";
 import enemies from "../../data/enemies.json";
 import heroes from "../../data/heroes.json";
 import ICharacter from "../../types/ICharacter";
+import CharacterGrid from "../ui/CharacterGrid";
 import Character from "../ui/afk/Character";
 import Enemi from "../ui/afk/Enemi";
-import CharacterGrid from "../ui/CharacterGrid";
 
 interface Hero {
   type: "h" | "e";
@@ -38,6 +38,7 @@ const factions: IFactions = (heroes as ICharacter[]).reduce(
     celestials: [],
     hypogeans: [],
     dimensionals: [],
+    draconis: [],
     none: [],
   }
 );
