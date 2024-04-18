@@ -4,8 +4,8 @@ import { getAscend } from "../../lib/hero";
 import ICharacter from "../../types/ICharacter";
 import { useHeroById } from "../pages/TiersList/hooks/useHero";
 import { IFirebasePriorityListHero } from "../providers/types/IFirebasePriorityList";
-import Character from "../ui/afk/Character";
 import CharacterGrid from "../ui/CharacterGrid";
+import Character from "../ui/afk/Character";
 import styles from "./ChoosePriorityHero.module.css";
 import AscendForm from "./components/ui/AscendForm";
 import EngraveForm from "./components/ui/EngraveForm";
@@ -29,6 +29,7 @@ const factions: IFactions = (heroes as ICharacter[]).reduce(
     celestials: [],
     hypogeans: [],
     dimensionals: [],
+    draconis: [],
     none: [],
   }
 );

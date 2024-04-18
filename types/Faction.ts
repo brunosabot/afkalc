@@ -7,6 +7,7 @@ enum Faction {
   celestials = "celestials",
   hypogeans = "hypogeans",
   dimensionals = "dimensionals",
+  draconis = "draconis",
 }
 
 export const factionNumberMap = {
@@ -18,6 +19,7 @@ export const factionNumberMap = {
   celestials: 5,
   hypogeans: 6,
   dimensionals: 7,
+  draconis: 8,
 };
 export const factionFactionMap = {
   0: Faction.none,
@@ -28,6 +30,7 @@ export const factionFactionMap = {
   5: Faction.celestials,
   6: Faction.hypogeans,
   7: Faction.dimensionals,
+  8: Faction.draconis,
 };
 
 export const factionAsNumber = (faction: Faction) => factionNumberMap[faction] ?? 0;

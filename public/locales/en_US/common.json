@@ -205,6 +205,7 @@
   "faction-celestials": "Celestials",
   "faction-hypogeans": "Hypogeans",
   "faction-dimensionals": "Dimensionals",
+  "faction-draconis": "Draconis",
   "concept": {
     "si": "SI",
     "siUnlocked": "SI Unlocked",
@@ -375,7 +376,10 @@
     "paladin": "Lucius",
     "tangod": "Adrian & Elyse",
     "tombkeeper": "Bronn",
-    "purga": "Kalthin"
+    "purga": "Kalthin",
+    "dpop": "Nyla",
+    "dvain": "Pulina",
+    "dherald": "Cassius"
   },
   "enemyName": {
     "goblin": "Wrizz",

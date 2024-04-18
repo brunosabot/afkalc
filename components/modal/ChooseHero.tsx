@@ -3,11 +3,11 @@ import React from "react";
 import artifacts from "../../data/artifacts.json";
 import heroes from "../../data/heroes.json";
 import ICharacter from "../../types/ICharacter";
-import Artifact from "../ui/afk/Artifact";
-import Character, { DetailType } from "../ui/afk/Character";
 import CharacterGrid from "../ui/CharacterGrid";
 import CheckboxField from "../ui/CheckboxField";
 import InputField from "../ui/InputField";
+import Artifact from "../ui/afk/Artifact";
+import Character, { DetailType } from "../ui/afk/Character";
 import styles from "./ChooseHero.module.css";
 
 interface IFactions {
@@ -27,6 +27,7 @@ const factions: IFactions = (heroes as ICharacter[]).reduce(
     celestials: [],
     hypogeans: [],
     dimensionals: [],
+    draconis: [],
     none: [],
   }
 );

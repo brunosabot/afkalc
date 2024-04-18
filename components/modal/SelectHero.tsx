@@ -7,14 +7,14 @@ import { getAscend } from "../../lib/hero";
 import ICharacter from "../../types/ICharacter";
 import { useHeroById } from "../pages/TiersList/hooks/useHero";
 import ProfileContext from "../providers/ProfileContext";
+import CharacterGrid from "../ui/CharacterGrid";
 import Artifact from "../ui/afk/Artifact";
 import Character from "../ui/afk/Character";
-import CharacterGrid from "../ui/CharacterGrid";
+import classes from "./SelectHero.module.css";
 import AscendForm from "./components/ui/AscendForm";
 import EngraveForm from "./components/ui/EngraveForm";
 import FiForm from "./components/ui/FiForm";
 import SiForm from "./components/ui/SiForm";
-import classes from "./SelectHero.module.css";
 
 interface IFactions {
   [key: string]: ICharacter[];
@@ -33,6 +33,7 @@ const factions: IFactions = (heroes as ICharacter[]).reduce(
     celestials: [],
     hypogeans: [],
     dimensionals: [],
+    draconis: [],
     none: [],
   }
 );

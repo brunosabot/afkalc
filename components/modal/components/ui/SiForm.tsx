@@ -44,6 +44,7 @@ const SiForm: React.FC<Props> = function SiForm({ hero, si, onChange }) {
     resource?.faction === "dimensionals" ||
     resource?.faction === "celestials" ||
     resource?.faction === "hypogeans" ||
+    resource?.faction === "draconis" ||
     resource?.isAwakened === true;
 
   return (
