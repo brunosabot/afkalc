@@ -205,6 +205,7 @@
   "faction-celestials": "Himmelswesen",
   "faction-hypogeans": "Unterweltler",
   "faction-dimensionals": "Dimensionale",
+  "faction-draconis": "Draconis",
   "concept": {
     "si": "Charakter-Item",
     "siUnlocked": "Charakter-Item entsperrt",
@@ -374,7 +375,13 @@
     "mess": "Malkrie",
     "paladin": "Lucius",
     "tangod": "Adrian & Elyse",
-    "tombkeeper": "Bronn"
+    "tombkeeper": "Bronn",
+    "purga": "Kalthin",
+    "dpop": "Nyla",
+    "dvain": "Pulina",
+    "dherald": "Cassius",
+    "dfiery": "Hildwin",
+    "dlongbow": "Gwyneth"
   },
   "enemyName": {
     "goblin": "Wrizz",
@@ -420,6 +427,7 @@
     "6017": "Spinnen-Pilz",
     "6018": "Radieschen Rotunde",
     "6019": "Pandy Dumpty",
-    "6020": "Ice Crown"
+    "6020": "Ice Crown",
+    "6021": "Aureus"
   }
 }
