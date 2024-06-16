@@ -205,6 +205,7 @@
   "faction-celestials": "Celestiales",
   "faction-hypogeans": "Hipógeos",
   "faction-dimensionals": "Dimensionales",
+  "faction-draconis": "Draconis",
   "concept": {
     "si": "SI",
     "siUnlocked": "SI desbloqueado",
@@ -374,7 +375,13 @@
     "mess": "Malkrie",
     "paladin": "ALucius",
     "tangod": "Adrian & Elyse",
-    "tombkeeper": "Bronn"
+    "tombkeeper": "Bronn",
+    "purga": "Kalthin",
+    "dpop": "Nyla",
+    "dvain": "Pulina",
+    "dherald": "Cassius",
+    "dfiery": "Hildwin",
+    "dlongbow": "AGwyneth"
   },
   "enemyName": {
     "goblin": "Wrizz",
@@ -420,6 +427,7 @@
     "6017": "Setaraña",
     "6018": "Rábano radiante",
     "6019": "Pumpum",
-    "6020": "Diadema gélida"
+    "6020": "Diadema gélida",
+    "6021": "Aureus"
   }
 }
