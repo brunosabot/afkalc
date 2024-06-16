@@ -1614,7 +1614,7 @@
     "type": "intelligence",
     "class": "mage",
     "role": "continuous",
-    "image": "/heroes/DFiery.png",
+    "image": "/heroes/DFiery.jpg",
     "slug": "dfiery",
     "faction": "draconis",
     "isAwakened": true
@@ -1624,9 +1624,39 @@
     "type": "strength",
     "class": "ranger",
     "role": "continuous",
-    "image": "/heroes/DLongbow.png",
+    "image": "/heroes/DLongbow.jpg",
     "slug": "dlongbow",
     "faction": "draconis",
+    "isAwakened": true
+  },
+  {
+    "id": 165,
+    "type": "intelligence",
+    "class": "support",
+    "role": "buffer",
+    "image": "/heroes/PinkWitch.jpg",
+    "slug": "pinkwitch",
+    "faction": "dimensionals",
+    "isAwakened": false
+  },
+  {
+    "id": 166,
+    "type": "intelligence",
+    "class": "mage",
+    "role": "burst",
+    "image": "/heroes/CuteLord.jpg",
+    "slug": "cutelord",
+    "faction": "dimensionals",
+    "isAwakened": false
+  },
+  {
+    "id": 167,
+    "type": "agility",
+    "class": "warrior",
+    "role": "continuous",
+    "image": "/heroes/SLeopard.jpg",
+    "slug": "sleopard",
+    "faction": "maulers",
     "isAwakened": true
   }
 ]
