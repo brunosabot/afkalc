@@ -1658,5 +1658,25 @@
     "slug": "sleopard",
     "faction": "maulers",
     "isAwakened": true
+  },
+  {
+    "id": 168,
+    "type": "agility",
+    "class": "support",
+    "role": "debuff",
+    "image": "/heroes/ScorpionLady.jpg",
+    "slug": "scorpionlady",
+    "faction": "maulers",
+    "isAwakened": false
+  },
+  {
+    "id": 169,
+    "type": "intelligence",
+    "class": "support",
+    "role": "control",
+    "image": "/heroes/DEnforcer.png",
+    "slug": "denforcer",
+    "faction": "draconis",
+    "isAwakened": false
   }
 ]
