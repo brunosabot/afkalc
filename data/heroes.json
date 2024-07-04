@@ -1674,7 +1674,7 @@
     "type": "intelligence",
     "class": "support",
     "role": "control",
-    "image": "/heroes/DEnforcer.png",
+    "image": "/heroes/DEnforcer.jpg",
     "slug": "denforcer",
     "faction": "draconis",
     "isAwakened": false
