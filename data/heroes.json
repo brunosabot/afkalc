@@ -1683,7 +1683,7 @@
     "id": 170,
     "type": "intelligence",
     "class": "ranger",
-    "role": "burst",
+    "role": "debuff",
     "image": "/heroes/Shamus.jpg",
     "slug": "shamus",
     "faction": "lightbearers",
