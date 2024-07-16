@@ -1678,5 +1678,15 @@
     "slug": "denforcer",
     "faction": "draconis",
     "isAwakened": false
+  },
+  {
+    "id": 170,
+    "type": "intelligence",
+    "class": "ranger",
+    "role": "debuff",
+    "image": "/heroes/Shamus.jpg",
+    "slug": "shamus",
+    "faction": "lightbearers",
+    "isAwakened": false
   }
 ]
