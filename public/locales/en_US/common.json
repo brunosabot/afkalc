@@ -387,8 +387,7 @@
     "sleopard": "Antandra",
     "scorpionlady": "Vilanelle",
     "denforcer": "Melion",
-    "shamus": "Raoul",
-    "dloong": "Lan"
+    "shamus": "Raoul"
   },
   "enemyName": {
     "goblin": "Wrizz",
@@ -435,7 +434,6 @@
     "6018": "Raddish Rotunda",
     "6019": "Pandy Dumpty",
     "6020": "Ice Crown",
-    "6021": "Aureus",
-    "6022": "Pearlcrest Ibis"
+    "6021": "Aureus"
   }
 }
