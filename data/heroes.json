@@ -1688,5 +1688,15 @@
     "slug": "shamus",
     "faction": "lightbearers",
     "isAwakened": false
+  },
+  {
+    "id": 171,
+    "type": "intelligence",
+    "class": "support",
+    "role": "buffer",
+    "image": "/heroes/DLoong.jpg",
+    "slug": "dloong",
+    "faction": "draconis",
+    "isAwakened": true
   }
 ]
