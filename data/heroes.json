@@ -1698,5 +1698,15 @@
     "slug": "dloong",
     "faction": "draconis",
     "isAwakened": true
+  },
+  {
+    "id": 172,
+    "type": "intelligence",
+    "class": "support",
+    "role": "control",
+    "image": "/heroes/Snail.jpg",
+    "slug": "snail",
+    "faction": "wilders",
+    "isAwakened": false
   }
 ]
