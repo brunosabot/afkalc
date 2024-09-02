@@ -1708,5 +1708,15 @@
     "slug": "snail",
     "faction": "wilders",
     "isAwakened": false
+  },
+  {
+    "id": 173,
+    "type": "agility",
+    "class": "ranger",
+    "role": "continuous",
+    "image": "/heroes/CrySword.jpg",
+    "slug": "crysword",
+    "faction": "wilders",
+    "isAwakened": true
   }
 ]
