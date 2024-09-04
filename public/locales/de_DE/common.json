@@ -1,7 +1,7 @@
 {
   "welcome": "Willkommen bei Afkalc, dem Berechnungstool für AFK Arena",
   "label-copied": "Link wurde kopiert",
-  "require-login": "Du musst eingeloggt sein, um diese Funktion nutzen zu können.",
+  "require-login": "Du musst angemeldet sein, um diese Funktion nutzen zu können.",
   "credit-desc": "Für die Hilfe bei der Datensammlung, Bereitstellung großartigen Inhalts oder die App-Entwicklung, danke an:",
   "temporary-account": "Sie sind als Gast angemeldet. Ihre Änderungen sind nur vorübergehend verfügbar und werden nicht gespeichert.",
   "go-registration": "Zur Registrierung gehen",
@@ -388,7 +388,8 @@
     "scorpionlady": "Vilanelle",
     "denforcer": "Melion",
     "shamus": "Raoul",
-    "dloong": "Lan"
+    "dloong": "Lan",
+    "snail": "Misha"
   },
   "enemyName": {
     "goblin": "Wrizz",
