@@ -1718,5 +1718,35 @@
     "slug": "crysword",
     "faction": "wilders",
     "isAwakened": true
+  },
+  {
+    "id": 174,
+    "type": "intelligence",
+    "class": "mage",
+    "role": "buffer",
+    "image": "/heroes/AutumnG.jpg",
+    "slug": "autumng",
+    "faction": "celestials",
+    "isAwakened": false
+  },
+  {
+    "id": 175,
+    "type": "strength",
+    "class": "tank",
+    "role": "buffer",
+    "image": "/heroes/DConcierge.jpg",
+    "slug": "dconcierge",
+    "faction": "draconis",
+    "isAwakened": false
+  },
+  {
+    "id": 176,
+    "type": "agility",
+    "class": "support",
+    "role": "continuous",
+    "image": "/heroes/SoulScythe.jpg",
+    "slug": "soulscythe",
+    "faction": "graveborns",
+    "isAwakened": false
   }
 ]
