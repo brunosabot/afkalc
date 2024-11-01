@@ -1748,5 +1748,26 @@
     "slug": "soulscythe",
     "faction": "graveborns",
     "isAwakened": false
+  },
+  {
+    "id": 177,
+    "type": "strength",
+    "class": "tank",
+    "role": "tank",
+    "image": "/heroes/SNKStorm.jpg",
+    "slug": "snkstorm",
+    "faction": "graveborns",
+    "isAwakened": true
+  },
+  {
+    "id": 178,
+    "type": "intelligence",
+    "class": "support",
+    "role": "debuffer",
+    "image": "/heroes/Geezer.jpg",
+    "slug": "geezer",
+    "faction": "hypogeans",
+    "isAwakened": false
   }
+
 ]
