@@ -393,7 +393,9 @@
     "crysword": "Eironn",
     "autumng": "Aurelia",
     "dconcierge": "Kregor",
-    "soulscythe": "Randle"
+    "soulscythe": "Randle",
+    "snkstorm": "Thoran",
+    "geezer": "Knox"
   },
   "enemyName": {
     "goblin": "Врицц",
@@ -441,6 +443,7 @@
     "6019": "Pandy Dumpty",
     "6020": "Ice Crown",
     "6021": "Aureus",
-    "6022": "Pearlcrest Ibis"
+    "6022": "Pearlcrest Ibis",
+    "6023": "Treatspector"
   }
 }
