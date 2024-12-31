@@ -1768,6 +1768,46 @@
     "slug": "geezer",
     "faction": "hypogeans",
     "isAwakened": false
+  },
+  {
+    "id": 179,
+    "type": "agility",
+    "class": "ranger",
+    "role": "continuous",
+    "image": "/heroes/DSky.jpg",
+    "slug": "dsky",
+    "faction": "draconis",
+    "isAwakened": true
+  },
+  {
+    "id": 180,
+    "type": "agility",
+    "class": "ranger",
+    "role": "buffer",
+    "image": "/heroes/Orcook.jpg",
+    "slug": "orcook",
+    "faction": "maulers",
+    "isAwakened": false
+  },
+  {
+    "id": 181,
+    "type": "intelligence",
+    "class": "mage",
+    "role": "continuous",
+    "image": "/heroes/Zorah.jpg",
+    "slug": "zorah",
+    "faction": "celestials",
+    "isAwakened": true
+  },
+  {
+    "id": 182,
+    "type": "strength",
+    "class": "warrior",
+    "role": "continuous",
+    "image": "/heroes/BloodS.jpg",
+    "slug": "bloods",
+    "faction": "dimensionals",
+    "isAwakened": false
   }
 
 ]
