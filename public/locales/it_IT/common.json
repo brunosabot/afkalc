@@ -395,7 +395,11 @@
     "dconcierge": "Kregor",
     "soulscythe": "Randle",
     "snkstorm": "Thoran",
-    "geezer": "Knox"
+    "geezer": "Knox",
+    "dsky": "Skylan",
+    "orcook": "Gorren",
+    "zorah": "Zohra",
+    "bloods": "Shalltear Bloodfallen"
   },
   "enemyName": {
     "goblin": "Wrizz",
@@ -444,6 +448,7 @@
     "6020": "Ice Crown",
     "6021": "Aureus",
     "6022": "Pearlcrest Ibis",
-    "6023": "Treatspector"
+    "6023": "Treatspector",
+    "6024": "Joyous Roamer"
   }
 }
