@@ -395,7 +395,11 @@
     "dconcierge": "Kregor",
     "soulscythe": "Randle",
     "snkstorm": "AThoran",
-    "geezer": "Knox"
+    "geezer": "Knox",
+    "dsky": "Skylan",
+    "orcook": "Gorren",
+    "zorah": "Zohra",
+    "bloods": "Shalltear Bloodfallen"
   },
   "enemyName": {
     "goblin": "Wrizz",
@@ -444,6 +448,7 @@
     "6020": "Diadema gélida",
     "6021": "Aureus",
     "6022": "Ibis crestaperla",
-    "6023": "Brománima"
+    "6023": "Brománima",
+    "6024": "Joyous Roamer"
   }
 }
