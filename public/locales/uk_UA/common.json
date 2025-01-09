@@ -395,7 +395,11 @@
     "dconcierge": "Крегор",
     "soulscythe": "Рендл",
     "snkstorm": "Торан",
-    "geezer": "Нокс"
+    "geezer": "Нокс",
+    "dsky": "Skylan",
+    "orcook": "Gorren",
+    "zorah": "Zohra",
+    "bloods": "Shalltear Bloodfallen"
   },
   "enemyName": {
     "goblin": "Вріз",
@@ -444,6 +448,7 @@
     "6020": "Льодяна корона",
     "6021": "Ауреус",
     "6022": "Перлкрест Ібіс",
-    "6023": "Перспектор"
+    "6023": "Перспектор",
+    "6024": "Joyous Roamer"
   }
 }
