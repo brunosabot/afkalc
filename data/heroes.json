@@ -1808,6 +1808,55 @@
     "slug": "bloods",
     "faction": "dimensionals",
     "isAwakened": false
+  },
+  {
+    "id": 183,
+    "type": "agility",
+    "class": "ranger",
+    "role": "continuous",
+    "image": "/heroes/DTornado.jpg",
+    "slug": "dtornado",
+    "faction": "draconis",
+    "isAwakened": false
+  },
+  {
+    "id": 184,
+    "type": "strength",
+    "class": "warrior",
+    "role": "burst",
+    "image": "/heroes/Dsun.jpg",
+    "slug": "dsun",
+    "faction": "draconis",
+    "isAwakened": true
+  },
+  {
+    "id": 185,
+    "type": "intelligence",
+    "class": "mage",
+    "role": "burst",
+    "image": "/heroes/Daughter.jpg",
+    "slug": "daughter",
+    "faction": "graveborns",
+    "isAwakened": false
+  },
+  {
+    "id": 186,
+    "type": "agility",
+    "class": "ranger",
+    "role": "continuous",
+    "image": "/heroes/EnvyD.jpg",
+    "slug": "envyd",
+    "faction": "hypogeans",
+    "isAwakened": true
+  },
+  {
+    "id": 187,
+    "type": "agility",
+    "class": "ranger",
+    "role": "buffer",
+    "image": "/heroes/Game.jpg",
+    "slug": "game",
+    "faction": "celestials",
+    "isAwakened": false
   }
-
 ]
