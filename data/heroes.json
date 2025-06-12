@@ -1858,5 +1858,35 @@
     "slug": "game",
     "faction": "celestials",
     "isAwakened": false
+  },
+  {
+    "id": 188,
+    "type": "intelligence",
+    "class": "support",
+    "role": "debuff",
+    "image": "/heroes/Denchant.jpg",
+    "slug": "denchant",
+    "faction": "draconis",
+    "isAwakened": false
+  },
+  {
+    "id": 189,
+    "type": "intelligence",
+    "class": "mage",
+    "role": "continuous",
+    "image": "/heroes/Marcille.jpg",
+    "slug": "marcille",
+    "faction": "dimensionals",
+    "isAwakened": false
+  },
+  {
+    "id": 190,
+    "type": "strength",
+    "class": "warrior",
+    "role": "control",
+    "image": "/heroes/Laios.jpg",
+    "slug": "laios",
+    "faction": "dimensionals",
+    "isAwakened": false
   }
 ]
