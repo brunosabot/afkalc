@@ -1,8 +1,8 @@
 {
-  "abex-relic-desc": "Abyssal expedition tile calculator",
-  "confirm-reset-timers": "This will reset all your existing timers, do you really want to continue?",
+  "abex-relic-desc": "Licznik kafelków w Podróży do Odchłani",
+  "confirm-reset-timers": "Ta akcja wyzeruje wszystkie twoje liczniki, czy chcesz kontynuować?",
   "confirm-reset-box": "This will reset all your existing data, do you really want to continue?",
-  "reset-timers": "Reset All Timers",
+  "reset-timers": "Wyzeruj wszystkie liczniki",
   "reset-box": "Reset The Box",
   "label-owned": "Owned",
   "label-garrison": "Garrison",
