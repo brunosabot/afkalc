@@ -1888,5 +1888,35 @@
     "slug": "laios",
     "faction": "dimensionals",
     "isAwakened": false
+  },
+  {
+    "id": 191,
+    "type": "strength",
+    "class": "tank",
+    "role": "tank",
+    "image": "/heroes/Docean.jpg",
+    "slug": "docean",
+    "faction": "draconis",
+    "isAwakened": true
+  },
+  {
+    "id": 192,
+    "type": "strength",
+    "class": "tank",
+    "role": "debuff",
+    "image": "/heroes/PirateQ.jpg",
+    "slug": "pirateq",
+    "faction": "lightbearers",
+    "isAwakened": false
+  },
+  {
+    "id": 193,
+    "type": "strength",
+    "class": "tank",
+    "role": "tank",
+    "image": "/heroes/Sknight.jpg",
+    "slug": "sknight",
+    "faction": "lightbearers",
+    "isAwakened": true
   }
 ]
