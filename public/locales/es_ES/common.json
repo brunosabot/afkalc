@@ -404,7 +404,10 @@
     "dsun": "Haelia",
     "daughter": "Mira",
     "envyd": "Envydiel",
-    "game": "Lysander"
+    "game": "Lysander",
+    "denchant": "Velufira",
+    "marcille": "Marcille",
+    "laios": "Laios"
   },
   "enemyName": {
     "goblin": "Wrizz",
@@ -454,6 +457,7 @@
     "6021": "Aureus",
     "6022": "Ibis crestaperla",
     "6023": "Brománima",
-    "6024": "Errante Dichoso"
+    "6024": "Errante Dichoso",
+    "6025": "Trickery Chest"
   }
 }

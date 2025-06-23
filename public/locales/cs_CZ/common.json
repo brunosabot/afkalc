@@ -404,7 +404,10 @@
     "dsun": "Haelia",
     "daughter": "Mira",
     "envyd": "Envydiel",
-    "game": "Lysander"
+    "game": "Lysander",
+    "denchant": "Velufira",
+    "marcille": "Marcille",
+    "laios": "Laios"
   },
   "enemyName": {
     "goblin": "Wrizz",
@@ -454,6 +457,7 @@
     "6021": "Aureus",
     "6022": "Pearlcrest Ibis",
     "6023": "Treatspector",
-    "6024": "Joyous Roamer"
+    "6024": "Joyous Roamer",
+    "6025": "Trickery Chest"
   }
 }
