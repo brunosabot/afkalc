@@ -407,7 +407,10 @@
     "game": "Lysander",
     "denchant": "Velufira",
     "marcille": "Marcille",
-    "laios": "Laios"
+    "laios": "Laios",
+    "docean": "Leviathan",
+    "pirateq": "Alvida",
+    "sknight": "AEstrilda"
   },
   "enemyName": {
     "goblin": "Wrizz",
@@ -458,6 +461,6 @@
     "6022": "Ibis crestaperla",
     "6023": "Brománima",
     "6024": "Errante Dichoso",
-    "6025": "Trickery Chest"
+    "6025": "Cofre bribón"
   }
 }
