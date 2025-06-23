@@ -407,7 +407,10 @@
     "game": "Lysander",
     "denchant": "Velufira",
     "marcille": "Marcille",
-    "laios": "Laios"
+    "laios": "Laios",
+    "docean": "Leviathan",
+    "pirateq": "Alvida",
+    "sknight": "Estrilda"
   },
   "enemyName": {
     "goblin": "Вріз",
