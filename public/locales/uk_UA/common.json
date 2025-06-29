@@ -396,21 +396,21 @@
     "soulscythe": "Рендл",
     "snkstorm": "Торан",
     "geezer": "Нокс",
-    "dsky": "Skylan",
-    "orcook": "Gorren",
-    "zorah": "Zohra",
-    "bloods": "Shalltear Bloodfallen",
-    "dtornado": "Sion",
-    "dsun": "Haelia",
-    "daughter": "Mira",
-    "envyd": "Envydiel",
-    "game": "Lysander",
-    "denchant": "Velufira",
-    "marcille": "Marcille",
-    "laios": "Laios",
-    "docean": "Leviathan",
-    "pirateq": "Alvida",
-    "sknight": "Estrilda"
+    "dsky": "Скайлан",
+    "orcook": "Горен",
+    "zorah": "Зохра",
+    "bloods": "Шалтір Бладфоллен",
+    "dtornado": "Сіон",
+    "dsun": "Гелія",
+    "daughter": "Міра",
+    "envyd": "Енвідіель",
+    "game": "Лісандер",
+    "denchant": "Велуфіра",
+    "marcille": "Марсіль",
+    "laios": "Лайос",
+    "docean": "Левіфан",
+    "pirateq": "Альвіда",
+    "sknight": "Естрільда"
   },
   "enemyName": {
     "goblin": "Вріз",
@@ -460,7 +460,7 @@
     "6021": "Ауреус",
     "6022": "Перлкрест Ібіс",
     "6023": "Перспектор",
-    "6024": "Joyous Roamer",
-    "6025": "Trickery Chest"
+    "6024": "Веселий блукач",
+    "6025": "Хрящова Скриня"
   }
 }
