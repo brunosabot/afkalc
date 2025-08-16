@@ -1918,5 +1918,55 @@
     "slug": "sknight",
     "faction": "lightbearers",
     "isAwakened": true
+  },
+  {
+    "id": 194,
+    "type": "agility",
+    "class": "warrior",
+    "role": "continuous",
+    "image": "/heroes/Dshadow.jpg",
+    "slug": "dshadow",
+    "faction": "draconis",
+    "isAwakened": false
+  },
+  {
+    "id": 195,
+    "type": "intelligence",
+    "class": "mage",
+    "role": "buffer",
+    "image": "/heroes/DevilSucker.jpg",
+    "slug": "devilSucker",
+    "faction": "hypogeans",
+    "isAwakened": false
+  },
+  {
+    "id": 196,
+    "type": "agility",
+    "class": "ranger",
+    "role": "burst",
+    "image": "/heroes/Darklord.jpg",
+    "slug": "darklord",
+    "faction": "dimensionals",
+    "isAwakened": false
+  },
+  {
+    "id": 197,
+    "type": "strength",
+    "class": "warrior",
+    "role": "control",
+    "image": "/heroes/Lighthunter.jpg",
+    "slug": "lighthunter",
+    "faction": "dimensionals",
+    "isAwakened": false
+  },
+  {
+    "id": 198,
+    "type": "agility",
+    "class": "ranger",
+    "role": "continuous",
+    "image": "/heroes/DGambling.jpg",
+    "slug": "dgambling",
+    "faction": "draconis",
+    "isAwakened": true
   }
 ]
