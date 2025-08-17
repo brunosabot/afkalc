@@ -410,7 +410,12 @@
     "laios": "Laios",
     "docean": "Leviathan",
     "pirateq": "Alvida",
-    "sknight": "AEstrilda"
+    "sknight": "AEstrilda",
+    "dshadow": "Umbriel",
+    "devilSucker": "Serenmira",
+    "darklord": "Sung Jinwoo",
+    "lighthunter": "Cha Hae-in",
+    "dgambling": "Kaelon"
   },
   "enemyName": {
     "goblin": "Wrizz",
@@ -461,6 +466,7 @@
     "6022": "Ibis crestaperla",
     "6023": "Brománima",
     "6024": "Errante Dichoso",
-    "6025": "Cofre bribón"
+    "6025": "Cofre bribón",
+    "6026": "Thistlekin"
   }
 }
