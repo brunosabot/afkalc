@@ -410,7 +410,12 @@
     "laios": "Лайос",
     "docean": "Левіфан",
     "pirateq": "Альвіда",
-    "sknight": "Естрільда"
+    "sknight": "Естрільда",
+    "dshadow": "Umbriel",
+    "devilSucker": "Serenmira",
+    "darklord": "Sung Jinwoo",
+    "lighthunter": "Cha Hae-in",
+    "dgambling": "Kaelon"
   },
   "enemyName": {
     "goblin": "Вріз",
@@ -461,6 +466,7 @@
     "6022": "Перлкрест Ібіс",
     "6023": "Перспектор",
     "6024": "Веселий блукач",
-    "6025": "Хрящова Скриня"
+    "6025": "Хрящова Скриня",
+    "6026": "Thistlekin"
   }
 }
