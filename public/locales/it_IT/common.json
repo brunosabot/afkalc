@@ -410,7 +410,12 @@
     "laios": "Laios",
     "docean": "Leviathan",
     "pirateq": "Alvida",
-    "sknight": "Estrilda"
+    "sknight": "Estrilda",
+    "dshadow": "Umbriel",
+    "devilSucker": "Serenmira",
+    "darklord": "Sung Jinwoo",
+    "lighthunter": "Cha Hae-in",
+    "dgambling": "Kaelon"
   },
   "enemyName": {
     "goblin": "Wrizz",
@@ -461,6 +466,7 @@
     "6022": "Pearlcrest Ibis",
     "6023": "Treatspector",
     "6024": "Joyous Roamer",
-    "6025": "Trickery Chest"
+    "6025": "Trickery Chest",
+    "6026": "Thistlekin"
   }
 }
