@@ -1968,5 +1968,35 @@
     "slug": "dgambling",
     "faction": "draconis",
     "isAwakened": true
+  },
+  {
+    "id": 199,
+    "type": "intelligence",
+    "class": "support",
+    "role": "buffer",
+    "image": "/heroes/OrcAngler.jpg",
+    "slug": "orcangler",
+    "faction": "maulers",
+    "isAwakened": false
+  },
+  {
+    "id": 200,
+    "type": "intelligence",
+    "class": "mage",
+    "role": "continuous",
+    "image": "/heroes/DesertEagle.jpg",
+    "slug": "deserteagle",
+    "faction": "maulers",
+    "isAwakened": true
+  },
+  {
+    "id": 201,
+    "type": "strength",
+    "class": "warrior",
+    "role": "continuous",
+    "image": "/heroes/Beetle.jpg",
+    "slug": "beetle",
+    "faction": "wilders",
+    "isAwakened": false
   }
 ]
