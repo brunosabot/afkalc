@@ -415,7 +415,10 @@
     "devilSucker": "Serenmira",
     "darklord": "Sung Jinwoo",
     "lighthunter": "Cha Hae-in",
-    "dgambling": "Kaelon"
+    "dgambling": "Kaelon",
+    "orcangler": "Talimar",
+    "deserteagle": "Skriath",
+    "beetle": "Gorok"
   },
   "enemyName": {
     "goblin": "Wrizz",
@@ -467,6 +470,7 @@
     "6023": "Brománima",
     "6024": "Errante Dichoso",
     "6025": "Cofre bribón",
-    "6026": "Brotánido"
+    "6026": "Brotánido",
+    "6027": "Nightfall Pegasus"
   }
 }
