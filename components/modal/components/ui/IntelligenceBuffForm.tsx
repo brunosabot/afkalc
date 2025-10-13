@@ -11,16 +11,30 @@ const intelligenceBuffShort: [number, string][] = [
   [4, "4"],
   [5, "5"],
   [6, "6"],
+  [7, "7"],
+  [8, "8"],
+  [9, "9"],
+  [10, "10"],
+  [11, "11"],
+  [12, "12"],
+  [13, "13"],
+  [14, "14"],
+  [15, "15"],
+  [16, "16"],
+  [17, "17"],
+  [18, "18"],
 ];
 
 interface Props {
   intelligenceBuff: number;
   onChange: (value: number) => void;
+  max: number;
 }
 
 const IntelligenceBuffForm: React.FC<Props> = function IntelligenceBuffForm({
   intelligenceBuff,
   onChange,
+  max,
 }) {
   const { t } = useTranslation("common");
 
@@ -34,7 +48,7 @@ const IntelligenceBuffForm: React.FC<Props> = function IntelligenceBuffForm({
         value={intelligenceBuff}
         onChange={(intelligenceBuffValue) => onChange(parseInt(intelligenceBuffValue, 10))}
       />
-      <FastButtons values={intelligenceBuffShort} onClick={onChange} />
+      <FastButtons values={intelligenceBuffShort.slice(0, max + 1)} onClick={onChange} />
     </div>
   );
 };

@@ -1,5 +1,5 @@
 export default interface IPet {
   id: string;
   hasBasic: boolean;
-  elevation: "rare" | "elite";
+  elevation: "rare" | "elite" | "legendary";
 }

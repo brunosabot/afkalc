@@ -1,11 +1,15 @@
 import { mdiChevronLeft, mdiChevronRight } from "@mdi/js";
 import React from "react";
+import petsJson from "../../data/pets.json";
+import IPet from "../../types/IPet";
 import Pet from "../ui/afk/Pet";
 import Svg from "../ui/Svg";
 import AgilityBuffForm from "./components/ui/AgilityBuffForm";
 import IntelligenceBuffForm from "./components/ui/IntelligenceBuffForm";
 import StrengthBuffForm from "./components/ui/StrengthBuffForm";
 import styles from "./EditPet.module.css";
+
+const typedPets: IPet[] = petsJson as IPet[];
 
 export type SetLevelType = "strengthBuff" | "intelligenceBuff" | "agilityBuff";
 
@@ -28,6 +32,7 @@ const EditPet: React.FC<Props> = function EditPet({
   onNext = () => {},
 }) {
   const { id, strengthBuff, intelligenceBuff, agilityBuff } = pet;
+  const thePet = typedPets.find((p) => p.id === id);
 
   return (
     <div className={styles.EditPet}>
@@ -49,16 +54,19 @@ const EditPet: React.FC<Props> = function EditPet({
         <StrengthBuffForm
           strengthBuff={strengthBuff}
           onChange={(strengthBuffValue) => setLevel(id, "strengthBuff", strengthBuffValue)}
+          max={thePet?.elevation === "legendary" ? 18 : 12}
         />
         <IntelligenceBuffForm
           intelligenceBuff={intelligenceBuff}
           onChange={(intelligenceBuffValue) =>
             setLevel(id, "intelligenceBuff", intelligenceBuffValue)
           }
+          max={thePet?.elevation === "legendary" ? 18 : 12}
         />
         <AgilityBuffForm
           agilityBuff={agilityBuff}
           onChange={(agilityBuffValue) => setLevel(id, "agilityBuff", agilityBuffValue)}
+          max={thePet?.elevation === "legendary" ? 18 : 12}
         />
       </div>
     </div>
