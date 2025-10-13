@@ -415,7 +415,10 @@
     "devilSucker": "Serenmira",
     "darklord": "Sung Jinwoo",
     "lighthunter": "Cha Hae-in",
-    "dgambling": "Kaelon"
+    "dgambling": "Kaelon",
+    "orcangler": "Talimar",
+    "deserteagle": "Skriath",
+    "beetle": "Gorok"
   },
   "enemyName": {
     "goblin": "Wrizz",
@@ -467,6 +470,7 @@
     "6023": "Treatspector",
     "6024": "Joyous Roamer",
     "6025": "Trickery Chest",
-    "6026": "Thistlekin"
+    "6026": "Thistlekin",
+    "6027": "Nightfall Pegasus"
   }
 }
