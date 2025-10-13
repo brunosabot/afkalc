@@ -415,7 +415,10 @@
     "devilSucker": "Serenmira",
     "darklord": "Sung Jinwoo",
     "lighthunter": "Cha Hae-in",
-    "dgambling": "Kaelon"
+    "dgambling": "Kaelon",
+    "orcangler": "Talimar",
+    "deserteagle": "Skriath",
+    "beetle": "Gorok"
   },
   "enemyName": {
     "goblin": "Вріз",
@@ -467,6 +470,7 @@
     "6023": "Перспектор",
     "6024": "Веселий блукач",
     "6025": "Хрящова Скриня",
-    "6026": "Thistlekin"
+    "6026": "Thistlekin",
+    "6027": "Nightfall Pegasus"
   }
 }
