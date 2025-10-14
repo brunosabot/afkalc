@@ -10,10 +10,14 @@ interface IProps {
 
 const PetTooltip: React.FC<IProps> = function PetTooltip({ pet }) {
   const { t } = useTranslation("common");
+  const { t: tPublic } = useTranslation("public");
 
   return (
     <>
-      <div className={classes.Name}>{t(`petName.${pet.id}`)}</div>
+      <div className={classes.Name}>
+        {t(`petName.${pet.id}`)} ({tPublic("label-level")}&nbsp;
+        {pet.strengthBuff + pet.intelligenceBuff + pet.agilityBuff})
+      </div>
 
       <div className={classes.BuffWrapper}>
         <Image
