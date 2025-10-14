@@ -2,6 +2,7 @@
 import { useTranslation } from "next-i18next";
 import React, { useCallback, useContext } from "react";
 import pets from "../../data/pets.json";
+import IPet from "../../types/IPet";
 import ProfileContext from "../providers/ProfileContext";
 import Pet from "../ui/afk/Pet";
 import CharacterGrid from "../ui/CharacterGrid";
@@ -10,7 +11,9 @@ import IntelligenceBuffForm from "./components/ui/IntelligenceBuffForm";
 import StrengthBuffForm from "./components/ui/StrengthBuffForm";
 import classes from "./SelectPet.module.css";
 
-interface IPet {
+const typedPets: IPet[] = pets as IPet[];
+
+interface ICurrentPet {
   id: string;
   agilityBuff: number;
   intelligenceBuff: number;
@@ -18,8 +21,8 @@ interface IPet {
 }
 
 interface Props {
-  onSelect: (value: IPet) => void;
-  pet: IPet;
+  onSelect: (value: ICurrentPet) => void;
+  pet: ICurrentPet;
 }
 
 const SelectPet: React.FC<Props> = function SelectPet({ pet, onSelect }) {
@@ -34,6 +37,8 @@ const SelectPet: React.FC<Props> = function SelectPet({ pet, onSelect }) {
       strengthBuff: values.pets[pet.id]?.strengthBuff ?? 0,
     });
   }, [pet.id, onSelect, values.pets]);
+
+  const thePet = typedPets.find((p) => p.id === pet.id);
 
   return (
     <>
@@ -59,16 +64,19 @@ const SelectPet: React.FC<Props> = function SelectPet({ pet, onSelect }) {
         <StrengthBuffForm
           strengthBuff={pet.strengthBuff}
           onChange={(strengthBuffValue) => onSelect({ ...pet, strengthBuff: strengthBuffValue })}
+          max={thePet?.elevation === "legendary" ? 18 : 12}
         />
         <IntelligenceBuffForm
           intelligenceBuff={pet.intelligenceBuff}
           onChange={(intelligenceBuffValue) =>
             onSelect({ ...pet, intelligenceBuff: intelligenceBuffValue })
           }
+          max={thePet?.elevation === "legendary" ? 18 : 12}
         />
         <AgilityBuffForm
           agilityBuff={pet.agilityBuff}
           onChange={(agilityBuffValue) => onSelect({ ...pet, agilityBuff: agilityBuffValue })}
+          max={thePet?.elevation === "legendary" ? 18 : 12}
         />
       </div>
     </>
