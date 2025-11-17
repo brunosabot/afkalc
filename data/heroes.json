@@ -1998,5 +1998,35 @@
     "slug": "beetle",
     "faction": "wilders",
     "isAwakened": false
+  },
+  {
+    "id": 202,
+    "type": "intelligence",
+    "class": "mage",
+    "role": "burst",
+    "image": "/heroes/Selene.jpg",
+    "slug": "selene",
+    "faction": "celestials",
+    "isAwakened": false
+  },
+  {
+    "id": 203,
+    "type": "strength",
+    "class": "warrior",
+    "role": "buffer",
+    "image": "/heroes/Doutside.jpg",
+    "slug": "doutside",
+    "faction": "draconis",
+    "isAwakened": false
+  },
+  {
+    "id": 204,
+    "type": "intelligence",
+    "class": "mage",
+    "role": "continuous",
+    "image": "/heroes/Coffin.jpg",
+    "slug": "coffin",
+    "faction": "graveborns",
+    "isAwakened": true
   }
 ]
