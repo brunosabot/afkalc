@@ -2083,7 +2083,7 @@
     "id": 210,
     "type": "intelligence",
     "class": "mage",
-    "role": "continuous",
+    "role": "burst",
     "image": "/heroes/Pippa.jpg",
     "slug": "pippa",
     "faction": "wilders",
