@@ -421,7 +421,12 @@
     "beetle": "Gorok",
     "selene": "Selene",
     "doutside": "Begris",
-    "coffin": "Fawkes"
+    "coffin": "Fawkes",
+    "ghostboy": "Lethos",
+    "dhot": "Elthara",
+    "dtrade": "Tavriel",
+    "opman": "Saitama",
+    "gtornado": "Terrible Tornado"
   },
   "enemyName": {
     "goblin": "Wrizz",
@@ -474,6 +479,7 @@
     "6024": "Joyous Roamer",
     "6025": "Trickery Chest",
     "6026": "Thistlekin",
-    "6027": "Nightfall Pegasus"
+    "6027": "Nightfall Pegasus",
+    "6028": "Count Snickerfang"
   }
 }
