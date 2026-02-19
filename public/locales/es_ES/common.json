@@ -421,7 +421,12 @@
     "beetle": "Gorok",
     "selene": "Selene",
     "doutside": "Begris",
-    "coffin": "AFawkes"
+    "coffin": "AFawkes",
+    "ghostboy": "Lethos",
+    "dhot": "Elthara",
+    "dtrade": "Tavriel",
+    "opman": "Saitama",
+    "gtornado": "Terrible Tornado"
   },
   "enemyName": {
     "goblin": "Wrizz",
@@ -474,6 +479,7 @@
     "6024": "Errante Dichoso",
     "6025": "Cofre bribón",
     "6026": "Brotánido",
-    "6027": "Pegasombrío"
+    "6027": "Pegasombrío",
+    "6028": "Count Snickerfang"
   }
 }
