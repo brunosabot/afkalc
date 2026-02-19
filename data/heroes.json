@@ -2028,5 +2028,66 @@
     "slug": "coffin",
     "faction": "graveborns",
     "isAwakened": true
+  },
+  {
+    "id": 205,
+    "type": "agility",
+    "class": "warrior",
+    "role": "continuous",
+    "image": "/heroes/GhostBoy.jpg",
+    "slug": "ghostboy",
+    "faction": "graveborns",
+    "isAwakened": false
+  },
+  {
+    "id": 206,
+    "type": "intelligence",
+    "class": "mage",
+    "role": "continuous",
+    "image": "/heroes/Dhot.jpg",
+    "slug": "dhot",
+    "faction": "draconis",
+    "isAwakened": true
+  },
+  {
+    "id": 207,
+    "type": "intelligence",
+    "class": "support",
+    "role": "buffer",
+    "image": "/heroes/Dtrade.jpg",
+    "slug": "dtrade",
+    "faction": "draconis",
+    "isAwakened": false
+  },
+  {
+    "id": 208,
+    "type": "strength",
+    "class": "warrior",
+    "role": "continuous",
+    "image": "/heroes/Opman.jpg",
+    "slug": "opman",
+    "faction": "dimensionals",
+    "isAwakened": false
+  },
+  {
+    "id": 209,
+    "type": "intelligence",
+    "class": "mage",
+    "role": "buffer",
+    "image": "/heroes/Gtornado.jpg",
+    "slug": "gtornado",
+    "faction": "dimensionals",
+    "isAwakened": false
+  },
+  {
+    "id": 210,
+    "type": "intelligence",
+    "class": "mage",
+    "role": "burst",
+    "image": "/heroes/Pippa.jpg",
+    "slug": "pippa",
+    "faction": "wilders",
+    "isAwakened": true
   }
+
 ]
