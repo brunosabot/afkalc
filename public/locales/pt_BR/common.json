@@ -407,7 +407,26 @@
     "game": "Lysander",
     "denchant": "Velufira",
     "marcille": "Marcille",
-    "laios": "Laios"
+    "laios": "Laios",
+    "docean": "Leviathan",
+    "pirateq": "Alvida",
+    "sknight": "Estrilda",
+    "dshadow": "Umbriel",
+    "devilSucker": "Serenmira",
+    "darklord": "Sung Jinwoo",
+    "lighthunter": "Cha Hae-in",
+    "dgambling": "Kaelon",
+    "orcangler": "Talimar",
+    "deserteagle": "Skriath",
+    "beetle": "Gorok",
+    "selene": "Selene",
+    "doutside": "Begris",
+    "coffin": "Fawkes",
+    "ghostboy": "Lethos",
+    "dhot": "Elthara",
+    "dtrade": "Tavriel",
+    "opman": "Saitama",
+    "gtornado": "Terrible Tornado"
   },
   "enemyName": {
     "goblin": "Wrizz",
@@ -458,6 +477,9 @@
     "6022": "Pearlcrest Ibis",
     "6023": "Treatspector",
     "6024": "Joyous Roamer",
-    "6025": "Trickery Chest"
+    "6025": "Trickery Chest",
+    "6026": "Thistlekin",
+    "6027": "Nightfall Pegasus",
+    "6028": "Count Snickerfang"
   }
 }
