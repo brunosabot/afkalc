@@ -426,7 +426,17 @@
     "dhot": "Elthara",
     "dtrade": "Tavriel",
     "opman": "Saitama",
-    "gtornado": "Tornado Terrible"
+    "gtornado": "Tornado Terrible",
+    "pippa": "APippa",
+    "flysquirrel": "Icariel",
+    "dshift": "Odysseus",
+    "dogd": "Harvey",
+    "ladydracula": "Dracula",
+    "dyandere": "Serennia",
+    "prided": "Hybris",
+    "apollo": "Misfortis",
+    "dtrans": "Severin",
+    "puppeteer": "Judy & Punch"
   },
   "enemyName": {
     "goblin": "Wrizz",
@@ -480,6 +490,7 @@
     "6025": "Cofre bribón",
     "6026": "Brotánido",
     "6027": "Pegasombrío",
-    "6028": "Conde Conécula"
+    "6028": "Conde Conécula",
+    "6029": "Espíritu Gemenube"
   }
 }

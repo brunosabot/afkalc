@@ -426,7 +426,17 @@
     "dhot": "Elthara",
     "dtrade": "Tavriel",
     "opman": "Saitama",
-    "gtornado": "Terrible Tornado"
+    "gtornado": "Terrible Tornado",
+    "pippa": "Pippa",
+    "flysquirrel": "Icariel",
+    "dshift": "Odysseus",
+    "dogd": "Harvey",
+    "ladydracula": "Dracula",
+    "dyandere": "Serennia",
+    "prided": "Hybris",
+    "apollo": "Misfortis",
+    "dtrans": "Severin",
+    "puppeteer": "Judy & Punch"
   },
   "enemyName": {
     "goblin": "Wrizz",
@@ -480,6 +490,7 @@
     "6025": "Trickery Chest",
     "6026": "Thistlekin",
     "6027": "Nightfall Pegasus",
-    "6028": "Count Snickerfang"
+    "6028": "Count Snickerfang",
+    "6029": "Twinlum Spirit"
   }
 }
